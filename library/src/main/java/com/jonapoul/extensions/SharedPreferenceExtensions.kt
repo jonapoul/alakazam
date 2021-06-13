@@ -2,7 +2,6 @@ package com.jonapoul.extensions
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.jonapoul.sharedprefs.PrefPair
 
 /**
  * Small utility class to carry both a preference key and its default value in the same container.
