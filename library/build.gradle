@@ -35,6 +35,4 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
-
-    api "com.github.jonapoul:sharedprefs:$versions.sharedprefs"
 }
