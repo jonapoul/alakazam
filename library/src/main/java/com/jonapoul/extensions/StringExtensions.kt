@@ -9,3 +9,16 @@ fun String.parseBoolean(): Boolean {
         else -> throw IllegalArgumentException("Unable to parse boolean from '$this'")
     }
 }
+
+/*
+* Mercilessly lifted from https://stackoverflow.com/a/67843987/15634757
+*/
+fun String.capitalized(): String {
+    return this.replaceFirstChar {
+        if (it.isLowerCase()) {
+            it.titlecase(Locale.getDefault())
+        } else {
+            it.toString()
+        }
+    }
+}
