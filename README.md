@@ -2,6 +2,7 @@
 
 ![Build](https://github.com/jonapoul/android-extensions/actions/workflows/build.yml/badge.svg)
 [![Jitpack](https://jitpack.io/v/jonapoul/android-extensions.svg)](https://jitpack.io/#jonapoul/android-extensions)
+![Jitpack](https://img.shields.io/github/license/jonapoul/android-extensions)
 
 This is a simple library to hold a bunch of Kotlin extensions that I use all the time in various projects. I just made this repo to keep them all in the same place and stop me copying them around all the time. 
 
