@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: chmod +x ./gradlew
       - uses: actions/checkout@v2
+      - run: chmod +x ./gradlew
       - uses: actions/setup-java@v2
         with:
           java-version: 8
