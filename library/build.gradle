@@ -46,4 +46,5 @@ dependencies {
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    api "com.github.Zhuinden:fragmentviewbindingdelegate-kt:$versions.viewbinding_delegate"
 }
