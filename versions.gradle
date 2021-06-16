@@ -19,5 +19,9 @@ ext.versions = [
         recyclerview            : '1.2.1',
         sharedprefs             : '1.0.4',
         viewbinding_delegate    : '1.0.0',
+
+        // Testing
+        junit                   : '4.13.2',
+        mockk                   : '1.11.0',
 ]
 

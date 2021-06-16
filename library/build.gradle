@@ -47,4 +47,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
     api "com.github.Zhuinden:fragmentviewbindingdelegate-kt:$versions.viewbinding_delegate"
+
+    testImplementation "io.mockk:mockk:$versions.mockk"
+    testImplementation "junit:junit:$versions.junit"
 }
