@@ -9,3 +9,9 @@ fun ImageView.setColorFilterRes(@ColorRes color: Int) {
         ContextCompat.getColor(context, color)
     )
 }
+
+fun ImageView.setColorFilterAttr(@ColorRes color: Int) {
+    setColorFilter(
+        context.getColorFromAttr(color)
+    )
+}
