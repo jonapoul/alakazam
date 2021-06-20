@@ -17,6 +17,6 @@ allprojects {
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {
-    implementation "com.github.jonapoul:android-extensions:1.0.2"
+    implementation "com.github.jonapoul:android-extensions:1.0.3"
 }
 ```
