@@ -16,6 +16,12 @@ fun SharedPreferences.parseIntFromPair(pref: PrefPair<String>): Int {
     }.toInt()
 }
 
+fun SharedPreferences.parseLongFromPair(pref: PrefPair<String>): Long {
+    return typeSafeGet(pref) {
+        this.getString(pref.key, pref.default)!!
+    }.toLong()
+}
+
 fun SharedPreferences.parseDoubleFromPair(pref: PrefPair<String>): Double {
     return typeSafeGet(pref) {
         this.getString(pref.key, pref.default)!!
