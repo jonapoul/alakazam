@@ -5,6 +5,10 @@ import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 
+/**
+ * Pulls a [ColorInt] colour from our current app theme. We assume that the user passes in a valid
+ * colour attribute in the [attrColor] parameter.
+ */
 @ColorInt
 fun Context.getColorFromAttr(
     @AttrRes attrColor: Int,
