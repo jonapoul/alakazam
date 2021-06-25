@@ -55,7 +55,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+    implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
+    implementation "com.google.android.material:material:$versions.material"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
 
     testImplementation "io.mockk:mockk:$versions.mockk"

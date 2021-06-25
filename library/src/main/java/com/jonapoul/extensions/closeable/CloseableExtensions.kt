@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.closeable
 
 import java.io.Closeable
 

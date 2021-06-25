@@ -1,6 +1,6 @@
 # Template borrowed from https://github.com/square/kotlinpoet/blob/master/.github/workflows/publish-website.yml
 # for dokka building and publishing
-name: Build, Test and Deploy Documentation
+name: Build
 
 on:
   pull_request:

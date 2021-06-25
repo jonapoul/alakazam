@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.closeable
 
 import io.mockk.MockKAnnotations
 import io.mockk.every

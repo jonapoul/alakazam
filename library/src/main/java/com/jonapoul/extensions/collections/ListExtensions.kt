@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.collections
 
 /**
  * Returns a copied new list instance.
