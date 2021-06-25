@@ -1,5 +1,7 @@
 package com.jonapoul.extensions
 
+import com.jonapoul.extensions.string.capitalized
+import com.jonapoul.extensions.string.parseBoolean
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Test

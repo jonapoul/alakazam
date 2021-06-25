@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.navigation
 
 import androidx.annotation.IdRes
 import androidx.navigation.NavController

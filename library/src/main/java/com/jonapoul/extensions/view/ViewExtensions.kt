@@ -55,11 +55,17 @@ fun <V : View> V.onDestroyView(callback: V.() -> Unit) {
     )
 }
 
+/**
+ * Starts a fading-in animation of the given [View]. The default fade duration is 500 milliseconds.
+ */
 @UiThread
 fun View.fadeIn(duration: Long = 500L) {
     fade(duration, 1.0f)
 }
 
+/**
+ * Starts a fading-out animation of the given [View]. The default fade duration is 500 milliseconds.
+ */
 @UiThread
 fun View.fadeOut(duration: Long = 500L) {
     fade(duration, 0.0f)
@@ -75,18 +81,30 @@ private fun View.fade(duration: Long, targetAlpha: Float) {
     )
 }
 
-fun View.enableIf(condition: Boolean) {
-    if (condition) enable() else disable()
-}
-
-fun View.disableIf(condition: Boolean) {
-    enableIf(!condition)
-}
-
+/**
+ * Sets the given [View]'s state to enabled.
+ */
 fun View.enable() {
     this.isEnabled = true
 }
 
+/**
+ * Sets the given [View]'s state to disabled.
+ */
 fun View.disable() {
     this.isEnabled = false
+}
+
+/**
+ * Sets the given [View]'s state to enabled if [condition] is true, else disabled.
+ */
+fun View.enableIf(condition: Boolean) {
+    if (condition) enable() else disable()
+}
+
+/**
+ * Sets the given [View]'s state to disabled if [condition] is true, else enabled.
+ */
+fun View.disableIf(condition: Boolean) {
+    enableIf(!condition)
 }

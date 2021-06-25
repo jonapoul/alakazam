@@ -1,5 +1,7 @@
 package com.jonapoul.extensions
 
+import com.jonapoul.extensions.collections.deepCopy
+import com.jonapoul.extensions.collections.replaceAllWith
 import org.junit.Assert.*
 import org.junit.Test
 

@@ -11,7 +11,7 @@ import androidx.core.content.edit
 data class PrefPair<T>(val key: String, val default: T)
 
 /**
- * Parses an [Int] from a [SharedPreferences] [String] value, returning the [PrefPair] default if
+ * Parses an [Int] from a [SharedPreferences] [String] value, returning the [Int] default value if
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseIntFromPair(pref: PrefPair<String>): Int {
@@ -21,8 +21,8 @@ fun SharedPreferences.parseIntFromPair(pref: PrefPair<String>): Int {
 }
 
 /**
- * Parses a [Long] from a [SharedPreferences] [String] value, returning the [PrefPair] default if
- * the value isn't already persisted or the type is incorrect.
+ * Parses a [Long] from a [SharedPreferences] [String] value, returning the [Long] default value
+ * if the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseLongFromPair(pref: PrefPair<String>): Long {
     return typeSafeGet(pref) {
@@ -31,8 +31,8 @@ fun SharedPreferences.parseLongFromPair(pref: PrefPair<String>): Long {
 }
 
 /**
- * Parses a [Double] from a [SharedPreferences] [String] value, returning the [PrefPair] default if
- * the value isn't already persisted or the type is incorrect.
+ * Parses a [Double] from a [SharedPreferences] [String] value, returning the [Double] default value
+ * if the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseDoubleFromPair(pref: PrefPair<String>): Double {
     return typeSafeGet(pref) {
@@ -41,8 +41,8 @@ fun SharedPreferences.parseDoubleFromPair(pref: PrefPair<String>): Double {
 }
 
 /**
- * Parses a [Float] from a [SharedPreferences] [String] value, returning the [PrefPair] default if
- * the value isn't already persisted or the type is incorrect.
+ * Parses a [Float] from a [SharedPreferences] [String] value, returning the [Float] default value
+ * if the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseFloatFromPair(pref: PrefPair<String>): Float {
     return typeSafeGet(pref) {
@@ -51,7 +51,7 @@ fun SharedPreferences.parseFloatFromPair(pref: PrefPair<String>): Float {
 }
 
 /**
- * Returns an [Int] from a [SharedPreferences] instance, returning the [PrefPair] default if either
+ * Returns an [Int] from a [SharedPreferences] instance, returning the [Int] default value if either
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getIntFromPair(pref: PrefPair<Int>): Int {
@@ -61,8 +61,8 @@ fun SharedPreferences.getIntFromPair(pref: PrefPair<Int>): Int {
 }
 
 /**
- * Returns a [Float] from a [SharedPreferences] instance, returning the [PrefPair] default if either
- * the value isn't already persisted or the type is incorrect.
+ * Returns a [Float] from a [SharedPreferences] instance, returning the [Float] default value if
+ * either the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getFloatFromPair(pref: PrefPair<Float>): Float {
     return typeSafeGet(pref) {
@@ -71,8 +71,8 @@ fun SharedPreferences.getFloatFromPair(pref: PrefPair<Float>): Float {
 }
 
 /**
- * Returns a [Long] from a [SharedPreferences] instance, returning the [PrefPair] default if either
- * the value isn't already persisted or the type is incorrect.
+ * Returns a [Long] from a [SharedPreferences] instance, returning the [Long] default value if
+ * either the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getLongFromPair(pref: PrefPair<Long>): Long {
     return typeSafeGet(pref) {
@@ -81,7 +81,7 @@ fun SharedPreferences.getLongFromPair(pref: PrefPair<Long>): Long {
 }
 
 /**
- * Returns a [String] from [SharedPreferences], returning the [PrefPair] default if either
+ * Returns a [String] from [SharedPreferences], returning the [String] default value if either
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getStringFromPair(pref: PrefPair<String>): String {

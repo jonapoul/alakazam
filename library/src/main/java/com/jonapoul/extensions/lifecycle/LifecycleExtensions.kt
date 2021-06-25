@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.lifecycle
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
@@ -13,8 +13,8 @@ import kotlinx.coroutines.launch
  * Without this we'd need two indentations before any collected values are dealt with, but this
  * reduces that by one so it's a tad more readable.
  *
- * See [Fragment.collectFlow] for a similar function to work specifically with a [Fragment]'s view
- * lifecycle.
+ * See [com.jonapoul.extensions.fragment.collectFlow] for a similar function to work
+ * specifically with a [Fragment]'s view lifecycle.
  */
 fun <T> LifecycleOwner.collectFlow(flow: Flow<T>, callback: (T) -> Unit): Job {
     return lifecycleScope.launch {

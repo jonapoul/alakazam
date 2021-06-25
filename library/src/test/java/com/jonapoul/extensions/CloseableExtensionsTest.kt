@@ -1,5 +1,6 @@
 package com.jonapoul.extensions
 
+import com.jonapoul.extensions.closeable.quietlyClose
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK

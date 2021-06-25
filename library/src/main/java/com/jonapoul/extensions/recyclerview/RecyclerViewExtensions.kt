@@ -5,11 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jonapoul.extensions.view.onDestroyView
 
+/**
+ * Returns true if a [RecyclerView.Adapter] is attached and it contains any items, false otherwise.
+ */
 val RecyclerView.isEmpty: Boolean
     get() = adapter?.itemCount == 0
 
+/**
+ * Returns true if a [RecyclerView.Adapter] is attached and it contains no items, false otherwise.
+ */
 val RecyclerView.isNotEmpty: Boolean
-    get() = !isEmpty
+    get() = adapter?.let { it.itemCount > 0 } ?: false
 
 /**
  * Automatically clears the [RecyclerView.Adapter] instance from your [RecyclerView] when the host
@@ -25,6 +31,10 @@ fun <VH : RecyclerView.ViewHolder> RecyclerView.setLifecycleAwareAdapter(
     }
 }
 
+/**
+ * Sets up the [RecyclerView] with a standard [LinearLayoutManager] and the supplied
+ * [RecyclerView.Adapter], along with any extra configuration supplied as a lambda block.
+ */
 fun <VH : RecyclerView.ViewHolder> RecyclerView.initialise(
     adapter: RecyclerView.Adapter<VH>,
     otherConfig: RecyclerView.() -> Unit = {}
@@ -34,9 +44,12 @@ fun <VH : RecyclerView.ViewHolder> RecyclerView.initialise(
     this.otherConfig()
 }
 
+/**
+ * Sets up one or two callbacks to be invoked when the [RecyclerView] scrolls.
+ */
 fun RecyclerView.scrollListener(
     onScrollStateChanged: (recycler: RecyclerView, newState: Int) -> Unit = { _, _ -> },
-    onScrolled: (recycler: RecyclerView, scrollbyX: Int, scrollbyY: Int) -> Unit = { _, _, _ -> }
+    onScrolled: (recycler: RecyclerView, dx: Int, dy: Int) -> Unit = { _, _, _ -> }
 ) {
     this.addOnScrollListener(
         object : RecyclerView.OnScrollListener() {
