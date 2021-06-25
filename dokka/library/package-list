@@ -1,5 +1,129 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:com.jonapoul.extensions.activity////PointingToDeclaration/library/com.jonapoul.extensions.activity/index.html
+$dokka.location:com.jonapoul.extensions.activity//alert/android.app.Activity#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.activity/alert.html
+$dokka.location:com.jonapoul.extensions.activity//rootView/android.app.Activity#/PointingToDeclaration/library/com.jonapoul.extensions.activity/root-view.html
+$dokka.location:com.jonapoul.extensions.bytes////PointingToDeclaration/library/com.jonapoul.extensions.bytes/index.html
+$dokka.location:com.jonapoul.extensions.bytes//toHexString/kotlin.ByteArray#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.bytes/to-hex-string.html
+$dokka.location:com.jonapoul.extensions.bytes//toMacAddress/kotlin.ByteArray#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.bytes/to-mac-address.html
+$dokka.location:com.jonapoul.extensions.closeable////PointingToDeclaration/library/com.jonapoul.extensions.closeable/index.html
+$dokka.location:com.jonapoul.extensions.closeable//quietlyClose/java.io.Closeable#/PointingToDeclaration/library/com.jonapoul.extensions.closeable/quietly-close.html
+$dokka.location:com.jonapoul.extensions.collections////PointingToDeclaration/library/com.jonapoul.extensions.collections/index.html
+$dokka.location:com.jonapoul.extensions.collections//deepCopy/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/library/com.jonapoul.extensions.collections/deep-copy.html
+$dokka.location:com.jonapoul.extensions.collections//deepCopy/kotlin.collections.Map[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/library/com.jonapoul.extensions.collections/deep-copy.html
+$dokka.location:com.jonapoul.extensions.collections//replaceAllWith/kotlin.collections.MutableList[TypeParam(bounds=[kotlin.Any?])]#kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/library/com.jonapoul.extensions.collections/replace-all-with.html
+$dokka.location:com.jonapoul.extensions.collections//replaceAllWith/kotlin.collections.MutableMap[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.collections.Map[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/library/com.jonapoul.extensions.collections/replace-all-with.html
+$dokka.location:com.jonapoul.extensions.colours////PointingToDeclaration/library/com.jonapoul.extensions.colours/index.html
+$dokka.location:com.jonapoul.extensions.colours//alpha/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.colours/alpha.html
+$dokka.location:com.jonapoul.extensions.colours//argbColour/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.colours/argb-colour.html
+$dokka.location:com.jonapoul.extensions.colours//blue/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.colours/blue.html
+$dokka.location:com.jonapoul.extensions.colours//darken/kotlin.Int#kotlin.Float/PointingToDeclaration/library/com.jonapoul.extensions.colours/darken.html
+$dokka.location:com.jonapoul.extensions.colours//getColorFromAttr/android.content.Context#kotlin.Int#android.util.TypedValue#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.colours/get-color-from-attr.html
+$dokka.location:com.jonapoul.extensions.colours//green/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.colours/green.html
+$dokka.location:com.jonapoul.extensions.colours//lerpColours/#kotlin.Int#kotlin.Int#kotlin.Float/PointingToDeclaration/library/com.jonapoul.extensions.colours/lerp-colours.html
+$dokka.location:com.jonapoul.extensions.colours//lighten/kotlin.Int#kotlin.Float/PointingToDeclaration/library/com.jonapoul.extensions.colours/lighten.html
+$dokka.location:com.jonapoul.extensions.colours//red/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.colours/red.html
+$dokka.location:com.jonapoul.extensions.colours//setColorFilterAttr/android.widget.ImageView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.colours/set-color-filter-attr.html
+$dokka.location:com.jonapoul.extensions.colours//setColorFilterRes/android.widget.ImageView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.colours/set-color-filter-res.html
+$dokka.location:com.jonapoul.extensions.colours//setTextColorAttr/android.widget.TextView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.colours/set-text-color-attr.html
+$dokka.location:com.jonapoul.extensions.colours//setTextColorRes/android.widget.TextView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.colours/set-text-color-res.html
+$dokka.location:com.jonapoul.extensions.colours//tintForeground/androidx.appcompat.widget.Toolbar#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.colours/tint-foreground.html
+$dokka.location:com.jonapoul.extensions.context////PointingToDeclaration/library/com.jonapoul.extensions.context/index.html
+$dokka.location:com.jonapoul.extensions.context//alert/android.content.Context#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.context/alert.html
+$dokka.location:com.jonapoul.extensions.context//alert/android.content.Context#kotlin.Int#kotlin.Int#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.context/alert.html
+$dokka.location:com.jonapoul.extensions.context//alert/android.content.Context#kotlin.String#kotlin.String#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.context/alert.html
+$dokka.location:com.jonapoul.extensions.context//showMultiPicker/android.content.Context#kotlin.collections.Collection[kotlin.String]#kotlin.Function2[kotlin.Int,kotlin.Boolean,kotlin.Unit]#kotlin.BooleanArray?/PointingToDeclaration/library/com.jonapoul.extensions.context/show-multi-picker.html
+$dokka.location:com.jonapoul.extensions.context//showSinglePicker/android.content.Context#kotlin.collections.Collection[kotlin.String]#kotlin.Function1[kotlin.Int,kotlin.Unit]#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.context/show-single-picker.html
+$dokka.location:com.jonapoul.extensions.context//startServiceWithAction/android.content.Context#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.context/start-service-with-action.html
+$dokka.location:com.jonapoul.extensions.datetime////PointingToDeclaration/library/com.jonapoul.extensions.datetime/index.html
+$dokka.location:com.jonapoul.extensions.datetime//calendar/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/calendar.html
+$dokka.location:com.jonapoul.extensions.datetime//dayOfMonth/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/day-of-month.html
+$dokka.location:com.jonapoul.extensions.datetime//daysSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/days-since.html
+$dokka.location:com.jonapoul.extensions.datetime//hour/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/hour.html
+$dokka.location:com.jonapoul.extensions.datetime//hourOfDay/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/hour-of-day.html
+$dokka.location:com.jonapoul.extensions.datetime//hoursSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/hours-since.html
+$dokka.location:com.jonapoul.extensions.datetime//isFuture/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/is-future.html
+$dokka.location:com.jonapoul.extensions.datetime//isPast/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/is-past.html
+$dokka.location:com.jonapoul.extensions.datetime//isToday/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/is-today.html
+$dokka.location:com.jonapoul.extensions.datetime//isTomorrow/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/is-tomorrow.html
+$dokka.location:com.jonapoul.extensions.datetime//isYesterday/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/is-yesterday.html
+$dokka.location:com.jonapoul.extensions.datetime//millisecondsSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/milliseconds-since.html
+$dokka.location:com.jonapoul.extensions.datetime//minute/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/minute.html
+$dokka.location:com.jonapoul.extensions.datetime//minutesSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/minutes-since.html
+$dokka.location:com.jonapoul.extensions.datetime//month/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/month.html
+$dokka.location:com.jonapoul.extensions.datetime//second/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/second.html
+$dokka.location:com.jonapoul.extensions.datetime//secondsSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/seconds-since.html
+$dokka.location:com.jonapoul.extensions.datetime//weeksSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/weeks-since.html
+$dokka.location:com.jonapoul.extensions.datetime//year/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/year.html
+$dokka.location:com.jonapoul.extensions.datetime//yearsSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.datetime/years-since.html
+$dokka.location:com.jonapoul.extensions.datetime/Time///PointingToDeclaration/library/com.jonapoul.extensions.datetime/-time/index.html
+$dokka.location:com.jonapoul.extensions.datetime/Time/now/#/PointingToDeclaration/library/com.jonapoul.extensions.datetime/-time/now.html
+$dokka.location:com.jonapoul.extensions.enums////PointingToDeclaration/library/com.jonapoul.extensions.enums/index.html
+$dokka.location:com.jonapoul.extensions.enums/Enums///PointingToDeclaration/library/com.jonapoul.extensions.enums/-enums/index.html
+$dokka.location:com.jonapoul.extensions.enums/Enums/first/#kotlin.Function1[TypeParam(bounds=[kotlin.Enum[^]]),kotlin.Boolean]/PointingToDeclaration/library/com.jonapoul.extensions.enums/-enums/first.html
+$dokka.location:com.jonapoul.extensions.enums/Enums/firstFromString/#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.enums/-enums/first-from-string.html
+$dokka.location:com.jonapoul.extensions.enums/Enums/firstOrNull/#kotlin.Function1[TypeParam(bounds=[kotlin.Enum[^]]),kotlin.Boolean]/PointingToDeclaration/library/com.jonapoul.extensions.enums/-enums/first-or-null.html
+$dokka.location:com.jonapoul.extensions.enums/Enums/firstOrNullFromString/#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.enums/-enums/first-or-null-from-string.html
+$dokka.location:com.jonapoul.extensions.fragment////PointingToDeclaration/library/com.jonapoul.extensions.fragment/index.html
+$dokka.location:com.jonapoul.extensions.fragment//alert/androidx.fragment.app.Fragment#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.fragment/alert.html
+$dokka.location:com.jonapoul.extensions.fragment//alert/androidx.fragment.app.Fragment#kotlin.String#kotlin.String#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.fragment/alert.html
+$dokka.location:com.jonapoul.extensions.fragment//collectFlow/androidx.fragment.app.Fragment#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.fragment/collect-flow.html
+$dokka.location:com.jonapoul.extensions.lifecycle////PointingToDeclaration/library/com.jonapoul.extensions.lifecycle/index.html
+$dokka.location:com.jonapoul.extensions.lifecycle//collectFlow/androidx.lifecycle.LifecycleOwner#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.lifecycle/collect-flow.html
+$dokka.location:com.jonapoul.extensions.navigation////PointingToDeclaration/library/com.jonapoul.extensions.navigation/index.html
+$dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#androidx.navigation.NavDirections/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
+$dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
+$dokka.location:com.jonapoul.extensions.other////PointingToDeclaration/library/com.jonapoul.extensions.other/index.html
+$dokka.location:com.jonapoul.extensions.other//exhaustive/TypeParam(bounds=[kotlin.Any?])#/PointingToDeclaration/library/com.jonapoul.extensions.other/exhaustive.html
+$dokka.location:com.jonapoul.extensions.other/IntGenerator///PointingToDeclaration/library/com.jonapoul.extensions.other/-int-generator/index.html
+$dokka.location:com.jonapoul.extensions.other/IntGenerator/next/#/PointingToDeclaration/library/com.jonapoul.extensions.other/-int-generator/next.html
+$dokka.location:com.jonapoul.extensions.recyclerview////PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/index.html
+$dokka.location:com.jonapoul.extensions.recyclerview//initialise/androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.Adapter[TypeParam(bounds=[androidx.recyclerview.widget.RecyclerView.ViewHolder])]#kotlin.Function1[androidx.recyclerview.widget.RecyclerView,kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/initialise.html
+$dokka.location:com.jonapoul.extensions.recyclerview//isEmpty/androidx.recyclerview.widget.RecyclerView#/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/is-empty.html
+$dokka.location:com.jonapoul.extensions.recyclerview//isNotEmpty/androidx.recyclerview.widget.RecyclerView#/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/is-not-empty.html
+$dokka.location:com.jonapoul.extensions.recyclerview//scrollListener/androidx.recyclerview.widget.RecyclerView#kotlin.Function2[androidx.recyclerview.widget.RecyclerView,kotlin.Int,kotlin.Unit]#kotlin.Function3[androidx.recyclerview.widget.RecyclerView,kotlin.Int,kotlin.Int,kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/scroll-listener.html
+$dokka.location:com.jonapoul.extensions.recyclerview//setLifecycleAwareAdapter/androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.Adapter[TypeParam(bounds=[androidx.recyclerview.widget.RecyclerView.ViewHolder])]/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/set-lifecycle-aware-adapter.html
+$dokka.location:com.jonapoul.extensions.sharedprefs////PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/index.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getBooleanFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Boolean]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-boolean-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getFloatFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Float]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-float-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getIntFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Int]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-int-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getLongFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Long]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-long-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getStringFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-string-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getStringFromPairNoBlank/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-string-from-pair-no-blank.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//getStringSetFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.collections.Set[kotlin.String]]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/get-string-set-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//observeSharedPrefs/androidx.lifecycle.LifecycleOwner#android.content.SharedPreferences#kotlin.Function1[kotlin.String,kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/observe-shared-prefs.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//parseDoubleFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/parse-double-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//parseFloatFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/parse-float-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//parseIntFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/parse-int-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//parseLongFromPair/android.content.SharedPreferences#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/parse-long-from-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//putBooleanIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Boolean]#kotlin.Boolean?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-boolean-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//putFloatIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Float]#kotlin.Float?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-float-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//putIntIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Int]#kotlin.Int?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-int-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//putLongIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Long]#kotlin.Long?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-long-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//putStringIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]#kotlin.String?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-string-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//putStringSetIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.collections.Set[kotlin.String]]#kotlin.collections.Set[kotlin.String]?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-string-set-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair///PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/index.html
+$dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair/PrefPair/#kotlin.String#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/-pref-pair.html
+$dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair/default/#/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/default.html
+$dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair/key/#/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/key.html
+$dokka.location:com.jonapoul.extensions.string////PointingToDeclaration/library/com.jonapoul.extensions.string/index.html
+$dokka.location:com.jonapoul.extensions.string//capitalized/kotlin.String#/PointingToDeclaration/library/com.jonapoul.extensions.string/capitalized.html
+$dokka.location:com.jonapoul.extensions.string//parseBoolean/kotlin.String#/PointingToDeclaration/library/com.jonapoul.extensions.string/parse-boolean.html
+$dokka.location:com.jonapoul.extensions.view////PointingToDeclaration/library/com.jonapoul.extensions.view/index.html
+$dokka.location:com.jonapoul.extensions.view//disable/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/disable.html
+$dokka.location:com.jonapoul.extensions.view//disableChildren/android.view.ViewGroup#/PointingToDeclaration/library/com.jonapoul.extensions.view/disable-children.html
+$dokka.location:com.jonapoul.extensions.view//disableIf/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/disable-if.html
+$dokka.location:com.jonapoul.extensions.view//enable/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/enable.html
+$dokka.location:com.jonapoul.extensions.view//enableChildren/android.view.ViewGroup#/PointingToDeclaration/library/com.jonapoul.extensions.view/enable-children.html
+$dokka.location:com.jonapoul.extensions.view//enableIf/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/enable-if.html
+$dokka.location:com.jonapoul.extensions.view//fadeIn/android.view.View#kotlin.Long/PointingToDeclaration/library/com.jonapoul.extensions.view/fade-in.html
+$dokka.location:com.jonapoul.extensions.view//fadeOut/android.view.View#kotlin.Long/PointingToDeclaration/library/com.jonapoul.extensions.view/fade-out.html
+$dokka.location:com.jonapoul.extensions.view//hide/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/hide.html
+$dokka.location:com.jonapoul.extensions.view//hideIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/hide-if-true.html
+$dokka.location:com.jonapoul.extensions.view//inflate/android.view.ViewGroup#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.view/inflate.html
+$dokka.location:com.jonapoul.extensions.view//onDestroyView/TypeParam(bounds=[android.view.View])#kotlin.Function1[TypeParam(bounds=[android.view.View]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.view/on-destroy-view.html
+$dokka.location:com.jonapoul.extensions.view//show/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/show.html
+$dokka.location:com.jonapoul.extensions.view//showIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/show-if-true.html
 $dokka.location:com.jonapoul.extensions.viewbinding////PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/index.html
 $dokka.location:com.jonapoul.extensions.viewbinding//cleanUpRecyclerAdapters/androidx.viewbinding.ViewBinding?#/PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/clean-up-recycler-adapters.html
 $dokka.location:com.jonapoul.extensions.viewbinding//viewBinder/android.app.Activity#kotlin.Function1[android.view.LayoutInflater,TypeParam(bounds=[androidx.viewbinding.ViewBinding])]/PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/view-binder.html
@@ -13,48 +137,21 @@ $dokka.location:com.jonapoul.extensions.viewbinding/ActivityViewBindingDelegate/
 $dokka.location:com.jonapoul.extensions.viewbinding/FragmentViewBindingDelegate///PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/-fragment-view-binding-delegate/index.html
 $dokka.location:com.jonapoul.extensions.viewbinding/FragmentViewBindingDelegate/FragmentViewBindingDelegate/#androidx.fragment.app.Fragment#kotlin.Function1[android.view.View,TypeParam(bounds=[androidx.viewbinding.ViewBinding])]/PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/-fragment-view-binding-delegate/-fragment-view-binding-delegate.html
 $dokka.location:com.jonapoul.extensions.viewbinding/FragmentViewBindingDelegate/getValue/#androidx.fragment.app.Fragment#kotlin.reflect.KProperty[*]/PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/-fragment-view-binding-delegate/get-value.html
-$dokka.location:com.jonapoul.extensions////PointingToDeclaration/library/com.jonapoul.extensions/index.html
-$dokka.location:com.jonapoul.extensions//capitalized/kotlin.String#/PointingToDeclaration/library/com.jonapoul.extensions/capitalized.html
-$dokka.location:com.jonapoul.extensions//collectFlow/androidx.fragment.app.Fragment#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions/collect-flow.html
-$dokka.location:com.jonapoul.extensions//collectFlow/androidx.lifecycle.LifecycleOwner#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions/collect-flow.html
-$dokka.location:com.jonapoul.extensions//deepCopy/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/library/com.jonapoul.extensions/deep-copy.html
-$dokka.location:com.jonapoul.extensions//getBooleanFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.Boolean]/PointingToDeclaration/library/com.jonapoul.extensions/get-boolean-from-pair.html
-$dokka.location:com.jonapoul.extensions//getColorFromAttr/android.content.Context#kotlin.Int#android.util.TypedValue#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions/get-color-from-attr.html
-$dokka.location:com.jonapoul.extensions//getFloatFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.Float]/PointingToDeclaration/library/com.jonapoul.extensions/get-float-from-pair.html
-$dokka.location:com.jonapoul.extensions//getIntFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.Int]/PointingToDeclaration/library/com.jonapoul.extensions/get-int-from-pair.html
-$dokka.location:com.jonapoul.extensions//getLongFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.Long]/PointingToDeclaration/library/com.jonapoul.extensions/get-long-from-pair.html
-$dokka.location:com.jonapoul.extensions//getStringFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions/get-string-from-pair.html
-$dokka.location:com.jonapoul.extensions//getStringFromPairNoBlank/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions/get-string-from-pair-no-blank.html
-$dokka.location:com.jonapoul.extensions//getStringSetFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.collections.Set[kotlin.String]]/PointingToDeclaration/library/com.jonapoul.extensions/get-string-set-from-pair.html
-$dokka.location:com.jonapoul.extensions//hide/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions/hide.html
-$dokka.location:com.jonapoul.extensions//hideIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions/hide-if-true.html
-$dokka.location:com.jonapoul.extensions//onDestroyView/TypeParam(bounds=[android.view.View])#kotlin.Function1[TypeParam(bounds=[android.view.View]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions/on-destroy-view.html
-$dokka.location:com.jonapoul.extensions//parseBoolean/kotlin.String#/PointingToDeclaration/library/com.jonapoul.extensions/parse-boolean.html
-$dokka.location:com.jonapoul.extensions//parseDoubleFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions/parse-double-from-pair.html
-$dokka.location:com.jonapoul.extensions//parseFloatFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions/parse-float-from-pair.html
-$dokka.location:com.jonapoul.extensions//parseIntFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions/parse-int-from-pair.html
-$dokka.location:com.jonapoul.extensions//parseLongFromPair/android.content.SharedPreferences#com.jonapoul.extensions.PrefPair[kotlin.String]/PointingToDeclaration/library/com.jonapoul.extensions/parse-long-from-pair.html
-$dokka.location:com.jonapoul.extensions//putBooleanIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.PrefPair[kotlin.Boolean]#kotlin.Boolean?/PointingToDeclaration/library/com.jonapoul.extensions/put-boolean-if-not-null.html
-$dokka.location:com.jonapoul.extensions//putFloatIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.PrefPair[kotlin.Float]#kotlin.Float?/PointingToDeclaration/library/com.jonapoul.extensions/put-float-if-not-null.html
-$dokka.location:com.jonapoul.extensions//putIntIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.PrefPair[kotlin.Int]#kotlin.Int?/PointingToDeclaration/library/com.jonapoul.extensions/put-int-if-not-null.html
-$dokka.location:com.jonapoul.extensions//putLongIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.PrefPair[kotlin.Long]#kotlin.Long?/PointingToDeclaration/library/com.jonapoul.extensions/put-long-if-not-null.html
-$dokka.location:com.jonapoul.extensions//putStringIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.PrefPair[kotlin.String]#kotlin.String?/PointingToDeclaration/library/com.jonapoul.extensions/put-string-if-not-null.html
-$dokka.location:com.jonapoul.extensions//putStringSetIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.PrefPair[kotlin.collections.Set[kotlin.String]]#kotlin.collections.Set[kotlin.String]?/PointingToDeclaration/library/com.jonapoul.extensions/put-string-set-if-not-null.html
-$dokka.location:com.jonapoul.extensions//quietlyClose/java.io.Closeable#/PointingToDeclaration/library/com.jonapoul.extensions/quietly-close.html
-$dokka.location:com.jonapoul.extensions//replaceAllWith/kotlin.collections.MutableList[TypeParam(bounds=[kotlin.Any?])]#kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/library/com.jonapoul.extensions/replace-all-with.html
-$dokka.location:com.jonapoul.extensions//safelyNavigate/androidx.navigation.NavController#androidx.navigation.NavDirections/PointingToDeclaration/library/com.jonapoul.extensions/safely-navigate.html
-$dokka.location:com.jonapoul.extensions//safelyNavigate/androidx.navigation.NavController#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions/safely-navigate.html
-$dokka.location:com.jonapoul.extensions//setColorFilterAttr/android.widget.ImageView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions/set-color-filter-attr.html
-$dokka.location:com.jonapoul.extensions//setColorFilterRes/android.widget.ImageView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions/set-color-filter-res.html
-$dokka.location:com.jonapoul.extensions//setLifecycleAwareAdapter/androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.Adapter[TypeParam(bounds=[androidx.recyclerview.widget.RecyclerView.ViewHolder])]/PointingToDeclaration/library/com.jonapoul.extensions/set-lifecycle-aware-adapter.html
-$dokka.location:com.jonapoul.extensions//setTextColorAttr/android.widget.TextView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions/set-text-color-attr.html
-$dokka.location:com.jonapoul.extensions//setTextColorRes/android.widget.TextView#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions/set-text-color-res.html
-$dokka.location:com.jonapoul.extensions//show/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions/show.html
-$dokka.location:com.jonapoul.extensions//showIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions/show-if-true.html
-$dokka.location:com.jonapoul.extensions/PrefPair///PointingToDeclaration/library/com.jonapoul.extensions/-pref-pair/index.html
-$dokka.location:com.jonapoul.extensions/PrefPair/PrefPair/#kotlin.String#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/library/com.jonapoul.extensions/-pref-pair/-pref-pair.html
-$dokka.location:com.jonapoul.extensions/PrefPair/default/#/PointingToDeclaration/library/com.jonapoul.extensions/-pref-pair/default.html
-$dokka.location:com.jonapoul.extensions/PrefPair/key/#/PointingToDeclaration/library/com.jonapoul.extensions/-pref-pair/key.html
-com.jonapoul.extensions
+com.jonapoul.extensions.activity
+com.jonapoul.extensions.bytes
+com.jonapoul.extensions.closeable
+com.jonapoul.extensions.collections
+com.jonapoul.extensions.colours
+com.jonapoul.extensions.context
+com.jonapoul.extensions.datetime
+com.jonapoul.extensions.enums
+com.jonapoul.extensions.fragment
+com.jonapoul.extensions.lifecycle
+com.jonapoul.extensions.navigation
+com.jonapoul.extensions.other
+com.jonapoul.extensions.recyclerview
+com.jonapoul.extensions.sharedprefs
+com.jonapoul.extensions.string
+com.jonapoul.extensions.view
 com.jonapoul.extensions.viewbinding
 
