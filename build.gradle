@@ -10,6 +10,7 @@ buildscript {
 
     dependencies {
         classpath "com.android.tools.build:gradle:$versions.gradle"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:$versions.spotless"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$versions.dokka"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "org.jlleitschuh.gradle:ktlint-gradle:$versions.ktlint"
@@ -28,13 +29,4 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-subprojects {
-    apply plugin: "org.jetbrains.dokka"
-    apply plugin: "org.jlleitschuh.gradle.ktlint"
-
-    ktlint {
-        disabledRules = ["no-wildcard-imports"]
-    }
 }

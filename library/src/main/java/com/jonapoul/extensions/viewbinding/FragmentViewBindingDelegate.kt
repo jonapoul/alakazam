@@ -59,4 +59,3 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(
         return binding!!
     }
 }
-
