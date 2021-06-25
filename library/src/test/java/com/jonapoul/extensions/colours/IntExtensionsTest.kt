@@ -4,6 +4,10 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class IntExtensionsTest {
+    private val red = 0xFFFF0000.toInt()
+    private val white = 0xFFFFFFFF.toInt()
+    private val black = 0xFF000000.toInt()
+
     @Test
     fun `Alpha extension`() {
         assertEquals(255, 0xFF000000.toInt().alpha())
@@ -43,6 +47,21 @@ class IntExtensionsTest {
 
     @Test
     fun `Lighten colours`() {
-//        assertEquals()
+        assertEquals(black, black.lighten(0.0f))
+        assertEquals(white, black.lighten(1.0f))
+        assertEquals(white, white.lighten(0.0f))
+        assertEquals(white, white.lighten(1.0f))
+        assertEquals(red, red.lighten(0.0f))
+        assertEquals(white, red.lighten(1.0f))
+    }
+
+    @Test
+    fun `Darken colours`() {
+        assertEquals(black, black.darken(0.0f))
+        assertEquals(black, black.darken(1.0f))
+        assertEquals(white, white.darken(0.0f))
+        assertEquals(black, white.darken(1.0f))
+        assertEquals(red, red.darken(0.0f))
+        assertEquals(black, red.darken(1.0f))
     }
 }

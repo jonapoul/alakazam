@@ -5,8 +5,8 @@ package com.jonapoul.extensions.bytes
  * an optional separating character between each byte. If the separator character is ignored or
  * set to null, there will be no gap between each byte string.
  */
-fun ByteArray.toHexString(separator: String? = null): String {
-    return joinToString(separator = separator ?: "") {
+fun ByteArray.toHexString(separator: String = ""): String {
+    return joinToString(separator) {
         "%02X".format(it.toInt() and 0xff)
     }
 }

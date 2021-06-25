@@ -1,6 +1,5 @@
 package com.jonapoul.extensions.colours
 
-import android.graphics.Color
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 
@@ -50,46 +49,7 @@ fun Int.darken(
 
 @ColorInt
 private inline fun Int.colourFactor(rgbFactor: (Int) -> Float): Int {
-    val (red, green, blue) = intArrayOf(
-        Color.red(this),
-        Color.green(this),
-        Color.blue(this)
-    ).map { rgbFactor.invoke(it).toInt() }
-    return Color.argb(
-        Color.alpha(this),
-        red,
-        green,
-        blue
-    )
+    val (r, g, b) = intArrayOf(red(), green(), blue())
+        .map { rgbFactor.invoke(it).toInt() }
+    return argbColour(alpha(), r, g, b)
 }
-
-/**
- * Converts an integer to a hexadecimal ARGB string. Examples:
- * 0 -> "00000000"
- * 255 -> "000000FF"
- * 4286611584 -> "FF808080"
- */
-fun Int.toArgbHexString(): String {
-    return "${alpha()}${toRgbHexString()}"
-}
-
-/**
- * Converts an integer to a hexadecimal RGB string, ignoring the alpha component. Examples:
- * 0 -> "000000"
- * 255 -> "0000FF"
- * 4286611584 -> "808080"
- */
-fun Int.toRgbHexString(): String {
-    return "${red()}${green()}${blue()}"
-}
-
-/**
- * Converts an integer to a hexadecimal string of the configured length. Examples:
- * 255.toHex(2) = "FF"
- * 255.toHex(4) = "00FF"
- * 4286611584.toHex(6) = "808080"
- * 4286611584.toHex(8) = "FF808080"
- */
-fun Int.toHex(length: Int): String = toString(16)
-    .takeLast(length)
-    .padStart(length, padChar = '0')

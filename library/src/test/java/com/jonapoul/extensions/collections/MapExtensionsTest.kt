@@ -1,16 +1,16 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.collections
 
-import com.jonapoul.extensions.collections.deepCopy
-import com.jonapoul.extensions.collections.replaceAllWith
 import org.junit.Assert.*
 import org.junit.Test
 
-class ListExtensionsTest {
+class MapExtensionsTest {
     @Test
     fun `Editing original after deep copy doesn't affect copy`() {
-        val original = mutableListOf(1, 2, 3, 4)
+        val original = mutableMapOf(
+            0 to "a", 1 to "b", 2 to "c", 3 to "d"
+        )
         val copy = original.deepCopy()
-        original[0] = 100
+        original[0] = "e"
         assertFalse(original[0] == copy[0])
         assertTrue(original[1] == copy[1])
         assertTrue(original[2] == copy[2])
@@ -19,9 +19,11 @@ class ListExtensionsTest {
 
     @Test
     fun `Editing copy after deep copy doesn't affect original`() {
-        val original = listOf(1, 2, 3, 4)
-        val copy = original.deepCopy().toMutableList()
-        copy[0] = 100
+        val original = mapOf(
+            0 to "a", 1 to "b", 2 to "c", 3 to "d"
+        )
+        val copy = original.deepCopy().toMutableMap()
+        copy[0] = "e"
         assertFalse(original[0] == copy[0])
         assertTrue(original[1] == copy[1])
         assertTrue(original[2] == copy[2])
@@ -30,12 +32,16 @@ class ListExtensionsTest {
 
     @Test
     fun `Replacing all replaces all`() {
-        val original = mutableListOf(1, 2, 3, 4)
-        val new = listOf(5, 6, 7, 8, 9)
+        val original = mutableMapOf(
+            0 to "a", 1 to "b", 2 to "c", 3 to "d"
+        )
+        val new = mapOf(
+            4 to "e", 5 to "f", 6 to "g", 7 to "h"
+        )
         original.replaceAllWith(new)
         assertArrayEquals(
-            original.toTypedArray(),
-            new.toTypedArray()
+            original.toList().toTypedArray(),
+            new.toList().toTypedArray()
         )
     }
 }
