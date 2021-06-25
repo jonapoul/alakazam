@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.string
 
 import java.util.*
 
@@ -8,9 +8,9 @@ import java.util.*
  */
 @Throws(IllegalStateException::class)
 fun String.parseBoolean(): Boolean {
-    return when (this.lowercase(Locale.ENGLISH)) {
-        "true" -> true
-        "false" -> false
+    return when {
+        this.equals("true", ignoreCase = true) -> true
+        this.equals("false", ignoreCase = true) -> false
         else -> error("Unable to parse boolean from '$this'")
     }
 }

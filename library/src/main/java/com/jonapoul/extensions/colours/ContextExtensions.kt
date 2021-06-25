@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.colours
 
 import android.content.Context
 import android.util.TypedValue

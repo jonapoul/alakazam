@@ -1,6 +1,8 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.view
 
 import android.view.View
+import android.view.animation.AlphaAnimation
+import androidx.annotation.UiThread
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 
@@ -51,4 +53,40 @@ fun <V : View> V.onDestroyView(callback: V.() -> Unit) {
             }
         }
     )
+}
+
+@UiThread
+fun View.fadeIn(duration: Long = 500L) {
+    fade(duration, 1.0f)
+}
+
+@UiThread
+fun View.fadeOut(duration: Long = 500L) {
+    fade(duration, 0.0f)
+}
+
+@UiThread
+private fun View.fade(duration: Long, targetAlpha: Float) {
+    this.clearAnimation()
+    this.startAnimation(
+        AlphaAnimation(this.alpha, targetAlpha).also {
+            it.duration = duration
+        }
+    )
+}
+
+fun View.enableIf(condition: Boolean) {
+    if (condition) enable() else disable()
+}
+
+fun View.disableIf(condition: Boolean) {
+    enableIf(!condition)
+}
+
+fun View.enable() {
+    this.isEnabled = true
+}
+
+fun View.disable() {
+    this.isEnabled = false
 }

@@ -1,8 +1,9 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.fragment
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -22,4 +23,13 @@ fun <T> Fragment.collectFlow(flow: Flow<T>, callback: (T) -> Unit): Job {
             callback.invoke(it)
         }
     }
+}
+
+/**
+ * Simplified method of quickly showing dialogs in the [Fragment].
+ */
+inline fun Fragment.alert(body: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder) {
+    MaterialAlertDialogBuilder(requireContext())
+        .body()
+        .show()
 }

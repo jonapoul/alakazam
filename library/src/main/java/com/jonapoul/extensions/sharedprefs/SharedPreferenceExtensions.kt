@@ -1,4 +1,4 @@
-package com.jonapoul.extensions
+package com.jonapoul.extensions.sharedprefs
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
