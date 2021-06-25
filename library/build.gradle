@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 
+apply from: "../plugin_config.gradle"
+
 ext {
     GROUP_ID = 'com.jonapoul'
     ARTIFACT_ID = 'android-extensions'
@@ -32,6 +34,7 @@ android {
         kotlinOptions.freeCompilerArgs += ['-module-name', "$GROUP_ID.$ARTIFACT_ID"]
     }
 
+    buildFeatures.viewBinding = true
     kotlinOptions.jvmTarget = '1.8'
 }
 
@@ -46,13 +49,14 @@ project.afterEvaluate {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.fragment:fragment-ktx:$versions.fragment"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
-    api "com.github.Zhuinden:fragmentviewbindingdelegate-kt:$versions.viewbinding_delegate"
 
     testImplementation "io.mockk:mockk:$versions.mockk"
     testImplementation "junit:junit:$versions.junit"

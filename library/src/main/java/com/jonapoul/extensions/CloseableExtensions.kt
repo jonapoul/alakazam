@@ -2,7 +2,11 @@ package com.jonapoul.extensions
 
 import java.io.Closeable
 
-fun Closeable.safelyClose() {
+/**
+ * Attempts to call [Closeable.close], ignoring any exceptions which might be thrown. Will still
+ * allow through other [Throwable]s (e.g. [NoClassDefFoundError])
+ */
+fun Closeable.quietlyClose() {
     try {
         close()
     } catch (e: Exception) {

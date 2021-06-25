@@ -1,0 +1,50 @@
+# Template borrowed from https://github.com/square/kotlinpoet/blob/master/.github/workflows/publish-website.yml
+# for dokka building and publishing
+name: Build, Test and Deploy Documentation
+
+on:
+  pull_request:
+  push:
+    branches:
+
+env:
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+
+jobs:
+  deploy-website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Configure JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 14
+
+      - name: Enable gradle execution
+        run: chmod +x ./gradlew
+
+      - name: Build, test and generate HTML docs
+        run: ./gradlew build
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Build mkdocs
+        run: |
+          pip3 install -r .github/workflows/mkdocs-requirements.txt
+          mkdocs build
+
+      - name: Deploy Docs
+        if: success() && github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: library/build/dokka/html # The folder the action should deploy.
