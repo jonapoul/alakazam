@@ -3,12 +3,14 @@
 # mkdocs gh-deploy
 
 site_name: Android Extensions
+site_url: https://jonapoul.github.io/android-extensions
 repo_url: https://github.com/jonapoul/android-extensions
 site_description: "A set of useful functions and extensions for Kotlin/Android development"
 site_author: Jon Poulton
 remote_branch: gh-pages
 
 copyright: 'Copyright &copy; 2021 Jon Poulton'
+docs_dir: 'docs'
 
 theme:
   name: 'material'
@@ -49,13 +51,6 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-  - 'Overview':
-      - 'KotlinPoet': index.md
-  - 'API':
-      - 'kotlinpoet': 1.x/index.html
-      - 'interop-kotlinx-metadata-classinspectors-elements': 1.x/elements/index.html
-      - 'interop-kotlinx-metadata-classinspectors-reflect': 1.x/reflect/index.html
-      - 'interop-kotlinx-metadata-core': 1.x/core/index.html
-      - 'interop-kotlinx-metadata-specs': 1.x/specs/index.html
-  - 'Change Log': changelog.md
-  - 'Contributing': contributing.md
+  - 'Home': index.md
+  - 'Second Page': test.md
+  - 'API': library/index.html
