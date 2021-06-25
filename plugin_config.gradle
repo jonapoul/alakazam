@@ -1,5 +1,6 @@
 apply plugin: "org.jetbrains.dokka"
 dokkaHtml.configure {
+    outputDirectory.set(new File("${rootProject.rootDir}/docs/dokka"))
     dokkaSourceSets {
         named("main") {
             noAndroidSdkLink.set(false)

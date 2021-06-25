@@ -1,8 +1,9 @@
 /.idea
+/.gradle
 /build
+/docs/dokka
 /captures
 local.properties
-.gradle
 .DS_Store
 .externalNativeBuild
 .cxx
