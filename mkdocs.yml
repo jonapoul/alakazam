@@ -53,4 +53,4 @@ markdown_extensions:
 nav:
   - 'Home': index.md
   - 'Second Page': test.md
-  - 'API': library/index.html
+  - 'API': dokka/index.html
