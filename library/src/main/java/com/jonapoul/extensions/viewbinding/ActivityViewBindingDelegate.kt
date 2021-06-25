@@ -50,6 +50,4 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
         }
         return binding!!
     }
-
-
 }
