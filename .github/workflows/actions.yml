@@ -47,4 +47,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: library/build/dokka/html # The folder the action should deploy.
+          FOLDER: docs # The folder the action should deploy.
