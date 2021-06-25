@@ -1,0 +1,61 @@
+# pip install mkdocs mkdocs-material
+# mkdocs serve
+# mkdocs gh-deploy
+
+site_name: Android Extensions
+repo_url: https://github.com/jonapoul/android-extensions
+site_description: "A set of useful functions and extensions for Kotlin/Android development"
+site_author: Jon Poulton
+remote_branch: gh-pages
+
+copyright: 'Copyright &copy; 2021 Jon Poulton'
+
+theme:
+  name: 'material'
+  icon:
+    repo: fontawesome/brands/git-alt
+  static_templates:
+    - 404.html
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Dark Theme
+    - media: "(prefers-color-scheme: light)"
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Light Theme
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jonapoul
+
+plugins:
+  - git-revision-date
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - 'Overview':
+      - 'KotlinPoet': index.md
+  - 'API':
+      - 'kotlinpoet': 1.x/index.html
+      - 'interop-kotlinx-metadata-classinspectors-elements': 1.x/elements/index.html
+      - 'interop-kotlinx-metadata-classinspectors-reflect': 1.x/reflect/index.html
+      - 'interop-kotlinx-metadata-core': 1.x/core/index.html
+      - 'interop-kotlinx-metadata-specs': 1.x/specs/index.html
+  - 'Change Log': changelog.md
+  - 'Contributing': contributing.md
