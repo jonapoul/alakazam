@@ -1,6 +1,8 @@
 package com.jonapoul.extensions.sharedprefs
 
 import android.content.SharedPreferences
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.core.content.edit
 
 /**
@@ -116,6 +118,7 @@ fun SharedPreferences.getBooleanFromPair(pref: PrefPair<Boolean>): Boolean {
  * Returns a [Set] of [String]s from [SharedPreferences], returning the [PrefPair] default if either
  * the value isn't already persisted or the type is incorrect.
  */
+@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.getStringSetFromPair(pref: PrefPair<Set<String>>): Set<String> {
     return typeSafeGet(pref) {
         this.getStringSet(pref.key, pref.default)!!
@@ -210,6 +213,7 @@ fun SharedPreferences.Editor.putStringIfNotNull(
  * Attempts to insert a [Set] value into this [SharedPreferences.Editor] instance. Skips if the
  * supplied [value] is null.
  */
+@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.Editor.putStringSetIfNotNull(
     pref: PrefPair<Set<String>>,
     value: Set<String>?

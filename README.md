@@ -6,7 +6,7 @@
 This is a simple library to hold a bunch of Kotlin extensions that I use all the time in various projects. I just made this repo to keep them all in the same place and stop me copying them around all the time. 
 
 ## API Reference
-See [https://jonapoul.github.io/android-extensions/api](https://jonapoul.github.io/android-extensions/api).
+See [https://jonapoul.github.io/android-extensions](https://jonapoul.github.io/android-extensions).
 
 ## Usage 
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
@@ -20,6 +20,6 @@ allprojects {
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {
-    implementation "com.github.jonapoul:android-extensions:1.0.5"
+    implementation "com.github.jonapoul:android-extensions:1.0.6"
 }
 ```

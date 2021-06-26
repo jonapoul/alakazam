@@ -1,6 +1,8 @@
 package com.jonapoul.extensions.datetime
 
+import android.os.Build
 import android.text.format.DateUtils
+import androidx.annotation.RequiresApi
 import java.util.*
 
 /**
@@ -59,17 +61,17 @@ inline val Date.isPast: Boolean
 /**
  * Returns true if the given [Date] is on the same day as the current system time, false otherwise.
  */
-inline val Date.isToday: Boolean
-    get() = DateUtils.isToday(this.time)
+@RequiresApi(Build.VERSION_CODES.CUPCAKE)
+fun Date.isToday(): Boolean = DateUtils.isToday(this.time)
 
 /**
  * Returns true if the given [Date] is on the day before the current system time, false otherwise.
  */
-inline val Date.isYesterday: Boolean
-    get() = DateUtils.isToday(this.time + DateUtils.DAY_IN_MILLIS)
+@RequiresApi(Build.VERSION_CODES.CUPCAKE)
+fun Date.isYesterday(): Boolean = DateUtils.isToday(this.time + DateUtils.DAY_IN_MILLIS)
 
 /**
  * Returns true if the given [Date] is on the next day after current system time, false otherwise.
  */
-inline val Date.isTomorrow: Boolean
-    get() = DateUtils.isToday(this.time - DateUtils.DAY_IN_MILLIS)
+@RequiresApi(Build.VERSION_CODES.CUPCAKE)
+fun Date.isTomorrow(): Boolean = DateUtils.isToday(this.time - DateUtils.DAY_IN_MILLIS)

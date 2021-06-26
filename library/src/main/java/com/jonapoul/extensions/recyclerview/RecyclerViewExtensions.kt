@@ -1,5 +1,7 @@
 package com.jonapoul.extensions.recyclerview
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +24,7 @@ val RecyclerView.isNotEmpty: Boolean
  * view is destroyed. This means you can remove a bunch of [Fragment.onDestroyView] boilerplate,
  * just by using this instead of [RecyclerView.setAdapter].
  */
+@RequiresApi(Build.VERSION_CODES.HONEYCOMB_MR1)
 fun <VH : RecyclerView.ViewHolder> RecyclerView.setLifecycleAwareAdapter(
     lifecycleAdapter: RecyclerView.Adapter<VH>
 ) {
@@ -35,6 +38,7 @@ fun <VH : RecyclerView.ViewHolder> RecyclerView.setLifecycleAwareAdapter(
  * Sets up the [RecyclerView] with a standard [LinearLayoutManager] and the supplied
  * [RecyclerView.Adapter], along with any extra configuration supplied as a lambda block.
  */
+@RequiresApi(Build.VERSION_CODES.HONEYCOMB_MR1)
 fun <VH : RecyclerView.ViewHolder> RecyclerView.initialise(
     adapter: RecyclerView.Adapter<VH>,
     otherConfig: RecyclerView.() -> Unit = {}
