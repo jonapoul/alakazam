@@ -22,6 +22,7 @@ theme:
   palette:
     - scheme: slate
       primary: yellow
+      accent: red
   features:
     - navigation.instant
     - navigation.sections

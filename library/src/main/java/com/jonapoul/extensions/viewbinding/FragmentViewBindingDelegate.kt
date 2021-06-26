@@ -50,6 +50,9 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(
         }
     }
 
+    /**
+     * Returns the [ViewBinding] object.
+     */
     override fun getValue(thisRef: Fragment, property: KProperty<*>): VB {
         val lifecycle = fragment.viewLifecycleOwner.lifecycle
         if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {

@@ -43,6 +43,11 @@ fun Context.alert(
     }
 }
 
+/**
+ * Show a basic dialog window with a title string and a message. Will also include a single button
+ * saying "OK" which does nothing except close the dialog, which can be overridden by passing a
+ * call to [MaterialAlertDialogBuilder.setPositiveButton] as part of the [config] code block.
+ */
 fun Context.alert(
     @StringRes title: Int,
     @StringRes message: Int,

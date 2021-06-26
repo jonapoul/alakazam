@@ -1,5 +1,6 @@
 package com.jonapoul.extensions.fragment
 
+import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -53,6 +54,19 @@ inline fun Fragment.alert(config: MaterialAlertDialogBuilder.() -> MaterialAlert
 fun Fragment.alert(
     title: String,
     message: String,
+    config: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this }
+) {
+    requireContext().alert(title, message, config)
+}
+
+/**
+ * Show a basic dialog window with a title string and a message. Will also include a single button
+ * saying "OK" which does nothing except close the dialog, which can be overridden by passing a
+ * call to [MaterialAlertDialogBuilder.setPositiveButton] as part of the [config] code block.
+ */
+fun Fragment.alert(
+    @StringRes title: Int,
+    @StringRes message: Int,
     config: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this }
 ) {
     requireContext().alert(title, message, config)

@@ -24,6 +24,9 @@ fun ViewBinding?.cleanUpRecyclerAdapters() {
     }
 }
 
+/**
+ * Creates a lazy inflating delegate for a [ViewBinding] instance.
+ */
 inline fun <VB : ViewBinding> Activity.viewBinder(
     crossinline bindingInflater: (LayoutInflater) -> VB
 ) = lazy(LazyThreadSafetyMode.NONE) {
