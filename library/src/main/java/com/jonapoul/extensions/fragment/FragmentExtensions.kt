@@ -30,7 +30,7 @@ fun <T> Fragment.collectFlow(flow: Flow<T>, callback: (T) -> Unit): Job {
  * A different API for showing a dialog window. All configuration is passed in via the [config]
  * lambda block.
  *
- * This Will also include a single button saying "OK" which does nothing except close the dialog,
+ * This will also include a single button saying "OK" which does nothing except close the dialog,
  * which can be overridden by passing a call to [MaterialAlertDialogBuilder.setPositiveButton] as
  * part of the [config] code block.
  *

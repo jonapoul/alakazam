@@ -42,6 +42,9 @@ jobs:
           pip3 install -r .github/workflows/mkdocs-requirements.txt
           mkdocs build
 
+      - name: Copy README to docs
+        run: cp README.md docs/index.md
+
       - name: Deploy Docs
         if: success() && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@releases/v3

@@ -3,6 +3,7 @@
 # mkdocs gh-deploy
 
 site_name: Android Extensions
+repo_name: Android Extensions
 site_url: https://jonapoul.github.io/android-extensions
 repo_url: https://github.com/jonapoul/android-extensions
 site_description: "A set of useful functions and extensions for Kotlin/Android development"
@@ -19,20 +20,8 @@ theme:
   static_templates:
     - 404.html
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: red
-      accent: red
-      toggle:
-        icon: material/weather-night
-        name: Dark Theme
-    - media: "(prefers-color-scheme: light)"
-    - scheme: default
-      primary: red
-      accent: red
-      toggle:
-        icon: material/weather-sunny
-        name: Light Theme
+    - scheme: slate
+      primary: yellow
   features:
     - navigation.instant
     - navigation.sections
@@ -53,4 +42,4 @@ markdown_extensions:
 nav:
   - 'Home': index.md
   - 'Second Page': test.md
-  - 'API': dokka/index.html
+  - 'API Reference': api/index.html
