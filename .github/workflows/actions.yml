@@ -29,7 +29,7 @@ jobs:
       - name: Enable gradle execution
         run: chmod +x ./gradlew
 
-      - name: Build, test and generate HTML docs
+      - name: Build, test and generate docs
         run: ./gradlew build
 
       - name: Set up Python
@@ -37,17 +37,23 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Copy README to docs
+        run: cp README.md docs/index.md
+
       - name: Build mkdocs
         run: |
           pip3 install -r .github/workflows/mkdocs-requirements.txt
           mkdocs build
 
-      - name: Copy README to docs
-        run: cp README.md docs/index.md
+#      - name: Deploy Docs
+#        uses: JamesIves/github-pages-deploy-action@releases/v3
+#        with:
+#          BRANCH: gh-pages # The branch the action should deploy to.
+#          FOLDER: docs # The folder the action should deploy.
 
       - name: Deploy Docs
         if: success() && github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
+          publish_branch: gh-pages
+          publish_dir: ./docs
