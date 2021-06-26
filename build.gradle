@@ -29,7 +29,7 @@ allprojects {
 
 subprojects {
     apply plugin: "org.jetbrains.dokka"
-    dokkaGfm.configure {
+    dokkaHtml.configure {
         outputDirectory.set(new File("${rootProject.rootDir}/docs/api"))
     }
 
@@ -68,7 +68,7 @@ subprojects {
     }
 
     afterEvaluate {
-        tasks.getByName('build').dependsOn dokkaGfm
+        tasks.getByName('build').dependsOn dokkaHtml
     }
 }
 
