@@ -24,12 +24,18 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
         activity.lifecycle.addObserver(this)
     }
 
+    /**
+     * Constructs the binding and binds its contents to the activity.
+     */
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun createBinding() {
         buildBindingIfNeeded()
         activity.setContentView(binding?.root)
     }
 
+    /**
+     * Clears the binding, removes any RecyclerView adapters and removes the observer.
+     */
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun destroyBinding() {
         binding.cleanUpRecyclerAdapters()
@@ -43,6 +49,9 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
         }
     }
 
+    /**
+     * Returns the [ViewBinding] object.
+     */
     override fun getValue(thisRef: AppCompatActivity, property: KProperty<*>): VB {
         buildBindingIfNeeded()
         if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {

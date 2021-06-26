@@ -29,8 +29,16 @@ allprojects {
 
 subprojects {
     apply plugin: "org.jetbrains.dokka"
-    dokkaHtml.configure {
+    tasks.named("dokkaHtml") {
         outputDirectory.set(new File("${rootProject.rootDir}/docs/api"))
+        dokkaSourceSets {
+            configureEach {
+                includeNonPublic.set(false)
+                skipEmptyPackages.set(true)
+                reportUndocumented.set(true)
+                noAndroidSdkLink.set(false)
+            }
+        }
     }
 
     apply plugin: "org.jlleitschuh.gradle.ktlint"
@@ -68,7 +76,8 @@ subprojects {
     }
 
     afterEvaluate {
-        tasks.getByName('build').dependsOn dokkaHtml
+        // Attach the dokka task to build afterwards, since the build task doesn't exist right now.
+        tasks.getByName('build').dependsOn "dokkaHtml"
     }
 }
 
