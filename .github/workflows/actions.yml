@@ -42,7 +42,10 @@ jobs:
 
       - name: Build mkdocs
         run: |
-          pip3 install -r .github/workflows/mkdocs-requirements.txt
+          pip3 install -r mkdocs
+          pip3 install -r mkdocs-material
+          pip3 install -r mkdocs-redirects
+          pip3 install -r mkdocs-git-revision-date-plugin
           mkdocs build
 
       - name: Deploy Docs
