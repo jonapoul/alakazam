@@ -47,8 +47,7 @@ jobs:
           mkdocs build
 
       - name: Deploy docs
-#        if: success() && github.ref == 'refs/heads/master'
-        if: success()
+        if: success() && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages # The branch the action should deploy to.
