@@ -45,15 +45,10 @@ jobs:
           pip3 install -r .github/workflows/mkdocs-requirements.txt
           mkdocs build
 
-#      - name: Deploy Docs
-#        uses: JamesIves/github-pages-deploy-action@releases/v3
-#        with:
-#          BRANCH: gh-pages # The branch the action should deploy to.
-#          FOLDER: docs # The folder the action should deploy.
-
       - name: Deploy Docs
-        if: success() && github.ref == 'refs/heads/master'
-        uses: peaceiris/actions-gh-pages@v3
+#        if: success() && github.ref == 'refs/heads/master'
+        if: success()
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          publish_branch: gh-pages
-          publish_dir: ./docs
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: docs # The folder the action should deploy.
