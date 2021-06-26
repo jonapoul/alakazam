@@ -2,8 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 
-apply from: "../plugin_config.gradle"
-
 ext {
     GROUP_ID = 'com.jonapoul'
     ARTIFACT_ID = 'android-extensions'
