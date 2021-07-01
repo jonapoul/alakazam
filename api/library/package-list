@@ -72,6 +72,7 @@ $dokka.location:com.jonapoul.extensions.fragment//collectFlow/androidx.fragment.
 $dokka.location:com.jonapoul.extensions.lifecycle////PointingToDeclaration/library/com.jonapoul.extensions.lifecycle/index.html
 $dokka.location:com.jonapoul.extensions.lifecycle//collectFlow/androidx.lifecycle.LifecycleOwner#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.lifecycle/collect-flow.html
 $dokka.location:com.jonapoul.extensions.navigation////PointingToDeclaration/library/com.jonapoul.extensions.navigation/index.html
+$dokka.location:com.jonapoul.extensions.navigation//navControllers/androidx.fragment.app.Fragment#/PointingToDeclaration/library/com.jonapoul.extensions.navigation/nav-controllers.html
 $dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#androidx.navigation.NavDirections/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
 $dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
 $dokka.location:com.jonapoul.extensions.other////PointingToDeclaration/library/com.jonapoul.extensions.other/index.html
