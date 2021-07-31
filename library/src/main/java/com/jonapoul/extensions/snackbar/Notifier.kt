@@ -23,7 +23,7 @@ interface INotifier {
     fun toast(context: Context, @StringRes message: Int)
 }
 
-internal class Notifier : INotifier {
+class Notifier : INotifier {
     private fun snackbar(
         root: View,
         message: String,
