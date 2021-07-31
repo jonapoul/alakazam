@@ -6,7 +6,9 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.jonapoul.extensions.R
 
@@ -23,16 +25,22 @@ interface INotifier {
     fun toast(context: Context, @StringRes message: Int)
 }
 
-class Notifier : INotifier {
-    private fun snackbar(
+class Notifier(
+    @ColorRes private val successColour: Int = R.color.notifier_success,
+    @ColorRes private val infoColour: Int = R.color.notifier_info,
+    @ColorRes private val warningColour: Int = R.color.notifier_warning,
+    @ColorRes private val errorColour: Int = R.color.notifier_error,
+) : INotifier {
+
+    fun snackbar(
         root: View,
         message: String,
-        @ColorInt bgColour: Int,
+        @ColorRes bgColour: Int,
         @ColorInt textColour: Int
     ) {
         val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG)
         val view = snackbar.view
-        view.setBackgroundColor(bgColour)
+        view.setBackgroundColor(ContextCompat.getColor(view.context, bgColour))
         val text = view.findViewById<TextView>(R.id.snackbar_text)
         text.setTextColor(textColour)
         text.maxLines = 20 // don't crop off any longer messages
@@ -42,7 +50,7 @@ class Notifier : INotifier {
     }
 
     override fun success(root: View, message: String) {
-        snackbar(root, message, DEFAULT_SUCCESS, Color.WHITE)
+        snackbar(root, message, successColour, Color.WHITE)
     }
 
     override fun success(root: View, message: Int) {
@@ -50,7 +58,7 @@ class Notifier : INotifier {
     }
 
     override fun info(root: View, message: String) {
-        snackbar(root, message, DEFAULT_INFO, Color.BLACK)
+        snackbar(root, message, infoColour, Color.BLACK)
     }
 
     override fun info(root: View, message: Int) {
@@ -58,7 +66,7 @@ class Notifier : INotifier {
     }
 
     override fun warn(root: View, message: String) {
-        snackbar(root, message, DEFAULT_WARNING, Color.BLACK)
+        snackbar(root, message, warningColour, Color.BLACK)
     }
 
     override fun warn(root: View, message: Int) {
@@ -66,7 +74,7 @@ class Notifier : INotifier {
     }
 
     override fun error(root: View, message: String) {
-        snackbar(root, message, DEFAULT_ERROR, Color.WHITE)
+        snackbar(root, message, errorColour, Color.WHITE)
     }
 
     override fun error(root: View, message: Int) {
@@ -84,10 +92,5 @@ class Notifier : INotifier {
     private companion object {
         const val DEFAULT_TEXT = "OK"
         val DEFAULT_ACTION = View.OnClickListener { /* No-op */ }
-
-        val DEFAULT_SUCCESS = Color.parseColor("#007E33")
-        val DEFAULT_WARNING = Color.parseColor("#FF8800")
-        val DEFAULT_ERROR = Color.parseColor("#CC0000")
-        val DEFAULT_INFO = Color.parseColor("#0099CC")
     }
 }
