@@ -42,5 +42,4 @@ markdown_extensions:
 
 nav:
   - 'Home': index.md
-  - 'Second Page': test.md
   - 'API Reference': api/index.html
