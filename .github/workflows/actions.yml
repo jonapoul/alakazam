@@ -41,7 +41,6 @@ jobs:
       - name: Copy README to docs
         run:  |
           mkdir -p docs
-          cp -r img docs/img
           cp README.md docs/index.md
 
       - name: Build mkdocs
