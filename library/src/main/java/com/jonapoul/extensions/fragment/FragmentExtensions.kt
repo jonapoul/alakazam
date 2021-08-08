@@ -1,5 +1,7 @@
 package com.jonapoul.extensions.fragment
 
+import android.view.View
+import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
@@ -7,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jonapoul.extensions.context.alert
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -26,6 +29,25 @@ fun <T> Fragment.collectFlow(flow: Flow<T>, callback: (T) -> Unit): Job {
         }
     }
 }
+
+/**
+ * Runs an infinite loop of periodic function calls, scoped to the fragment's [View] lifecycle.
+ * Takes a [LoopDelayType] parameter, which specifies whether the periodic delay is placed before
+ * the first callback or after. This will only matter on the first run through.
+ */
+fun Fragment.runLoop(periodMs: Long, delayType: LoopDelayType, call: suspend () -> Unit): Job {
+    val delayBefore = if (delayType == LoopDelayType.DELAY_BEFORE) periodMs else 0L
+    val delayAfter = if (delayType == LoopDelayType.DELAY_AFTER) periodMs else 0L
+    return viewLifecycleOwner.lifecycleScope.launch {
+        while (true) {
+            delay(delayBefore)
+            call.invoke()
+            delay(delayAfter)
+        }
+    }
+}
+
+enum class LoopDelayType { DELAY_BEFORE, DELAY_AFTER }
 
 /**
  * A different API for showing a dialog window. All configuration is passed in via the [config]
@@ -70,4 +92,20 @@ fun Fragment.alert(
     config: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this }
 ) {
     requireContext().alert(title, message, config)
+}
+
+/**
+ * Show a dialog window with a title string, and an inflated [View] layout instead of a message.
+ */
+fun Fragment.alertView(
+    @StringRes title: Int,
+    @LayoutRes layout: Int,
+    config: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this }
+) {
+    val context = requireContext()
+    context.alert {
+        setTitle(title)
+        setView(View.inflate(context, layout, null))
+        config()
+    }
 }
