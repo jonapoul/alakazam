@@ -3,7 +3,11 @@ package com.jonapoul.extensions.context
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
@@ -15,6 +19,20 @@ inline fun <reified S : Service> Context.startServiceWithAction(action: String) 
             setAction(action)
         }
     )
+}
+
+/**
+ * Get color from resources
+ */
+fun Context.getCompatColor(@ColorRes colorInt: Int): Int {
+    return ContextCompat.getColor(this, colorInt)
+}
+
+/**
+ * Get drawable from resources
+ */
+fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable {
+    return ContextCompat.getDrawable(this, drawableRes)!!
 }
 
 /**
