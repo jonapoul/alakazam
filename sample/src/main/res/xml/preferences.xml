@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.jonapoul.extensions.preference.EditIntPreference
+        android:title="Edit Ints"
+        app:key="edit_int"
+        app:useSimpleSummaryProvider="true" />
+
+    <com.jonapoul.extensions.preference.EditFloatPreference
+        android:title="Edit Floats"
+        app:key="edit_float"
+        app:useSimpleSummaryProvider="true" />
+
+</PreferenceScreen>
