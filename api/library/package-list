@@ -100,6 +100,11 @@ $dokka.location:com.jonapoul.extensions.other//exhaustive/TypeParam(bounds=[kotl
 $dokka.location:com.jonapoul.extensions.other//justTry/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.other/just-try.html
 $dokka.location:com.jonapoul.extensions.other/IntGenerator///PointingToDeclaration/library/com.jonapoul.extensions.other/-int-generator/index.html
 $dokka.location:com.jonapoul.extensions.other/IntGenerator/next/#/PointingToDeclaration/library/com.jonapoul.extensions.other/-int-generator/next.html
+$dokka.location:com.jonapoul.extensions.preference////PointingToDeclaration/library/com.jonapoul.extensions.preference/index.html
+$dokka.location:com.jonapoul.extensions.preference/EditFloatPreference///PointingToDeclaration/library/com.jonapoul.extensions.preference/-edit-float-preference/index.html
+$dokka.location:com.jonapoul.extensions.preference/EditFloatPreference/EditFloatPreference/#android.content.Context#android.util.AttributeSet?/PointingToDeclaration/library/com.jonapoul.extensions.preference/-edit-float-preference/-edit-float-preference.html
+$dokka.location:com.jonapoul.extensions.preference/EditIntPreference///PointingToDeclaration/library/com.jonapoul.extensions.preference/-edit-int-preference/index.html
+$dokka.location:com.jonapoul.extensions.preference/EditIntPreference/EditIntPreference/#android.content.Context#android.util.AttributeSet?/PointingToDeclaration/library/com.jonapoul.extensions.preference/-edit-int-preference/-edit-int-preference.html
 $dokka.location:com.jonapoul.extensions.recyclerview////PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/index.html
 $dokka.location:com.jonapoul.extensions.recyclerview//initialise/androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.Adapter[TypeParam(bounds=[androidx.recyclerview.widget.RecyclerView.ViewHolder])]#kotlin.Function1[androidx.recyclerview.widget.RecyclerView,kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/initialise.html
 $dokka.location:com.jonapoul.extensions.recyclerview//isEmpty/androidx.recyclerview.widget.RecyclerView#/PointingToDeclaration/library/com.jonapoul.extensions.recyclerview/is-empty.html
@@ -125,6 +130,8 @@ $dokka.location:com.jonapoul.extensions.sharedprefs//putIntIfNotNull/android.con
 $dokka.location:com.jonapoul.extensions.sharedprefs//putLongIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.Long]#kotlin.Long?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-long-if-not-null.html
 $dokka.location:com.jonapoul.extensions.sharedprefs//putStringIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.String]#kotlin.String?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-string-if-not-null.html
 $dokka.location:com.jonapoul.extensions.sharedprefs//putStringSetIfNotNull/android.content.SharedPreferences.Editor#com.jonapoul.extensions.sharedprefs.PrefPair[kotlin.collections.Set[kotlin.String]]#kotlin.collections.Set[kotlin.String]?/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/put-string-set-if-not-null.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//sharedPrefs/android.content.Context#kotlin.String?#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/shared-prefs.html
+$dokka.location:com.jonapoul.extensions.sharedprefs//sharedPrefs/androidx.fragment.app.Fragment#kotlin.String?#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/shared-prefs.html
 $dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair///PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/index.html
 $dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair/PrefPair/#kotlin.String#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/-pref-pair.html
 $dokka.location:com.jonapoul.extensions.sharedprefs/PrefPair/default/#/PointingToDeclaration/library/com.jonapoul.extensions.sharedprefs/-pref-pair/default.html
@@ -201,6 +208,7 @@ com.jonapoul.extensions.fragment
 com.jonapoul.extensions.lifecycle
 com.jonapoul.extensions.navigation
 com.jonapoul.extensions.other
+com.jonapoul.extensions.preference
 com.jonapoul.extensions.recyclerview
 com.jonapoul.extensions.sharedprefs
 com.jonapoul.extensions.snackbar
