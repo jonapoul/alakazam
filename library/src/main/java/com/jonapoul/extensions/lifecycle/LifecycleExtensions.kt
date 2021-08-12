@@ -1,12 +1,12 @@
 package com.jonapoul.extensions.lifecycle
 
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 /**
  * Cleans up some of the boilerplate associated with collecting [Flow] streams from a fragment.
@@ -23,33 +23,3 @@ fun <T> LifecycleOwner.collectFlow(flow: Flow<T>, callback: (T) -> Unit): Job {
         }
     }
 }
-
-/**
- * Runs an infinite loop of periodic function calls, scoped to the lifecycle. Takes a
- * [LoopDelayType] parameter, which specifies whether the periodic delay is placed before the first
- * callback or after. This will only matter on the first run through. The [skipIf] lambda will be
- * run directly before invoking the main [call], to verify whether the [call] should be run.
- */
-fun LifecycleCoroutineScope.infiniteLoop(
-    periodMs: Long,
-    delayType: LoopDelayType,
-    dispatcher: CoroutineDispatcher = Dispatchers.Main,
-    skipIf: (() -> Boolean)? = null,
-    call: suspend () -> Unit
-): Job {
-    val delayBefore = if (delayType == LoopDelayType.DELAY_BEFORE) periodMs else 0L
-    val delayAfter = if (delayType == LoopDelayType.DELAY_AFTER) periodMs else 0L
-    return launch(dispatcher) {
-        while (true) {
-            delay(delayBefore)
-            if (skipIf?.invoke() == true) continue
-            call.invoke()
-            delay(delayAfter)
-        }
-    }
-}
-
-/**
- * Defines the time to perform the sleep operation on our looping coroutine in [infiniteLoop].
- */
-enum class LoopDelayType { DELAY_BEFORE, DELAY_AFTER }
