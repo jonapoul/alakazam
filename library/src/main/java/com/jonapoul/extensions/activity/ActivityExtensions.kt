@@ -1,6 +1,7 @@
 package com.jonapoul.extensions.activity
 
 import android.app.Activity
+import android.os.Build
 import android.view.View
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -17,4 +18,12 @@ inline fun Activity.alert(body: MaterialAlertDialogBuilder.() -> MaterialAlertDi
     MaterialAlertDialogBuilder(this)
         .body()
         .show()
+}
+
+fun Activity.finishCompat(removeTask: Boolean = true) {
+    if (removeTask && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        finishAndRemoveTask()
+    } else {
+        finish()
+    }
 }
