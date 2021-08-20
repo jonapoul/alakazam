@@ -167,6 +167,8 @@ $dokka.location:com.jonapoul.extensions.snackbar/Notifier/warn/#android.view.Vie
 $dokka.location:com.jonapoul.extensions.string////PointingToDeclaration/library/com.jonapoul.extensions.string/index.html
 $dokka.location:com.jonapoul.extensions.string//capitalized/kotlin.String#/PointingToDeclaration/library/com.jonapoul.extensions.string/capitalized.html
 $dokka.location:com.jonapoul.extensions.string//parseBoolean/kotlin.String#/PointingToDeclaration/library/com.jonapoul.extensions.string/parse-boolean.html
+$dokka.location:com.jonapoul.extensions.throwable////PointingToDeclaration/library/com.jonapoul.extensions.throwable/index.html
+$dokka.location:com.jonapoul.extensions.throwable//requireMessage/kotlin.Throwable#/PointingToDeclaration/library/com.jonapoul.extensions.throwable/require-message.html
 $dokka.location:com.jonapoul.extensions.view////PointingToDeclaration/library/com.jonapoul.extensions.view/index.html
 $dokka.location:com.jonapoul.extensions.view//disable/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/disable.html
 $dokka.location:com.jonapoul.extensions.view//disableChildren/android.view.ViewGroup#/PointingToDeclaration/library/com.jonapoul.extensions.view/disable-children.html
@@ -214,6 +216,7 @@ com.jonapoul.extensions.recyclerview
 com.jonapoul.extensions.sharedprefs
 com.jonapoul.extensions.snackbar
 com.jonapoul.extensions.string
+com.jonapoul.extensions.throwable
 com.jonapoul.extensions.view
 com.jonapoul.extensions.viewbinding
 
