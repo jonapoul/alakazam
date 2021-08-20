@@ -10,7 +10,7 @@ import kotlinx.coroutines.*
  */
 fun CoroutineScope.infiniteLoop(
     periodMs: Long,
-    delayType: LoopDelayType,
+    delayType: LoopDelayType = LoopDelayType.DELAY_AFTER,
     dispatcher: CoroutineDispatcher = Dispatchers.Main,
     skipIf: (() -> Boolean)? = null,
     call: suspend () -> Unit
