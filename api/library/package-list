@@ -89,6 +89,22 @@ $dokka.location:com.jonapoul.extensions.fragment//alert/androidx.fragment.app.Fr
 $dokka.location:com.jonapoul.extensions.fragment//alert/androidx.fragment.app.Fragment#kotlin.String#kotlin.String#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.fragment/alert.html
 $dokka.location:com.jonapoul.extensions.fragment//alertView/androidx.fragment.app.Fragment#kotlin.Int#kotlin.Int#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.fragment/alert-view.html
 $dokka.location:com.jonapoul.extensions.fragment//collectFlow/androidx.fragment.app.Fragment#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.fragment/collect-flow.html
+$dokka.location:com.jonapoul.extensions.http////PointingToDeclaration/library/com.jonapoul.extensions.http/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Companion///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-companion/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Companion/from/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-companion/from.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Failure///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-failure/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Failure/Failure/#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-failure/-failure.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Failure/message/#/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-failure/message.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.HttpFailure///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-http-failure/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.HttpFailure/HttpFailure/#kotlin.Int#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-http-failure/-http-failure.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.NetworkFailure///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-network-failure/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.NetworkFailure/NetworkFailure/#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-network-failure/-network-failure.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.OtherFailure///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-other-failure/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.OtherFailure/OtherFailure/#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-other-failure/-other-failure.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Success///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-success/index.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Success/Success/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-success/-success.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult.Success/data/#/PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/-success/data.html
+$dokka.location:com.jonapoul.extensions.http/ApiResult///PointingToDeclaration/library/com.jonapoul.extensions.http/-api-result/index.html
 $dokka.location:com.jonapoul.extensions.lifecycle////PointingToDeclaration/library/com.jonapoul.extensions.lifecycle/index.html
 $dokka.location:com.jonapoul.extensions.lifecycle//collectFlow/androidx.lifecycle.LifecycleOwner#kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.lifecycle/collect-flow.html
 $dokka.location:com.jonapoul.extensions.navigation////PointingToDeclaration/library/com.jonapoul.extensions.navigation/index.html
@@ -208,6 +224,7 @@ com.jonapoul.extensions.coroutines
 com.jonapoul.extensions.datetime
 com.jonapoul.extensions.enums
 com.jonapoul.extensions.fragment
+com.jonapoul.extensions.http
 com.jonapoul.extensions.lifecycle
 com.jonapoul.extensions.navigation
 com.jonapoul.extensions.other
