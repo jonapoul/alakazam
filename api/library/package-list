@@ -2,6 +2,7 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.extensions.activity////PointingToDeclaration/library/com.jonapoul.extensions.activity/index.html
 $dokka.location:com.jonapoul.extensions.activity//alert/android.app.Activity#kotlin.Function1[com.google.android.material.dialog.MaterialAlertDialogBuilder,com.google.android.material.dialog.MaterialAlertDialogBuilder]/PointingToDeclaration/library/com.jonapoul.extensions.activity/alert.html
+$dokka.location:com.jonapoul.extensions.activity//finishCompat/android.app.Activity#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.activity/finish-compat.html
 $dokka.location:com.jonapoul.extensions.activity//rootView/android.app.Activity#/PointingToDeclaration/library/com.jonapoul.extensions.activity/root-view.html
 $dokka.location:com.jonapoul.extensions.bytes////PointingToDeclaration/library/com.jonapoul.extensions.bytes/index.html
 $dokka.location:com.jonapoul.extensions.bytes//toHexString/kotlin.ByteArray#kotlin.String/PointingToDeclaration/library/com.jonapoul.extensions.bytes/to-hex-string.html
