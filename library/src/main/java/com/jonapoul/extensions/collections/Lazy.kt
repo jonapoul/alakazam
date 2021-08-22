@@ -1,6 +1,5 @@
 package com.jonapoul.extensions.collections
 
-
 fun <DataType> lazyListOf(vararg elements: DataType): Lazy<List<DataType>> =
     LazyCollection { elements.asList() }
 
