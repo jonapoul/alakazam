@@ -4,19 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 /**
- * A method of getting an [INotifier] object into your [Fragment].
+ * A method of getting an [Notifier] object into your [Fragment].
  */
-fun Fragment.notifiers(): Lazy<INotifier> = LazyNotifier()
+fun Fragment.notifiers(): Lazy<Notifier> = LazyNotifier()
 
 /**
- * A method of getting an [INotifier] object into your [AppCompatActivity].
+ * A method of getting an [Notifier] object into your [AppCompatActivity].
  */
-fun AppCompatActivity.notifiers(): Lazy<INotifier> = LazyNotifier()
+fun AppCompatActivity.notifiers(): Lazy<Notifier> = LazyNotifier()
 
-internal class LazyNotifier : Lazy<INotifier> {
-    private var cached: INotifier? = null
+internal class LazyNotifier : Lazy<Notifier> {
+    private var cached: Notifier? = null
 
-    override val value: INotifier
+    override val value: Notifier
         get() = cached ?: Notifier().also { cached = it }
 
     override fun isInitialized(): Boolean = cached != null
