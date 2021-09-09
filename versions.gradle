@@ -3,12 +3,12 @@ ext.versions = [
         minSdk                  : 9,
         targetSdk               : 30,
         libVersionCode          : 18,
-        libVersionName          : '1.3.5',
+        libVersionName          : '1.3.6',
 
         // Plugins, etc
         gradle                  : '4.2.2',
         dokka                   : '1.4.32',
-        kotlin                  : '1.5.21',
+        kotlin                  : '1.5.30',
         buildTools              : '30.0.3',
         ktlint                  : '10.1.0',
         leakcanary              : '2.7',
@@ -16,7 +16,7 @@ ext.versions = [
 
         // Library versions
         appcompat               : '1.3.1',
-        coroutines              : '1.5.0',
+        coroutines              : '1.5.2-native-mt',
         fragment                : '1.3.6',
         lifecycle               : '2.3.1',
         material                : '1.4.0',
@@ -31,6 +31,6 @@ ext.versions = [
 
         // Testing
         junit                   : '4.13.2',
-        mockk                   : '1.11.0',
+        mockk                   : '1.12.0',
 ]
 
