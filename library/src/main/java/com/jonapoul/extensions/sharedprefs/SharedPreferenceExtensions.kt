@@ -223,3 +223,41 @@ fun SharedPreferences.Editor.putStringSetIfNotNull(
     }
     return this
 }
+
+fun SharedPreferences.putInt(key: String, value: Int) =
+    edit { putInt(key, value) }
+
+fun SharedPreferences.putLong(key: String, value: Long) =
+    edit { putLong(key, value) }
+
+fun SharedPreferences.putFloat(key: String, value: Float) =
+    edit { putFloat(key, value) }
+
+fun SharedPreferences.putBoolean(key: String, value: Boolean) =
+    edit { putBoolean(key, value) }
+
+fun SharedPreferences.putString(key: String, value: String) =
+    edit { putString(key, value) }
+
+@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
+fun SharedPreferences.putStringSet(key: String, value: Set<String>) =
+    edit { putStringSet(key, value) }
+
+fun SharedPreferences.putInt(pref: PrefPair<Int>, value: Int) =
+    putInt(pref.key, value)
+
+fun SharedPreferences.putLong(pref: PrefPair<Long>, value: Long) =
+    putLong(pref.key, value)
+
+fun SharedPreferences.putFloat(pref: PrefPair<Float>, value: Float) =
+    putFloat(pref.key, value)
+
+fun SharedPreferences.putBoolean(pref: PrefPair<Boolean>, value: Boolean) =
+    putBoolean(pref.key, value)
+
+fun SharedPreferences.putString(pref: PrefPair<String>, value: String) =
+    putString(pref.key, value)
+
+@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
+fun SharedPreferences.putStringSet(pref: PrefPair<Set<String>>, value: Set<String>) =
+    putStringSet(pref.key, value)
