@@ -112,7 +112,11 @@ $dokka.location:com.jonapoul.extensions.lifecycle//collectFlow/androidx.lifecycl
 $dokka.location:com.jonapoul.extensions.navigation////PointingToDeclaration/library/com.jonapoul.extensions.navigation/index.html
 $dokka.location:com.jonapoul.extensions.navigation//navControllers/androidx.appcompat.app.AppCompatActivity#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.navigation/nav-controllers.html
 $dokka.location:com.jonapoul.extensions.navigation//navControllers/androidx.fragment.app.Fragment#/PointingToDeclaration/library/com.jonapoul.extensions.navigation/nav-controllers.html
+$dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#androidx.navigation.NavDirections#androidx.navigation.NavOptions/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
+$dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#androidx.navigation.NavDirections#androidx.navigation.Navigator.Extras/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
 $dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#androidx.navigation.NavDirections/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
+$dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#kotlin.Int#android.os.Bundle?#androidx.navigation.NavOptions#androidx.navigation.Navigator.Extras/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
+$dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#kotlin.Int#android.os.Bundle?#androidx.navigation.NavOptions/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
 $dokka.location:com.jonapoul.extensions.navigation//safelyNavigate/androidx.navigation.NavController#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.navigation/safely-navigate.html
 $dokka.location:com.jonapoul.extensions.other////PointingToDeclaration/library/com.jonapoul.extensions.other/index.html
 $dokka.location:com.jonapoul.extensions.other//exhaustive/TypeParam(bounds=[kotlin.Any?])#/PointingToDeclaration/library/com.jonapoul.extensions.other/exhaustive.html
