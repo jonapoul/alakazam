@@ -70,12 +70,10 @@ dependencies {
     implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "com.google.android.material:material:$versions.material"
-    implementation "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp"
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "javax.inject:javax.inject:$versions.inject"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
-    implementation "org.threeten:threetenbp:$versions.threetenbp:no-tzdb"
 
     testImplementation "io.mockk:mockk:$versions.mockk"
     testImplementation "junit:junit:$versions.junit"
