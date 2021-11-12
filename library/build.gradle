@@ -32,7 +32,7 @@ android {
         kotlinOptions.freeCompilerArgs += ['-module-name', "$GROUP_ID.$ARTIFACT_ID"]
     }
 
-    buildFeatures.viewBinding = true
+    buildFeatures.viewBinding true
     kotlinOptions.jvmTarget = '1.8'
 }
 
@@ -46,19 +46,36 @@ project.afterEvaluate {
     }
 }
 
+task installLocalGitHook(type: Copy) {
+    from new File(rootProject.rootDir, 'scripts/pre-commit.sh')
+    into { new File(rootProject.rootDir, '.git/hooks') }
+    rename 'pre-commit.sh', 'pre-commit'
+    fileMode 0775
+}
+
+gradle.projectsEvaluated {
+    /* Force the pre-commit hook to be installed in the local repo when Gradle syncs */
+    preBuild.dependsOn installLocalGitHook
+}
+
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.fragment:fragment-ktx:$versions.fragment"
     implementation "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-service:$versions.lifecycle"
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
     implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "com.google.android.material:material:$versions.material"
+    implementation "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp"
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "javax.inject:javax.inject:$versions.inject"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    implementation "org.threeten:threetenbp:$versions.threetenbp:no-tzdb"
 
     testImplementation "io.mockk:mockk:$versions.mockk"
     testImplementation "junit:junit:$versions.junit"

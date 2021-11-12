@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_loading">Loading…</string>
+    <string name="dialog_caution">Caution</string>
+    <string name="dialog_warning">Warning</string>
+</resources>

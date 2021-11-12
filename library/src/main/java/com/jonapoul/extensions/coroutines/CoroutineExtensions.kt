@@ -1,6 +1,11 @@
 package com.jonapoul.extensions.coroutines
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 /**
  * Runs an infinite loop of periodic function calls, scoped to the lifecycle. Takes a
@@ -13,7 +18,7 @@ fun CoroutineScope.infiniteLoop(
     delayType: LoopDelayType = LoopDelayType.DELAY_AFTER,
     dispatcher: CoroutineDispatcher = Dispatchers.Main,
     skipIf: (() -> Boolean)? = null,
-    call: suspend () -> Unit
+    call: suspend () -> Unit,
 ): Job {
     val delayBefore = if (delayType == LoopDelayType.DELAY_BEFORE) periodMs else 0L
     val delayAfter = if (delayType == LoopDelayType.DELAY_AFTER) periodMs else 0L

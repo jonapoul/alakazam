@@ -12,6 +12,7 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
         classpath "com.android.tools.build:gradle:$versions.gradle"
         classpath "com.diffplug.spotless:spotless-plugin-gradle:$versions.spotless"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$versions.detekt"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$versions.dokka"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "org.jlleitschuh.gradle:ktlint-gradle:$versions.ktlint"
@@ -19,7 +20,12 @@ buildscript {
 }
 
 allprojects {
-    apply from: "$rootProject.projectDir/versions.gradle"
+    def root = rootProject.projectDir
+    apply from: "$root/versions.gradle"
+    apply from: "$root/gradle/plugins/detekt.gradle"
+    apply from: "$root/gradle/plugins/dokka.gradle"
+    apply from: "$root/gradle/plugins/ktlint.gradle"
+    apply from: "$root/gradle/plugins/spotless.gradle"
 
     repositories {
         google()
@@ -29,50 +35,13 @@ allprojects {
 }
 
 subprojects {
-    apply plugin: "org.jetbrains.dokka"
-    tasks.named("dokkaHtml") {
-        outputDirectory.set(new File("${rootProject.rootDir}/docs/api"))
-        dokkaSourceSets {
-            configureEach {
-                includeNonPublic.set(false)
-                skipEmptyPackages.set(true)
-                reportUndocumented.set(true)
-                noAndroidSdkLink.set(false)
-            }
-        }
-    }
-
-    apply plugin: "org.jlleitschuh.gradle.ktlint"
-    ktlint {
-        disabledRules = ["no-wildcard-imports"]
-    }
-
-    apply plugin: "com.diffplug.spotless"
-    spotless {
-        format 'misc', {
-            target '**/*.gradle', '**/*.md', '**/.gitignore', '**/.pro'
-            indentWithSpaces()
-            trimTrailingWhitespace()
-            endWithNewline()
-        }
-        kotlin {
-            ktlint()
-            indentWithSpaces()
-            trimTrailingWhitespace()
-            endWithNewline()
-        }
-        json {
-            target '**/*.json'
-            simple()
-        }
-    }
-
     tasks.withType(Test) {
         testLogging {
             exceptionFormat 'FULL'
             showCauses true
             showExceptions true
             showStackTraces true
+            showStandardStreams true
         }
     }
 
@@ -80,8 +49,4 @@ subprojects {
         // Attach the dokka task to build afterwards, since the build task doesn't exist right now.
         tasks.getByName('build').dependsOn "dokkaHtml"
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

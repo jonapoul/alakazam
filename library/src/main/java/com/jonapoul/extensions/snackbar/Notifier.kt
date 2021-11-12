@@ -22,7 +22,7 @@ class Notifier(
         val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG)
         snackbar.view.setBackgroundResource(backgroundColour)
         val text = snackbar.view.findViewById<TextView>(R.id.snackbar_text)
-        text.maxLines = 20 // don't crop off any longer messages
+        text.maxLines = MAX_LINES // don't crop off any longer messages
         text.setTextColor(Color.WHITE)
         snackbar.setAction(DEFAULT_TEXT, DEFAULT_ACTION)
         snackbar.setActionTextColor(ContextCompat.getColor(root.context, actionTextColour))
@@ -71,6 +71,7 @@ class Notifier(
 
     companion object {
         private const val DEFAULT_TEXT = "OK"
+        private const val MAX_LINES = 20
         private val DEFAULT_ACTION = View.OnClickListener { /* No-op */ }
     }
 }

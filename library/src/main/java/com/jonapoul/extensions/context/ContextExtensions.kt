@@ -3,12 +3,37 @@ package com.jonapoul.extensions.context
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+
+/**
+ * Shows a toast with the given [message].
+ */
+fun Context.toast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+}
+
+/**
+ * Shows a toast with the given string resource as a message.
+ */
+fun Context.toast(@StringRes message: Int) {
+    toast(getString(message))
+}
+
+/**
+ * Checks whether the given app [Context] has been granted the specified [permission].
+ */
+fun Context.hasPermission(permission: String): Boolean {
+    val permissionState = ContextCompat.checkSelfPermission(this, permission)
+    return permissionState == PackageManager.PERMISSION_GRANTED
+}
 
 /**
  * Shorthand method to start the specified [Service] class with the given [action] string.

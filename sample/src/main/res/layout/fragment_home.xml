@@ -19,4 +19,25 @@
         android:text="LOVE"
         app:icon="@drawable/ic_love" />
 
+    <Button
+        android:id="@+id/warning_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WARNING"
+        app:icon="@drawable/ic_warning" />
+
+    <Button
+        android:id="@+id/caution_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CAUTION"
+        app:icon="@drawable/ic_caution" />
+
+    <Button
+        android:id="@+id/loading_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOAD"
+        app:icon="@drawable/ic_refresh" />
+
 </LinearLayout>

@@ -2,9 +2,8 @@ package com.jonapoul.extensions.sharedprefs
 
 import android.content.SharedPreferences
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.OnLifecycleEvent
 
 /**
  * A different method of dealing with [SharedPreferences.OnSharedPreferenceChangeListener], instead
@@ -28,16 +27,14 @@ fun LifecycleOwner.observeSharedPrefs(
     onPreferenceUpdated: (key: String) -> Unit
 ) {
     lifecycle.addObserver(
-        object : SharedPreferences.OnSharedPreferenceChangeListener, LifecycleObserver {
-            @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-            fun onCreate() {
-                prefs.registerOnSharedPreferenceChangeListener(this)
-            }
-
-            @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-            fun onDestroy() {
-                prefs.unregisterOnSharedPreferenceChangeListener(this)
-                lifecycle.removeObserver(this)
+        object : SharedPreferences.OnSharedPreferenceChangeListener, LifecycleEventObserver {
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                if (event == Lifecycle.Event.ON_CREATE) {
+                    prefs.registerOnSharedPreferenceChangeListener(this)
+                } else if (event == Lifecycle.Event.ON_DESTROY) {
+                    prefs.unregisterOnSharedPreferenceChangeListener(this)
+                    lifecycle.removeObserver(this)
+                }
             }
 
             override fun onSharedPreferenceChanged(sp: SharedPreferences, key: String) {

@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.jonapoul.extensions.colours
 
 import androidx.annotation.ColorInt

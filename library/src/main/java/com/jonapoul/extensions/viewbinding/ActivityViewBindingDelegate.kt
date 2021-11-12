@@ -3,8 +3,8 @@ package com.jonapoul.extensions.viewbinding
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -16,7 +16,7 @@ import kotlin.reflect.KProperty
 class ActivityViewBindingDelegate<VB : ViewBinding>(
     private val activity: AppCompatActivity,
     private val viewBindingFactory: (LayoutInflater) -> VB,
-) : ReadOnlyProperty<AppCompatActivity, VB>, LifecycleObserver {
+) : ReadOnlyProperty<AppCompatActivity, VB>, LifecycleEventObserver {
 
     private var binding: VB? = null
 
@@ -24,23 +24,15 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
         activity.lifecycle.addObserver(this)
     }
 
-    /**
-     * Constructs the binding and binds its contents to the activity.
-     */
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun createBinding() {
-        buildBindingIfNeeded()
-        activity.setContentView(binding?.root)
-    }
-
-    /**
-     * Clears the binding, removes any RecyclerView adapters and removes the observer.
-     */
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    fun destroyBinding() {
-        binding.cleanUpRecyclerAdapters()
-        binding = null
-        activity.lifecycle.removeObserver(this)
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        if (event == Lifecycle.Event.ON_CREATE) {
+            buildBindingIfNeeded()
+            activity.setContentView(binding?.root)
+        } else if (event == Lifecycle.Event.ON_CREATE) {
+            binding.cleanUpRecyclerAdapters()
+            binding = null
+            activity.lifecycle.removeObserver(this)
+        }
     }
 
     private fun buildBindingIfNeeded() {

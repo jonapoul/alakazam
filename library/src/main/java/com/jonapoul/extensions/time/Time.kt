@@ -1,4 +1,4 @@
-package com.jonapoul.extensions.datetime
+package com.jonapoul.extensions.time
 
 /**
  * Simple class to help with mocking calls to system time, since mocking

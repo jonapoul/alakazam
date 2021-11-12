@@ -1,3 +1,5 @@
+@file:Suppress("TooManyFunctions")
+
 package com.jonapoul.extensions.view
 
 import android.os.Build

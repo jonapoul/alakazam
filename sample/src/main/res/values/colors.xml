@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="onSurfaceOrange">#B06300</color>
+    <color name="onSurfaceRed">#B00000</color>
 </resources>

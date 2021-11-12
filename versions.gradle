@@ -1,14 +1,15 @@
 ext.versions = [
         // Build variables
-        minSdk                  : 9,
-        targetSdk               : 30,
-        libVersionCode          : 20,
-        libVersionName          : '1.3.9',
+        minSdk                  : 15,
+        targetSdk               : 31,
+        libVersionCode          : 21,
+        libVersionName          : '1.3.10',
 
         // Plugins, etc
         gradle                  : '4.2.2',
+        detekt                  : '1.18.1',
         dokka                   : '1.4.32',
-        kotlin                  : '1.5.30',
+        kotlin                  : '1.5.31',
         buildTools              : '30.0.3',
         ktlint                  : '10.1.0',
         leakcanary              : '2.7',
@@ -18,19 +19,20 @@ ext.versions = [
         appcompat               : '1.3.1',
         coroutines              : '1.5.2-native-mt',
         fragment                : '1.3.6',
-        lifecycle               : '2.3.1',
+        inject                  : '1',
+        lifecycle               : '2.4.0',
         material                : '1.4.0',
         navigation              : '2.3.5',
         preference              : '1.1.1',
         recyclerview            : '1.2.1',
         retrofit                : '2.9.0',
+        threetenabp             : '1.3.1',
+        threetenbp              : '1.5.2',
 
         // Sample app dependencies
         constraintlayout        : '2.1.1',
-        core_ktx                : '1.3.2',
 
         // Testing
         junit                   : '4.13.2',
         mockk                   : '1.12.0',
 ]
-

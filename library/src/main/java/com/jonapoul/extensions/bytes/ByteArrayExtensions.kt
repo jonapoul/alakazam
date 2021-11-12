@@ -1,5 +1,8 @@
 package com.jonapoul.extensions.bytes
 
+private const val MAX_BYTE = 0xff
+private const val NUM_MAC_BYTES = 6
+
 /**
  * Returns a string of each byte represented as a two-character capitalised hexadecimal string, with
  * an optional separating character between each byte. If the separator character is ignored or
@@ -7,7 +10,7 @@ package com.jonapoul.extensions.bytes
  */
 fun ByteArray.toHexString(separator: String = ""): String {
     return joinToString(separator) {
-        "%02X".format(it.toInt() and 0xff)
+        "%02X".format(it.toInt() and MAX_BYTE)
     }
 }
 
@@ -17,7 +20,7 @@ fun ByteArray.toHexString(separator: String = ""): String {
  * MAC byte instead of colons.
  */
 fun ByteArray.toMacAddress(separator: String = ":"): String {
-    if (size != 6) {
+    if (size != NUM_MAC_BYTES) {
         error("MAC addresses need 6 bytes, this has $size")
     }
     return toHexString(separator)

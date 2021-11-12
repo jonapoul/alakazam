@@ -6,6 +6,10 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.jonapoul.extensions.context.toast
+import com.jonapoul.extensions.dialogs.showCautionDialog
+import com.jonapoul.extensions.dialogs.showLoadingDialog
+import com.jonapoul.extensions.dialogs.showWarningDialog
 import com.jonapoul.extensions.navigation.navControllers
 import com.jonapoul.extensions.navigation.safelyNavigate
 import com.jonapoul.extensions.sample.databinding.FragmentHomeBinding
@@ -24,7 +28,31 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        /* TBC */
+        initCautionButton()
+        initWarningButton()
+        initLoadingButton()
+    }
+
+    private fun initCautionButton() {
+        binding.cautionDialog.setOnClickListener {
+            showCautionDialog("Something happened!")
+        }
+    }
+
+    private fun initWarningButton() {
+        binding.warningDialog.setOnClickListener {
+            showWarningDialog("Something happened!")
+        }
+    }
+
+    private fun initLoadingButton() {
+        binding.loadingDialog.setOnClickListener {
+            showLoadingDialog(
+                onClickCancel = {
+                    requireContext().toast("Loading cancelled!")
+                }
+            )
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

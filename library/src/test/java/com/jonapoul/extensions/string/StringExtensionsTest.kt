@@ -1,6 +1,8 @@
 package com.jonapoul.extensions.string
 
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
+import org.junit.Assert.assertThrows
 import org.junit.Test
 
 class StringExtensionsTest {

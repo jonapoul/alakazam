@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.jonapoul.extensions.sample"
-        minSdkVersion 14
+        minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.libVersionCode
         versionName versions.libVersionName
@@ -36,11 +36,11 @@ dependencies {
 
     implementation project(":library")
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
     implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "com.google.android.material:material:$versions.material"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
 }

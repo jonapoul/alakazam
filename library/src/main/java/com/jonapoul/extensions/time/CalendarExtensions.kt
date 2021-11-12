@@ -1,6 +1,6 @@
-package com.jonapoul.extensions.datetime
+package com.jonapoul.extensions.time
 
-import java.util.*
+import java.util.Calendar
 
 /**
  * Gets Year directly from [Calendar] object

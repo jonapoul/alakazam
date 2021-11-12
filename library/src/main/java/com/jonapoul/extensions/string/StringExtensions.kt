@@ -1,6 +1,6 @@
 package com.jonapoul.extensions.string
 
-import java.util.*
+import java.util.Locale
 
 /**
  * Attempts to parse a [Boolean] value from the supplied [String], case-insensitively. If the
@@ -16,9 +16,9 @@ fun String.parseBoolean(): Boolean {
 }
 
 /**
-* Replaces the first character of the supplied [String] with a capitalised version.
-* Mercilessly lifted from https://stackoverflow.com/a/67843987/15634757
-*/
+ * Replaces the first character of the supplied [String] with a capitalised version.
+ * Mercilessly lifted from https://stackoverflow.com/a/67843987/15634757
+ */
 fun String.capitalized(): String {
     return this.replaceFirstChar {
         if (it.isLowerCase()) {

@@ -1,7 +1,10 @@
-package com.jonapoul.extensions.datetime
+@file:Suppress("MagicNumber")
+
+package com.jonapoul.extensions.time
 
 import android.text.format.DateUtils
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
 /**
  * Number of milliseconds between the two dates.
