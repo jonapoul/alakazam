@@ -226,9 +226,6 @@ $dokka.location:com.jonapoul.extensions.time//hourOfDay/java.util.Calendar#/Poin
 $dokka.location:com.jonapoul.extensions.time//hoursSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.time/hours-since.html
 $dokka.location:com.jonapoul.extensions.time//hr/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.time/hr.html
 $dokka.location:com.jonapoul.extensions.time//hr/kotlin.Long#/PointingToDeclaration/library/com.jonapoul.extensions.time/hr.html
-$dokka.location:com.jonapoul.extensions.time//inPast/org.threeten.bp.temporal.TemporalAmount#/PointingToDeclaration/library/com.jonapoul.extensions.time/in-past.html
-$dokka.location:com.jonapoul.extensions.time//instantInPast/#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.time/instant-in-past.html
-$dokka.location:com.jonapoul.extensions.time//isBefore/org.threeten.bp.OffsetDateTime#org.threeten.bp.Instant/PointingToDeclaration/library/com.jonapoul.extensions.time/is-before.html
 $dokka.location:com.jonapoul.extensions.time//isFuture/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.time/is-future.html
 $dokka.location:com.jonapoul.extensions.time//isPast/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.time/is-past.html
 $dokka.location:com.jonapoul.extensions.time//isToday/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.time/is-today.html
@@ -242,13 +239,11 @@ $dokka.location:com.jonapoul.extensions.time//minutesSince/java.util.Date#java.u
 $dokka.location:com.jonapoul.extensions.time//month/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.time/month.html
 $dokka.location:com.jonapoul.extensions.time//ms/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.time/ms.html
 $dokka.location:com.jonapoul.extensions.time//ms/kotlin.Long#/PointingToDeclaration/library/com.jonapoul.extensions.time/ms.html
-$dokka.location:com.jonapoul.extensions.time//periodOf/#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.time/period-of.html
 $dokka.location:com.jonapoul.extensions.time//sec/kotlin.Int#/PointingToDeclaration/library/com.jonapoul.extensions.time/sec.html
 $dokka.location:com.jonapoul.extensions.time//sec/kotlin.Long#/PointingToDeclaration/library/com.jonapoul.extensions.time/sec.html
 $dokka.location:com.jonapoul.extensions.time//second/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.time/second.html
 $dokka.location:com.jonapoul.extensions.time//secondsSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.time/seconds-since.html
 $dokka.location:com.jonapoul.extensions.time//weeksSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.time/weeks-since.html
-$dokka.location:com.jonapoul.extensions.time//withLocale/org.threeten.bp.format.DateTimeFormatter#android.content.Context/PointingToDeclaration/library/com.jonapoul.extensions.time/with-locale.html
 $dokka.location:com.jonapoul.extensions.time//year/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.time/year.html
 $dokka.location:com.jonapoul.extensions.time//yearsSince/java.util.Date#java.util.Date/PointingToDeclaration/library/com.jonapoul.extensions.time/years-since.html
 $dokka.location:com.jonapoul.extensions.time/Days///PointingToDeclaration/library/com.jonapoul.extensions.time/-days/index.html
