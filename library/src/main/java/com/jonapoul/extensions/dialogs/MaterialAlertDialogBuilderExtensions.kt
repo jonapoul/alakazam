@@ -13,7 +13,7 @@ fun MaterialAlertDialogBuilder.setSimpleNegativeButton(
     return if (call == null) {
         setNegativeButton(android.R.string.cancel, null)
     } else {
-        setNegativeButton(android.R.string.ok) { _, _ -> call.invoke() }
+        setNegativeButton(android.R.string.cancel) { _, _ -> call.invoke() }
     }
 }
 
