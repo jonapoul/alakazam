@@ -31,3 +31,15 @@ fun <Builder, Value> Builder.ifNotNull(value: Value?, action: Builder.(Value) ->
 fun <Builder, Value> Builder.ifNull(value: Value?, action: Builder.() -> Builder): Builder {
     return if (value == null) this.action() else this
 }
+
+/**
+ * If [value] is an instance of type [Expected], the subject [Builder] will have the [action] lambda
+ * called on it, then the subject is returned. If [value] is not an instance of [Expected], the
+ * subject is returned as-is.
+ */
+inline fun <Builder, Input, reified Expected> Builder.ifIsInstance(
+    value: Input?,
+    action: Builder.(Expected) -> Builder,
+): Builder {
+    return if (value is Expected) this.action(value) else this
+}
