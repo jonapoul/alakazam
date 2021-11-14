@@ -11,16 +11,26 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
 /**
- * Performs a similar function to [com.jonapoul.extensions.onDestroyView] but in a more automated
+ * Performs a similar function to [com.jonapoul.extensions.view.onDestroyView] but in a more automated
  * fashion, in that it recursively sets all attached [RecyclerView.Adapter] instances to null when
  * the [ViewBinding] is destroyed. This helps remove a source of memory leaks from the app.
  */
 fun ViewBinding?.cleanUpRecyclerAdapters() {
     val viewGroup = this?.root ?: return
     if (viewGroup is ViewGroup) {
-        viewGroup.children
-            .filterIsInstance<RecyclerView>()
-            .forEach { it.adapter = null }
+        viewGroup.cleanUpRecyclerAdapters()
+    }
+}
+
+fun ViewGroup.cleanUpRecyclerAdapters() {
+    children.forEach {
+        if (it is ViewGroup) {
+            /* Recursively go through child layouts to find RecyclerViews */
+            it.cleanUpRecyclerAdapters()
+        } else if (it is RecyclerView) {
+            /* Remove the adapter class to allow garbage collection */
+            it.adapter = null
+        }
     }
 }
 
@@ -28,7 +38,7 @@ fun ViewBinding?.cleanUpRecyclerAdapters() {
  * Creates a lazy inflating delegate for a [ViewBinding] instance.
  */
 inline fun <VB : ViewBinding> Activity.viewBinder(
-    crossinline bindingInflater: (LayoutInflater) -> VB
+    crossinline bindingInflater: (LayoutInflater) -> VB,
 ) = lazy(LazyThreadSafetyMode.NONE) {
     bindingInflater.invoke(layoutInflater)
 }
@@ -42,7 +52,7 @@ inline fun <VB : ViewBinding> Activity.viewBinder(
 fun <VB : ViewBinding> AppCompatActivity.viewBinding(
     bindingInflater: (LayoutInflater) -> VB,
 ) = ActivityViewBindingDelegate(
-    this,
+    activity = this,
     bindingInflater,
 )
 
@@ -55,6 +65,6 @@ fun <VB : ViewBinding> AppCompatActivity.viewBinding(
 fun <VB : ViewBinding> Fragment.viewBinding(
     viewBindingFactory: (View) -> VB,
 ) = FragmentViewBindingDelegate(
-    this,
+    fragment = this,
     viewBindingFactory,
 )

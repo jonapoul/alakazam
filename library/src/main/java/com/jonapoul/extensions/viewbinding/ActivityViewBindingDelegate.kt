@@ -28,7 +28,7 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
         if (event == Lifecycle.Event.ON_CREATE) {
             buildBindingIfNeeded()
             activity.setContentView(binding?.root)
-        } else if (event == Lifecycle.Event.ON_CREATE) {
+        } else if (event == Lifecycle.Event.ON_DESTROY) {
             binding.cleanUpRecyclerAdapters()
             binding = null
             activity.lifecycle.removeObserver(this)
