@@ -10,38 +10,51 @@ private const val HOURS_IN_MS = MINUTES_IN_MS * 60L
 private const val DAYS_IN_MS = HOURS_IN_MS * 24L
 
 @JvmInline
-value class Millis(val ms: Long) {
+value class Millis(val ms: Long) : Comparable<Millis> {
     @RequiresApi(Build.VERSION_CODES.O)
     fun duration(): Duration = Duration.ofMillis(ms)
+
+    override fun compareTo(other: Millis): Int = ms.compareTo(other.ms)
 }
 
 @JvmInline
-value class Seconds(val seconds: Long) {
+value class Seconds(val seconds: Long) : Comparable<Seconds> {
     fun toMillis(): Millis = Millis(seconds * SECONDS_IN_MS)
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun duration(): Duration = Duration.ofSeconds(seconds)
+
+    override fun compareTo(other: Seconds): Int = seconds.compareTo(other.seconds)
 }
 
 @JvmInline
-value class Minutes(val minutes: Long) {
+value class Minutes(val minutes: Long) : Comparable<Minutes> {
     fun toMillis(): Millis = Millis(minutes * MINUTES_IN_MS)
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun duration(): Duration = Duration.ofMinutes(minutes)
+
+    override fun compareTo(other: Minutes): Int = minutes.compareTo(other.minutes)
 }
 
 @JvmInline
-value class Hours(val hours: Long) {
+value class Hours(val hours: Long) : Comparable<Hours> {
     fun toMillis(): Millis = Millis(hours * HOURS_IN_MS)
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun duration(): Duration = Duration.ofHours(hours)
+
+    override fun compareTo(other: Hours): Int = hours.compareTo(other.hours)
 }
 
 @JvmInline
-value class Days(val days: Long) {
+value class Days(val days: Long) : Comparable<Days> {
     fun toMillis(): Millis = Millis(days * DAYS_IN_MS)
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun duration(): Duration = Duration.ofDays(days)
+
+    override fun compareTo(other: Days): Int = days.compareTo(other.days)
 }
 
 inline val Long.ms
