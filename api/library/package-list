@@ -289,10 +289,12 @@ $dokka.location:com.jonapoul.extensions.view//fadeIn/android.view.View#kotlin.Lo
 $dokka.location:com.jonapoul.extensions.view//fadeOut/android.view.View#kotlin.Long/PointingToDeclaration/library/com.jonapoul.extensions.view/fade-out.html
 $dokka.location:com.jonapoul.extensions.view//getString/com.google.android.material.textfield.TextInputLayout#/PointingToDeclaration/library/com.jonapoul.extensions.view/get-string.html
 $dokka.location:com.jonapoul.extensions.view//hide/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/hide.html
+$dokka.location:com.jonapoul.extensions.view//hideIfEquals/android.view.View#TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/library/com.jonapoul.extensions.view/hide-if-equals.html
 $dokka.location:com.jonapoul.extensions.view//hideIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/hide-if-true.html
 $dokka.location:com.jonapoul.extensions.view//inflate/android.view.ViewGroup#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.view/inflate.html
 $dokka.location:com.jonapoul.extensions.view//onDestroyView/TypeParam(bounds=[android.view.View])#kotlin.Function1[TypeParam(bounds=[android.view.View]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.view/on-destroy-view.html
 $dokka.location:com.jonapoul.extensions.view//show/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/show.html
+$dokka.location:com.jonapoul.extensions.view//showIfEquals/android.view.View#TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/library/com.jonapoul.extensions.view/show-if-equals.html
 $dokka.location:com.jonapoul.extensions.view//showIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/show-if-true.html
 $dokka.location:com.jonapoul.extensions.viewbinding////PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/index.html
 $dokka.location:com.jonapoul.extensions.viewbinding//cleanUpRecyclerAdapters/android.view.ViewGroup#/PointingToDeclaration/library/com.jonapoul.extensions.viewbinding/clean-up-recycler-adapters.html
