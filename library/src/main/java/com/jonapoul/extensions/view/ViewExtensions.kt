@@ -20,8 +20,8 @@ fun View.show() {
 /**
  * Sets the supplied [View]'s visibility to [View.GONE].
  */
-fun View.hide() {
-    visibility = View.GONE
+fun View.hide(maintainLayout: Boolean = false) {
+    visibility = if (maintainLayout) View.INVISIBLE else View.GONE
 }
 
 /**
