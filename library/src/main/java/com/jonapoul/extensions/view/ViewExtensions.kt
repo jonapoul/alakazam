@@ -38,6 +38,14 @@ fun View.hideIfTrue(condition: Boolean) {
     showIfTrue(!condition)
 }
 
+fun <A, B> View.showIfEquals(itemA: A, itemB: B) {
+    if (itemA == itemB) show() else hide()
+}
+
+fun <A, B> View.hideIfEquals(itemA: A, itemB: B) {
+    if (itemA != itemB) show() else hide()
+}
+
 /**
  * Registers a callback to be run when the view is detached from the window. This is useful because
  * ViewBinding objects can't be accessed in the [Fragment.onDestroyView] method. This means that
