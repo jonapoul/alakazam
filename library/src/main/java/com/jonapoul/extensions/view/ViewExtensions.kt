@@ -11,42 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 
 /**
- * Sets the supplied [View]'s visibility to [View.VISIBLE].
- */
-fun View.show() {
-    visibility = View.VISIBLE
-}
-
-/**
- * Sets the supplied [View]'s visibility to [View.GONE].
- */
-fun View.hide(maintainLayout: Boolean = false) {
-    visibility = if (maintainLayout) View.INVISIBLE else View.GONE
-}
-
-/**
- * Sets the supplied [View]'s visibility to [View.VISIBLE], if the supplied [condition] is true.
- */
-fun View.showIfTrue(condition: Boolean) {
-    if (condition) show() else hide()
-}
-
-/**
- * Sets the supplied [View]'s visibility to [View.GONE], if the supplied [condition] is true.
- */
-fun View.hideIfTrue(condition: Boolean) {
-    showIfTrue(!condition)
-}
-
-fun <A, B> View.showIfEquals(itemA: A, itemB: B) {
-    if (itemA == itemB) show() else hide()
-}
-
-fun <A, B> View.hideIfEquals(itemA: A, itemB: B) {
-    if (itemA != itemB) show() else hide()
-}
-
-/**
  * Registers a callback to be run when the view is detached from the window. This is useful because
  * ViewBinding objects can't be accessed in the [Fragment.onDestroyView] method. This means that
  * without this method we'd be blocked from doing certain cleanup tasks in onDestroyView - such as
@@ -95,32 +59,4 @@ private fun View.fade(duration: Long, targetAlpha: Float) {
             it.duration = duration
         }
     )
-}
-
-/**
- * Sets the given [View]'s state to enabled.
- */
-fun View.enable() {
-    this.isEnabled = true
-}
-
-/**
- * Sets the given [View]'s state to disabled.
- */
-fun View.disable() {
-    this.isEnabled = false
-}
-
-/**
- * Sets the given [View]'s state to enabled if [condition] is true, else disabled.
- */
-fun View.enableIf(condition: Boolean) {
-    if (condition) enable() else disable()
-}
-
-/**
- * Sets the given [View]'s state to disabled if [condition] is true, else enabled.
- */
-fun View.disableIf(condition: Boolean) {
-    enableIf(!condition)
 }
