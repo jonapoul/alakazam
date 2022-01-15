@@ -288,7 +288,7 @@ $dokka.location:com.jonapoul.extensions.view//enableIf/android.view.View#kotlin.
 $dokka.location:com.jonapoul.extensions.view//fadeIn/android.view.View#kotlin.Long/PointingToDeclaration/library/com.jonapoul.extensions.view/fade-in.html
 $dokka.location:com.jonapoul.extensions.view//fadeOut/android.view.View#kotlin.Long/PointingToDeclaration/library/com.jonapoul.extensions.view/fade-out.html
 $dokka.location:com.jonapoul.extensions.view//getString/com.google.android.material.textfield.TextInputLayout#/PointingToDeclaration/library/com.jonapoul.extensions.view/get-string.html
-$dokka.location:com.jonapoul.extensions.view//hide/android.view.View#/PointingToDeclaration/library/com.jonapoul.extensions.view/hide.html
+$dokka.location:com.jonapoul.extensions.view//hide/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/hide.html
 $dokka.location:com.jonapoul.extensions.view//hideIfTrue/android.view.View#kotlin.Boolean/PointingToDeclaration/library/com.jonapoul.extensions.view/hide-if-true.html
 $dokka.location:com.jonapoul.extensions.view//inflate/android.view.ViewGroup#kotlin.Int/PointingToDeclaration/library/com.jonapoul.extensions.view/inflate.html
 $dokka.location:com.jonapoul.extensions.view//onDestroyView/TypeParam(bounds=[android.view.View])#kotlin.Function1[TypeParam(bounds=[android.view.View]),kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.view/on-destroy-view.html
