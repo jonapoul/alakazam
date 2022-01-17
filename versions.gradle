@@ -2,8 +2,8 @@ ext.versions = [
         // Build variables
         minSdk                  : 15,
         targetSdk               : 31,
-        libVersionCode          : 28,
-        libVersionName          : '1.3.17',
+        libVersionCode          : 29,
+        libVersionName          : '1.3.18',
 
         // Plugins, etc
         gradle                  : '4.2.2',
@@ -16,12 +16,12 @@ ext.versions = [
         spotless                : '5.14.0',
 
         // Library versions
-        appcompat               : '1.4.0',
+        appcompat               : '1.4.1',
         coroutines              : '1.6.0',
         fragment                : '1.4.0',
         inject                  : '1',
         lifecycle               : '2.4.0',
-        material                : '1.4.0',
+        material                : '1.5.0',
         navigation              : '2.3.5',
         preference              : '1.1.1',
         recyclerview            : '1.2.1',
