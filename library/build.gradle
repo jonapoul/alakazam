@@ -33,7 +33,14 @@ android {
     }
 
     buildFeatures.viewBinding true
-    kotlinOptions.jvmTarget = '1.8'
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = [
+                '-Xjvm-default=compatibility',
+                '-Xopt-in=kotlin.RequiresOptIn'
+        ]
+    }
 }
 
 project.afterEvaluate {
@@ -75,6 +82,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
 
+    testImplementation "app.cash.turbine:turbine:$versions.turbine"
     testImplementation "io.mockk:mockk:$versions.mockk"
     testImplementation "junit:junit:$versions.junit"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
 }
