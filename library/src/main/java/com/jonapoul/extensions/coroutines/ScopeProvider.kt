@@ -6,6 +6,6 @@ import kotlinx.coroutines.GlobalScope
 
 @DelicateCoroutinesApi
 class ScopeProvider(dispatcherProvider: DispatcherProvider) {
-    val globalScope = GlobalScope
-    val applicationScope = CoroutineScope(dispatcherProvider.main())
+    val globalScope: CoroutineScope = GlobalScope
+    val applicationScope: CoroutineScope = CoroutineScope(dispatcherProvider.main())
 }
