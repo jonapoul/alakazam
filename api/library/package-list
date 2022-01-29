@@ -222,6 +222,9 @@ $dokka.location:com.jonapoul.extensions.text/TextCreator///PointingToDeclaration
 $dokka.location:com.jonapoul.extensions.text/TextCreator/TextCreator/#android.content.Context/PointingToDeclaration/library/com.jonapoul.extensions.text/-text-creator/-text-creator.html
 $dokka.location:com.jonapoul.extensions.throwable////PointingToDeclaration/library/com.jonapoul.extensions.throwable/index.html
 $dokka.location:com.jonapoul.extensions.throwable//requireMessage/kotlin.Throwable#/PointingToDeclaration/library/com.jonapoul.extensions.throwable/require-message.html
+$dokka.location:com.jonapoul.extensions.throwable//throwsAnyException/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.throwable/throws-any-exception.html
+$dokka.location:com.jonapoul.extensions.throwable//throwsAnyThrowable/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.throwable/throws-any-throwable.html
+$dokka.location:com.jonapoul.extensions.throwable//throwsSpecific/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/library/com.jonapoul.extensions.throwable/throws-specific.html
 $dokka.location:com.jonapoul.extensions.time////PointingToDeclaration/library/com.jonapoul.extensions.time/index.html
 $dokka.location:com.jonapoul.extensions.time//calendar/java.util.Date#/PointingToDeclaration/library/com.jonapoul.extensions.time/calendar.html
 $dokka.location:com.jonapoul.extensions.time//dayOfMonth/java.util.Calendar#/PointingToDeclaration/library/com.jonapoul.extensions.time/day-of-month.html
