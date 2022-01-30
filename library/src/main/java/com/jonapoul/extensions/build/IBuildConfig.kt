@@ -11,6 +11,6 @@ interface IBuildConfig {
     val debug: Boolean
     val versionName: String
     val versionCode: Int
-    val gitHash: String
+    val gitId: String
     val buildTime: Millis
 }
