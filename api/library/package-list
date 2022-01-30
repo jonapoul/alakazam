@@ -8,7 +8,7 @@ $dokka.location:com.jonapoul.extensions.build////PointingToDeclaration/library/
 $dokka.location:com.jonapoul.extensions.build/IBuildConfig///PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/index.html
 $dokka.location:com.jonapoul.extensions.build/IBuildConfig/buildTime/#/PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/build-time.html
 $dokka.location:com.jonapoul.extensions.build/IBuildConfig/debug/#/PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/debug.html
-$dokka.location:com.jonapoul.extensions.build/IBuildConfig/gitHash/#/PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/git-hash.html
+$dokka.location:com.jonapoul.extensions.build/IBuildConfig/gitId/#/PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/git-id.html
 $dokka.location:com.jonapoul.extensions.build/IBuildConfig/versionCode/#/PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/version-code.html
 $dokka.location:com.jonapoul.extensions.build/IBuildConfig/versionName/#/PointingToDeclaration/library/com.jonapoul.extensions.build/-i-build-config/version-name.html
 $dokka.location:com.jonapoul.extensions.build/Versions///PointingToDeclaration/library/com.jonapoul.extensions.build/-versions/index.html
