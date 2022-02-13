@@ -7,4 +7,5 @@ import javax.inject.Inject
 class DispatcherProvider @Inject constructor() {
     fun main(): CoroutineDispatcher = Dispatchers.Main
     fun io(): CoroutineDispatcher = Dispatchers.IO
+    fun default(): CoroutineDispatcher = Dispatchers.Default
 }
