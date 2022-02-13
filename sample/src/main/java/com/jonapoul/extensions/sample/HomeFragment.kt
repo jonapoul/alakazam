@@ -6,19 +6,17 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.jonapoul.extensions.context.toast
-import com.jonapoul.extensions.dialogs.showCautionDialog
-import com.jonapoul.extensions.dialogs.showLoadingDialog
-import com.jonapoul.extensions.dialogs.showWarningDialog
-import com.jonapoul.extensions.navigation.navControllers
-import com.jonapoul.extensions.navigation.safelyNavigate
+import com.jonapoul.extensions.domain.safelyNavigate
+import com.jonapoul.extensions.domain.toast
 import com.jonapoul.extensions.sample.databinding.FragmentHomeBinding
-import com.jonapoul.extensions.sharedprefs.sharedPrefs
-import com.jonapoul.extensions.viewbinding.viewBinding
+import com.jonapoul.extensions.ui.dialogs.showCautionDialog
+import com.jonapoul.extensions.ui.dialogs.showLoadingDialog
+import com.jonapoul.extensions.ui.dialogs.showWarningDialog
+import com.jonapoul.extensions.ui.navControllers
+import com.jonapoul.extensions.ui.viewbinding.viewBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private val prefs by sharedPrefs()
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val navController by navControllers()
 

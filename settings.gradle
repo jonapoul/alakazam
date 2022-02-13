@@ -1,2 +1,4 @@
-include ':library'
+include ':library-data'
+include ':library-domain'
+include ':library-ui'
 include ':sample'

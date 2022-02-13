@@ -13,6 +13,7 @@ android {
         versionCode versions.libVersionCode
         versionName versions.libVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -34,7 +35,9 @@ android {
 dependencies {
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
 
-    implementation project(":library")
+    implementation project(":library-data")
+    implementation project(":library-domain")
+    implementation project(":library-ui")
 
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"

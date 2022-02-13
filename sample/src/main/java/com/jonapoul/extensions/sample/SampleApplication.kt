@@ -3,8 +3,8 @@ package com.jonapoul.extensions.sample
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
-import com.jonapoul.extensions.dialogs.setDialogThemes
-import com.jonapoul.extensions.sharedprefs.getIntFromPair
+import com.jonapoul.extensions.ui.dialogs.setDialogThemes
+import com.jonapoul.extensions.domain.getIntFromPair
 
 class SampleApplication : Application() {
     override fun onCreate() {

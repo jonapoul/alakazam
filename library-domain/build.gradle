@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
+
+ext {
+    GROUP_ID = 'com.jonapoul'
+    ARTIFACT_ID = 'android-extensions-domain'
+}
+
+android {
+    compileSdkVersion versions.targetSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.libVersionCode
+        versionName versions.libVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        kotlinOptions.freeCompilerArgs += ['-module-name', "$GROUP_ID.$ARTIFACT_ID"]
+    }
+
+    buildFeatures.viewBinding true
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = [
+                '-Xjvm-default=compatibility',
+                '-Xopt-in=kotlin.RequiresOptIn'
+        ]
+    }
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation project(":library-data")
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+    implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+    implementation "androidx.preference:preference-ktx:$versions.preference"
+    implementation "javax.inject:javax.inject:$versions.inject"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+
+    testImplementation "app.cash.turbine:turbine:$versions.turbine"
+    testImplementation "io.mockk:mockk:$versions.mockk"
+    testImplementation "junit:junit:$versions.junit"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
+}
