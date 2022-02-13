@@ -22,10 +22,47 @@ buildscript {
 allprojects {
     def root = rootProject.projectDir
     apply from: "$root/versions.gradle"
-    apply from: "$root/gradle/plugins/detekt.gradle"
-    apply from: "$root/gradle/plugins/dokka.gradle"
-    apply from: "$root/gradle/plugins/ktlint.gradle"
-    apply from: "$root/gradle/plugins/spotless.gradle"
+
+    apply plugin: "io.gitlab.arturbosch.detekt"
+    dependencies {
+        detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt"
+    }
+    detekt {
+        toolVersion = versions.detekt
+        config = files("$rootDir/detekt.yml")
+        buildUponDefaultConfig = true
+        reports.html.enabled = true
+    }
+
+    apply plugin: "org.jetbrains.dokka"
+    tasks.named("dokkaHtml") {
+        outputDirectory.set(new File("${rootProject.rootDir}/docs/api"))
+        dokkaSourceSets {
+            configureEach {
+                includeNonPublic.set(false)
+                skipEmptyPackages.set(true)
+                reportUndocumented.set(true)
+                noAndroidSdkLink.set(false)
+            }
+        }
+    }
+
+    apply plugin: "org.jlleitschuh.gradle.ktlint"
+    ktlint {
+        reporters {
+            reporter "html"
+        }
+    }
+
+    apply plugin: "com.diffplug.spotless"
+    spotless {
+        format 'misc', {
+            target '**/*.gradle', '**/*.md', '**/.gitignore', '**/.pro'
+            indentWithSpaces()
+            trimTrailingWhitespace()
+            endWithNewline()
+        }
+    }
 
     repositories {
         google()
