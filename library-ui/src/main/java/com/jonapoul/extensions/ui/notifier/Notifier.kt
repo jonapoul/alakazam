@@ -12,11 +12,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.jonapoul.extensions.ui.R
 
 class Notifier(
-    @ColorRes private val backgroundColour: Int = R.color.notifier_background,
-    @ColorRes private val successColour: Int = R.color.notifier_success,
-    @ColorRes private val infoColour: Int = R.color.notifier_info,
-    @ColorRes private val cautionColour: Int = R.color.notifier_caution,
-    @ColorRes private val warningColour: Int = R.color.notifier_warning,
+    @ColorRes private val backgroundColour: Int = R.color.notifierBackground,
+    @ColorRes private val successColour: Int = R.color.notifierSuccess,
+    @ColorRes private val infoColour: Int = R.color.notifierInfo,
+    @ColorRes private val cautionColour: Int = R.color.notifierCaution,
+    @ColorRes private val warningColour: Int = R.color.notifierWarning,
 ) {
     private fun snackbar(root: View, message: String, @ColorRes actionTextColour: Int) {
         val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG)

@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="notifier_background">#444444</color>
-    <color name="notifier_success">#007E33</color>
-    <color name="notifier_info">#0099CC</color>
-    <color name="notifier_caution">#FF8800</color>
-    <color name="notifier_warning">#CC0000</color>
+    <color name="cardBackground">#FFFFFF</color>
+
+    <color name="onSurfaceGreen">#00B000</color>
+    <color name="onSurfaceYellow">#B0B000</color>
+    <color name="onSurfaceOrange">#B06300</color>
+    <color name="onSurfaceRed">#B00000</color>
+    <color name="onSurfaceBlue">#0063B0</color>
+
+    <color name="notifierBackground">#444444</color>
+    <color name="notifierSuccess">#007E33</color>
+    <color name="notifierInfo">#0099CC</color>
+    <color name="notifierCaution">#FF8800</color>
+    <color name="notifierWarning">#CC0000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="lightGrey">#C0C0C0</color>
+    <color name="grey">#808080</color>
+    <color name="darkGrey">#404040</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#80FFFFFF</color>
 </resources>

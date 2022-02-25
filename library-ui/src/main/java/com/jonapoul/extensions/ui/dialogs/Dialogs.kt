@@ -4,29 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.annotation.StringRes
-import androidx.annotation.StyleRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jonapoul.extensions.data.ifNotNull
 import com.jonapoul.extensions.ui.R
 import com.jonapoul.extensions.ui.databinding.DialogLoadingBinding
-
-@StyleRes
-private var warningThemeNullable: Int? = null
-
-@StyleRes
-private var cautionThemeNullable: Int? = null
-
-fun setDialogThemes(@StyleRes cautionTheme: Int?, @StyleRes warningTheme: Int?) {
-    cautionThemeNullable = cautionTheme
-    warningThemeNullable = warningTheme
-}
-
-@Throws(IllegalStateException::class)
-private fun throwIfNoTheme(): Int {
-    throw IllegalStateException("Call setDialogThemes() before showing a dialog!")
-}
 
 fun Fragment.showLoadingDialog(
     @StringRes loadingText: Int = R.string.dialog_loading,
@@ -79,7 +62,7 @@ private fun showWarningDialogImpl(
     title: String,
     message: String,
     extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
-): AlertDialog = MaterialAlertDialogBuilder(context, warningThemeNullable ?: throwIfNoTheme())
+): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Core_AlertDialog_Warning)
     .setTitle(title)
     .setIcon(R.drawable.ic_warning)
     .setMessage(message)
@@ -92,7 +75,7 @@ private fun showCautionDialogImpl(
     title: String,
     message: String,
     extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
-): AlertDialog = MaterialAlertDialogBuilder(context, cautionThemeNullable ?: throwIfNoTheme())
+): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Core_AlertDialog_Caution)
     .setTitle(title)
     .setIcon(R.drawable.ic_caution)
     .setMessage(message)

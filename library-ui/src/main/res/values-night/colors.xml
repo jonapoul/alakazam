@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cardBackground">#181818</color>
+
+    <color name="onSurfaceGreen">#55ff55</color>
+    <color name="onSurfaceYellow">#ffff55</color>
+    <color name="onSurfaceOrange">#ff9955</color>
+    <color name="onSurfaceRed">#ff5555</color>
+    <color name="onSurfaceBlue">#5599FF</color>
+</resources>
