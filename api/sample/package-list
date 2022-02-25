@@ -14,7 +14,6 @@ $dokka.location:com.jonapoul.extensions.sample/SampleActivity/SampleActivity/#/P
 $dokka.location:com.jonapoul.extensions.sample/SampleActivity/onSupportNavigateUp/#/PointingToDeclaration/sample/com.jonapoul.extensions.sample/-sample-activity/on-support-navigate-up.html
 $dokka.location:com.jonapoul.extensions.sample/SampleApplication///PointingToDeclaration/sample/com.jonapoul.extensions.sample/-sample-application/index.html
 $dokka.location:com.jonapoul.extensions.sample/SampleApplication/SampleApplication/#/PointingToDeclaration/sample/com.jonapoul.extensions.sample/-sample-application/-sample-application.html
-$dokka.location:com.jonapoul.extensions.sample/SampleApplication/onCreate/#/PointingToDeclaration/sample/com.jonapoul.extensions.sample/-sample-application/on-create.html
 $dokka.location:com.jonapoul.extensions.sample/SettingsFragment///PointingToDeclaration/sample/com.jonapoul.extensions.sample/-settings-fragment/index.html
 $dokka.location:com.jonapoul.extensions.sample/SettingsFragment/SettingsFragment/#/PointingToDeclaration/sample/com.jonapoul.extensions.sample/-settings-fragment/-settings-fragment.html
 $dokka.location:com.jonapoul.extensions.sample/SettingsFragment/onCreatePreferences/#android.os.Bundle?#kotlin.String?/PointingToDeclaration/sample/com.jonapoul.extensions.sample/-settings-fragment/on-create-preferences.html
