@@ -10,7 +10,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  */
 open class DarkenedBackgroundAlertDialogBuilder(
     context: Context,
-    overrideThemeResId: Int = 0
+    overrideThemeResId: Int = 0,
 ) : MaterialAlertDialogBuilder(
     context,
     overrideThemeResId

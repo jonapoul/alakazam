@@ -26,7 +26,7 @@ val RecyclerView.isNotEmpty: Boolean
  */
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB_MR1)
 fun <VH : RecyclerView.ViewHolder> RecyclerView.setLifecycleAwareAdapter(
-    lifecycleAdapter: RecyclerView.Adapter<VH>
+    lifecycleAdapter: RecyclerView.Adapter<VH>,
 ) {
     this.adapter = lifecycleAdapter
     this.onDestroyView {
@@ -41,7 +41,7 @@ fun <VH : RecyclerView.ViewHolder> RecyclerView.setLifecycleAwareAdapter(
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB_MR1)
 fun <VH : RecyclerView.ViewHolder> RecyclerView.initialise(
     adapter: RecyclerView.Adapter<VH>,
-    otherConfig: RecyclerView.() -> Unit = {}
+    otherConfig: RecyclerView.() -> Unit = {},
 ) {
     this.layoutManager = LinearLayoutManager(context)
     this.setLifecycleAwareAdapter(adapter)
@@ -53,7 +53,7 @@ fun <VH : RecyclerView.ViewHolder> RecyclerView.initialise(
  */
 fun RecyclerView.scrollListener(
     onScrollStateChanged: (recycler: RecyclerView, newState: Int) -> Unit = { _, _ -> },
-    onScrolled: (recycler: RecyclerView, dx: Int, dy: Int) -> Unit = { _, _, _ -> }
+    onScrolled: (recycler: RecyclerView, dx: Int, dy: Int) -> Unit = { _, _, _ -> },
 ) {
     this.addOnScrollListener(
         object : RecyclerView.OnScrollListener() {

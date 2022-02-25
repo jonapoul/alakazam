@@ -16,7 +16,7 @@ fun argbColour(
     @IntRange(from = 0, to = 255) alpha: Int,
     @IntRange(from = 0, to = 255) red: Int,
     @IntRange(from = 0, to = 255) green: Int,
-    @IntRange(from = 0, to = 255) blue: Int
+    @IntRange(from = 0, to = 255) blue: Int,
 ): Int = alpha shl 24 or (red shl 16) or (green shl 8) or blue
 
 /**
@@ -30,7 +30,7 @@ fun argbColour(
 fun lerpColours(
     @ColorInt start: Int,
     @ColorInt end: Int,
-    @FloatRange(from = 0.0, to = 1.0) factor: Float
+    @FloatRange(from = 0.0, to = 1.0) factor: Float,
 ): Int {
     val da = end.alpha() - start.alpha()
     val dr = end.red() - start.red()
@@ -83,7 +83,7 @@ fun Int.blue(): Int = this and 0xFF
  */
 @ColorInt
 fun Int.lighten(
-    @FloatRange(from = 0.0, to = 1.0) factor: Float
+    @FloatRange(from = 0.0, to = 1.0) factor: Float,
 ): Int = colourFactor { it * (1f - factor) + 255f * factor }
 
 /**
@@ -93,7 +93,7 @@ fun Int.lighten(
  */
 @ColorInt
 fun Int.darken(
-    @FloatRange(from = 0.0, to = 1.0) factor: Float
+    @FloatRange(from = 0.0, to = 1.0) factor: Float,
 ): Int = colourFactor { it * (1f - factor) }
 
 @ColorInt

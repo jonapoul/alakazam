@@ -21,7 +21,7 @@ fun NavController.safelyNavigate(@IdRes destination: Int) =
 fun NavController.safelyNavigate(
     @IdRes destination: Int,
     args: Bundle?,
-    navOptions: NavOptions
+    navOptions: NavOptions,
 ) = safely { navigate(destination, args, navOptions) }
 
 /**
@@ -32,7 +32,7 @@ fun NavController.safelyNavigate(
     @IdRes destination: Int,
     args: Bundle?,
     navOptions: NavOptions,
-    extras: Navigator.Extras
+    extras: Navigator.Extras,
 ) = safely { navigate(destination, args, navOptions, extras) }
 
 /**

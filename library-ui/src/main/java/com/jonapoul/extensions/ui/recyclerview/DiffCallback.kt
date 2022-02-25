@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
  * tell us what class attribute we want to treat as the "uniqueness" identifier.
  */
 internal class DiffCallback<ItemType, ItemIdType>(
-    private val itemIdGetter: ItemType.() -> ItemIdType
+    private val itemIdGetter: ItemType.() -> ItemIdType,
 ) : DiffUtil.ItemCallback<ItemType>() {
     override fun areItemsTheSame(oldItem: ItemType, newItem: ItemType): Boolean {
         return oldItem.itemIdGetter() == newItem.itemIdGetter()

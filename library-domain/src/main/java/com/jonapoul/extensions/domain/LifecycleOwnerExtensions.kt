@@ -24,7 +24,7 @@ import androidx.lifecycle.LifecycleOwner
  */
 fun LifecycleOwner.observeSharedPrefs(
     prefs: SharedPreferences,
-    onPreferenceUpdated: (key: String) -> Unit
+    onPreferenceUpdated: (key: String) -> Unit,
 ) {
     lifecycle.addObserver(
         object : SharedPreferences.OnSharedPreferenceChangeListener, LifecycleEventObserver {

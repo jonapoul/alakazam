@@ -26,7 +26,7 @@ fun AppCompatActivity.navControllers(@IdRes navHostFragmentId: Int): Lazy<NavCon
     LazyNavController { findNavController(navHostFragmentId) }
 
 internal class LazyNavController(
-    private val navControllerFactory: () -> NavController
+    private val navControllerFactory: () -> NavController,
 ) : Lazy<NavController> {
     private var cached: NavController? = null
 

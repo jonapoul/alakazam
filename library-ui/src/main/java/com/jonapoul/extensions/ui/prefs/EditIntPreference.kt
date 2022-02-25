@@ -8,7 +8,7 @@ import androidx.preference.EditTextPreference
 
 class EditIntPreference @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet? = null
+    attrs: AttributeSet? = null,
 ) : EditTextPreference(
     context,
     attrs,

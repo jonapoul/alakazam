@@ -10,7 +10,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  */
 fun MaterialAlertDialogBuilder.setSimpleNegativeButton(
     @StringRes text: Int = android.R.string.cancel,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
 ): MaterialAlertDialogBuilder {
     return if (onClick == null) {
         setNegativeButton(text, null)
@@ -26,7 +26,7 @@ fun MaterialAlertDialogBuilder.setSimpleNegativeButton(
  */
 fun MaterialAlertDialogBuilder.setSimplePositiveButton(
     @StringRes text: Int = android.R.string.ok,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
 ): MaterialAlertDialogBuilder {
     return if (onClick == null) {
         setPositiveButton(text, null)

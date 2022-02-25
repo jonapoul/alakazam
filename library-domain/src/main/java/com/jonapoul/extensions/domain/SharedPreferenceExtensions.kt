@@ -138,7 +138,7 @@ private fun <T> SharedPreferences.typeSafeGet(pref: PrefPair<T>, call: () -> T):
  */
 fun SharedPreferences.Editor.putIntIfNotNull(
     pref: PrefPair<Int>,
-    value: Int?
+    value: Int?,
 ): SharedPreferences.Editor {
     if (value != null) {
         this.putInt(pref.key, value)
@@ -152,7 +152,7 @@ fun SharedPreferences.Editor.putIntIfNotNull(
  */
 fun SharedPreferences.Editor.putFloatIfNotNull(
     pref: PrefPair<Float>,
-    value: Float?
+    value: Float?,
 ): SharedPreferences.Editor {
     if (value != null) {
         this.putFloat(pref.key, value)
@@ -166,7 +166,7 @@ fun SharedPreferences.Editor.putFloatIfNotNull(
  */
 fun SharedPreferences.Editor.putBooleanIfNotNull(
     pref: PrefPair<Boolean>,
-    value: Boolean?
+    value: Boolean?,
 ): SharedPreferences.Editor {
     if (value != null) {
         this.putBoolean(pref.key, value)
@@ -180,7 +180,7 @@ fun SharedPreferences.Editor.putBooleanIfNotNull(
  */
 fun SharedPreferences.Editor.putLongIfNotNull(
     pref: PrefPair<Long>,
-    value: Long?
+    value: Long?,
 ): SharedPreferences.Editor {
     if (value != null) {
         this.putLong(pref.key, value)
@@ -194,7 +194,7 @@ fun SharedPreferences.Editor.putLongIfNotNull(
  */
 fun SharedPreferences.Editor.putStringIfNotNull(
     pref: PrefPair<String>,
-    value: String?
+    value: String?,
 ): SharedPreferences.Editor {
     if (value != null) {
         this.putString(pref.key, value)
@@ -209,7 +209,7 @@ fun SharedPreferences.Editor.putStringIfNotNull(
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.Editor.putStringSetIfNotNull(
     pref: PrefPair<Set<String>>,
-    value: Set<String>?
+    value: Set<String>?,
 ): SharedPreferences.Editor {
     if (value != null) {
         this.putStringSet(pref.key, value)

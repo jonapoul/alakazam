@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 fun Context.toast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }
+
 /**
  * Shows a toast with the given string resource as a message.
  */
@@ -35,7 +36,7 @@ fun Context.toast(@StringRes message: Int) {
 fun Context.getColorFromAttr(
     @AttrRes attrColor: Int,
     typedValue: TypedValue = TypedValue(),
-    resolveRefs: Boolean = true
+    resolveRefs: Boolean = true,
 ): Int {
     theme.resolveAttribute(attrColor, typedValue, resolveRefs)
     return typedValue.data
