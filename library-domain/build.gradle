@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
 ext {
@@ -56,9 +57,13 @@ project.afterEvaluate {
 dependencies {
     implementation project(":library-data")
 
+    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
+
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
     implementation "androidx.preference:preference-ktx:$versions.preference"
+    implementation "com.jakewharton.timber:timber:$versions.timber"
     implementation "javax.inject:javax.inject:$versions.inject"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"

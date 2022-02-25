@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
 ext {
@@ -54,10 +55,18 @@ project.afterEvaluate {
 }
 
 dependencies {
+    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
+
+    implementation "com.github.tony19:logback-android:$versions.logback_android"
+    implementation "com.jakewharton.timber:timber:$versions.timber"
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
     implementation "javax.inject:javax.inject:$versions.inject"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    implementation "org.slf4j:slf4j-api:$versions.slf4j"
 
     testImplementation "app.cash.turbine:turbine:$versions.turbine"
     testImplementation "io.mockk:mockk:$versions.mockk"
