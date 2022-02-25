@@ -17,9 +17,11 @@ import androidx.viewbinding.ViewBinding
  * app.
  */
 fun ViewBinding?.cleanUpRecyclerAdapters() {
-    val viewGroup = this?.root ?: return
-    if (viewGroup is ViewGroup) {
-        viewGroup.cleanUpRecyclerAdapters()
+    val view = this?.root ?: return
+    if (view is ViewGroup) {
+        view.cleanUpRecyclerAdapters()
+    } else if (view is RecyclerView) {
+        view.adapter = null
     }
 }
 
