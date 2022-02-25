@@ -12,7 +12,7 @@ import com.jonapoul.extensions.data.PrefPair
  * Parses an [Int] from a [SharedPreferences] [String] value, returning the [Int] default value if
  * the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.parseIntFromPair(pref: PrefPair<String>): Int {
+fun SharedPreferences.parseInt(pref: PrefPair<String>): Int {
     return typeSafeGet(pref) {
         this.getString(pref.key, pref.default)!!
     }.toInt()
@@ -22,7 +22,7 @@ fun SharedPreferences.parseIntFromPair(pref: PrefPair<String>): Int {
  * Parses a [Long] from a [SharedPreferences] [String] value, returning the [Long] default value
  * if the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.parseLongFromPair(pref: PrefPair<String>): Long {
+fun SharedPreferences.parseLong(pref: PrefPair<String>): Long {
     return typeSafeGet(pref) {
         this.getString(pref.key, pref.default)!!
     }.toLong()
@@ -32,7 +32,7 @@ fun SharedPreferences.parseLongFromPair(pref: PrefPair<String>): Long {
  * Parses a [Double] from a [SharedPreferences] [String] value, returning the [Double] default value
  * if the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.parseDoubleFromPair(pref: PrefPair<String>): Double {
+fun SharedPreferences.parseDouble(pref: PrefPair<String>): Double {
     return typeSafeGet(pref) {
         this.getString(pref.key, pref.default)!!
     }.toDouble()
@@ -42,7 +42,7 @@ fun SharedPreferences.parseDoubleFromPair(pref: PrefPair<String>): Double {
  * Parses a [Float] from a [SharedPreferences] [String] value, returning the [Float] default value
  * if the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.parseFloatFromPair(pref: PrefPair<String>): Float {
+fun SharedPreferences.parseFloat(pref: PrefPair<String>): Float {
     return typeSafeGet(pref) {
         this.getString(pref.key, pref.default)!!
     }.toFloat()
@@ -52,7 +52,7 @@ fun SharedPreferences.parseFloatFromPair(pref: PrefPair<String>): Float {
  * Returns an [Int] from a [SharedPreferences] instance, returning the [Int] default value if either
  * the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.getIntFromPair(pref: PrefPair<Int>): Int {
+fun SharedPreferences.getInt(pref: PrefPair<Int>): Int {
     return typeSafeGet(pref) {
         this.getInt(pref.key, pref.default)
     }
@@ -62,7 +62,7 @@ fun SharedPreferences.getIntFromPair(pref: PrefPair<Int>): Int {
  * Returns a [Float] from a [SharedPreferences] instance, returning the [Float] default value if
  * either the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.getFloatFromPair(pref: PrefPair<Float>): Float {
+fun SharedPreferences.getFloat(pref: PrefPair<Float>): Float {
     return typeSafeGet(pref) {
         this.getFloat(pref.key, pref.default)
     }
@@ -72,7 +72,7 @@ fun SharedPreferences.getFloatFromPair(pref: PrefPair<Float>): Float {
  * Returns a [Long] from a [SharedPreferences] instance, returning the [Long] default value if
  * either the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.getLongFromPair(pref: PrefPair<Long>): Long {
+fun SharedPreferences.getLong(pref: PrefPair<Long>): Long {
     return typeSafeGet(pref) {
         this.getLong(pref.key, pref.default)
     }
@@ -82,7 +82,7 @@ fun SharedPreferences.getLongFromPair(pref: PrefPair<Long>): Long {
  * Returns a [String] from [SharedPreferences], returning the [String] default value if either
  * the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.getStringFromPair(pref: PrefPair<String>): String {
+fun SharedPreferences.getString(pref: PrefPair<String>): String {
     return typeSafeGet(pref) {
         this.getString(pref.key, pref.default)!!
     }
@@ -92,16 +92,16 @@ fun SharedPreferences.getStringFromPair(pref: PrefPair<String>): String {
  * Returns a [String] from [SharedPreferences]. If the persisted value either a) doesn't exist, b)
  * is the wrong type, or c) is blank, the [PrefPair] default is returned.
  */
-fun SharedPreferences.getStringFromPairNoBlank(pref: PrefPair<String>): String {
-    val result = getStringFromPair(pref)
-    return if (result.isBlank()) pref.default else result
+fun SharedPreferences.getStringNoBlank(pref: PrefPair<String>): String {
+    val result = getString(pref)
+    return result.ifBlank { pref.default }
 }
 
 /**
  * Returns a [Boolean] from [SharedPreferences], returning the [PrefPair] default if either
  * the value isn't already persisted or the type is incorrect.
  */
-fun SharedPreferences.getBooleanFromPair(pref: PrefPair<Boolean>): Boolean {
+fun SharedPreferences.getBoolean(pref: PrefPair<Boolean>): Boolean {
     return typeSafeGet(pref) {
         this.getBoolean(pref.key, pref.default)
     }
@@ -112,7 +112,7 @@ fun SharedPreferences.getBooleanFromPair(pref: PrefPair<Boolean>): Boolean {
  * the value isn't already persisted or the type is incorrect.
  */
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
-fun SharedPreferences.getStringSetFromPair(pref: PrefPair<Set<String>>): Set<String> {
+fun SharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Set<String> {
     return typeSafeGet(pref) {
         this.getStringSet(pref.key, pref.default)!!
     }

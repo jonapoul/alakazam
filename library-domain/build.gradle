@@ -63,6 +63,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
     implementation "androidx.preference:preference-ktx:$versions.preference"
+    implementation "com.fredporciuncula:flow-preferences:$versions.flow_preferences"
     implementation "com.jakewharton.timber:timber:$versions.timber"
     implementation "javax.inject:javax.inject:$versions.inject"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
