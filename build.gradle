@@ -84,6 +84,6 @@ subprojects {
 
     afterEvaluate {
         // Attach the dokka task to build afterwards, since the build task doesn't exist right now.
-        tasks.getByName('build').dependsOn "dokkaHtml"
+        tasks.getByName("build").dependsOn "dokkaHtml"
     }
 }
