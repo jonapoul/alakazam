@@ -1,4 +1,4 @@
-package com.jonapoul.extensions.data
+package com.jonapoul.extensions.data.coroutines
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEach

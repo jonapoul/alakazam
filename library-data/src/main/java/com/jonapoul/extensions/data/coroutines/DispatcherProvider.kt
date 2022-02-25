@@ -1,4 +1,4 @@
-package com.jonapoul.extensions.data
+package com.jonapoul.extensions.data.coroutines
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

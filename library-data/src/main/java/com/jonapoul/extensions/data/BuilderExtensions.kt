@@ -1,4 +1,4 @@
-package com.jonapoul.extensions.domain
+package com.jonapoul.extensions.data
 
 /**
  * If [condition] is true, the subject [Builder] will have the [action] lambda called on it, then

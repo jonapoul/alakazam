@@ -1,4 +1,4 @@
-package com.jonapoul.extensions.data
+package com.jonapoul.extensions.data.coroutines
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi

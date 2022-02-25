@@ -1,5 +1,6 @@
-package com.jonapoul.extensions.data
+package com.jonapoul.extensions.data.api
 
+import com.jonapoul.extensions.data.requireMessage
 import retrofit2.HttpException
 import java.io.IOException
 

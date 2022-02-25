@@ -8,7 +8,7 @@ import androidx.annotation.StyleRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.jonapoul.extensions.domain.ifNotNull
+import com.jonapoul.extensions.data.ifNotNull
 import com.jonapoul.extensions.ui.R
 import com.jonapoul.extensions.ui.databinding.DialogLoadingBinding
 
