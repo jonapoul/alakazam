@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Core.EditText" parent="Widget.AppCompat.EditText">
+    <style name="Theme.Common.EditText" parent="Widget.AppCompat.EditText">
         <!-- This field requires API 26 -->
         <item name="android:importantForAutofill">no</item>
 

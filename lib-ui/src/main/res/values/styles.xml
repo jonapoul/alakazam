@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Core" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Common" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- AlertDialog -->
-        <item name="materialAlertDialogTheme">@style/Theme.Core.AlertDialog</item>
-        <item name="alertDialogTheme">@style/Theme.Core.AlertDialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.Core.AlertDialog</item>
-        <item name="android:dialogTheme">@style/Theme.Core.AlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.Common.AlertDialog</item>
+        <item name="alertDialogTheme">@style/Theme.Common.AlertDialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.Common.AlertDialog</item>
+        <item name="android:dialogTheme">@style/Theme.Common.AlertDialog</item>
 
         <!-- CardView -->
-        <item name="materialCardViewStyle">@style/Theme.Core.CardView</item>
-        <item name="cardViewStyle">@style/Theme.Core.CardView</item>
+        <item name="materialCardViewStyle">@style/Theme.Common.CardView</item>
+        <item name="cardViewStyle">@style/Theme.Common.CardView</item>
 
         <!-- EditText -->
-        <item name="android:editTextStyle">@style/Theme.Core.EditText</item>
-        <item name="editTextStyle">@style/Theme.Core.EditText</item>
+        <item name="android:editTextStyle">@style/Theme.Common.EditText</item>
+        <item name="editTextStyle">@style/Theme.Common.EditText</item>
 
         <!-- Button -->
-        <item name="materialButtonStyle">@style/Theme.Core.Button</item>
+        <item name="materialButtonStyle">@style/Theme.Common.Button</item>
     </style>
 
-    <style name="Theme.Core.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+    <style name="Theme.Common.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
 
-    <style name="Theme.Core.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
+    <style name="Theme.Common.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
 
-    <style name="Theme.Core.CardView" parent="Widget.MaterialComponents.CardView">
+    <style name="Theme.Common.CardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardBackgroundColor">@color/cardBackground</item>
         <item name="cardCornerRadius">@dimen/small</item>
         <item name="cardUseCompatPadding">true</item>
@@ -31,102 +31,102 @@
         <item name="cardElevation">@dimen/small</item>
     </style>
 
-    <style name="Theme.Core.EditText" parent="Widget.AppCompat.EditText">
+    <style name="Theme.Common.EditText" parent="Widget.AppCompat.EditText">
         <item name="android:imeOptions">flagNoPersonalizedLearning</item>
         <item name="android:inputType">textNoSuggestions</item>
     </style>
 
-    <style name="Theme.Core.Text" parent="Widget.MaterialComponents.TextView">
+    <style name="Theme.Common.Text" parent="Widget.MaterialComponents.TextView">
         <item name="android:textSize">@dimen/text_size_normal</item>
     </style>
 
-    <style name="Theme.Core.Text.Title" parent="Theme.Core.Text">
+    <style name="Theme.Common.Text.Title" parent="Theme.Common.Text">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?attr/colorAccent</item>
         <item name="android:gravity">start</item>
     </style>
 
-    <style name="Theme.Core.Button" parent="Widget.MaterialComponents.Button">
+    <style name="Theme.Common.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="iconTint">?attr/colorOnPrimary</item>
     </style>
 
-    <style name="Theme.Core.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="Theme.Common.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="iconTint">@color/black</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Theme.Core.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="Theme.Common.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="iconTint">?attr/colorAccent</item>
         <item name="android:textColor">?attr/colorAccent</item>
     </style>
 
-    <style name="Theme.Core.Button.Text.Warning" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="Theme.Common.Button.Text.Warning" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/onSurfaceRed</item>
     </style>
 
-    <style name="Theme.Core.Button.Text.Caution" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="Theme.Common.Button.Text.Caution" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/onSurfaceOrange</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="buttonBarNegativeButtonStyle">@style/Theme.Core.Button.Text</item>
-        <item name="buttonBarPositiveButtonStyle">@style/Theme.Core.Button.Text</item>
-        <item name="buttonBarNeutralButtonStyle">@style/Theme.Core.Button.Text</item>
-        <item name="buttonBarButtonStyle">@style/Theme.Core.Button.Text</item>
-        <item name="materialAlertDialogTitleTextStyle">@style/Theme.Core.AlertDialog.Text</item>
+    <style name="Theme.Common.AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarNegativeButtonStyle">@style/Theme.Common.Button.Text</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Theme.Common.Button.Text</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Theme.Common.Button.Text</item>
+        <item name="buttonBarButtonStyle">@style/Theme.Common.Button.Text</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/Theme.Common.AlertDialog.Text</item>
         <item name="textColorAlertDialogListItem">?attr/colorOnSurface</item>
         <item name="android:textColorAlertDialogListItem">?attr/colorOnSurface</item>
-        <item name="materialAlertDialogTitleIconStyle">@style/Theme.Core.AlertDialog.Icon</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/Theme.Common.AlertDialog.Icon</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <style name="Theme.Common.AlertDialog.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">?attr/colorAccent</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Icon" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <style name="Theme.Common.AlertDialog.Icon" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
         <item name="android:tint">?attr/colorAccent</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Warning" parent="Theme.Core.AlertDialog">
+    <style name="Theme.Common.AlertDialog.Warning" parent="Theme.Common.AlertDialog">
         <item name="materialAlertDialogTitleTextStyle">
-            @style/Theme.Core.AlertDialog.Text.Warning
+            @style/Theme.Common.AlertDialog.Text.Warning
         </item>
         <item name="materialAlertDialogTitleIconStyle">
-            @style/Theme.Core.AlertDialog.Icon.Warning
+            @style/Theme.Common.AlertDialog.Icon.Warning
         </item>
-        <item name="buttonBarButtonStyle">@style/Theme.Core.Button.Text.Warning</item>
-        <item name="buttonBarNegativeButtonStyle">@style/Theme.Core.Button.Text.Warning</item>
-        <item name="buttonBarPositiveButtonStyle">@style/Theme.Core.Button.Text.Warning</item>
-        <item name="buttonBarNeutralButtonStyle">@style/Theme.Core.Button.Text.Warning</item>
+        <item name="buttonBarButtonStyle">@style/Theme.Common.Button.Text.Warning</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Theme.Common.Button.Text.Warning</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Theme.Common.Button.Text.Warning</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Theme.Common.Button.Text.Warning</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Caution" parent="Theme.Core.AlertDialog">
+    <style name="Theme.Common.AlertDialog.Caution" parent="Theme.Common.AlertDialog">
         <item name="materialAlertDialogTitleTextStyle">
-            @style/Theme.Core.AlertDialog.Text.Caution
+            @style/Theme.Common.AlertDialog.Text.Caution
         </item>
         <item name="materialAlertDialogTitleIconStyle">
-            @style/Theme.Core.AlertDialog.Icon.Caution
+            @style/Theme.Common.AlertDialog.Icon.Caution
         </item>
-        <item name="buttonBarButtonStyle">@style/Theme.Core.Button.Text.Caution</item>
-        <item name="buttonBarNegativeButtonStyle">@style/Theme.Core.Button.Text.Caution</item>
-        <item name="buttonBarPositiveButtonStyle">@style/Theme.Core.Button.Text.Caution</item>
-        <item name="buttonBarNeutralButtonStyle">@style/Theme.Core.Button.Text.Caution</item>
+        <item name="buttonBarButtonStyle">@style/Theme.Common.Button.Text.Caution</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Theme.Common.Button.Text.Caution</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Theme.Common.Button.Text.Caution</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Theme.Common.Button.Text.Caution</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Text.Warning" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <style name="Theme.Common.AlertDialog.Text.Warning" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">@color/onSurfaceRed</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Icon.Warning" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <style name="Theme.Common.AlertDialog.Icon.Warning" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
         <item name="android:tint">@color/onSurfaceRed</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Text.Caution" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <style name="Theme.Common.AlertDialog.Text.Caution" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">@color/onSurfaceOrange</item>
     </style>
 
-    <style name="Theme.Core.AlertDialog.Icon.Caution" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <style name="Theme.Common.AlertDialog.Icon.Caution" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
         <item name="android:tint">@color/onSurfaceOrange</item>
     </style>
 </resources>

@@ -62,7 +62,7 @@ private fun showWarningDialogImpl(
     title: String,
     message: String,
     extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
-): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Core_AlertDialog_Warning)
+): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Common_AlertDialog_Warning)
     .setTitle(title)
     .setIcon(R.drawable.ic_warning)
     .setMessage(message)
@@ -75,7 +75,7 @@ private fun showCautionDialogImpl(
     title: String,
     message: String,
     extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
-): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Core_AlertDialog_Caution)
+): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Common_AlertDialog_Caution)
     .setTitle(title)
     .setIcon(R.drawable.ic_caution)
     .setMessage(message)

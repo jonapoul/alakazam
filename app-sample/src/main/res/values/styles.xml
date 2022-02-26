@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Sample" parent="Theme.MaterialComponents.DayNight">
+    <style name="Theme.Sample" parent="Theme.Common">
         <item name="colorPrimary">#6200EE</item>
         <item name="colorPrimaryVariant">#3700B3</item>
         <item name="colorSecondary">#03DAC6</item>
@@ -17,62 +17,4 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
 
-    <style name="Theme.Sample.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.Sample.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Sample.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="Theme.Sample.AlertDialog.Warning" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="materialAlertDialogTitleTextStyle">
-            @style/Theme.Sample.AlertDialog.Text.Warning
-        </item>
-        <item name="materialAlertDialogTitleIconStyle">
-            @style/Theme.Sample.AlertDialog.Icon.Warning
-        </item>
-        <item name="buttonBarButtonStyle">@style/Theme.Sample.Button.Text.Warning</item>
-        <item name="buttonBarNegativeButtonStyle">@style/Theme.Sample.Button.Text.Warning</item>
-        <item name="buttonBarPositiveButtonStyle">@style/Theme.Sample.Button.Text.Warning</item>
-        <item name="buttonBarNeutralButtonStyle">@style/Theme.Sample.Button.Text.Warning</item>
-    </style>
-
-    <style name="Theme.Sample.AlertDialog.Caution" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="materialAlertDialogTitleTextStyle">
-            @style/Theme.Sample.AlertDialog.Text.Caution
-        </item>
-        <item name="materialAlertDialogTitleIconStyle">
-            @style/Theme.Sample.AlertDialog.Icon.Caution
-        </item>
-        <item name="buttonBarButtonStyle">@style/Theme.Sample.Button.Text.Caution</item>
-        <item name="buttonBarNegativeButtonStyle">@style/Theme.Sample.Button.Text.Caution</item>
-        <item name="buttonBarPositiveButtonStyle">@style/Theme.Sample.Button.Text.Caution</item>
-        <item name="buttonBarNeutralButtonStyle">@style/Theme.Sample.Button.Text.Caution</item>
-    </style>
-
-    <style name="Theme.Sample.AlertDialog.Text.Warning" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:textColor">@color/onSurfaceRed</item>
-    </style>
-
-    <style name="Theme.Sample.AlertDialog.Icon.Warning" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
-        <item name="android:tint">@color/onSurfaceRed</item>
-    </style>
-
-    <style name="Theme.Sample.AlertDialog.Text.Caution" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:textColor">@color/onSurfaceOrange</item>
-    </style>
-
-    <style name="Theme.Sample.AlertDialog.Icon.Caution" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
-        <item name="android:tint">@color/onSurfaceOrange</item>
-    </style>
-
-    <style name="Theme.Sample.Button.Text.Warning" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textColor">@color/onSurfaceRed</item>
-    </style>
-
-    <style name="Theme.Sample.Button.Text.Caution" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textColor">@color/onSurfaceOrange</item>
-    </style>
 </resources>
