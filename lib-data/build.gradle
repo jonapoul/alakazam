@@ -43,7 +43,7 @@ project.afterEvaluate {
         publications {
             maven(MavenPublication) {
                 groupId 'com.jonapoul'
-                artifactId 'common-data'
+                artifactId 'lib-data'
                 version versions.libVersionName
                 from components.release
             }

@@ -23,5 +23,8 @@ dependencies {
     implementation "com.github.jonapoul:android-common:lib-ui:{version}"
     implementation "com.github.jonapoul:android-common:lib-domain:{version}"
     implementation "com.github.jonapoul.android-common:lib-data:{version}"
+    
+    testImplementation "com.github.jonapoul.android-common:testing-unit:{version}"
+    androidTestImplementation "com.github.jonapoul.android-common:testing-android:{version}"
 }
 ```
