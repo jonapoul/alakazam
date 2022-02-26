@@ -1,4 +1,4 @@
 include ':lib-data'
 include ':lib-domain'
 include ':lib-ui'
-include ':sample'
+include ':app-sample'
