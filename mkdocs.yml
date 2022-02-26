@@ -2,10 +2,10 @@
 # mkdocs serve
 # mkdocs gh-deploy
 
-site_name: Android Extensions
-repo_name: Android Extensions
-site_url: https://jonapoul.github.io/android-extensions
-repo_url: https://github.com/jonapoul/android-extensions
+site_name: Android Common
+repo_name: Android Common
+site_url: https://jonapoul.github.io/android-common
+repo_url: https://github.com/jonapoul/android-common
 site_description: "A set of useful functions and extensions for Kotlin/Android development"
 site_author: Jon Poulton
 remote_branch: gh-pages

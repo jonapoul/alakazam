@@ -7,7 +7,7 @@ android {
     buildToolsVersion versions.buildTools
 
     defaultConfig {
-        applicationId "com.jonapoul.extensions.sample"
+        applicationId "com.jonapoul.common.sample"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.libVersionCode
@@ -33,11 +33,11 @@ android {
 }
 
 dependencies {
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+    implementation project(':lib-ui')
+    implementation project(':lib-domain')
+    implementation project(':lib-data')
 
-    implementation project(":library-data")
-    implementation project(":library-domain")
-    implementation project(":library-ui")
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
 
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
