@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId 'com.jonapoul'
+                artifactId 'testing-unit'
+                version versions.libVersionName
+                from components.java
+            }
+        }
+    }
+}
+
+dependencies {
+    api project(":testing-core")
+    api "androidx.arch.core:core-testing:$versions.android_arch_test"
+    api "io.mockk:mockk:$versions.mockk"
+    api "org.robolectric:robolectric:$versions.robolectric"
+}

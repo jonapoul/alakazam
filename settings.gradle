@@ -1,4 +1,7 @@
+include ':app-sample'
 include ':lib-data'
 include ':lib-domain'
 include ':lib-ui'
-include ':app-sample'
+include ':testing-android'
+include ':testing-core'
+include ':testing-unit'

@@ -1,0 +1,37 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+kotlin.sourceSets.all {
+    languageSettings.optIn("kotlin.RequiresOptIn")
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId 'com.jonapoul'
+                artifactId 'testing-core'
+                version versions.libVersionName
+                from components.java
+            }
+        }
+    }
+}
+
+dependencies {
+    api project(":lib-data")
+
+    api "app.cash.turbine:turbine:$versions.turbine"
+    api "junit:junit:$versions.junit"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines_test"
+    api "com.squareup.moshi:moshi:$versions.moshi"
+    api "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+}
