@@ -14,7 +14,7 @@ ext.versions = [
     kotlin                  : '1.6.10',
     ktlint                  : '10.1.0',
     leakcanary              : '2.8.1',
-    spotless                : '5.14.0',
+    spotless                : '6.3.0',
 
     // Library versions
     appcompat               : '1.4.1',
