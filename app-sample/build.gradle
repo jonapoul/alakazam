@@ -37,6 +37,9 @@ dependencies {
     implementation project(':lib-domain')
     implementation project(':lib-data')
 
+    testImplementation project(":testing-unit")
+    androidTestImplementation project(":testing-android")
+
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
 
     implementation "androidx.appcompat:appcompat:$versions.appcompat"

@@ -8,6 +8,11 @@ android {
     compileSdkVersion versions.targetSdk
     buildToolsVersion versions.buildTools
 
+    defaultConfig {
+        minSdkVersion 21 // restricted by mockk
+        targetSdkVersion versions.targetSdk
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
