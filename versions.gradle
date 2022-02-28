@@ -2,8 +2,8 @@ ext.versions = [
     // Build variables
     minSdk                  : 15,
     targetSdk               : 31,
-    libVersionCode          : 173,
-    libVersionName          : '1.7.3',
+    libVersionCode          : 174,
+    libVersionName          : '1.7.4',
 
     // Plugins, etc
     buildTools              : '30.0.3',
