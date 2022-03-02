@@ -1,4 +1,4 @@
-package com.jonapoul.common.test.android
+package com.jonapoul.common.test.unit
 
 import io.mockk.MockKAnnotations
 import io.mockk.unmockkAll

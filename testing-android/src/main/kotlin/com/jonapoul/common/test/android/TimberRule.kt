@@ -1,4 +1,4 @@
-package com.jonapoul.common.test.unit
+package com.jonapoul.common.test.android
 
 import net.lachlanmckee.timberjunit.TimberTestRule
 import org.junit.rules.TestRule

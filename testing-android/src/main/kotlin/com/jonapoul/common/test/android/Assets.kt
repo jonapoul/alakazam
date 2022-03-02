@@ -1,4 +1,4 @@
-package com.jonapoul.common.test.unit
+package com.jonapoul.common.test.android
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
