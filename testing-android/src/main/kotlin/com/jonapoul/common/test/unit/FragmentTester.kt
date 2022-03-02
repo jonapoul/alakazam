@@ -1,4 +1,4 @@
-package com.jonapoul.common.test
+package com.jonapoul.common.test.unit
 
 import android.content.ComponentName
 import android.content.Intent
