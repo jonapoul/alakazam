@@ -2,12 +2,12 @@
 <resources>
     <style name="Theme.Common.Text.Title" parent="Theme.Common.Text">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+        <item name="android:textColor">?attr/colorAccent</item>
         <item name="android:gravity">start</item>
     </style>
 
     <style name="Theme.Common.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="iconTint">?attr/colorPrimaryVariant</item>
-        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+        <item name="iconTint">?attr/colorAccent</item>
+        <item name="android:textColor">?attr/colorAccent</item>
     </style>
 </resources>
