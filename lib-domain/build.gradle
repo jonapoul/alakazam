@@ -42,7 +42,7 @@ project.afterEvaluate {
     publishing {
         publications {
             maven(MavenPublication) {
-                groupId 'com.jonapoul'
+                groupId 'com.github.jonapoul.android-common'
                 artifactId 'lib-domain'
                 version versions.libVersionName
                 from components.release
