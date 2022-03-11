@@ -1,8 +1,7 @@
 package com.jonapoul.common.data.api
 
-import com.jonapoul.common.data.Seconds
-import com.jonapoul.common.data.sec
 import okhttp3.OkHttpClient
+import org.threeten.bp.Duration
 import retrofit2.Retrofit
 
 abstract class ApiBuilder<Api>(
@@ -10,7 +9,7 @@ abstract class ApiBuilder<Api>(
     private val okHttpClientFactory: OkHttpClientFactory,
     private val apiClass: Class<Api>,
     private val baseUrl: String,
-    private val timeout: Seconds = DEFAULT_TIMEOUT,
+    private val timeout: Duration = DEFAULT_TIMEOUT,
 ) {
 
     fun buildApi(): Api {
@@ -29,6 +28,6 @@ abstract class ApiBuilder<Api>(
     }
 
     private companion object {
-        val DEFAULT_TIMEOUT = 2.sec
+        val DEFAULT_TIMEOUT: Duration = Duration.ofSeconds(2)
     }
 }

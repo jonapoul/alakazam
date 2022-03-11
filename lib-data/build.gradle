@@ -67,6 +67,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
     implementation "org.slf4j:slf4j-api:$versions.slf4j"
+    implementation "org.threeten:threetenbp:$versions.threetenbp:no-tzdb"
 
     testImplementation "app.cash.turbine:turbine:$versions.turbine"
     testImplementation "io.mockk:mockk:$versions.mockk"

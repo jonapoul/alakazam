@@ -1,15 +1,14 @@
 package com.jonapoul.common.data.api
 
 import android.content.Context
-import com.jonapoul.common.data.Seconds
 import com.jonapoul.common.data.ifNotNull
-import com.jonapoul.common.data.sec
 import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Cache
 import okhttp3.ConnectionPool
 import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.threeten.bp.Duration
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -19,8 +18,8 @@ class OkHttpClientFactory @Inject constructor(
     private val interceptor: HttpLoggingInterceptor?,
 ) {
     fun getClient(
-        readWriteTimeout: Seconds = DEFAULT_TIMEOUT,
-        connectTimeout: Seconds = DEFAULT_TIMEOUT,
+        readWriteTimeout: Duration = DEFAULT_TIMEOUT,
+        connectTimeout: Duration = DEFAULT_TIMEOUT,
         extraConfig: OkHttpClient.Builder.() -> OkHttpClient.Builder = { this },
     ): OkHttpClient {
         return OkHttpClient.Builder()
@@ -49,7 +48,7 @@ class OkHttpClientFactory @Inject constructor(
     }
 
     private companion object {
-        val DEFAULT_TIMEOUT = 5.sec
+        val DEFAULT_TIMEOUT: Duration = Duration.ofSeconds(5)
         const val CACHE_MAX_SIZE_BYTES = 50L * 1024 * 1024 // 50MB
         const val MAX_IDLE_CONNECTIONS = 10
         const val KEEP_ALIVE_TIME_MINUTES = 2L
