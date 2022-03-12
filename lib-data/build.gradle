@@ -56,6 +56,7 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
 
     implementation "com.github.tony19:logback-android:$versions.logback_android"
+    implementation "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp"
     implementation "com.jakewharton.timber:timber:$versions.timber"
     implementation "com.squareup.moshi:moshi:$versions.moshi"
     implementation "com.squareup.moshi:moshi-kotlin:$versions.moshi"
@@ -67,7 +68,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
     implementation "org.slf4j:slf4j-api:$versions.slf4j"
-    implementation "org.threeten:threetenbp:$versions.threetenbp:no-tzdb"
 
     testImplementation "app.cash.turbine:turbine:$versions.turbine"
     testImplementation "io.mockk:mockk:$versions.mockk"
