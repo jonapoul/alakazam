@@ -31,9 +31,12 @@ jobs:
 
       - name: Generate docs
         run: |
-          ./gradlew :library-data:dokkaHtml
-          ./gradlew :library-domain:dokkaHtml
-          ./gradlew :library-ui:dokkaHtml
+          ./gradlew :lib-data:dokkaHtml
+          ./gradlew :lib-domain:dokkaHtml
+          ./gradlew :lib-ui:dokkaHtml
+          ./gradlew :testing-android:dokkaHtml
+          ./gradlew :testing-core:dokkaHtml
+          ./gradlew :testing-unit:dokkaHtml
 
       - name: Set up Python
         uses: actions/setup-python@v2
