@@ -64,7 +64,6 @@ dependencies {
     api "androidx.test.ext:junit:$versions.androidx_junit"
     api "com.kaspersky.android-components:kaspresso:$versions.kaspresso"
     api "io.mockk:mockk-android:$versions.mockk"
-    implementation "net.lachlanmckee:timber-junit-rule:$versions.timber_junit_rule"
 
     debugImplementation "androidx.fragment:fragment-testing:$versions.fragment"
 }
