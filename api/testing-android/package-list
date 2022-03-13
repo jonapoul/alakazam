@@ -1,0 +1,24 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.jonapoul.common.test.android////PointingToDeclaration/testing-android/com.jonapoul.common.test.android/index.html
+$dokka.location:com.jonapoul.common.test.android//getTestAssetAsStream/#kotlin.String/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/get-test-asset-as-stream.html
+$dokka.location:com.jonapoul.common.test.android//relaxedMockk/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/relaxed-mockk.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/index.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester/FragmentTester/#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/-fragment-tester.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester/launchFragment/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/launch-fragment.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester/launchFragmentInHiltContainer/#kotlin.Int#android.os.Bundle?#kotlin.Function1[TypeParam(bounds=[androidx.fragment.app.Fragment]),kotlin.Unit]/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/launch-fragment-in-hilt-container.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester/navDestination/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/nav-destination.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester/navGraph/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/nav-graph.html
+$dokka.location:com.jonapoul.common.test.android/FragmentTester/themeResId/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-fragment-tester/theme-res-id.html
+$dokka.location:com.jonapoul.common.test.android/HiltTestActivity///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-activity/index.html
+$dokka.location:com.jonapoul.common.test.android/HiltTestActivity/HiltTestActivity/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-activity/-hilt-test-activity.html
+$dokka.location:com.jonapoul.common.test.android/HiltTestRunner///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-runner/index.html
+$dokka.location:com.jonapoul.common.test.android/HiltTestRunner/HiltTestRunner/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-runner/-hilt-test-runner.html
+$dokka.location:com.jonapoul.common.test.android/HiltTestRunner/newApplication/#java.lang.ClassLoader?#kotlin.String?#android.content.Context?/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-runner/new-application.html
+$dokka.location:com.jonapoul.common.test.android/MockkAndroidRule///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-mockk-android-rule/index.html
+$dokka.location:com.jonapoul.common.test.android/MockkAndroidRule/MockkAndroidRule/#kotlin.Any/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-mockk-android-rule/-mockk-android-rule.html
+$dokka.location:com.jonapoul.common.test.android/RoomDatabaseRule///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-room-database-rule/index.html
+$dokka.location:com.jonapoul.common.test.android/RoomDatabaseRule/RoomDatabaseRule/#kotlin.reflect.KClass[TypeParam(bounds=[androidx.room.RoomDatabase])]#kotlin.Boolean/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-room-database-rule/-room-database-rule.html
+$dokka.location:com.jonapoul.common.test.android/RoomDatabaseRule/database/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-room-database-rule/database.html
+com.jonapoul.common.test.android
+
