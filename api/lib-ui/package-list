@@ -105,6 +105,8 @@ $dokka.location:com.jonapoul.common.ui/CommonFragment///PointingToDeclaration/l
 $dokka.location:com.jonapoul.common.ui/CommonFragment/CommonFragment/#kotlin.Int#kotlin.Int?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-fragment/-common-fragment.html
 $dokka.location:com.jonapoul.common.ui/CommonFragment/onCreate/#android.os.Bundle?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-fragment/on-create.html
 $dokka.location:com.jonapoul.common.ui/CommonFragment/onCreateOptionsMenu/#android.view.Menu#android.view.MenuInflater/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-fragment/on-create-options-menu.html
+$dokka.location:com.jonapoul.common.ui/CommonFragment/onDestroyView/#/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-fragment/on-destroy-view.html
+$dokka.location:com.jonapoul.common.ui/CommonFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-fragment/on-view-created.html
 $dokka.location:com.jonapoul.common.ui/CommonPreferenceFragment///PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-preference-fragment/index.html
 $dokka.location:com.jonapoul.common.ui/CommonPreferenceFragment/CommonPreferenceFragment/#kotlin.Int#kotlin.Int?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-preference-fragment/-common-preference-fragment.html
 $dokka.location:com.jonapoul.common.ui/CommonPreferenceFragment/onCreateOptionsMenu/#android.view.Menu#android.view.MenuInflater/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/-common-preference-fragment/on-create-options-menu.html
