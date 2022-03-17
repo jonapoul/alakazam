@@ -92,3 +92,15 @@ inline fun <reified T : Throwable> assertThrows(call: () -> Unit) {
         }
     }
 }
+
+fun <T : Comparable<T>> T.assertMoreThan(other: T) {
+    if (this <= other) {
+        throw AssertionError("$this should be more than $other")
+    }
+}
+
+fun <T : Comparable<T>> T.assertLessThan(other: T) {
+    if (this >= other) {
+        throw AssertionError("$this should be less than $other")
+    }
+}
