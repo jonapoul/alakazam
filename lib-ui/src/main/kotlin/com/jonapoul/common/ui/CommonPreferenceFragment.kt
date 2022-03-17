@@ -11,7 +11,7 @@ import androidx.annotation.MenuRes
 import androidx.annotation.XmlRes
 import androidx.preference.PreferenceFragmentCompat
 
-abstract class CorePreferenceFragment(
+abstract class CommonPreferenceFragment(
     @XmlRes private val settings: Int,
     @MenuRes private val menu: Int?,
 ) : PreferenceFragmentCompat() {

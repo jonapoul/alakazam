@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
  * [RecyclerView.Adapter] class to reduce boilerplate and give smoother animations when submitting
  * new data to the view.
  */
-abstract class CoreListAdapter<ItemType, ViewHolderType : CoreViewHolder<ItemType>, ItemIdType>(
+abstract class CommonListAdapter<ItemType, ViewHolderType : CommonViewHolder<ItemType>, ItemIdType>(
     private val itemIdGetter: ItemType.() -> ItemIdType,
 ) : ListAdapter<ItemType, ViewHolderType>(
     DiffCallback<ItemType, ItemIdType> { itemIdGetter() }
