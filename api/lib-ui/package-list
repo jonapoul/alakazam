@@ -29,10 +29,15 @@ $dokka.location:com.jonapoul.common.ui.notifier/Notifier/toast/#android.content.
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/warning/#android.view.View#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/warning.html
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/warning/#android.view.View#kotlin.String/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/warning.html
 $dokka.location:com.jonapoul.common.ui.prefs////PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/index.html
+$dokka.location:com.jonapoul.common.ui.prefs/CommonPreferenceCategory///PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-common-preference-category/index.html
+$dokka.location:com.jonapoul.common.ui.prefs/CommonPreferenceCategory/CommonPreferenceCategory/#android.content.Context#android.util.AttributeSet?#kotlin.Int#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-common-preference-category/-common-preference-category.html
+$dokka.location:com.jonapoul.common.ui.prefs/CommonPreferenceCategory/onBindViewHolder/#androidx.preference.PreferenceViewHolder/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-common-preference-category/on-bind-view-holder.html
 $dokka.location:com.jonapoul.common.ui.prefs/EditFloatPreference///PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-edit-float-preference/index.html
 $dokka.location:com.jonapoul.common.ui.prefs/EditFloatPreference/EditFloatPreference/#android.content.Context#android.util.AttributeSet?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-edit-float-preference/-edit-float-preference.html
 $dokka.location:com.jonapoul.common.ui.prefs/EditIntPreference///PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-edit-int-preference/index.html
 $dokka.location:com.jonapoul.common.ui.prefs/EditIntPreference/EditIntPreference/#android.content.Context#android.util.AttributeSet?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-edit-int-preference/-edit-int-preference.html
+$dokka.location:com.jonapoul.common.ui.prefs/TypedArrayUtils2///PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-typed-array-utils2/index.html
+$dokka.location:com.jonapoul.common.ui.prefs/TypedArrayUtils2/getAttr/#android.content.Context#kotlin.Int#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/-typed-array-utils2/get-attr.html
 $dokka.location:com.jonapoul.common.ui.recyclerview////PointingToDeclaration/lib-ui/com.jonapoul.common.ui.recyclerview/index.html
 $dokka.location:com.jonapoul.common.ui.recyclerview//initialise/androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.Adapter[TypeParam(bounds=[androidx.recyclerview.widget.RecyclerView.ViewHolder])]#kotlin.Function1[androidx.recyclerview.widget.RecyclerView,kotlin.Unit]/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.recyclerview/initialise.html
 $dokka.location:com.jonapoul.common.ui.recyclerview//isEmpty/androidx.recyclerview.widget.RecyclerView#/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.recyclerview/is-empty.html
