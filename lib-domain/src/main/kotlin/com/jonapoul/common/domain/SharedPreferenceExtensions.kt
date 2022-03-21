@@ -89,6 +89,16 @@ fun SharedPreferences.getString(pref: PrefPair<String>): String {
 }
 
 /**
+ * Returns a nullable [String] from [SharedPreferences], returning null if either the value isn't
+ * already persisted or the type is incorrect.
+ */
+fun SharedPreferences.getNullableString(pref: PrefPair<String?>): String? {
+    return typeSafeGet(pref) {
+        this.getString(pref.key, pref.default)
+    }
+}
+
+/**
  * Returns a [String] from [SharedPreferences]. If the persisted value either a) doesn't exist, b)
  * is the wrong type, or c) is blank, the [PrefPair] default is returned.
  */
@@ -232,6 +242,9 @@ fun SharedPreferences.putBoolean(key: String, value: Boolean) =
 fun SharedPreferences.putString(key: String, value: String) =
     edit { putString(key, value) }
 
+fun SharedPreferences.putNullableString(key: String, value: String?) =
+    edit { putString(key, value) }
+
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.putStringSet(key: String, value: Set<String>) =
     edit { putStringSet(key, value) }
@@ -250,6 +263,9 @@ fun SharedPreferences.putBoolean(pref: PrefPair<Boolean>, value: Boolean) =
 
 fun SharedPreferences.putString(pref: PrefPair<String>, value: String) =
     putString(pref.key, value)
+
+fun SharedPreferences.putNullableString(pref: PrefPair<String?>, value: String?) =
+    putNullableString(pref.key, value)
 
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.putStringSet(pref: PrefPair<Set<String>>, value: Set<String>) =
