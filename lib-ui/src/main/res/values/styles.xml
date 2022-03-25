@@ -14,9 +14,11 @@
         <!-- EditText -->
         <item name="android:editTextStyle">@style/Theme.Common.EditText</item>
         <item name="editTextStyle">@style/Theme.Common.EditText</item>
+        <item name="textInputStyle">@style/Theme.Common.TextInputLayout</item>
 
         <!-- Button -->
         <item name="materialButtonStyle">@style/Theme.Common.Button</item>
+        <item name="imageButtonStyle">@style/Theme.Common.ImageButton</item>
     </style>
 
     <style name="Theme.Common.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
@@ -44,6 +46,12 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?attr/colorPrimaryVariant</item>
         <item name="android:gravity">start</item>
+    </style>
+
+    <style name="Theme.Common.ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:tint">?attr/colorOnPrimary</item>
+        <item name="tint">?attr/colorOnPrimary</item>
     </style>
 
     <style name="Theme.Common.Button" parent="Widget.MaterialComponents.Button">
@@ -128,5 +136,29 @@
 
     <style name="Theme.Common.AlertDialog.Icon.Caution" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
         <item name="android:tint">@color/onSurfaceOrange</item>
+    </style>
+
+    <style name="Theme.Common.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:padding">@dimen/small</item>
+        <item name="startIconTint">@color/material_on_primary_disabled</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconTint">@color/onSurfaceRed</item>
+        <item name="errorTextColor">@color/onSurfaceRed</item>
+        <item name="boxStrokeErrorColor">@color/onSurfaceRed</item>
+    </style>
+
+    <style name="Theme.Common.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+        <item name="android:padding">@dimen/small</item>
+        <item name="startIconTint">@color/material_on_primary_disabled</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconTint">@color/onSurfaceRed</item>
+        <item name="errorTextColor">@color/onSurfaceRed</item>
+        <item name="boxStrokeErrorColor">@color/onSurfaceRed</item>
+    </style>
+
+    <style name="Theme.Common.TextInputEditText" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:imeOptions">actionNext|flagNoPersonalizedLearning</item>
     </style>
 </resources>
