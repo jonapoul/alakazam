@@ -3,10 +3,10 @@ package com.jonapoul.common.ui.prefs
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
-import android.util.Log
 import androidx.preference.EditTextPreference
+import timber.log.Timber
 
-class EditIntPreference @JvmOverloads constructor(
+open class EditIntPreference @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
 ) : EditTextPreference(
@@ -28,13 +28,12 @@ class EditIntPreference @JvmOverloads constructor(
         return try {
             persistInt(value?.toInt() ?: DEFAULT_VALUE)
         } catch (e: NumberFormatException) {
-            Log.e(TAG, "Failed to parse '$value' as an integer")
+            Timber.e("Failed to parse '$value' as an integer")
             false
         }
     }
 
     private companion object {
-        val TAG: String = EditIntPreference::class.java.simpleName
         const val DEFAULT_VALUE = -1
     }
 }

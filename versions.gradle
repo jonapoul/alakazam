@@ -2,8 +2,8 @@ ext.versions = [
     // Build variables
     minSdk                  : 15,
     targetSdk               : 31,
-    libVersionCode          : 202203250,
-    libVersionName          : '1.8.5',
+    libVersionCode          : 202204140,
+    libVersionName          : '1.8.6',
 
     // Plugins, etc
     buildTools              : '30.0.3',
@@ -11,7 +11,7 @@ ext.versions = [
     detekt                  : '1.19.0',
     dokka                   : '1.4.32',
     hilt                    : '2.41',
-    kotlin                  : '1.6.10',
+    kotlin                  : '1.6.20',
     ktlint                  : '10.1.0',
     leakcanary              : '2.8.1',
     spotless                : '6.3.0',
@@ -27,8 +27,8 @@ ext.versions = [
     logback_android         : '2.0.0',
     material                : '1.5.0',
     moshi                   : '1.13.0',
-    navigation              : '2.4.1',
-    okhttp                  : '5.0.0-alpha.5',
+    navigation              : '2.4.2',
+    okhttp                  : '5.0.0-alpha.6',
     preference              : '1.2.0',
     recyclerview            : '1.2.1',
     retrofit                : '2.9.0',

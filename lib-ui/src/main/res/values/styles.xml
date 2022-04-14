@@ -140,7 +140,6 @@
 
     <style name="Theme.Common.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:padding">@dimen/small</item>
-        <item name="startIconTint">@color/material_on_primary_disabled</item>
         <item name="errorEnabled">true</item>
         <item name="errorIconTint">@color/onSurfaceRed</item>
         <item name="errorTextColor">@color/onSurfaceRed</item>
@@ -149,7 +148,6 @@
 
     <style name="Theme.Common.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
         <item name="android:padding">@dimen/small</item>
-        <item name="startIconTint">@color/material_on_primary_disabled</item>
         <item name="errorEnabled">true</item>
         <item name="errorIconTint">@color/onSurfaceRed</item>
         <item name="errorTextColor">@color/onSurfaceRed</item>

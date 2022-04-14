@@ -66,6 +66,7 @@ dependencies {
     implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "com.google.android.material:material:$versions.material"
+    implementation "com.jakewharton.timber:timber:$versions.timber"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
 

@@ -3,10 +3,10 @@ package com.jonapoul.common.ui.prefs
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
-import android.util.Log
 import androidx.preference.EditTextPreference
+import timber.log.Timber
 
-class EditFloatPreference @JvmOverloads constructor(
+open class EditFloatPreference @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
 ) : EditTextPreference(
@@ -29,13 +29,12 @@ class EditFloatPreference @JvmOverloads constructor(
         return try {
             persistFloat(value?.toFloat() ?: DEFAULT_VALUE)
         } catch (e: NumberFormatException) {
-            Log.e(TAG, "Failed to parse '$value' as a float")
+            Timber.e("Failed to parse '$value' as a float")
             false
         }
     }
 
     private companion object {
-        val TAG: String = EditFloatPreference::class.java.simpleName
         const val DEFAULT_VALUE = -1.0f
     }
 }
