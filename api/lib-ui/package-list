@@ -101,8 +101,6 @@ $dokka.location:com.jonapoul.common.ui//hide/android.view.MenuItem#/PointingToDe
 $dokka.location:com.jonapoul.common.ui//hideIfTrue/android.view.MenuItem#kotlin.Boolean/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/hide-if-true.html
 $dokka.location:com.jonapoul.common.ui//navControllers/androidx.appcompat.app.AppCompatActivity#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/nav-controllers.html
 $dokka.location:com.jonapoul.common.ui//navControllers/androidx.fragment.app.Fragment#/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/nav-controllers.html
-$dokka.location:com.jonapoul.common.ui//sharedPrefs/android.content.Context#kotlin.String?#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/shared-prefs.html
-$dokka.location:com.jonapoul.common.ui//sharedPrefs/androidx.fragment.app.Fragment#kotlin.String?#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/shared-prefs.html
 $dokka.location:com.jonapoul.common.ui//show/android.view.MenuItem#/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/show.html
 $dokka.location:com.jonapoul.common.ui//showIfTrue/android.view.MenuItem#kotlin.Boolean/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/show-if-true.html
 $dokka.location:com.jonapoul.common.ui//viewIsAccessible/androidx.fragment.app.Fragment#/PointingToDeclaration/lib-ui/com.jonapoul.common.ui/view-is-accessible.html
