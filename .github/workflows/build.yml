@@ -26,8 +26,14 @@ jobs:
       - name: Enable gradle execution
         run: chmod +x ./gradlew
 
-      - name: Build and test
-        run: ./gradlew build
+      - name: Code quality
+        run: ./gradlew runChecks
+
+      - name: Assemble
+        run: ./gradlew assembleDebug
+
+      - name: Test
+        run: ./gradlew testDebugUnitTest
 
       - name: Generate docs
         run: |

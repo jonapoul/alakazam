@@ -33,6 +33,12 @@ allprojects {
     apply from: "$root/gradle/ktlint.gradle"
     apply from: "$root/gradle/spotless.gradle"
 
+    task runChecks() {
+        dependsOn "detekt"
+        dependsOn "spotlessCheck"
+        dependsOn "ktlintCheck"
+    }
+
     repositories {
         google()
         mavenCentral()
