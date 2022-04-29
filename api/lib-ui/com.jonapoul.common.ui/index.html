@@ -1,229 +1,217 @@
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>com.jonapoul.common.ui</title>
-<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script><script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script><link href="../../styles/style.css" rel="Stylesheet"><link href="../../styles/logo-styles.css" rel="Stylesheet"><link href="../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../styles/main.css" rel="Stylesheet"><script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script><script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script><script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script><script type="text/javascript" src="../../scripts/main.js" async="async"></script>  </head>
-  <body>
-    <div id="container">
-      <div id="leftColumn"><a href="../../index.html">
-          <div id="logo"></div>
-        </a>
-        <div id="paneSearch"></div>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../index.html">
+                    <span>lib-ui</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
         <div id="sideMenu"></div>
-      </div>
-      <div id="main">
-        <div id="leftToggler"><span class="icon-toggler"></span></div>
-<script type="text/javascript" src="../../scripts/main.js"></script>        <div class="main-content" id="content" pageIds="lib-ui::com.jonapoul.common.ui////PointingToDeclaration//-266710194">
-          <div class="navigation-wrapper" id="navigation-wrapper">
-            <div class="breadcrumbs"><a href="../../index.html">lib-ui</a>/<a href="index.html">com.jonapoul.common.ui</a></div>
-            <div class="pull-right d-flex">
-              <div id="searchBar"></div>
-            </div>
-          </div>
-          <div class="cover ">
-            <h1 class="cover"><span>Package com.</span><wbr></wbr><span>jonapoul.</span><wbr></wbr><span>common.</span><wbr></wbr><span>ui</span></h1>
-          </div>
-          <div class="tabbedcontent">
-            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button></div>
-            <div class="tabs-section-body">
-              <h2 class="">Types</h2>
-              <div class="table" data-togglable="Types"><a data-name="220535211%2FClasslikes%2F-266710194" anchor-label="CommonFragment" id="220535211%2FClasslikes%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="-common-fragment/index.html">CommonFragment</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="220535211%2FClasslikes%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">abstract class <a href="-common-fragment/index.html">CommonFragment</a>(<span>@<a href="https://developer.android.com/reference/kotlin/androidx/annotation/LayoutRes.html">LayoutRes</a>() </span>layout: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, <span>@<a href="https://developer.android.com/reference/kotlin/androidx/annotation/MenuRes.html">MenuRes</a>() </span>menu: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>?) : <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="lib-ui::com.jonapoul.common.ui////PointingToDeclaration//-266710194">
+  <div class="breadcrumbs"><a href="../../index.html">lib-ui</a><span class="delimiter">/</span><a href="index.html">com.jonapoul.common.ui</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package</span></span> <span>com.</span><wbr></wbr><span>jonapoul.</span><wbr></wbr><span>common.</span><wbr></wbr><span>ui</span></h1>
   </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="953184144%2FClasslikes%2F-266710194" anchor-label="CommonPreferenceFragment" id="953184144%2FClasslikes%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="-common-preference-fragment/index.html">CommonPreferenceFragment</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="953184144%2FClasslikes%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">abstract class <a href="-common-preference-fragment/index.html">CommonPreferenceFragment</a>(<span>@<a href="https://developer.android.com/reference/kotlin/androidx/annotation/XmlRes.html">XmlRes</a>() </span>settings: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, <span>@<a href="https://developer.android.com/reference/kotlin/androidx/annotation/MenuRes.html">MenuRes</a>() </span>menu: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>?) : <a href="https://developer.android.com/reference/kotlin/androidx/preference/PreferenceFragmentCompat.html">PreferenceFragmentCompat</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1692956031%2FClasslikes%2F-266710194" anchor-label="SimpleTextWatcher" id="1692956031%2FClasslikes%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="-simple-text-watcher/index.html">SimpleTextWatcher</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1692956031%2FClasslikes%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">abstract class <a href="-simple-text-watcher/index.html">SimpleTextWatcher</a> : <a href="https://developer.android.com/reference/kotlin/android/text/TextWatcher.html">TextWatcher</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h2 class="">Functions</h2>
-              <div class="table" data-togglable="Functions"><a data-name="1054004030%2FFunctions%2F-266710194" anchor-label="collectFlow" id="1054004030%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="collect-flow.html">collectFlow</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1054004030%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun &lt;<a href="collect-flow.html">T</a>&gt; <a href="https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html">ComponentActivity</a>.<a href="collect-flow.html">collectFlow</a>(flow: <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span>&lt;<a href="collect-flow.html">T</a>&gt;?, call: suspend (<a href="collect-flow.html">T</a>) -&gt; <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>): <span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-<a data-name="1989138047%2FFunctions%2F-266710194" anchor-label="collectFlow" id="1989138047%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a><div class="brief "><a data-name="1989138047%2FFunctions%2F-266710194" anchor-label="collectFlow" id="1989138047%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html">ComponentActivity</a> without needing to explicitly launch a suspending coroutine to do so.</div></div>
-<div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun &lt;<a href="collect-flow.html">T</a>&gt; <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>.<a href="collect-flow.html">collectFlow</a>(flow: <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span>&lt;<a href="collect-flow.html">T</a>&gt;?, call: suspend (<a href="collect-flow.html">T</a>) -&gt; <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>): <span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-<a data-name="-940126407%2FFunctions%2F-266710194" anchor-label="collectFlow" id="-940126407%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a><div class="brief "><a data-name="-940126407%2FFunctions%2F-266710194" anchor-label="collectFlow" id="-940126407%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a> without needing to explicitly launch a suspending coroutine to do so.</div></div>
-<div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun &lt;<a href="collect-flow.html">T</a>&gt; <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html">ViewModel</a>.<a href="collect-flow.html">collectFlow</a>(flow: <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span>&lt;<a href="collect-flow.html">T</a>&gt;?, call: suspend (<a href="collect-flow.html">T</a>) -&gt; <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>): <span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-<a data-name="210702430%2FFunctions%2F-266710194" anchor-label="collectFlow" id="210702430%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a><div class="brief "><a data-name="210702430%2FFunctions%2F-266710194" anchor-label="collectFlow" id="210702430%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html">ViewModel</a> without needing to explicitly launch a suspending coroutine to do so.</div></div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-366903519%2FFunctions%2F-266710194" anchor-label="hide" id="-366903519%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="hide.html">hide</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-366903519%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a>.<a href="hide.html">hide</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1035554321%2FFunctions%2F-266710194" anchor-label="hideIfTrue" id="1035554321%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="hide-if-true.html">hideIfTrue</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1035554321%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a>.<a href="hide-if-true.html">hideIfTrue</a>(condition: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1358190289%2FFunctions%2F-266710194" anchor-label="navControllers" id="-1358190289%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="nav-controllers.html">navControllers</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1358190289%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>.<a href="nav-controllers.html">navControllers</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-lazy/index.html">Lazy</a>&lt;<a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController.html">NavController</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-<a data-name="-16130053%2FFunctions%2F-266710194" anchor-label="navControllers" id="-16130053%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a><div class="brief "><a data-name="-16130053%2FFunctions%2F-266710194" anchor-label="navControllers" id="-16130053%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>An alternative method for getting a <a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController.html">NavController</a> from a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>.</div></div>
-<div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a>.<a href="nav-controllers.html">navControllers</a>(<span>@<a href="https://developer.android.com/reference/kotlin/androidx/annotation/IdRes.html">IdRes</a>() </span>navHostFragmentId: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-lazy/index.html">Lazy</a>&lt;<a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController.html">NavController</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-<a data-name="-817554728%2FFunctions%2F-266710194" anchor-label="navControllers" id="-817554728%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a><div class="brief "><a data-name="-817554728%2FFunctions%2F-266710194" anchor-label="navControllers" id="-817554728%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>As above, so below.</div></div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="187542940%2FFunctions%2F-266710194" anchor-label="show" id="187542940%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="show.html">show</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="187542940%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a>.<a href="show.html">show</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-362778356%2FFunctions%2F-266710194" anchor-label="showIfTrue" id="-362778356%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="show-if-true.html">showIfTrue</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-362778356%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a>.<a href="show-if-true.html">showIfTrue</a>(condition: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="896955722%2FFunctions%2F-266710194" anchor-label="viewIsAccessible" id="896955722%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="view-is-accessible.html">viewIsAccessible</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="896955722%2FFunctions%2F-266710194"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace">fun <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>.<a href="view-is-accessible.html">viewIsAccessible</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-<a data-name="896955722%2FFunctions%2F-266710194" anchor-label="viewIsAccessible" id="896955722%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a><div class="brief "><a data-name="896955722%2FFunctions%2F-266710194" anchor-label="viewIsAccessible" id="896955722%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>If the view (and therefore the <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span>) is inaccessible, meaning we have reached <a href="../com.jonapoul.common.ui.view/on-destroy-view.html">onDestroyView</a>, then grabbing the lifecycle will throw an <a href="https://developer.android.com/reference/kotlin/java/lang/IllegalStateException.html">IllegalStateException</a>.</div></div>
-</div>
-                    </div>
-                  </div>
-                </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="220535211%2FClasslikes%2F-266710194" anchor-label="CommonFragment" id="220535211%2FClasslikes%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-common-fragment/index.html"><span>Common</span><wbr></wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="220535211%2FClasslikes%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-common-fragment/index.html">CommonFragment</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/LayoutRes.html"><span class="token annotation">LayoutRes</span></a> </span>layout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/MenuRes.html"><span class="token annotation">MenuRes</span></a> </span>menu<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
+<a data-name="953184144%2FClasslikes%2F-266710194" anchor-label="CommonPreferenceFragment" id="953184144%2FClasslikes%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-common-preference-fragment/index.html"><span>Common</span><wbr></wbr><span>Preference</span><wbr></wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="953184144%2FClasslikes%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-common-preference-fragment/index.html">CommonPreferenceFragment</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/XmlRes.html"><span class="token annotation">XmlRes</span></a> </span>settings<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/MenuRes.html"><span class="token annotation">MenuRes</span></a> </span>menu<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/preference/PreferenceFragmentCompat.html">PreferenceFragmentCompat</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1692956031%2FClasslikes%2F-266710194" anchor-label="SimpleTextWatcher" id="1692956031%2FClasslikes%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-text-watcher/index.html"><span>Simple</span><wbr></wbr><span>Text</span><wbr></wbr><span><span>Watcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1692956031%2FClasslikes%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-simple-text-watcher/index.html">SimpleTextWatcher</a> : <a href="https://developer.android.com/reference/kotlin/android/text/TextWatcher.html">TextWatcher</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="1054004030%2FFunctions%2F-266710194" anchor-label="collectFlow" id="1054004030%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="collect-flow.html"><span>collect</span><wbr></wbr><span><span>Flow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1054004030%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html">ComponentActivity</a><span class="token punctuation">.</span><a href="collect-flow.html"><span class="token function">collectFlow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">flow<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">call<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html">ComponentActivity</a> without needing to explicitly launch a suspending coroutine to do so.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="collect-flow.html"><span class="token function">collectFlow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">flow<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">call<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a> without needing to explicitly launch a suspending coroutine to do so. This is tied to the lifecycle of the view, NOT the lifecycle of the <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a> itself.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html">ViewModel</a><span class="token punctuation">.</span><a href="collect-flow.html"><span class="token function">collectFlow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">flow<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">call<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html">ViewModel</a> without needing to explicitly launch a suspending coroutine to do so.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-366903519%2FFunctions%2F-266710194" anchor-label="hide" id="-366903519%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="hide.html"><span><span>hide</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-366903519%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="hide.html"><span class="token function">hide</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1035554321%2FFunctions%2F-266710194" anchor-label="hideIfTrue" id="1035554321%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="hide-if-true.html"><span>hide</span><wbr></wbr><span>If</span><wbr></wbr><span><span>True</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1035554321%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="hide-if-true.html"><span class="token function">hideIfTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1358190289%2FFunctions%2F-266710194" anchor-label="navControllers" id="-1358190289%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="nav-controllers.html"><span>nav</span><wbr></wbr><span><span>Controllers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1358190289%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="nav-controllers.html"><span class="token function">navControllers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-lazy/index.html">Lazy</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController.html">NavController</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">An alternative method for getting a <a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController.html">NavController</a> from a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>. For extremely lazy people who can't be bothered to type:     private val navController by lazy { findNavController() } but can type:     private val navController by navControllers()</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a><span class="token punctuation">.</span><a href="nav-controllers.html"><span class="token function">navControllers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/IdRes.html"><span class="token annotation">IdRes</span></a> </span>navHostFragmentId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-lazy/index.html">Lazy</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController.html">NavController</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">As above, so below. This time for an <a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a> instead of a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>. This requires the ID of your NavHostFragment, which should be declared in your activity XML layout.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="187542940%2FFunctions%2F-266710194" anchor-label="show" id="187542940%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="show.html"><span><span>show</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="187542940%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-362778356%2FFunctions%2F-266710194" anchor-label="showIfTrue" id="-362778356%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="show-if-true.html"><span>show</span><wbr></wbr><span>If</span><wbr></wbr><span><span>True</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-362778356%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="show-if-true.html"><span class="token function">showIfTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="896955722%2FFunctions%2F-266710194" anchor-label="viewIsAccessible" id="896955722%2FFunctions%2F-266710194" data-filterable-set=":lib-ui:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":lib-ui:dokkaHtml/release" data-filterable-set=":lib-ui:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="view-is-accessible.html"><span>view</span><wbr></wbr><span>Is</span><wbr></wbr><span><span>Accessible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="896955722%2FFunctions%2F-266710194"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-ui:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="view-is-accessible.html"><span class="token function">viewIsAccessible</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">If the view (and therefore the <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span>) is inaccessible, meaning we have reached <a href="../com.jonapoul.common.ui.view/on-destroy-view.html">onDestroyView</a>, then grabbing the lifecycle will throw an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a>. So this can be used to check that state, e.g. with a ListAdapter's submitList callback.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        </div>
+    </div>
+</div>
+</body>
 </html>
-

@@ -2,7 +2,6 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.common.test////PointingToDeclaration/testing-core/com.jonapoul.common.test/index.html
 $dokka.location:com.jonapoul.common.test//assertEmission/kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-emission.html
-$dokka.location:com.jonapoul.common.test//assertEquals/#TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-equals.html
 $dokka.location:com.jonapoul.common.test//assertFalse/#kotlin.Boolean?/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-false.html
 $dokka.location:com.jonapoul.common.test//assertIsType/#kotlin.Any?/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-is-type.html
 $dokka.location:com.jonapoul.common.test//assertIsTypeOrSubclass/#kotlin.Any?/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-is-type-or-subclass.html
@@ -10,9 +9,6 @@ $dokka.location:com.jonapoul.common.test//assertLessThan/TypeParam(bounds=[kotli
 $dokka.location:com.jonapoul.common.test//assertListContains/#kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-list-contains.html
 $dokka.location:com.jonapoul.common.test//assertListEquals/#kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-list-equals.html
 $dokka.location:com.jonapoul.common.test//assertMoreThan/TypeParam(bounds=[kotlin.Comparable[^]])#TypeParam(bounds=[kotlin.Comparable[^]])/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-more-than.html
-$dokka.location:com.jonapoul.common.test//assertNotEquals/#TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-not-equals.html
-$dokka.location:com.jonapoul.common.test//assertNotNull/#kotlin.Any?/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-not-null.html
-$dokka.location:com.jonapoul.common.test//assertNull/#kotlin.Any?/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-null.html
 $dokka.location:com.jonapoul.common.test//assertThrows/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-throws.html
 $dokka.location:com.jonapoul.common.test//assertTrue/#kotlin.Boolean?/PointingToDeclaration/testing-core/com.jonapoul.common.test/assert-true.html
 $dokka.location:com.jonapoul.common.test//fail/#kotlin.String/PointingToDeclaration/testing-core/com.jonapoul.common.test/fail.html

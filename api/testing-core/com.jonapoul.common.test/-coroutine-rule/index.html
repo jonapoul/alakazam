@@ -1,28 +1,52 @@
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>CoroutineRule</title>
-<link href="../../../../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script><script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script><link href="../../../styles/style.css" rel="Stylesheet"><link href="../../../styles/logo-styles.css" rel="Stylesheet"><link href="../../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../../styles/main.css" rel="Stylesheet"><script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script><script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script><script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script><script type="text/javascript" src="../../../scripts/main.js" async="async"></script>  </head>
-  <body>
-    <div id="container">
-      <div id="leftColumn"><a href="../../../index.html">
-          <div id="logo"></div>
-        </a>
-        <div id="paneSearch"></div>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>testing-core</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
         <div id="sideMenu"></div>
-      </div>
-      <div id="main">
-        <div id="leftToggler"><span class="icon-toggler"></span></div>
-<script type="text/javascript" src="../../../scripts/main.js"></script>        <div class="main-content" id="content" pageIds="testing-core::com.jonapoul.common.test/CoroutineRule///PointingToDeclaration//-1236850589">
-          <div class="navigation-wrapper" id="navigation-wrapper">
-            <div class="breadcrumbs"><a href="../../../index.html">testing-core</a>/<a href="../index.html">com.jonapoul.common.test</a>/<a href="index.html">CoroutineRule</a></div>
-            <div class="pull-right d-flex">
-              <div id="searchBar"></div>
-            </div>
-          </div>
-          <div class="cover ">
-            <h1 class="cover"><span>Coroutine</span><wbr></wbr><span>Rule</span></h1>
-            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">class <a href="index.html">CoroutineRule</a> : <span data-unresolved-link="org.junit.rules/TestWatcher///PointingToDeclaration/">TestWatcher</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This rule should be added to any test containing any coroutines/Flows, since it handles the cleaning up of any loose Jobs and also sets the main dispatcher to run in a controlled test CoroutineScope. Use as:</p><div class="sample-container"><code class="" theme="idea"><pre>    @get:Rule
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="testing-core::com.jonapoul.common.test/CoroutineRule///PointingToDeclaration//-1236850589">
+  <div class="breadcrumbs"><a href="../../../index.html">testing-core</a><span class="delimiter">/</span><a href="../index.html">com.jonapoul.common.test</a><span class="delimiter">/</span><a href="index.html">CoroutineRule</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Coroutine</span><wbr></wbr><span><span>Rule</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CoroutineRule</a> : <span data-unresolved-link="org.junit.rules/TestWatcher///PointingToDeclaration/">TestWatcher</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This rule should be added to any test containing any coroutines/Flows, since it handles the cleaning up of any loose Jobs and also sets the main dispatcher to run in a controlled test CoroutineScope. Use as:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">    @get:Rule
     val coroutineRule = CoroutineRule()
 
     @Test
@@ -30,164 +54,160 @@
         launch {
             assertEquals(1+1, 2)
         }
-    }</pre></code></div></div></div>
-          </div>
-          <div class="tabbedcontent">
-            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
-            <div class="tabs-section-body">
-              <h2 class="tabbedcontent">Constructors</h2>
-              <div class="table" data-togglable="Constructors"><a data-name="-2078422191%2FConstructors%2F-1236850589" anchor-label="CoroutineRule" id="-2078422191%2FConstructors%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue TabbedContent">
-                    <div class=""><span class="inline-flex"><a href="-coroutine-rule.html">CoroutineRule</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2078422191%2FConstructors%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">fun <a href="-coroutine-rule.html">CoroutineRule</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h2 class="">Functions</h2>
-              <div class="table" data-togglable="Functions"><a data-name="-1703729179%2FFunctions%2F-1236850589" anchor-label="advanceUntilIdle" id="-1703729179%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="advance-until-idle.html">advanceUntilIdle</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1703729179%2FFunctions%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">fun <a href="advance-until-idle.html">advanceUntilIdle</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
   </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1929544992%2FFunctions%2F-1236850589" anchor-label="apply" id="-1929544992%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="index.html#-1929544992%2FFunctions%2F-1236850589">apply</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1929544992%2FFunctions%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">open override fun <a href="index.html#-1929544992%2FFunctions%2F-1236850589">apply</a>(p0: <span data-unresolved-link="org.junit.runners.model/Statement///PointingToDeclaration/">Statement</span>, p1: <span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span>): <span data-unresolved-link="org.junit.runners.model/Statement///PointingToDeclaration/">Statement</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="2019667857%2FFunctions%2F-1236850589" anchor-label="failed" id="2019667857%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="index.html#2019667857%2FFunctions%2F-1236850589">failed</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2019667857%2FFunctions%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">open fun <a href="index.html#2019667857%2FFunctions%2F-1236850589">failed</a>(p0: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a>, p1: <span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-206408058%2FFunctions%2F-1236850589" anchor-label="runTest" id="-206408058%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="run-test.html">runTest</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-206408058%2FFunctions%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">fun <a href="run-test.html">runTest</a>(timeoutMs: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a> = DEFAULT_TIMEOUT_MS, testBody: suspend <span data-unresolved-link="kotlinx.coroutines.test/TestScope///PointingToDeclaration/">TestScope</span>.() -&gt; <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>): <span data-unresolved-link="/&amp;lt;ERROR CLASS&amp;gt;///PointingToDeclaration/">&lt;ERROR CLASS&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-518806935%2FFunctions%2F-1236850589" anchor-label="skipped" id="-518806935%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="index.html#-1682087327%2FFunctions%2F-1236850589">skipped</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-518806935%2FFunctions%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">open fun <a href="index.html#-1682087327%2FFunctions%2F-1236850589">skipped</a>(p0: <span data-unresolved-link="org.junit/AssumptionViolatedException///PointingToDeclaration/">AssumptionViolatedException</span>, p1: <span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace strikethrough">open fun <a href="index.html#-1688344674%2FFunctions%2F-1236850589">skipped</a>(p0: <span data-unresolved-link="org.junit.internal/AssumptionViolatedException///PointingToDeclaration/">AssumptionViolatedException</span>, p1: <span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1776812923%2FFunctions%2F-1236850589" anchor-label="succeeded" id="1776812923%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="index.html#1776812923%2FFunctions%2F-1236850589">succeeded</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1776812923%2FFunctions%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title"><div class="divergent-group" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
-
-  <div>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace">open fun <a href="index.html#1776812923%2FFunctions%2F-1236850589">succeeded</a>(p0: <span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-  </div>
-</div>
-</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h2 class="">Properties</h2>
-              <div class="table" data-togglable="Properties"><a data-name="2114660622%2FProperties%2F-1236850589" anchor-label="dispatcher" id="2114660622%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="dispatcher.html">dispatcher</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2114660622%2FProperties%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><a data-name="2114660622%2FProperties%2F-1236850589" anchor-label="dispatcher" id="2114660622%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a><div class="symbol monospace">val <a href="dispatcher.html">dispatcher</a>: <span data-unresolved-link="/&amp;lt;ERROR CLASS&amp;gt;///PointingToDeclaration/">&lt;ERROR CLASS&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1616587055%2FProperties%2F-1236850589" anchor-label="scope" id="-1616587055%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
-                <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="scope.html">scope</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1616587055%2FProperties%2F-1236850589"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><a data-name="-1616587055%2FProperties%2F-1236850589" anchor-label="scope" id="-1616587055%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a><div class="symbol monospace">val <a href="scope.html">scope</a>: <span data-unresolved-link="/&amp;lt;ERROR CLASS&amp;gt;///PointingToDeclaration/">&lt;ERROR CLASS&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-2078422191%2FConstructors%2F-1236850589" anchor-label="CoroutineRule" id="-2078422191%2FConstructors%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-coroutine-rule.html"><span>Coroutine</span><wbr></wbr><span><span>Rule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2078422191%2FConstructors%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-coroutine-rule.html"><span class="token function">CoroutineRule</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-1703729179%2FFunctions%2F-1236850589" anchor-label="advanceUntilIdle" id="-1703729179%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="advance-until-idle.html"><span>advance</span><wbr></wbr><span>Until</span><wbr></wbr><span><span>Idle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1703729179%2FFunctions%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="advance-until-idle.html"><span class="token function">advanceUntilIdle</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1929544992%2FFunctions%2F-1236850589" anchor-label="apply" id="-1929544992%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1929544992%2FFunctions%2F-1236850589"><span><span>apply</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1929544992%2FFunctions%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#-1929544992%2FFunctions%2F-1236850589"><span class="token function">apply</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><span data-unresolved-link="org.junit.runners.model/Statement///PointingToDeclaration/">Statement</span><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.junit.runners.model/Statement///PointingToDeclaration/">Statement</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2019667857%2FFunctions%2F-1236850589" anchor-label="failed" id="2019667857%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#2019667857%2FFunctions%2F-1236850589"><span><span>failed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2019667857%2FFunctions%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#2019667857%2FFunctions%2F-1236850589"><span class="token function">failed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-206408058%2FFunctions%2F-1236850589" anchor-label="runTest" id="-206408058%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="run-test.html"><span>run</span><wbr></wbr><span><span>Test</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-206408058%2FFunctions%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="run-test.html"><span class="token function">runTest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">timeoutMs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span>DEFAULT_TIMEOUT_MS<span class="token punctuation">, </span></span><span class="parameter ">testBody<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token keyword"></span><span data-unresolved-link="kotlinx.coroutines.test/TestScope///PointingToDeclaration/">TestScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.test/TestResult///PointingToDeclaration/">TestResult</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-518806935%2FFunctions%2F-1236850589" anchor-label="skipped" id="-518806935%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1682087327%2FFunctions%2F-1236850589"><span><span>skipped</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-518806935%2FFunctions%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1682087327%2FFunctions%2F-1236850589"><span class="token function">skipped</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><span data-unresolved-link="org.junit/AssumptionViolatedException///PointingToDeclaration/">AssumptionViolatedException</span><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace strikethrough"><strike><span class="token keyword">open </span></strike><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="index.html#-1688344674%2FFunctions%2F-1236850589"><strike><span class="token function">skipped</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><span data-unresolved-link="org.junit.internal/AssumptionViolatedException///PointingToDeclaration/">AssumptionViolatedException</span><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span></span></span><strike><span class="token punctuation">)</span></strike><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1776812923%2FFunctions%2F-1236850589" anchor-label="succeeded" id="1776812923%2FFunctions%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#1776812923%2FFunctions%2F-1236850589"><span><span>succeeded</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1776812923%2FFunctions%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1776812923%2FFunctions%2F-1236850589"><span class="token function">succeeded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="2114660622%2FProperties%2F-1236850589" anchor-label="dispatcher" id="2114660622%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="dispatcher.html">dispatcher</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2114660622%2FProperties%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><a data-name="2114660622%2FProperties%2F-1236850589" anchor-label="dispatcher" id="2114660622%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="dispatcher.html">dispatcher</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.test/TestDispatcher///PointingToDeclaration/">TestDispatcher</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1616587055%2FProperties%2F-1236850589" anchor-label="scope" id="-1616587055%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a>
+        <div class="table-row" data-filterable-current=":testing-core:dokkaHtml/main" data-filterable-set=":testing-core:dokkaHtml/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="scope.html">scope</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1616587055%2FProperties%2F-1236850589"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":testing-core:dokkaHtml/main"><a data-name="-1616587055%2FProperties%2F-1236850589" anchor-label="scope" id="-1616587055%2FProperties%2F-1236850589" data-filterable-set=":testing-core:dokkaHtml/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="scope.html">scope</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.test/TestScope///PointingToDeclaration/">TestScope</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        </div>
+    </div>
+</div>
+</body>
 </html>
-

@@ -78,12 +78,8 @@ $dokka.location:com.jonapoul.common.domain/ActivityLauncher///PointingToDeclarat
 $dokka.location:com.jonapoul.common.domain/ActivityLauncher/ActivityLauncher/#android.content.Context/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-activity-launcher/-activity-launcher.html
 $dokka.location:com.jonapoul.common.domain/ActivityLauncher/launch/#kotlin.String#android.net.Uri?#kotlin.Int?#android.os.Bundle?/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-activity-launcher/launch.html
 $dokka.location:com.jonapoul.common.domain/ActivityLauncher/launch/#kotlin.reflect.KClass[TypeParam(bounds=[android.app.Activity])]#android.net.Uri?#kotlin.Int?#android.os.Bundle?/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-activity-launcher/launch.html
-$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_AFTER///PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-a-f-t-e-r/index.html
-$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_AFTER/name/#/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-a-f-t-e-r/name.html
-$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_AFTER/ordinal/#/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-a-f-t-e-r/ordinal.html
-$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_BEFORE///PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-b-e-f-o-r-e/index.html
-$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_BEFORE/name/#/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-b-e-f-o-r-e/name.html
-$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_BEFORE/ordinal/#/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-b-e-f-o-r-e/ordinal.html
+$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_AFTER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-a-f-t-e-r/index.html
+$dokka.location:com.jonapoul.common.domain/LoopDelayType.DELAY_BEFORE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib-domain/com.jonapoul.common.domain/-loop-delay-type/-d-e-l-a-y_-b-e-f-o-r-e/index.html
 $dokka.location:com.jonapoul.common.domain/LoopDelayType///PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-loop-delay-type/index.html
 $dokka.location:com.jonapoul.common.domain/TextCreator///PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-text-creator/index.html
 $dokka.location:com.jonapoul.common.domain/TextCreator/TextCreator/#android.content.Context/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-text-creator/-text-creator.html
