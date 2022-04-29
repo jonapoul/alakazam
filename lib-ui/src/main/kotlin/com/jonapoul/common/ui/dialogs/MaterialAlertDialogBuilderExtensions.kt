@@ -34,3 +34,14 @@ fun MaterialAlertDialogBuilder.setSimplePositiveButton(
         setPositiveButton(text) { _, _ -> onClick.invoke() }
     }
 }
+
+fun MaterialAlertDialogBuilder.setSimpleNeutralButton(
+    @StringRes text: Int,
+    onClick: (() -> Unit)? = null,
+): MaterialAlertDialogBuilder {
+    return if (onClick == null) {
+        setNeutralButton(text, null)
+    } else {
+        setNeutralButton(text) { _, _ -> onClick.invoke() }
+    }
+}
