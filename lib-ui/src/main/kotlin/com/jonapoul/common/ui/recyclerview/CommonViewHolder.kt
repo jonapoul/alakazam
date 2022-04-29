@@ -1,5 +1,6 @@
 package com.jonapoul.common.ui.recyclerview
 
+import android.content.Context
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
@@ -8,5 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
  * called when the view is being bound to an item of type [ItemType].
  */
 abstract class CommonViewHolder<ItemType>(root: View) : RecyclerView.ViewHolder(root) {
+    protected val context: Context
+        get() = itemView.context
+
     abstract fun bindTo(item: ItemType)
 }
