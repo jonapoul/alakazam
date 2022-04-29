@@ -19,7 +19,6 @@ private data class DataClass(
 )
 
 private val DATA1 = DataClass(INT, BOOL, DOUBLE)
-private val DATA2 = DataClass(INT, BOOL, DOUBLE)
 
 private abstract class AbstractClass
 private object FinalClass : AbstractClass()
@@ -38,54 +37,6 @@ private fun checkFailed(call: () -> Unit) {
         throw AssertionError(UNEXPECTED)
     } catch (e: AssertionError) {
         if (e.message == UNEXPECTED) throw e
-    }
-}
-
-@RunWith(Parameterized::class)
-class AssertEqualsValidTests(private val expected: Any, private val actual: Any) {
-    @Test
-    fun `assertEquals valid`() = assertEquals(expected, actual)
-
-    companion object {
-        @JvmStatic
-        @Parameterized.Parameters
-        fun data() = listOf(
-            arrayOf(INT, INT),
-            arrayOf(INT, INT),
-            arrayOf(LONG, LONG),
-            arrayOf(FLOAT, FLOAT),
-            arrayOf(DOUBLE, DOUBLE),
-            arrayOf(BOOL, BOOL),
-            arrayOf(DATA1.boolean, BOOL),
-            arrayOf(DATA1.int, INT),
-            arrayOf(DATA1.double, DOUBLE),
-            arrayOf(DATA1, DATA2),
-        )
-    }
-}
-
-@RunWith(Parameterized::class)
-class AssertNotEqualsValidTests(private val a: Any, private val b: Any) {
-    @Test
-    fun `assertNotEquals valid`() = assertNotEquals(a, b)
-
-    companion object {
-        @JvmStatic
-        @Parameterized.Parameters
-        fun data() = listOf(
-            arrayOf(0, false),
-            arrayOf(INT, BOOL),
-            arrayOf(INT, LONG),
-            arrayOf(INT, FLOAT),
-            arrayOf(INT, DOUBLE),
-            arrayOf(DATA1, DOUBLE),
-            arrayOf(INT, "1"),
-            arrayOf(LONG, "1"),
-            arrayOf(LONG, "1L"),
-            arrayOf(DOUBLE, "1.0"),
-            arrayOf(FLOAT, "1.0"),
-            arrayOf(FLOAT, "1.0f"),
-        )
     }
 }
 

@@ -32,6 +32,8 @@ dependencies {
     api "app.cash.turbine:turbine:$versions.turbine"
     api "junit:junit:$versions.junit"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines_test"
+    api "org.jetbrains.kotlin:kotlin-test-common:$versions.kotlin"
+    api "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
     api "com.squareup.moshi:moshi:$versions.moshi"
     api "com.squareup.moshi:moshi-kotlin:$versions.moshi"
     api "net.lachlanmckee:timber-junit-rule:$versions.timber_junit_rule"

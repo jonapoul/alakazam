@@ -1,22 +1,7 @@
 package com.jonapoul.common.test
 
 import org.junit.Assert
-
-fun <Expected, Actual> assertEquals(expected: Expected, actual: Actual) {
-    Assert.assertEquals(expected, actual)
-}
-
-fun <Unexpected, Actual> assertNotEquals(unexpected: Unexpected, actual: Actual) {
-    Assert.assertNotEquals(unexpected, actual)
-}
-
-fun assertNull(value: Any?) {
-    Assert.assertNull(value)
-}
-
-fun assertNotNull(value: Any?) {
-    Assert.assertNotNull(value)
-}
+import org.junit.Assert.assertEquals
 
 fun assertTrue(condition: Boolean?) {
     if (condition == null) {
