@@ -6,8 +6,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.jonapoul.common.core.toast
 import com.jonapoul.common.domain.safelyNavigate
-import com.jonapoul.common.domain.toast
 import com.jonapoul.common.sample.databinding.FragmentHomeBinding
 import com.jonapoul.common.ui.dialogs.showCautionDialog
 import com.jonapoul.common.ui.dialogs.showLoadingDialog

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.test.core.app.ApplicationProvider
-import com.jonapoul.common.data.ifTrue
+import com.jonapoul.common.core.ifTrue
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 import kotlin.reflect.KClass

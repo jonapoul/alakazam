@@ -44,6 +44,13 @@ allprojects {
         mavenCentral()
         maven { url "https://jitpack.io" }
     }
+
+    def name = project.name
+    if (name != root.name) {
+        if (name.startsWith("lib-")) {
+            apply from: "$root/gradle/build-common-lib.gradle"
+        }
+    }
 }
 
 subprojects {

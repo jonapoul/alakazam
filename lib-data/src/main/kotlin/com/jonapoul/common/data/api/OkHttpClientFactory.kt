@@ -1,7 +1,7 @@
 package com.jonapoul.common.data.api
 
 import android.content.Context
-import com.jonapoul.common.data.ifNotNull
+import com.jonapoul.common.core.ifNotNull
 import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Cache
 import okhttp3.ConnectionPool

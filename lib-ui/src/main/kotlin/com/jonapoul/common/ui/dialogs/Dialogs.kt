@@ -7,7 +7,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.jonapoul.common.data.ifNotNull
+import com.jonapoul.common.core.ifNotNull
 import com.jonapoul.common.ui.R
 import com.jonapoul.common.ui.databinding.DialogLoadingBinding
 

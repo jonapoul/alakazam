@@ -1,6 +1,6 @@
 package com.jonapoul.common.data.api
 
-import com.jonapoul.common.data.requireMessage
+import com.jonapoul.common.core.requireMessage
 import retrofit2.HttpException
 import java.io.IOException
 

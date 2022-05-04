@@ -8,7 +8,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import com.jonapoul.common.domain.getColorFromAttr
+import com.jonapoul.common.core.getColorFromAttr
 
 /**
  * Applies the given [ColorInt] colour to the text and icons of a [Toolbar].

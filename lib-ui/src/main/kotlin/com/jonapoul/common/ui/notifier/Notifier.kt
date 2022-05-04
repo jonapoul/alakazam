@@ -1,10 +1,8 @@
 package com.jonapoul.common.ui.notifier
 
-import android.content.Context
 import android.graphics.Color
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
@@ -59,14 +57,6 @@ class Notifier(
 
     fun info(root: View, @StringRes message: Int) {
         info(root, root.context.getString(message))
-    }
-
-    fun toast(context: Context, message: String) {
-        Toast.makeText(context.applicationContext, message, Toast.LENGTH_LONG).show()
-    }
-
-    fun toast(context: Context, @StringRes message: Int) {
-        toast(context, context.getString(message))
     }
 
     companion object {

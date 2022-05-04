@@ -9,7 +9,7 @@ import androidx.core.content.withStyledAttributes
 import androidx.core.widget.ImageViewCompat
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceViewHolder
-import com.jonapoul.common.domain.getColorFromAttr
+import com.jonapoul.common.core.getColorFromAttr
 import com.jonapoul.common.ui.R
 
 class CommonPreferenceCategory @JvmOverloads constructor(

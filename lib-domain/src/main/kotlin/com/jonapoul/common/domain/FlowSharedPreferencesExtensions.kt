@@ -4,7 +4,7 @@ package com.jonapoul.common.domain
 
 import com.fredporciuncula.flow.preferences.FlowSharedPreferences
 import com.fredporciuncula.flow.preferences.Preference
-import com.jonapoul.common.data.PrefPair
+import com.jonapoul.common.core.PrefPair
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 fun FlowSharedPreferences.getInt(pref: PrefPair<Int>): Preference<Int> =

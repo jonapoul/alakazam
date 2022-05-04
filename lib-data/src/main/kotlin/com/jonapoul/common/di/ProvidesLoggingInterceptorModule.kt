@@ -1,6 +1,6 @@
 package com.jonapoul.common.di
 
-import com.jonapoul.common.data.IBuildConfig
+import com.jonapoul.common.core.IBuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

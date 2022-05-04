@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.content.edit
-import com.jonapoul.common.data.PrefPair
+import com.jonapoul.common.core.PrefPair
 
 /**
  * Parses an [Int] from a [SharedPreferences] [String] value, returning the [Int] default value if

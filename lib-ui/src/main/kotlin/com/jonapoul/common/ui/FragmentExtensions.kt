@@ -2,7 +2,7 @@ package com.jonapoul.common.ui
 
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.jonapoul.common.domain.throwsSpecific
+import com.jonapoul.common.core.throwsSpecific
 import com.jonapoul.common.ui.view.onDestroyView
 
 /**

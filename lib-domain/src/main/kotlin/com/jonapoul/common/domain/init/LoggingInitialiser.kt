@@ -1,9 +1,9 @@
 package com.jonapoul.common.domain.init
 
 import android.app.Application
-import com.jonapoul.common.data.IBuildConfig
-import com.jonapoul.common.data.logging.ConsoleLoggingTree
-import com.jonapoul.common.data.logging.FileLoggingTree
+import com.jonapoul.common.core.IBuildConfig
+import com.jonapoul.common.core.logging.ConsoleLoggingTree
+import com.jonapoul.common.core.logging.FileLoggingTree
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

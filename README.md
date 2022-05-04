@@ -26,6 +26,7 @@ And add a dependency code to your **module**'s `build.gradle` file.
 
 ```gradle
 dependencies {
+    implementation "com.github.jonapoul:android-common:lib-core:{version}"
     implementation "com.github.jonapoul:android-common:lib-ui:{version}"
     implementation "com.github.jonapoul:android-common:lib-domain:{version}"
     implementation "com.github.jonapoul.android-common:lib-data:{version}"

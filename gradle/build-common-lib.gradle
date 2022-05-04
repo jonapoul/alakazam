@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion versions.targetSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.libVersionCode
+        versionName versions.libVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures.viewBinding true
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = [
+            '-Xjvm-default=compatibility',
+            '-Xopt-in=kotlin.RequiresOptIn'
+        ]
+    }
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId 'com.github.jonapoul.android-common'
+                artifactId ARTIFACT_ID
+                version versions.libVersionName
+                from components.release
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
+
+    testImplementation "app.cash.turbine:turbine:$versions.turbine"
+    testImplementation "io.mockk:mockk:$versions.mockk"
+    testImplementation "junit:junit:$versions.junit"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
+}
