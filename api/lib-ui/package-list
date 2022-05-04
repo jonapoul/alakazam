@@ -25,8 +25,6 @@ $dokka.location:com.jonapoul.common.ui.notifier/Notifier/info/#android.view.View
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/info/#android.view.View#kotlin.String/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/info.html
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/success/#android.view.View#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/success.html
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/success/#android.view.View#kotlin.String/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/success.html
-$dokka.location:com.jonapoul.common.ui.notifier/Notifier/toast/#android.content.Context#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/toast.html
-$dokka.location:com.jonapoul.common.ui.notifier/Notifier/toast/#android.content.Context#kotlin.String/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/toast.html
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/warning/#android.view.View#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/warning.html
 $dokka.location:com.jonapoul.common.ui.notifier/Notifier/warning/#android.view.View#kotlin.String/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.notifier/-notifier/warning.html
 $dokka.location:com.jonapoul.common.ui.prefs////PointingToDeclaration/lib-ui/com.jonapoul.common.ui.prefs/index.html
@@ -74,6 +72,8 @@ $dokka.location:com.jonapoul.common.ui.view//inflate/android.view.ViewGroup#kotl
 $dokka.location:com.jonapoul.common.ui.view//onDestroyView/TypeParam(bounds=[android.view.View])#kotlin.Function1[TypeParam(bounds=[android.view.View]),kotlin.Unit]/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/on-destroy-view.html
 $dokka.location:com.jonapoul.common.ui.view//setColorFilterAttr/android.widget.ImageView#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/set-color-filter-attr.html
 $dokka.location:com.jonapoul.common.ui.view//setColorFilterRes/android.widget.ImageView#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/set-color-filter-res.html
+$dokka.location:com.jonapoul.common.ui.view//setSpinnerText/com.google.android.material.textfield.TextInputLayout#kotlin.String/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/set-spinner-text.html
+$dokka.location:com.jonapoul.common.ui.view//setText/com.google.android.material.textfield.TextInputLayout#kotlin.String?/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/set-text.html
 $dokka.location:com.jonapoul.common.ui.view//setTextColorAttr/android.widget.TextView#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/set-text-color-attr.html
 $dokka.location:com.jonapoul.common.ui.view//setTextColorRes/android.widget.TextView#kotlin.Int/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/set-text-color-res.html
 $dokka.location:com.jonapoul.common.ui.view//show/android.view.View#/PointingToDeclaration/lib-ui/com.jonapoul.common.ui.view/show.html
