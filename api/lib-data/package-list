@@ -2,7 +2,7 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.common.data.api////PointingToDeclaration/lib-data/com.jonapoul.common.data.api/index.html
 $dokka.location:com.jonapoul.common.data.api/ApiBuilder///PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-builder/index.html
-$dokka.location:com.jonapoul.common.data.api/ApiBuilder/ApiBuilder/#retrofit2.Retrofit.Builder#com.jonapoul.common.data.api.OkHttpClientFactory#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]#kotlin.String#org.threeten.bp.Duration/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-builder/-api-builder.html
+$dokka.location:com.jonapoul.common.data.api/ApiBuilder/ApiBuilder/#retrofit2.Retrofit.Builder#com.jonapoul.common.data.api.OkHttpClientFactory#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]#kotlin.String#org.threeten.bp.Duration#kotlin.String/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-builder/-api-builder.html
 $dokka.location:com.jonapoul.common.data.api/ApiBuilder/buildApi/#/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-builder/build-api.html
 $dokka.location:com.jonapoul.common.data.api/ApiResult.Companion///PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-result/-companion/index.html
 $dokka.location:com.jonapoul.common.data.api/ApiResult.Companion/from/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-result/-companion/from.html
@@ -21,7 +21,7 @@ $dokka.location:com.jonapoul.common.data.api/ApiResult.Success/data/#/PointingTo
 $dokka.location:com.jonapoul.common.data.api/ApiResult///PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-api-result/index.html
 $dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory///PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/index.html
 $dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory/OkHttpClientFactory/#android.content.Context#okhttp3.logging.HttpLoggingInterceptor?/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/-ok-http-client-factory.html
-$dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory/getClient/#org.threeten.bp.Duration#org.threeten.bp.Duration#kotlin.Function1[okhttp3.OkHttpClient.Builder,okhttp3.OkHttpClient.Builder]/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/get-client.html
+$dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory/getClient/#org.threeten.bp.Duration#org.threeten.bp.Duration/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/get-client.html
 $dokka.location:com.jonapoul.common.data////PointingToDeclaration/lib-data/com.jonapoul.common.data/index.html
 $dokka.location:com.jonapoul.common.data//deepCopy/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/lib-data/com.jonapoul.common.data/deep-copy.html
 $dokka.location:com.jonapoul.common.data//deepCopy/kotlin.collections.Map[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/lib-data/com.jonapoul.common.data/deep-copy.html
