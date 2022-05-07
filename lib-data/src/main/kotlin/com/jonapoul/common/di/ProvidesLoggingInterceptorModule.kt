@@ -6,6 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.logging.HttpLoggingInterceptor
+import timber.log.Timber
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -15,9 +16,9 @@ class ProvidesLoggingInterceptorModule {
         buildConfig: IBuildConfig,
     ): HttpLoggingInterceptor? {
         return if (buildConfig.debug) {
-            HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            }
+            val interceptor = HttpLoggingInterceptor { message -> Timber.tag("OkHttp").d(message) }
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            interceptor
         } else null
     }
 }
