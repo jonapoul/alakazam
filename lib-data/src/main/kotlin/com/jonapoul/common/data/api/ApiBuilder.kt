@@ -10,17 +10,21 @@ abstract class ApiBuilder<Api>(
     private val apiClass: Class<Api>,
     private val baseUrl: String,
     private val timeout: Duration = DEFAULT_TIMEOUT,
+    private val protocol: String = "https"
 ) {
-
     fun buildApi(): Api {
         return retrofitBuilder
-            .baseUrl("https://$baseUrl")
+            .baseUrl("$protocol://$baseUrl")
             .client(buildOkHttpClient())
+            .extraConfig()
             .build()
             .create(apiClass)
     }
 
-    private fun buildOkHttpClient(): OkHttpClient {
+    protected open fun Retrofit.Builder.extraConfig(): Retrofit.Builder =
+        this
+
+    protected open fun buildOkHttpClient(): OkHttpClient {
         return okHttpClientFactory.getClient(
             readWriteTimeout = timeout,
             connectTimeout = timeout,

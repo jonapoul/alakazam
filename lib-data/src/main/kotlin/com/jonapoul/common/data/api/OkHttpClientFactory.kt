@@ -13,14 +13,13 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class OkHttpClientFactory @Inject constructor(
+open class OkHttpClientFactory @Inject constructor(
     @ApplicationContext private val context: Context,
     private val interceptor: HttpLoggingInterceptor?,
 ) {
     fun getClient(
         readWriteTimeout: Duration = DEFAULT_TIMEOUT,
         connectTimeout: Duration = DEFAULT_TIMEOUT,
-        extraConfig: OkHttpClient.Builder.() -> OkHttpClient.Builder = { this },
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .ifNotNull(interceptor) { addInterceptor(it) }
@@ -35,6 +34,9 @@ class OkHttpClientFactory @Inject constructor(
             .build()
     }
 
+    protected open fun OkHttpClient.Builder.extraConfig(): OkHttpClient.Builder =
+        this
+
     private fun buildCache(): Cache {
         val directory = File(context.cacheDir, "api_cache")
         return Cache(directory, CACHE_MAX_SIZE_BYTES)
@@ -42,7 +44,7 @@ class OkHttpClientFactory @Inject constructor(
 
     private fun buildDispatcher(): Dispatcher {
         return Dispatcher().apply {
-            /* Allow for high number of concurrent image fetches on same host. */
+            /* Allow for high number of concurrent data fetches on same host. */
             maxRequestsPerHost = MAX_REQUESTS_PER_HOST
         }
     }
