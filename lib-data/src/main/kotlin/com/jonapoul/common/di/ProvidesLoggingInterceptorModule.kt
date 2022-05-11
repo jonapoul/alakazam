@@ -16,7 +16,7 @@ class ProvidesLoggingInterceptorModule {
         buildConfig: IBuildConfig,
     ): HttpLoggingInterceptor? {
         return if (buildConfig.debug) {
-            val interceptor = HttpLoggingInterceptor { message -> Timber.tag("OkHttp").d(message) }
+            val interceptor = HttpLoggingInterceptor { message -> Timber.d(message) }
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             interceptor
         } else null
