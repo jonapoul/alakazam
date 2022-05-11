@@ -40,6 +40,7 @@ project.afterEvaluate {
 
 dependencies {
     api project(":testing-core")
+    implementation project(":lib-core")
 
     /* General runtime */
     implementation "androidx.activity:activity-ktx:$versions.activity_ktx"

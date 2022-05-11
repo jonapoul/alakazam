@@ -2,12 +2,12 @@ ext.versions = [
     // Build variables
     minSdk                  : 15,
     targetSdk               : 31,
-    libVersionCode          : 202205110,
-    libVersionName          : '1.9.3',
+    libVersionCode          : 202205111,
+    libVersionName          : '1.9.4',
 
     // Plugins, etc
     buildTools              : '30.0.3',
-    gradle                  : '4.2.2',
+    gradle                  : '7.2.0',
     gradle_versions         : '0.42.0',
     detekt                  : '1.20.0',
     dokka                   : '1.6.21',
@@ -15,7 +15,7 @@ ext.versions = [
     kotlin                  : '1.6.21',
     kover                   : '0.5.1',
     ktlint                  : '0.45.2',
-    ktlint_gradle           : '10.3.0',
+    ktlint_gradle           : '10.2.1',
     leakcanary              : '2.9.1',
     spotless                : '6.6.0',
 

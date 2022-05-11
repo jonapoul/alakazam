@@ -37,6 +37,7 @@ jobs:
 
       - name: Generate docs
         run: |
+          ./gradlew :lib-core:dokkaHtml
           ./gradlew :lib-data:dokkaHtml
           ./gradlew :lib-domain:dokkaHtml
           ./gradlew :lib-ui:dokkaHtml
