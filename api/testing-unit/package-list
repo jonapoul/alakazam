@@ -2,7 +2,5 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.common.test.unit////PointingToDeclaration/testing-unit/com.jonapoul.common.test.unit/index.html
 $dokka.location:com.jonapoul.common.test.unit//relaxedMockk/#/PointingToDeclaration/testing-unit/com.jonapoul.common.test.unit/relaxed-mockk.html
-$dokka.location:com.jonapoul.common.test.unit/MockkUnitRule///PointingToDeclaration/testing-unit/com.jonapoul.common.test.unit/-mockk-unit-rule/index.html
-$dokka.location:com.jonapoul.common.test.unit/MockkUnitRule/MockkUnitRule/#kotlin.Any/PointingToDeclaration/testing-unit/com.jonapoul.common.test.unit/-mockk-unit-rule/-mockk-unit-rule.html
 com.jonapoul.common.test.unit
 

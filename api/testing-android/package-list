@@ -15,8 +15,6 @@ $dokka.location:com.jonapoul.common.test.android/HiltTestActivity/HiltTestActivi
 $dokka.location:com.jonapoul.common.test.android/HiltTestRunner///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-runner/index.html
 $dokka.location:com.jonapoul.common.test.android/HiltTestRunner/HiltTestRunner/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-runner/-hilt-test-runner.html
 $dokka.location:com.jonapoul.common.test.android/HiltTestRunner/newApplication/#java.lang.ClassLoader?#kotlin.String?#android.content.Context?/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-hilt-test-runner/new-application.html
-$dokka.location:com.jonapoul.common.test.android/MockkAndroidRule///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-mockk-android-rule/index.html
-$dokka.location:com.jonapoul.common.test.android/MockkAndroidRule/MockkAndroidRule/#kotlin.Any/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-mockk-android-rule/-mockk-android-rule.html
 $dokka.location:com.jonapoul.common.test.android/RoomDatabaseRule///PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-room-database-rule/index.html
 $dokka.location:com.jonapoul.common.test.android/RoomDatabaseRule/RoomDatabaseRule/#kotlin.reflect.KClass[TypeParam(bounds=[androidx.room.RoomDatabase])]#kotlin.Boolean/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-room-database-rule/-room-database-rule.html
 $dokka.location:com.jonapoul.common.test.android/RoomDatabaseRule/database/#/PointingToDeclaration/testing-android/com.jonapoul.common.test.android/-room-database-rule/database.html
