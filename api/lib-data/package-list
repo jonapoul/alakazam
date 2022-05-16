@@ -22,6 +22,10 @@ $dokka.location:com.jonapoul.common.data.api/ApiResult///PointingToDeclaration/
 $dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory///PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/index.html
 $dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory/OkHttpClientFactory/#android.content.Context#okhttp3.logging.HttpLoggingInterceptor?/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/-ok-http-client-factory.html
 $dokka.location:com.jonapoul.common.data.api/OkHttpClientFactory/getClient/#org.threeten.bp.Duration#org.threeten.bp.Duration/PointingToDeclaration/lib-data/com.jonapoul.common.data.api/-ok-http-client-factory/get-client.html
+$dokka.location:com.jonapoul.common.data.db////PointingToDeclaration/lib-data/com.jonapoul.common.data.db/index.html
+$dokka.location:com.jonapoul.common.data.db/InstantConverter///PointingToDeclaration/lib-data/com.jonapoul.common.data.db/-instant-converter/index.html
+$dokka.location:com.jonapoul.common.data.db/InstantConverter/fromInstant/#org.threeten.bp.Instant/PointingToDeclaration/lib-data/com.jonapoul.common.data.db/-instant-converter/from-instant.html
+$dokka.location:com.jonapoul.common.data.db/InstantConverter/toInstant/#kotlin.String/PointingToDeclaration/lib-data/com.jonapoul.common.data.db/-instant-converter/to-instant.html
 $dokka.location:com.jonapoul.common.data////PointingToDeclaration/lib-data/com.jonapoul.common.data/index.html
 $dokka.location:com.jonapoul.common.data//deepCopy/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/lib-data/com.jonapoul.common.data/deep-copy.html
 $dokka.location:com.jonapoul.common.data//deepCopy/kotlin.collections.Map[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/lib-data/com.jonapoul.common.data/deep-copy.html
@@ -44,5 +48,6 @@ $dokka.location:com.jonapoul.common.di/ProvidesRetrofitModule/ProvidesRetrofitMo
 $dokka.location:com.jonapoul.common.di/ProvidesRetrofitModule/provideRetrofitBuilder/#com.squareup.moshi.Moshi/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-retrofit-module/provide-retrofit-builder.html
 com.jonapoul.common.data
 com.jonapoul.common.data.api
+com.jonapoul.common.data.db
 com.jonapoul.common.di
 
