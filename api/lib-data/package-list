@@ -42,7 +42,8 @@ $dokka.location:com.jonapoul.common.di/ProvidesLoggingInterceptorModule/Provides
 $dokka.location:com.jonapoul.common.di/ProvidesLoggingInterceptorModule/provideHttpLoggingInterceptor/#com.jonapoul.common.core.IBuildConfig/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-logging-interceptor-module/provide-http-logging-interceptor.html
 $dokka.location:com.jonapoul.common.di/ProvidesMoshiModule///PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-moshi-module/index.html
 $dokka.location:com.jonapoul.common.di/ProvidesMoshiModule/ProvidesMoshiModule/#/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-moshi-module/-provides-moshi-module.html
-$dokka.location:com.jonapoul.common.di/ProvidesMoshiModule/providesMoshi/#/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-moshi-module/provides-moshi.html
+$dokka.location:com.jonapoul.common.di/ProvidesMoshiModule/builder/#/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-moshi-module/builder.html
+$dokka.location:com.jonapoul.common.di/ProvidesMoshiModule/moshi/#com.squareup.moshi.Moshi.Builder/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-moshi-module/moshi.html
 $dokka.location:com.jonapoul.common.di/ProvidesRetrofitModule///PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-retrofit-module/index.html
 $dokka.location:com.jonapoul.common.di/ProvidesRetrofitModule/ProvidesRetrofitModule/#/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-retrofit-module/-provides-retrofit-module.html
 $dokka.location:com.jonapoul.common.di/ProvidesRetrofitModule/provideRetrofitBuilder/#com.squareup.moshi.Moshi/PointingToDeclaration/lib-data/com.jonapoul.common.di/-provides-retrofit-module/provide-retrofit-builder.html
