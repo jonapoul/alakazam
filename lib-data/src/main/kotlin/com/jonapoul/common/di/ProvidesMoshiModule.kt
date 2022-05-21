@@ -11,7 +11,10 @@ import dagger.hilt.components.SingletonComponent
 @Module
 class ProvidesMoshiModule {
     @Provides
-    fun providesMoshi(): Moshi = Moshi.Builder()
+    fun moshi(builder: Moshi.Builder): Moshi =
+        builder.build()
+
+    @Provides
+    fun builder(): Moshi.Builder = Moshi.Builder()
         .addLast(KotlinJsonAdapterFactory())
-        .build()
 }
