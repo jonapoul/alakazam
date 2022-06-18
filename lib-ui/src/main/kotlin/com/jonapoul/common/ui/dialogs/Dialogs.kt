@@ -33,6 +33,12 @@ fun Activity.showLoadingDialog(
         .show()
 }
 
+fun Activity.showSuccessDialog(
+    message: String,
+    title: String = getString(R.string.dialog_success),
+    extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
+) = showWarningDialogImpl(this, title, message, extraConfig)
+
 fun Activity.showCautionDialog(
     message: String,
     title: String = getString(R.string.dialog_caution),
@@ -44,6 +50,12 @@ fun Activity.showWarningDialog(
     title: String = getString(R.string.dialog_warning),
     extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
 ) = showWarningDialogImpl(this, title, message, extraConfig)
+
+fun Fragment.showSuccessDialog(
+    message: String,
+    title: String = getString(R.string.dialog_success),
+    extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
+) = showWarningDialogImpl(requireActivity(), title, message, extraConfig)
 
 fun Fragment.showCautionDialog(
     message: String,
