@@ -77,6 +77,10 @@
         <item name="android:textColor">@color/onSurfaceOrange</item>
     </style>
 
+    <style name="Theme.Common.Button.Text.Success" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/onSurfaceGreen</item>
+    </style>
+
     <style name="Theme.Common.AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="buttonBarNegativeButtonStyle">@style/Theme.Common.Button.Text</item>
         <item name="buttonBarPositiveButtonStyle">@style/Theme.Common.Button.Text</item>
@@ -122,6 +126,19 @@
         <item name="buttonBarNeutralButtonStyle">@style/Theme.Common.Button.Text.Caution</item>
     </style>
 
+    <style name="Theme.Common.AlertDialog.Success" parent="Theme.Common.AlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">
+            @style/Theme.Common.AlertDialog.Text.Success
+        </item>
+        <item name="materialAlertDialogTitleIconStyle">
+            @style/Theme.Common.AlertDialog.Icon.Success
+        </item>
+        <item name="buttonBarButtonStyle">@style/Theme.Common.Button.Text.Success</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Theme.Common.Button.Text.Success</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Theme.Common.Button.Text.Success</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Theme.Common.Button.Text.Success</item>
+    </style>
+
     <style name="Theme.Common.AlertDialog.Text.Warning" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">@color/onSurfaceRed</item>
     </style>
@@ -136,6 +153,14 @@
 
     <style name="Theme.Common.AlertDialog.Icon.Caution" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
         <item name="android:tint">@color/onSurfaceOrange</item>
+    </style>
+
+    <style name="Theme.Common.AlertDialog.Text.Success" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/onSurfaceGreen</item>
+    </style>
+
+    <style name="Theme.Common.AlertDialog.Icon.Success" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+        <item name="android:tint">@color/onSurfaceGreen</item>
     </style>
 
     <style name="Theme.Common.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">

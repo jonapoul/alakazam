@@ -82,3 +82,16 @@ private fun showCautionDialogImpl(
     .setSimplePositiveButton()
     .extraConfig()
     .show()
+
+private fun showSuccessDialogImpl(
+    context: Context,
+    title: String,
+    message: String,
+    extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
+): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Common_AlertDialog_Success)
+    .setTitle(title)
+    .setIcon(R.drawable.ic_check)
+    .setMessage(message)
+    .setSimplePositiveButton()
+    .extraConfig()
+    .show()
