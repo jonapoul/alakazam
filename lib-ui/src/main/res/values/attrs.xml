@@ -3,4 +3,6 @@
     <declare-styleable name="CommonPreferenceCategory">
         <attr name="cpc_tint" format="color" />
     </declare-styleable>
+
+    <attr name="primaryOnSurface" format="color" />
 </resources>

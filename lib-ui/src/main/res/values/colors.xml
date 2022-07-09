@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="cardBackground">#FFFFFF</color>
+    <color name="onSurface">@color/black</color>
+    <color name="onSurfaceSecondary">#8a000000</color>
+    <color name="onSurfaceDisabled">#B1B1B1</color>
+    <color name="loadingOnSurface">@color/grey</color>
+    <color name="snackbarBackground">#575757</color>
 
     <color name="onSurfaceGreen">#00B000</color>
     <color name="onSurfaceYellow">#B0B000</color>
@@ -21,4 +26,9 @@
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
     <color name="translucent">#80FFFFFF</color>
+
+    <color name="onSnackbarGreen">#55ff55</color>
+    <color name="onSnackbarBlue">#5599FF</color>
+    <color name="onSnackbarYellow">#ffff55</color>
+    <color name="onSnackbarRed">#ff5555</color>
 </resources>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="cardBackground">#181818</color>
+    <color name="onSurface">@color/white</color>
+    <color name="onSurfaceSecondary">#b3ffffff</color>
+    <color name="onSurfaceDisabled">#494949</color>
+    <color name="loadingOnSurface">@color/grey</color>
+    <color name="snackbarBackground">#474747</color>
 
     <color name="onSurfaceGreen">#55ff55</color>
     <color name="onSurfaceYellow">#ffff55</color>
