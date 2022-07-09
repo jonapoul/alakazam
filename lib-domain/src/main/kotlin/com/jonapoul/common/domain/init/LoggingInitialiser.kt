@@ -3,7 +3,6 @@ package com.jonapoul.common.domain.init
 import android.app.Application
 import com.jonapoul.common.core.IBuildConfig
 import com.jonapoul.common.core.logging.ConsoleLoggingTree
-import com.jonapoul.common.core.logging.FileLoggingTree
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,10 +20,6 @@ internal class LoggingInitialiser @Inject constructor(
             Timber.plant(ConsoleLoggingTree())
             Timber.d("Started console logging")
         }
-
-        /* Log to file in all builds, regardless of variant */
-        Timber.plant(FileLoggingTree())
-        Timber.d("Started file logging")
     }
 }
 
