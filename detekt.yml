@@ -2,8 +2,7 @@ complexity:
   LongParameterList:
     active: false
   TooManyFunctions:
-    thresholdInObjects: 20
-    thresholdInClasses: 20
+    active: false
 
 exceptions:
   SwallowedException:
