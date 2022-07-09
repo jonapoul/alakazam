@@ -27,7 +27,7 @@ project.afterEvaluate {
 }
 
 dependencies {
-    implementation project(":lib-core")
+    implementation project(path: ":lib-core", configuration: "default")
 
     api "app.cash.turbine:turbine:$versions.turbine"
     api "junit:junit:$versions.junit"
