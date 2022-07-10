@@ -35,6 +35,7 @@ $dokka.location:com.jonapoul.common.core//parseBoolean/kotlin.String#/PointingTo
 $dokka.location:com.jonapoul.common.core//quietlyClose/java.io.Closeable#/PointingToDeclaration/lib-core/com.jonapoul.common.core/quietly-close.html
 $dokka.location:com.jonapoul.common.core//red/kotlin.Int#/PointingToDeclaration/lib-core/com.jonapoul.common.core/red.html
 $dokka.location:com.jonapoul.common.core//requireMessage/kotlin.Throwable#/PointingToDeclaration/lib-core/com.jonapoul.common.core/require-message.html
+$dokka.location:com.jonapoul.common.core//shortName/kotlin.time.DurationUnit#/PointingToDeclaration/lib-core/com.jonapoul.common.core/short-name.html
 $dokka.location:com.jonapoul.common.core//startServiceWithAction/android.content.Context#kotlin.String/PointingToDeclaration/lib-core/com.jonapoul.common.core/start-service-with-action.html
 $dokka.location:com.jonapoul.common.core//takeUntilExclusive/kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Boolean]/PointingToDeclaration/lib-core/com.jonapoul.common.core/take-until-exclusive.html
 $dokka.location:com.jonapoul.common.core//takeUntilInclusive/kotlinx.coroutines.flow.Flow[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Boolean]/PointingToDeclaration/lib-core/com.jonapoul.common.core/take-until-inclusive.html

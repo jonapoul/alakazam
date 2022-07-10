@@ -75,7 +75,9 @@ $dokka.location:com.jonapoul.common.domain/Preferences/stringAsFlow/#com.jonapou
 $dokka.location:com.jonapoul.common.domain/TextCreator///PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-text-creator/index.html
 $dokka.location:com.jonapoul.common.domain/TextCreator/TextCreator/#android.content.Context/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-text-creator/-text-creator.html
 $dokka.location:com.jonapoul.common.domain/Toaster///PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/index.html
-$dokka.location:com.jonapoul.common.domain/Toaster/Toaster/#android.content.Context/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/-toaster.html
+$dokka.location:com.jonapoul.common.domain/Toaster/Toaster/#android.content.Context#kotlinx.coroutines.CoroutineDispatcher/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/-toaster.html
+$dokka.location:com.jonapoul.common.domain/Toaster/coToast/#kotlin.Int#kotlin.Int/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/co-toast.html
+$dokka.location:com.jonapoul.common.domain/Toaster/coToast/#kotlin.String#kotlin.Int/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/co-toast.html
 $dokka.location:com.jonapoul.common.domain/Toaster/toast/#kotlin.Int#kotlin.Int/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/toast.html
 $dokka.location:com.jonapoul.common.domain/Toaster/toast/#kotlin.String#kotlin.Int/PointingToDeclaration/lib-domain/com.jonapoul.common.domain/-toaster/toast.html
 com.jonapoul.common.di
