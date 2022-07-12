@@ -2,8 +2,8 @@ ext.versions = [
     // Build variables
     minSdk                  : 15,
     targetSdk               : 31,
-    libVersionCode          : 202207090,
-    libVersionName          : '1.10.0',
+    libVersionCode          : 202207120,
+    libVersionName          : '1.11.0',
 
     // Plugins, etc
     buildTools              : '30.0.3',
@@ -27,7 +27,7 @@ ext.versions = [
     fragment                : '1.5.0',
     lifecycle               : '2.5.0',
     logback_android         : '2.0.0',
-    material                : '1.6.0',
+    material                : '1.6.1',
     moshi                   : '1.13.0',
     navigation              : '2.5.0',
     okhttp                  : '5.0.0-alpha.10',
