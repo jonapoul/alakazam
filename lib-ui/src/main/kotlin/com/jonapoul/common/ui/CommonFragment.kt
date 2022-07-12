@@ -26,16 +26,10 @@ abstract class CommonFragment(
     private val recyclerViews = mutableListOf<RecyclerView>()
 
     @CallSuper
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(menu != null)
-    }
-
-    @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         grabRecyclerViews(view)
         menu?.let {
-            requireActivity().addMenuProvider(this)
+            requireActivity().addMenuProvider(this, viewLifecycleOwner)
         }
     }
 
@@ -46,6 +40,7 @@ abstract class CommonFragment(
         recyclerViews.clear()
     }
 
+    @CallSuper
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         this.menu?.let { menuInflater.inflate(it, menu) }
     }
