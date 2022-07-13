@@ -1,4 +1,4 @@
-package com.jonapoul.common.test.android
+package com.jonapoul.common.test.db
 
 import android.content.Context
 import androidx.room.Room
