@@ -1,7 +1,7 @@
 package com.jonapoul.common.data.db
 
 import androidx.room.TypeConverter
-import org.threeten.bp.Instant
+import java.time.Instant
 
 object InstantConverter {
     @TypeConverter
