@@ -1,0 +1,16 @@
+apply plugin: "kotlinx-serialization"
+
+ext.ARTIFACT_ID = "lib-json"
+
+android {
+    kotlinOptions {
+        freeCompilerArgs += [
+            '-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi'
+        ]
+    }
+}
+
+dependencies {
+    api project(":lib-core")
+    api "org.jetbrains.kotlinx:kotlinx-serialization-json:$versions.kotlinx_serialization"
+}
