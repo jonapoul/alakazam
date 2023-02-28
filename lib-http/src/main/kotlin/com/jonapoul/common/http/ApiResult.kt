@@ -1,4 +1,4 @@
-package com.jonapoul.common.data.api
+package com.jonapoul.common.http
 
 import com.jonapoul.common.core.requireMessage
 import retrofit2.HttpException

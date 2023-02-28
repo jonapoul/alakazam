@@ -1,4 +1,4 @@
-package com.jonapoul.common.data.api
+package com.jonapoul.common.http
 
 import android.content.Context
 import com.jonapoul.common.core.ifNotNull
@@ -8,8 +8,8 @@ import okhttp3.ConnectionPool
 import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.threeten.bp.Duration
 import java.io.File
+import java.time.Duration
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ open class OkHttpClientFactory @Inject constructor(
     @ApplicationContext private val context: Context,
     private val interceptor: HttpLoggingInterceptor?,
 ) {
-    fun getClient(
+    open fun getClient(
         readWriteTimeout: Duration = DEFAULT_TIMEOUT,
         connectTimeout: Duration = DEFAULT_TIMEOUT,
     ): OkHttpClient {

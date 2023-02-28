@@ -1,0 +1,22 @@
+apply plugin: "kotlinx-serialization"
+
+ext.ARTIFACT_ID = "lib-http"
+
+android {
+    kotlinOptions {
+        freeCompilerArgs += [
+            '-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi'
+        ]
+    }
+}
+
+dependencies {
+    api project(":lib-core")
+    api project(":lib-json")
+    api project(":lib-logging")
+
+    api "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$versions.retrofit_serialization"
+    api "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+    api "com.squareup.okhttp3:okhttp:$versions.okhttp"
+    api "com.squareup.retrofit2:retrofit:$versions.retrofit"
+}

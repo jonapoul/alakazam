@@ -12,13 +12,14 @@ import timber.log.Timber
 @Module
 class ProvidesLoggingInterceptorModule {
     @Provides
-    fun provideHttpLoggingInterceptor(
+    fun interceptor(
         buildConfig: IBuildConfig,
     ): HttpLoggingInterceptor? {
         return if (buildConfig.debug) {
-            val interceptor = HttpLoggingInterceptor { message -> Timber.d(message) }
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
-            interceptor
-        } else null
+            HttpLoggingInterceptor { message -> Timber.d(message) }
+                .also { it.level = HttpLoggingInterceptor.Level.BODY }
+        } else {
+            null
+        }
     }
 }
