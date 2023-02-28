@@ -63,13 +63,11 @@ configurations.all {
 }
 
 dependencies {
+    api "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$versions.desugar"
 
     implementation "com.google.dagger:hilt-android:$versions.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
 
-    testImplementation "app.cash.turbine:turbine:$versions.turbine"
-    testImplementation "io.mockk:mockk:$versions.mockk"
-    testImplementation "junit:junit:$versions.junit"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
+    testImplementation project(":testing-core")
 }

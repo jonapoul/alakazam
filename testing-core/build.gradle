@@ -30,6 +30,7 @@ dependencies {
     implementation project(path: ":lib-core", configuration: "default")
 
     api "app.cash.turbine:turbine:$versions.turbine"
+    api "io.mockk:mockk:$versions.mockk"
     api "junit:junit:$versions.junit"
     api "org.jetbrains.kotlin:kotlin-test-common:$versions.kotlin"
     api "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"

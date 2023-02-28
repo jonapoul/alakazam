@@ -3,9 +3,6 @@ ext.ARTIFACT_ID = "lib-data"
 dependencies {
     api project(":lib-core")
 
-    /* Time */
-    implementation "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp"
-
     /* API */
     implementation "com.squareup.moshi:moshi:$versions.moshi"
     implementation "com.squareup.moshi:moshi-kotlin:$versions.moshi"

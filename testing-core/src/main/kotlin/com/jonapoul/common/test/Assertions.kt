@@ -1,23 +1,6 @@
 package com.jonapoul.common.test
 
-import org.junit.Assert
 import org.junit.Assert.assertEquals
-
-fun assertTrue(condition: Boolean?) {
-    if (condition == null) {
-        condition ?: fail("Null boolean argument")
-    } else {
-        Assert.assertTrue(condition)
-    }
-}
-
-fun assertFalse(condition: Boolean?) {
-    if (condition == null) {
-        condition ?: fail("Null boolean argument")
-    } else {
-        Assert.assertFalse(condition)
-    }
-}
 
 @Throws(AssertionError::class)
 fun fail(reason: String) {

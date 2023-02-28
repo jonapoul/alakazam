@@ -43,3 +43,11 @@ inline fun <Builder, Input, reified Expected> Builder.ifIsInstance(
 ): Builder {
     return if (value is Expected) this.action(value) else this
 }
+
+fun <Builder, Value> Builder.ifEquals(value1: Value?, value2: Value?, action: Builder.() -> Builder): Builder {
+    return ifTrue(condition = value1 == value2, action)
+}
+
+fun <Builder, Value> Builder.ifNotEquals(value1: Value?, value2: Value?, action: Builder.() -> Builder): Builder {
+    return ifTrue(condition = value1 != value2, action)
+}

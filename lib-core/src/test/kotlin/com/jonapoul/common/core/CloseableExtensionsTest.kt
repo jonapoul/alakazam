@@ -1,22 +1,20 @@
 package com.jonapoul.common.core
 
-import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
+import io.mockk.junit4.MockKRule
 import io.mockk.just
 import io.mockk.runs
-import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import java.io.Closeable
 
 class CloseableExtensionsTest {
+    @get:Rule
+    val mockkRule = MockKRule(this)
+
     @RelaxedMockK
     private lateinit var closeable: Closeable
-
-    @Before
-    fun before() {
-        MockKAnnotations.init(this)
-    }
 
     @Test
     fun `Closing with exception doesn't crash`() {

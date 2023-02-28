@@ -1,9 +1,9 @@
-package com.jonapoul.common.data
+package com.jonapoul.common.core
 
 import org.junit.Assert.assertArrayEquals
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
 import org.junit.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 
 class MapExtensionsTest {
     @Test
@@ -13,10 +13,10 @@ class MapExtensionsTest {
         )
         val copy = original.deepCopy()
         original[0] = "e"
-        assertFalse(original[0] == copy[0])
-        assertTrue(original[1] == copy[1])
-        assertTrue(original[2] == copy[2])
-        assertTrue(original[3] == copy[3])
+        assertNotEquals(original[0], copy[0])
+        assertEquals(original[1], copy[1])
+        assertEquals(original[2], copy[2])
+        assertEquals(original[3], copy[3])
     }
 
     @Test
@@ -26,10 +26,10 @@ class MapExtensionsTest {
         )
         val copy = original.deepCopy().toMutableMap()
         copy[0] = "e"
-        assertFalse(original[0] == copy[0])
-        assertTrue(original[1] == copy[1])
-        assertTrue(original[2] == copy[2])
-        assertTrue(original[3] == copy[3])
+        assertNotEquals(original[0], copy[0])
+        assertEquals(original[1], copy[1])
+        assertEquals(original[2], copy[2])
+        assertEquals(original[3], copy[3])
     }
 
     @Test

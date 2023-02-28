@@ -1,6 +1,6 @@
 package com.jonapoul.common.core
 
-import org.threeten.bp.Instant
+import java.time.Instant
 
 /**
  * Intended to give a less annoying interface to compile-time constants of the app. This way if we

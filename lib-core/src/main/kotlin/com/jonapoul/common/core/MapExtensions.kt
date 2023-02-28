@@ -1,4 +1,4 @@
-package com.jonapoul.common.data
+package com.jonapoul.common.core
 
 /**
  * Returns a copied new map instance.

@@ -2,9 +2,9 @@
 
 package com.jonapoul.common.core
 
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
 import org.junit.Test
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class ThrowsAnyExceptionTest {
     private class CustomSubClassException : IllegalStateException()
