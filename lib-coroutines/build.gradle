@@ -1,0 +1,8 @@
+ext.ARTIFACT_ID = "lib-coroutines"
+
+dependencies {
+    api project(":lib-core")
+
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+}

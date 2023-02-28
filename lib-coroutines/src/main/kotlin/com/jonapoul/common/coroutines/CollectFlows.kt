@@ -1,4 +1,4 @@
-package com.jonapoul.common.core
+package com.jonapoul.common.coroutines
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -13,10 +13,9 @@ import kotlinx.coroutines.launch
  * This is used more specifically for fragments, activities and ViewModels in the domain module of
  * this library.
  */
-fun <T> CoroutineScope.collectFlow(flow: Flow<T>?, call: suspend (T) -> Unit): Job {
-    return launch {
+fun <T> CoroutineScope.collectFlow(flow: Flow<T>?, call: suspend (T) -> Unit): Job =
+    launch {
         flow?.collect {
             call.invoke(it)
         }
     }
-}

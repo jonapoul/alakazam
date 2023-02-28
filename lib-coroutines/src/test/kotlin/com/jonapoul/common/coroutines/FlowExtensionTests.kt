@@ -1,14 +1,14 @@
-package com.jonapoul.common.core
+package com.jonapoul.common.coroutines
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertArrayEquals
 import org.junit.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class FlowOnEachOfTypeTest {
@@ -39,7 +39,7 @@ class FlowOnEachOfTypeTest {
         flowOf(FinalClass(), FinalClass(), FinalClass())
             .onEachOfType<OpenClass, FinalClass> { grabbedOpens.add(it) }
             .collect()
-        assertEquals(grabbedOpens.size, 3)
+        assertEquals(actual = grabbedOpens.size, expected = 3)
     }
 
     @Test
@@ -76,7 +76,7 @@ class FlowTakeUntilExclusiveTest {
         val taken = flowOf("a", "b", "c")
             .takeUntilExclusive { it == "c" }
             .toList()
-        Assert.assertArrayEquals(
+        assertArrayEquals(
             arrayOf("a", "b"),
             taken.toTypedArray()
         )
@@ -87,7 +87,7 @@ class FlowTakeUntilExclusiveTest {
         val taken = flowOf("a", "b", "c")
             .takeUntilExclusive { it == "a" }
             .toList()
-        Assert.assertArrayEquals(
+        assertArrayEquals(
             arrayOf(),
             taken.toTypedArray()
         )
@@ -101,7 +101,7 @@ class FlowTakeUntilInclusiveTest {
         val taken = flowOf("a", "b", "c")
             .takeUntilInclusive { it == "d" }
             .toList()
-        Assert.assertArrayEquals(
+        assertArrayEquals(
             arrayOf("a", "b", "c"),
             taken.toTypedArray()
         )
@@ -112,7 +112,7 @@ class FlowTakeUntilInclusiveTest {
         val taken = flowOf("a", "b", "c")
             .takeUntilInclusive { it == "c" }
             .toList()
-        Assert.assertArrayEquals(
+        assertArrayEquals(
             arrayOf("a", "b", "c"),
             taken.toTypedArray()
         )
@@ -123,7 +123,7 @@ class FlowTakeUntilInclusiveTest {
         val taken = flowOf("a", "b", "c")
             .takeUntilInclusive { it == "a" }
             .toList()
-        Assert.assertArrayEquals(
+        assertArrayEquals(
             arrayOf("a"),
             taken.toTypedArray()
         )

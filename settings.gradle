@@ -1,5 +1,6 @@
 include ':app-sample'
 include ':lib-core'
+include ':lib-coroutines'
 include ':lib-data'
 include ':lib-domain'
 include ':lib-ui'

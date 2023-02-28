@@ -1,4 +1,4 @@
-package com.jonapoul.common.data
+package com.jonapoul.common.coroutines
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

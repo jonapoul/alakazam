@@ -1,6 +1,5 @@
-package com.jonapoul.common.core
+package com.jonapoul.common.coroutines
 
-import androidx.annotation.Keep
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,5 +35,4 @@ fun CoroutineScope.launchInfiniteLoop(
 /**
  * Defines the time to perform the sleep operation on our looping coroutine in [launchInfiniteLoop].
  */
-@Keep
 enum class LoopDelayType { DELAY_BEFORE, DELAY_AFTER }
