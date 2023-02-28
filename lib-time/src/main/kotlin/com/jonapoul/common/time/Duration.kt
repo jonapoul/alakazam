@@ -1,4 +1,4 @@
-package com.jonapoul.common.core
+package com.jonapoul.common.time
 
 import kotlin.time.DurationUnit
 
@@ -7,7 +7,7 @@ import kotlin.time.DurationUnit
  */
 fun DurationUnit.shortName(): String = when (this) {
     DurationUnit.NANOSECONDS -> "ns"
-    DurationUnit.MICROSECONDS -> "us"
+    DurationUnit.MICROSECONDS -> "μs"
     DurationUnit.MILLISECONDS -> "ms"
     DurationUnit.SECONDS -> "s"
     DurationUnit.MINUTES -> "m"

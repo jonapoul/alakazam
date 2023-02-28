@@ -1,0 +1,5 @@
+ext.ARTIFACT_ID = "lib-time"
+
+dependencies {
+    api project(":lib-core")
+}
