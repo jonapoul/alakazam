@@ -1,10 +1,9 @@
 @file:OptIn(ExperimentalCoroutinesApi::class)
 
-package com.jonapoul.common.domain
+package com.jonapoul.common.prefs
 
 import com.fredporciuncula.flow.preferences.FlowSharedPreferences
 import com.fredporciuncula.flow.preferences.Preference
-import com.jonapoul.common.core.PrefPair
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 fun FlowSharedPreferences.getInt(pref: PrefPair<Int>): Preference<Int> =

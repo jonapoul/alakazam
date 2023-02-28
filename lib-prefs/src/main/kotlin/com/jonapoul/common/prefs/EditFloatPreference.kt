@@ -1,4 +1,4 @@
-package com.jonapoul.common.ui.prefs
+package com.jonapoul.common.prefs
 
 import android.content.Context
 import android.text.InputType

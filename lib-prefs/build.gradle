@@ -1,0 +1,9 @@
+ext.ARTIFACT_ID = "lib-prefs"
+
+dependencies {
+    api project(":lib-core")
+    api project(":lib-logging")
+
+    api "androidx.preference:preference-ktx:$versions.preference"
+    api "com.fredporciuncula:flow-preferences:$versions.flow_preferences"
+}

@@ -1,4 +1,4 @@
-package com.jonapoul.common.core
+package com.jonapoul.common.prefs
 
 import android.content.SharedPreferences
 

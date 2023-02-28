@@ -1,12 +1,9 @@
 @file:Suppress("TooManyFunctions")
 
-package com.jonapoul.common.domain
+package com.jonapoul.common.prefs
 
 import android.content.SharedPreferences
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.core.content.edit
-import com.jonapoul.common.core.PrefPair
 
 /**
  * Parses an [Int] from a [SharedPreferences] [String] value, returning the [Int] default value if
@@ -121,7 +118,6 @@ fun SharedPreferences.getBoolean(pref: PrefPair<Boolean>): Boolean {
  * Returns a [Set] of [String]s from [SharedPreferences], returning the [PrefPair] default if either
  * the value isn't already persisted or the type is incorrect.
  */
-@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Set<String> {
     return typeSafeGet(pref) {
         this.getStringSet(pref.key, pref.default)!!
@@ -216,7 +212,6 @@ fun SharedPreferences.Editor.putStringIfNotNull(
  * Attempts to insert a [Set] value into this [SharedPreferences.Editor] instance. Skips if the
  * supplied [value] is null.
  */
-@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.Editor.putStringSetIfNotNull(
     pref: PrefPair<Set<String>>,
     value: Set<String>?,
@@ -245,7 +240,6 @@ fun SharedPreferences.putString(key: String, value: String) =
 fun SharedPreferences.putNullableString(key: String, value: String?) =
     edit { putString(key, value) }
 
-@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.putStringSet(key: String, value: Set<String>) =
     edit { putStringSet(key, value) }
 
@@ -267,6 +261,5 @@ fun SharedPreferences.putString(pref: PrefPair<String>, value: String) =
 fun SharedPreferences.putNullableString(pref: PrefPair<String?>, value: String?) =
     putNullableString(pref.key, value)
 
-@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 fun SharedPreferences.putStringSet(pref: PrefPair<Set<String>>, value: Set<String>) =
     putStringSet(pref.key, value)

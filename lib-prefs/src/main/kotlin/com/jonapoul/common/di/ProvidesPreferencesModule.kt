@@ -3,6 +3,7 @@ package com.jonapoul.common.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
+import com.fredporciuncula.flow.preferences.FlowSharedPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,9 +12,12 @@ import dagger.hilt.components.SingletonComponent
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ProvidesSharedPreferencesModule {
+class ProvidesPreferencesModule {
     @Provides
-    fun providesSharedPreferences(
-        @ApplicationContext context: Context,
-    ): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    fun sharedPrefs(@ApplicationContext context: Context): SharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(context)
+
+    @Provides
+    fun flowPrefs(prefs: SharedPreferences): FlowSharedPreferences =
+        FlowSharedPreferences(prefs)
 }

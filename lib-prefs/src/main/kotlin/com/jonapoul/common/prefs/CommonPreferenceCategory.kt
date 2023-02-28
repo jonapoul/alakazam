@@ -1,21 +1,23 @@
-package com.jonapoul.common.ui.prefs
+package com.jonapoul.common.prefs
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.TypedArrayUtils
 import androidx.core.content.withStyledAttributes
 import androidx.core.widget.ImageViewCompat
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceViewHolder
 import com.jonapoul.common.core.getColorFromAttr
-import com.jonapoul.common.ui.R
 
+@SuppressLint("RestrictedApi")
 class CommonPreferenceCategory @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = TypedArrayUtils2.getAttr(
+    defStyleAttr: Int = TypedArrayUtils.getAttr(
         context,
         R.attr.preferenceCategoryStyle,
         android.R.attr.preferenceCategoryStyle
