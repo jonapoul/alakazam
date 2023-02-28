@@ -40,8 +40,6 @@ dependencies {
     testImplementation project(":testing-unit")
     androidTestImplementation project(":testing-android")
 
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
-
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
