@@ -1,0 +1,9 @@
+ext.ARTIFACT_ID = "lib-logging"
+
+dependencies {
+    api project(":lib-core")
+
+    api "com.jakewharton.timber:timber:$versions.timber"
+    implementation "com.github.tony19:logback-android:$versions.logback_android"
+    implementation "org.slf4j:slf4j-api:$versions.slf4j"
+}

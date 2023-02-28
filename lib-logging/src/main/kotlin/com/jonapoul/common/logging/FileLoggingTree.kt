@@ -1,4 +1,4 @@
-package com.jonapoul.common.core.logging
+package com.jonapoul.common.logging
 
 import android.util.Log
 import org.slf4j.LoggerFactory
