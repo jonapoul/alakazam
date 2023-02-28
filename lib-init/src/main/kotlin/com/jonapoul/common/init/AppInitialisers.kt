@@ -1,4 +1,4 @@
-package com.jonapoul.common.domain.init
+package com.jonapoul.common.init
 
 import android.app.Application
 import javax.inject.Inject

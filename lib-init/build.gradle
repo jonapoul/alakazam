@@ -1,0 +1,6 @@
+ext.ARTIFACT_ID = "lib-init"
+
+dependencies {
+    api project(":lib-core")
+    api project(":lib-logging")
+}
