@@ -2,9 +2,9 @@ buildscript {
     apply from: "$rootProject.projectDir/versions.gradle"
 
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url "https://plugins.gradle.org/m2/" }
         maven { url "https://jitpack.io" }
     }
 
@@ -22,17 +22,15 @@ buildscript {
     }
 }
 
-apply from: "gradle/kover.gradle"
-apply from: "gradle/dependency-update.gradle"
+def root = rootProject.projectDir
+apply from: "$root/gradle/dependency-update.gradle"
+apply from: "$root/gradle/detekt.gradle"
+apply from: "$root/gradle/dokka.gradle"
+apply from: "$root/gradle/kover.gradle"
+apply from: "$root/gradle/ktlint.gradle"
+apply from: "$root/gradle/spotless.gradle"
 
 allprojects {
-    def root = rootProject.projectDir
-    apply from: "$root/versions.gradle"
-    apply from: "$root/gradle/detekt.gradle"
-    apply from: "$root/gradle/dokka.gradle"
-    apply from: "$root/gradle/ktlint.gradle"
-    apply from: "$root/gradle/spotless.gradle"
-
     task runChecks() {
         dependsOn "detekt"
         dependsOn "spotlessCheck"
