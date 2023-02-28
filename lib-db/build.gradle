@@ -1,0 +1,10 @@
+ext.ARTIFACT_ID = "lib-db"
+
+dependencies {
+    api project(":lib-core")
+
+    /* Database */
+    api "androidx.room:room-ktx:$versions.room"
+    api "androidx.room:room-runtime:$versions.room"
+    kapt "androidx.room:room-compiler:$versions.room"
+}
