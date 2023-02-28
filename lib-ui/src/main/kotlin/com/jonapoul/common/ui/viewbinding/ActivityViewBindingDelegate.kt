@@ -47,7 +47,7 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
     override fun getValue(thisRef: AppCompatActivity, property: KProperty<*>): VB {
         buildBindingIfNeeded()
         if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
-            throw IllegalStateException("Activity is destroyed.")
+            error("Activity is destroyed.")
         }
         return binding!!
     }

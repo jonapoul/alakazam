@@ -13,6 +13,7 @@ android {
         versionCode versions.libVersionCode
         versionName versions.libVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -34,7 +35,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs = [
+        freeCompilerArgs += [
             '-Xjvm-default=compatibility',
             '-Xopt-in=kotlin.RequiresOptIn'
         ]

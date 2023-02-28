@@ -1,4 +1,4 @@
-package com.jonapoul.common.domain
+package com.jonapoul.common.core
 
 import android.app.Activity
 import android.content.Context

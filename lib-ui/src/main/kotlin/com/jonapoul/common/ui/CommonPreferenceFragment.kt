@@ -1,41 +1,36 @@
 package com.jonapoul.common.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.MenuItem
 import androidx.annotation.CallSuper
+import androidx.annotation.IdRes
 import androidx.annotation.MenuRes
 import androidx.annotation.XmlRes
+import androidx.core.view.MenuProvider
 import androidx.preference.PreferenceFragmentCompat
 
 abstract class CommonPreferenceFragment(
     @XmlRes private val settings: Int,
     @MenuRes private val menu: Int?,
-) : PreferenceFragmentCompat() {
+) : PreferenceFragmentCompat(), MenuProvider {
 
     protected val navController by navControllers()
 
     @CallSuper
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(settings, null)
+        setPreferencesFromResource(settings, rootKey)
     }
 
     @CallSuper
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        setHasOptionsMenu(menu != null)
-        return super.onCreateView(inflater, container, savedInstanceState)
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+        this.menu?.let { menuInflater.inflate(it, menu) }
     }
 
-    @CallSuper
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        this.menu?.let { inflater.inflate(it, menu) }
-    }
+    protected open fun onMenuItemSelected(@IdRes menuItemId: Int): Boolean =
+        false
+
+    final override fun onMenuItemSelected(menuItem: MenuItem): Boolean =
+        onMenuItemSelected(menuItem.itemId)
 }

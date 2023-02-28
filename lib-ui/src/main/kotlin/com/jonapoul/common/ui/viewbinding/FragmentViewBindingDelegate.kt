@@ -60,7 +60,7 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(
     override fun getValue(thisRef: Fragment, property: KProperty<*>): VB {
         val lifecycle = fragment.viewLifecycleOwner.lifecycle
         if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
-            throw IllegalStateException("Fragment views are destroyed.")
+            error("Fragment views are destroyed.")
         }
         buildBindingIfNeeded()
         return binding!!

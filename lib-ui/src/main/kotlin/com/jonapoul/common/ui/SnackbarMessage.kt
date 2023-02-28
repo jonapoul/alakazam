@@ -1,7 +1,6 @@
 package com.jonapoul.common.ui
 
 import android.view.View
-import com.jonapoul.common.ui.notifier.Notifier
 
 sealed class SnackbarMessage(val notify: Notifier.(View) -> Unit) {
     data class Info(

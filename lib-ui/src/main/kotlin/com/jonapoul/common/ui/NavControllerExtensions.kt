@@ -1,4 +1,4 @@
-package com.jonapoul.common.domain
+package com.jonapoul.common.ui
 
 import android.os.Bundle
 import androidx.annotation.IdRes

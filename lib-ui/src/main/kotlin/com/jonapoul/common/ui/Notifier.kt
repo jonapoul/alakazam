@@ -1,13 +1,14 @@
-package com.jonapoul.common.ui.notifier
+package com.jonapoul.common.ui
 
 import android.graphics.Color
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import com.jonapoul.common.ui.R
 
 class Notifier(
     @ColorRes private val backgroundColour: Int = R.color.notifierBackground,
@@ -68,4 +69,17 @@ class Notifier(
         private const val MAX_LINES = 20
         val EMPTY_ACTION = Action(android.R.string.ok) { /* No-op */ }
     }
+}
+
+fun Fragment.notifiers(): Lazy<Notifier> = LazyNotifier()
+
+fun AppCompatActivity.notifiers(): Lazy<Notifier> = LazyNotifier()
+
+internal class LazyNotifier : Lazy<Notifier> {
+    private var cached: Notifier? = null
+
+    override val value: Notifier
+        get() = cached ?: Notifier().also { cached = it }
+
+    override fun isInitialized(): Boolean = cached != null
 }

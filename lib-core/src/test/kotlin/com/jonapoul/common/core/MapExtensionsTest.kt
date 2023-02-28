@@ -9,7 +9,10 @@ class MapExtensionsTest {
     @Test
     fun `Editing original after deep copy doesn't affect copy`() {
         val original = mutableMapOf(
-            0 to "a", 1 to "b", 2 to "c", 3 to "d"
+            0 to "a",
+            1 to "b",
+            2 to "c",
+            3 to "d",
         )
         val copy = original.deepCopy()
         original[0] = "e"
@@ -22,7 +25,10 @@ class MapExtensionsTest {
     @Test
     fun `Editing copy after deep copy doesn't affect original`() {
         val original = mapOf(
-            0 to "a", 1 to "b", 2 to "c", 3 to "d"
+            0 to "a",
+            1 to "b",
+            2 to "c",
+            3 to "d",
         )
         val copy = original.deepCopy().toMutableMap()
         copy[0] = "e"
@@ -35,10 +41,16 @@ class MapExtensionsTest {
     @Test
     fun `Replacing all replaces all`() {
         val original = mutableMapOf(
-            0 to "a", 1 to "b", 2 to "c", 3 to "d"
+            0 to "a",
+            1 to "b",
+            2 to "c",
+            3 to "d",
         )
         val new = mapOf(
-            4 to "e", 5 to "f", 6 to "g", 7 to "h"
+            4 to "e",
+            5 to "f",
+            6 to "g",
+            7 to "h",
         )
         original.replaceAllWith(new)
         assertArrayEquals(

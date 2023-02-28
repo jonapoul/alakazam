@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.jonapoul.common.core.collectFlow
+import com.jonapoul.common.coroutines.collectFlow
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 

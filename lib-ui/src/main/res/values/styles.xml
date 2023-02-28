@@ -60,8 +60,9 @@
     </style>
 
     <style name="Theme.Common.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="iconTint">@color/black</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="iconTint">@color/outline_button</item>
+        <item name="strokeColor">@color/outline_button</item>
+        <item name="android:textColor">@color/outline_button</item>
     </style>
 
     <style name="Theme.Common.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">

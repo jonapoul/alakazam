@@ -13,4 +13,9 @@ interface IBuildConfig {
     val versionCode: Int
     val gitId: String
     val buildTime: Instant
+    val applicationId: String
+    val os: Int
+    val platform: String
+    val manufacturer: String
+    val model: String
 }

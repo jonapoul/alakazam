@@ -28,7 +28,7 @@ abstract class CommonFragment(
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         grabRecyclerViews(view)
-        menu?.let {
+        if (menu != null) {
             requireActivity().addMenuProvider(this, viewLifecycleOwner)
         }
     }

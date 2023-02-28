@@ -2,21 +2,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.jonapoul.common.ui.prefs.CommonPreferenceCategory
+    <com.jonapoul.common.prefs.CommonPreferenceCategory
         app:icon="@drawable/ic_settings"
         app:cpc_tint="@color/onSurfaceGreen"
         app:title="Title">
 
-        <com.jonapoul.common.ui.prefs.EditIntPreference
+        <com.jonapoul.common.prefs.EditIntPreference
             android:title="Edit Ints"
             app:key="edit_int"
             app:useSimpleSummaryProvider="true" />
 
-        <com.jonapoul.common.ui.prefs.EditFloatPreference
+        <com.jonapoul.common.prefs.EditFloatPreference
             android:title="Edit Floats"
             app:key="edit_float"
             app:useSimpleSummaryProvider="true" />
 
-    </com.jonapoul.common.ui.prefs.CommonPreferenceCategory>
+    </com.jonapoul.common.prefs.CommonPreferenceCategory>
 
 </PreferenceScreen>
