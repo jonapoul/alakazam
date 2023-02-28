@@ -1,4 +1,4 @@
-package com.jonapoul.common.core
+package com.jonapoul.common.ui
 
 import android.content.Context
 import android.widget.Toast

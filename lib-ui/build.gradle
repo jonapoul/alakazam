@@ -1,5 +1,9 @@
 ext.ARTIFACT_ID = "lib-ui"
 
+android {
+    namespace "com.jonapoul.common.ui"
+}
+
 dependencies {
     api project(":lib-core")
     api project(":lib-coroutines")

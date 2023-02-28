@@ -1,5 +1,9 @@
 ext.ARTIFACT_ID = "lib-coroutines"
 
+android {
+    namespace "com.jonapoul.common.coroutines"
+}
+
 dependencies {
     api project(":lib-core")
 

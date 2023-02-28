@@ -1,5 +1,9 @@
 ext.ARTIFACT_ID = "lib-prefs"
 
+android {
+    namespace "com.jonapoul.common.prefs"
+}
+
 dependencies {
     api project(":lib-core")
     api project(":lib-logging")

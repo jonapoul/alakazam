@@ -5,6 +5,7 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'maven-publish'
 
 android {
+    namespace "com.jonapoul.common.test.android"
     compileSdkVersion versions.targetSdk
     buildToolsVersion versions.buildTools
 

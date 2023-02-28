@@ -1,5 +1,9 @@
 ext.ARTIFACT_ID = "lib-logging"
 
+android {
+    namespace "com.jonapoul.common.logging"
+}
+
 dependencies {
     api project(":lib-core")
 

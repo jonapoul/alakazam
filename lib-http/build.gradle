@@ -3,6 +3,10 @@ apply plugin: "kotlinx-serialization"
 ext.ARTIFACT_ID = "lib-http"
 
 android {
+    namespace "com.jonapoul.common.http"
+}
+
+android {
     kotlinOptions {
         freeCompilerArgs += [
             '-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi'

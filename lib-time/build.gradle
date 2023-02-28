@@ -1,5 +1,9 @@
 ext.ARTIFACT_ID = "lib-time"
 
+android {
+    namespace "com.jonapoul.common.time"
+}
+
 dependencies {
     api project(":lib-core")
 }

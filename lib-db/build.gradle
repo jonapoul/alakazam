@@ -1,5 +1,9 @@
 ext.ARTIFACT_ID = "lib-db"
 
+android {
+    namespace "com.jonapoul.common.db"
+}
+
 dependencies {
     api project(":lib-core")
 

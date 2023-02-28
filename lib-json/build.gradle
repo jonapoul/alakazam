@@ -3,6 +3,10 @@ apply plugin: "kotlinx-serialization"
 ext.ARTIFACT_ID = "lib-json"
 
 android {
+    namespace "com.jonapoul.common.json"
+}
+
+android {
     kotlinOptions {
         freeCompilerArgs += [
             '-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi'

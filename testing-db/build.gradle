@@ -4,6 +4,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
 android {
+    namespace "com.jonapoul.common.test.db"
     compileSdkVersion versions.targetSdk
     buildToolsVersion versions.buildTools
 
