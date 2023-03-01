@@ -6,9 +6,8 @@ ext.versions = [
     libVersionName          : '2.0.0',
 
     // Plugins, etc
+    agp                     : '7.4.2',
     buildTools              : '30.0.3',
-    gradle                  : '7.4.2',
-    gradle_versions         : '0.46.0',
     detekt                  : '1.22.0',
     dokka                   : '1.7.20',
     hilt                    : '2.45',
@@ -17,6 +16,7 @@ ext.versions = [
     ktlint                  : '0.48.2',
     ktlint_gradle           : '11.2.0',
     spotless                : '6.16.0',
+    versions                : '0.46.0',
 
     // Library versions
     activity_ktx            : '1.6.1',

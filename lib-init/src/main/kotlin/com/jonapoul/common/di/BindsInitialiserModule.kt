@@ -14,9 +14,9 @@ import dagger.multibindings.IntoSet
 internal interface BindsInitialiserModule {
     @Binds
     @IntoSet
-    fun initialiser(bind: LoggingInitialiser): IAppInitialiser
+    fun logging(bind: LoggingInitialiser): IAppInitialiser
 
     @Binds
     @IntoSet
-    fun initialiser(bind: BuildConfigInitialiser): IAppInitialiser
+    fun buildConfig(bind: BuildConfigInitialiser): IAppInitialiser
 }

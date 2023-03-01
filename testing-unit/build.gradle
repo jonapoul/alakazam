@@ -5,16 +5,16 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 project.afterEvaluate {
     publishing {
         publications {
             maven(MavenPublication) {
-                groupId 'com.github.jonapoul.android-common'
-                artifactId 'testing-unit'
+                groupId GROUP_NAME
+                artifactId "testing-unit"
                 version versions.libVersionName
                 from components.java
             }

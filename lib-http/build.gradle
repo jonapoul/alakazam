@@ -9,7 +9,7 @@ android {
 android {
     kotlinOptions {
         freeCompilerArgs += [
-            '-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi'
+            '-opt-in=kotlinx.serialization.ExperimentalSerializationApi'
         ]
     }
 }

@@ -10,9 +10,9 @@ buildscript {
 
     dependencies {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
-        classpath "com.android.tools.build:gradle:$versions.gradle"
+        classpath "com.android.tools.build:gradle:$versions.agp"
         classpath "com.diffplug.spotless:spotless-plugin-gradle:$versions.spotless"
-        classpath "com.github.ben-manes:gradle-versions-plugin:$versions.gradle_versions"
+        classpath "com.github.ben-manes:gradle-versions-plugin:$versions.versions"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$versions.detekt"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$versions.dokka"
