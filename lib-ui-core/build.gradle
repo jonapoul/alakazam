@@ -1,0 +1,18 @@
+ext.ARTIFACT_ID = "lib-ui-core"
+
+android {
+    namespace "com.jonapoul.common.ui.core"
+}
+
+dependencies {
+    api project(":lib-core")
+    api project(":lib-coroutines")
+    api project(":lib-logging")
+
+    api "androidx.activity:activity-ktx:$versions.activity_ktx"
+    api "androidx.appcompat:appcompat:$versions.appcompat"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+    api "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+    api "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+    api "androidx.preference:preference-ktx:$versions.preference"
+}

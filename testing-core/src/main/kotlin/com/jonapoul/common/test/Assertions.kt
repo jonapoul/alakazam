@@ -31,9 +31,7 @@ inline fun <reified E, reified A> assertListEquals(expected: List<E>, actual: Li
     if (expected.size != actual.size) {
         val expStr = expected.toTypedArray().contentDeepToString()
         val actStr = actual.toTypedArray().contentDeepToString()
-        throw AssertionError(
-            "Different list sizes: expected = $expStr, actual = $actStr"
-        )
+        throw AssertionError("Different list sizes: expected = $expStr, actual = $actStr")
     } else {
         expected.zip(actual).forEach {
             assertEquals(it.first, it.second)

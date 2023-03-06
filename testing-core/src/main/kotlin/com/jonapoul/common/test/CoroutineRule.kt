@@ -33,7 +33,7 @@ class CoroutineRule : TestWatcher() {
 
     fun runTest(
         timeoutMs: Long = DEFAULT_TIMEOUT_MS,
-        testBody: suspend TestScope.() -> Unit
+        testBody: suspend TestScope.() -> Unit,
     ): TestResult = scope.runTest(timeoutMs, testBody)
 
     fun advanceUntilIdle() {

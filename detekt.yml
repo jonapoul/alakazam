@@ -1,6 +1,6 @@
 complexity:
   LongParameterList:
-    active: false
+    ignoreDefaultParameters: true
   TooManyFunctions:
     active: false
 
@@ -14,10 +14,18 @@ formatting:
   NoWildcardImports:
     active: false
 
+naming:
+  FunctionNaming:
+    ignoreAnnotated: [ 'Composable' ]
+  TopLevelPropertyNaming:
+    active: false
+
 style:
   UnnecessaryAbstractClass:
     active: false
   UnusedPrivateMember:
-    active: false
+    ignoreAnnotated: [ 'PreviewThemes', 'Preview' ]
   WildcardImport:
+    active: false
+  MagicNumber:
     active: false

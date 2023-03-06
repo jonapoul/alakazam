@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.jonapoul.common.sample.databinding.ActivitySampleBinding
-import com.jonapoul.common.ui.navControllers
-import com.jonapoul.common.ui.viewbinding.viewBinding
+import com.jonapoul.common.ui.core.navControllers
+import com.jonapoul.common.ui.view.viewBinding
 
 class SampleActivity : AppCompatActivity() {
 

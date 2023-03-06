@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-    implementation project(':lib-ui')
+    implementation project(':lib-ui-view')
     implementation project(':lib-prefs')
 
     testImplementation project(":testing-unit")
