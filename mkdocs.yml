@@ -2,15 +2,15 @@
 # mkdocs serve
 # mkdocs gh-deploy
 
-site_name: Android Common
-repo_name: Android Common
-site_url: https://jonapoul.github.io/android-common
-repo_url: https://github.com/jonapoul/android-common
+site_name: Alakazam
+repo_name: Alakazam
+site_url: https://jonapoul.github.io/alakazam
+repo_url: https://github.com/jonapoul/alakazam
 site_description: "A set of useful functions and extensions for Kotlin/Android development"
 site_author: Jon Poulton
 remote_branch: gh-pages
 
-copyright: 'Copyright &copy; 2021 Jon Poulton'
+copyright: 'Copyright &copy; 2023 Jon Poulton'
 docs_dir: 'docs'
 
 theme:

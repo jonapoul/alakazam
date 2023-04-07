@@ -30,7 +30,7 @@ abstract class ApiBuilder<Api>(
         this
 
     open fun buildOkHttpClient(): OkHttpClient {
-        return okHttpClientFactory.getClient(
+        return okHttpClientFactory.buildClient(
             readWriteTimeout = timeout,
             connectTimeout = timeout,
         )

@@ -23,10 +23,12 @@ fun FlowSharedPreferences.getFloat(pref: PrefPair<Float>): Preference<Float> =
 fun FlowSharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Preference<Set<String>> =
     getStringSet(pref.key, pref.default)
 
-fun <T : Any> FlowSharedPreferences.getObject(pair: PrefPair<T>, serialiser: Serializer<T>): Preference<T> =
-    getObject(pair.key.toString(), serialiser, pair.default)
+fun <T : Any> FlowSharedPreferences.getObject(
+    pair: PrefPair<T>,
+    serializer: Serializer<T>,
+): Preference<T> = getObject(pair.key, serializer, pair.default)
 
 fun <T : Any> FlowSharedPreferences.getNullableObject(
     pair: PrefPair<T?>,
-    serialiser: NullableSerializer<T>,
-): Preference<T?> = getNullableObject(pair.key.toString(), serialiser, pair.default)
+    serializer: NullableSerializer<T>,
+): Preference<T?> = getNullableObject(pair.key, serializer, pair.default)

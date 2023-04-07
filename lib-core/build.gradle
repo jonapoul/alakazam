@@ -1,9 +1,0 @@
-ext.ARTIFACT_ID = "lib-core"
-
-android {
-    namespace "com.jonapoul.common.core"
-}
-
-dependencies {
-    /* TBC */
-}

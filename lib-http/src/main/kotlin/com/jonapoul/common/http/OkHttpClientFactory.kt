@@ -17,7 +17,7 @@ open class OkHttpClientFactory @Inject constructor(
     @ApplicationContext private val context: Context,
     private val interceptor: HttpLoggingInterceptor?,
 ) {
-    open fun getClient(
+    open fun buildClient(
         readWriteTimeout: Duration = DEFAULT_TIMEOUT,
         connectTimeout: Duration = DEFAULT_TIMEOUT,
     ): OkHttpClient {
