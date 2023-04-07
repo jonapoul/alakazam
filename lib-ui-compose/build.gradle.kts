@@ -1,10 +1,12 @@
+
 import com.android.build.gradle.LibraryExtension
 
 configureAndroidLibrary()
 configurePublishing(artifact = "lib-ui-compose")
 
+@Suppress("UnstableApiUsage")
 extensions.configure<LibraryExtension> {
-    namespace = "com.jonapoul.common.ui.compose"
+    namespace = "com.jonapoul.alakazam.ui.compose"
 
     buildFeatures {
         compose = true
@@ -34,4 +36,9 @@ dependencies {
     implementation(libs.compose.ui.fonts)
     implementation(libs.compose.ui.tooling)
     implementation(libs.compose.ui.util)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    testImplementation(project(":testing-core"))
 }

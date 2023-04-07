@@ -6,7 +6,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "lib-json")
 
 extensions.configure<LibraryExtension> {
-    namespace = "com.jonapoul.common.json"
+    namespace = "com.jonapoul.alakazam.json"
 
     kotlinOptions {
         freeCompilerArgs += listOf(
@@ -18,6 +18,11 @@ extensions.configure<LibraryExtension> {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":lib-core"))
+    api(project(":kotlin-core"))
     api(libs.kotlinx.serialization.json)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    testImplementation(project(":testing-core"))
 }

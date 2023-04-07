@@ -4,7 +4,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "lib-ui-view")
 
 extensions.configure<LibraryExtension> {
-    namespace = "com.jonapoul.common.ui.view"
+    namespace = "com.jonapoul.alakazam.ui.view"
 }
 
 dependencies {
@@ -15,4 +15,9 @@ dependencies {
     api(libs.fragment.ktx)
     api(libs.recyclerview)
     api(libs.material)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    testImplementation(project(":testing-core"))
 }

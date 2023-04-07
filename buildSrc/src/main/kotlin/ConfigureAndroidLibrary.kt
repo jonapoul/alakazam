@@ -7,7 +7,9 @@ import org.gradle.kotlin.dsl.configure
 @Suppress("UnstableApiUsage")
 fun Project.configureAndroidLibrary() {
     apply(plugin = "com.android.library")
+    apply(plugin = "dagger.hilt.android.plugin")
     apply(plugin = "kotlin-android")
+    apply(plugin = "kotlin-kapt")
 
     extensions.configure<LibraryExtension> {
         compileSdk = BuildConstants.COMPILE_SDK

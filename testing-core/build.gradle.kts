@@ -1,26 +1,11 @@
-import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
-
 apply(plugin = "java-library")
 apply(plugin = "kotlin")
 
+configureKotlinLibrary()
 configurePublishing(artifact = "testing-core", componentName = "java")
 
-extensions.configure<JavaPluginExtension> {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-}
-
-extensions.configure<KotlinProjectExtension> {
-    sourceSets.all {
-        languageSettings {
-            optIn("kotlin.RequiresOptIn")
-            optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
-        }
-    }
-}
-
 dependencies {
-    implementation(project(path = ":lib-core", configuration = "default"))
+    implementation(project(":kotlin-core"))
 
     api(libs.turbine)
     api(libs.mockk.core)

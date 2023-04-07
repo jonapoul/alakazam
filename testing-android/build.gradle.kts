@@ -1,13 +1,10 @@
 import com.android.build.gradle.LibraryExtension
 
-apply(plugin = "kotlin-kapt")
-apply(plugin = "dagger.hilt.android.plugin")
-
 configureAndroidLibrary()
 configurePublishing(artifact = "testing-android")
 
 extensions.configure<LibraryExtension> {
-    namespace = "com.jonapoul.common.test.android"
+    namespace = "com.jonapoul.alakazam.test.android"
 
     defaultConfig {
         minSdk = 21 // restricted by mockk
@@ -16,9 +13,7 @@ extensions.configure<LibraryExtension> {
 
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
-
-    api(project(":testing-core"))
-    implementation(project(":lib-core"))
+    implementation(project(":android-core"))
 
     /* General runtime */
     implementation(libs.activity)

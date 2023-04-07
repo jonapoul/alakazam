@@ -6,11 +6,11 @@ apply(plugin = "androidx.navigation.safeargs.kotlin")
 
 @Suppress("UnstableApiUsage")
 extensions.configure<AppExtension> {
-    namespace = "com.jonapoul.common.sample"
+    namespace = "com.jonapoul.alakazam.sample"
     compileSdkVersion(BuildConstants.COMPILE_SDK)
 
     defaultConfig {
-        applicationId("com.jonapoul.common.sample")
+        applicationId("com.jonapoul.alakazam.sample")
         minSdk = BuildConstants.MIN_SDK
         targetSdk = BuildConstants.COMPILE_SDK
         versionCode(BuildConstants.LIB_VERSION_CODE)

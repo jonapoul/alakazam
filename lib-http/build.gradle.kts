@@ -6,7 +6,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "lib-http")
 
 extensions.configure<LibraryExtension> {
-    namespace = "com.jonapoul.common.http"
+    namespace = "com.jonapoul.alakazam.http"
 
     kotlinOptions {
         freeCompilerArgs += listOf(
@@ -18,7 +18,7 @@ extensions.configure<LibraryExtension> {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":lib-core"))
+    api(project(":kotlin-core"))
     api(project(":lib-json"))
     api(project(":lib-logging"))
 
@@ -26,4 +26,9 @@ dependencies {
     api(libs.okhttp.logging)
     api(libs.retrofit.core)
     api(libs.retrofit.serialization)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    testImplementation(project(":testing-core"))
 }

@@ -1,5 +1,9 @@
 include(":app-sample")
-include(":lib-core")
+
+include(":kotlin-core")
+
+include(":android-core")
+
 include(":lib-coroutines")
 include(":lib-db")
 include(":lib-http")
@@ -11,6 +15,7 @@ include(":lib-time")
 include(":lib-ui-core")
 include(":lib-ui-compose")
 include(":lib-ui-view")
+
 include(":testing-android")
 include(":testing-core")
 include(":testing-db")
