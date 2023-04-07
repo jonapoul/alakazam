@@ -1,6 +1,5 @@
 package com.jonapoul.common.coroutines
 
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.toList
@@ -10,7 +9,6 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class FlowOnEachOfTypeTest {
     @Test
     fun `String flow doesn't emit any ints`() = runTest {
@@ -61,7 +59,6 @@ class FlowOnEachOfTypeTest {
     }
 }
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class FlowTakeUntilExclusiveTest {
     @Test
     fun `No matches doesn't cancel the flow`() = runTest {
@@ -94,7 +91,6 @@ class FlowTakeUntilExclusiveTest {
     }
 }
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class FlowTakeUntilInclusiveTest {
     @Test
     fun `No matches returns all emissions`() = runTest {

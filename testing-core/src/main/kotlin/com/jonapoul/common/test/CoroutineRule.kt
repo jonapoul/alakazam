@@ -1,7 +1,6 @@
 package com.jonapoul.common.test
 
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestResult
 import kotlinx.coroutines.test.TestScope
@@ -26,7 +25,6 @@ import org.junit.runner.Description
  *          }
  *      }
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class CoroutineRule : TestWatcher() {
     val scope = TestScope()
     val dispatcher = StandardTestDispatcher(scope.testScheduler)

@@ -11,6 +11,7 @@ java {
 
 kotlin.sourceSets.all {
     languageSettings.optIn("kotlin.RequiresOptIn")
+    languageSettings.optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
 }
 
 project.afterEvaluate {

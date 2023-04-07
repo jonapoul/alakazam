@@ -37,7 +37,8 @@ android {
         jvmTarget = "11"
         freeCompilerArgs += [
             '-Xjvm-default=compatibility',
-            '-opt-in=kotlin.RequiresOptIn'
+            '-opt-in=kotlin.RequiresOptIn',
+            '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
         ]
     }
 }
