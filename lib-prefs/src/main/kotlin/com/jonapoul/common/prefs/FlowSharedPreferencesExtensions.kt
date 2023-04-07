@@ -1,10 +1,9 @@
-@file:OptIn(ExperimentalCoroutinesApi::class)
-
 package com.jonapoul.common.prefs
 
 import com.fredporciuncula.flow.preferences.FlowSharedPreferences
+import com.fredporciuncula.flow.preferences.NullableSerializer
 import com.fredporciuncula.flow.preferences.Preference
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import com.fredporciuncula.flow.preferences.Serializer
 
 fun FlowSharedPreferences.getInt(pref: PrefPair<Int>): Preference<Int> =
     getInt(pref.key, pref.default)
@@ -23,3 +22,11 @@ fun FlowSharedPreferences.getFloat(pref: PrefPair<Float>): Preference<Float> =
 
 fun FlowSharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Preference<Set<String>> =
     getStringSet(pref.key, pref.default)
+
+fun <T : Any> FlowSharedPreferences.getObject(pair: PrefPair<T>, serialiser: Serializer<T>): Preference<T> =
+    getObject(pair.key.toString(), serialiser, pair.default)
+
+fun <T : Any> FlowSharedPreferences.getNullableObject(
+    pair: PrefPair<T?>,
+    serialiser: NullableSerializer<T>,
+): Preference<T?> = getNullableObject(pair.key.toString(), serialiser, pair.default)
