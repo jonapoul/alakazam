@@ -1,30 +1,27 @@
+---
 complexity:
   LongParameterList:
     ignoreDefaultParameters: true
   TooManyFunctions:
     active: false
-
 exceptions:
   SwallowedException:
     active: false
   TooGenericExceptionCaught:
     active: false
-
-formatting:
-  NoWildcardImports:
-    active: false
-
 naming:
   FunctionNaming:
-    ignoreAnnotated: [ 'Composable' ]
+    ignoreAnnotated:
+    - "Composable"
   TopLevelPropertyNaming:
     active: false
-
 style:
   UnnecessaryAbstractClass:
     active: false
   UnusedPrivateMember:
-    ignoreAnnotated: [ 'PreviewThemes', 'Preview' ]
+    ignoreAnnotated:
+    - "PreviewThemes"
+    - "Preview"
   WildcardImport:
     active: false
   MagicNumber:

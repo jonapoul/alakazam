@@ -10,7 +10,7 @@ extensions.configure<LibraryExtension> {
 
     kotlinOptions {
         freeCompilerArgs += listOf(
-            "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"
+            "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
         )
     }
 }

@@ -1,45 +1,36 @@
-# pip install mkdocs mkdocs-material
-# mkdocs serve
-# mkdocs gh-deploy
-
-site_name: Alakazam
-repo_name: Alakazam
-site_url: https://jonapoul.github.io/alakazam
-repo_url: https://github.com/jonapoul/alakazam
+---
+site_name: "Alakazam"
+repo_name: "Alakazam"
+site_url: "https://jonapoul.github.io/alakazam"
+repo_url: "https://github.com/jonapoul/alakazam"
 site_description: "A set of useful functions and extensions for Kotlin/Android development"
-site_author: Jon Poulton
-remote_branch: gh-pages
-
-copyright: 'Copyright &copy; 2023 Jon Poulton'
-docs_dir: 'docs'
-
+site_author: "Jon Poulton"
+remote_branch: "gh-pages"
+copyright: "Copyright &copy; 2023 Jon Poulton"
+docs_dir: "docs"
 theme:
-  name: 'material'
+  name: "material"
   icon:
-    repo: fontawesome/brands/git-alt
+    repo: "fontawesome/brands/git-alt"
   static_templates:
-    - 404.html
+  - "404.html"
   palette:
-    - scheme: slate
-      primary: yellow
-      accent: red
+  - scheme: "slate"
+    primary: "yellow"
+    accent: "red"
   features:
-    - navigation.instant
-    - navigation.sections
-    - navigation.expand
-
+  - "navigation.instant"
+  - "navigation.sections"
+  - "navigation.expand"
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/jonapoul
-
+  - icon: "fontawesome/brands/github"
+    link: "https://github.com/jonapoul"
 plugins:
-  - git-revision-date
-
+- "git-revision-date"
 markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences
-
+- "pymdownx.highlight"
+- "pymdownx.superfences"
 nav:
-  - 'Home': index.md
-  - 'API Reference': api/index.html
+- Home: "index.md"
+- API Reference: "api/index.html"
