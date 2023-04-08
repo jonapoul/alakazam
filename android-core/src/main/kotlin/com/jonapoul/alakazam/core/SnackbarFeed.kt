@@ -1,4 +1,4 @@
-package com.jonapoul.alakazam.ui.core
+package com.jonapoul.alakazam.core
 
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel

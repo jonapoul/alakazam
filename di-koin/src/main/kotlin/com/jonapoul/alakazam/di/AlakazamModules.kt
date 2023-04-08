@@ -2,7 +2,7 @@ package com.jonapoul.alakazam.di
 
 val alakazamModules = listOf(
   coroutineModule,
-  coreUiModule,
+  coreModule,
   httpModule,
   initialiserModule,
   preferencesModule,
