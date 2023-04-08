@@ -2,17 +2,17 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-db", ArtifactType.Android)
 
 android {
-  namespace = "com.jonapoul.alakazam.db"
+    namespace = "com.jonapoul.alakazam.db"
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
+    coreLibraryDesugaring(libs.desugaring)
 
-  api(project(":android-core"))
+    api(project(":android-core"))
 
-  api(libs.room.ktx)
-  api(libs.room.runtime)
-  kapt(libs.room.compiler)
+    api(libs.room.ktx)
+    api(libs.room.runtime)
+    kapt(libs.room.compiler)
 
-  testImplementation(project(":testing-core"))
+    testImplementation(project(":testing-core"))
 }
