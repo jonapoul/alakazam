@@ -36,23 +36,7 @@ jobs:
         run: ./gradlew testDebugUnitTest
 
       - name: Generate docs
-        run: |
-          ./gradlew :lib-core:dokkaHtml
-          ./gradlew :lib-coroutines:dokkaHtml
-          ./gradlew :lib-db:dokkaHtml
-          ./gradlew :lib-http:dokkaHtml
-          ./gradlew :lib-init:dokkaHtml
-          ./gradlew :lib-json:dokkaHtml
-          ./gradlew :lib-logging:dokkaHtml
-          ./gradlew :lib-prefs:dokkaHtml
-          ./gradlew :lib-time:dokkaHtml
-          ./gradlew :lib-ui-core:dokkaHtml
-          ./gradlew :lib-ui-compose:dokkaHtml
-          ./gradlew :lib-ui-view:dokkaHtml
-          ./gradlew :testing-android:dokkaHtml
-          ./gradlew :testing-core:dokkaHtml
-          ./gradlew :testing-db:dokkaHtml
-          ./gradlew :testing-unit:dokkaHtml
+        run: ./gradlew dokkaHtml
 
       - name: Set up Python
         uses: actions/setup-python@v2
