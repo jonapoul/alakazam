@@ -26,29 +26,29 @@ import org.junit.runner.Description
  *      }
  */
 class CoroutineRule : TestWatcher() {
-    val scope = TestScope()
-    val dispatcher = StandardTestDispatcher(scope.testScheduler)
+  val scope = TestScope()
+  val dispatcher = StandardTestDispatcher(scope.testScheduler)
 
-    fun runTest(
-        timeoutMs: Long = DEFAULT_TIMEOUT_MS,
-        testBody: suspend TestScope.() -> Unit,
-    ): TestResult = scope.runTest(timeoutMs, testBody)
+  fun runTest(
+    timeoutMs: Long = DEFAULT_TIMEOUT_MS,
+    testBody: suspend TestScope.() -> Unit,
+  ): TestResult = scope.runTest(timeoutMs, testBody)
 
-    fun advanceUntilIdle() {
-        scope.testScheduler.advanceUntilIdle()
-    }
+  fun advanceUntilIdle() {
+    scope.testScheduler.advanceUntilIdle()
+  }
 
-    override fun starting(description: Description?) {
-        super.starting(description)
-        Dispatchers.setMain(dispatcher)
-    }
+  override fun starting(description: Description?) {
+    super.starting(description)
+    Dispatchers.setMain(dispatcher)
+  }
 
-    override fun finished(description: Description?) {
-        super.finished(description)
-        Dispatchers.resetMain()
-    }
+  override fun finished(description: Description?) {
+    super.finished(description)
+    Dispatchers.resetMain()
+  }
 
-    private companion object {
-        const val DEFAULT_TIMEOUT_MS = 10_000L
-    }
+  private companion object {
+    const val DEFAULT_TIMEOUT_MS = 10_000L
+  }
 }

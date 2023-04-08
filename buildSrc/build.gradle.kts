@@ -1,20 +1,20 @@
 plugins {
-    `kotlin-dsl`
+  `kotlin-dsl`
 }
 
 repositories {
-    gradlePluginPortal()
-    mavenCentral()
-    google()
+  gradlePluginPortal()
+  mavenCentral()
+  google()
 }
 
 dependencies {
-    implementation(libs.plugin.agp)
-    implementation(libs.plugin.detekt)
-    implementation(libs.plugin.dokka)
-    implementation(libs.plugin.kotlin.gradle)
-    implementation(libs.plugin.kover)
-    implementation(libs.plugin.ktlint)
-    implementation(libs.plugin.spotless)
-    implementation(libs.plugin.versions)
+  implementation(libs.plugin.agp)
+  implementation(libs.plugin.detekt)
+  implementation(libs.plugin.dokka)
+  implementation(libs.plugin.kotlin.gradle)
+  implementation(libs.plugin.kover)
+  implementation(libs.plugin.ktlint)
+  implementation(libs.plugin.spotless)
+  implementation(libs.plugin.versions)
 }

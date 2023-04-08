@@ -23,15 +23,15 @@ fun Fragment.navControllers(): Lazy<NavController> = LazyNavController { findNav
  * the ID of your NavHostFragment, which should be declared in your activity XML layout.
  */
 fun AppCompatActivity.navControllers(@IdRes navHostFragmentId: Int): Lazy<NavController> =
-    LazyNavController { findNavController(navHostFragmentId) }
+  LazyNavController { findNavController(navHostFragmentId) }
 
 internal class LazyNavController(
-    private val navControllerFactory: () -> NavController,
+  private val navControllerFactory: () -> NavController,
 ) : Lazy<NavController> {
-    private var cached: NavController? = null
+  private var cached: NavController? = null
 
-    override val value: NavController
-        get() = cached ?: navControllerFactory.invoke().also { cached = it }
+  override val value: NavController
+    get() = cached ?: navControllerFactory.invoke().also { cached = it }
 
-    override fun isInitialized(): Boolean = cached != null
+  override fun isInitialized(): Boolean = cached != null
 }

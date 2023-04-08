@@ -9,5 +9,5 @@ import androidx.annotation.StringRes
  * and easier to read, as well as easier to test.
  */
 abstract class TextCreator(protected val context: Context) {
-    protected fun fromRes(@StringRes res: Int): String = context.getString(res)
+  protected fun fromRes(@StringRes res: Int): String = context.getString(res)
 }

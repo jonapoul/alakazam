@@ -4,48 +4,48 @@ import org.gradle.kotlin.dsl.apply
 
 @Suppress("UnstableApiUsage")
 fun Project.configureAndroidLibrary() {
-    apply(plugin = "com.android.library")
-    apply(plugin = "kotlin-android")
-    apply(plugin = "kotlin-kapt")
+  apply(plugin = "com.android.library")
+  apply(plugin = "kotlin-android")
+  apply(plugin = "kotlin-kapt")
 
-    android {
-        compileSdk = BuildConstants.COMPILE_SDK
+  android {
+    compileSdk = BuildConstants.COMPILE_SDK
 
-        defaultConfig {
-            minSdk = BuildConstants.MIN_SDK
-            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-            testInstrumentationRunnerArguments["disableAnalytics"] = "true"
-            multiDexEnabled = true
-        }
-
-        compileOptions {
-            isCoreLibraryDesugaringEnabled = true
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
-        }
-
-        buildFeatures {
-            viewBinding = true
-        }
-
-        kotlinOptions {
-            jvmTarget = "11"
-            freeCompilerArgs += listOf(
-                "-Xjvm-default=compatibility",
-                "-opt-in=kotlin.RequiresOptIn",
-                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-            )
-        }
-
-        packagingOptions {
-            resources.excludes.add("META-INF/*")
-        }
-
-        publishing {
-            singleVariant("release") {
-                withSourcesJar()
-                withJavadocJar()
-            }
-        }
+    defaultConfig {
+      minSdk = BuildConstants.MIN_SDK
+      testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+      testInstrumentationRunnerArguments["disableAnalytics"] = "true"
+      multiDexEnabled = true
     }
+
+    compileOptions {
+      isCoreLibraryDesugaringEnabled = true
+      sourceCompatibility = JavaVersion.VERSION_11
+      targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+      viewBinding = true
+    }
+
+    kotlinOptions {
+      jvmTarget = "11"
+      freeCompilerArgs += listOf(
+        "-Xjvm-default=compatibility",
+        "-opt-in=kotlin.RequiresOptIn",
+        "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+      )
+    }
+
+    packagingOptions {
+      resources.excludes.add("META-INF/*")
+    }
+
+    publishing {
+      singleVariant("release") {
+        withSourcesJar()
+        withJavadocJar()
+      }
+    }
+  }
 }

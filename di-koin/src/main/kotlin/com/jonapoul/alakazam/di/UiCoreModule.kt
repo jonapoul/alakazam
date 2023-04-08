@@ -8,5 +8,5 @@ import org.koin.dsl.module
  * Requires binding to be set for [android.content.Context]
  */
 val coreUiModule = module {
-    factory { Toaster(get(), get(named(KoinDispatchers.MAIN))) }
+  factory { Toaster(get(), get(named(KoinDispatchers.MAIN))) }
 }

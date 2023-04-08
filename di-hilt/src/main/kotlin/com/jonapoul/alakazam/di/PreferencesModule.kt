@@ -14,14 +14,14 @@ import kotlinx.coroutines.CoroutineDispatcher
 @InstallIn(SingletonComponent::class)
 @Module
 class PreferencesModule {
-    @Provides
-    fun sharedPrefs(
-        @ApplicationContext context: Context,
-    ): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+  @Provides
+  fun sharedPrefs(
+    @ApplicationContext context: Context,
+  ): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-    @Provides
-    fun flowPrefs(
-        prefs: SharedPreferences,
-        @IODispatcher io: CoroutineDispatcher,
-    ): FlowSharedPreferences = FlowSharedPreferences(prefs, io)
+  @Provides
+  fun flowPrefs(
+    prefs: SharedPreferences,
+    @IODispatcher io: CoroutineDispatcher,
+  ): FlowSharedPreferences = FlowSharedPreferences(prefs, io)
 }

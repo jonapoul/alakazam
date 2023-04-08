@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.filterIsInstance
 import org.junit.Assert.assertEquals
 
 suspend inline fun <Input, reified Expected> Flow<Input>.assertEmission(
-    expected: Expected,
+  expected: Expected,
 ) = filterIsInstance<Expected>().test {
-    assertEquals(expected, awaitItem())
-    cancel()
+  assertEquals(expected, awaitItem())
+  cancel()
 }

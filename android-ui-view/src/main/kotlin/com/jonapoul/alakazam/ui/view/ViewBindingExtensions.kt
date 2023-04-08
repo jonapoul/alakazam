@@ -16,21 +16,21 @@ import androidx.viewbinding.ViewBinding
  * app.
  */
 fun ViewBinding?.cleanUpRecyclerAdapters() {
-    val view = this?.root ?: return
-    if (view is RecyclerView) {
-        view.adapter = null
-    } else if (view is ViewGroup) {
-        view.cleanUpRecyclerAdapters()
-    }
+  val view = this?.root ?: return
+  if (view is RecyclerView) {
+    view.adapter = null
+  } else if (view is ViewGroup) {
+    view.cleanUpRecyclerAdapters()
+  }
 }
 
 /**
  * Creates a lazy inflating delegate for a [ViewBinding] instance.
  */
 inline fun <VB : ViewBinding> Activity.viewBinder(
-    crossinline bindingInflater: (LayoutInflater) -> VB,
+  crossinline bindingInflater: (LayoutInflater) -> VB,
 ) = lazy(LazyThreadSafetyMode.NONE) {
-    bindingInflater.invoke(layoutInflater)
+  bindingInflater.invoke(layoutInflater)
 }
 
 /**
@@ -40,10 +40,10 @@ inline fun <VB : ViewBinding> Activity.viewBinder(
  *      private val binding by viewBinding(MyActivityBinding::inflate)
  */
 fun <VB : ViewBinding> AppCompatActivity.viewBinding(
-    bindingInflater: (LayoutInflater) -> VB,
+  bindingInflater: (LayoutInflater) -> VB,
 ) = ActivityViewBindingDelegate(
-    activity = this,
-    bindingInflater,
+  activity = this,
+  bindingInflater,
 )
 
 /**
@@ -53,8 +53,8 @@ fun <VB : ViewBinding> AppCompatActivity.viewBinding(
  *      private val binding by viewBinding(MyFragmentBinding::bind)
  */
 fun <VB : ViewBinding> Fragment.viewBinding(
-    viewBindingFactory: (View) -> VB,
+  viewBindingFactory: (View) -> VB,
 ) = FragmentViewBindingDelegate(
-    fragment = this,
-    viewBindingFactory,
+  fragment = this,
+  viewBindingFactory,
 )

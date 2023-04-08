@@ -13,23 +13,23 @@ import androidx.preference.PreferenceFragmentCompat
 import com.jonapoul.alakazam.ui.core.navControllers
 
 abstract class CommonPreferenceFragment(
-    @XmlRes private val settings: Int,
-    @MenuRes private val menu: Int?,
+  @XmlRes private val settings: Int,
+  @MenuRes private val menu: Int?,
 ) : PreferenceFragmentCompat(), MenuProvider {
 
-    protected val navController by navControllers()
+  protected val navController by navControllers()
 
-    @CallSuper
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(settings, rootKey)
-    }
+  @CallSuper
+  override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    setPreferencesFromResource(settings, rootKey)
+  }
 
-    @CallSuper
-    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-        this.menu?.let { menuInflater.inflate(it, menu) }
-    }
+  @CallSuper
+  override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+    this.menu?.let { menuInflater.inflate(it, menu) }
+  }
 
-    protected open fun onMenuItemSelected(@IdRes menuItemId: Int): Boolean = false
+  protected open fun onMenuItemSelected(@IdRes menuItemId: Int): Boolean = false
 
-    final override fun onMenuItemSelected(menuItem: MenuItem): Boolean = onMenuItemSelected(menuItem.itemId)
+  final override fun onMenuItemSelected(menuItem: MenuItem): Boolean = onMenuItemSelected(menuItem.itemId)
 }

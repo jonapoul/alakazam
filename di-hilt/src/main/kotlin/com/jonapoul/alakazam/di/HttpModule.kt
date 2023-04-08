@@ -13,13 +13,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 class HttpModule {
-    @Provides
-    @Singleton
-    fun clientFactory(
-        @ApplicationContext context: Context,
-        buildConfig: IBuildConfig,
-    ): OkHttpClientFactory = OkHttpClientFactory(
-        context,
-        buildConfig,
-    )
+  @Provides
+  @Singleton
+  fun clientFactory(
+    @ApplicationContext context: Context,
+    buildConfig: IBuildConfig,
+  ): OkHttpClientFactory = OkHttpClientFactory(
+    context,
+    buildConfig,
+  )
 }

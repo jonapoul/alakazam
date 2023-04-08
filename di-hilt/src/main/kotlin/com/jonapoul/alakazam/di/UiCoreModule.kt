@@ -14,13 +14,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 class UiCoreModule {
-    @Provides
-    @Singleton
-    fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
+  @Provides
+  @Singleton
+  fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
 
-    @Provides
-    fun toaster(
-        @ApplicationContext context: Context,
-        @MainDispatcher main: CoroutineDispatcher,
-    ): Toaster = Toaster(context, main)
+  @Provides
+  fun toaster(
+    @ApplicationContext context: Context,
+    @MainDispatcher main: CoroutineDispatcher,
+  ): Toaster = Toaster(context, main)
 }

@@ -15,54 +15,54 @@ import androidx.compose.ui.graphics.vector.ImageVector as ComposeImageVector
 
 @SuppressLint("ComposableNaming")
 sealed interface ComposeDrawable {
-    class Painter(private val painter: ComposePainter) : ComposeDrawable {
-        @Composable
-        override fun compose(contentDescription: String?, modifier: Modifier, tint: Color) {
-            Icon(
-                modifier = modifier,
-                painter = painter,
-                tint = tint,
-                contentDescription = contentDescription,
-            )
-        }
-    }
-
-    class ImageVector(private val imageVector: ComposeImageVector) : ComposeDrawable {
-        @Composable
-        override fun compose(contentDescription: String?, modifier: Modifier, tint: Color) {
-            Icon(
-                modifier = modifier,
-                imageVector = imageVector,
-                tint = tint,
-                contentDescription = contentDescription,
-            )
-        }
-    }
-
-    class ImageBitmap(private val imageBitmap: ComposeImageBitmap) : ComposeDrawable {
-        @Composable
-        override fun compose(contentDescription: String?, modifier: Modifier, tint: Color) {
-            val bitmapPainter = remember(imageBitmap) { BitmapPainter(imageBitmap) }
-            Painter(bitmapPainter).compose(contentDescription, modifier, tint)
-        }
-    }
-
+  class Painter(private val painter: ComposePainter) : ComposeDrawable {
     @Composable
-    fun compose(
-        contentDescription: String?,
-        modifier: Modifier,
-        tint: Color,
-    )
+    override fun compose(contentDescription: String?, modifier: Modifier, tint: Color) {
+      Icon(
+        modifier = modifier,
+        painter = painter,
+        tint = tint,
+        contentDescription = contentDescription,
+      )
+    }
+  }
+
+  class ImageVector(private val imageVector: ComposeImageVector) : ComposeDrawable {
+    @Composable
+    override fun compose(contentDescription: String?, modifier: Modifier, tint: Color) {
+      Icon(
+        modifier = modifier,
+        imageVector = imageVector,
+        tint = tint,
+        contentDescription = contentDescription,
+      )
+    }
+  }
+
+  class ImageBitmap(private val imageBitmap: ComposeImageBitmap) : ComposeDrawable {
+    @Composable
+    override fun compose(contentDescription: String?, modifier: Modifier, tint: Color) {
+      val bitmapPainter = remember(imageBitmap) { BitmapPainter(imageBitmap) }
+      Painter(bitmapPainter).compose(contentDescription, modifier, tint)
+    }
+  }
+
+  @Composable
+  fun compose(
+    contentDescription: String?,
+    modifier: Modifier,
+    tint: Color,
+  )
 }
 
 @Composable
 fun defaultDrawableColor(): Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current)
 
 fun ComposePainter.asDrawable(): ComposeDrawable =
-    ComposeDrawable.Painter(this)
+  ComposeDrawable.Painter(this)
 
 fun ComposeImageVector.asDrawable(): ComposeDrawable =
-    ComposeDrawable.ImageVector(this)
+  ComposeDrawable.ImageVector(this)
 
 fun ComposeImageBitmap.asDrawable(): ComposeDrawable =
-    ComposeDrawable.ImageBitmap(this)
+  ComposeDrawable.ImageBitmap(this)

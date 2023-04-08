@@ -6,17 +6,17 @@ import androidx.navigation.NavController
 typealias ScreenFactory = @Composable (NavController) -> Unit
 
 interface NavScreen {
-    val route: String
-    val titleRes: Int
-    val screen: ScreenFactory
+  val route: String
+  val titleRes: Int
+  val screen: ScreenFactory
 }
 
 fun navScreenImpl(
-    route: String,
-    titleRes: Int,
-    screen: ScreenFactory,
+  route: String,
+  titleRes: Int,
+  screen: ScreenFactory,
 ): NavScreen = object : NavScreen {
-    override val route: String = route
-    override val titleRes: Int = titleRes
-    override val screen: ScreenFactory = screen
+  override val route: String = route
+  override val titleRes: Int = titleRes
+  override val screen: ScreenFactory = screen
 }

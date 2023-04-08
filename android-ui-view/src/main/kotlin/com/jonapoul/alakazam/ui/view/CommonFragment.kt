@@ -16,38 +16,38 @@ import androidx.viewbinding.ViewBinding
 import com.jonapoul.alakazam.ui.core.navControllers
 
 abstract class CommonFragment(
-    @LayoutRes private val layout: Int,
-    @MenuRes private val menu: Int?,
+  @LayoutRes private val layout: Int,
+  @MenuRes private val menu: Int?,
 ) : Fragment(layout), MenuProvider {
 
-    protected abstract val binding: ViewBinding
-    protected val navController by navControllers()
-    private val recyclerViews = mutableListOf<RecyclerView>()
+  protected abstract val binding: ViewBinding
+  protected val navController by navControllers()
+  private val recyclerViews = mutableListOf<RecyclerView>()
 
-    @CallSuper
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        grabRecyclerViews(view)
-        if (menu != null) {
-            requireActivity().addMenuProvider(this, viewLifecycleOwner)
-        }
+  @CallSuper
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    grabRecyclerViews(view)
+    if (menu != null) {
+      requireActivity().addMenuProvider(this, viewLifecycleOwner)
     }
+  }
 
-    @CallSuper
-    override fun onDestroyView() {
-        super.onDestroyView()
-        recyclerViews.forEach { it.adapter = null }
-        recyclerViews.clear()
-    }
+  @CallSuper
+  override fun onDestroyView() {
+    super.onDestroyView()
+    recyclerViews.forEach { it.adapter = null }
+    recyclerViews.clear()
+  }
 
-    @CallSuper
-    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-        this.menu?.let { menuInflater.inflate(it, menu) }
-    }
+  @CallSuper
+  override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+    this.menu?.let { menuInflater.inflate(it, menu) }
+  }
 
-    private fun grabRecyclerViews(view: View) {
-        when (view) {
-            is RecyclerView -> recyclerViews.add(view)
-            is ViewGroup -> view.children.forEach(::grabRecyclerViews)
-        }
+  private fun grabRecyclerViews(view: View) {
+    when (view) {
+      is RecyclerView -> recyclerViews.add(view)
+      is ViewGroup -> view.children.forEach(::grabRecyclerViews)
     }
+  }
 }

@@ -11,17 +11,17 @@ import androidx.compose.ui.tooling.preview.Preview
 annotation class PreviewThemes
 
 @Preview(
-    name = "Landscape",
-    showBackground = true,
-    device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape"
+  name = "Landscape",
+  showBackground = true,
+  device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape"
 )
 annotation class PreviewLandscape
 
 @Composable
 fun PreviewScreen(
-    content: @Composable () -> Unit,
+  content: @Composable () -> Unit,
 ) = MaterialTheme {
-    Surface {
-        content.invoke()
-    }
+  Surface {
+    content.invoke()
+  }
 }

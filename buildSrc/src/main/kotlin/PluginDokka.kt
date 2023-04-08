@@ -5,25 +5,25 @@ import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.File
 
 fun Project.configureDokka() {
-    allprojects {
-        apply(plugin = "org.jetbrains.dokka")
+  allprojects {
+    apply(plugin = "org.jetbrains.dokka")
 
-        tasks.withType<DokkaTask>().configureEach {
-            outputDirectory.set(File("${rootProject.rootDir}/docs/api"))
+    tasks.withType<DokkaTask>().configureEach {
+      outputDirectory.set(File("${rootProject.rootDir}/docs/api"))
 
-            dokkaSourceSets.configureEach {
-                includeNonPublic.set(false)
-                skipEmptyPackages.set(true)
-                reportUndocumented.set(true)
-                noAndroidSdkLink.set(false)
-            }
-        }
+      dokkaSourceSets.configureEach {
+        includeNonPublic.set(false)
+        skipEmptyPackages.set(true)
+        reportUndocumented.set(true)
+        noAndroidSdkLink.set(false)
+      }
     }
+  }
 
-    subprojects {
-        afterEvaluate {
-            // Attach the dokka task to build afterwards, since the build task doesn't exist right now.
-            tasks.getByName("build").dependsOn("dokkaHtml")
-        }
+  subprojects {
+    afterEvaluate {
+      // Attach the dokka task to build afterwards, since the build task doesn't exist right now.
+      tasks.getByName("build").dependsOn("dokkaHtml")
     }
+  }
 }

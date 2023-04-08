@@ -9,9 +9,9 @@ private const val NUM_MAC_BYTES = 6
  * set to null, there will be no gap between each byte string.
  */
 fun ByteArray.toHexString(separator: String = ""): String {
-    return joinToString(separator) {
-        "%02X".format(it.toInt() and MAX_BYTE)
-    }
+  return joinToString(separator) {
+    "%02X".format(it.toInt() and MAX_BYTE)
+  }
 }
 
 /**
@@ -20,8 +20,8 @@ fun ByteArray.toHexString(separator: String = ""): String {
  * MAC byte instead of colons.
  */
 fun ByteArray.toMacAddress(separator: String = ":"): String {
-    if (size != NUM_MAC_BYTES) {
-        error("MAC addresses need 6 bytes, this has $size")
-    }
-    return toHexString(separator)
+  if (size != NUM_MAC_BYTES) {
+    error("MAC addresses need 6 bytes, this has $size")
+  }
+  return toHexString(separator)
 }

@@ -9,13 +9,13 @@ import kotlinx.coroutines.flow.transformWhile
  * are passed through as-is, regardless of the type.
  */
 inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
-    crossinline call: suspend (Expected) -> Unit,
+  crossinline call: suspend (Expected) -> Unit,
 ): Flow<Input> {
-    return onEach {
-        if (it is Expected) {
-            call.invoke(it)
-        }
+  return onEach {
+    if (it is Expected) {
+      call.invoke(it)
     }
+  }
 }
 
 /**
@@ -24,11 +24,11 @@ inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
  * caller and the flow will be cancelled.
  */
 fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
-    val shouldStop = !stopOn.invoke(it)
-    if (shouldStop) {
-        emit(it)
-    }
-    shouldStop
+  val shouldStop = !stopOn.invoke(it)
+  if (shouldStop) {
+    emit(it)
+  }
+  shouldStop
 }
 
 /**
@@ -37,6 +37,6 @@ fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = transformW
  * caller and the flow will be cancelled.
  */
 fun <T> Flow<T>.takeUntilInclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
-    emit(it)
-    !stopOn.invoke(it)
+  emit(it)
+  !stopOn.invoke(it)
 }

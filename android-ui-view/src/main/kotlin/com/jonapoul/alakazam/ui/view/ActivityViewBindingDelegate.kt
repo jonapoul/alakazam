@@ -14,41 +14,41 @@ import kotlin.reflect.KProperty
  * cleared when the [AppCompatActivity] reaches the "destroyed" lifecycle state.
  */
 class ActivityViewBindingDelegate<VB : ViewBinding>(
-    private val activity: AppCompatActivity,
-    private val viewBindingFactory: (LayoutInflater) -> VB,
+  private val activity: AppCompatActivity,
+  private val viewBindingFactory: (LayoutInflater) -> VB,
 ) : ReadOnlyProperty<AppCompatActivity, VB>, LifecycleEventObserver {
 
-    private var binding: VB? = null
+  private var binding: VB? = null
 
-    init {
-        activity.lifecycle.addObserver(this)
-    }
+  init {
+    activity.lifecycle.addObserver(this)
+  }
 
-    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
-        if (event == Lifecycle.Event.ON_CREATE) {
-            buildBindingIfNeeded()
-            activity.setContentView(binding?.root)
-        } else if (event == Lifecycle.Event.ON_DESTROY) {
-            binding.cleanUpRecyclerAdapters()
-            binding = null
-            activity.lifecycle.removeObserver(this)
-        }
+  override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+    if (event == Lifecycle.Event.ON_CREATE) {
+      buildBindingIfNeeded()
+      activity.setContentView(binding?.root)
+    } else if (event == Lifecycle.Event.ON_DESTROY) {
+      binding.cleanUpRecyclerAdapters()
+      binding = null
+      activity.lifecycle.removeObserver(this)
     }
+  }
 
-    private fun buildBindingIfNeeded() {
-        if (binding == null) {
-            binding = viewBindingFactory.invoke(activity.layoutInflater)
-        }
+  private fun buildBindingIfNeeded() {
+    if (binding == null) {
+      binding = viewBindingFactory.invoke(activity.layoutInflater)
     }
+  }
 
-    /**
-     * Returns the [ViewBinding] object.
-     */
-    override fun getValue(thisRef: AppCompatActivity, property: KProperty<*>): VB {
-        buildBindingIfNeeded()
-        if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
-            error("Activity is destroyed.")
-        }
-        return binding!!
+  /**
+   * Returns the [ViewBinding] object.
+   */
+  override fun getValue(thisRef: AppCompatActivity, property: KProperty<*>): VB {
+    buildBindingIfNeeded()
+    if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+      error("Activity is destroyed.")
     }
+    return binding!!
+  }
 }

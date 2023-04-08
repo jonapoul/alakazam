@@ -15,18 +15,18 @@ import androidx.recyclerview.widget.RecyclerView
  * removing the adapter from a [RecyclerView].
  */
 fun <V : View> V.onDestroyView(callback: V.() -> Unit) {
-    addOnAttachStateChangeListener(
-        object : View.OnAttachStateChangeListener {
-            override fun onViewAttachedToWindow(v: View) {
-                /* No-op */
-            }
+  addOnAttachStateChangeListener(
+    object : View.OnAttachStateChangeListener {
+      override fun onViewAttachedToWindow(v: View) {
+        /* No-op */
+      }
 
-            override fun onViewDetachedFromWindow(v: View) {
-                callback()
-                removeOnAttachStateChangeListener(this)
-            }
-        }
-    )
+      override fun onViewDetachedFromWindow(v: View) {
+        callback()
+        removeOnAttachStateChangeListener(this)
+      }
+    }
+  )
 }
 
 /**
@@ -34,7 +34,7 @@ fun <V : View> V.onDestroyView(callback: V.() -> Unit) {
  */
 @UiThread
 fun View.fadeIn(duration: Long = 500L) {
-    fade(duration, 1.0f)
+  fade(duration, 1.0f)
 }
 
 /**
@@ -42,15 +42,15 @@ fun View.fadeIn(duration: Long = 500L) {
  */
 @UiThread
 fun View.fadeOut(duration: Long = 500L) {
-    fade(duration, 0.0f)
+  fade(duration, 0.0f)
 }
 
 @UiThread
 private fun View.fade(duration: Long, targetAlpha: Float) {
-    this.clearAnimation()
-    this.startAnimation(
-        AlphaAnimation(this.alpha, targetAlpha).also {
-            it.duration = duration
-        }
-    )
+  this.clearAnimation()
+  this.startAnimation(
+    AlphaAnimation(this.alpha, targetAlpha).also {
+      it.duration = duration
+    }
+  )
 }

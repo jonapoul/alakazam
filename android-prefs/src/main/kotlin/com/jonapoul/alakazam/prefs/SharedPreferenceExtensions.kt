@@ -10,9 +10,9 @@ import androidx.core.content.edit
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseInt(pref: PrefPair<String>): Int {
-    return typeSafeGet(pref) {
-        this.getString(pref.key, pref.default)!!
-    }.toInt()
+  return typeSafeGet(pref) {
+    this.getString(pref.key, pref.default)!!
+  }.toInt()
 }
 
 /**
@@ -20,9 +20,9 @@ fun SharedPreferences.parseInt(pref: PrefPair<String>): Int {
  * if the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseLong(pref: PrefPair<String>): Long {
-    return typeSafeGet(pref) {
-        this.getString(pref.key, pref.default)!!
-    }.toLong()
+  return typeSafeGet(pref) {
+    this.getString(pref.key, pref.default)!!
+  }.toLong()
 }
 
 /**
@@ -30,9 +30,9 @@ fun SharedPreferences.parseLong(pref: PrefPair<String>): Long {
  * if the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseDouble(pref: PrefPair<String>): Double {
-    return typeSafeGet(pref) {
-        this.getString(pref.key, pref.default)!!
-    }.toDouble()
+  return typeSafeGet(pref) {
+    this.getString(pref.key, pref.default)!!
+  }.toDouble()
 }
 
 /**
@@ -40,9 +40,9 @@ fun SharedPreferences.parseDouble(pref: PrefPair<String>): Double {
  * if the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.parseFloat(pref: PrefPair<String>): Float {
-    return typeSafeGet(pref) {
-        this.getString(pref.key, pref.default)!!
-    }.toFloat()
+  return typeSafeGet(pref) {
+    this.getString(pref.key, pref.default)!!
+  }.toFloat()
 }
 
 /**
@@ -50,9 +50,9 @@ fun SharedPreferences.parseFloat(pref: PrefPair<String>): Float {
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getInt(pref: PrefPair<Int>): Int {
-    return typeSafeGet(pref) {
-        this.getInt(pref.key, pref.default)
-    }
+  return typeSafeGet(pref) {
+    this.getInt(pref.key, pref.default)
+  }
 }
 
 /**
@@ -60,9 +60,9 @@ fun SharedPreferences.getInt(pref: PrefPair<Int>): Int {
  * either the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getFloat(pref: PrefPair<Float>): Float {
-    return typeSafeGet(pref) {
-        this.getFloat(pref.key, pref.default)
-    }
+  return typeSafeGet(pref) {
+    this.getFloat(pref.key, pref.default)
+  }
 }
 
 /**
@@ -70,9 +70,9 @@ fun SharedPreferences.getFloat(pref: PrefPair<Float>): Float {
  * either the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getLong(pref: PrefPair<Long>): Long {
-    return typeSafeGet(pref) {
-        this.getLong(pref.key, pref.default)
-    }
+  return typeSafeGet(pref) {
+    this.getLong(pref.key, pref.default)
+  }
 }
 
 /**
@@ -80,9 +80,9 @@ fun SharedPreferences.getLong(pref: PrefPair<Long>): Long {
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getString(pref: PrefPair<String>): String {
-    return typeSafeGet(pref) {
-        this.getString(pref.key, pref.default)!!
-    }
+  return typeSafeGet(pref) {
+    this.getString(pref.key, pref.default)!!
+  }
 }
 
 /**
@@ -90,9 +90,9 @@ fun SharedPreferences.getString(pref: PrefPair<String>): String {
  * already persisted or the type is incorrect.
  */
 fun SharedPreferences.getNullableString(pref: PrefPair<String?>): String? {
-    return typeSafeGet(pref) {
-        this.getString(pref.key, pref.default)
-    }
+  return typeSafeGet(pref) {
+    this.getString(pref.key, pref.default)
+  }
 }
 
 /**
@@ -100,8 +100,8 @@ fun SharedPreferences.getNullableString(pref: PrefPair<String?>): String? {
  * is the wrong type, or c) is blank, the [PrefPair] default is returned.
  */
 fun SharedPreferences.getStringNoBlank(pref: PrefPair<String>): String {
-    val result = getString(pref)
-    return result.ifBlank { pref.default }
+  val result = getString(pref)
+  return result.ifBlank { pref.default }
 }
 
 /**
@@ -109,9 +109,9 @@ fun SharedPreferences.getStringNoBlank(pref: PrefPair<String>): String {
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getBoolean(pref: PrefPair<Boolean>): Boolean {
-    return typeSafeGet(pref) {
-        this.getBoolean(pref.key, pref.default)
-    }
+  return typeSafeGet(pref) {
+    this.getBoolean(pref.key, pref.default)
+  }
 }
 
 /**
@@ -119,9 +119,9 @@ fun SharedPreferences.getBoolean(pref: PrefPair<Boolean>): Boolean {
  * the value isn't already persisted or the type is incorrect.
  */
 fun SharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Set<String> {
-    return typeSafeGet(pref) {
-        this.getStringSet(pref.key, pref.default)!!
-    }
+  return typeSafeGet(pref) {
+    this.getStringSet(pref.key, pref.default)!!
+  }
 }
 
 /**
@@ -130,12 +130,12 @@ fun SharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Set<String> {
  * returned.
  */
 private fun <T> SharedPreferences.typeSafeGet(pref: PrefPair<T>, call: () -> T): T {
-    return try {
-        call.invoke()
-    } catch (e: ClassCastException) {
-        edit { remove(pref.key) }
-        pref.default
-    }
+  return try {
+    call.invoke()
+  } catch (e: ClassCastException) {
+    edit { remove(pref.key) }
+    pref.default
+  }
 }
 
 /**
@@ -143,13 +143,13 @@ private fun <T> SharedPreferences.typeSafeGet(pref: PrefPair<T>, call: () -> T):
  * supplied [value] is null.
  */
 fun SharedPreferences.Editor.putIntIfNotNull(
-    pref: PrefPair<Int>,
-    value: Int?,
+  pref: PrefPair<Int>,
+  value: Int?,
 ): SharedPreferences.Editor {
-    if (value != null) {
-        this.putInt(pref.key, value)
-    }
-    return this
+  if (value != null) {
+    this.putInt(pref.key, value)
+  }
+  return this
 }
 
 /**
@@ -157,13 +157,13 @@ fun SharedPreferences.Editor.putIntIfNotNull(
  * supplied [value] is null.
  */
 fun SharedPreferences.Editor.putFloatIfNotNull(
-    pref: PrefPair<Float>,
-    value: Float?,
+  pref: PrefPair<Float>,
+  value: Float?,
 ): SharedPreferences.Editor {
-    if (value != null) {
-        this.putFloat(pref.key, value)
-    }
-    return this
+  if (value != null) {
+    this.putFloat(pref.key, value)
+  }
+  return this
 }
 
 /**
@@ -171,13 +171,13 @@ fun SharedPreferences.Editor.putFloatIfNotNull(
  * supplied [value] is null.
  */
 fun SharedPreferences.Editor.putBooleanIfNotNull(
-    pref: PrefPair<Boolean>,
-    value: Boolean?,
+  pref: PrefPair<Boolean>,
+  value: Boolean?,
 ): SharedPreferences.Editor {
-    if (value != null) {
-        this.putBoolean(pref.key, value)
-    }
-    return this
+  if (value != null) {
+    this.putBoolean(pref.key, value)
+  }
+  return this
 }
 
 /**
@@ -185,13 +185,13 @@ fun SharedPreferences.Editor.putBooleanIfNotNull(
  * supplied [value] is null.
  */
 fun SharedPreferences.Editor.putLongIfNotNull(
-    pref: PrefPair<Long>,
-    value: Long?,
+  pref: PrefPair<Long>,
+  value: Long?,
 ): SharedPreferences.Editor {
-    if (value != null) {
-        this.putLong(pref.key, value)
-    }
-    return this
+  if (value != null) {
+    this.putLong(pref.key, value)
+  }
+  return this
 }
 
 /**
@@ -199,13 +199,13 @@ fun SharedPreferences.Editor.putLongIfNotNull(
  * supplied [value] is null.
  */
 fun SharedPreferences.Editor.putStringIfNotNull(
-    pref: PrefPair<String>,
-    value: String?,
+  pref: PrefPair<String>,
+  value: String?,
 ): SharedPreferences.Editor {
-    if (value != null) {
-        this.putString(pref.key, value)
-    }
-    return this
+  if (value != null) {
+    this.putString(pref.key, value)
+  }
+  return this
 }
 
 /**
@@ -213,53 +213,53 @@ fun SharedPreferences.Editor.putStringIfNotNull(
  * supplied [value] is null.
  */
 fun SharedPreferences.Editor.putStringSetIfNotNull(
-    pref: PrefPair<Set<String>>,
-    value: Set<String>?,
+  pref: PrefPair<Set<String>>,
+  value: Set<String>?,
 ): SharedPreferences.Editor {
-    if (value != null) {
-        this.putStringSet(pref.key, value)
-    }
-    return this
+  if (value != null) {
+    this.putStringSet(pref.key, value)
+  }
+  return this
 }
 
 fun SharedPreferences.putInt(key: String, value: Int) =
-    edit { putInt(key, value) }
+  edit { putInt(key, value) }
 
 fun SharedPreferences.putLong(key: String, value: Long) =
-    edit { putLong(key, value) }
+  edit { putLong(key, value) }
 
 fun SharedPreferences.putFloat(key: String, value: Float) =
-    edit { putFloat(key, value) }
+  edit { putFloat(key, value) }
 
 fun SharedPreferences.putBoolean(key: String, value: Boolean) =
-    edit { putBoolean(key, value) }
+  edit { putBoolean(key, value) }
 
 fun SharedPreferences.putString(key: String, value: String) =
-    edit { putString(key, value) }
+  edit { putString(key, value) }
 
 fun SharedPreferences.putNullableString(key: String, value: String?) =
-    edit { putString(key, value) }
+  edit { putString(key, value) }
 
 fun SharedPreferences.putStringSet(key: String, value: Set<String>) =
-    edit { putStringSet(key, value) }
+  edit { putStringSet(key, value) }
 
 fun SharedPreferences.putInt(pref: PrefPair<Int>, value: Int) =
-    putInt(pref.key, value)
+  putInt(pref.key, value)
 
 fun SharedPreferences.putLong(pref: PrefPair<Long>, value: Long) =
-    putLong(pref.key, value)
+  putLong(pref.key, value)
 
 fun SharedPreferences.putFloat(pref: PrefPair<Float>, value: Float) =
-    putFloat(pref.key, value)
+  putFloat(pref.key, value)
 
 fun SharedPreferences.putBoolean(pref: PrefPair<Boolean>, value: Boolean) =
-    putBoolean(pref.key, value)
+  putBoolean(pref.key, value)
 
 fun SharedPreferences.putString(pref: PrefPair<String>, value: String) =
-    putString(pref.key, value)
+  putString(pref.key, value)
 
 fun SharedPreferences.putNullableString(pref: PrefPair<String?>, value: String?) =
-    putNullableString(pref.key, value)
+  putNullableString(pref.key, value)
 
 fun SharedPreferences.putStringSet(pref: PrefPair<Set<String>>, value: Set<String>) =
-    putStringSet(pref.key, value)
+  putStringSet(pref.key, value)

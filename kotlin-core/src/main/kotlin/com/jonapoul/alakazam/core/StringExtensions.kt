@@ -8,11 +8,11 @@ import java.util.Locale
  */
 @Throws(IllegalStateException::class)
 fun String.parseBoolean(): Boolean {
-    return when {
-        this.equals("true", ignoreCase = true) -> true
-        this.equals("false", ignoreCase = true) -> false
-        else -> error("Unable to parse boolean from '$this'")
-    }
+  return when {
+    this.equals("true", ignoreCase = true) -> true
+    this.equals("false", ignoreCase = true) -> false
+    else -> error("Unable to parse boolean from '$this'")
+  }
 }
 
 /**
@@ -20,11 +20,11 @@ fun String.parseBoolean(): Boolean {
  * Mercilessly lifted from https://stackoverflow.com/a/67843987/15634757
  */
 fun String.capitalized(): String {
-    return this.replaceFirstChar {
-        if (it.isLowerCase()) {
-            it.titlecase(Locale.getDefault())
-        } else {
-            it.toString()
-        }
+  return this.replaceFirstChar {
+    if (it.isLowerCase()) {
+      it.titlecase(Locale.getDefault())
+    } else {
+      it.toString()
     }
+  }
 }

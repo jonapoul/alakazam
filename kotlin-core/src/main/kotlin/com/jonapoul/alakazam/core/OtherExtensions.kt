@@ -5,18 +5,18 @@ package com.jonapoul.alakazam.core
  * thrown. Use with caution, obviously!
  */
 fun justTry(block: () -> Unit) {
-    try {
-        block.invoke()
-    } catch (e: Exception) {
-        /* No-op */
-    }
+  try {
+    block.invoke()
+  } catch (e: Exception) {
+    /* No-op */
+  }
 }
 
 /**
  * Don't do anything
  */
 fun noOp() {
-    /* No-op, obviously */
+  /* No-op, obviously */
 }
 
 /**
@@ -25,4 +25,4 @@ fun noOp() {
  * statements, a compiler error will block building.
  */
 val <T> T.exhaustive: T
-    get() = this
+  get() = this

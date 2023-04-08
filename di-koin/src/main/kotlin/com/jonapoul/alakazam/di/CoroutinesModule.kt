@@ -10,29 +10,29 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val coroutineModule = module {
-    /* Application scope */
-    single { CoroutineScope(SupervisorJob()) }
+  /* Application scope */
+  single { CoroutineScope(SupervisorJob()) }
 
-    /* Dispatchers */
-    single<CoroutineDispatcher>(named(KoinDispatchers.MAIN)) { Dispatchers.Main }
-    single(named(KoinDispatchers.IO)) { Dispatchers.IO }
-    single(named(KoinDispatchers.DEFAULT)) { Dispatchers.Default }
+  /* Dispatchers */
+  single<CoroutineDispatcher>(named(KoinDispatchers.MAIN)) { Dispatchers.Main }
+  single(named(KoinDispatchers.IO)) { Dispatchers.IO }
+  single(named(KoinDispatchers.DEFAULT)) { Dispatchers.Default }
 }
 
 object KoinDispatchers {
-    const val MAIN = "KoinDispatchers.MAIN"
-    const val IO = "KoinDispatchers.IO"
-    const val DEFAULT = "KoinDispatchers.DEFAULT"
+  const val MAIN = "KoinDispatchers.MAIN"
+  const val IO = "KoinDispatchers.IO"
+  const val DEFAULT = "KoinDispatchers.DEFAULT"
 }
 
 fun KoinComponent.injectMainDispatcher(): Lazy<CoroutineDispatcher> =
-    inject(named(KoinDispatchers.MAIN))
+  inject(named(KoinDispatchers.MAIN))
 
 fun KoinComponent.injectIoDispatcher(): Lazy<CoroutineDispatcher> =
-    inject(named(KoinDispatchers.IO))
+  inject(named(KoinDispatchers.IO))
 
 fun KoinComponent.injectDefaultDispatcher(): Lazy<CoroutineDispatcher> =
-    inject(named(KoinDispatchers.DEFAULT))
+  inject(named(KoinDispatchers.DEFAULT))
 
 fun KoinComponent.injectCoroutineScope(): Lazy<CoroutineScope> =
-    inject()
+  inject()

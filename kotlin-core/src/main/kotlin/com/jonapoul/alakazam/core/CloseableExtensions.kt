@@ -7,9 +7,9 @@ import java.io.Closeable
  * allow through other [Throwable]s (e.g. [NoClassDefFoundError])
  */
 fun Closeable.quietlyClose() {
-    try {
-        close()
-    } catch (e: Exception) {
-        /* No-op */
-    }
+  try {
+    close()
+  } catch (e: Exception) {
+    /* No-op */
+  }
 }

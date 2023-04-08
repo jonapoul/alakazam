@@ -15,36 +15,31 @@ import com.jonapoul.alakazam.core.getColorFromAttr
 
 @SuppressLint("RestrictedApi")
 class CommonPreferenceCategory @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = TypedArrayUtils.getAttr(
-        context,
-        R.attr.preferenceCategoryStyle,
-        android.R.attr.preferenceCategoryStyle
-    ),
-    defStyleRes: Int = 0,
-) : PreferenceCategory(
+  context: Context,
+  attrs: AttributeSet? = null,
+  defStyleAttr: Int = TypedArrayUtils.getAttr(
     context,
-    attrs,
-    defStyleAttr,
-    defStyleRes,
-) {
-    private var categoryTint: Int = context.getColorFromAttr(R.attr.colorPrimary)
+    R.attr.preferenceCategoryStyle,
+    android.R.attr.preferenceCategoryStyle
+  ),
+  defStyleRes: Int = 0,
+) : PreferenceCategory(context, attrs, defStyleAttr, defStyleRes) {
+  private var categoryTint: Int = context.getColorFromAttr(R.attr.colorPrimary)
 
-    init {
-        context.withStyledAttributes(attrs, R.styleable.CommonPreferenceCategory, defStyleAttr, defStyleRes) {
-            categoryTint = getColor(R.styleable.CommonPreferenceCategory_cpc_tint, categoryTint)
-        }
+  init {
+    context.withStyledAttributes(attrs, R.styleable.CommonPreferenceCategory, defStyleAttr, defStyleRes) {
+      categoryTint = getColor(R.styleable.CommonPreferenceCategory_cpc_tint, categoryTint)
     }
+  }
 
-    override fun onBindViewHolder(holder: PreferenceViewHolder) {
-        super.onBindViewHolder(holder)
-        /* Set icon colour */
-        val imageView = holder.findViewById(android.R.id.icon) as ImageView
-        ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(categoryTint))
+  override fun onBindViewHolder(holder: PreferenceViewHolder) {
+    super.onBindViewHolder(holder)
+    /* Set icon colour */
+    val imageView = holder.findViewById(android.R.id.icon) as ImageView
+    ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(categoryTint))
 
-        /* Set text colour */
-        val titleView = holder.findViewById(android.R.id.title) as TextView
-        titleView.setTextColor(categoryTint)
-    }
+    /* Set text colour */
+    val titleView = holder.findViewById(android.R.id.title) as TextView
+    titleView.setTextColor(categoryTint)
+  }
 }

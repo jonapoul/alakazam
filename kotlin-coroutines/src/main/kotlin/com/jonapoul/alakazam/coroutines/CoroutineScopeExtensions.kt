@@ -14,22 +14,22 @@ import kotlinx.coroutines.launch
  * run directly before invoking the main [call], to verify whether the [call] should be run.
  */
 fun CoroutineScope.launchInfiniteLoop(
-    periodMs: Long,
-    delayType: LoopDelayType = LoopDelayType.DELAY_AFTER,
-    dispatcher: CoroutineDispatcher = Dispatchers.Main,
-    skipIf: (() -> Boolean)? = null,
-    call: suspend () -> Unit,
+  periodMs: Long,
+  delayType: LoopDelayType = LoopDelayType.DELAY_AFTER,
+  dispatcher: CoroutineDispatcher = Dispatchers.Main,
+  skipIf: (() -> Boolean)? = null,
+  call: suspend () -> Unit,
 ): Job {
-    val delayBefore = delayType == LoopDelayType.DELAY_BEFORE
-    val delayAfter = delayType == LoopDelayType.DELAY_AFTER
-    return launch(dispatcher) {
-        while (true) {
-            if (delayBefore) delay(periodMs)
-            if (skipIf?.invoke() == true) continue
-            call.invoke()
-            if (delayAfter) delay(periodMs)
-        }
+  val delayBefore = delayType == LoopDelayType.DELAY_BEFORE
+  val delayAfter = delayType == LoopDelayType.DELAY_AFTER
+  return launch(dispatcher) {
+    while (true) {
+      if (delayBefore) delay(periodMs)
+      if (skipIf?.invoke() == true) continue
+      call.invoke()
+      if (delayAfter) delay(periodMs)
     }
+  }
 }
 
 /**

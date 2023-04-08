@@ -4,14 +4,13 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.withType
 
 fun Project.configureVersions() {
-    apply(plugin = "com.github.ben-manes.versions")
+  apply(plugin = "com.github.ben-manes.versions")
 
-    tasks.withType<DependencyUpdatesTask> {
-        rejectVersionIf {
-            !candidate.version.isStable() && currentVersion.isStable()
-        }
+  tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+      !candidate.version.isStable() && currentVersion.isStable()
     }
+  }
 }
 
-private fun String.isStable(): Boolean =
-    listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
+private fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }

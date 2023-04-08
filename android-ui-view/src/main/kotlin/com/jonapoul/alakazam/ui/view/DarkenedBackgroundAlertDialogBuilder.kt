@@ -9,20 +9,17 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  * doesn't apply to preference dialogs.
  */
 open class DarkenedBackgroundAlertDialogBuilder(
-    context: Context,
-    overrideThemeResId: Int = 0,
-) : MaterialAlertDialogBuilder(
-    context,
-    overrideThemeResId
-) {
-    override fun show(): AlertDialog {
-        val dialog = create()
-        dialog.window?.setDimAmount(DIM_AMOUNT)
-        dialog.show()
-        return dialog
+  context: Context,
+  overrideThemeResId: Int = 0,
+) : MaterialAlertDialogBuilder(context, overrideThemeResId) {
+  override fun show(): AlertDialog {
+    return create().apply {
+      window?.setDimAmount(DIM_AMOUNT)
+      show()
     }
+  }
 
-    private companion object {
-        const val DIM_AMOUNT = 0.8f
-    }
+  private companion object {
+    const val DIM_AMOUNT = 0.8f
+  }
 }

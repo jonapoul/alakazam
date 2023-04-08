@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.Flow
  * suspending coroutine to do so.
  */
 fun <T> ComponentActivity.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
-    return lifecycleScope.collectFlow(flow, call)
+  return lifecycleScope.collectFlow(flow, call)
 }
 
 /**
@@ -21,5 +21,5 @@ fun <T> ComponentActivity.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit):
  * suspending coroutine to do so.
  */
 fun <T> ViewModel.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
-    return viewModelScope.collectFlow(flow, call)
+  return viewModelScope.collectFlow(flow, call)
 }

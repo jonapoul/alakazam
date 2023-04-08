@@ -4,30 +4,30 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 
 fun Project.configureSpotless() {
-    allprojects {
-        apply(plugin = "com.diffplug.spotless")
+  allprojects {
+    apply(plugin = "com.diffplug.spotless")
 
-        extensions.configure<SpotlessExtension> {
-            format("misc") {
-                target("*.gradle", "*.gitignore", "*.pro")
-                indentWithSpaces()
-                trimTrailingWhitespace()
-                endWithNewline()
-            }
+    extensions.configure<SpotlessExtension> {
+      format("misc") {
+        target("*.gradle", "*.gitignore", "*.pro")
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+      }
 
-            freshmark {
-                target("*.md")
-            }
+      freshmark {
+        target("*.md")
+      }
 
-            json {
-                target("*.json")
-                simple()
-            }
+      json {
+        target("*.json")
+        simple()
+      }
 
-            yaml {
-                target("*.yml", "*.yaml")
-                jackson()
-            }
-        }
+      yaml {
+        target("*.yml", "*.yaml")
+        jackson()
+      }
     }
+  }
 }

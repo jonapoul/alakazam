@@ -6,14 +6,14 @@ import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 fun Project.configureKtlint(ktlintVersion: Provider<String>) {
-    allprojects {
-        apply(plugin = "org.jlleitschuh.gradle.ktlint")
+  allprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
 
-        extensions.configure<KtlintExtension> {
-            version.set(ktlintVersion.get())
-            reporters {
-                reporter(ReporterType.HTML)
-            }
-        }
+    extensions.configure<KtlintExtension> {
+      version.set(ktlintVersion.get())
+      reporters {
+        reporter(ReporterType.HTML)
+      }
     }
+  }
 }

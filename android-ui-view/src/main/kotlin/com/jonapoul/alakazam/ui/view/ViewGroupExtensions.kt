@@ -1,21 +1,21 @@
 package com.jonapoul.alakazam.ui.view
 
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.annotation.UiThread
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
+import com.jonapoul.alakazam.core.inflater
 
 @UiThread
 private fun ViewGroup.setChildrenEnabled(enable: Boolean) {
-    children.forEach {
-        when (it) {
-            is ViewGroup -> it.setChildrenEnabled(enable)
-            else -> enableIf(enable)
-        }
+  children.forEach {
+    when (it) {
+      is ViewGroup -> it.setChildrenEnabled(enable)
+      else -> enableIf(enable)
     }
+  }
 }
 
 /**
@@ -23,7 +23,7 @@ private fun ViewGroup.setChildrenEnabled(enable: Boolean) {
  */
 @UiThread
 fun ViewGroup.disableChildren() {
-    setChildrenEnabled(false)
+  setChildrenEnabled(false)
 }
 
 /**
@@ -31,7 +31,7 @@ fun ViewGroup.disableChildren() {
  */
 @UiThread
 fun ViewGroup.enableChildren() {
-    setChildrenEnabled(true)
+  setChildrenEnabled(true)
 }
 
 /**
@@ -40,17 +40,17 @@ fun ViewGroup.enableChildren() {
  */
 @UiThread
 fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
-    return LayoutInflater.from(context).inflate(layoutRes, this, false)
+  return context.inflater.inflate(layoutRes, this, false)
 }
 
 fun ViewGroup.cleanUpRecyclerAdapters() {
-    children.forEach {
-        if (it is RecyclerView) {
-            /* Remove the adapter class to allow garbage collection */
-            it.adapter = null
-        } else if (it is ViewGroup) {
-            /* Recursively go through child layouts to find RecyclerViews */
-            it.cleanUpRecyclerAdapters()
-        }
+  children.forEach {
+    if (it is RecyclerView) {
+      /* Remove the adapter class to allow garbage collection */
+      it.adapter = null
+    } else if (it is ViewGroup) {
+      /* Recursively go through child layouts to find RecyclerViews */
+      it.cleanUpRecyclerAdapters()
     }
+  }
 }

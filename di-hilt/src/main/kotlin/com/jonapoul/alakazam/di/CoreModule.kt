@@ -11,8 +11,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 @Module
 class CoreModule {
-    @Provides
-    fun launcher(
-        @ApplicationContext context: Context,
-    ): ActivityLauncher = ActivityLauncher(context)
+  @Provides
+  fun launcher(
+    @ApplicationContext context: Context,
+  ): ActivityLauncher = ActivityLauncher(context)
 }

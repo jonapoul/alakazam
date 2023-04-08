@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
  * called when the view is being bound to an item of type [T].
  */
 abstract class CommonViewHolder<T>(root: View) : RecyclerView.ViewHolder(root) {
-    protected val context: Context
-        get() = itemView.context
+  protected val context: Context
+    get() = itemView.context
 
-    abstract fun bindTo(item: T)
+  abstract fun bindTo(item: T)
 
-    open fun onRecycled() {
-        /* No-op by default */
-    }
+  open fun onRecycled() {
+    /* No-op by default */
+  }
 }

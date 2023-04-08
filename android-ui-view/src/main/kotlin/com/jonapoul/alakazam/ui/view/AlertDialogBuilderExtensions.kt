@@ -11,14 +11,14 @@ import androidx.appcompat.app.AlertDialog
  * pressed. If [onClick] is null, the button will simply close the dialog.
  */
 fun <T : AlertDialog.Builder> T.setSimpleNegativeButton(
-    @StringRes text: Int = android.R.string.cancel,
-    onClick: (() -> Unit)? = null,
+  @StringRes text: Int = android.R.string.cancel,
+  onClick: (() -> Unit)? = null,
 ): T {
-    return if (onClick == null) {
-        setNegativeButton(text, null) as T
-    } else {
-        setNegativeButton(text) { _, _ -> onClick.invoke() } as T
-    }
+  return if (onClick == null) {
+    setNegativeButton(text, null) as T
+  } else {
+    setNegativeButton(text) { _, _ -> onClick.invoke() } as T
+  }
 }
 
 /**
@@ -27,23 +27,23 @@ fun <T : AlertDialog.Builder> T.setSimpleNegativeButton(
  * pressed. If [onClick] is null, the button will simply close the dialog.
  */
 fun <T : AlertDialog.Builder> T.setSimplePositiveButton(
-    @StringRes text: Int = android.R.string.ok,
-    onClick: (() -> Unit)? = null,
+  @StringRes text: Int = android.R.string.ok,
+  onClick: (() -> Unit)? = null,
 ): T {
-    return if (onClick == null) {
-        setPositiveButton(text, null) as T
-    } else {
-        setPositiveButton(text) { _, _ -> onClick.invoke() } as T
-    }
+  return if (onClick == null) {
+    setPositiveButton(text, null) as T
+  } else {
+    setPositiveButton(text) { _, _ -> onClick.invoke() } as T
+  }
 }
 
 fun <T : AlertDialog.Builder> T.setSimpleNeutralButton(
-    @StringRes text: Int,
-    onClick: (() -> Unit)? = null,
+  @StringRes text: Int,
+  onClick: (() -> Unit)? = null,
 ): T {
-    return if (onClick == null) {
-        setNeutralButton(text, null) as T
-    } else {
-        setNeutralButton(text) { _, _ -> onClick.invoke() } as T
-    }
+  return if (onClick == null) {
+    setNeutralButton(text, null) as T
+  } else {
+    setNeutralButton(text) { _, _ -> onClick.invoke() } as T
+  }
 }

@@ -14,8 +14,8 @@ import kotlinx.coroutines.launch
  * this library.
  */
 fun <T> CoroutineScope.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job =
-    launch {
-        flow.collect {
-            call.invoke(it)
-        }
+  launch {
+    flow.collect {
+      call.invoke(it)
     }
+  }

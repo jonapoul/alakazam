@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.jonapoul.alakazam.core.inflater
 
 /**
  * Gives a base implementation of the [ListAdapter], which can be used in place of a
@@ -12,21 +13,20 @@ import androidx.recyclerview.widget.RecyclerView
  * new data to the view.
  */
 abstract class CommonListAdapter<T : Any, VH : CommonViewHolder<T>>(
-    diffCallback: DiffUtil.ItemCallback<T>,
+  diffCallback: DiffUtil.ItemCallback<T>,
 ) : ListAdapter<T, VH>(diffCallback) {
 
-    protected abstract fun buildViewHolder(inflater: LayoutInflater, parent: ViewGroup): VH
+  protected abstract fun buildViewHolder(inflater: LayoutInflater, parent: ViewGroup): VH
 
-    final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val inflater = LayoutInflater.from(parent.context)
-        return buildViewHolder(inflater, parent)
-    }
+  final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+    return buildViewHolder(parent.context.inflater, parent)
+  }
 
-    final override fun onBindViewHolder(holder: VH, position: Int) {
-        holder.bindTo(getItem(position))
-    }
+  final override fun onBindViewHolder(holder: VH, position: Int) {
+    holder.bindTo(getItem(position))
+  }
 
-    override fun onViewRecycled(holder: VH) {
-        holder.onRecycled()
-    }
+  override fun onViewRecycled(holder: VH) {
+    holder.onRecycled()
+  }
 }

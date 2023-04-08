@@ -16,53 +16,53 @@ import kotlin.reflect.KProperty
  * when the [Fragment]'s view lifecycle reaches the "destroyed" state.
  */
 class FragmentViewBindingDelegate<VB : ViewBinding>(
-    private val fragment: Fragment,
-    private val viewBindingFactory: (View) -> VB,
+  private val fragment: Fragment,
+  private val viewBindingFactory: (View) -> VB,
 ) : ReadOnlyProperty<Fragment, VB>, LifecycleObserver {
 
-    private var binding: VB? = null
+  private var binding: VB? = null
 
-    init {
-        fragment.lifecycle.addObserver(
+  init {
+    fragment.lifecycle.addObserver(
+      object : DefaultLifecycleObserver {
+        val liveDataObserver = Observer<LifecycleOwner> {
+          val viewLifecycleOwner = it ?: return@Observer
+          viewLifecycleOwner.lifecycle.addObserver(
             object : DefaultLifecycleObserver {
-                val liveDataObserver = Observer<LifecycleOwner> {
-                    val viewLifecycleOwner = it ?: return@Observer
-                    viewLifecycleOwner.lifecycle.addObserver(
-                        object : DefaultLifecycleObserver {
-                            override fun onDestroy(owner: LifecycleOwner) {
-                                binding.cleanUpRecyclerAdapters()
-                                binding = null
-                            }
-                        }
-                    )
-                }
-
-                override fun onCreate(owner: LifecycleOwner) {
-                    fragment.viewLifecycleOwnerLiveData.observeForever(liveDataObserver)
-                }
-
-                override fun onDestroy(owner: LifecycleOwner) {
-                    fragment.viewLifecycleOwnerLiveData.removeObserver(liveDataObserver)
-                }
+              override fun onDestroy(owner: LifecycleOwner) {
+                binding.cleanUpRecyclerAdapters()
+                binding = null
+              }
             }
-        )
-    }
-
-    private fun buildBindingIfNeeded() {
-        if (binding == null) {
-            binding = viewBindingFactory.invoke(fragment.requireView())
+          )
         }
-    }
 
-    /**
-     * Returns the [ViewBinding] object.
-     */
-    override fun getValue(thisRef: Fragment, property: KProperty<*>): VB {
-        val lifecycle = fragment.viewLifecycleOwner.lifecycle
-        if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
-            error("Fragment views are destroyed.")
+        override fun onCreate(owner: LifecycleOwner) {
+          fragment.viewLifecycleOwnerLiveData.observeForever(liveDataObserver)
         }
-        buildBindingIfNeeded()
-        return binding!!
+
+        override fun onDestroy(owner: LifecycleOwner) {
+          fragment.viewLifecycleOwnerLiveData.removeObserver(liveDataObserver)
+        }
+      }
+    )
+  }
+
+  private fun buildBindingIfNeeded() {
+    if (binding == null) {
+      binding = viewBindingFactory.invoke(fragment.requireView())
     }
+  }
+
+  /**
+   * Returns the [ViewBinding] object.
+   */
+  override fun getValue(thisRef: Fragment, property: KProperty<*>): VB {
+    val lifecycle = fragment.viewLifecycleOwner.lifecycle
+    if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+      error("Fragment views are destroyed.")
+    }
+    buildBindingIfNeeded()
+    return binding!!
+  }
 }

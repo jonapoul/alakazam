@@ -9,5 +9,5 @@ import org.koin.dsl.module
  * Requires a binding to be set for [android.content.SharedPreferences].
  */
 val preferencesModule = module {
-    factory { FlowSharedPreferences(get(), get<CoroutineDispatcher>(named(KoinDispatchers.IO))) }
+  factory { FlowSharedPreferences(get(), get<CoroutineDispatcher>(named(KoinDispatchers.IO))) }
 }
