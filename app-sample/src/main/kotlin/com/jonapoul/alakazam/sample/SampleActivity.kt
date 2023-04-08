@@ -8,7 +8,7 @@ import com.jonapoul.alakazam.sample.databinding.ActivitySampleBinding
 import com.jonapoul.alakazam.ui.core.navControllers
 import com.jonapoul.alakazam.ui.view.viewBinding
 
-class SampleActivity : AppCompatActivity() {
+internal class SampleActivity : AppCompatActivity() {
   private val binding by viewBinding(ActivitySampleBinding::inflate)
   private val navController by navControllers(R.id.nav_host_fragment)
 

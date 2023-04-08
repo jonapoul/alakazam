@@ -12,7 +12,7 @@ import com.jonapoul.alakazam.ui.view.showLoadingDialog
 import com.jonapoul.alakazam.ui.view.showWarningDialog
 import com.jonapoul.alakazam.ui.view.viewBinding
 
-class HomeFragment : CommonFragment(layout = R.layout.fragment_home, menu = R.menu.home) {
+internal class HomeFragment : CommonFragment(layout = R.layout.fragment_home, menu = R.menu.home) {
   override val binding by viewBinding(FragmentHomeBinding::bind)
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
