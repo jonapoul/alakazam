@@ -35,13 +35,13 @@ jobs:
           job-id: jdk11
           multi-cache-enabled: false
 
-      - name: Enable gradle execution
+      - name: Enable Gradle Execution
         run: chmod +x ./gradlew
 
-      - name: Run all checks
-        run: ./gradlew check koverMergedHtmlReport # koverMergedVerify
+      - name: Run Checks
+        run: ./gradlew check koverMergedHtmlReport
 
-      - name: Upload project reports
+      - name: Upload Project Reports
         uses: actions/upload-artifact@v3
         if: always()
         with:
@@ -49,7 +49,7 @@ jobs:
           path: ./build/reports
           if-no-files-found: error
 
-      - name: Upload module reports
+      - name: Upload Module Reports
         uses: actions/upload-artifact@v3
         if: always()
         with:
