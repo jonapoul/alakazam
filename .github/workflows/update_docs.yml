@@ -25,6 +25,12 @@ jobs:
           java-version: 11
           distribution: corretto
 
+      - name: Gradle Cache
+        uses: burrunan/gradle-cache-action@v1
+        with:
+          job-id: jdk11
+          multi-cache-enabled: false
+
       - name: Enable gradle execution
         run: chmod +x ./gradlew
 
