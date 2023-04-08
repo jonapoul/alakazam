@@ -2,11 +2,11 @@
 # Plugins
 agp = "7.4.2"
 buildTools = "30.0.3"
-compose-compiler = "1.4.3"
+compose-compiler = "1.4.4"
 detekt = "1.22.0"
 dokka = "1.8.10"
 hilt = "2.45"
-kotlin-lang = "1.8.20"
+kotlin-lang = "1.8.10"
 kover = "0.6.1"
 ktlint-cli = "0.48.2"
 ktlint-gradle = "11.3.1"
