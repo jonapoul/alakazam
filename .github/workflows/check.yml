@@ -39,7 +39,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Run all checks
-        run: ./gradlew check
+        run: ./gradlew check koverMergedHtmlReport # koverMergedVerify
 
       - name: Upload project reports
         uses: actions/upload-artifact@v3
