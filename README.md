@@ -10,7 +10,7 @@ projects. I just made this repo to keep them all in the same place and stop me c
 
 ## API Reference
 
-See [https://jonapoul.github.io/alakazam](https://jonapoul.github.io/alakazam).
+See [https://jonapoul.github.io/alakazam/api/](https://jonapoul.github.io/alakazam/api/).
 
 ## Usage
 
