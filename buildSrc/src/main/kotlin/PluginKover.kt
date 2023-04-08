@@ -64,22 +64,13 @@ private val KOVER_EXCLUDES = listOf(
 
   /* UI classes */
   "*.*Binding",
-  "*.ui.compose.*",
-  "*.ui.*Activity*",
-  "*.ui.*Application*",
-  "*.ui.*Adapter*",
-  "*.ui.*Dialog*",
-  "*.ui.*DiffCallbacks*",
-  "*.ui.*Fragment*",
-  "*.ui.*Layout*",
-  "*.ui.*NavController*",
-  "*.ui.*Service*",
-  "*.ui.*Snackbar*",
-  "*.ui.*ViewHolder*",
-  "*.ui.*View*",
+  "*.ui.*",
 
   /* Hilt modules */
   "*.di.*",
+
+  /* Test utilities */
+  "*.test.*",
 
   /* Sample app */
   "com.jonapoul.alakazam.sample.*",
