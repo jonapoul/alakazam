@@ -2,11 +2,9 @@ package com.jonapoul.alakazam.test.android
 
 import android.content.ComponentName
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.annotation.NavigationRes
-import androidx.annotation.RequiresApi
 import androidx.annotation.StyleRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -32,7 +30,6 @@ class FragmentTester(
     }
   }
 
-  @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
   inline fun <reified F : Fragment> launchFragmentInHiltContainer(
     @StyleRes themeResId: Int,
     fragmentArgs: Bundle? = null,

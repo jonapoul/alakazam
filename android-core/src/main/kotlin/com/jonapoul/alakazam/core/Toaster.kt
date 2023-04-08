@@ -1,4 +1,4 @@
-package com.jonapoul.alakazam.ui.core
+package com.jonapoul.alakazam.core
 
 import android.content.Context
 import android.widget.Toast

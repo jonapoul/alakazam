@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
+import com.jonapoul.alakazam.core.INotifier
 import com.jonapoul.alakazam.core.getCompatColor
 
 class Notifier(
@@ -14,13 +15,9 @@ class Notifier(
   @ColorRes private val infoColour: Int = R.color.notifierInfo,
   @ColorRes private val cautionColour: Int = R.color.notifierCaution,
   @ColorRes private val warningColour: Int = R.color.notifierWarning,
-) {
-  data class Action(
-    @StringRes val actionText: Int,
-    val onClick: View.OnClickListener,
-  )
+) : INotifier {
 
-  private fun snackbar(root: View, message: String, @ColorRes actionTextColour: Int, action: Action) {
+  private fun snackbar(root: View, message: String, @ColorRes actionTextColour: Int, action: INotifier.Action) {
     val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG)
     snackbar.view.setBackgroundResource(backgroundColour)
     val text = snackbar.view.findViewById<TextView>(R.id.snackbar_text)
@@ -31,40 +28,39 @@ class Notifier(
     snackbar.show()
   }
 
-  fun success(root: View, message: String, action: Action = EMPTY_ACTION) {
+  override fun success(root: View, message: String, action: INotifier.Action) {
     snackbar(root, message, successColour, action)
   }
 
-  fun success(root: View, @StringRes message: Int, action: Action = EMPTY_ACTION) {
+  override fun success(root: View, @StringRes message: Int, action: INotifier.Action) {
     success(root, root.context.getString(message), action)
   }
 
-  fun caution(root: View, message: String, action: Action = EMPTY_ACTION) {
+  override fun caution(root: View, message: String, action: INotifier.Action) {
     snackbar(root, message, cautionColour, action)
   }
 
-  fun caution(root: View, @StringRes message: Int, action: Action = EMPTY_ACTION) {
+  override fun caution(root: View, @StringRes message: Int, action: INotifier.Action) {
     caution(root, root.context.getString(message), action)
   }
 
-  fun warning(root: View, message: String, action: Action = EMPTY_ACTION) {
+  override fun warning(root: View, message: String, action: INotifier.Action) {
     snackbar(root, message, warningColour, action)
   }
 
-  fun warning(root: View, @StringRes message: Int, action: Action = EMPTY_ACTION) {
+  override fun warning(root: View, @StringRes message: Int, action: INotifier.Action) {
     caution(root, root.context.getString(message), action)
   }
 
-  fun info(root: View, message: String, action: Action = EMPTY_ACTION) {
+  override fun info(root: View, message: String, action: INotifier.Action) {
     snackbar(root, message, infoColour, action)
   }
 
-  fun info(root: View, @StringRes message: Int, action: Action = EMPTY_ACTION) {
+  override fun info(root: View, @StringRes message: Int, action: INotifier.Action) {
     info(root, root.context.getString(message), action)
   }
 
-  companion object {
-    private const val MAX_LINES = 20
-    val EMPTY_ACTION = Action(android.R.string.ok) { /* No-op */ }
+  private companion object {
+    const val MAX_LINES = 20
   }
 }
