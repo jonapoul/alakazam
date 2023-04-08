@@ -5,7 +5,12 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.create
 
-fun Project.configurePublishing(artifact: String, componentName: String = "release") {
+enum class ArtifactType(internal val componentName: String) {
+    Android(componentName = "release"),
+    Kotlin(componentName = "java"),
+}
+
+fun Project.configurePublishing(artifact: String, artifactType: ArtifactType) {
     apply(plugin = "maven-publish")
 
     afterEvaluate {
@@ -15,7 +20,7 @@ fun Project.configurePublishing(artifact: String, componentName: String = "relea
                     groupId = "com.jonapoul.alakazam"
                     artifactId = artifact
                     version = BuildConstants.LIB_VERSION_NAME
-                    from(components.getByName(componentName))
+                    from(components.getByName(artifactType.componentName))
 
                     pom {
                         name.set("Alakazam")

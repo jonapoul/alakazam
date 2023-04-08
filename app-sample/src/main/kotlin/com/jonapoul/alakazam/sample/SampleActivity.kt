@@ -18,11 +18,9 @@ class SampleActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(
             navController,
-            AppBarConfiguration(navController.graph)
+            AppBarConfiguration(navController.graph),
         )
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
+    override fun onSupportNavigateUp(): Boolean = navController.navigateUp() || super.onSupportNavigateUp()
 }

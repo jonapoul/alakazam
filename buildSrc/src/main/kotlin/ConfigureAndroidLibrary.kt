@@ -1,17 +1,14 @@
-import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.configure
 
 @Suppress("UnstableApiUsage")
 fun Project.configureAndroidLibrary() {
     apply(plugin = "com.android.library")
-    apply(plugin = "dagger.hilt.android.plugin")
     apply(plugin = "kotlin-android")
     apply(plugin = "kotlin-kapt")
 
-    extensions.configure<LibraryExtension> {
+    android {
         compileSdk = BuildConstants.COMPILE_SDK
 
         defaultConfig {

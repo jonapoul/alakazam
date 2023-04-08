@@ -2,7 +2,7 @@ apply(plugin = "java-library")
 apply(plugin = "kotlin")
 
 configureKotlinLibrary()
-configurePublishing(artifact = "testing-unit", componentName = "java")
+configurePublishing(artifact = "testing-unit", ArtifactType.Kotlin)
 
 dependencies {
     api(project(":testing-core"))

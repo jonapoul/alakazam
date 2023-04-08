@@ -1,9 +1,9 @@
-import com.android.build.gradle.LibraryExtension
+
 
 configureAndroidLibrary()
-configurePublishing(artifact = "testing-db")
+configurePublishing(artifact = "testing-db", ArtifactType.Android)
 
-extensions.configure<LibraryExtension> {
+android {
     namespace = "com.jonapoul.alakazam.test.db"
 }
 
@@ -18,7 +18,4 @@ dependencies {
 
     api(libs.core.test)
     api(libs.robolectric)
-
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
 }

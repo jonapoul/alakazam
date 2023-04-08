@@ -1,9 +1,9 @@
-import com.android.build.gradle.LibraryExtension
+
 
 configureAndroidLibrary()
-configurePublishing(artifact = "testing-android")
+configurePublishing(artifact = "testing-android", ArtifactType.Android)
 
-extensions.configure<LibraryExtension> {
+android {
     namespace = "com.jonapoul.alakazam.test.android"
 
     defaultConfig {

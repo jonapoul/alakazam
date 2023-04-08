@@ -1,5 +1,7 @@
+import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Project
 import org.gradle.api.artifacts.Configuration
+import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -32,4 +34,8 @@ fun Project.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
     tasks.withType<KotlinCompile> {
         kotlinOptions(block)
     }
+}
+
+fun Project.android(block: LibraryExtension.() -> Unit) {
+    extensions.configure<LibraryExtension>(block)
 }

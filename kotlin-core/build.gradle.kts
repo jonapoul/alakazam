@@ -1,5 +1,5 @@
 configureKotlinLibrary()
-configurePublishing(artifact = "kotlin-core", componentName = "java")
+configurePublishing(artifact = "kotlin-core", ArtifactType.Kotlin)
 
 dependencies {
     api(libs.kotlin.stdlib)

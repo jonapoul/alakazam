@@ -1,16 +1,14 @@
-import com.android.build.gradle.LibraryExtension
+
 
 configureAndroidLibrary()
-configurePublishing(artifact = "android-core")
+configurePublishing(artifact = "android-core", ArtifactType.Android)
 
-extensions.configure<LibraryExtension> {
+android {
     namespace = "com.jonapoul.alakazam.core"
 }
 
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
     api(project(":kotlin-core"))
-
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    api(libs.core.ktx)
 }

@@ -9,12 +9,12 @@ repositories {
 }
 
 dependencies {
-    api(libs.plugin.agp)
-    api(libs.plugin.detekt)
-    api(libs.plugin.dokka)
-    api(libs.plugin.kotlin.gradle)
-    api(libs.plugin.kover)
-    api(libs.plugin.ktlint)
-    api(libs.plugin.spotless)
-    api(libs.plugin.versions)
+    implementation(libs.plugin.agp)
+    implementation(libs.plugin.detekt)
+    implementation(libs.plugin.dokka)
+    implementation(libs.plugin.kotlin.gradle)
+    implementation(libs.plugin.kover)
+    implementation(libs.plugin.ktlint)
+    implementation(libs.plugin.spotless)
+    implementation(libs.plugin.versions)
 }

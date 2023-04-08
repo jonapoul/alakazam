@@ -40,17 +40,10 @@ extensions.configure<AppExtension> {
 
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
-    implementation(project(":lib-ui-view"))
-    implementation(project(":lib-prefs"))
+
+    implementation(project(":android-prefs"))
+    implementation(project(":android-ui-view"))
 
     testImplementation(project(":testing-unit"))
     androidTestImplementation(project(":testing-android"))
-
-    implementation(libs.appcompat)
-    implementation(libs.constraintlayout)
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation.ui)
-    implementation(libs.preference)
-    implementation(libs.material)
-    implementation(libs.kotlin.stdlib)
 }

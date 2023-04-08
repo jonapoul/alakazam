@@ -6,13 +6,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import kotlin.reflect.KClass
 
-class ActivityLauncher @Inject constructor(
-    @ApplicationContext private val context: Context,
-) {
+class ActivityLauncher(private val context: Context) {
     fun launch(
         action: String,
         data: Uri? = null,
