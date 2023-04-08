@@ -35,7 +35,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Generate docs
-        run: ./gradlew dokkaHtml
+        run: ./gradlew dokkaHtmlMultiModule
 
       - name: Set up Python
         uses: actions/setup-python@v4

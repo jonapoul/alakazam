@@ -1,6 +1,8 @@
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.dokka.DokkaDefaults.includeNonPublic
+import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.File
 
@@ -8,15 +10,17 @@ fun Project.configureDokka() {
   allprojects {
     apply(plugin = "org.jetbrains.dokka")
 
-    tasks.withType<DokkaTask>().configureEach {
-      outputDirectory.set(File("${rootProject.rootDir}/docs/api"))
-
+    tasks.withType<DokkaTask> {
       dokkaSourceSets.configureEach {
         includeNonPublic.set(false)
         skipEmptyPackages.set(true)
         reportUndocumented.set(true)
         noAndroidSdkLink.set(false)
       }
+    }
+
+    tasks.withType<DokkaMultiModuleTask> {
+      outputDirectory.set(File("${rootProject.rootDir}/docs/api"))
     }
   }
 
