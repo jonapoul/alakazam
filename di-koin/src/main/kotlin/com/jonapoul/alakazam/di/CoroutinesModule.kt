@@ -9,6 +9,7 @@ import org.koin.core.component.inject
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
+@Suppress("InjectDispatcher")
 val coroutineModule = module {
   /* Application scope */
   single { CoroutineScope(SupervisorJob()) }

@@ -1,4 +1,4 @@
-@file:Suppress("TooManyFunctions")
+@file:Suppress("TooManyFunctions", "UnsafeCallOnNullableType")
 
 package com.jonapoul.alakazam.prefs
 

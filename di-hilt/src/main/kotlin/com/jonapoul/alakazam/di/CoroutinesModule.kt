@@ -41,6 +41,7 @@ annotation class MainDispatcher
 )
 annotation class DefaultDispatcher
 
+@Suppress("InjectDispatcher")
 @InstallIn(SingletonComponent::class)
 @Module
 class CoroutinesModule {

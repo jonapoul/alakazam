@@ -31,7 +31,7 @@ configureVersions()
 
 allprojects {
   tasks.create("runChecks") {
-    dependsOn("detekt", "spotlessCheck", "ktlintCheck")
+    dependsOn("detektDebug", "spotlessCheck", "ktlintCheck")
   }
 
   repositories {

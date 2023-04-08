@@ -44,6 +44,7 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
   /**
    * Returns the [ViewBinding] object.
    */
+  @Suppress("UnsafeCallOnNullableType")
   override fun getValue(thisRef: AppCompatActivity, property: KProperty<*>): VB {
     buildBindingIfNeeded()
     if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {

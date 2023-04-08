@@ -1,9 +1,9 @@
 package com.jonapoul.alakazam.di
 
+import com.jonapoul.alakazam.core.IBuildConfig
 import com.jonapoul.alakazam.init.AppInitialisers
 import com.jonapoul.alakazam.init.IAppInitialiser
 import com.jonapoul.alakazam.init.LoggingInitialiser
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,13 +13,13 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-interface InitialiserModule {
+class InitialiserModule {
   @Provides
   @Singleton
   fun initialisers(initialisers: Set<@JvmSuppressWildcards IAppInitialiser>): AppInitialisers =
     AppInitialisers(initialisers)
 
-  @Binds
+  @Provides
   @IntoSet
-  fun logging(logging: LoggingInitialiser): IAppInitialiser
+  fun logging(buildConfig: IBuildConfig): IAppInitialiser = LoggingInitialiser(buildConfig)
 }

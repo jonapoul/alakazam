@@ -6,7 +6,7 @@ import androidx.annotation.RequiresApi
 import com.google.android.material.textfield.TextInputLayout
 
 fun TextInputLayout.getString(): String =
-  editText?.text?.toString() ?: ""
+  editText?.text?.toString().orEmpty()
 
 fun TextInputLayout.setText(text: String?) {
   editText?.setText(text)

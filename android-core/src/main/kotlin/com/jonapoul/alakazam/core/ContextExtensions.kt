@@ -73,7 +73,8 @@ fun Context.getCompatColor(@ColorRes colorInt: Int): Int {
  * Get drawable from resources
  */
 fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable {
-  return ContextCompat.getDrawable(this, drawableRes)!!
+  return ContextCompat.getDrawable(this, drawableRes)
+    ?: error("Failed to get drawable from $this for $drawableRes")
 }
 
 val Context.inflater: LayoutInflater
