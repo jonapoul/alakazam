@@ -1,4 +1,4 @@
-name: Build
+name: Docs
 
 on:
   # Run when master has been updated
@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 14
+          distribution: cornetto
 
       - name: Enable gradle execution
         run: chmod +x ./gradlew
