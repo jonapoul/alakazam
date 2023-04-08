@@ -11,6 +11,7 @@ repositories {
 dependencies {
   implementation(libs.plugin.agp)
   implementation(libs.plugin.detekt)
+  implementation(libs.plugin.doctor)
   implementation(libs.plugin.dokka)
   implementation(libs.plugin.kotlin.gradle)
   implementation(libs.plugin.kover)

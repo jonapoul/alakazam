@@ -10,6 +10,7 @@ buildscript {
     dependencies {
         classpath(libs.plugin.agp)
         classpath(libs.plugin.detekt)
+        classpath(libs.plugin.doctor)
         classpath(libs.plugin.dokka)
         classpath(libs.plugin.hilt)
         classpath(libs.plugin.kotlin.gradle)
@@ -23,6 +24,7 @@ buildscript {
 }
 
 configureDetekt()
+configureDoctor()
 configureDokka()
 configureKover()
 configureKtlint(libs.versions.ktlint.cli)
