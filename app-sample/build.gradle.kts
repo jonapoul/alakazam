@@ -11,7 +11,7 @@ extensions.configure<AppExtension> {
 
     defaultConfig {
         applicationId("com.jonapoul.alakazam.sample")
-        minSdk = BuildConstants.MIN_SDK
+        minSdk = 21 // limited by testing-android
         targetSdk = BuildConstants.COMPILE_SDK
         versionCode(BuildConstants.LIB_VERSION_CODE)
         versionName(BuildConstants.LIB_VERSION_NAME)

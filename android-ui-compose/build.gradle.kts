@@ -5,6 +5,10 @@ configurePublishing(artifact = "android-ui-compose", ArtifactType.Android)
 android {
     namespace = "com.jonapoul.alakazam.ui.compose"
 
+    defaultConfig {
+        minSdk = 21 // limited by hilt-navigation-compose
+    }
+
     buildFeatures {
         compose = true
     }
