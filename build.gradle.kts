@@ -1,25 +1,25 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 buildscript {
-  repositories {
-    gradlePluginPortal()
-    mavenCentral()
-    google()
-  }
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        google()
+    }
 
-  dependencies {
-    classpath(libs.plugin.agp)
-    classpath(libs.plugin.detekt)
-    classpath(libs.plugin.dokka)
-    classpath(libs.plugin.hilt)
-    classpath(libs.plugin.kotlin.gradle)
-    classpath(libs.plugin.kotlin.serialization)
-    classpath(libs.plugin.kover)
-    classpath(libs.plugin.ktlint)
-    classpath(libs.plugin.navigation)
-    classpath(libs.plugin.spotless)
-    classpath(libs.plugin.versions)
-  }
+    dependencies {
+        classpath(libs.plugin.agp)
+        classpath(libs.plugin.detekt)
+        classpath(libs.plugin.dokka)
+        classpath(libs.plugin.hilt)
+        classpath(libs.plugin.kotlin.gradle)
+        classpath(libs.plugin.kotlin.serialization)
+        classpath(libs.plugin.kover)
+        classpath(libs.plugin.ktlint)
+        classpath(libs.plugin.navigation)
+        classpath(libs.plugin.spotless)
+        classpath(libs.plugin.versions)
+    }
 }
 
 configureDetekt()
@@ -30,24 +30,24 @@ configureSpotless()
 configureVersions()
 
 allprojects {
-  tasks.create("runChecks") {
-    dependsOn("detektDebug", "spotlessCheck", "ktlintCheck")
-  }
+    tasks.create("runChecks") {
+        dependsOn("detekt", "spotlessCheck", "ktlintCheck")
+    }
 
-  repositories {
-    mavenCentral()
-    google()
-  }
+    repositories {
+        mavenCentral()
+        google()
+    }
 }
 
 subprojects {
-  tasks.withType<Test> {
-    testLogging {
-      exceptionFormat = TestExceptionFormat.FULL
-      showCauses = true
-      showExceptions = true
-      showStackTraces = true
-      showStandardStreams = true
+    tasks.withType<Test> {
+        testLogging {
+            exceptionFormat = TestExceptionFormat.FULL
+            showCauses = true
+            showExceptions = true
+            showStackTraces = true
+            showStandardStreams = true
+        }
     }
-  }
 }

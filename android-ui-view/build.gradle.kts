@@ -2,17 +2,17 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-ui-view", ArtifactType.Android)
 
 android {
-  namespace = "com.jonapoul.alakazam.ui.view"
+    namespace = "com.jonapoul.alakazam.ui.view"
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
+    coreLibraryDesugaring(libs.desugaring)
 
-  api(project(":android-ui-core"))
+    api(project(":android-ui-core"))
 
-  api(libs.fragment.ktx)
-  api(libs.recyclerview)
-  api(libs.material)
+    api(libs.fragment.ktx)
+    api(libs.recyclerview)
+    api(libs.material)
 
-  testImplementation(project(":testing-core"))
+    testImplementation(project(":testing-core"))
 }

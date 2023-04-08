@@ -1,4 +1,4 @@
-name: Build
+name: Check
 
 on:
   # Run on every commit in a PR, in any branch
@@ -13,7 +13,7 @@ env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,16 +26,33 @@ jobs:
       - name: Configure JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 14
+          java-version: 11
+          distribution: corretto
 
-      - name: Enable gradle execution
+      - name: Gradle Cache
+        uses: burrunan/gradle-cache-action@v1
+        with:
+          job-id: jdk11
+          multi-cache-enabled: false
+
+      - name: Enable Gradle Execution
         run: chmod +x ./gradlew
 
-      - name: Code quality
-        run: ./gradlew runChecks
+      - name: Run Checks
+        run: ./gradlew check koverMergedHtmlReport
 
-      - name: Assemble
-        run: ./gradlew assembleDebug
+      - name: Upload Project Reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: project-reports
+          path: ./build/reports
+          if-no-files-found: error
 
-      - name: Test
-        run: ./gradlew koverMergedVerify
+      - name: Upload Module Reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: module-reports
+          path: ./*/build/reports
+          if-no-files-found: error

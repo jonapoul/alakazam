@@ -1,4 +1,4 @@
-package com.jonapoul.alakazam.domain.usecase
+package com.jonapoul.alakazam.ui.compose
 
 import com.jonapoul.alakazam.core.exhaustive
 import com.jonapoul.alakazam.ui.compose.SnackbarMessage

@@ -31,7 +31,7 @@ fun Project.configureAndroidLibrary() {
     kotlinOptions {
       jvmTarget = "11"
       freeCompilerArgs += listOf(
-        "-Xjvm-default=compatibility",
+        "-Xjvm-default=all-compatibility",
         "-opt-in=kotlin.RequiresOptIn",
         "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
       )

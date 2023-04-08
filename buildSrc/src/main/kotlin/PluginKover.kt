@@ -12,6 +12,12 @@ fun Project.configureKover() {
 
   extensions.configure<KoverMergedConfig> {
     enable()
+    filters {
+      classes {
+        includes.addAll(KOVER_INCLUDES)
+        excludes.addAll(KOVER_EXCLUDES)
+      }
+    }
   }
 
   extensions.configure<KoverProjectConfig> {
@@ -35,6 +41,10 @@ fun Project.configureKover() {
       }
     }
   }
+
+  subprojects {
+    apply(plugin = "kover")
+  }
 }
 
 private val KOVER_INCLUDES = listOf(
@@ -42,18 +52,10 @@ private val KOVER_INCLUDES = listOf(
 )
 
 private val KOVER_EXCLUDES = listOf(
-  /* Generated classes, mostly Hilt */
-  "*.*ViewInjector*",
-  "*.*MembersInjector",
-  "*.*_Factory*",
-  "*.*_*Factory*",
-  "*.*_Provide*Factory",
-  "*.Hilt_*",
-  "*.*_HiltModules*",
-  "dagger.hilt.internal.*",
-  "hilt_aggregated_deps.*",
+  /* Hilt */
+  "*.di.*",
 
-  /* BuildConfig */
+  /* Generated classes */
   "*.BuildConfig",
 
   /* Navigation */
@@ -62,12 +64,14 @@ private val KOVER_EXCLUDES = listOf(
 
   /* UI classes */
   "*.*Binding",
-  "*.ui.*Activity*",
-  "*.ui.*Application*",
-  "*.ui.*Adapter*",
-  "*.ui.*Fragment*",
-  "*.ui.*ViewHolder*",
+  "*.ui.*",
 
   /* Hilt modules */
   "*.di.*",
+
+  /* Test utilities */
+  "*.test.*",
+
+  /* Sample app */
+  "com.jonapoul.alakazam.sample.*",
 )

@@ -2,14 +2,14 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-init", ArtifactType.Android)
 
 android {
-  namespace = "com.jonapoul.alakazam.init"
+    namespace = "com.jonapoul.alakazam.init"
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
+    coreLibraryDesugaring(libs.desugaring)
 
-  api(project(":android-core"))
-  api(project(":android-logging"))
+    api(project(":android-core"))
+    api(project(":android-logging"))
 
-  testImplementation(project(":testing-core"))
+    testImplementation(project(":testing-core"))
 }
