@@ -1,6 +1,0 @@
-$dokka.format:html-v1
-$dokka.linkExtension:html
-$dokka.location:com.jonapoul.alakazam.test.unit////PointingToDeclaration/testing-unit/com.jonapoul.alakazam.test.unit/index.html
-$dokka.location:com.jonapoul.alakazam.test.unit//relaxedMockk/#/PointingToDeclaration/testing-unit/com.jonapoul.alakazam.test.unit/relaxed-mockk.html
-com.jonapoul.alakazam.test.unit
-
