@@ -1,0 +1,11 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.jonapoul.alakazam.logging////PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/index.html
+$dokka.location:com.jonapoul.alakazam.logging/ConsoleLoggingTree///PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/-console-logging-tree/index.html
+$dokka.location:com.jonapoul.alakazam.logging/ConsoleLoggingTree/ConsoleLoggingTree/#/PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/-console-logging-tree/-console-logging-tree.html
+$dokka.location:com.jonapoul.alakazam.logging/FileLoggingTree///PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/-file-logging-tree/index.html
+$dokka.location:com.jonapoul.alakazam.logging/FileLoggingTree/FileLoggingTree/#kotlin.Int/PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/-file-logging-tree/-file-logging-tree.html
+$dokka.location:com.jonapoul.alakazam.logging/TaggedDebugTree///PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/-tagged-debug-tree/index.html
+$dokka.location:com.jonapoul.alakazam.logging/TaggedDebugTree/TaggedDebugTree/#/PointingToDeclaration/android-logging/com.jonapoul.alakazam.logging/-tagged-debug-tree/-tagged-debug-tree.html
+com.jonapoul.alakazam.logging
+

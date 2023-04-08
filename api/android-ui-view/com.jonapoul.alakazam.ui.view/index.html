@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.jonapoul.alakazam.ui.view</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../index.html">
+                    <span>android-ui-view</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":android-ui-view:dokkaHtml/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="android-ui-view::com.jonapoul.alakazam.ui.view////PointingToDeclaration//-1319038528">
+  <div class="breadcrumbs"><a href="../../index.html">android-ui-view</a><span class="delimiter">/</span><span class="current">com.jonapoul.alakazam.ui.view</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-752406516%2FClasslikes%2F-1319038528" anchor-label="ActivityViewBindingDelegate" id="-752406516%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-activity-view-binding-delegate/index.html"><span>Activity</span><wbr></wbr><span>View</span><wbr></wbr><span>Binding</span><wbr></wbr><span><span>Delegate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-752406516%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-activity-view-binding-delegate/index.html">ActivityViewBindingDelegate</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-activity-view-binding-delegate/index.html">VB</a><span class="token operator"> : </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">activity<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a><span class="token punctuation">, </span></span><span class="parameter ">viewBindingFactory<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/view/LayoutInflater.html">LayoutInflater</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="-activity-view-binding-delegate/index.html">VB</a></span></span><span class="token punctuation">)</span> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-read-only-property/index.html">ReadOnlyProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="-activity-view-binding-delegate/index.html">VB</a><span class="token operator">&gt; </span>, <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleEventObserver.html">LifecycleEventObserver</a></div><div class="brief "><p class="paragraph">Creates and manages a <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span> object from within an <a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a>. The value will be cleared when the <a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a> reaches the &quot;destroyed&quot; lifecycle state.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2084131259%2FClasslikes%2F-1319038528" anchor-label="CommonFragment" id="-2084131259%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-common-fragment/index.html"><span>Common</span><wbr></wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2084131259%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-common-fragment/index.html">CommonFragment</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/LayoutRes.html"><span class="token annotation builtin">LayoutRes</span></a> </span>layout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/MenuRes.html"><span class="token annotation builtin">MenuRes</span></a> </span>menu<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>, <a href="https://developer.android.com/reference/kotlin/androidx/core/view/MenuProvider.html">MenuProvider</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1712919652%2FClasslikes%2F-1319038528" anchor-label="CommonListAdapter" id="-1712919652%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-common-list-adapter/index.html"><span>Common</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Adapter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1712919652%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-common-list-adapter/index.html">CommonListAdapter</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-common-list-adapter/index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="-common-list-adapter/index.html">VH</a><span class="token operator"> : </span><a href="-common-view-holder/index.html">CommonViewHolder</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-common-list-adapter/index.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">diffCallback<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/DiffUtil.ItemCallback.html">DiffUtil.ItemCallback</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-common-list-adapter/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/ListAdapter.html">ListAdapter</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-common-list-adapter/index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="-common-list-adapter/index.html">VH</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Gives a base implementation of the <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/ListAdapter.html">ListAdapter</a>, which can be used in place of a <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a> class to reduce boilerplate and give smoother animations when submitting new data to the view.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1662815146%2FClasslikes%2F-1319038528" anchor-label="CommonPreferenceFragment" id="1662815146%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-common-preference-fragment/index.html"><span>Common</span><wbr></wbr><span>Preference</span><wbr></wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1662815146%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-common-preference-fragment/index.html">CommonPreferenceFragment</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/XmlRes.html"><span class="token annotation builtin">XmlRes</span></a> </span>settings<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/MenuRes.html"><span class="token annotation builtin">MenuRes</span></a> </span>menu<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/preference/PreferenceFragmentCompat.html">PreferenceFragmentCompat</a>, <a href="https://developer.android.com/reference/kotlin/androidx/core/view/MenuProvider.html">MenuProvider</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1359880708%2FClasslikes%2F-1319038528" anchor-label="CommonViewHolder" id="1359880708%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-common-view-holder/index.html"><span>Common</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Holder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1359880708%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-common-view-holder/index.html">CommonViewHolder</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-common-view-holder/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">root<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a></div><div class="brief "><p class="paragraph">A base implementation of the <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> class, exposing a single method to be called when the view is being bound to an item of type <a href="-common-view-holder/index.html">T</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-922184259%2FClasslikes%2F-1319038528" anchor-label="DarkenedBackgroundAlertDialogBuilder" id="-922184259%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-darkened-background-alert-dialog-builder/index.html"><span>Darkened</span><wbr></wbr><span>Background</span><wbr></wbr><span>Alert</span><wbr></wbr><span>Dialog</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-922184259%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-darkened-background-alert-dialog-builder/index.html">DarkenedBackgroundAlertDialogBuilder</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">overrideThemeResId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span></div><div class="brief "><p class="paragraph">Simple wrapper class to apply a darkened background to any alert dialog popups. Note that this doesn't apply to preference dialogs.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1002715417%2FClasslikes%2F-1319038528" anchor-label="DiffCallbacks" id="1002715417%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-diff-callbacks/index.html"><span>Diff</span><wbr></wbr><span><span>Callbacks</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1002715417%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-diff-callbacks/index.html">DiffCallbacks</a></div><div class="brief "><p class="paragraph">Allows for easier declaration of <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/DiffUtil.ItemCallback.html">DiffUtil.ItemCallback</a>s for use in <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/ListAdapter.html">androidx.recyclerview.widget.ListAdapter</a> class instances.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2098921011%2FClasslikes%2F-1319038528" anchor-label="FragmentViewBindingDelegate" id="-2098921011%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-fragment-view-binding-delegate/index.html"><span>Fragment</span><wbr></wbr><span>View</span><wbr></wbr><span>Binding</span><wbr></wbr><span><span>Delegate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2098921011%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-fragment-view-binding-delegate/index.html">FragmentViewBindingDelegate</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-fragment-view-binding-delegate/index.html">VB</a><span class="token operator"> : </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fragment<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">, </span></span><span class="parameter ">viewBindingFactory<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="-fragment-view-binding-delegate/index.html">VB</a></span></span><span class="token punctuation">)</span> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-read-only-property/index.html">ReadOnlyProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="-fragment-view-binding-delegate/index.html">VB</a><span class="token operator">&gt; </span>, <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleObserver.html">LifecycleObserver</a></div><div class="brief "><p class="paragraph">Creates and manages a <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span> object from within a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>. The value will be cleared when the <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>'s view lifecycle reaches the &quot;destroyed&quot; state.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1573625179%2FClasslikes%2F-1319038528" anchor-label="SimpleTextWatcher" id="-1573625179%2FClasslikes%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-simple-text-watcher/index.html"><span>Simple</span><wbr></wbr><span>Text</span><wbr></wbr><span><span>Watcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1573625179%2FClasslikes%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-simple-text-watcher/index.html">SimpleTextWatcher</a> : <a href="https://developer.android.com/reference/kotlin/android/text/TextWatcher.html">TextWatcher</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1296716146%2FFunctions%2F-1319038528" anchor-label="cleanUpRecyclerAdapters" id="1296716146%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clean-up-recycler-adapters.html"><span>clean</span><wbr></wbr><span>Up</span><wbr></wbr><span>Recycler</span><wbr></wbr><span><span>Adapters</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1296716146%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/ViewGroup.html">ViewGroup</a><span class="token punctuation">.</span><a href="clean-up-recycler-adapters.html"><span class="token function">cleanUpRecyclerAdapters</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><br><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">?</span><span class="token punctuation">.</span><a href="clean-up-recycler-adapters.html"><span class="token function">cleanUpRecyclerAdapters</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Performs a similar function to <a href="on-destroy-view.html">com.jonapoul.alakazam.ui.view.onDestroyView</a> but in a more automated fashion, in that it recursively sets all attached <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a> instances to null when the <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span> is destroyed. This helps remove a source of memory leaks from the app.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1407660062%2FFunctions%2F-1319038528" anchor-label="collectFlow" id="1407660062%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-flow.html"><span>collect</span><wbr></wbr><span><span>Flow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1407660062%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="collect-flow.html"><span class="token function">collectFlow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">flow<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">call<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="collect-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span></div><div class="brief "><p class="paragraph">Easily collect a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> from a <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a> without needing to explicitly launch a suspending coroutine to do so. This is tied to the lifecycle of the view, NOT the lifecycle of the <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a> itself.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="299159544%2FFunctions%2F-1319038528" anchor-label="disable" id="299159544%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable.html"><span><span>disable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="299159544%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="disable.html"><span class="token function">disable</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-693117244%2FFunctions%2F-1319038528" anchor-label="disableChildren" id="-693117244%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-children.html"><span>disable</span><wbr></wbr><span><span>Children</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-693117244%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/ViewGroup.html">ViewGroup</a><span class="token punctuation">.</span><a href="disable-children.html"><span class="token function">disableChildren</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Recursively sets every <a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a> under this <a href="https://developer.android.com/reference/kotlin/android/view/ViewGroup.html">ViewGroup</a> to a disabled state.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-423880454%2FFunctions%2F-1319038528" anchor-label="disableIf" id="-423880454%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-if.html"><span>disable</span><wbr></wbr><span><span>If</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-423880454%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="disable-if.html"><span class="token function">disableIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2119663202%2FFunctions%2F-1319038528" anchor-label="disableIfEqual" id="2119663202%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-if-equal.html"><span>disable</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Equal</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2119663202%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="disable-if-equal.html">A</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="disable-if-equal.html">B</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="disable-if-equal.html"><span class="token function">disableIfEqual</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">valueA<span class="token operator">: </span><a href="disable-if-equal.html">A</a><span class="token punctuation">, </span></span><span class="parameter ">valueB<span class="token operator">: </span><a href="disable-if-equal.html">B</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1364854913%2FFunctions%2F-1319038528" anchor-label="disableIfNull" id="1364854913%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-if-null.html"><span>disable</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1364854913%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="disable-if-null.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="disable-if-null.html"><span class="token function">disableIfNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="disable-if-null.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-127021489%2FFunctions%2F-1319038528" anchor-label="enable" id="-127021489%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable.html"><span><span>enable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-127021489%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="enable.html"><span class="token function">enable</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="931341773%2FFunctions%2F-1319038528" anchor-label="enableChildren" id="931341773%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-children.html"><span>enable</span><wbr></wbr><span><span>Children</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="931341773%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/ViewGroup.html">ViewGroup</a><span class="token punctuation">.</span><a href="enable-children.html"><span class="token function">enableChildren</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Recursively sets every <a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a> under this <a href="https://developer.android.com/reference/kotlin/android/view/ViewGroup.html">ViewGroup</a> to an enabled state.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1856796335%2FFunctions%2F-1319038528" anchor-label="enableIf" id="-1856796335%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-if.html"><span>enable</span><wbr></wbr><span><span>If</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1856796335%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="enable-if.html"><span class="token function">enableIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-492574855%2FFunctions%2F-1319038528" anchor-label="enableIfEqual" id="-492574855%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-if-equal.html"><span>enable</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Equal</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-492574855%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="enable-if-equal.html">A</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="enable-if-equal.html">B</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="enable-if-equal.html"><span class="token function">enableIfEqual</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">valueA<span class="token operator">: </span><a href="enable-if-equal.html">A</a><span class="token punctuation">, </span></span><span class="parameter ">valueB<span class="token operator">: </span><a href="enable-if-equal.html">B</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-895971944%2FFunctions%2F-1319038528" anchor-label="enableIfNull" id="-895971944%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-if-null.html"><span>enable</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-895971944%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="enable-if-null.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="enable-if-null.html"><span class="token function">enableIfNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="enable-if-null.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1109568244%2FFunctions%2F-1319038528" anchor-label="fadeIn" id="-1109568244%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fade-in.html"><span>fade</span><wbr></wbr><span><span>In</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1109568244%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="fade-in.html"><span class="token function">fadeIn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">duration<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span><span class="token constant">500</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Starts a fading-in animation of the given <a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a>. The default fade duration is 500 milliseconds.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1909956151%2FFunctions%2F-1319038528" anchor-label="fadeOut" id="1909956151%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fade-out.html"><span>fade</span><wbr></wbr><span><span>Out</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1909956151%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="fade-out.html"><span class="token function">fadeOut</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">duration<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span><span class="token constant">500</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Starts a fading-out animation of the given <a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a>. The default fade duration is 500 milliseconds.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1540575406%2FFunctions%2F-1319038528" anchor-label="getString" id="1540575406%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-string.html"><span>get</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1540575406%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.material.textfield/TextInputLayout///PointingToDeclaration/">TextInputLayout</span><span class="token punctuation">.</span><a href="get-string.html"><span class="token function">getString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1930106684%2FFunctions%2F-1319038528" anchor-label="hide" id="-1930106684%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide.html"><span><span>hide</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1930106684%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="hide.html"><span class="token function">hide</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="hide.html"><span class="token function">hide</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1849597425%2FFunctions%2F-1319038528" anchor-label="hideIfEquals" id="1849597425%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-if-equals.html"><span>hide</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1849597425%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="hide-if-equals.html">A</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="hide-if-equals.html">B</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="hide-if-equals.html"><span class="token function">hideIfEquals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">itemA<span class="token operator">: </span><a href="hide-if-equals.html">A</a><span class="token punctuation">, </span></span><span class="parameter ">itemB<span class="token operator">: </span><a href="hide-if-equals.html">B</a><span class="token punctuation">, </span></span><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-147534899%2FFunctions%2F-1319038528" anchor-label="hideIfNull" id="-147534899%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-if-null.html"><span>hide</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-147534899%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="hide-if-null.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="hide-if-null.html"><span class="token function">hideIfNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="hide-if-null.html">T</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1971068379%2FFunctions%2F-1319038528" anchor-label="hideIfTrue" id="-1971068379%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-if-true.html"><span>hide</span><wbr></wbr><span>If</span><wbr></wbr><span><span>True</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1971068379%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="hide-if-true.html"><span class="token function">hideIfTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="hide-if-true.html"><span class="token function">hideIfTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1569225826%2FFunctions%2F-1319038528" anchor-label="inflate" id="1569225826%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="inflate.html"><span><span>inflate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1569225826%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/ViewGroup.html">ViewGroup</a><span class="token punctuation">.</span><a href="inflate.html"><span class="token function">inflate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/LayoutRes.html"><span class="token annotation builtin">LayoutRes</span></a> </span>layoutRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a></div><div class="brief "><p class="paragraph">Inflates the given view. Mostly useful for the purposes of calling onCreateViewHolder in a RecyclerView adapter.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1734283430%2FFunctions%2F-1319038528" anchor-label="onDestroyView" id="-1734283430%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-destroy-view.html"><span>on</span><wbr></wbr><span>Destroy</span><wbr></wbr><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1734283430%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="on-destroy-view.html">V</a><span class="token operator"> : </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token operator">&gt; </span><a href="on-destroy-view.html">V</a><span class="token punctuation">.</span><a href="on-destroy-view.html"><span class="token function">onDestroyView</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">callback<span class="token operator">: </span><span class="token keyword"></span><a href="on-destroy-view.html">V</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Registers a callback to be run when the view is detached from the window. This is useful because ViewBinding objects can't be accessed in the <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html#ondestroyview">Fragment.onDestroyView</a> method. This means that without this method we'd be blocked from doing certain cleanup tasks in onDestroyView - such as removing the adapter from a <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="647873353%2FFunctions%2F-1319038528" anchor-label="scrollListener" id="647873353%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="scroll-listener.html"><span>scroll</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="647873353%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a><span class="token punctuation">.</span><a href="scroll-listener.html"><span class="token function">scrollListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">onScrollStateChanged<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>recycler<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a><span class="token punctuation">, </span><span class="token keyword"></span>newState<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{ _, _ -&gt; }<span class="token punctuation">, </span></span><span class="parameter ">onScrolled<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>recycler<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a><span class="token punctuation">, </span><span class="token keyword"></span>dx<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span>dy<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{ _, _, _ -&gt; }</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets up one or two callbacks to be invoked when the <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a> scrolls.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-512259800%2FFunctions%2F-1319038528" anchor-label="setColorFilterAttr" id="-512259800%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-color-filter-attr.html"><span>set</span><wbr></wbr><span>Color</span><wbr></wbr><span>Filter</span><wbr></wbr><span><span>Attr</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-512259800%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a><span class="token punctuation">.</span><a href="set-color-filter-attr.html"><span class="token function">setColorFilterAttr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/AttrRes.html"><span class="token annotation builtin">AttrRes</span></a> </span>color<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Quick method to allow changing the ColorFilter of an <a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a> just from a color attribute.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1060482009%2FFunctions%2F-1319038528" anchor-label="setColorFilterRes" id="-1060482009%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-color-filter-res.html"><span>set</span><wbr></wbr><span>Color</span><wbr></wbr><span>Filter</span><wbr></wbr><span><span>Res</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1060482009%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a><span class="token punctuation">.</span><a href="set-color-filter-res.html"><span class="token function">setColorFilterRes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/ColorRes.html"><span class="token annotation builtin">ColorRes</span></a> </span>color<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Quick method to allow changing the ColorFilter of an <a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a> just from a <a href="https://developer.android.com/reference/kotlin/androidx/annotation/ColorRes.html">ColorRes</a> integer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1436616394%2FFunctions%2F-1319038528" anchor-label="setSimpleNegativeButton" id="-1436616394%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-simple-negative-button.html"><span>set</span><wbr></wbr><span>Simple</span><wbr></wbr><span>Negative</span><wbr></wbr><span><span>Button</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1436616394%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="set-simple-negative-button.html">T</a><span class="token operator"> : </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.Builder.html">AlertDialog.Builder</a><span class="token operator">&gt; </span><a href="set-simple-negative-button.html">T</a><span class="token punctuation">.</span><a href="set-simple-negative-button.html"><span class="token function">setSimpleNegativeButton</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/StringRes.html"><span class="token annotation builtin">StringRes</span></a> </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>android.R.string.cancel<span class="token punctuation">, </span></span><span class="parameter ">onClick<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="set-simple-negative-button.html">T</a></div><div class="brief "><p class="paragraph">Gives a best-case API to allow callbacks on pressing the &quot;negative&quot; button in a dialog. Here we apply a default (system-translated) string of &quot;CANCEL&quot; and invoke the supplied <a href="set-simple-negative-button.html">onClick</a> when it's pressed. If <a href="set-simple-negative-button.html">onClick</a> is null, the button will simply close the dialog.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="648177564%2FFunctions%2F-1319038528" anchor-label="setSimpleNeutralButton" id="648177564%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-simple-neutral-button.html"><span>set</span><wbr></wbr><span>Simple</span><wbr></wbr><span>Neutral</span><wbr></wbr><span><span>Button</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="648177564%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="set-simple-neutral-button.html">T</a><span class="token operator"> : </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.Builder.html">AlertDialog.Builder</a><span class="token operator">&gt; </span><a href="set-simple-neutral-button.html">T</a><span class="token punctuation">.</span><a href="set-simple-neutral-button.html"><span class="token function">setSimpleNeutralButton</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/StringRes.html"><span class="token annotation builtin">StringRes</span></a> </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">onClick<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="set-simple-neutral-button.html">T</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1145168890%2FFunctions%2F-1319038528" anchor-label="setSimplePositiveButton" id="1145168890%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-simple-positive-button.html"><span>set</span><wbr></wbr><span>Simple</span><wbr></wbr><span>Positive</span><wbr></wbr><span><span>Button</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1145168890%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="set-simple-positive-button.html">T</a><span class="token operator"> : </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.Builder.html">AlertDialog.Builder</a><span class="token operator">&gt; </span><a href="set-simple-positive-button.html">T</a><span class="token punctuation">.</span><a href="set-simple-positive-button.html"><span class="token function">setSimplePositiveButton</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/StringRes.html"><span class="token annotation builtin">StringRes</span></a> </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>android.R.string.ok<span class="token punctuation">, </span></span><span class="parameter ">onClick<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="set-simple-positive-button.html">T</a></div><div class="brief "><p class="paragraph">Gives a best-case API to allow callbacks on pressing the &quot;positive&quot; button in a dialog. Here we apply a default (system-translated) string of &quot;OK&quot; and invoke the supplied <a href="set-simple-positive-button.html">onClick</a> when it's pressed. If <a href="set-simple-positive-button.html">onClick</a> is null, the button will simply close the dialog.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2138215005%2FFunctions%2F-1319038528" anchor-label="setSpinnerText" id="2138215005%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-spinner-text.html"><span>set</span><wbr></wbr><span>Spinner</span><wbr></wbr><span><span>Text</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2138215005%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/RequiresApi.html"><span class="token annotation builtin">RequiresApi</span></a><span class="token punctuation">(</span><span>value<span class="token operator"> = </span><span class="breakable-word"><span class="token constant">17</span></span></span><wbr></wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.material.textfield/TextInputLayout///PointingToDeclaration/">TextInputLayout</span><span class="token punctuation">.</span><a href="set-spinner-text.html"><span class="token function">setSpinnerText</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">text<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1288899403%2FFunctions%2F-1319038528" anchor-label="setText" id="-1288899403%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-text.html"><span>set</span><wbr></wbr><span><span>Text</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1288899403%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.material.textfield/TextInputLayout///PointingToDeclaration/">TextInputLayout</span><span class="token punctuation">.</span><a href="set-text.html"><span class="token function">setText</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">text<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1155080323%2FFunctions%2F-1319038528" anchor-label="setTextColorAttr" id="-1155080323%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-text-color-attr.html"><span>set</span><wbr></wbr><span>Text</span><wbr></wbr><span>Color</span><wbr></wbr><span><span>Attr</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1155080323%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/widget/TextView.html">TextView</a><span class="token punctuation">.</span><a href="set-text-color-attr.html"><span class="token function">setTextColorAttr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/AttrRes.html"><span class="token annotation builtin">AttrRes</span></a> </span>color<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Quick method to allow changing the ColorFilter of an <a href="https://developer.android.com/reference/kotlin/android/widget/TextView.html">TextView</a> just from a color attribute.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1770309320%2FFunctions%2F-1319038528" anchor-label="setTextColorRes" id="1770309320%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-text-color-res.html"><span>set</span><wbr></wbr><span>Text</span><wbr></wbr><span>Color</span><wbr></wbr><span><span>Res</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1770309320%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/widget/TextView.html">TextView</a><span class="token punctuation">.</span><a href="set-text-color-res.html"><span class="token function">setTextColorRes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/ColorRes.html"><span class="token annotation builtin">ColorRes</span></a> </span>color<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Quick method to allow changing the ColorFilter of an <a href="https://developer.android.com/reference/kotlin/android/widget/TextView.html">TextView</a> just from a <a href="https://developer.android.com/reference/kotlin/androidx/annotation/ColorRes.html">ColorRes</a> integer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2137039839%2FFunctions%2F-1319038528" anchor-label="show" id="2137039839%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show.html"><span><span>show</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2137039839%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="621449041%2FFunctions%2F-1319038528" anchor-label="showCautionDialog" id="621449041%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-caution-dialog.html"><span>show</span><wbr></wbr><span>Caution</span><wbr></wbr><span><span>Dialog</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="621449041%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a><span class="token punctuation">.</span><a href="show-caution-dialog.html"><span class="token function">showCautionDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_caution)<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="show-caution-dialog.html"><span class="token function">showCautionDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_caution)<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1038937004%2FFunctions%2F-1319038528" anchor-label="showIfEquals" id="1038937004%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-if-equals.html"><span>show</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1038937004%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="show-if-equals.html">A</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="show-if-equals.html">B</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="show-if-equals.html"><span class="token function">showIfEquals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">itemA<span class="token operator">: </span><a href="show-if-equals.html">A</a><span class="token punctuation">, </span></span><span class="parameter ">itemB<span class="token operator">: </span><a href="show-if-equals.html">B</a><span class="token punctuation">, </span></span><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1476734642%2FFunctions%2F-1319038528" anchor-label="showIfNull" id="1476734642%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-if-null.html"><span>show</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1476734642%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="show-if-null.html">T</a><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="show-if-null.html"><span class="token function">showIfNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="show-if-null.html">T</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="680663685%2FFunctions%2F-1319038528" anchor-label="showIfTrue" id="680663685%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-if-true.html"><span>show</span><wbr></wbr><span>If</span><wbr></wbr><span><span>True</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="680663685%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/MenuItem.html">MenuItem</a><span class="token punctuation">.</span><a href="show-if-true.html"><span class="token function">showIfTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html"><span class="token annotation builtin">UiThread</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="show-if-true.html"><span class="token function">showIfTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">condition<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">maintainLayout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1719993291%2FFunctions%2F-1319038528" anchor-label="showLoadingDialog" id="-1719993291%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-loading-dialog.html"><span>show</span><wbr></wbr><span>Loading</span><wbr></wbr><span><span>Dialog</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1719993291%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a><span class="token punctuation">.</span><a href="show-loading-dialog.html"><span class="token function">showLoadingDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">loadingText<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_loading)<span class="token punctuation">, </span></span><span class="parameter ">onClickCancel<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="show-loading-dialog.html"><span class="token function">showLoadingDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/StringRes.html"><span class="token annotation builtin">StringRes</span></a> </span>loadingText<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>R.string.dialog_loading<span class="token punctuation">, </span></span><span class="parameter ">onClickCancel<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1444744063%2FFunctions%2F-1319038528" anchor-label="showSuccessDialog" id="-1444744063%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-success-dialog.html"><span>show</span><wbr></wbr><span>Success</span><wbr></wbr><span><span>Dialog</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1444744063%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a><span class="token punctuation">.</span><a href="show-success-dialog.html"><span class="token function">showSuccessDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_success)<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="show-success-dialog.html"><span class="token function">showSuccessDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_success)<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1763321139%2FFunctions%2F-1319038528" anchor-label="showWarningDialog" id="1763321139%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-warning-dialog.html"><span>show</span><wbr></wbr><span>Warning</span><wbr></wbr><span><span>Dialog</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1763321139%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a><span class="token punctuation">.</span><a href="show-warning-dialog.html"><span class="token function">showWarningDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_warning)<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="show-warning-dialog.html"><span class="token function">showWarningDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>getString(R.string.dialog_warning)<span class="token punctuation">, </span></span><span class="parameter ">extraConfig<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.material.dialog/MaterialAlertDialogBuilder///PointingToDeclaration/">MaterialAlertDialogBuilder</span><span class="token operator"> = </span>{ this }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html">AlertDialog</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-117641446%2FFunctions%2F-1319038528" anchor-label="tintForeground" id="-117641446%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tint-foreground.html"><span>tint</span><wbr></wbr><span><span>Foreground</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-117641446%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/widget/Toolbar.html">Toolbar</a><span class="token punctuation">.</span><a href="tint-foreground.html"><span class="token function">tintForeground</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/ColorInt.html"><span class="token annotation builtin">ColorInt</span></a> </span>color<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Applies the given <a href="https://developer.android.com/reference/kotlin/androidx/annotation/ColorInt.html">ColorInt</a> colour to the text and icons of a <a href="https://developer.android.com/reference/kotlin/androidx/appcompat/widget/Toolbar.html">Toolbar</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="245199147%2FFunctions%2F-1319038528" anchor-label="viewBinder" id="245199147%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="view-binder.html"><span>view</span><wbr></wbr><span><span>Binder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="245199147%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="view-binder.html">VB</a><span class="token operator"> : </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a><span class="token punctuation">.</span><a href="view-binder.html"><span class="token function">viewBinder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">crossinline </span>bindingInflater<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/view/LayoutInflater.html">LayoutInflater</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="view-binder.html">VB</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-lazy/index.html">Lazy</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="view-binder.html">VB</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Creates a lazy inflating delegate for a <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span> instance.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-625302851%2FFunctions%2F-1319038528" anchor-label="viewBinding" id="-625302851%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="view-binding.html"><span>view</span><wbr></wbr><span><span>Binding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-625302851%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="view-binding.html">VB</a><span class="token operator"> : </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a><span class="token punctuation">.</span><a href="view-binding.html"><span class="token function">viewBinding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bindingInflater<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/view/LayoutInflater.html">LayoutInflater</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="view-binding.html">VB</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-activity-view-binding-delegate/index.html">ActivityViewBindingDelegate</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="view-binding.html">VB</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Creates a <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span> delegate object, allowing us to declare it at the top of our <a href="https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html">AppCompatActivity</a> like so:</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="view-binding.html">VB</a><span class="token operator"> : </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt; </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="view-binding.html"><span class="token function">viewBinding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">viewBindingFactory<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="view-binding.html">VB</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-fragment-view-binding-delegate/index.html">FragmentViewBindingDelegate</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="view-binding.html">VB</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Creates a <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span> delegate object, allowing us to declare it at the top of our <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a> like so:</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-109880336%2FFunctions%2F-1319038528" anchor-label="viewIsAccessible" id="-109880336%2FFunctions%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="view-is-accessible.html"><span>view</span><wbr></wbr><span>Is</span><wbr></wbr><span><span>Accessible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-109880336%2FFunctions%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a><span class="token punctuation">.</span><a href="view-is-accessible.html"><span class="token function">viewIsAccessible</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">If the view (and therefore the <span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span>) is inaccessible, meaning we have reached <a href="on-destroy-view.html">onDestroyView</a>, then grabbing the lifecycle will throw an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a>. So this can be used to check that state, e.g. with a ListAdapter's submitList callback.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1775919309%2FProperties%2F-1319038528" anchor-label="isEmpty" id="1775919309%2FProperties%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-empty.html"><span>is</span><wbr></wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1775919309%2FProperties%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a><span class="token punctuation">.</span><a href="is-empty.html">isEmpty</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if a <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a> is attached and it contains any items, false otherwise.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1400147382%2FProperties%2F-1319038528" anchor-label="isNotEmpty" id="-1400147382%2FProperties%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-not-empty.html"><span>is</span><wbr></wbr><span>Not</span><wbr></wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1400147382%2FProperties%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.html">RecyclerView</a><span class="token punctuation">.</span><a href="is-not-empty.html">isNotEmpty</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if a <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a> is attached and it contains no items, false otherwise.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-406473089%2FProperties%2F-1319038528" anchor-label="viewScope" id="-406473089%2FProperties%2F-1319038528" data-filterable-set=":android-ui-view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":android-ui-view:dokkaHtml/release" data-filterable-set=":android-ui-view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="view-scope.html"><span>view</span><wbr></wbr><span><span>Scope</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-406473089%2FProperties%2F-1319038528"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":android-ui-view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">.</span><a href="view-scope.html">viewScope</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

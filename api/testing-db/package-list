@@ -1,0 +1,8 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.jonapoul.alakazam.test.db////PointingToDeclaration/testing-db/com.jonapoul.alakazam.test.db/index.html
+$dokka.location:com.jonapoul.alakazam.test.db/RoomDatabaseRule///PointingToDeclaration/testing-db/com.jonapoul.alakazam.test.db/-room-database-rule/index.html
+$dokka.location:com.jonapoul.alakazam.test.db/RoomDatabaseRule/RoomDatabaseRule/#kotlin.reflect.KClass[TypeParam(bounds=[androidx.room.RoomDatabase])]#kotlin.Boolean/PointingToDeclaration/testing-db/com.jonapoul.alakazam.test.db/-room-database-rule/-room-database-rule.html
+$dokka.location:com.jonapoul.alakazam.test.db/RoomDatabaseRule/database/#/PointingToDeclaration/testing-db/com.jonapoul.alakazam.test.db/-room-database-rule/database.html
+com.jonapoul.alakazam.test.db
+

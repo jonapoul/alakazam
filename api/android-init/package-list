@@ -1,0 +1,15 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.jonapoul.alakazam.init////PointingToDeclaration/android-init/com.jonapoul.alakazam.init/index.html
+$dokka.location:com.jonapoul.alakazam.init/AppInitialisers///PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-app-initialisers/index.html
+$dokka.location:com.jonapoul.alakazam.init/AppInitialisers/AppInitialisers/#kotlin.collections.Set[com.jonapoul.alakazam.init.IAppInitialiser]/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-app-initialisers/-app-initialisers.html
+$dokka.location:com.jonapoul.alakazam.init/AppInitialisers/init/#android.app.Application/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-app-initialisers/init.html
+$dokka.location:com.jonapoul.alakazam.init/IAppInitialiser///PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-i-app-initialiser/index.html
+$dokka.location:com.jonapoul.alakazam.init/IAppInitialiser/init/#android.app.Application/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-i-app-initialiser/init.html
+$dokka.location:com.jonapoul.alakazam.init/IAppInitialiser/shouldGoFirst/#/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-i-app-initialiser/should-go-first.html
+$dokka.location:com.jonapoul.alakazam.init/LoggingInitialiser///PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-logging-initialiser/index.html
+$dokka.location:com.jonapoul.alakazam.init/LoggingInitialiser/LoggingInitialiser/#com.jonapoul.alakazam.core.IBuildConfig/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-logging-initialiser/-logging-initialiser.html
+$dokka.location:com.jonapoul.alakazam.init/LoggingInitialiser/init/#android.app.Application/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-logging-initialiser/init.html
+$dokka.location:com.jonapoul.alakazam.init/LoggingInitialiser/shouldGoFirst/#/PointingToDeclaration/android-init/com.jonapoul.alakazam.init/-logging-initialiser/should-go-first.html
+com.jonapoul.alakazam.init
+

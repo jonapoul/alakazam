@@ -1,0 +1,11 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.jonapoul.alakazam.db////PointingToDeclaration/android-db/com.jonapoul.alakazam.db/index.html
+$dokka.location:com.jonapoul.alakazam.db/InstantConverter///PointingToDeclaration/android-db/com.jonapoul.alakazam.db/-instant-converter/index.html
+$dokka.location:com.jonapoul.alakazam.db/InstantConverter/fromString/#kotlin.String?/PointingToDeclaration/android-db/com.jonapoul.alakazam.db/-instant-converter/from-string.html
+$dokka.location:com.jonapoul.alakazam.db/InstantConverter/toString/#java.time.Instant?/PointingToDeclaration/android-db/com.jonapoul.alakazam.db/-instant-converter/to-string.html
+$dokka.location:com.jonapoul.alakazam.db/UUIDConverter///PointingToDeclaration/android-db/com.jonapoul.alakazam.db/-u-u-i-d-converter/index.html
+$dokka.location:com.jonapoul.alakazam.db/UUIDConverter/fromString/#kotlin.String?/PointingToDeclaration/android-db/com.jonapoul.alakazam.db/-u-u-i-d-converter/from-string.html
+$dokka.location:com.jonapoul.alakazam.db/UUIDConverter/toString/#java.util.UUID?/PointingToDeclaration/android-db/com.jonapoul.alakazam.db/-u-u-i-d-converter/to-string.html
+com.jonapoul.alakazam.db
+

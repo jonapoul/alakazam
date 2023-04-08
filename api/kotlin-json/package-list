@@ -1,0 +1,10 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.jonapoul.alakazam.json////PointingToDeclaration/kotlin-json/com.jonapoul.alakazam.json/index.html
+$dokka.location:com.jonapoul.alakazam.json/SimpleSerializer///PointingToDeclaration/kotlin-json/com.jonapoul.alakazam.json/-simple-serializer/index.html
+$dokka.location:com.jonapoul.alakazam.json/SimpleSerializer/SimpleSerializer/#kotlin.String#kotlin.Function1[kotlin.String,TypeParam(bounds=[kotlin.Any])]/PointingToDeclaration/kotlin-json/com.jonapoul.alakazam.json/-simple-serializer/-simple-serializer.html
+$dokka.location:com.jonapoul.alakazam.json/SimpleSerializer/descriptor/#/PointingToDeclaration/kotlin-json/com.jonapoul.alakazam.json/-simple-serializer/descriptor.html
+$dokka.location:com.jonapoul.alakazam.json/SimpleSerializer/deserialize/#kotlinx.serialization.encoding.Decoder/PointingToDeclaration/kotlin-json/com.jonapoul.alakazam.json/-simple-serializer/deserialize.html
+$dokka.location:com.jonapoul.alakazam.json/SimpleSerializer/serialize/#kotlinx.serialization.encoding.Encoder#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/kotlin-json/com.jonapoul.alakazam.json/-simple-serializer/serialize.html
+com.jonapoul.alakazam.json
+
