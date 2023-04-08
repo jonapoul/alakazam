@@ -13,7 +13,7 @@ env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,7 @@ jobs:
       - name: Configure JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 14
+          java-version: 11
           distribution: corretto
 
       - name: Enable gradle execution
