@@ -45,12 +45,12 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: project-reports
-          path: /build.reports/*
+          path: ./build.reports
           if-no-files-found: error
 
       - name: Upload module reports
         uses: actions/upload-artifact@v3
         with:
           name: module-reports
-          path: /*/build.reports/*
+          path: ./*/build.reports
           if-no-files-found: error
