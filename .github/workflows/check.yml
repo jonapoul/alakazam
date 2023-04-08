@@ -38,11 +38,19 @@ jobs:
       - name: Enable gradle execution
         run: chmod +x ./gradlew
 
-      - name: Code quality
-        run: ./gradlew runChecks
+      - name: Run all checks
+        run: ./gradlew check
 
-      - name: Assemble
-        run: ./gradlew assembleDebug
+      - name: Upload project reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: project-reports
+          path: /build.reports/*
+          if-no-files-found: error
 
-      - name: Test
-        run: ./gradlew koverMergedVerify
+      - name: Upload module reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: module-reports
+          path: /*/build.reports/*
+          if-no-files-found: error
