@@ -1,8 +1,9 @@
 name: Build
 
 on:
-  release:
-    types: [ published ]
+  # Run when master has been updated
+  push:
+    branches: [ "main", "master" ]
 
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
@@ -13,38 +14,29 @@ jobs:
 
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
 
       - name: Configure JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           java-version: 14
 
       - name: Enable gradle execution
         run: chmod +x ./gradlew
 
-      - name: Code quality
-        run: ./gradlew runChecks
-
-      - name: Assemble
-        run: ./gradlew assembleDebug
-
-      - name: Test
-        run: ./gradlew testDebugUnitTest
-
       - name: Generate docs
         run: ./gradlew dokkaHtml
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
 
       - name: Copy README to docs
-        run:  |
+        run: |
           mkdir -p docs
           cp README.md docs/index.md
 
@@ -58,8 +50,7 @@ jobs:
 
       - name: Deploy docs
         if: success()
-        #        if: success() && github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: site # The folder the action should deploy.
+          branch: gh-pages
+          folder: site
