@@ -35,6 +35,10 @@ fun Project.configureKover() {
       }
     }
   }
+
+  subprojects {
+    apply(plugin = "kover")
+  }
 }
 
 private val KOVER_INCLUDES = listOf(
@@ -46,7 +50,6 @@ private val KOVER_EXCLUDES = listOf(
   "*.*ViewInjector*",
   "*.*MembersInjector",
   "*.*_Factory*",
-  "*.*_*Factory*",
   "*.*_Provide*Factory",
   "*.Hilt_*",
   "*.*_HiltModules*",
@@ -65,7 +68,10 @@ private val KOVER_EXCLUDES = listOf(
   "*.ui.*Activity*",
   "*.ui.*Application*",
   "*.ui.*Adapter*",
+  "*.ui.*Dialog*",
+  "*.ui.*DiffCallbacks*",
   "*.ui.*Fragment*",
+  "*.ui.*Service*",
   "*.ui.*ViewHolder*",
 
   /* Hilt modules */

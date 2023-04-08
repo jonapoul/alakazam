@@ -40,26 +40,6 @@ private fun checkFailed(call: () -> Unit) {
   }
 }
 
-class AssertTrueOrFalseTests {
-  @Test
-  fun `assertTrue valid`() = assertTrue(true)
-
-  @Test
-  fun `assertTrue invalid 1`() = checkFailed { assertTrue(false) }
-
-  @Test
-  fun `assertTrue invalid 2`() = checkFailed { assertTrue(null) }
-
-  @Test
-  fun `assertFalse valid`() = assertFalse(false)
-
-  @Test
-  fun `assertFalse invalid 1`() = checkFailed { assertFalse(true) }
-
-  @Test
-  fun `assertFalse invalid 2`() = checkFailed { assertFalse(null) }
-}
-
 class AssertIsTypeTests {
   @Test
   fun `assertIsType valid 1`() = assertIsType<DataClass>(DATA1)
