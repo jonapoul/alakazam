@@ -38,10 +38,6 @@ fun Project.configureAndroidLibrary() {
       )
     }
 
-    packagingOptions {
-      resources.excludes.add("META-INF/*")
-    }
-
     publishing {
       singleVariant("release") {
         withSourcesJar()
