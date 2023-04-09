@@ -25,7 +25,8 @@ fun Project.configureAndroidLibrary() {
     }
 
     buildFeatures {
-      viewBinding = true
+      buildConfig = false
+      viewBinding = false
     }
 
     kotlinOptions {
