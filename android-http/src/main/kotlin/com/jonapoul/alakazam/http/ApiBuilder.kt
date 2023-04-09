@@ -1,27 +1,31 @@
 package com.jonapoul.alakazam.http
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.StringFormat
 import kotlinx.serialization.json.Json
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import retrofit2.Converter
 import retrofit2.Retrofit
 import java.time.Duration
 
 abstract class ApiBuilder<Api>(
   private val okHttpClientFactory: OkHttpClientFactory,
   private val apiClass: Class<Api>,
+  private val baseUrl: String,
+  private val timeout: Duration = DEFAULT_TIMEOUT,
+  private val protocol: String = DEFAULT_PROTOCOL,
 ) {
-  fun buildApi(
-    baseUrl: String,
-    timeout: Duration = DEFAULT_TIMEOUT,
-    protocol: String = DEFAULT_PROTOCOL,
-    stringFormat: StringFormat = Json,
-    mediaType: MediaType = "application/json".toMediaType(),
+  protected open val converterFactories: Set<Converter.Factory> = setOf(
+    Json.asConverterFactory("application/json".toMediaType()),
+  )
+
+  open fun buildApi(
+    baseUrl: String = this.baseUrl,
+    timeout: Duration = this.timeout,
+    protocol: String = this.protocol,
   ): Api {
     return Retrofit.Builder()
-      .addConverterFactory(stringFormat.asConverterFactory(mediaType))
+      .apply { converterFactories.forEach(::addConverterFactory) }
       .baseUrl("$protocol://$baseUrl")
       .client(buildOkHttpClient(timeout))
       .extraConfig()
