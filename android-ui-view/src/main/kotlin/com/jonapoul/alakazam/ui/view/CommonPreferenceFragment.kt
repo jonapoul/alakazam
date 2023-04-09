@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.annotation.CallSuper
-import androidx.annotation.IdRes
 import androidx.annotation.MenuRes
 import androidx.annotation.XmlRes
 import androidx.core.view.MenuProvider
@@ -29,7 +28,8 @@ abstract class CommonPreferenceFragment(
     this.menu?.let { menuInflater.inflate(it, menu) }
   }
 
-  protected open fun onMenuItemSelected(@IdRes menuItemId: Int): Boolean = false
-
-  final override fun onMenuItemSelected(menuItem: MenuItem): Boolean = onMenuItemSelected(menuItem.itemId)
+  override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+    /* No-op by default */
+    return false
+  }
 }

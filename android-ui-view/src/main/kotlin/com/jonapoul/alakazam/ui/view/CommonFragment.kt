@@ -3,6 +3,7 @@ package com.jonapoul.alakazam.ui.view
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
@@ -49,5 +50,10 @@ abstract class CommonFragment(
       is RecyclerView -> recyclerViews.add(view)
       is ViewGroup -> view.children.forEach(::grabRecyclerViews)
     }
+  }
+
+  override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+    /* No-op by default */
+    return false
   }
 }
