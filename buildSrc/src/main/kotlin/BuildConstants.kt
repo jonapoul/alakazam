@@ -2,6 +2,6 @@ object BuildConstants {
   const val MIN_SDK = 15
   const val COMPILE_SDK = 33
 
-  const val LIB_VERSION_NAME = "3.0.0-rc02"
-  const val LIB_VERSION_CODE = 202304090
+  const val LIB_VERSION_NAME = "3.0.0-rc03"
+  const val LIB_VERSION_CODE = 202304091
 }

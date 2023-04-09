@@ -25,8 +25,8 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(
   init {
     fragment.lifecycle.addObserver(
       object : DefaultLifecycleObserver {
-        val liveDataObserver = Observer<LifecycleOwner> {
-          val viewLifecycleOwner = it
+        val liveDataObserver = Observer<LifecycleOwner?> {
+          val viewLifecycleOwner = it ?: return@Observer
           viewLifecycleOwner.lifecycle.addObserver(
             object : DefaultLifecycleObserver {
               override fun onDestroy(owner: LifecycleOwner) {
