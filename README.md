@@ -35,6 +35,7 @@ dependencies {
     implementation "com.github.jonapoul.alakazam:android-init:{version}"
     implementation "com.github.jonapoul.alakazam:android-logging:{version}"
     implementation "com.github.jonapoul.alakazam:android-prefs:{version}"
+    implementation "com.github.jonapoul.alakazam:android-theme:{version}"
     implementation "com.github.jonapoul.alakazam:android-ui-core:{version}"
     implementation "com.github.jonapoul.alakazam:android-ui-compose:{version}"
     implementation "com.github.jonapoul.alakazam:android-ui-view:{version}"
