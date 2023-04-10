@@ -13,6 +13,8 @@ module:android-logging
 com.jonapoul.alakazam.logging
 module:android-prefs
 com.jonapoul.alakazam.prefs
+module:android-theme
+com.jonapoul.alakazam.theme
 module:android-ui-compose
 com.jonapoul.alakazam.ui.compose
 module:android-ui-core
