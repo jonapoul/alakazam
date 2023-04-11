@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-theme", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.theme"
+    namespace = "dev.jonpoulton.alakazam.theme"
 }
 
 dependencies {

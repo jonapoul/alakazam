@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-prefs", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.prefs"
+    namespace = "dev.jonpoulton.alakazam.prefs"
 }
 
 dependencies {

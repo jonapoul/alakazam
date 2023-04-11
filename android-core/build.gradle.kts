@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-core", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.core"
+    namespace = "dev.jonpoulton.alakazam.core"
 }
 
 dependencies {

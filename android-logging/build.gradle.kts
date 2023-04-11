@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-logging", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.logging"
+    namespace = "dev.jonpoulton.alakazam.logging"
 }
 
 dependencies {

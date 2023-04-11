@@ -3,7 +3,7 @@ configurePublishing(artifact = "android-ui-compose", ArtifactType.Android)
 
 @Suppress("UnstableApiUsage")
 android {
-    namespace = "com.jonapoul.alakazam.ui.compose"
+    namespace = "dev.jonpoulton.alakazam.ui.compose"
 
     defaultConfig {
         minSdk = 21 // limited by hilt-navigation-compose

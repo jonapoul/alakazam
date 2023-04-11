@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-db", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.db"
+    namespace = "dev.jonpoulton.alakazam.db"
 }
 
 dependencies {

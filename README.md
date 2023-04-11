@@ -29,31 +29,31 @@ And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {
     /* Android libraries */
-    implementation "com.github.jonapoul.alakazam:android-core:{version}"
-    implementation "com.github.jonapoul.alakazam:android-db:{version}"
-    implementation "com.github.jonapoul.alakazam:android-http:{version}"
-    implementation "com.github.jonapoul.alakazam:android-init:{version}"
-    implementation "com.github.jonapoul.alakazam:android-logging:{version}"
-    implementation "com.github.jonapoul.alakazam:android-prefs:{version}"
-    implementation "com.github.jonapoul.alakazam:android-theme:{version}"
-    implementation "com.github.jonapoul.alakazam:android-ui-core:{version}"
-    implementation "com.github.jonapoul.alakazam:android-ui-compose:{version}"
-    implementation "com.github.jonapoul.alakazam:android-ui-view:{version}"
+    implementation "dev.jonpoulton.alakazam:android-core:{version}"
+    implementation "dev.jonpoulton.alakazam:android-db:{version}"
+    implementation "dev.jonpoulton.alakazam:android-http:{version}"
+    implementation "dev.jonpoulton.alakazam:android-init:{version}"
+    implementation "dev.jonpoulton.alakazam:android-logging:{version}"
+    implementation "dev.jonpoulton.alakazam:android-prefs:{version}"
+    implementation "dev.jonpoulton.alakazam:android-theme:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-core:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-compose:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-view:{version}"
     
     /* DI libraries */
-    implementation "com.github.jonapoul.alakazam:di-hilt:{version}"
-    implementation "com.github.jonapoul.alakazam:di-koin:{version}"
+    implementation "dev.jonpoulton.alakazam:di-hilt:{version}"
+    implementation "dev.jonpoulton.alakazam:di-koin:{version}"
         
     /* Kotlin libraries */
-    implementation "com.github.jonapoul.alakazam:kotlin-core:{version}"
-    implementation "com.github.jonapoul.alakazam:kotlin-coroutines:{version}"
-    implementation "com.github.jonapoul.alakazam:kotlin-json:{version}"
-    implementation "com.github.jonapoul.alakazam:kotlin-time:{version}"
+    implementation "dev.jonpoulton.alakazam:kotlin-core:{version}"
+    implementation "dev.jonpoulton.alakazam:kotlin-coroutines:{version}"
+    implementation "dev.jonpoulton.alakazam:kotlin-json:{version}"
+    implementation "dev.jonpoulton.alakazam:kotlin-time:{version}"
 
     /* Testing libraries */
-    testImplementation "com.github.jonapoul.alakazam:testing-core:{version}"
-    testImplementation "com.github.jonapoul.alakazam:testing-db:{version}"
-    testImplementation "com.github.jonapoul.alakazam:testing-unit:{version}"
-    androidTestImplementation "com.github.jonapoul.alakazam:testing-android:{version}"
+    testImplementation "dev.jonpoulton.alakazam:testing-core:{version}"
+    testImplementation "dev.jonpoulton.alakazam:testing-db:{version}"
+    testImplementation "dev.jonpoulton.alakazam:testing-unit:{version}"
+    androidTestImplementation "dev.jonpoulton.alakazam:testing-android:{version}"
 }
 ```

@@ -4,7 +4,7 @@ configurePublishing(artifact = "testing-android", ArtifactType.Android)
 apply(plugin = "com.google.dagger.hilt.android")
 
 android {
-    namespace = "com.jonapoul.alakazam.test.android"
+    namespace = "dev.jonpoulton.alakazam.test.android"
 
     defaultConfig {
         minSdk = 21 // restricted by mockk

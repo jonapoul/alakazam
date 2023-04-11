@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "testing-db", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.test.db"
+    namespace = "dev.jonpoulton.alakazam.test.db"
 }
 
 dependencies {

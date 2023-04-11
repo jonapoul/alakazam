@@ -4,7 +4,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "di-hilt", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.di"
+    namespace = "dev.jonpoulton.alakazam.di"
 }
 
 dependencies {

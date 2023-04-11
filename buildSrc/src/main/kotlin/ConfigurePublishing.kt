@@ -17,7 +17,7 @@ fun Project.configurePublishing(artifact: String, artifactType: ArtifactType) {
     extensions.configure<PublishingExtension> {
       publications {
         create<MavenPublication>(name = "maven") {
-          groupId = "com.jonapoul.alakazam"
+          groupId = "dev.jonpoulton.alakazam"
           artifactId = artifact
           version = BuildConstants.LIB_VERSION_NAME
           from(components.getByName(artifactType.componentName))
