@@ -1,6 +1,6 @@
 # Alakazam
 
-![Build](https://github.com/jonapoul/alakazam/actions/workflows/actions.yml/badge.svg)
+![Check](https://github.com/jonapoul/alakazam/actions/workflows/check.yml/badge.svg)
 [![Jitpack](https://jitpack.io/v/jonapoul/alakazam.svg)](https://jitpack.io/#jonapoul/alakazam)
 
 ![Alakazam](img/alakazam.png)
