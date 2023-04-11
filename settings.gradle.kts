@@ -23,3 +23,6 @@ include(":testing-android")
 include(":testing-core")
 include(":testing-db")
 include(":testing-unit")
+
+// https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
