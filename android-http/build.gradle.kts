@@ -20,11 +20,11 @@ dependencies {
     api(projects.kotlinJson)
     api(projects.androidCore)
 
-    api(libs.okhttp.core)
-    api(libs.okhttp.logging)
-    api(libs.retrofit.core)
-    api(libs.retrofit.serialization)
-    api(libs.timber.core)
+    implementation(libs.okhttp.core)
+    implementation(libs.okhttp.logging)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.serialization)
+    implementation(libs.timber.core)
 
     testImplementation(projects.testingCore)
 }

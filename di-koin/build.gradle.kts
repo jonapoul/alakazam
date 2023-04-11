@@ -15,8 +15,8 @@ dependencies {
     api(projects.androidUiCore)
     api(projects.kotlinCoroutines)
 
-    api(libs.koin.core)
-    api(libs.koin.android)
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
 
     testImplementation(projects.testingCore)
 }

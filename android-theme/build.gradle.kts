@@ -10,7 +10,8 @@ dependencies {
 
     api(projects.androidPrefs)
     api(projects.diHilt)
-    api(libs.preference)
+
+    implementation(libs.preference)
 
     testImplementation(projects.testingCore)
 }

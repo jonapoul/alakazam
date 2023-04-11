@@ -17,7 +17,7 @@ dependencies {
     api(projects.androidUiCore)
     api(projects.kotlinCoroutines)
 
-    api(libs.hilt.android)
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
     testImplementation(projects.testingCore)

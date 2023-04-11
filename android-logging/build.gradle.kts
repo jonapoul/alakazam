@@ -10,7 +10,7 @@ dependencies {
 
     api(projects.androidCore)
 
-    api(libs.timber.core)
+    implementation(libs.timber.core)
     implementation(libs.logback.android)
     implementation(libs.slf4j)
 

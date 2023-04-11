@@ -10,8 +10,8 @@ dependencies {
 
     api(projects.androidCore)
 
-    api(libs.room.ktx)
-    api(libs.room.runtime)
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
     kapt(libs.room.compiler)
 
     testImplementation(projects.testingCore)

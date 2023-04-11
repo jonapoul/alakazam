@@ -11,8 +11,8 @@ dependencies {
     api(projects.androidCore)
     api(projects.androidLogging)
 
-    api(libs.preference)
-    api(libs.flowpreferences)
+    implementation(libs.preference)
+    implementation(libs.flowpreferences)
 
     testImplementation(projects.testingCore)
 }

@@ -15,9 +15,9 @@ dependencies {
 
     api(projects.androidUiCore)
 
-    api(libs.fragment.ktx)
-    api(libs.recyclerview)
-    api(libs.material)
+    implementation(libs.fragment.ktx)
+    implementation(libs.recyclerview)
+    implementation(libs.material)
 
     testImplementation(projects.testingCore)
 }
