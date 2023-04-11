@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "di-koin", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.di"
+    namespace = "dev.jonpoulton.alakazam.di"
 }
 
 dependencies {

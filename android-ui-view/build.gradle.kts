@@ -3,7 +3,7 @@ configurePublishing(artifact = "android-ui-view", ArtifactType.Android)
 
 @Suppress("Incubating")
 android {
-    namespace = "com.jonapoul.alakazam.ui.view"
+    namespace = "dev.jonpoulton.alakazam.ui.view"
 
     buildFeatures {
         viewBinding = true

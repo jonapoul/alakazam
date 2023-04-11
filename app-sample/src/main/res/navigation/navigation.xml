@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.jonapoul.alakazam.sample.HomeFragment"
+        android:name="dev.jonpoulton.alakazam.sample.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
 
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.jonapoul.alakazam.sample.SettingsFragment"
+        android:name="dev.jonpoulton.alakazam.sample.SettingsFragment"
         android:label="Settings" />
 
 </navigation>

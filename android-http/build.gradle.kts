@@ -4,7 +4,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-http", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.http"
+    namespace = "dev.jonpoulton.alakazam.http"
 
     kotlinOptions {
         freeCompilerArgs += listOf(

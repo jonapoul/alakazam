@@ -48,7 +48,7 @@ fun Project.configureKover() {
 }
 
 private val KOVER_INCLUDES = listOf(
-  "com.jonapoul.*",
+  "dev.jonpoulton.*",
 )
 
 private val KOVER_EXCLUDES = listOf(
@@ -73,5 +73,5 @@ private val KOVER_EXCLUDES = listOf(
   "*.test.*",
 
   /* Sample app */
-  "com.jonapoul.alakazam.sample.*",
+  "dev.jonpoulton.alakazam.sample.*",
 )

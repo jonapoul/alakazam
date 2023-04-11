@@ -1,7 +1,6 @@
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.dokka.DokkaDefaults.includeNonPublic
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.File

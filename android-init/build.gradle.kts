@@ -2,7 +2,7 @@ configureAndroidLibrary()
 configurePublishing(artifact = "android-init", ArtifactType.Android)
 
 android {
-    namespace = "com.jonapoul.alakazam.init"
+    namespace = "dev.jonpoulton.alakazam.init"
 }
 
 dependencies {
