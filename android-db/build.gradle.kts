@@ -8,11 +8,11 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-core"))
+    api(projects.androidCore)
 
     api(libs.room.ktx)
     api(libs.room.runtime)
     kapt(libs.room.compiler)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

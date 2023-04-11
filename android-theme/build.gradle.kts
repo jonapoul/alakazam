@@ -8,9 +8,9 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-prefs"))
-    api(project(":di-hilt"))
+    api(projects.androidPrefs)
+    api(projects.diHilt)
     api(libs.preference)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

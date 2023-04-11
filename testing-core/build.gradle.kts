@@ -5,7 +5,7 @@ configureKotlinLibrary()
 configurePublishing(artifact = "testing-core", ArtifactType.Kotlin)
 
 dependencies {
-    implementation(project(":kotlin-core"))
+    implementation(projects.kotlinCore)
 
     api(libs.turbine)
     api(libs.mockk.core)

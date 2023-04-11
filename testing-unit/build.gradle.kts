@@ -5,7 +5,7 @@ configureKotlinLibrary()
 configurePublishing(artifact = "testing-unit", ArtifactType.Kotlin)
 
 dependencies {
-    api(project(":testing-core"))
+    api(projects.testingCore)
     api(libs.androidx.arch.test)
     api(libs.mockk.core)
     api(libs.robolectric)

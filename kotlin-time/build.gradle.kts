@@ -2,7 +2,7 @@ configureKotlinLibrary()
 configurePublishing(artifact = "kotlin-time", ArtifactType.Kotlin)
 
 dependencies {
-    api(project(":kotlin-core"))
+    api(projects.kotlinCore)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

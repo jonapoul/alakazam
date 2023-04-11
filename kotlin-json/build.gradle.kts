@@ -14,8 +14,8 @@ tasks.withType<KotlinCompile> {
 }
 
 dependencies {
-    api(project(":kotlin-core"))
+    api(projects.kotlinCore)
     api(libs.kotlinx.serialization.json)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

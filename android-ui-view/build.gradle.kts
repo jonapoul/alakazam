@@ -13,11 +13,11 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-ui-core"))
+    api(projects.androidUiCore)
 
     api(libs.fragment.ktx)
     api(libs.recyclerview)
     api(libs.material)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }
