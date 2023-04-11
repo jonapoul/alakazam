@@ -11,5 +11,8 @@ dependencies {
     api(projects.androidCore)
     api(projects.androidLogging)
 
+    implementation(libs.hilt.android)
+    implementation(libs.timber.core)
+
     testImplementation(projects.testingCore)
 }

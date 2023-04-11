@@ -13,6 +13,7 @@ dependencies {
 
     implementation(libs.preference)
     implementation(libs.flowpreferences)
+    implementation(libs.timber.core)
 
     testImplementation(projects.testingCore)
 }

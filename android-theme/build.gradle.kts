@@ -11,6 +11,7 @@ dependencies {
     api(projects.androidPrefs)
     api(projects.diHilt)
 
+    implementation(libs.hilt.android)
     implementation(libs.preference)
 
     testImplementation(projects.testingCore)

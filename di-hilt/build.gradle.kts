@@ -17,7 +17,9 @@ dependencies {
     api(projects.androidUiCore)
     api(projects.kotlinCoroutines)
 
+    implementation(libs.flowpreferences)
     implementation(libs.hilt.android)
+    implementation(libs.preference)
     kapt(libs.hilt.compiler)
 
     testImplementation(projects.testingCore)

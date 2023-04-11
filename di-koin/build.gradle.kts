@@ -15,8 +15,10 @@ dependencies {
     api(projects.androidUiCore)
     api(projects.kotlinCoroutines)
 
+    implementation(libs.flowpreferences)
     implementation(libs.koin.core)
     implementation(libs.koin.android)
+    implementation(libs.preference)
 
     testImplementation(projects.testingCore)
 }

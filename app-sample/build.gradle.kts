@@ -42,7 +42,13 @@ dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
     implementation(projects.androidPrefs)
+    implementation(projects.androidUiCore)
     implementation(projects.androidUiView)
+
+    implementation(libs.appcompat)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.preference)
 
     testImplementation(projects.testingUnit)
     androidTestImplementation(projects.testingAndroid)
