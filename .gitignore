@@ -35,7 +35,6 @@ captures/
 
 # IntelliJ
 *.iml
-.idea/
 
 # Keystore files
 *.keystore
@@ -62,3 +61,8 @@ fastlane/readme.md
 # Custom files
 keystore.gradle
 docs/
+
+# Ignore all IDEA files, except those excluded below
+.idea/*
+# Detekt plugin configuration (Tools -> Detekt)
+!.idea/detekt.xml
