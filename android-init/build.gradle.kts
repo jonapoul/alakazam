@@ -8,8 +8,11 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-core"))
-    api(project(":android-logging"))
+    api(projects.androidCore)
+    api(projects.androidLogging)
 
-    testImplementation(project(":testing-core"))
+    implementation(libs.hilt.android)
+    implementation(libs.timber.core)
+
+    testImplementation(projects.testingCore)
 }

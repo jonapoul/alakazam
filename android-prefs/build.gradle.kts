@@ -8,11 +8,12 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-core"))
-    api(project(":android-logging"))
+    api(projects.androidCore)
+    api(projects.androidLogging)
 
-    api(libs.preference)
-    api(libs.flowpreferences)
+    implementation(libs.preference)
+    implementation(libs.flowpreferences)
+    implementation(libs.timber.core)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

@@ -2,10 +2,10 @@ configureKotlinLibrary()
 configurePublishing(artifact = "kotlin-coroutines", ArtifactType.Kotlin)
 
 dependencies {
-    api(project(":kotlin-core"))
+    api(projects.kotlinCore)
 
-    api(libs.kotlinx.coroutines.core)
-    api(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

@@ -8,16 +8,16 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-core"))
-    api(project(":android-logging"))
-    api(project(":kotlin-coroutines"))
+    api(projects.androidCore)
+    api(projects.androidLogging)
+    api(projects.kotlinCoroutines)
 
-    api(libs.activity)
-    api(libs.appcompat)
-    api(libs.lifecycle.runtime)
-    api(libs.navigation.fragment)
-    api(libs.navigation.ui)
-    api(libs.preference)
+    implementation(libs.activity)
+    implementation(libs.appcompat)
+    implementation(libs.lifecycle.runtime)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.preference)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

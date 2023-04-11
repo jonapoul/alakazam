@@ -8,15 +8,17 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-core"))
-    api(project(":android-http"))
-    api(project(":android-init"))
-    api(project(":android-prefs"))
-    api(project(":android-ui-core"))
-    api(project(":kotlin-coroutines"))
+    api(projects.androidCore)
+    api(projects.androidHttp)
+    api(projects.androidInit)
+    api(projects.androidPrefs)
+    api(projects.androidUiCore)
+    api(projects.kotlinCoroutines)
 
-    api(libs.koin.core)
-    api(libs.koin.android)
+    implementation(libs.flowpreferences)
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.preference)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

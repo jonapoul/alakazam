@@ -7,7 +7,7 @@ android {
 
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
-    implementation(project(":android-core"))
+    implementation(projects.androidCore)
 
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)

@@ -16,15 +16,16 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":kotlin-core"))
-    api(project(":kotlin-json"))
-    api(project(":android-core"))
+    api(projects.kotlinCore)
+    api(projects.kotlinJson)
+    api(projects.androidCore)
 
-    api(libs.okhttp.core)
-    api(libs.okhttp.logging)
-    api(libs.retrofit.core)
-    api(libs.retrofit.serialization)
-    api(libs.timber.core)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.okhttp.core)
+    implementation(libs.okhttp.logging)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.serialization)
+    implementation(libs.timber.core)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

@@ -13,7 +13,7 @@ android {
 
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
-    implementation(project(":android-core"))
+    implementation(projects.androidCore)
 
     /* General runtime */
     implementation(libs.activity)

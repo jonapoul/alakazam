@@ -41,9 +41,15 @@ extensions.configure<AppExtension> {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    implementation(project(":android-prefs"))
-    implementation(project(":android-ui-view"))
+    implementation(projects.androidPrefs)
+    implementation(projects.androidUiCore)
+    implementation(projects.androidUiView)
 
-    testImplementation(project(":testing-unit"))
-    androidTestImplementation(project(":testing-android"))
+    implementation(libs.appcompat)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.preference)
+
+    testImplementation(projects.testingUnit)
+    androidTestImplementation(projects.testingAndroid)
 }

@@ -21,7 +21,7 @@ android {
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
-    api(project(":android-ui-core"))
+    api(projects.androidUiCore)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.activity)
@@ -38,5 +38,5 @@ dependencies {
     implementation(libs.compose.ui.tooling)
     implementation(libs.compose.ui.util)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }

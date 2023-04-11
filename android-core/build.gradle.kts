@@ -7,9 +7,10 @@ android {
 
 dependencies {
     coreLibraryDesugaring(libs.desugaring)
-    api(project(":kotlin-core"))
-    api(libs.core.ktx)
-    api(libs.kotlinx.coroutines.android)
+    api(projects.kotlinCore)
 
-    testImplementation(project(":testing-core"))
+    implementation(libs.core.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+
+    testImplementation(projects.testingCore)
 }

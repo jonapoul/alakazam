@@ -2,7 +2,7 @@ configureKotlinLibrary()
 configurePublishing(artifact = "kotlin-core", ArtifactType.Kotlin)
 
 dependencies {
-    api(libs.kotlin.stdlib)
+    implementation(libs.kotlin.stdlib)
 
-    testImplementation(project(":testing-core"))
+    testImplementation(projects.testingCore)
 }
