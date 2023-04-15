@@ -4,6 +4,8 @@ on:
   release:
     types: [ published ]
 
+  workflow_dispatch:
+
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 

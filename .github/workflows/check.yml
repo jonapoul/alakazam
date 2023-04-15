@@ -5,6 +5,8 @@ on:
   pull_request:
     branches:
 
+  workflow_dispatch:
+
   # Run when a commit has been made on the primary branches, which should be after a PR
   push:
     branches: [ "develop", "main", "master" ]
