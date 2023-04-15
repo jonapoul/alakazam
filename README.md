@@ -1,7 +1,7 @@
 # Alakazam
 
 ![Check](https://github.com/jonapoul/alakazam/actions/workflows/check.yml/badge.svg)
-[![Jitpack](https://jitpack.io/v/jonapoul/alakazam.svg)](https://jitpack.io/#jonapoul/alakazam)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/android-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/android-core)
 
 ![Alakazam](docs/alakazam.png)
 
@@ -39,11 +39,11 @@ dependencies {
     implementation "dev.jonpoulton.alakazam:android-ui-core:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-compose:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-view:{version}"
-    
+
     /* DI libraries */
     implementation "dev.jonpoulton.alakazam:di-hilt:{version}"
     implementation "dev.jonpoulton.alakazam:di-koin:{version}"
-        
+
     /* Kotlin libraries */
     implementation "dev.jonpoulton.alakazam:kotlin-core:{version}"
     implementation "dev.jonpoulton.alakazam:kotlin-coroutines:{version}"

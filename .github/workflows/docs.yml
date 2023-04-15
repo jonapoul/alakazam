@@ -1,9 +1,8 @@
 name: Docs
 
 on:
-  # Run when master has been updated
-  push:
-    branches: [ "main", "master" ]
+  release:
+    types: [ published ]
 
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
