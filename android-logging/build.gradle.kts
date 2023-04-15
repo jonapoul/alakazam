@@ -3,7 +3,7 @@
 plugins {
   id("com.android.library")
   id("kotlin-android")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -14,16 +14,6 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "android-logging",
-      artifactType = ArtifactType.Android,
-    )
-  }
 }
 
 dependencies {

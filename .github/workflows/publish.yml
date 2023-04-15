@@ -7,7 +7,24 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: badasintended/autojitpack@v1
+      - name: Checkout the repo
+          uses: actions/checkout@v3
+
+      - name: Configure JDK
+        uses: actions/setup-java@v3
         with:
-          version: ${{ github.event.release.tag_name }}
+          java-version: 11
+          distribution: corretto
+
+      - name: Upload Artifacts
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: clean publish --stacktrace
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}

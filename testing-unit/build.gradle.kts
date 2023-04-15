@@ -1,7 +1,7 @@
 plugins {
   id("java-library")
   id("kotlin")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 java {
@@ -11,16 +11,6 @@ java {
 
 kotlin {
   kotlinConfig()
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "testing-unit",
-      artifactType = ArtifactType.Kotlin,
-    )
-  }
 }
 
 dependencies {

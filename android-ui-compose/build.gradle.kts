@@ -3,7 +3,7 @@
 plugins {
   id("com.android.library")
   id("kotlin-android")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -25,16 +25,6 @@ android {
 
   composeOptions {
     kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-  }
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "android-ui-compose",
-      artifactType = ArtifactType.Android,
-    )
   }
 }
 

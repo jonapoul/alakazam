@@ -16,6 +16,7 @@ buildscript {
     classpath(libs.plugin.kotlin.serialization)
     classpath(libs.plugin.kover)
     classpath(libs.plugin.ktlint)
+    classpath(libs.plugin.maven.publish)
     classpath(libs.plugin.navigation)
     classpath(libs.plugin.spotless)
     classpath(libs.plugin.versions)

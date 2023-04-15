@@ -5,7 +5,7 @@ plugins {
   id("kotlin-android")
   id("kotlin-kapt")
   id("dagger.hilt.android.plugin")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -16,16 +16,6 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "di-hilt",
-      artifactType = ArtifactType.Android,
-    )
-  }
 }
 
 dependencies {

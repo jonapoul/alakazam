@@ -5,7 +5,7 @@ plugins {
   id("kotlin-android")
   id("kotlin-kapt")
   id("com.google.dagger.hilt.android")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -19,16 +19,6 @@ android {
 
   defaultConfig {
     minSdk = 21 // restricted by mockk
-  }
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "testing-android",
-      artifactType = ArtifactType.Android,
-    )
   }
 }
 

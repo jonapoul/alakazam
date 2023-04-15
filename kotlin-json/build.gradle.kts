@@ -2,7 +2,7 @@ plugins {
   id("java-library")
   id("kotlin")
   id("kotlinx-serialization")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 java {
@@ -12,16 +12,6 @@ java {
 
 kotlin {
   kotlinConfig()
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "kotlin-json",
-      artifactType = ArtifactType.Kotlin,
-    )
-  }
 }
 
 dependencies {

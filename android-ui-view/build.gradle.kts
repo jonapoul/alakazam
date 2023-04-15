@@ -3,7 +3,7 @@
 plugins {
   id("com.android.library")
   id("kotlin-android")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -17,16 +17,6 @@ android {
 
   buildFeatures {
     viewBinding = true
-  }
-}
-
-afterEvaluate {
-  publishing {
-    addPublication(
-      project = project,
-      artifact = "android-ui-view",
-      artifactType = ArtifactType.Android,
-    )
   }
 }
 
