@@ -3,7 +3,7 @@
 ![Check](https://github.com/jonapoul/alakazam/actions/workflows/check.yml/badge.svg)
 [![Jitpack](https://jitpack.io/v/jonapoul/alakazam.svg)](https://jitpack.io/#jonapoul/alakazam)
 
-![Alakazam](img/alakazam.png)
+![Alakazam](docs/alakazam.png)
 
 This is a simple library to hold a bunch of Kotlin extensions and utility functions that I use all the time in various
 projects. I just made this repo to keep them all in the same place and stop me copying them around all the time.

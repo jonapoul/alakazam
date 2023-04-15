@@ -60,7 +60,7 @@ fastlane/readme.md
 
 # Custom files
 keystore.gradle
-docs/
+docs/api/
 
 # Ignore all IDEA files, except those excluded below
 .idea/*
