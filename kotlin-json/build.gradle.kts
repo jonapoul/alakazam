@@ -1,22 +1,31 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+plugins {
+  id("java-library")
+  id("kotlin")
+  id("kotlinx-serialization")
+  id("maven-publish")
+}
 
-apply(plugin = "kotlinx-serialization")
+java {
+  sourceCompatibility = JavaVersion.VERSION_11
+  targetCompatibility = JavaVersion.VERSION_11
+}
 
-configureKotlinLibrary()
-configurePublishing(artifact = "kotlin-json", ArtifactType.Kotlin)
+kotlin {
+  kotlinConfig()
+}
 
-tasks.withType<KotlinCompile> {
-    compilerOptions {
-        freeCompilerArgs.addAll(
-            "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
-        )
-    }
+afterEvaluate {
+  publishing {
+    addPublication(
+      project = project,
+      artifact = "kotlin-json",
+      artifactType = ArtifactType.Kotlin,
+    )
+  }
 }
 
 dependencies {
-    api(projects.kotlinCore)
-
-    implementation(libs.kotlinx.serialization.json)
-
-    testImplementation(projects.testingCore)
+  api(projects.kotlinCore)
+  implementation(libs.kotlinx.serialization.json)
+  testImplementation(projects.testingCore)
 }

@@ -1,48 +1,53 @@
+import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-@Suppress("UnstableApiUsage")
-fun Project.configureAndroidLibrary() {
-  apply(plugin = "com.android.library")
-  apply(plugin = "kotlin-android")
-  apply(plugin = "kotlin-kapt")
+fun BaseExtension.androidDefaultConfig() {
+  defaultConfig {
+    minSdk = BuildConstants.MIN_SDK
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunnerArguments["disableAnalytics"] = "true"
+    multiDexEnabled = true
+  }
+}
 
-  android {
-    compileSdk = BuildConstants.COMPILE_SDK
+fun BaseExtension.androidCompileOptions() {
+  compileOptions {
+    isCoreLibraryDesugaringEnabled = true
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+  }
+}
 
-    defaultConfig {
-      minSdk = BuildConstants.MIN_SDK
-      testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-      testInstrumentationRunnerArguments["disableAnalytics"] = "true"
-      multiDexEnabled = true
-    }
+fun LibraryExtension.androidBuildFeatures() {
+  buildFeatures {
+    buildConfig = false
+    viewBinding = false
+  }
+}
 
-    compileOptions {
-      isCoreLibraryDesugaringEnabled = true
-      sourceCompatibility = JavaVersion.VERSION_11
-      targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    buildFeatures {
-      buildConfig = false
-      viewBinding = false
-    }
-
+fun Project.androidKotlinOptions() {
+  tasks.withType<KotlinCompile> {
     kotlinOptions {
       jvmTarget = "11"
       freeCompilerArgs += listOf(
         "-Xjvm-default=all-compatibility",
         "-opt-in=kotlin.RequiresOptIn",
         "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
       )
     }
+  }
+}
 
-    publishing {
-      singleVariant("release") {
-        withSourcesJar()
-        withJavadocJar()
-      }
+fun LibraryExtension.androidPublishing() {
+  publishing {
+    singleVariant("release") {
+      withSourcesJar()
+      withJavadocJar()
     }
   }
 }

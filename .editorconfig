@@ -2,13 +2,12 @@
 root = true
 
 [*]
-insert_final_newline = true
-indent_size = 4
-max_line_length = 120
-indent_style = space
-
-[*.yml]
+charset = utf-8
 indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 120
+trim_trailing_whitespace = true
 
 [*.{kt, kts, java}]
 ij_kotlin_code_style_defaults = KOTLIN_OFFICIAL
@@ -17,9 +16,5 @@ ij_kotlin_line_comment_add_space = true
 ij_kotlin_name_count_to_use_star_import = 999
 ij_kotlin_name_count_to_use_star_import_for_members = 999
 ij_java_class_count_to_use_import_on_demand = 999
-indent_size = 2
+kotlin_imports_layout = ascii
 
-[*.kts]
-# This is only different to the indentation of .kt files above because ktlint doesn't take the indent size into account
-# when checking .kts files. Not sure whether this is intentional or not, but I can live with this for now
-indent_size = 4

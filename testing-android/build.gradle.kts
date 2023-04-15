@@ -1,37 +1,58 @@
-configureAndroidLibrary()
-configurePublishing(artifact = "testing-android", ArtifactType.Android)
+@file:Suppress("UnstableApiUsage", "SuspiciousCollectionReassignment")
 
-apply(plugin = "com.google.dagger.hilt.android")
+plugins {
+  id("com.android.library")
+  id("kotlin-android")
+  id("kotlin-kapt")
+  id("com.google.dagger.hilt.android")
+  id("maven-publish")
+}
 
 android {
-    namespace = "dev.jonpoulton.alakazam.test.android"
+  namespace = "dev.jonpoulton.alakazam.test.android"
+  compileSdk = BuildConstants.COMPILE_SDK
 
-    defaultConfig {
-        minSdk = 21 // restricted by mockk
-    }
+  androidDefaultConfig()
+  androidCompileOptions()
+  androidKotlinOptions()
+  androidBuildFeatures()
+
+  defaultConfig {
+    minSdk = 21 // restricted by mockk
+  }
+}
+
+afterEvaluate {
+  publishing {
+    addPublication(
+      project = project,
+      artifact = "testing-android",
+      artifactType = ArtifactType.Android,
+    )
+  }
 }
 
 dependencies {
-    coreLibraryDesugaring(libs.desugaring)
-    implementation(projects.androidCore)
+  coreLibraryDesugaring(libs.desugaring)
+  implementation(projects.androidCore)
 
-    /* General runtime */
-    implementation(libs.activity)
-    implementation(libs.appcompat)
-    implementation(libs.fragment.ktx)
+  /* General runtime */
+  implementation(libs.activity)
+  implementation(libs.appcompat)
+  implementation(libs.fragment.ktx)
 
-    /* DI */
-    implementation(libs.hilt.android)
-    api(libs.hilt.test)
-    kapt(libs.hilt.compiler)
+  /* DI */
+  implementation(libs.hilt.android)
+  api(libs.hilt.test)
+  kapt(libs.hilt.compiler)
 
-    /* Testing */
-    api(libs.androidx.arch.test)
-    api(libs.androidx.junit.test)
-    api(libs.core.test)
-    api(libs.kaspresso)
-    api(libs.mockk.android)
-    api(libs.navigation.testing)
+  /* Testing */
+  api(libs.androidx.arch.test)
+  api(libs.androidx.junit.test)
+  api(libs.core.test)
+  api(libs.kaspresso)
+  api(libs.mockk.android)
+  api(libs.navigation.testing)
 
-    debugImplementation(libs.fragment.test)
+  debugImplementation(libs.fragment.test)
 }
