@@ -42,12 +42,3 @@ fun Project.androidKotlinOptions() {
     }
   }
 }
-
-fun LibraryExtension.androidPublishing() {
-  publishing {
-    singleVariant("release") {
-      withSourcesJar()
-      withJavadocJar()
-    }
-  }
-}

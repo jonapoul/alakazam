@@ -14,8 +14,8 @@ android {
     applicationId = "dev.jonpoulton.alakazam.sample"
     minSdk = 21 // limited by testing-android
     targetSdk = BuildConstants.COMPILE_SDK
-    versionCode = BuildConstants.LIB_VERSION_CODE
-    versionName = BuildConstants.LIB_VERSION_NAME
+    versionCode = 1
+    versionName = "1.0.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     testInstrumentationRunnerArguments["disableAnalytics"] = "true"
     multiDexEnabled = true
