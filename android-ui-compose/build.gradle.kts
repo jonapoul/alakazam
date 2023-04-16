@@ -14,6 +14,7 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
+  androidPackagingOptions()
 
   defaultConfig {
     minSdk = 21 // limited by hilt-navigation-compose

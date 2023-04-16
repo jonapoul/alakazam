@@ -16,6 +16,7 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
+  androidPackagingOptions()
 
   defaultConfig {
     minSdk = 21 // restricted by mockk

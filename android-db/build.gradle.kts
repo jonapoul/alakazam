@@ -15,6 +15,7 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
+  androidPackagingOptions()
 }
 
 dependencies {
