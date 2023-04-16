@@ -21,7 +21,7 @@ env:
   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
 
 jobs:
-  check:
+  checks:
     name: Run checks
     runs-on: ubuntu-latest
     steps:
