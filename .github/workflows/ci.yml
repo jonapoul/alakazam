@@ -34,6 +34,11 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: ${{ env.JDK_DIST }}
 
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
       - name: Clear cache
         run: ./ci_clear_gradle_cache.sh
 
@@ -47,9 +52,6 @@ jobs:
 
       - name: Validate gradle
         uses: gradle/wrapper-validation-action@v1
-
-      - name: Enable gradle execution
-        run: chmod +x ./gradlew
 
       - name: Run checks
         run: ./gradlew runChecks
@@ -78,6 +80,11 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: ${{ env.JDK_DIST }}
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
 
       - name: Clear cache
         run: ./ci_clear_gradle_cache.sh
@@ -119,6 +126,11 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: ${{ env.JDK_DIST }}
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
 
       - name: Clear cache
         run: ./ci_clear_gradle_cache.sh
@@ -199,6 +211,11 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: ${{ env.JDK_DIST }}
 
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
       - name: Publush snapshot
         run: ./gradlew publish
 
@@ -225,6 +242,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
 
       - name: Deploy Docs
         run: |
