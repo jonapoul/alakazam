@@ -48,138 +48,138 @@ jobs:
           path: ./*/build/reports
           if-no-files-found: warn
 
-    unit-tests:
-      name: Unit tests
-      runs-on: ubuntu-latest
-      timeout-minutes: 10
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-java@v3
-          with:
-            java-version: ${{ env.JAVA_VERSION }}
-            distribution: ${{ env.JDK_DIST }}
-        - run: ./ci_clear_gradle_cache.sh
-        - uses: actions/cache@v3
-          with:
-            path: |
-              ~/.gradle/caches
-              ~/.gradle/wrapper
-            key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
-        - name: ./gradlew koverMergedHtmlReport
-        - uses: actions/upload-artifact@v3
-          if: always()
-          with:
-            name: test-reports-unit
-            path: ./*/build/reports
-            if-no-files-found: warn
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+      - run: ./ci_clear_gradle_cache.sh
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
+      - name: ./gradlew koverMergedHtmlReport
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-reports-unit
+          path: ./*/build/reports
+          if-no-files-found: warn
 
-    instrumentation-tests:
-      name: Instrumentation tests
-      runs-on: macOS-latest
-      timeout-minutes: 45
-      strategy:
-        fail-fast: true
-        matrix:
-          # API 21 is flaky and times out.
-          api-level: [ 22, 26, 31 ]
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-java@v3
-          with:
-            java-version: ${{ env.JAVA_VERSION }}
-            distribution: ${{ env.JDK_DIST }}
-        - run: ./ci_clear_gradle_cache.sh
-        - uses: actions/cache@v3
-          with:
-            path: |
-              ~/.gradle/caches
-              ~/.gradle/wrapper
-            key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
+  instrumentation-tests:
+    name: Instrumentation tests
+    runs-on: macOS-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: true
+      matrix:
+        # API 21 is flaky and times out.
+        api-level: [ 22, 26, 31 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+      - run: ./ci_clear_gradle_cache.sh
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
 
-        # API 30+ emulators only have x86_64 system images.
-        - name: Get AVD info
-          uses: ./.github/actions/get-avd-info
-          id: avd-info
-          with:
-            api-level: ${{ matrix.api-level }}
+      # API 30+ emulators only have x86_64 system images.
+      - name: Get AVD info
+        uses: ./.github/actions/get-avd-info
+        id: avd-info
+        with:
+          api-level: ${{ matrix.api-level }}
 
-        # Retrieve the cached emulator snapshot.
-        - uses: actions/cache@v3
-          id: avd-cache
-          with:
-            path: |
-              ~/.android/avd/*
-              ~/.android/adb*
-            key: ${{ runner.os }}-avd-${{ env.CACHE_VERSION }}-${{ steps.avd-info.outputs.arch }}-${{ steps.avd-info.outputs.target }}-${{ matrix.api-level }}
+      # Retrieve the cached emulator snapshot.
+      - uses: actions/cache@v3
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: ${{ runner.os }}-avd-${{ env.CACHE_VERSION }}-${{ steps.avd-info.outputs.arch }}-${{ steps.avd-info.outputs.target }}-${{ matrix.api-level }}
 
-        # Create a new emulator snapshot if it isn't present in the cache.
-        - name: Create AVD snapshot
-          if: steps.avd-cache.outputs.cache-hit != 'true'
-          uses: reactivecircus/android-emulator-runner@v2
-          with:
-            api-level: ${{ matrix.api-level }}
-            arch: ${{ steps.avd-info.outputs.arch }}
-            target: ${{ steps.avd-info.outputs.target }}
-            disable-animations: false
-            force-avd-creation: false
-            ram-size: 4096M
-            emulator-boot-timeout: 12000
-            emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-            script: echo "Generated AVD snapshot."
+      # Create a new emulator snapshot if it isn't present in the cache.
+      - name: Create AVD snapshot
+        if: steps.avd-cache.outputs.cache-hit != 'true'
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          arch: ${{ steps.avd-info.outputs.arch }}
+          target: ${{ steps.avd-info.outputs.target }}
+          disable-animations: false
+          force-avd-creation: false
+          ram-size: 4096M
+          emulator-boot-timeout: 12000
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: echo "Generated AVD snapshot."
 
-        - name: Instrumentation tests
-          uses: reactivecircus/android-emulator-runner@v2
-          with:
-            api-level: ${{ matrix.api-level }}
-            arch: ${{ steps.avd-info.outputs.arch }}
-            target: ${{ steps.avd-info.outputs.target }}
-            disable-animations: true
-            force-avd-creation: false
-            ram-size: 4096M
-            emulator-boot-timeout: 12000
-            emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot-save
-            script: mv .github/debug.keystore ~/.android; ./gradlew connectedDebugAndroidTest
-        - uses: actions/upload-artifact@v3
-          if: always()
-          with:
-            name: test-reports-instrumented
-            path: ./*/build/reports
-            if-no-files-found: warn
+      - name: Instrumentation tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          arch: ${{ steps.avd-info.outputs.arch }}
+          target: ${{ steps.avd-info.outputs.target }}
+          disable-animations: true
+          force-avd-creation: false
+          ram-size: 4096M
+          emulator-boot-timeout: 12000
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot-save
+          script: mv .github/debug.keystore ~/.android; ./gradlew connectedDebugAndroidTest
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-reports-instrumented
+          path: ./*/build/reports
+          if-no-files-found: warn
 
-    deploy-snapshot:
-      name: Deploy snapshot
-      runs-on: ubuntu-latest
-      timeout-minutes: 10
-      if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
-      needs: [ checks, unit-tests, instrumentation-tests ]
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-java@v3
-          with:
-            distribution: ${{ env.JDK_DIST }}
-            java-version: ${{ env.JAVA_VERSION }}
-        - run: ./gradlew publish
+  deploy-snapshot:
+    name: Deploy snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
+    needs: [ checks, unit-tests, instrumentation-tests ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: ${{ env.JDK_DIST }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - run: ./gradlew publish
 
-    deploy-docs:
-      name: Deploy docs
-      runs-on: ubuntu-latest
-      timeout-minutes: 10
-      if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
-      needs: [ checks, unit-tests, instrumentation-tests ]
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0
-            lfs: 'true'
-        - uses: actions/setup-java@v3
-          with:
-            distribution: ${{ env.JDK_DIST }}
-            java-version: ${{ env.JAVA_VERSION }}
-        - uses: actions/setup-python@v4
-          with:
-            python-version: '3.x'
-        - name: Deploy Docs
-          run: |
-            git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
-            pip3 install --upgrade pip && pip3 install mkdocs-material mkdocs-material-extensions mkdocs-minify-plugin
-            ./deploy_docs.sh
+  deploy-docs:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
+    needs: [ checks, unit-tests, instrumentation-tests ]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: 'true'
+      - uses: actions/setup-java@v3
+        with:
+          distribution: ${{ env.JDK_DIST }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Deploy Docs
+        run: |
+          git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+          pip3 install --upgrade pip && pip3 install mkdocs-material mkdocs-material-extensions mkdocs-minify-plugin
+          ./deploy_docs.sh
