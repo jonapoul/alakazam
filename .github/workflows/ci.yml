@@ -15,7 +15,7 @@ env:
   CI: true
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
   CACHE_VERSION: 1 # Increment this to invalidate the cache.
-  JAVA_VERSION: 19
+  JAVA_VERSION: 11
   JDK_DIST: 'corretto'
   ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
@@ -185,7 +185,7 @@ jobs:
           ram-size: 4096M
           emulator-boot-timeout: 12000
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot-save
-          script: mv .github/debug.keystore ~/.android; ./gradlew connectedDebugAndroidTest
+          script: ./gradlew connectedDebugAndroidTest
 
       - name: Upload test reports
         uses: actions/upload-artifact@v3
