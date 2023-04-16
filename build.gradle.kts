@@ -111,7 +111,7 @@ tasks.withType<DependencyUpdatesTask> {
 }
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
 /* Kover konfig */
-val koverIncludes = listOf("dev.jonpoulton.mandark.*")
+val koverIncludes = listOf("dev.jonpoulton.alakazam.*")
 val koverExcludes = listOf(
   /* Hilt */
   "*.di.*",
