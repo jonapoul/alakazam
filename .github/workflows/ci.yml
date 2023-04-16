@@ -56,9 +56,6 @@ jobs:
       - name: Run checks
         run: ./gradlew runChecks
 
-      - name: Assemble
-        run: ./gradlew assemble
-
       - name: Upload reports
         uses: actions/upload-artifact@v3
         if: always()
