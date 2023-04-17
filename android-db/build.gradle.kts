@@ -26,4 +26,10 @@ dependencies {
   kapt(libs.room.compiler)
 
   testImplementation(projects.testingCore)
+
+  androidTestImplementation(projects.testingAndroid)
+  androidTestImplementation(projects.testingDb)
+  androidTestImplementation(libs.room.ktx)
+  androidTestImplementation(libs.room.runtime)
+  kaptAndroidTest(libs.room.compiler)
 }

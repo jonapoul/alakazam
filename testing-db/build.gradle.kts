@@ -21,11 +21,9 @@ dependencies {
   coreLibraryDesugaring(libs.desugaring)
   implementation(projects.androidCore)
 
-  implementation(libs.room.ktx)
-  implementation(libs.room.runtime)
-  api(libs.room.testing)
-  kapt(libs.room.compiler)
+  api(libs.room.ktx)
+  api(libs.room.runtime)
 
-  api(libs.core.test)
-  api(libs.robolectric)
+  api(libs.androidx.test.coreKtx)
+  api(libs.androidx.test.room)
 }

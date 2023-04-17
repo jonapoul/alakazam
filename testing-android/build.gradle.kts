@@ -10,7 +10,7 @@ android {
   compileSdk = BuildConstants.COMPILE_SDK
 
   androidDefaultConfig()
-  androidCompileOptions()
+  androidCompileOptions(desugaring = false)
   androidKotlinOptions()
   androidBuildFeatures()
   androidPackagingOptions()
@@ -18,21 +18,21 @@ android {
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
   implementation(projects.androidCore)
+  api(projects.testingCore)
 
   /* General runtime */
-  implementation(libs.activity)
-  implementation(libs.appcompat)
-  implementation(libs.fragment.ktx)
+  api(libs.timber.core)
 
   /* Testing */
-  api(libs.androidx.arch.test)
-  api(libs.androidx.junit.test)
-  api(libs.core.test)
+  api(libs.androidx.test.arch)
+  api(libs.androidx.test.coreKtx)
+  api(libs.androidx.test.junit)
+  api(libs.androidx.test.navigation)
+  api(libs.androidx.test.rules)
+  api(libs.androidx.test.runner)
   api(libs.kaspresso)
   api(libs.mockk.android)
-  api(libs.navigation.testing)
 
-  debugImplementation(libs.fragment.test)
+  api(libs.androidx.test.fragment)
 }
