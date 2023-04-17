@@ -132,6 +132,9 @@ jobs:
       - name: Clear cache
         run: ./ci_clear_gradle_cache.sh
 
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+
       - name: Run instrumented tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
