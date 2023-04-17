@@ -2,7 +2,6 @@ plugins {
   id("com.android.library")
   id("kotlin-android")
   id("kotlin-kapt")
-  id("com.google.dagger.hilt.android")
   id("com.vanniktech.maven.publish")
 }
 
@@ -26,11 +25,6 @@ dependencies {
   implementation(libs.activity)
   implementation(libs.appcompat)
   implementation(libs.fragment.ktx)
-
-  /* DI */
-  implementation(libs.hilt.android)
-  api(libs.hilt.test)
-  kapt(libs.hilt.compiler)
 
   /* Testing */
   api(libs.androidx.arch.test)
