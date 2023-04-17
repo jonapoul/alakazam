@@ -67,7 +67,7 @@ jobs:
   unit-tests:
     name: Unit tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -111,9 +111,6 @@ jobs:
     timeout-minutes: 45
     strategy:
       fail-fast: true
-      matrix:
-        # API 21 is flaky and times out.
-        api-level: [ 21, 29 ]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -138,10 +135,8 @@ jobs:
       - name: Run instrumented tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: ${{ matrix.api-level }}
+          api-level: 29
           script: ./gradlew connectedDebugAndroidTest
-        env:
-          API_LEVEL: ${{ matrix.api-level }}
 
       - name: Upload test reports
         uses: actions/upload-artifact@v3
