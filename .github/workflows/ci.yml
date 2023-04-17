@@ -113,7 +113,7 @@ jobs:
       fail-fast: true
       matrix:
         # API 21 is flaky and times out.
-        api-level: [ 21, 27, 33 ]
+        api-level: [ 21, 27, 32 ]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
