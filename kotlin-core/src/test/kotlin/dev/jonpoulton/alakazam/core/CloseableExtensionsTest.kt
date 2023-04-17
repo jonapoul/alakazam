@@ -1,7 +1,7 @@
 package dev.jonpoulton.alakazam.core
 
-import java.io.Closeable
 import org.junit.Test
+import java.io.Closeable
 
 class CloseableExtensionsTest {
   private lateinit var closeable: Closeable
