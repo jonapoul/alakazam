@@ -132,14 +132,6 @@ jobs:
       - name: Clear cache
         run: ./ci_clear_gradle_cache.sh
 
-      - name: Get cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
-
       - name: Run instrumented tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
