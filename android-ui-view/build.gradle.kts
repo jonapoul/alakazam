@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage", "SuspiciousCollectionReassignment")
-
 plugins {
   id("com.android.library")
   id("kotlin-android")
@@ -15,6 +13,7 @@ android {
   androidKotlinOptions()
   androidBuildFeatures()
   androidPackagingOptions()
+  androidTestOptions()
 
   buildFeatures {
     viewBinding = true

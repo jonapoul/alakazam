@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage", "SuspiciousCollectionReassignment")
-
 plugins {
   id("com.android.library")
   id("kotlin-android")
@@ -17,10 +15,7 @@ android {
   androidKotlinOptions()
   androidBuildFeatures()
   androidPackagingOptions()
-
-  defaultConfig {
-    minSdk = 21 // restricted by mockk
-  }
+  androidTestOptions()
 }
 
 dependencies {
