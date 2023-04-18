@@ -1,0 +1,206 @@
+name: CI
+
+on:
+  # Run on every commit in a PR, in any branch
+  pull_request:
+    branches:
+
+  workflow_dispatch:
+
+  # Run when a commit has been made on the primary branch, which should be after a PR
+  push:
+    branches: [ "master" ]
+
+env:
+  CI: true
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+  CACHE_VERSION: 1 # Increment this to invalidate the cache.
+  JAVA_VERSION: 11
+  JDK_DIST: 'corretto'
+  ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
+  ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
+
+jobs:
+  checks:
+    name: Run checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
+      - name: Clear cache
+        run: ./ci_clear_gradle_cache.sh
+
+      - name: Get cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
+
+      - name: Validate gradle
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Run checks
+        run: ./gradlew runChecks
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: check-reports
+          path: ./*/build/reports
+          if-no-files-found: warn
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
+      - name: Clear cache
+        run: ./ci_clear_gradle_cache.sh
+
+      - name: Get cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
+
+      - name: Run unit tests
+        run: ./gradlew koverMergedHtmlReport
+
+      - name: Upload test reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-reports-unit
+          path: ./*/build/reports
+          if-no-files-found: warn
+
+  instrumentation-tests:
+    name: Instrumentation tests
+    runs-on: macOS-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: true
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
+      - name: Clear cache
+        run: ./ci_clear_gradle_cache.sh
+
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+
+      - name: Run instrumented tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedDebugAndroidTest
+
+      - name: Upload test reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-reports-instrumented
+          path: ./*/build/reports
+          if-no-files-found: warn
+
+  deploy-snapshot:
+    name: Deploy snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
+    needs: [ checks, unit-tests, instrumentation-tests ]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
+      - name: Publush snapshot
+        run: ./gradlew publish
+
+  deploy-docs:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
+    needs: [ checks, unit-tests, instrumentation-tests ]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: 'true'
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
+
+      - name: Deploy Docs
+        run: |
+          git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+          pip3 install --upgrade pip && pip3 install mkdocs-material mkdocs-material-extensions mkdocs-minify-plugin
+          ./deploy_docs.sh

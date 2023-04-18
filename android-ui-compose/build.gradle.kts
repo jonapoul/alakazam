@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage", "SuspiciousCollectionReassignment")
-
 plugins {
   id("com.android.library")
   id("kotlin-android")
@@ -14,10 +12,8 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
-
-  defaultConfig {
-    minSdk = 21 // limited by hilt-navigation-compose
-  }
+  androidPackagingOptions()
+  androidTestOptions()
 
   buildFeatures {
     compose = true

@@ -17,7 +17,6 @@ dependencies {
   implementation(projects.kotlinCore)
 
   api(libs.turbine)
-  api(libs.mockk.core)
   api(libs.junit)
   api(libs.kotlin.test.common)
   api(libs.kotlin.test.coroutines)

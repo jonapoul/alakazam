@@ -2,11 +2,12 @@ plugins {
   id("com.android.library")
   id("kotlin-android")
   id("kotlin-kapt")
+  id("com.google.dagger.hilt.android")
   id("com.vanniktech.maven.publish")
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.test.android"
+  namespace = "dev.jonpoulton.alakazam.test.hilt"
   compileSdk = BuildConstants.COMPILE_SDK
 
   androidDefaultConfig()
@@ -22,17 +23,17 @@ dependencies {
   api(projects.testingCore)
 
   /* General runtime */
-  api(libs.timber.core)
+  api(libs.appcompat)
+  api(libs.lifecycle.runtime)
+
+  /* DI */
+  implementation(libs.hilt.android)
+  api(libs.hilt.test)
+  kapt(libs.hilt.compiler)
 
   /* Testing */
-  api(libs.androidx.test.arch)
-  api(libs.androidx.test.coreKtx)
-  api(libs.androidx.test.junit)
   api(libs.androidx.test.navigation)
-  api(libs.androidx.test.rules)
   api(libs.androidx.test.runner)
-  api(libs.kaspresso)
-  api(libs.mockk.android)
 
   api(libs.androidx.test.fragment)
 }

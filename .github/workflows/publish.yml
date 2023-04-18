@@ -1,35 +1,38 @@
 name: Publish
 
 on:
-#  release:
-#    types: [ published ]
+  release:
+    types: [ published ]
 
   workflow_dispatch:
+
+env:
+  CI: true
+  JAVA_VERSION: 19
+  JDK_DIST: 'corretto'
+  ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
+  ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
+  ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
+  ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
+  ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout the repo
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Configure JDK
+      - name: Setup JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 11
-          distribution: corretto
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JDK_DIST }}
 
-      - name: Enable gradle execution
-        run: chmod +x ./gradlew
+      - name: Enable execution
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
 
-      - name: Upload Artifacts
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: publish
-        env:
-          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
-          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
-          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
-          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
-          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
+      - name: Publish artifacts
+        run: ./gradlew publish

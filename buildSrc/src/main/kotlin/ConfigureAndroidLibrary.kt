@@ -14,9 +14,9 @@ fun BaseExtension.androidDefaultConfig() {
   }
 }
 
-fun BaseExtension.androidCompileOptions() {
+fun BaseExtension.androidCompileOptions(desugaring: Boolean = true) {
   compileOptions {
-    isCoreLibraryDesugaringEnabled = true
+    isCoreLibraryDesugaringEnabled = desugaring
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
   }
@@ -26,6 +26,41 @@ fun LibraryExtension.androidBuildFeatures() {
   buildFeatures {
     buildConfig = false
     viewBinding = false
+  }
+}
+
+fun BaseExtension.androidPackagingOptions() {
+  packagingOptions {
+    jniLibs {
+      useLegacyPackaging = true
+    }
+
+    resources {
+      pickFirsts.add("MANIFEST.MF")
+      excludes.addAll(
+        listOf(
+          "META-INF/DEPENDENCIES",
+          "META-INF/LICENSE",
+          "META-INF/LICENSE.md",
+          "META-INF/LICENSE.txt",
+          "META-INF/license.txt",
+          "META-INF/LICENSE-notice.md",
+          "META-INF/NOTICE",
+          "META-INF/NOTICE.txt",
+          "META-INF/notice.txt",
+          "META-INF/ASL2.0",
+          "META-INF/*.kotlin_module",
+        )
+      )
+    }
+  }
+}
+
+fun BaseExtension.androidTestOptions() {
+  testOptions {
+    unitTests {
+      isIncludeAndroidResources = true
+    }
   }
 }
 

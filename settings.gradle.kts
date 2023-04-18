@@ -22,6 +22,7 @@ include(":di-koin")
 include(":testing-android")
 include(":testing-core")
 include(":testing-db")
+include(":testing-hilt")
 include(":testing-unit")
 
 // https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:type-safe-project-accessors

@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage", "SuspiciousCollectionReassignment")
-
 plugins {
   id("com.android.library")
   id("kotlin-android")
@@ -15,6 +13,8 @@ android {
   androidCompileOptions()
   androidKotlinOptions()
   androidBuildFeatures()
+  androidPackagingOptions()
+  androidTestOptions()
 }
 
 dependencies {
