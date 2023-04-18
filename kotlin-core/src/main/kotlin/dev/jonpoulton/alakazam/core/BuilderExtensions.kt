@@ -1,53 +1,49 @@
 package dev.jonpoulton.alakazam.core
 
 /**
- * If [condition] is true, the subject [Builder] will have the [action] lambda called on it, then
- * the subject is returned. If [condition] is false, the subject is returned as-is.
+ * If [condition] is true, the subject [B] will have the [action] lambda called on it, then the subject is returned.
+ * If [condition] is false, the subject is returned as-is.
  */
-fun <Builder> Builder.ifTrue(condition: Boolean, action: Builder.() -> Builder): Builder {
+fun <B> B.ifTrue(condition: Boolean, action: B.() -> B): B {
   return if (condition) this.action() else this
 }
 
 /**
- * If [condition] is false, the subject [Builder] will have the [action] lambda called on it, then
- * the subject is returned. If [condition] is true, the subject is returned as-is.
+ * If [condition] is false, the subject [B] will have the [action] lambda called on it, then the subject is
+ * returned. If [condition] is true, the subject is returned as-is.
  */
-fun <Builder> Builder.ifFalse(condition: Boolean, action: Builder.() -> Builder): Builder {
+fun <B> B.ifFalse(condition: Boolean, action: B.() -> B): B {
   return if (!condition) this.action() else this
 }
 
 /**
- * If [value] is not null, the subject [Builder] will have the [action] lambda called on it, then
- * the subject is returned. If [value] is null, the subject is returned as-is.
+ * If [value] is not null, the subject [B] will have the [action] lambda called on it, then the subject is returned.
+ * If [value] is null, the subject is returned as-is.
  */
-fun <Builder, Value> Builder.ifNotNull(value: Value?, action: Builder.(Value) -> Builder): Builder {
+fun <B, Value> B.ifNotNull(value: Value?, action: B.(Value) -> B): B {
   return if (value != null) this.action(value) else this
 }
 
 /**
- * If [value] is null, the subject [Builder] will have the [action] lambda called on it, then
- * the subject is returned. If [value] is not null, the subject is returned as-is.
+ * If [value] is null, the subject [B] will have the [action] lambda called on it, then the subject is returned.
+ * If [value] is not null, the subject is returned as-is.
  */
-fun <Builder, Value> Builder.ifNull(value: Value?, action: Builder.() -> Builder): Builder {
+fun <B, Value> B.ifNull(value: Value?, action: B.() -> B): B {
   return if (value == null) this.action() else this
 }
 
 /**
- * If [value] is an instance of type [Expected], the subject [Builder] will have the [action] lambda
- * called on it, then the subject is returned. If [value] is not an instance of [Expected], the
- * subject is returned as-is.
+ * If [value] is an instance of type [C], the subject [A] will have the [action] lambda called on it, then the subject
+ * is returned. If [value] is not an instance of [C], the subject is returned as-is.
  */
-inline fun <Builder, Input, reified Expected> Builder.ifIsInstance(
-  value: Input?,
-  action: Builder.(Expected) -> Builder,
-): Builder {
-  return if (value is Expected) this.action(value) else this
+inline fun <A, B, reified C> A.ifIsInstance(value: B?, action: A.(C) -> A): A {
+  return if (value is C) this.action(value) else this
 }
 
-fun <Builder, Value> Builder.ifEquals(value1: Value?, value2: Value?, action: Builder.() -> Builder): Builder {
+fun <B, T> B.ifEquals(value1: T?, value2: T?, action: B.() -> B): B {
   return ifTrue(condition = value1 == value2, action)
 }
 
-fun <Builder, Value> Builder.ifNotEquals(value1: Value?, value2: Value?, action: Builder.() -> Builder): Builder {
+fun <B, T> B.ifNotEquals(value1: T?, value2: T?, action: B.() -> B): B {
   return ifTrue(condition = value1 != value2, action)
 }

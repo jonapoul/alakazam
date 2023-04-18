@@ -7,10 +7,10 @@ import androidx.core.content.edit
 /**
  * An enum class to hold the three possible app theme states: light, dark and system.
  */
-enum class AppTheme(val string: String, val int: Int) {
-  SYSTEM("system", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM),
-  LIGHT("light", AppCompatDelegate.MODE_NIGHT_NO),
-  DARK("dark", AppCompatDelegate.MODE_NIGHT_YES);
+enum class AppTheme(val string: String, val mode: Int) {
+  SYSTEM(string = "system", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM),
+  LIGHT(string = "light", AppCompatDelegate.MODE_NIGHT_NO),
+  DARK(string = "dark", AppCompatDelegate.MODE_NIGHT_YES);
 
   companion object {
     internal var sharedPrefs: SharedPreferences? = null
@@ -20,7 +20,7 @@ enum class AppTheme(val string: String, val int: Int) {
      */
     fun set(theme: AppTheme) {
       sharedPrefs?.edit { putString(Constants.PREF_KEY, theme.string) }
-      AppCompatDelegate.setDefaultNightMode(theme.int)
+      AppCompatDelegate.setDefaultNightMode(theme.mode)
     }
 
     /**
@@ -49,7 +49,7 @@ enum class AppTheme(val string: String, val int: Int) {
      */
     private fun fromString(str: String?): Int = values()
       .firstOrNull { it.string == str }
-      ?.int
+      ?.mode
       ?: error("Unknown theme '$str'")
   }
 }
