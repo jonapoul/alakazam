@@ -1,6 +1,6 @@
 # Alakazam
 
-![Check](https://github.com/jonapoul/alakazam/actions/workflows/check.yml/badge.svg)
+![CI](https://github.com/jonapoul/alakazam/actions/workflows/ci.yml/badge.svg)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/android-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/android-core)
 
 ![Alakazam](docs/alakazam.png)
