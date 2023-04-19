@@ -12,9 +12,6 @@ env:
   JDK_DIST: 'corretto'
   ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
-  ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
-  ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
-  ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
 
 jobs:
   publish:
