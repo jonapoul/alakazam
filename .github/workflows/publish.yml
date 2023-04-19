@@ -8,7 +8,7 @@ on:
 
 env:
   CI: true
-  JAVA_VERSION: 19
+  JAVA_VERSION: 11
   JDK_DIST: 'corretto'
   ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
