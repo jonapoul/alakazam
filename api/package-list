@@ -39,5 +39,7 @@ module:testing-core
 dev.jonpoulton.alakazam.test
 module:testing-db
 dev.jonpoulton.alakazam.test.db
+module:testing-hilt
+dev.jonpoulton.alakazam.test.android
 module:testing-unit
 dev.jonpoulton.alakazam.test.unit
