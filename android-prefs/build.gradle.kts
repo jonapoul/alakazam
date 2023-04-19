@@ -27,4 +27,6 @@ dependencies {
   implementation(libs.timber.core)
 
   testImplementation(projects.testingCore)
+  testImplementation(libs.androidx.test.coreKtx)
+  testImplementation(libs.robolectric)
 }

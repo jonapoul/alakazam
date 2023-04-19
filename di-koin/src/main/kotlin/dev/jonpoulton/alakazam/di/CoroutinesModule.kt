@@ -26,14 +26,6 @@ object KoinDispatchers {
   const val DEFAULT = "KoinDispatchers.DEFAULT"
 }
 
-fun KoinComponent.injectMainDispatcher(): Lazy<CoroutineDispatcher> =
-  inject(named(KoinDispatchers.MAIN))
-
-fun KoinComponent.injectIoDispatcher(): Lazy<CoroutineDispatcher> =
-  inject(named(KoinDispatchers.IO))
-
-fun KoinComponent.injectDefaultDispatcher(): Lazy<CoroutineDispatcher> =
-  inject(named(KoinDispatchers.DEFAULT))
-
-fun KoinComponent.injectCoroutineScope(): Lazy<CoroutineScope> =
-  inject()
+fun KoinComponent.injectMainDispatcher(): Lazy<CoroutineDispatcher> = inject(named(KoinDispatchers.MAIN))
+fun KoinComponent.injectIoDispatcher(): Lazy<CoroutineDispatcher> = inject(named(KoinDispatchers.IO))
+fun KoinComponent.injectDefaultDispatcher(): Lazy<CoroutineDispatcher> = inject(named(KoinDispatchers.DEFAULT))

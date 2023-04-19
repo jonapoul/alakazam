@@ -1,6 +1,5 @@
 package dev.jonpoulton.alakazam.theme
 
-import android.app.Application
 import android.content.SharedPreferences
 import dagger.Binds
 import dagger.Module
@@ -13,7 +12,7 @@ import javax.inject.Inject
 class AppThemeInitialiser @Inject constructor(
   private val prefs: SharedPreferences,
 ) : IAppInitialiser {
-  override fun init(app: Application) {
+  override fun init() {
     AppTheme.init(prefs)
   }
 }

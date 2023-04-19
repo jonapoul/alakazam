@@ -110,6 +110,7 @@ tasks.withType<DependencyUpdatesTask> {
   }
 }
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
+
 /* Kover konfig */
 val koverIncludes = listOf("dev.jonpoulton.alakazam.*")
 val koverExcludes = listOf(
@@ -130,7 +131,6 @@ val koverExcludes = listOf(
   /* Sample app */
   "dev.jonpoulton.alakazam.sample.*",
 )
-
 allprojects {
   apply(plugin = "kover")
 }
@@ -164,6 +164,7 @@ extensions.configure<KoverProjectConfig> {
   }
 }
 
+/* General config */
 allprojects {
   tasks.create("runChecks") {
     dependsOn("detekt", "spotlessCheck", "ktlintCheck")
