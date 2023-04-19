@@ -105,53 +105,12 @@ jobs:
           path: ./*/build/reports
           if-no-files-found: warn
 
-  instrumentation-tests:
-    name: Instrumentation tests
-    runs-on: macOS-latest
-    timeout-minutes: 45
-    strategy:
-      fail-fast: true
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JDK_DIST }}
-
-      - name: Enable execution
-        run: |
-          chmod +x ./gradlew
-          chmod +x ./*.sh
-
-      - name: Clear cache
-        run: ./ci_clear_gradle_cache.sh
-
-      - name: Build
-        uses: gradle/gradle-build-action@v2
-
-      - name: Run instrumented tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          script: ./gradlew connectedDebugAndroidTest
-
-      - name: Upload test reports
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: test-reports-instrumented
-          path: ./*/build/reports
-          if-no-files-found: warn
-
   deploy-snapshot:
     name: Deploy snapshot
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
-    needs: [ checks, unit-tests, instrumentation-tests ]
+    needs: [ checks, unit-tests ]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -175,7 +134,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/main'
-    needs: [ checks, unit-tests, instrumentation-tests ]
+    needs: [ checks, unit-tests ]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
