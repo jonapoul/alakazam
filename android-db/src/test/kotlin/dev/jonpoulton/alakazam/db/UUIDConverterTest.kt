@@ -9,12 +9,14 @@ import androidx.room.Query
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import dev.jonpoulton.alakazam.test.db.RoomDatabaseRule
-import java.util.UUID
-import kotlin.test.assertEquals
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import java.util.UUID
+import kotlin.test.assertEquals
 
 @Entity
 data class TestUuidEntity(
@@ -38,6 +40,7 @@ abstract class TestUuidDatabase : RoomDatabase() {
   abstract fun dao(): TestUuidDao
 }
 
+@RunWith(RobolectricTestRunner::class)
 class UUIDConverterTest {
   @get:Rule
   val databaseRule = RoomDatabaseRule(databaseClass = TestUuidDatabase::class)
