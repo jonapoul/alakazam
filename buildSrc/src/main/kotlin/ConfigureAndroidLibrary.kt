@@ -49,7 +49,6 @@ fun BaseExtension.androidPackagingOptions() {
           "META-INF/NOTICE.txt",
           "META-INF/notice.txt",
           "META-INF/ASL2.0",
-          "META-INF/*.kotlin_module",
         )
       )
     }

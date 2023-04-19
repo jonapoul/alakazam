@@ -125,7 +125,7 @@ jobs:
           chmod +x ./gradlew
           chmod +x ./*.sh
 
-      - name: Publush snapshot
+      - name: Publish snapshot
         run: ./gradlew publish
 
   deploy-docs:
