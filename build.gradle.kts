@@ -1,6 +1,5 @@
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
-import com.osacky.doctor.DoctorExtension
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import kotlinx.kover.api.CounterType
@@ -24,7 +23,6 @@ buildscript {
   dependencies {
     classpath(libs.plugin.agp)
     classpath(libs.plugin.detekt)
-    classpath(libs.plugin.doctor)
     classpath(libs.plugin.dokka)
     classpath(libs.plugin.hilt)
     classpath(libs.plugin.kotlin.gradle)
@@ -49,18 +47,6 @@ allprojects {
     reports.html.required.set(true)
   }
 }
-
-/* Doctor config */
-apply(plugin = "com.osacky.doctor")
-extensions.configure<DoctorExtension> {
-  warnWhenJetifierEnabled.set(true)
-  javaHome {
-    ensureJavaHomeMatches.set(true)
-    ensureJavaHomeIsSet.set(true)
-    failOnError.set(true)
-  }
-}
-
 /* Dokka config */
 allprojects {
   apply(plugin = "org.jetbrains.dokka")
