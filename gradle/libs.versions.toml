@@ -4,6 +4,7 @@ agp = "7.4.2"
 buildTools = "30.0.3"
 compose-compiler = "1.4.4"
 detekt = "1.22.0"
+doctor = "0.8.1"
 dokka = "1.8.10"
 hilt = "2.45"
 kotlin-lang = "1.8.10"
@@ -58,6 +59,7 @@ turbine = "0.12.3"
 # Plugins
 plugin-agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+plugin-doctor = { module = "com.osacky.doctor:doctor-plugin", version.ref = "doctor" }
 plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 plugin-hilt = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 plugin-kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-lang" }
