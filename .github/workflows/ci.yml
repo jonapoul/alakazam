@@ -108,7 +108,6 @@ jobs:
   deploy-snapshot:
     name: Deploy snapshot
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/master'
     needs: [ checks, unit-tests ]
     steps:
@@ -132,7 +131,6 @@ jobs:
   deploy-docs:
     name: Deploy docs
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/master'
     needs: [ checks, unit-tests ]
     steps:
