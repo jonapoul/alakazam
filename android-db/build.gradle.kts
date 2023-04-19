@@ -25,11 +25,12 @@ dependencies {
   implementation(libs.room.runtime)
   kapt(libs.room.compiler)
 
-  testImplementation(projects.testingCore)
+  testImplementation(projects.testingAndroid)
+  testImplementation(libs.androidx.test.runner)
+  testImplementation(libs.robolectric)
 
-  androidTestImplementation(projects.testingAndroid)
-  androidTestImplementation(projects.testingDb)
-  androidTestImplementation(libs.room.ktx)
-  androidTestImplementation(libs.room.runtime)
-  kaptAndroidTest(libs.room.compiler)
+  testImplementation(projects.testingDb)
+  testImplementation(libs.room.ktx)
+  testImplementation(libs.room.runtime)
+  kaptTest(libs.room.compiler)
 }
