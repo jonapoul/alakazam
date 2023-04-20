@@ -9,7 +9,7 @@ on:
 env:
   CI: true
   JAVA_VERSION: 11
-  JDK_DIST: 'corretto'
+  JDK_DIST: 'zulu'
   ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
   ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
@@ -33,6 +33,17 @@ jobs:
         run: |
           chmod +x ./gradlew
           chmod +x ./*.sh
+
+      - name: Clear cache
+        run: ./ci_clear_gradle_cache.sh
+
+      - name: Get cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
 
       - name: Publish artifacts
         run: ./gradlew publish
