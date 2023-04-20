@@ -16,12 +16,7 @@ env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
   CACHE_VERSION: 1 # Increment this to invalidate the cache.
   JAVA_VERSION: 11
-  JDK_DIST: 'corretto'
-  ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
-  ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
-  ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
-  ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
-  ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
+  JDK_DIST: 'zulu'
 
 jobs:
   checks:
@@ -107,29 +102,6 @@ jobs:
           name: test-reports-unit
           path: ./*/build/reports
           if-no-files-found: warn
-
-  deploy-snapshot:
-    name: Deploy snapshot
-    runs-on: ubuntu-latest
-    if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/master'
-    needs: [ checks, unit-tests ]
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JDK_DIST }}
-
-      - name: Enable execution
-        run: |
-          chmod +x ./gradlew
-          chmod +x ./*.sh
-
-      - name: Publish snapshot
-        run: ./gradlew publish
 
   deploy-docs:
     name: Deploy docs
