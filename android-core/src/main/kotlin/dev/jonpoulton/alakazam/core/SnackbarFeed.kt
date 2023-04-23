@@ -2,6 +2,7 @@ package dev.jonpoulton.alakazam.core
 
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.ChannelResult
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -27,6 +28,10 @@ class SnackbarFeed {
 
   suspend fun add(message: SnackbarMessage) {
     pending.send(message)
+  }
+
+  fun post(message: SnackbarMessage): ChannelResult<Unit> {
+    return pending.trySend(message)
   }
 
   private companion object {
