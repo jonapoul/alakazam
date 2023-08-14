@@ -16,7 +16,6 @@ kotlin {
 dependencies {
   api(projects.testingCore)
 
-  api(libs.androidx.test.arch)
   api(libs.mockk.core)
   api(libs.robolectric)
 }
