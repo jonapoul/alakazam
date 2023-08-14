@@ -9,7 +9,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineDispatcher
+import dev.jonpoulton.alakazam.core.IODispatcher
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -22,6 +22,6 @@ class PreferencesModule {
   @Provides
   fun flowPrefs(
     prefs: SharedPreferences,
-    @IODispatcher io: CoroutineDispatcher,
+    io: IODispatcher,
   ): FlowSharedPreferences = FlowSharedPreferences(prefs, io)
 }

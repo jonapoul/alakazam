@@ -1,31 +1,21 @@
 package dev.jonpoulton.alakazam.di
 
-import kotlinx.coroutines.CoroutineDispatcher
+import dev.jonpoulton.alakazam.core.DefaultDispatcher
+import dev.jonpoulton.alakazam.core.IODispatcher
+import dev.jonpoulton.alakazam.core.MainDispatcher
+import dev.jonpoulton.alakazam.core.UnconfinedDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
-import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
-@Suppress("InjectDispatcher")
 val coroutineModule = module {
   /* Application scope */
   single { CoroutineScope(SupervisorJob()) }
 
   /* Dispatchers */
-  single<CoroutineDispatcher>(named(KoinDispatchers.MAIN)) { Dispatchers.Main }
-  single(named(KoinDispatchers.IO)) { Dispatchers.IO }
-  single(named(KoinDispatchers.DEFAULT)) { Dispatchers.Default }
+  single { MainDispatcher(Dispatchers.Main) }
+  single { IODispatcher(Dispatchers.IO) }
+  single { DefaultDispatcher(Dispatchers.Default) }
+  single { UnconfinedDispatcher(Dispatchers.Unconfined) }
 }
-
-object KoinDispatchers {
-  const val MAIN = "KoinDispatchers.MAIN"
-  const val IO = "KoinDispatchers.IO"
-  const val DEFAULT = "KoinDispatchers.DEFAULT"
-}
-
-fun KoinComponent.injectMainDispatcher(): Lazy<CoroutineDispatcher> = inject(named(KoinDispatchers.MAIN))
-fun KoinComponent.injectIoDispatcher(): Lazy<CoroutineDispatcher> = inject(named(KoinDispatchers.IO))
-fun KoinComponent.injectDefaultDispatcher(): Lazy<CoroutineDispatcher> = inject(named(KoinDispatchers.DEFAULT))

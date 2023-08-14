@@ -1,12 +1,12 @@
 package dev.jonpoulton.alakazam.core
 
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 /**
  * Cleans up some of the boilerplate associated with collecting [Flow] streams from a fragment. Without this we'd
@@ -30,13 +30,13 @@ fun <T> CoroutineScope.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Jo
 fun CoroutineScope.launchInfiniteLoop(
   periodMs: Long,
   delayType: LoopDelayType = LoopDelayType.DELAY_AFTER,
-  dispatcher: CoroutineDispatcher = Dispatchers.Main,
+  context: CoroutineContext = Dispatchers.Main,
   skipIf: (() -> Boolean)? = null,
   call: suspend () -> Unit,
 ): Job {
   val delayBefore = delayType == LoopDelayType.DELAY_BEFORE
   val delayAfter = delayType == LoopDelayType.DELAY_AFTER
-  return launch(dispatcher) {
+  return launch(context) {
     while (true) {
       if (delayBefore) delay(periodMs)
       if (skipIf?.invoke() == true) continue
