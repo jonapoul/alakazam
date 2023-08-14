@@ -26,6 +26,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Enable execution
+        run: chmod +x ./gradlew
+
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
@@ -62,6 +65,9 @@ jobs:
         with:
           fetch-depth: 0
           lfs: 'true'
+
+      - name: Enable execution
+        run: chmod +x ./gradlew
 
       - name: Setup JDK
         uses: actions/setup-java@v3
