@@ -1,20 +1,13 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("kotlin-kapt")
-  id("com.vanniktech.maven.publish")
+  id("convention-android")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.test.android"
-  compileSdk = BuildConstants.COMPILE_SDK
-
-  androidDefaultConfig()
-  androidCompileOptions(desugaring = false)
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
 }
 
 dependencies {
@@ -25,14 +18,13 @@ dependencies {
   api(libs.timber.core)
 
   /* Testing */
-  api(libs.androidx.test.arch)
-  api(libs.androidx.test.coreKtx)
-  api(libs.androidx.test.junit)
-  api(libs.androidx.test.navigation)
-  api(libs.androidx.test.rules)
-  api(libs.androidx.test.runner)
-  api(libs.kaspresso)
-  api(libs.mockk.android)
-
-  api(libs.androidx.test.fragment)
+  api(libs.test.androidx.arch)
+  api(libs.test.androidx.coreKtx)
+  api(libs.test.androidx.fragment)
+  api(libs.test.androidx.junit)
+  api(libs.test.androidx.navigation)
+  api(libs.test.androidx.rules)
+  api(libs.test.androidx.runner)
+  api(libs.test.kaspresso)
+  api(libs.test.mockk.android)
 }

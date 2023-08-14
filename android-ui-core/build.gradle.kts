@@ -1,34 +1,30 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("com.vanniktech.maven.publish")
+  id("convention-android")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.ui.core"
-  compileSdk = BuildConstants.COMPILE_SDK
 
-  androidDefaultConfig()
-  androidCompileOptions()
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
+  buildFeatures {
+    resValues = true
+  }
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
-
   api(projects.androidCore)
   api(projects.androidLogging)
   api(projects.kotlinCore)
 
-  implementation(libs.activity)
-  implementation(libs.appcompat)
-  implementation(libs.lifecycle.runtime)
-  implementation(libs.navigation.fragment)
-  implementation(libs.navigation.ui)
-  implementation(libs.preference)
+  implementation(libs.androidx.activity)
+  implementation(libs.androidx.appcompat)
+  implementation(libs.androidx.lifecycle.runtime)
+  implementation(libs.androidx.navigation.fragment)
+  implementation(libs.androidx.navigation.ui)
+  implementation(libs.androidx.preference)
 
   testImplementation(projects.testingCore)
 }

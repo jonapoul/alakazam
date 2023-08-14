@@ -1,27 +1,63 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
+  kotlin("android")
   id("com.android.application")
-  id("kotlin-android")
+  id("convention-kotlin")
+  id("convention-style")
+  id("convention-test")
   id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.sample"
-  compileSdk = BuildConstants.COMPILE_SDK
+  compileSdk = libs.versions.sdk.compile.get().toInt()
 
   defaultConfig {
     applicationId = "dev.jonpoulton.alakazam.sample"
-    targetSdk = BuildConstants.COMPILE_SDK
-    versionCode = 1
-    versionName = "1.0.0"
+    minSdk = libs.versions.sdk.min.get().toInt()
+    targetSdk = libs.versions.sdk.target.get().toInt()
+    versionCode = (System.currentTimeMillis() / 1000L).toInt()
+    versionName = rootProject.properties["VERSION_NAME"] as? String ?: error("Required version name")
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunnerArguments["disableAnalytics"] = "true"
+    multiDexEnabled = true
   }
 
-  androidDefaultConfig()
-  androidCompileOptions()
-  androidKotlinOptions()
-  androidPackagingOptions()
-  androidTestOptions()
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+  }
+
+  packaging {
+    jniLibs {
+      useLegacyPackaging = true
+    }
+
+    resources {
+      pickFirsts.add("MANIFEST.MF")
+      excludes.addAll(
+        listOf(
+          "META-INF/DEPENDENCIES",
+          "META-INF/LICENSE",
+          "META-INF/LICENSE.md",
+          "META-INF/LICENSE.txt",
+          "META-INF/license.txt",
+          "META-INF/LICENSE-notice.md",
+          "META-INF/NOTICE",
+          "META-INF/NOTICE.txt",
+          "META-INF/notice.txt",
+          "META-INF/ASL2.0",
+        ),
+      )
+    }
+  }
+
+  testOptions {
+    unitTests {
+      isIncludeAndroidResources = true
+    }
+  }
 
   buildTypes {
     getByName("release") {
@@ -36,16 +72,14 @@ android {
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
-
   implementation(projects.androidPrefs)
   implementation(projects.androidUiCore)
   implementation(projects.androidUiView)
 
-  implementation(libs.appcompat)
-  implementation(libs.navigation.fragment)
-  implementation(libs.navigation.ui)
-  implementation(libs.preference)
+  implementation(libs.androidx.appcompat)
+  implementation(libs.androidx.navigation.fragment)
+  implementation(libs.androidx.navigation.ui)
+  implementation(libs.androidx.preference)
 
   testImplementation(projects.testingUnit)
   androidTestImplementation(projects.testingAndroid)

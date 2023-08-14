@@ -19,12 +19,12 @@ class CommonPreferenceCategory @JvmOverloads constructor(
   attrs: AttributeSet? = null,
   defStyleAttr: Int = TypedArrayUtils.getAttr(
     context,
-    R.attr.preferenceCategoryStyle,
+    androidx.preference.R.attr.preferenceCategoryStyle,
     android.R.attr.preferenceCategoryStyle
   ),
   defStyleRes: Int = 0,
 ) : PreferenceCategory(context, attrs, defStyleAttr, defStyleRes) {
-  private var categoryTint: Int = context.getColorFromAttr(R.attr.colorPrimary)
+  private var categoryTint: Int = context.getColorFromAttr(android.R.attr.colorPrimary)
 
   init {
     context.withStyledAttributes(attrs, R.styleable.CommonPreferenceCategory, defStyleAttr, defStyleRes) {

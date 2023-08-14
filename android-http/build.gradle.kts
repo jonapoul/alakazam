@@ -1,25 +1,18 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("kotlinx-serialization")
-  id("com.vanniktech.maven.publish")
+  kotlin("plugin.serialization")
+  id("convention-android")
+  id("convention-desugaring")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.http"
-  compileSdk = BuildConstants.COMPILE_SDK
-
-  androidDefaultConfig()
-  androidCompileOptions()
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
-
   api(projects.kotlinCore)
   api(projects.kotlinJson)
   api(projects.androidCore)

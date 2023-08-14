@@ -1,36 +1,26 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("kotlin-kapt")
-  id("com.vanniktech.maven.publish")
+  id("convention-android")
+  id("convention-desugaring")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
+  id("com.google.devtools.ksp")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.db"
-  compileSdk = BuildConstants.COMPILE_SDK
-
-  androidDefaultConfig()
-  androidCompileOptions()
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
   api(projects.androidCore)
 
-  implementation(libs.room.ktx)
-  implementation(libs.room.runtime)
-  kapt(libs.room.compiler)
+  implementation(libs.androidx.room.ktx)
+  implementation(libs.androidx.room.runtime)
+  ksp(libs.androidx.room.compiler)
 
   testImplementation(projects.testingAndroid)
-  testImplementation(libs.androidx.test.runner)
-  testImplementation(libs.robolectric)
-
   testImplementation(projects.testingDb)
-  testImplementation(libs.room.ktx)
-  testImplementation(libs.room.runtime)
-  kaptTest(libs.room.compiler)
+  testImplementation(libs.test.androidx.runner)
+  testImplementation(libs.test.robolectric)
 }
