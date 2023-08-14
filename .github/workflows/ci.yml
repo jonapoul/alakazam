@@ -32,74 +32,16 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: ${{ env.JDK_DIST }}
 
-      - name: Enable execution
-        run: |
-          chmod +x ./gradlew
-          chmod +x ./*.sh
-
-      - name: Clear cache
-        run: ./ci_clear_gradle_cache.sh
-
-      - name: Get cache
-        uses: actions/cache@v3
+      - name: Check
+        uses: gradle/gradle-build-action@v2
         with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
-
-      - name: Validate gradle
-        uses: gradle/wrapper-validation-action@v1
-
-      - name: Run checks
-        run: ./gradlew runChecks
+          arguments: check
 
       - name: Upload reports
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: check-reports
-          path: ./*/build/reports
-          if-no-files-found: warn
-
-  unit-tests:
-    name: Unit tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JDK_DIST }}
-
-      - name: Enable execution
-        run: |
-          chmod +x ./gradlew
-          chmod +x ./*.sh
-
-      - name: Clear cache
-        run: ./ci_clear_gradle_cache.sh
-
-      - name: Get cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ env.CACHE_VERSION }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/libs.versions.toml') }}
-
-      - name: Run unit tests
-        run: ./gradlew koverMergedHtmlReport
-
-      - name: Upload test reports
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: test-reports-unit
           path: ./*/build/reports
           if-no-files-found: warn
 
@@ -113,7 +55,7 @@ jobs:
     name: Deploy docs
     runs-on: ubuntu-latest
     if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/master'
-    needs: [ checks, unit-tests ]
+    needs: [ checks ]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -132,10 +74,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Enable execution
-        run: |
-          chmod +x ./gradlew
-          chmod +x ./*.sh
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
 
       - name: Deploy Docs
         run: |
