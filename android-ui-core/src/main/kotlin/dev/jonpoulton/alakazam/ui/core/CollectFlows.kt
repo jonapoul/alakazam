@@ -4,7 +4,7 @@ import androidx.activity.ComponentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import dev.jonpoulton.alakazam.coroutines.collectFlow
+import dev.jonpoulton.alakazam.core.collectFlow
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 

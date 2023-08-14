@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.coroutines
+package dev.jonpoulton.alakazam.core
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

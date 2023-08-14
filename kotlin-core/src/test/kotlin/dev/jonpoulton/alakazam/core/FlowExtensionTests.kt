@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.coroutines
+package dev.jonpoulton.alakazam.core
 
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf

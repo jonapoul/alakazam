@@ -21,7 +21,7 @@ dependencies {
 
   api(projects.androidCore)
   api(projects.androidLogging)
-  api(projects.kotlinCoroutines)
+  api(projects.kotlinCore)
 
   implementation(libs.activity)
   implementation(libs.appcompat)

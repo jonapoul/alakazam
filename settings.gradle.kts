@@ -1,7 +1,6 @@
 include(":app-sample")
 
 include(":kotlin-core")
-include(":kotlin-coroutines")
 include(":kotlin-json")
 include(":kotlin-time")
 

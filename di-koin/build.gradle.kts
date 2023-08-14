@@ -24,7 +24,7 @@ dependencies {
   api(projects.androidInit)
   api(projects.androidPrefs)
   api(projects.androidUiCore)
-  api(projects.kotlinCoroutines)
+  api(projects.kotlinCore)
 
   implementation(libs.flowpreferences)
   implementation(libs.koin.core)
