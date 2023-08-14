@@ -6,7 +6,7 @@ detekt = "1.23.1"
 dokka = "1.8.20"
 hilt = "2.45"
 kotlin-lang = "1.9.0"
-kover = "0.6.1"
+kover = "0.7.3"
 ktlint-cli = "0.50.0"
 ktlint-gradle = "11.5.1"
 maven-publish = "0.25.3"
@@ -61,7 +61,7 @@ plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref
 plugin-hilt = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 plugin-kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-lang" }
 plugin-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin-lang" }
-plugin-kover = { module = "org.jetbrains.kotlinx:kover", version.ref = "kover" }
+plugin-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 plugin-ktlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint-gradle" }
 plugin-maven-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "maven-publish" }
 plugin-navigation = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation" }

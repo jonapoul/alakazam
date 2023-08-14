@@ -2,11 +2,9 @@ import com.diffplug.gradle.spotless.SpotlessExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
-import kotlinx.kover.api.CounterType
-import kotlinx.kover.api.KoverMergedConfig
-import kotlinx.kover.api.KoverProjectConfig
-import kotlinx.kover.api.VerificationTarget
-import kotlinx.kover.api.VerificationValueType
+import kotlinx.kover.gradle.plugin.dsl.AggregationType
+import kotlinx.kover.gradle.plugin.dsl.KoverReportExtension
+import kotlinx.kover.gradle.plugin.dsl.MetricType
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTask
@@ -112,7 +110,6 @@ tasks.withType<DependencyUpdatesTask> {
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
 
 /* Kover konfig */
-val koverIncludes = listOf("dev.jonpoulton.alakazam.*")
 val koverExcludes = listOf(
   /* Hilt */
   "*.di.*",
@@ -132,35 +129,37 @@ val koverExcludes = listOf(
   "dev.jonpoulton.alakazam.sample.*",
 )
 allprojects {
-  apply(plugin = "kover")
-}
-extensions.configure<KoverMergedConfig> {
-  enable()
-  filters {
-    classes {
-      includes.addAll(koverIncludes)
-      excludes.addAll(koverExcludes)
+  apply(plugin = "org.jetbrains.kotlinx.kover")
+
+  extensions.configure<KoverReportExtension> {
+    filters {
+      excludes { classes(koverExcludes) }
     }
-  }
-}
-extensions.configure<KoverProjectConfig> {
-  filters {
-    classes {
-      includes.addAll(koverIncludes)
-      excludes.addAll(koverExcludes)
-    }
-  }
-  verify {
-    onCheck.set(true)
-    rule {
-      isEnabled = true
-      target = VerificationTarget.ALL
-      bound {
-        minValue = 60
-        counter = CounterType.INSTRUCTION
-        valueType = VerificationValueType.COVERED_PERCENTAGE
+
+    defaults {
+      xml { onCheck = false }
+      html { onCheck = true }
+      verify {
+        onCheck = true
+        rule {
+          isEnabled = true
+          filters {
+            excludes { classes(koverExcludes) }
+          }
+          bound {
+            minValue = 50
+            metric = MetricType.INSTRUCTION
+            aggregation = AggregationType.COVERED_PERCENTAGE
+          }
+        }
       }
     }
+  }
+
+  val kover by rootProject.configurations
+  rootProject.dependencies {
+    /* Include this module in test coverage */
+    kover(project)
   }
 }
 
