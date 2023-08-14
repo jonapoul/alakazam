@@ -15,7 +15,7 @@ env:
   CI: true
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
   CACHE_VERSION: 1 # Increment this to invalidate the cache.
-  JAVA_VERSION: 11
+  JAVA_VERSION: 17
   JDK_DIST: 'zulu'
 
 jobs:

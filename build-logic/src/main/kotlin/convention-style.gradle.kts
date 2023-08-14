@@ -67,6 +67,12 @@ tasks.withType<Detekt> {
   reports.html.required.set(true)
 }
 
+val detektMain = tasks.findByName("detektMain")
+if (detektMain != null) {
+  val check by tasks
+  check.dependsOn(detektMain)
+}
+
 ktlint {
   version.set(libs.versions.ktlint.cli.get())
   reporters {
