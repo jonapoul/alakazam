@@ -1,7 +1,7 @@
 [versions]
 # Android
 sdk-min = "21"
-sdk-compile = "33"
+sdk-compile = "34"
 sdk-target = "34"
 
 # Plugins
@@ -24,14 +24,13 @@ versions = "0.47.0"
 androidx-activity = "1.7.2"
 androidx-appcompat = "1.6.1"
 androidx-compose-bom = "2023.08.00"
-androidx-compose-lifecycle = "2.6.0-rc01"
 androidx-compose-navigation-hilt = "1.0.0"
 androidx-constraintlayout = "2.1.4"
 androidx-core-ktx = "1.10.1"
 androidx-fragment = "1.6.1"
 androidx-hilt = "2.47"
 androidx-lifecycle = "2.6.1"
-androidx-navigation = "2.6.0"
+androidx-navigation = "2.7.0"
 androidx-preference = "1.2.1"
 androidx-recyclerview = "1.3.1"
 androidx-room = "2.5.2"
