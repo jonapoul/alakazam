@@ -34,7 +34,7 @@ jobs:
           distribution: ${{ env.JDK_DIST }}
 
       - name: Check
-        uses: gradle/gradle-build-action@2.7.0
+        uses: gradle/gradle-build-action@v2.7.0
         with:
           arguments: check
 
