@@ -1,19 +1,12 @@
 plugins {
-  id("java-library")
-  id("kotlin")
-  id("com.vanniktech.maven.publish")
-}
-
-java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
-}
-
-kotlin {
-  kotlinConfig()
+  kotlin("jvm")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 dependencies {
-  api(projects.kotlinCore)
+  implementation(projects.kotlinCore)
   testImplementation(projects.testingCore)
 }

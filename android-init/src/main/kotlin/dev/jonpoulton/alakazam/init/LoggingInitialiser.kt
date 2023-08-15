@@ -1,17 +1,14 @@
 package dev.jonpoulton.alakazam.init
 
-import dev.jonpoulton.alakazam.core.IBuildConfig
 import dev.jonpoulton.alakazam.logging.ConsoleLoggingTree
 import timber.log.Timber
+import javax.inject.Inject
 
-class LoggingInitialiser(private val buildConfig: IBuildConfig) : IAppInitialiser {
+class LoggingInitialiser @Inject constructor() : IAppInitialiser {
   override fun shouldGoFirst(): Boolean = true
 
   override fun init() {
-    if (buildConfig.debug) {
-      /* Only log to console in debug builds */
-      Timber.plant(ConsoleLoggingTree())
-      Timber.d("Started console logging")
-    }
+    Timber.plant(ConsoleLoggingTree())
+    Timber.d("Started console logging")
   }
 }

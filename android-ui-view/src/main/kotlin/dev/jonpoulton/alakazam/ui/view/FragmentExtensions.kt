@@ -3,8 +3,8 @@ package dev.jonpoulton.alakazam.ui.view
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import dev.jonpoulton.alakazam.core.collectFlow
 import dev.jonpoulton.alakazam.core.throwsSpecific
-import dev.jonpoulton.alakazam.coroutines.collectFlow
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 

@@ -1,39 +1,26 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("kotlin-kapt")
-  id("com.google.dagger.hilt.android")
-  id("com.vanniktech.maven.publish")
+  id("convention-android")
+  id("convention-hilt")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.test.hilt"
-  compileSdk = BuildConstants.COMPILE_SDK
-
-  androidDefaultConfig()
-  androidCompileOptions(desugaring = false)
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
 }
 
 dependencies {
   implementation(projects.androidCore)
   api(projects.testingCore)
 
-  /* General runtime */
-  api(libs.appcompat)
-  api(libs.lifecycle.runtime)
-
-  /* DI */
-  implementation(libs.hilt.android)
-  api(libs.hilt.test)
-  kapt(libs.hilt.compiler)
+  api(libs.androidx.appcompat)
+  api(libs.androidx.lifecycle.runtime)
 
   /* Testing */
-  api(libs.androidx.test.navigation)
-  api(libs.androidx.test.runner)
-
-  api(libs.androidx.test.fragment)
+  api(libs.test.androidx.fragment)
+  api(libs.test.androidx.hilt)
+  api(libs.test.androidx.navigation)
+  api(libs.test.androidx.runner)
 }

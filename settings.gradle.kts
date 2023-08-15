@@ -1,7 +1,26 @@
+@file:Suppress("UnstableApiUsage")
+
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    mavenCentral()
+    google()
+  }
+}
+
+dependencyResolutionManagement {
+  repositories {
+    mavenCentral()
+    google()
+    maven { url = uri("https://jitpack.io") }
+  }
+}
+
+includeBuild("build-logic")
+
 include(":app-sample")
 
 include(":kotlin-core")
-include(":kotlin-coroutines")
 include(":kotlin-json")
 include(":kotlin-time")
 
@@ -27,3 +46,6 @@ include(":testing-unit")
 
 // https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+// https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:stable
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

@@ -1,29 +1,24 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("com.vanniktech.maven.publish")
+  id("convention-android")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.theme"
-  compileSdk = BuildConstants.COMPILE_SDK
 
-  androidDefaultConfig()
-  androidCompileOptions()
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
+  buildFeatures {
+    resValues = true
+  }
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
-
+  api(projects.androidInit)
   api(projects.androidPrefs)
-  api(projects.diHilt)
-
-  implementation(libs.hilt.android)
-  implementation(libs.preference)
+  implementation(libs.androidx.preference)
+  implementation(libs.inject)
 
   testImplementation(projects.testingCore)
 }

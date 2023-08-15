@@ -3,12 +3,11 @@ package dev.jonpoulton.alakazam.core
 import android.content.Context
 import android.widget.Toast
 import androidx.annotation.StringRes
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
 class Toaster(
   private val context: Context,
-  private val main: CoroutineDispatcher,
+  private val main: MainDispatcher,
 ) {
   fun toast(message: String, length: Int = Toast.LENGTH_LONG) {
     Toast.makeText(context, message, length).show()

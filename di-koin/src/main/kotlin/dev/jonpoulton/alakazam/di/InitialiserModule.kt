@@ -10,8 +10,5 @@ val initialiserModule = module {
     AppInitialisers(initialisers = getAll<IAppInitialiser>().toSet())
   }
 
-  /**
-   * Requires binding to be set for [dev.jonpoulton.alakazam.core.IBuildConfig]
-   */
-  factory<IAppInitialiser> { LoggingInitialiser(buildConfig = get()) }
+  factory<IAppInitialiser> { LoggingInitialiser() }
 }

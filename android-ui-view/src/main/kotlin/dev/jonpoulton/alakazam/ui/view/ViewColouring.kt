@@ -16,11 +16,10 @@ import dev.jonpoulton.alakazam.core.getCompatColor
 fun Toolbar.tintForeground(@ColorInt color: Int) {
   setTitleTextColor(color)
   setSubtitleTextColor(color)
-  (0 until childCount)
-    .asSequence()
-    .map(::getChildAt)
-    .filterIsInstance<ImageButton>()
-    .forEach { it.setColorFilter(color) }
+  for (i in 0 until childCount) {
+    val child = getChildAt(i) as? ImageButton
+    child?.setColorFilter(color)
+  }
 }
 
 /**

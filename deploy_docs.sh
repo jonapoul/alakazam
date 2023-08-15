@@ -1,23 +1,23 @@
 #!/bin/bash
 
-# Clean any previous Dokka docs.
+# Clean any previous Dokka docs
 rm -rf docs/api
 
-# Build the docs.
+# Build the docs
 ./gradlew clean dokkaHtmlMultiModule
 
-# Copy outside files into the docs folder.
+# Copy outside files into the docs folder
 mkdir -p docs
 cp README.md docs/index.md
 
-# Deploy to Github pages.
+# Deploy to Github pages
 pip3 install mkdocs
 pip3 install mkdocs-material
 pip3 install mkdocs-redirects
 pip3 install mkdocs-git-revision-date-plugin
 python3 -m mkdocs gh-deploy
 
-# Clean up.
+# Clean up
 rm docs/index.md \
    docs/contributing.md \
    docs/changelog.md \

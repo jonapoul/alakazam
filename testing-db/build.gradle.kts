@@ -1,29 +1,22 @@
 plugins {
-  id("com.android.library")
-  id("kotlin-android")
-  id("kotlin-kapt")
-  id("com.vanniktech.maven.publish")
+  id("convention-android")
+  id("convention-desugaring")
+  id("convention-kotlin")
+  id("convention-publish")
+  id("convention-style")
+  id("convention-test")
 }
 
 android {
   namespace = "dev.jonpoulton.alakazam.test.db"
-  compileSdk = BuildConstants.COMPILE_SDK
-
-  androidDefaultConfig()
-  androidCompileOptions()
-  androidKotlinOptions()
-  androidBuildFeatures()
-  androidPackagingOptions()
-  androidTestOptions()
 }
 
 dependencies {
-  coreLibraryDesugaring(libs.desugaring)
   implementation(projects.androidCore)
 
-  api(libs.room.ktx)
-  api(libs.room.runtime)
+  api(libs.androidx.room.ktx)
+  api(libs.androidx.room.runtime)
 
-  api(libs.androidx.test.coreKtx)
-  api(libs.androidx.test.room)
+  api(libs.test.androidx.coreKtx)
+  api(libs.test.androidx.room)
 }

@@ -20,7 +20,7 @@ class Notifier(
   private fun snackbar(root: View, message: String, @ColorRes actionTextColour: Int, action: INotifier.Action) {
     val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG)
     snackbar.view.setBackgroundResource(backgroundColour)
-    val text = snackbar.view.findViewById<TextView>(R.id.snackbar_text)
+    val text = snackbar.view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
     text.maxLines = MAX_LINES // don't crop off any longer messages
     text.setTextColor(Color.WHITE)
     snackbar.setAction(action.actionText, action.onClick)

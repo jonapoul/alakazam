@@ -4,44 +4,15 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineDispatcher
+import dev.jonpoulton.alakazam.core.DefaultDispatcher
+import dev.jonpoulton.alakazam.core.IODispatcher
+import dev.jonpoulton.alakazam.core.MainDispatcher
+import dev.jonpoulton.alakazam.core.UnconfinedDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import javax.inject.Qualifier
 import javax.inject.Singleton
 
-@Qualifier
-@Target(
-  AnnotationTarget.FUNCTION,
-  AnnotationTarget.PROPERTY_GETTER,
-  AnnotationTarget.PROPERTY_SETTER,
-  AnnotationTarget.VALUE_PARAMETER,
-  AnnotationTarget.FIELD
-)
-annotation class IODispatcher
-
-@Qualifier
-@Target(
-  AnnotationTarget.FUNCTION,
-  AnnotationTarget.PROPERTY_GETTER,
-  AnnotationTarget.PROPERTY_SETTER,
-  AnnotationTarget.VALUE_PARAMETER,
-  AnnotationTarget.FIELD
-)
-annotation class MainDispatcher
-
-@Qualifier
-@Target(
-  AnnotationTarget.FUNCTION,
-  AnnotationTarget.PROPERTY_GETTER,
-  AnnotationTarget.PROPERTY_SETTER,
-  AnnotationTarget.VALUE_PARAMETER,
-  AnnotationTarget.FIELD
-)
-annotation class DefaultDispatcher
-
-@Suppress("InjectDispatcher")
 @InstallIn(SingletonComponent::class)
 @Module
 class CoroutinesModule {
@@ -50,14 +21,18 @@ class CoroutinesModule {
   fun scope(): CoroutineScope = CoroutineScope(SupervisorJob())
 
   @Provides
-  @IODispatcher
-  fun providesIO(): CoroutineDispatcher = Dispatchers.IO
+  @Singleton
+  fun providesIO(): IODispatcher = IODispatcher(Dispatchers.IO)
 
   @Provides
-  @MainDispatcher
-  fun providesMain(): CoroutineDispatcher = Dispatchers.Main
+  @Singleton
+  fun providesMain(): MainDispatcher = MainDispatcher(Dispatchers.Main)
 
   @Provides
-  @DefaultDispatcher
-  fun providesDefault(): CoroutineDispatcher = Dispatchers.Default
+  @Singleton
+  fun providesDefault(): DefaultDispatcher = DefaultDispatcher(Dispatchers.Default)
+
+  @Provides
+  @Singleton
+  fun providesUnconfined(): UnconfinedDispatcher = UnconfinedDispatcher(Dispatchers.Unconfined)
 }

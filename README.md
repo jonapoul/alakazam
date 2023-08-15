@@ -46,7 +46,6 @@ dependencies {
 
     /* Kotlin libraries */
     implementation "dev.jonpoulton.alakazam:kotlin-core:{version}"
-    implementation "dev.jonpoulton.alakazam:kotlin-coroutines:{version}"
     implementation "dev.jonpoulton.alakazam:kotlin-json:{version}"
     implementation "dev.jonpoulton.alakazam:kotlin-time:{version}"
 
