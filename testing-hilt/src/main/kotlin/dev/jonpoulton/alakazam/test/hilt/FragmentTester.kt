@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.test.android
+package dev.jonpoulton.alakazam.test.hilt
 
 import android.content.ComponentName
 import android.content.Intent
