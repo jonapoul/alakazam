@@ -9,5 +9,6 @@ suspend inline fun <Input, reified Expected> Flow<Input>.assertEmission(
   expected: Expected,
 ) = filterIsInstance<Expected>().test {
   assertEquals(expected, awaitItem())
+  awaitComplete()
   cancel()
 }

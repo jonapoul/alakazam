@@ -16,54 +16,55 @@ tasks.withType<Test> {
   }
 }
 
-val koverExcludes = listOf(
-  /* Hilt */
-  "*.di.*",
-
-  /* AGP */
-  "*.BuildConfig",
-
-  /* Navigation */
-  "*.*FragmentDirections*",
-  "*.*FragmentArgs*",
-
-  /* UI classes */
-  "*.*Binding",
-//   "*.ui.*",
-
-  /* Hilt modules */
-  "*.di.*",
-
-  /* Test utilities */
-  "*.test.*",
-
-  /* Sample app */
-  "dev.jonpoulton.alakazam.sample.*",
-)
+val isAndroid = project.isAndroid()
+val shouldRunOnCheck = project == rootProject
 
 koverReport {
   filters {
     includes { packages("dev.jonpoulton.alakazam") }
-    excludes { classes(koverExcludes) }
+    excludes {
+      classes(
+        "*Hilt_*",
+        "*_Factory*",
+      )
+      packages(
+        "*hilt_aggregated_deps.*",
+        "*.di.*",
+      )
+    }
   }
 
   defaults {
-    xml { onCheck = false }
-    html { onCheck = true }
+    if (isAndroid) {
+      mergeWith("debug")
+    }
+
+    html {
+      onCheck = shouldRunOnCheck
+    }
+
+    log {
+      onCheck = shouldRunOnCheck
+      coverageUnits = MetricType.INSTRUCTION
+      aggregationForGroup = AggregationType.COVERED_PERCENTAGE
+    }
+
     verify {
-      onCheck = true
+      onCheck = shouldRunOnCheck
       rule {
-        isEnabled = true
-        filters {
-          includes { packages("dev.jonpoulton.alakazam") }
-          excludes { classes(koverExcludes) }
-        }
+        isEnabled = shouldRunOnCheck
         bound {
           minValue = 50
           metric = MetricType.INSTRUCTION
           aggregation = AggregationType.COVERED_PERCENTAGE
         }
       }
+    }
+  }
+
+  if (isAndroid) {
+    androidReports("debug") {
+      /* No-op, all same config as default */
     }
   }
 }

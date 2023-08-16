@@ -3,7 +3,6 @@ plugins {
   id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
-  id("convention-test")
 }
 
 android {
@@ -19,6 +18,4 @@ dependencies {
   api(projects.androidPrefs)
   implementation(libs.androidx.preference)
   implementation(libs.inject)
-
-  testImplementation(projects.testingCore)
 }

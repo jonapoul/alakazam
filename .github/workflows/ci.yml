@@ -65,7 +65,9 @@ jobs:
           lfs: 'true'
 
       - name: Enable execution
-        run: chmod +x ./gradlew
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./*.sh
 
       - name: Setup JDK
         uses: actions/setup-java@v3

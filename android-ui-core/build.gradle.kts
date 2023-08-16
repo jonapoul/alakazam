@@ -3,7 +3,6 @@ plugins {
   id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
-  id("convention-test")
 }
 
 android {
@@ -25,6 +24,4 @@ dependencies {
   implementation(libs.androidx.navigation.fragment)
   implementation(libs.androidx.navigation.ui)
   implementation(libs.androidx.preference)
-
-  testImplementation(projects.testingCore)
 }

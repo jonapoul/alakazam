@@ -1,6 +1,7 @@
 package dev.jonpoulton.alakazam.http
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -8,6 +9,7 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import java.time.Duration
 
+@ExperimentalSerializationApi
 abstract class ApiBuilder<Api>(
   private val okHttpClientFactory: OkHttpClientFactory,
   private val apiClass: Class<Api>,
