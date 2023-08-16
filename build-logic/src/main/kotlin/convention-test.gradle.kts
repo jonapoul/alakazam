@@ -24,6 +24,7 @@ koverReport {
     excludes {
       classes(
         "*Hilt_*",
+        "*_Factory*",
       )
       packages(
         "*hilt_aggregated_deps.*",
