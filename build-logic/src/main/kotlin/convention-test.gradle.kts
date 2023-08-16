@@ -17,6 +17,7 @@ tasks.withType<Test> {
 }
 
 val isAndroid = project.isAndroid()
+val shouldRunOnCheck = project == rootProject
 
 koverReport {
   filters {
@@ -39,19 +40,19 @@ koverReport {
     }
 
     html {
-      onCheck = true
+      onCheck = shouldRunOnCheck
     }
 
     log {
-      onCheck = true
+      onCheck = shouldRunOnCheck
       coverageUnits = MetricType.INSTRUCTION
       aggregationForGroup = AggregationType.COVERED_PERCENTAGE
     }
 
     verify {
-      onCheck = true
+      onCheck = shouldRunOnCheck
       rule {
-        isEnabled = true
+        isEnabled = shouldRunOnCheck
         bound {
           minValue = 50
           metric = MetricType.INSTRUCTION
