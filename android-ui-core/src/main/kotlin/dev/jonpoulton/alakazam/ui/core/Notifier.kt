@@ -8,6 +8,7 @@ import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
 import dev.jonpoulton.alakazam.core.INotifier
 import dev.jonpoulton.alakazam.core.getCompatColor
+import dev.jonpoulton.alakazam.ui.core.R
 
 class Notifier(
   @ColorRes private val backgroundColour: Int = R.color.notifierBackground,

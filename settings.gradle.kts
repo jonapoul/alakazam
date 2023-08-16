@@ -32,7 +32,7 @@ include(":android-logging")
 include(":android-prefs")
 include(":android-theme")
 include(":android-ui-core")
-include(":android-ui-view")
+include(":android-ui-viewbinding")
 
 include(":di-hilt")
 include(":di-koin")
