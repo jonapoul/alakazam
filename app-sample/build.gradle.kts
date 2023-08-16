@@ -5,7 +5,6 @@ plugins {
   id("com.android.application")
   id("convention-kotlin")
   id("convention-style")
-  id("convention-test")
   id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -80,7 +79,4 @@ dependencies {
   implementation(libs.androidx.navigation.fragment)
   implementation(libs.androidx.navigation.ui)
   implementation(libs.androidx.preference)
-
-  testImplementation(projects.testingUnit)
-  androidTestImplementation(projects.testingAndroid)
 }
