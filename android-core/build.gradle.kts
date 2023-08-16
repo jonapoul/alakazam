@@ -13,7 +13,7 @@ android {
 }
 
 dependencies {
-  api(projects.kotlinCore)
+  implementation(projects.kotlinCore)
   implementation(libs.androidx.core.ktx)
   implementation(libs.kotlinx.coroutines.android)
   testImplementation(projects.testingCore)

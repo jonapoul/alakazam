@@ -21,7 +21,6 @@ python3 -m mkdocs gh-deploy
 rm docs/index.md \
    docs/contributing.md \
    docs/changelog.md \
-   docs/compose.md \
    docs/logo.svg \
    docs/gifs.md \
    docs/svgs.md \

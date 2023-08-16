@@ -6,7 +6,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import dev.jonpoulton.alakazam.sample.databinding.ActivitySampleBinding
 import dev.jonpoulton.alakazam.ui.core.navControllers
-import dev.jonpoulton.alakazam.ui.view.viewBinding
+import dev.jonpoulton.alakazam.ui.viewbinding.viewBinding
 
 internal class SampleActivity : AppCompatActivity() {
   private val binding by viewBinding(ActivitySampleBinding::inflate)

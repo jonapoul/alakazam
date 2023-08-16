@@ -1,8 +1,5 @@
-import gradle.kotlin.dsl.accessors._9885c8525475a2a77e0b650bdf1e3c81.implementation
-import gradle.kotlin.dsl.accessors._9885c8525475a2a77e0b650bdf1e3c81.testImplementation
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.the
 
 plugins {

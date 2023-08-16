@@ -73,7 +73,7 @@ android {
 dependencies {
   implementation(projects.androidPrefs)
   implementation(projects.androidUiCore)
-  implementation(projects.androidUiView)
+  implementation(projects.androidUiViewbinding)
 
   implementation(libs.androidx.appcompat)
   implementation(libs.androidx.navigation.fragment)

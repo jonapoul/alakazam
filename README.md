@@ -37,7 +37,7 @@ dependencies {
     implementation "dev.jonpoulton.alakazam:android-prefs:{version}"
     implementation "dev.jonpoulton.alakazam:android-theme:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-core:{version}"
-    implementation "dev.jonpoulton.alakazam:android-ui-view:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-viewbinding:{version}"
 
     /* DI libraries */
     implementation "dev.jonpoulton.alakazam:di-hilt:{version}"
