@@ -36,7 +36,7 @@ android {
     viewBinding = false
   }
 
-  packaging {
+  packagingOptions {
     jniLibs {
       useLegacyPackaging = true
     }
