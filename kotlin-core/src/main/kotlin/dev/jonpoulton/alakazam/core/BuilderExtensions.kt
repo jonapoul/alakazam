@@ -32,14 +32,6 @@ fun <B, Value> B.ifNull(value: Value?, action: B.() -> B): B {
   return if (value == null) this.action() else this
 }
 
-/**
- * If [value] is an instance of type [C], the subject [A] will have the [action] lambda called on it, then the subject
- * is returned. If [value] is not an instance of [C], the subject is returned as-is.
- */
-inline fun <A, B, reified C> A.ifIsInstance(value: B?, action: A.(C) -> A): A {
-  return if (value is C) this.action(value) else this
-}
-
 fun <B, T> B.ifEquals(value1: T?, value2: T?, action: B.() -> B): B {
   return ifTrue(condition = value1 == value2, action)
 }
