@@ -13,6 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import javax.inject.Singleton
 
+@Suppress("InjectDispatcher")
 @InstallIn(SingletonComponent::class)
 @Module
 class CoroutinesModule {

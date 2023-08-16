@@ -13,6 +13,7 @@ import kotlin.coroutines.CoroutineContext
 private val KEY_VIEW_SCOPE = R.id.view_scope
 private const val TAG = "ViewScope"
 
+@Suppress("InjectDispatcher")
 val View.viewScope: CoroutineScope
   get() {
     getTag(KEY_VIEW_SCOPE)?.let {
