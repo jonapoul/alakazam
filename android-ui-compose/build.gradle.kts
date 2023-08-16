@@ -3,7 +3,6 @@ plugins {
   id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
-  id("convention-test")
 }
 
 android {
@@ -36,6 +35,4 @@ dependencies {
   implementation(libs.androidx.compose.ui.fonts)
   implementation(libs.androidx.compose.ui.tooling)
   implementation(libs.androidx.compose.ui.util)
-
-  testImplementation(projects.testingCore)
 }

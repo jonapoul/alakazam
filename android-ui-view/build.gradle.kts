@@ -3,7 +3,6 @@ plugins {
   id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
-  id("convention-test")
 }
 
 android {
@@ -28,6 +27,4 @@ dependencies {
   implementation(libs.androidx.recyclerview)
   implementation(libs.material)
   implementation(libs.timber.core)
-
-  testImplementation(projects.testingCore)
 }
