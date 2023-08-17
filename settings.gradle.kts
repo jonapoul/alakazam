@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     mavenCentral()
     google()
     maven { url = uri("https://jitpack.io") }
+    maven { url = uri("${rootProject.projectDir}/maven") }
   }
 }
 
