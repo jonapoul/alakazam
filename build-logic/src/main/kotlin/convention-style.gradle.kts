@@ -31,28 +31,13 @@ licensee {
     allow(license)
   }
 
-  listOf(
-    /* Apache 2.0 */
-    "https://github.com/KasperskyLab/Kaspresso/blob/master/LICENSE.txt",
+  listOf<String>(
+    /* Hamcrest, BSD-2-Clause */
+    "http://www.opensource.org/licenses/bsd-license.php",
 
     /* MIT */
     "https://jsoup.org/license",
     "https://github.com/mockito/mockito/blob/master/LICENSE",
-
-    /* BSD-3-Clause */
-    "https://asm.ow2.io/license.html",
-
-    /* CDDL */
-    "https://github.com/javaee/javax.annotation/blob/master/LICENSE",
-
-    /* JUnit */
-    "https://www.eclipse.org/legal/epl-v20.html",
-
-    /* ICU4J - actual link at https://github.com/unicode-org/icu/blob/main/LICENSE */
-    "https://raw.githubusercontent.com/unicode-org/icu/main/icu4c/LICENSE",
-
-    /* Bouncy Castle */
-    "https://www.bouncycastle.org/licence.html",
   ).forEach { url ->
     allowUrl(url)
   }

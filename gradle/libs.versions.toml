@@ -52,7 +52,6 @@ androidx-rules = "1.5.0"
 androidx-runner = "1.5.2"
 androidx-test = "1.5.0"
 junit = "4.13.2"
-kaspresso = "1.4.1"
 mockk = "1.12.4"
 robolectric = "4.10.3"
 timber-junit = "1.0.1"
@@ -118,7 +117,6 @@ test-androidx-room = { module = "androidx.room:room-testing", version.ref = "and
 test-androidx-rules = { module = "androidx.test:rules", version.ref = "androidx-rules" }
 test-androidx-runner = { module = "androidx.test:runner", version.ref = "androidx-runner" }
 test-junit = { module = "junit:junit", version.ref = "junit" }
-test-kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso" }
 test-koin-core = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 test-koin-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
 test-kotlin-common = { module = "org.jetbrains.kotlin:kotlin-test-common", version.ref = "kotlin" }
