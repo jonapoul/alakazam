@@ -7,7 +7,7 @@ import timber.log.Timber
 class InstrumentedTimberRule : TestWatcher() {
   override fun starting(description: Description?) {
     super.starting(description)
-    Timber.plant()
+    Timber.plant(TREE)
   }
 
   override fun finished(description: Description?) {
