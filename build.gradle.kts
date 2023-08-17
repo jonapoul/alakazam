@@ -1,7 +1,6 @@
 plugins {
   /* convention-kotlin.gradle.kts */
   alias(libs.plugins.kotlin.android) apply false
-  alias(libs.plugins.kotlin.multiplatform) apply false
   alias(libs.plugins.kotlin.serialization) apply false
 
   /* convention-publish.gradle.kts */
