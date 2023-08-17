@@ -38,6 +38,11 @@ include(":android-ui-viewbinding")
 include(":di-hilt")
 include(":di-koin")
 
+/* Can't access SDK from CI! */
+if (!providers.environmentVariable("CI").isPresent) {
+  include(":tak-core")
+}
+
 include(":testing-android")
 include(":testing-core")
 include(":testing-db")
