@@ -15,7 +15,7 @@ android {
 dependencies {
   api(projects.androidCore)
 
-  implementation(libs.androidx.room.ktx)
+  implementation(libs.androidx.roomKtx)
   implementation(libs.androidx.room.runtime)
   ksp(libs.androidx.room.compiler)
 

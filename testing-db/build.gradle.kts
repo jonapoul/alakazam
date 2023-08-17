@@ -13,7 +13,7 @@ android {
 dependencies {
   implementation(projects.kotlinCore)
 
-  api(libs.androidx.room.ktx)
+  api(libs.androidx.roomKtx)
   api(libs.androidx.room.runtime)
 
   api(libs.test.androidx.coreKtx)

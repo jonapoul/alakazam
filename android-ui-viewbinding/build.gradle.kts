@@ -17,7 +17,7 @@ android {
 dependencies {
   implementation(projects.androidUiCore)
   implementation(libs.androidx.appcompat)
-  implementation(libs.androidx.fragment.ktx)
+  implementation(libs.androidx.fragmentKtx)
   implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.androidx.recyclerview)
 }
