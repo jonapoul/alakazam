@@ -1,7 +1,6 @@
 plugins {
   /* convention-kotlin.gradle.kts */
   alias(libs.plugins.kotlin.android) apply false
-  alias(libs.plugins.kotlin.multiplatform) apply false
   alias(libs.plugins.kotlin.serialization) apply false
 
   /* convention-publish.gradle.kts */
@@ -42,4 +41,4 @@ tasks.dependencyUpdates.configure {
   }
 }
 
-fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
+fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }

@@ -30,7 +30,6 @@ open class OkHttpClientFactory(
       .cache(buildCache())
       .connectionPool(CONNECTION_POOL)
       .dispatcher(buildDispatcher())
-      .fastFallback(true)
       .extraConfig()
       .build()
   }

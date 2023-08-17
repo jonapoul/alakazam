@@ -24,6 +24,5 @@ dependencies {
   api(libs.test.androidx.navigation)
   api(libs.test.androidx.rules)
   api(libs.test.androidx.runner)
-  api(libs.test.kaspresso)
   api(libs.test.mockk.android)
 }
