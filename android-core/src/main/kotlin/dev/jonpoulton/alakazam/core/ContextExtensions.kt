@@ -18,15 +18,15 @@ import androidx.core.content.ContextCompat
 /**
  * Shows a toast with the given [message].
  */
-fun Context.toast(message: String) {
-  Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+fun Context.toast(message: String, length: Int = Toast.LENGTH_LONG) {
+  Toast.makeText(this, message, length).show()
 }
 
 /**
  * Shows a toast with the given string resource as a message.
  */
-fun Context.toast(@StringRes message: Int) {
-  toast(getString(message))
+fun Context.toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+  toast(getString(message), length)
 }
 
 /**

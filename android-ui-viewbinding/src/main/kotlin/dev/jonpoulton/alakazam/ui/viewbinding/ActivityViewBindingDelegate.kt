@@ -29,7 +29,7 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
       buildBindingIfNeeded()
       activity.setContentView(binding?.root)
     } else if (event == Lifecycle.Event.ON_DESTROY) {
-      binding.cleanUpRecyclerAdapters()
+      binding?.cleanUpRecyclerAdapters()
       binding = null
       activity.lifecycle.removeObserver(this)
     }

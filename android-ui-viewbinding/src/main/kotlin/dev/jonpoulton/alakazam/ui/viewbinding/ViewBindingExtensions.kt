@@ -1,6 +1,5 @@
 package dev.jonpoulton.alakazam.ui.viewbinding
 
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import dev.jonpoulton.alakazam.ui.core.cleanUpRecyclerAdapters
+import dev.jonpoulton.alakazam.ui.core.viewScope
+import kotlinx.coroutines.CoroutineScope
 
-/**
- * Performs a similar function to [dev.jonpoulton.alakazam.ui.view.onDestroyView] but in a more
- * automated fashion, in that it recursively sets all attached [RecyclerView.Adapter] instances to
- * null when the [ViewBinding] is destroyed. This helps remove a source of memory leaks from the
- * app.
- */
-fun ViewBinding?.cleanUpRecyclerAdapters() {
-  val view = this?.root ?: return
+fun ViewBinding.cleanUpRecyclerAdapters() {
+  val view = this.root
   if (view is RecyclerView) {
     view.adapter = null
   } else if (view is ViewGroup) {
@@ -25,14 +20,8 @@ fun ViewBinding?.cleanUpRecyclerAdapters() {
   }
 }
 
-/**
- * Creates a lazy inflating delegate for a [ViewBinding] instance.
- */
-inline fun <VB : ViewBinding> Activity.viewBinder(
-  crossinline bindingInflater: (LayoutInflater) -> VB,
-) = lazy(LazyThreadSafetyMode.NONE) {
-  bindingInflater.invoke(layoutInflater)
-}
+val ViewBinding.viewScope: CoroutineScope
+  get() = root.viewScope
 
 /**
  * Creates a [ViewBinding] delegate object, allowing us to declare it at the top of our
