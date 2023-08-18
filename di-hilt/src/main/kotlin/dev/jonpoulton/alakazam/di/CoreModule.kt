@@ -10,6 +10,8 @@ import dev.jonpoulton.alakazam.core.ActivityLauncher
 import dev.jonpoulton.alakazam.core.MainDispatcher
 import dev.jonpoulton.alakazam.core.SnackbarFeed
 import dev.jonpoulton.alakazam.core.Toaster
+import dev.jonpoulton.alakazam.time.Clock
+import dev.jonpoulton.alakazam.time.SystemClock
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -29,4 +31,7 @@ class CoreModule {
     @ApplicationContext context: Context,
     main: MainDispatcher,
   ): Toaster = Toaster(context, main)
+
+  @Provides
+  fun clock(): Clock = SystemClock
 }

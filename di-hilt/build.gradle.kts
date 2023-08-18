@@ -11,12 +11,13 @@ android {
 }
 
 dependencies {
-  api(projects.androidCore)
-  api(projects.androidHttp)
-  api(projects.androidInit)
-  api(projects.androidPrefs)
-  api(projects.androidUiCore)
-  api(projects.kotlinCore)
+  implementation(projects.androidCore)
+  implementation(projects.androidHttp)
+  implementation(projects.androidInit)
+  implementation(projects.androidPrefs)
+  implementation(projects.androidUiCore)
+  implementation(projects.kotlinCore)
+  implementation(projects.kotlinTime)
 
   implementation(libs.androidx.preference)
   implementation(libs.flowpreferences)
