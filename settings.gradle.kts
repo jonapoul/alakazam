@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     mavenCentral()
     google()
     maven { url = uri("https://jitpack.io") }
+    maven { url = uri("${rootProject.projectDir}/maven") }
   }
 }
 
@@ -36,6 +37,13 @@ include(":android-ui-viewbinding")
 
 include(":di-hilt")
 include(":di-koin")
+
+/* Can't access SDK from CI! */
+if (!providers.environmentVariable("CI").isPresent) {
+  include(":tak-core")
+  include(":tak-plugin")
+  include(":tak-ui")
+}
 
 include(":testing-android")
 include(":testing-core")

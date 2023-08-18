@@ -30,7 +30,7 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(
           viewLifecycleOwner.lifecycle.addObserver(
             object : DefaultLifecycleObserver {
               override fun onDestroy(owner: LifecycleOwner) {
-                binding.cleanUpRecyclerAdapters()
+                binding?.cleanUpRecyclerAdapters()
                 binding = null
               }
             }
