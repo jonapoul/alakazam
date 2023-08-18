@@ -14,8 +14,8 @@ class SelfDocumentingImageButton @JvmOverloads constructor(
     setOnLongClickListener {
       val desc = contentDescription
       if (desc != null && desc.isNotBlank()) {
-        val context = MapView.getMapView().context
-        Toast.makeText(context, desc, Toast.LENGTH_LONG).show()
+        val appContext = MapView.getMapView().context
+        Toast.makeText(appContext, desc, Toast.LENGTH_LONG).show()
         true
       } else {
         false

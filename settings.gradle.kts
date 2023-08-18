@@ -41,6 +41,7 @@ include(":di-koin")
 /* Can't access SDK from CI! */
 if (!providers.environmentVariable("CI").isPresent) {
   include(":tak-core")
+  include(":tak-dagger")
   include(":tak-plugin")
   include(":tak-ui")
 }
