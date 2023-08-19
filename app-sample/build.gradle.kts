@@ -71,7 +71,9 @@ android {
 }
 
 dependencies {
+  implementation(projects.androidNavigation)
   implementation(projects.androidPrefs)
+  implementation(projects.androidUiAppcompat)
   implementation(projects.androidUiCore)
   implementation(projects.androidUiMaterial)
   implementation(projects.androidUiViewbinding)
