@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.ui.core
+package dev.jonpoulton.alakazam.navigation
 
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
