@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dev.jonpoulton.alakazam.core.ifNotNull
 import dev.jonpoulton.alakazam.core.inflater
-import dev.jonpoulton.alakazam.ui.core.R
 import dev.jonpoulton.alakazam.ui.core.setSimpleNegativeButton
 import dev.jonpoulton.alakazam.ui.core.setSimplePositiveButton
 

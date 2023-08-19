@@ -7,9 +7,9 @@ import dev.jonpoulton.alakazam.core.toast
 import dev.jonpoulton.alakazam.sample.databinding.FragmentHomeBinding
 import dev.jonpoulton.alakazam.ui.core.CommonFragment
 import dev.jonpoulton.alakazam.ui.core.safelyNavigate
-import dev.jonpoulton.alakazam.ui.core.showCautionDialog
-import dev.jonpoulton.alakazam.ui.core.showLoadingDialog
-import dev.jonpoulton.alakazam.ui.core.showWarningDialog
+import dev.jonpoulton.alakazam.ui.material.showCautionDialog
+import dev.jonpoulton.alakazam.ui.material.showLoadingDialog
+import dev.jonpoulton.alakazam.ui.material.showWarningDialog
 import dev.jonpoulton.alakazam.ui.viewbinding.viewBinding
 
 internal class HomeFragment : CommonFragment(layout = R.layout.fragment_home, menu = R.menu.home) {
