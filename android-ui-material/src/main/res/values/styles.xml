@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Theme.Alakazam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- AlertDialog -->
+    <item name="materialAlertDialogTheme">@style/Theme.Alakazam.AlertDialog</item>
+    <item name="alertDialogTheme">@style/Theme.Alakazam.AlertDialog</item>
+    <item name="android:alertDialogTheme">@style/Theme.Alakazam.AlertDialog</item>
+    <item name="android:dialogTheme">@style/Theme.Alakazam.AlertDialog</item>
+
+    <!-- CardView -->
+    <item name="materialCardViewStyle">@style/Theme.Alakazam.CardView</item>
+    <item name="cardViewStyle">@style/Theme.Alakazam.CardView</item>
+
+    <!-- EditText -->
+    <item name="android:editTextStyle">@style/Theme.Alakazam.EditText</item>
+    <item name="editTextStyle">@style/Theme.Alakazam.EditText</item>
+    <item name="textInputStyle">@style/Theme.Alakazam.TextInputLayout</item>
+
+    <!-- Button -->
+    <item name="materialButtonStyle">@style/Theme.Alakazam.Button</item>
+    <item name="imageButtonStyle">@style/Theme.Alakazam.ImageButton</item>
+  </style>
+
+  <style name="Theme.Alakazam.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+
+  <style name="Theme.Alakazam.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
+
+  <style name="Theme.Alakazam.CardView" parent="Widget.MaterialComponents.CardView">
+    <item name="cardBackgroundColor">@color/cardBackground</item>
+    <item name="cardCornerRadius">@dimen/small</item>
+    <item name="cardUseCompatPadding">true</item>
+    <item name="contentPadding">@dimen/medium</item>
+    <item name="cardElevation">@dimen/small</item>
+  </style>
+
+  <style name="Theme.Alakazam.EditText" parent="Widget.AppCompat.EditText">
+    <item name="android:imeOptions">flagNoPersonalizedLearning</item>
+    <item name="android:inputType">textNoSuggestions</item>
+  </style>
+
+  <style name="Theme.Alakazam.Text" parent="Widget.MaterialComponents.TextView">
+    <item name="android:textSize">@dimen/text_size_normal</item>
+  </style>
+
+  <style name="Theme.Alakazam.Text.Title" parent="Theme.Alakazam.Text">
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">?attr/colorPrimaryVariant</item>
+    <item name="android:gravity">start</item>
+  </style>
+
+  <style name="Theme.Alakazam.ImageButton" parent="Widget.AppCompat.ImageButton">
+    <item name="backgroundTint">?attr/colorPrimary</item>
+    <item name="android:tint">?attr/colorOnPrimary</item>
+    <item name="tint">?attr/colorOnPrimary</item>
+  </style>
+
+  <style name="Theme.Alakazam.Button" parent="Widget.MaterialComponents.Button">
+    <item name="android:textColor">?attr/colorOnPrimary</item>
+    <item name="iconTint">?attr/colorOnPrimary</item>
+  </style>
+
+  <style name="Theme.Alakazam.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <item name="iconTint">@color/outline_button</item>
+    <item name="strokeColor">@color/outline_button</item>
+    <item name="android:textColor">@color/outline_button</item>
+  </style>
+
+  <style name="Theme.Alakazam.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+    <item name="iconTint">?attr/colorPrimaryVariant</item>
+    <item name="android:textColor">?colorPrimaryVariant</item>
+  </style>
+
+  <style name="Theme.Alakazam.Button.Text.Warning" parent="Widget.MaterialComponents.Button.TextButton">
+    <item name="android:textColor">@color/onSurfaceRed</item>
+  </style>
+
+  <style name="Theme.Alakazam.Button.Text.Caution" parent="Widget.MaterialComponents.Button.TextButton">
+    <item name="android:textColor">@color/onSurfaceOrange</item>
+  </style>
+
+  <style name="Theme.Alakazam.Button.Text.Success" parent="Widget.MaterialComponents.Button.TextButton">
+    <item name="android:textColor">@color/onSurfaceGreen</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <item name="buttonBarNegativeButtonStyle">@style/Theme.Alakazam.Button.Text</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Theme.Alakazam.Button.Text</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Theme.Alakazam.Button.Text</item>
+    <item name="buttonBarButtonStyle">@style/Theme.Alakazam.Button.Text</item>
+    <item name="materialAlertDialogTitleTextStyle">@style/Theme.Alakazam.AlertDialog.Text</item>
+    <item name="textColorAlertDialogListItem">?attr/colorOnSurface</item>
+    <item name="android:textColorAlertDialogListItem">?attr/colorOnSurface</item>
+    <item name="materialAlertDialogTitleIconStyle">@style/Theme.Alakazam.AlertDialog.Icon</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <item name="android:textColor">?attr/colorAccent</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Icon" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <item name="android:tint">?attr/colorAccent</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Warning" parent="Theme.Alakazam.AlertDialog">
+    <item name="materialAlertDialogTitleTextStyle">
+      @style/Theme.Alakazam.AlertDialog.Text.Warning
+    </item>
+    <item name="materialAlertDialogTitleIconStyle">
+      @style/Theme.Alakazam.AlertDialog.Icon.Warning
+    </item>
+    <item name="buttonBarButtonStyle">@style/Theme.Alakazam.Button.Text.Warning</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Theme.Alakazam.Button.Text.Warning</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Theme.Alakazam.Button.Text.Warning</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Theme.Alakazam.Button.Text.Warning</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Caution" parent="Theme.Alakazam.AlertDialog">
+    <item name="materialAlertDialogTitleTextStyle">
+      @style/Theme.Alakazam.AlertDialog.Text.Caution
+    </item>
+    <item name="materialAlertDialogTitleIconStyle">
+      @style/Theme.Alakazam.AlertDialog.Icon.Caution
+    </item>
+    <item name="buttonBarButtonStyle">@style/Theme.Alakazam.Button.Text.Caution</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Theme.Alakazam.Button.Text.Caution</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Theme.Alakazam.Button.Text.Caution</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Theme.Alakazam.Button.Text.Caution</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Success" parent="Theme.Alakazam.AlertDialog">
+    <item name="materialAlertDialogTitleTextStyle">
+      @style/Theme.Alakazam.AlertDialog.Text.Success
+    </item>
+    <item name="materialAlertDialogTitleIconStyle">
+      @style/Theme.Alakazam.AlertDialog.Icon.Success
+    </item>
+    <item name="buttonBarButtonStyle">@style/Theme.Alakazam.Button.Text.Success</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Theme.Alakazam.Button.Text.Success</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Theme.Alakazam.Button.Text.Success</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Theme.Alakazam.Button.Text.Success</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Text.Warning" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <item name="android:textColor">@color/onSurfaceRed</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Icon.Warning" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <item name="android:tint">@color/onSurfaceRed</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Text.Caution" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <item name="android:textColor">@color/onSurfaceOrange</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Icon.Caution" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <item name="android:tint">@color/onSurfaceOrange</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Text.Success" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+    <item name="android:textColor">@color/onSurfaceGreen</item>
+  </style>
+
+  <style name="Theme.Alakazam.AlertDialog.Icon.Success" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
+    <item name="android:tint">@color/onSurfaceGreen</item>
+  </style>
+
+  <style name="Theme.Alakazam.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <item name="android:padding">@dimen/small</item>
+    <item name="errorEnabled">true</item>
+    <item name="errorIconTint">@color/onSurfaceRed</item>
+    <item name="errorTextColor">@color/onSurfaceRed</item>
+    <item name="boxStrokeErrorColor">@color/onSurfaceRed</item>
+  </style>
+
+  <style name="Theme.Alakazam.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+    <item name="android:padding">@dimen/small</item>
+    <item name="errorEnabled">true</item>
+    <item name="errorIconTint">@color/onSurfaceRed</item>
+    <item name="errorTextColor">@color/onSurfaceRed</item>
+    <item name="boxStrokeErrorColor">@color/onSurfaceRed</item>
+  </style>
+
+  <style name="Theme.Alakazam.TextInputEditText" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+    <item name="android:inputType">text</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:imeOptions">actionNext|flagNoPersonalizedLearning</item>
+  </style>
+</resources>

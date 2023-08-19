@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.ui.core
+package dev.jonpoulton.alakazam.ui.material
 
 import android.widget.AutoCompleteTextView
 import com.google.android.material.textfield.TextInputLayout

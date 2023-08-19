@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.ui.core
+package dev.jonpoulton.alakazam.ui.material
 
 import android.app.Activity
 import android.content.Context
@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dev.jonpoulton.alakazam.core.ifNotNull
 import dev.jonpoulton.alakazam.core.inflater
+import dev.jonpoulton.alakazam.ui.core.R
+import dev.jonpoulton.alakazam.ui.core.setSimpleNegativeButton
+import dev.jonpoulton.alakazam.ui.core.setSimplePositiveButton
 
 fun Fragment.showLoadingDialog(
   @StringRes loadingText: Int = R.string.dialog_loading,

@@ -33,6 +33,7 @@ include(":android-logging")
 include(":android-prefs")
 include(":android-theme")
 include(":android-ui-core")
+include(":android-ui-material")
 include(":android-ui-viewbinding")
 
 include(":di-hilt")

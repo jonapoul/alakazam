@@ -73,6 +73,7 @@ android {
 dependencies {
   implementation(projects.androidPrefs)
   implementation(projects.androidUiCore)
+  implementation(projects.androidUiMaterial)
   implementation(projects.androidUiViewbinding)
 
   implementation(libs.androidx.appcompat)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="snackbarBackground">#575757</color>
+
+  <color name="notifierBackground">#444444</color>
+  <color name="notifierSuccess">#007E33</color>
+  <color name="notifierInfo">#0099CC</color>
+  <color name="notifierCaution">#FF8800</color>
+  <color name="notifierWarning">#CC0000</color>
+
+  <color name="onSnackbarGreen">#55ff55</color>
+  <color name="onSnackbarBlue">#5599FF</color>
+  <color name="onSnackbarYellow">#ffff55</color>
+  <color name="onSnackbarRed">#ff5555</color>
+</resources>

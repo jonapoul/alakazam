@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.ui.core
+package dev.jonpoulton.alakazam.ui.material
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
