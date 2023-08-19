@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.ui.material"
+  namespace = "dev.jonpoulton.alakazam.ui.appcompat"
 
   buildFeatures {
     resValues = true
@@ -16,9 +16,7 @@ android {
 }
 
 dependencies {
-  implementation(projects.kotlinCore)
-  implementation(projects.androidCore)
   api(projects.androidUiCore)
-  api(projects.androidUiAppcompat)
-  implementation(libs.material)
+  api(libs.androidx.appcompat)
+  api(libs.androidx.recyclerview)
 }

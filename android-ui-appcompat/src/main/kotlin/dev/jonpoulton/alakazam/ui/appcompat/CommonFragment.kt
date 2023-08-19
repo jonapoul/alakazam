@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.ui.core
+package dev.jonpoulton.alakazam.ui.appcompat
 
 import android.os.Bundle
 import android.view.Menu
@@ -19,7 +19,6 @@ abstract class CommonFragment(
   @MenuRes private val menu: Int?,
 ) : Fragment(layout), MenuProvider {
 
-  protected val navController by navControllers()
   private val recyclerViews = mutableListOf<RecyclerView>()
 
   @CallSuper

@@ -18,7 +18,7 @@ android {
 dependencies {
   implementation(projects.kotlinCore)
   implementation(projects.androidCore)
-  implementation(libs.androidx.appcompat)
+  implementation(libs.androidx.coreKtx)
   implementation(libs.androidx.fragmentKtx)
   implementation(libs.androidx.recyclerview)
 }

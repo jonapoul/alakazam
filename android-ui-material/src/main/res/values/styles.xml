@@ -22,21 +22,12 @@
     <item name="imageButtonStyle">@style/Theme.Alakazam.ImageButton</item>
   </style>
 
-  <style name="Theme.Alakazam.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
-
-  <style name="Theme.Alakazam.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
-
   <style name="Theme.Alakazam.CardView" parent="Widget.MaterialComponents.CardView">
     <item name="cardBackgroundColor">@color/cardBackground</item>
     <item name="cardCornerRadius">@dimen/small</item>
     <item name="cardUseCompatPadding">true</item>
     <item name="contentPadding">@dimen/medium</item>
     <item name="cardElevation">@dimen/small</item>
-  </style>
-
-  <style name="Theme.Alakazam.EditText" parent="Widget.AppCompat.EditText">
-    <item name="android:imeOptions">flagNoPersonalizedLearning</item>
-    <item name="android:inputType">textNoSuggestions</item>
   </style>
 
   <style name="Theme.Alakazam.Text" parent="Widget.MaterialComponents.TextView">

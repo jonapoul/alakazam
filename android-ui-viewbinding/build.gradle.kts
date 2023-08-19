@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
   id("convention-android")
   id("convention-kotlin")
@@ -9,7 +11,6 @@ android {
   namespace = "dev.jonpoulton.alakazam.ui.viewbinding"
 
   buildFeatures {
-    resValues = true
     viewBinding = true
   }
 }
@@ -18,6 +19,5 @@ dependencies {
   implementation(projects.androidUiCore)
   implementation(libs.androidx.appcompat)
   implementation(libs.androidx.fragmentKtx)
-  implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.androidx.recyclerview)
 }

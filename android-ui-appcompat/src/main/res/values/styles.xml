@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Theme.Alakazam.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+
+  <style name="Theme.Alakazam.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
+
+  <style name="Theme.Alakazam.EditText" parent="Widget.AppCompat.EditText">
+    <item name="android:imeOptions">flagNoPersonalizedLearning</item>
+    <item name="android:inputType">textNoSuggestions</item>
+  </style>
+
+</resources>

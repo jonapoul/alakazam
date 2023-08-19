@@ -1,6 +1,6 @@
 @file:Suppress("UNCHECKED_CAST")
 
-package dev.jonpoulton.alakazam.ui.core
+package dev.jonpoulton.alakazam.ui.appcompat
 
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
