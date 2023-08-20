@@ -13,6 +13,7 @@ dependencies {
   api(libs.test.kotlin.common)
   api(libs.test.kotlin.coroutines)
   api(libs.test.kotlin.junit)
+  api(libs.test.mockk.core)
   api(libs.test.timber.junit)
   api(libs.test.turbine)
 }
