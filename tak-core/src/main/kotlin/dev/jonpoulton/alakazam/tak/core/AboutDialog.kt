@@ -1,27 +1,21 @@
 package dev.jonpoulton.alakazam.tak.core
 
+import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.view.View
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import com.atakmap.android.maps.MapView
+import com.atakmap.map.opengl.GLRenderGlobals.appContext
 import dev.jonpoulton.alakazam.core.IBuildConfig
 import dev.jonpoulton.alakazam.core.inflater
 import dev.jonpoulton.alakazam.time.localisedFormatter
 import dev.jonpoulton.alakazam.ui.core.show
 
 object AboutDialog {
-  fun show(appContext: AppContext, pluginContext: PluginContext, buildConfig: IBuildConfig): AlertDialog =
-    showImpl(appContext, pluginContext, buildConfig)
-
-  fun show(mapView: MapView, pluginContext: PluginContext, buildConfig: IBuildConfig): AlertDialog =
-    showImpl(mapView.context, pluginContext, buildConfig)
-
-  private fun showImpl(appContext: Context, pluginContext: PluginContext, buildConfig: IBuildConfig): AlertDialog {
+  fun show(activity: Activity, pluginContext: PluginContext, buildConfig: IBuildConfig): AlertDialog {
     val view = pluginContext.inflater.inflate(R.layout.dialog_about, null, false)
     AboutBinding(view).apply {
       version.icon.setImageResource(R.drawable.ic_version)
@@ -43,7 +37,7 @@ object AboutDialog {
         appContext.startActivity(intent)
       }
     }
-    return PluginAlertDialogBuilder(appContext, pluginContext)
+    return PluginAlertDialogBuilder(activity, pluginContext)
       .setTitle(R.string.about_title)
       .setView(view)
       .setSimplePositiveButton()
@@ -66,7 +60,7 @@ object AboutDialog {
     val icon: ImageView,
     val title: TextView,
     val subtitle: TextView,
-    val launchButton: Button,
+    val launchButton: ImageButton,
   ) {
     constructor(view: View) : this(
       icon = view.findViewById(R.id.icon),
