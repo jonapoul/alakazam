@@ -8,7 +8,7 @@ plugins {
 
 dependencies {
   implementation(projects.kotlinCore)
-
+  api(libs.kotlinx.coroutines.core)
   api(libs.test.junit)
   api(libs.test.kotlin.common)
   api(libs.test.kotlin.coroutines)
