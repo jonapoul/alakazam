@@ -34,9 +34,12 @@ dependencies {
     implementation "dev.jonpoulton.alakazam:android-http:{version}"
     implementation "dev.jonpoulton.alakazam:android-init:{version}"
     implementation "dev.jonpoulton.alakazam:android-logging:{version}"
+    implementation "dev.jonpoulton.alakazam:android-navigation:{version}"
     implementation "dev.jonpoulton.alakazam:android-prefs:{version}"
     implementation "dev.jonpoulton.alakazam:android-theme:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-appcompat:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-core:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-material:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-viewbinding:{version}"
 
     /* DI libraries */
