@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.navigation"
+  namespace = "dev.jonpoulton.alakazam.android.navigation"
 }
 
 dependencies {

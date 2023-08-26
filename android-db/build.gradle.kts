@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.db"
+  namespace = "dev.jonpoulton.alakazam.android.db"
 }
 
 dependencies {

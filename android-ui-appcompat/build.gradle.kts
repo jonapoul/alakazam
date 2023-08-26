@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.ui.appcompat"
+  namespace = "dev.jonpoulton.alakazam.android.ui.appcompat"
 
   buildFeatures {
     resValues = true

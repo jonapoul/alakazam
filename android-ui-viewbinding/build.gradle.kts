@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.ui.viewbinding"
+  namespace = "dev.jonpoulton.alakazam.android.ui.viewbinding"
 
   buildFeatures {
     viewBinding = true

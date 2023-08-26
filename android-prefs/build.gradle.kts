@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.prefs"
+  namespace = "dev.jonpoulton.alakazam.android.prefs"
 }
 
 dependencies {

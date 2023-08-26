@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
   id("convention-android")
   id("convention-kotlin")
@@ -6,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.theme"
+  namespace = "dev.jonpoulton.alakazam.android.theme"
 
   buildFeatures {
     resValues = true
