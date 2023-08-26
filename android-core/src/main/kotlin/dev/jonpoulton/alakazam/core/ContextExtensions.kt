@@ -4,6 +4,8 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -75,6 +77,15 @@ fun Context.getCompatColor(@ColorRes colorInt: Int): Int {
 fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable {
   return ContextCompat.getDrawable(this, drawableRes)
     ?: error("Failed to get drawable from $this for $drawableRes")
+}
+
+fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
+  val drawable = getCompatDrawable(drawableRes)
+  val bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
+  val canvas = Canvas(bitmap)
+  drawable.setBounds(0, 0, canvas.width, canvas.height)
+  drawable.draw(canvas)
+  return bitmap
 }
 
 val Context.inflater: LayoutInflater

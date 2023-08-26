@@ -8,8 +8,31 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import dev.jonpoulton.alakazam.ui.core.cleanUpRecyclerAdapters
+import dev.jonpoulton.alakazam.ui.core.hide
+import dev.jonpoulton.alakazam.ui.core.hideIfTrue
+import dev.jonpoulton.alakazam.ui.core.show
+import dev.jonpoulton.alakazam.ui.core.showIfTrue
 import dev.jonpoulton.alakazam.ui.core.viewScope
 import kotlinx.coroutines.CoroutineScope
+
+val ViewBinding.viewScope: CoroutineScope
+  get() = root.viewScope
+
+fun ViewBinding.showIfTrue(condition: Boolean) {
+  root.showIfTrue(condition)
+}
+
+fun ViewBinding.hideIfTrue(condition: Boolean) {
+  root.hideIfTrue(condition)
+}
+
+fun ViewBinding.show() {
+  root.show()
+}
+
+fun ViewBinding.hide() {
+  root.hide()
+}
 
 fun ViewBinding.cleanUpRecyclerAdapters() {
   val view = this.root
@@ -19,9 +42,6 @@ fun ViewBinding.cleanUpRecyclerAdapters() {
     view.cleanUpRecyclerAdapters()
   }
 }
-
-val ViewBinding.viewScope: CoroutineScope
-  get() = root.viewScope
 
 /**
  * Creates a [ViewBinding] delegate object, allowing us to declare it at the top of our
