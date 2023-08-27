@@ -1,6 +1,5 @@
 package dev.jonpoulton.alakazam.kotlin.core
 
-import dev.jonpoulton.alakazam.kotlin.core.quietlyClose
 import org.junit.Test
 import java.io.Closeable
 
