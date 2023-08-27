@@ -67,3 +67,4 @@ docs/api/
 .idea/*
 # Detekt plugin configuration (Tools -> Detekt)
 !.idea/detekt.xml
+!.idea/gradle.xml
