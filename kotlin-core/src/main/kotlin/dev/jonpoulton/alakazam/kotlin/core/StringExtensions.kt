@@ -28,3 +28,11 @@ fun String.capitalized(): String {
     }
   }
 }
+
+fun String.throwIfBlank(): String {
+  if (this.isBlank()) {
+    error("String can't be blank!")
+  } else {
+    return this
+  }
+}
