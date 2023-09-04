@@ -1,7 +1,5 @@
 package dev.jonpoulton.alakazam.test.core
 
-import dev.jonpoulton.alakazam.test.core.FiniteLoopController
-import dev.jonpoulton.alakazam.test.core.SingleLoopController
 import org.junit.Test
 import kotlin.test.assertEquals
 
