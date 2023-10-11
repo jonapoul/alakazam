@@ -1,18 +1,16 @@
 package dev.jonpoulton.alakazam.android.init
 
-import dev.jonpoulton.alakazam.android.init.AppInitialisers
-import dev.jonpoulton.alakazam.android.init.IAppInitialiser
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class AppInitialisersTest {
-  private lateinit var appInitialisers: AppInitialisers
+class AppInitializersTest {
+  private lateinit var appInitializers: AppInitializers
 
   @Test
   fun `Initialiser going first`() {
     /* Given */
     var builderString = ""
-    appInitialisers = AppInitialisers(
+    appInitializers = AppInitializers(
       setOf(
         initialiser(shouldGoFirst = false) { builderString += "A" },
         initialiser(shouldGoFirst = true) { builderString += "B" },
@@ -21,14 +19,14 @@ class AppInitialisersTest {
     )
 
     /* When */
-    appInitialisers.init()
+    appInitializers.init()
 
     /* Then */
     assertEquals(expected = "BAC", actual = builderString)
   }
 
-  private fun initialiser(shouldGoFirst: Boolean, block: () -> Unit): IAppInitialiser =
-    object : IAppInitialiser {
+  private fun initialiser(shouldGoFirst: Boolean, block: () -> Unit): AppInitializer =
+    object : AppInitializer {
       override fun shouldGoFirst(): Boolean = shouldGoFirst
       override fun init() = block.invoke()
     }

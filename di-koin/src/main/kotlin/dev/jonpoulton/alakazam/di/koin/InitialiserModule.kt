@@ -1,14 +1,14 @@
 package dev.jonpoulton.alakazam.di.koin
 
-import dev.jonpoulton.alakazam.android.init.AppInitialisers
-import dev.jonpoulton.alakazam.android.init.IAppInitialiser
-import dev.jonpoulton.alakazam.android.init.LoggingInitialiser
+import dev.jonpoulton.alakazam.android.init.AppInitializers
+import dev.jonpoulton.alakazam.android.init.AppInitializer
+import dev.jonpoulton.alakazam.android.init.LoggingInitializer
 import org.koin.dsl.module
 
 val initialiserModule = module {
   single {
-    AppInitialisers(initialisers = getAll<IAppInitialiser>().toSet())
+    AppInitializers(initializers = getAll<AppInitializer>().toSet())
   }
 
-  factory<IAppInitialiser> { LoggingInitialiser() }
+  factory<AppInitializer> { LoggingInitializer() }
 }

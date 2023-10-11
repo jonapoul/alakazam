@@ -1,6 +1,6 @@
 package dev.jonpoulton.alakazam.android.init
 
-interface IAppInitialiser {
+interface AppInitializer {
   fun shouldGoFirst(): Boolean = false
   fun init()
 }

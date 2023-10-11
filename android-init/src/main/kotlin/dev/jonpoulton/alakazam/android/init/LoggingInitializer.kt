@@ -4,7 +4,7 @@ import dev.jonpoulton.alakazam.android.logging.ConsoleLoggingTree
 import timber.log.Timber
 import javax.inject.Inject
 
-class LoggingInitialiser @Inject constructor() : IAppInitialiser {
+class LoggingInitializer @Inject constructor() : AppInitializer {
   override fun shouldGoFirst(): Boolean = true
 
   override fun init() {

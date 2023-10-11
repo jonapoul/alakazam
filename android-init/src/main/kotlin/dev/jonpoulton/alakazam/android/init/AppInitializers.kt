@@ -1,10 +1,10 @@
 package dev.jonpoulton.alakazam.android.init
 
-class AppInitialisers(
-  private val initialisers: Set<IAppInitialiser>,
+class AppInitializers(
+  private val initializers: Set<AppInitializer>,
 ) {
   fun init() {
-    initialisers
+    initializers
       .sortedByDescending { it.shouldGoFirst() }
       .forEach { it.init() }
   }
