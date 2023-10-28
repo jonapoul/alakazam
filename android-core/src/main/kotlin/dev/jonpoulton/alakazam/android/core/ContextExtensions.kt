@@ -8,7 +8,6 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.util.TypedValue
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
@@ -88,5 +87,3 @@ fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
   return bitmap
 }
 
-val Context.inflater: LayoutInflater
-  get() = LayoutInflater.from(this)

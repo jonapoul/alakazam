@@ -4,9 +4,8 @@ package dev.jonpoulton.alakazam.android.ui.core
 
 import android.view.View
 import android.view.animation.AlphaAnimation
-import android.view.inputmethod.InputMethodManager
 import androidx.annotation.UiThread
-import androidx.core.content.getSystemService
+import dev.jonpoulton.alakazam.android.core.inputMethodManager
 
 /**
  * Starts a fading-in animation of the given [View]. The default fade duration is 500 milliseconds.
@@ -36,6 +35,5 @@ private fun View.fade(duration: Long, targetAlpha: Float) {
 
 @UiThread
 fun View.hideKeyboard() {
-  val imm = context.getSystemService<InputMethodManager>()!!
-  imm.hideSoftInputFromWindow(windowToken, 0)
+  context.inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
 }
