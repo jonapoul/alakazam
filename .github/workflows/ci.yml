@@ -13,34 +13,41 @@ on:
 
 env:
   CI: true
-  JAVA_VERSION: 11
-  JDK_DIST: 'zulu'
+
+permissions:
+  contents: write
+  checks: write
 
 jobs:
-  checks:
-    name: Run checks
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JDK_DIST }}
+          java-version: 11
+          distribution: "zulu"
+
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          generate-job-summary: false
+          dependency-graph: generate-and-submit
 
       - name: Check
-        uses: gradle/gradle-build-action@v2.7.0
-        with:
-          arguments: check
+        run: ./gradlew check
 
       - name: Upload reports
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: check-reports
-          path: ./*/build/reports
+          path: |
+            ./*/build/reports
+            ./build/reports
           if-no-files-found: warn
 
       - name: Publish test reports
@@ -49,14 +56,20 @@ jobs:
         with:
           report_paths: "**/build/test-results/*/TEST-*.xml"
 
+  dependency-review:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform dependency review
+        uses: actions/dependency-review-action@v3
+
   deploy-docs:
-    name: Deploy docs
+    needs: check
     runs-on: ubuntu-latest
     if: github.repository == 'jonapoul/alakazam' && github.ref == 'refs/heads/master'
-    needs: [ checks ]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: 'true'
@@ -64,8 +77,8 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JDK_DIST }}
+          java-version: 11
+          distribution: "zulu"
 
       - name: Setup Python
         uses: actions/setup-python@v4
