@@ -1,3 +1,5 @@
+name: Publish
+
 on:
   push:
     tags:
@@ -73,9 +75,6 @@ jobs:
         with:
           generate-job-summary: false
           cache-read-only: false
-
-      - name: Generate Javadoc
-        run: ./gradlew dokkaJavadoc
 
       - name: Publish
         env:
