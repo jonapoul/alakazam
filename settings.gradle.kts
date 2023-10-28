@@ -18,8 +18,6 @@ dependencyResolutionManagement {
 
 includeBuild("build-logic")
 
-include(":app-sample")
-
 include(":kotlin-core")
 include(":kotlin-json")
 include(":kotlin-time")

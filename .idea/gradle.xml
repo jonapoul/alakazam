@@ -34,7 +34,6 @@
             <option value="$PROJECT_DIR$/android-ui-core" />
             <option value="$PROJECT_DIR$/android-ui-material" />
             <option value="$PROJECT_DIR$/android-ui-viewbinding" />
-            <option value="$PROJECT_DIR$/app-sample" />
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/di-hilt" />
             <option value="$PROJECT_DIR$/di-koin" />
