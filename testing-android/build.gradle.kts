@@ -9,6 +9,10 @@ android {
   namespace = "dev.jonpoulton.alakazam.test.android"
 }
 
+configurations.configureEach {
+  exclude(group = "org.junit.jupiter")
+}
+
 dependencies {
   implementation(projects.androidCore)
   api(projects.testingCore)

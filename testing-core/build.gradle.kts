@@ -6,6 +6,10 @@ plugins {
   id("convention-test")
 }
 
+configurations.configureEach {
+  exclude(group = "org.junit.jupiter")
+}
+
 dependencies {
   implementation(projects.kotlinCore)
   api(libs.kotlinx.coroutines.core)

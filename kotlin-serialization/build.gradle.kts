@@ -11,4 +11,5 @@ dependencies {
   api(projects.kotlinCore)
   api(libs.kotlinx.serialization.core)
   testImplementation(projects.testingCore)
+  testImplementation(libs.kotlinx.serialization.json)
 }
