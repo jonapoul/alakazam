@@ -16,33 +16,33 @@ class CoroutineScopeExtensionsKtTest {
 
   @Test
   fun `Collect flow`() {
-    /* Given */
+    // Given
     val flow = flowOf(1, 2, 3, 4, 5)
     val scope = CoroutineScope(context = coroutineRule.dispatcher)
 
-    /* When */
+    // When
     var numItemsCollected = 0
     scope.collectFlow(flow) { numItemsCollected++ }
     coroutineRule.advanceUntilIdle()
 
-    /* Then */
+    // Then
     assertEquals(expected = 5, actual = numItemsCollected)
   }
 
   @Test
   fun `Launch infinite loop`() = runTest {
-    /* Given */
+    // Given
     val controller = FiniteLoopController(maxLoops = 10)
     var numLoops = 0
 
-    /* When */
+    // When
     coroutineRule.scope.launchInfiniteLoop(loopController = controller) {
       numLoops++
       delay(5_000L) // will be skipped
     }
     coroutineRule.advanceUntilIdle()
 
-    /* Then */
+    // Then
     assertEquals(expected = 10, actual = numLoops)
   }
 }

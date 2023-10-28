@@ -12,7 +12,7 @@ class StateHolderTest {
   @get:Rule
   val coroutineRule = CoroutineRule()
 
-  private class IntStateHolder : StateHolder<Int>(initialState = InitialValue)
+  private class IntStateHolder : StateHolder<Int>(initialState = INITIAL_VALUE)
 
   private lateinit var stateHolder: IntStateHolder
 
@@ -23,9 +23,9 @@ class StateHolderTest {
 
   @Test
   fun `Initial state`() = runTest {
-    assertEquals(expected = InitialValue, actual = stateHolder.peek())
+    assertEquals(expected = INITIAL_VALUE, actual = stateHolder.peek())
     stateHolder.state.test {
-      assertEquals(expected = InitialValue, actual = awaitItem())
+      assertEquals(expected = INITIAL_VALUE, actual = awaitItem())
       cancelAndIgnoreRemainingEvents()
     }
   }
@@ -33,16 +33,16 @@ class StateHolderTest {
   @Test
   fun `Change state`() = runTest {
     stateHolder.state.test {
-      assertEquals(expected = InitialValue, actual = awaitItem())
+      assertEquals(expected = INITIAL_VALUE, actual = awaitItem())
       stateHolder.set(456)
       assertEquals(expected = 456, actual = awaitItem())
       stateHolder.reset()
-      assertEquals(expected = InitialValue, actual = awaitItem())
+      assertEquals(expected = INITIAL_VALUE, actual = awaitItem())
       cancelAndIgnoreRemainingEvents()
     }
   }
 
   private companion object {
-    const val InitialValue = 123
+    const val INITIAL_VALUE = 123
   }
 }

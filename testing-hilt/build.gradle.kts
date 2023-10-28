@@ -17,7 +17,7 @@ dependencies {
   api(libs.androidx.appcompat)
   api(libs.androidx.lifecycle.runtimeKtx)
 
-  /* Testing */
+  // Testing
   api(libs.test.androidx.fragment)
   api(libs.test.androidx.hilt)
   api(libs.test.androidx.navigation)

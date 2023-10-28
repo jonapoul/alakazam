@@ -29,6 +29,7 @@ class FlowOnEachOfTypeTest {
   }
 
   private open class OpenClass
+
   private class FinalClass : OpenClass()
 
   @Test

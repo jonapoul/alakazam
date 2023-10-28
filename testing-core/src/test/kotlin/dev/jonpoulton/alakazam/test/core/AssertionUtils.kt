@@ -17,8 +17,11 @@ internal data class DataClass(
 internal val DATA1 = DataClass(INT, BOOL, DOUBLE)
 
 internal abstract class AbstractClass
+
 internal object FinalClass : AbstractClass()
+
 internal interface IInterface
+
 internal object InterfaceImpl : IInterface
 
 internal val INTS = listOf(1, 2, 3)

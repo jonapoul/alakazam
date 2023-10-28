@@ -39,6 +39,7 @@ if (detektMain != null) {
 }
 
 ktlint {
+  android.set(true)
   version.set(libs.versions.ktlint.cli.get())
   reporters {
     reporter(ReporterType.HTML)

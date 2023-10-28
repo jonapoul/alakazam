@@ -10,6 +10,6 @@ fun Closeable.quietlyClose() {
   try {
     close()
   } catch (e: Exception) {
-    /* No-op */
+    // No-op
   }
 }

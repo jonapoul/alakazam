@@ -8,7 +8,7 @@ fun justTry(block: () -> Unit) {
   try {
     block.invoke()
   } catch (e: Exception) {
-    /* No-op */
+    // No-op
   }
 }
 
@@ -16,7 +16,7 @@ fun justTry(block: () -> Unit) {
  * Don't do anything
  */
 fun noOp() {
-  /* No-op, obviously */
+  // No-op, obviously
 }
 
 /**

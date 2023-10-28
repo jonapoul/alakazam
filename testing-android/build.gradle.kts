@@ -13,10 +13,10 @@ dependencies {
   implementation(projects.androidCore)
   api(projects.testingCore)
 
-  /* General runtime */
+  // General runtime
   api(libs.timber.core)
 
-  /* Testing */
+  // Testing
   api(libs.test.androidx.arch)
   api(libs.test.androidx.coreKtx)
   api(libs.test.androidx.fragment)
