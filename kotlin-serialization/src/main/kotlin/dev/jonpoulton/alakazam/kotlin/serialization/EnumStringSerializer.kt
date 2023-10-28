@@ -1,4 +1,4 @@
-package dev.jonpoulton.alakazam.kotlin.json
+package dev.jonpoulton.alakazam.kotlin.serialization
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerializationException

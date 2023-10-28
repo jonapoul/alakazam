@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.kotlin.json
 
+import dev.jonpoulton.alakazam.kotlin.serialization.SimpleSerializer
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString

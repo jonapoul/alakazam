@@ -8,7 +8,7 @@ plugins {
 }
 
 dependencies {
-  implementation(projects.kotlinCore)
-  implementation(libs.kotlinx.serialization.json)
+  api(projects.kotlinCore)
+  api(libs.kotlinx.serialization.core)
   testImplementation(projects.testingCore)
 }

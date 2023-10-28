@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 includeBuild("build-logic")
 
 include(":kotlin-core")
-include(":kotlin-json")
+include(":kotlin-serialization")
 include(":kotlin-time")
 
 include(":android-core")

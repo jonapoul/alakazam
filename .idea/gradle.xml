@@ -38,7 +38,7 @@
             <option value="$PROJECT_DIR$/di-hilt" />
             <option value="$PROJECT_DIR$/di-koin" />
             <option value="$PROJECT_DIR$/kotlin-core" />
-            <option value="$PROJECT_DIR$/kotlin-json" />
+            <option value="$PROJECT_DIR$/kotlin-serialization" />
             <option value="$PROJECT_DIR$/kotlin-time" />
             <option value="$PROJECT_DIR$/testing-android" />
             <option value="$PROJECT_DIR$/testing-core" />

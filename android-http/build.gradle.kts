@@ -14,7 +14,7 @@ android {
 
 dependencies {
   api(projects.kotlinCore)
-  api(projects.kotlinJson)
+  api(projects.kotlinSerialization)
   api(projects.androidCore)
 
   implementation(libs.kotlinx.serialization.json)
