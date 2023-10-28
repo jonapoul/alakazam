@@ -36,6 +36,7 @@ jobs:
         with:
           generate-job-summary: false
           dependency-graph: generate-and-submit
+          cache-read-only: false
 
       - name: Check
         run: ./gradlew check

@@ -29,7 +29,7 @@ jobs:
           echo "GIT_TAG=$GIT_TAG"
           echo "version=$GIT_TAG" >> $GITHUB_OUTPUT
 
-      - name: Get Git tag
+      - name: Get Gradle version
         id: gradle-version
         run: |
           GRADLE_VERSION=$(cat gradle.properties | grep VERSION_NAME | cut -d "=" -f 2)
@@ -56,17 +56,11 @@ jobs:
     needs: verify-version
 
     steps:
-      - name: Verify Git Tag
-        run: |
-          GIT_TAG="${{ needs.verify-version.outputs.git-tag }}"
-          if [ -z "$GIT_TAG" ]; then
-            echo "Empty tag?"
-            exit 1
-          fi
-          echo "GIT_TAG=$GIT_TAG" >> $GITHUB_ENV
-
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Get Git Tag
+        run: echo "GIT_TAG=$GIT_TAG" >> $GITHUB_ENV
 
       - name: Setup JDK
         uses: actions/setup-java@v3
@@ -78,9 +72,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           generate-job-summary: false
-
-      - name: Assemble
-        run: ./gradlew assemble
+          cache-read-only: false
 
       - name: Generate Javadoc
         run: ./gradlew dokkaJavadoc
@@ -90,12 +82,8 @@ jobs:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_IN_MEMORY_KEY }}
-          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
         run: ./gradlew publish
-
-      - name: Get tag
-        run: echo "GIT_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
       - name: Create release
         uses: ncipollo/release-action@v1
