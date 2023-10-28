@@ -31,8 +31,13 @@ android {
   }
 
   buildFeatures {
+    aidl = false
     buildConfig = false
+    compose = false
+    prefab = false
+    renderScript = false
     resValues = false
+    shaders = false
     viewBinding = false
   }
 
@@ -46,14 +51,8 @@ android {
       excludes.addAll(
         listOf(
           "META-INF/DEPENDENCIES",
-          "META-INF/LICENSE",
-          "META-INF/LICENSE.md",
-          "META-INF/LICENSE.txt",
-          "META-INF/license.txt",
-          "META-INF/LICENSE-notice.md",
-          "META-INF/NOTICE",
-          "META-INF/NOTICE.txt",
-          "META-INF/notice.txt",
+          "META-INF/LICENSE*",
+          "META-INF/NOTICE*",
           "META-INF/ASL2.0",
         )
       )

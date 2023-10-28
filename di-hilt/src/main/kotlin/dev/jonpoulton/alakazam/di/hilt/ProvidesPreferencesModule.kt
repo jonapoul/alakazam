@@ -13,7 +13,7 @@ import dev.jonpoulton.alakazam.kotlin.core.IODispatcher
 
 @InstallIn(SingletonComponent::class)
 @Module
-class PreferencesModule {
+class ProvidesPreferencesModule {
   @Provides
   fun sharedPrefs(
     @ApplicationContext context: Context,

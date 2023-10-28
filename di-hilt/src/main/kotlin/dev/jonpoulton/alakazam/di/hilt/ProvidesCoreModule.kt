@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class CoreModule {
+class ProvidesCoreModule {
   @Provides
   fun launcher(
     @ApplicationContext context: Context,
@@ -27,11 +27,8 @@ class CoreModule {
   fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
 
   @Provides
-  fun toaster(
-    @ApplicationContext context: Context,
-    main: MainDispatcher,
-  ): Toaster = Toaster(context, main)
+  fun clock(): Clock = SystemClock
 
   @Provides
-  fun clock(): Clock = SystemClock
+  fun toaster(context: Context, main: MainDispatcher): Toaster = Toaster(context, main)
 }

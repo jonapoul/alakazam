@@ -15,7 +15,7 @@ dependencies {
   api(projects.testingCore)
 
   api(libs.androidx.appcompat)
-  api(libs.androidx.lifecycle.runtime)
+  api(libs.androidx.lifecycle.runtimeKtx)
 
   /* Testing */
   api(libs.test.androidx.fragment)

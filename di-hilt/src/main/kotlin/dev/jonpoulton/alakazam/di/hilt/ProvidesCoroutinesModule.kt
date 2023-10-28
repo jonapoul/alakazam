@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @Suppress("InjectDispatcher")
 @InstallIn(SingletonComponent::class)
 @Module
-class CoroutinesModule {
+class ProvidesCoroutinesModule {
   @Provides
   @Singleton
   fun scope(): CoroutineScope = CoroutineScope(SupervisorJob())

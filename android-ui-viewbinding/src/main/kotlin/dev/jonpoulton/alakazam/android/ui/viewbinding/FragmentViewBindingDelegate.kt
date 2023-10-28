@@ -50,7 +50,7 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(
 
   private fun buildBindingIfNeeded() {
     if (binding == null) {
-      binding = viewBindingFactory.invoke(fragment.requireView())
+      binding = viewBindingFactory(fragment.requireView())
     }
   }
 

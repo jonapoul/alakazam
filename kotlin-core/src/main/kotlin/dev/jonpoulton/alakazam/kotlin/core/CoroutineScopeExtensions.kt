@@ -12,25 +12,26 @@ import kotlin.coroutines.EmptyCoroutineContext
  * need two indentations before any collected values are dealt with, but this reduces that by one so it's a tad more
  * readable.
  */
-fun <T> CoroutineScope.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
-  return launch {
-    flow.collect {
-      call.invoke(it)
-    }
-  }
-}
+fun <T> CoroutineScope.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job =
+  collectFlow(flow, EmptyCoroutineContext, call)
+
+fun <T> CoroutineScope.collectFlow(flow: Flow<T>, context: CoroutineContext, call: suspend (T) -> Unit): Job =
+  launch(context) { flow.collect(call::invoke) }
 
 /**
  * Runs an infinite loop of periodic function calls, scoped to the [CoroutineScope]'s lifecycle.
  */
 fun CoroutineScope.launchInfiniteLoop(
-  context: CoroutineContext = EmptyCoroutineContext,
   loopController: LoopController = InfiniteLoopController,
   call: suspend () -> Unit,
-): Job {
-  return launch(context) {
-    while (loopController.shouldLoop()) {
-      call.invoke()
-    }
+): Job = launchInfiniteLoop(EmptyCoroutineContext, loopController, call)
+
+fun CoroutineScope.launchInfiniteLoop(
+  context: CoroutineContext,
+  loopController: LoopController = InfiniteLoopController,
+  call: suspend () -> Unit,
+): Job = launch(context) {
+  while (loopController.shouldLoop()) {
+    call()
   }
 }

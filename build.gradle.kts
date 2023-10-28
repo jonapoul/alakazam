@@ -23,15 +23,7 @@ plugins {
   alias(libs.plugins.ksp) apply false
 
   /* Configured below */
-  alias(libs.plugins.doctor)
   alias(libs.plugins.versions)
-}
-
-/* Doctor config */
-doctor {
-  javaHome {
-    ensureJavaHomeMatches.set(false)
-  }
 }
 
 /* Dependency versions config */

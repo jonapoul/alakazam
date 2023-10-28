@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class HttpModule {
+class ProvidesHttpModule {
   @Provides
   @Singleton
   fun clientFactory(

@@ -37,7 +37,7 @@ class ActivityViewBindingDelegate<VB : ViewBinding>(
 
   private fun buildBindingIfNeeded() {
     if (binding == null) {
-      binding = viewBindingFactory.invoke(activity.layoutInflater)
+      binding = viewBindingFactory(activity.layoutInflater)
     }
   }
 
