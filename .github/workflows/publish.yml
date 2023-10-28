@@ -53,6 +53,7 @@ jobs:
 
   publish:
     runs-on: macos-latest
+    needs: verify-version
 
     steps:
       - name: Verify Git Tag
