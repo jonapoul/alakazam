@@ -10,12 +10,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import dev.jonpoulton.alakazam.test.db.RoomDatabaseRule
 import kotlinx.coroutines.test.runTest
+import kotlinx.datetime.Instant
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import java.time.Instant
 import kotlin.test.assertEquals
 
 @Entity
@@ -96,6 +96,6 @@ class InstantConverterTest {
   }
 
   private companion object {
-    val INSTANT = Instant.ofEpochMilli(1681641138112L)!! // Sun Apr 16 2023 10:32:18 UTC
+    val INSTANT = Instant.fromEpochMilliseconds(1681641138112L) // Sun Apr 16 2023 10:32:18 UTC
   }
 }

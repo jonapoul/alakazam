@@ -16,6 +16,7 @@ dependencies {
   implementation(projects.kotlinCore)
   implementation(libs.androidx.coreKtx)
   implementation(libs.kotlinx.coroutines.android)
+  implementation(libs.kotlinx.datetime)
   implementation(libs.timber.core)
   testImplementation(projects.testingCore)
 }

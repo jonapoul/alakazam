@@ -1,7 +1,7 @@
 package dev.jonpoulton.alakazam.android.db
 
 import androidx.room.TypeConverter
-import java.time.Instant
+import kotlinx.datetime.Instant
 
 object InstantConverter {
   @TypeConverter

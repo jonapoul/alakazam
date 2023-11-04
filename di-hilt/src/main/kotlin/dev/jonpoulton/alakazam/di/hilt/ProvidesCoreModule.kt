@@ -10,8 +10,7 @@ import dev.jonpoulton.alakazam.android.core.ActivityLauncher
 import dev.jonpoulton.alakazam.android.core.SnackbarFeed
 import dev.jonpoulton.alakazam.android.core.Toaster
 import dev.jonpoulton.alakazam.kotlin.core.MainDispatcher
-import dev.jonpoulton.alakazam.kotlin.time.Clock
-import dev.jonpoulton.alakazam.kotlin.time.SystemClock
+import kotlinx.datetime.Clock
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -27,7 +26,7 @@ class ProvidesCoreModule {
   fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
 
   @Provides
-  fun clock(): Clock = SystemClock
+  fun clock(): Clock = Clock.System
 
   @Provides
   fun toaster(

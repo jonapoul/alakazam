@@ -11,8 +11,9 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import timber.log.Timber
 import java.io.File
-import java.time.Duration
 import java.util.concurrent.TimeUnit
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.seconds
 
 open class OkHttpClientFactory(
   private val context: Context,
@@ -24,9 +25,9 @@ open class OkHttpClientFactory(
   ): OkHttpClient {
     return OkHttpClient.Builder()
       .ifTrue(buildConfig.debug) { addInterceptor(buildInterceptor()) }
-      .readTimeout(readWriteTimeout.seconds, TimeUnit.SECONDS)
-      .writeTimeout(readWriteTimeout.seconds, TimeUnit.SECONDS)
-      .connectTimeout(connectTimeout.seconds, TimeUnit.SECONDS)
+      .readTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
+      .writeTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
+      .connectTimeout(connectTimeout.inWholeSeconds, TimeUnit.SECONDS)
       .cache(buildCache())
       .connectionPool(CONNECTION_POOL)
       .dispatcher(buildDispatcher())
@@ -54,7 +55,7 @@ open class OkHttpClientFactory(
   }
 
   private companion object {
-    val DEFAULT_TIMEOUT: Duration = Duration.ofSeconds(5)
+    val DEFAULT_TIMEOUT = 5.seconds
     const val CACHE_MAX_SIZE_BYTES = 50L * 1024 * 1024 // 50MB
     const val MAX_IDLE_CONNECTIONS = 10
     const val KEEP_ALIVE_TIME_MINUTES = 2L

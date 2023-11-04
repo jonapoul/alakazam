@@ -1,8 +1,7 @@
 package dev.jonpoulton.alakazam.di.koin
 
 import dev.jonpoulton.alakazam.android.core.Toaster
-import dev.jonpoulton.alakazam.kotlin.time.Clock
-import dev.jonpoulton.alakazam.kotlin.time.SystemClock
+import kotlinx.datetime.Clock
 import org.koin.dsl.module
 
 /**
@@ -10,5 +9,5 @@ import org.koin.dsl.module
  */
 val coreModule = module {
   factory { Toaster(get(), get()) }
-  factory<Clock> { SystemClock }
+  factory<Clock> { Clock.System }
 }

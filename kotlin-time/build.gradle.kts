@@ -7,6 +7,7 @@ plugins {
 }
 
 dependencies {
+  api(libs.kotlinx.datetime)
   implementation(projects.kotlinCore)
   testImplementation(projects.testingCore)
 }

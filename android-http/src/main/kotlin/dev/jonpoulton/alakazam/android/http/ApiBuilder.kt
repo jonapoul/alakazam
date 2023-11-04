@@ -7,7 +7,8 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Converter
 import retrofit2.Retrofit
-import java.time.Duration
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.seconds
 
 @ExperimentalSerializationApi
 abstract class ApiBuilder<Api>(
@@ -45,7 +46,7 @@ abstract class ApiBuilder<Api>(
   }
 
   private companion object {
-    val DEFAULT_TIMEOUT: Duration = Duration.ofSeconds(2)
+    val DEFAULT_TIMEOUT = 2.seconds
     const val DEFAULT_PROTOCOL = "https"
   }
 }

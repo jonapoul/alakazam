@@ -17,6 +17,7 @@ dependencies {
   api(projects.kotlinSerialization)
   api(projects.androidCore)
 
+  implementation(libs.kotlinx.datetime)
   implementation(libs.kotlinx.serialization.json)
   implementation(libs.okhttp.core)
   implementation(libs.okhttp.logging)

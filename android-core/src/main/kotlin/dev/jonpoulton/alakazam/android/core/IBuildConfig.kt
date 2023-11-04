@@ -2,7 +2,7 @@ package dev.jonpoulton.alakazam.android.core
 
 import android.annotation.SuppressLint
 import android.os.Build
-import java.time.Instant
+import kotlinx.datetime.Instant
 
 /**
  * Intended to give a less annoying interface to compile-time constants of the app. This way if we run a project
@@ -24,9 +24,9 @@ interface IBuildConfig {
   val repoUrl: String // e.g. "https://github.com/jonapoul/alakazam"
 }
 
-@Suppress("LongParameterList")
+@Suppress("LongParameterList", "FunctionNaming")
 @SuppressLint("AnnotateVersionCheck")
-fun buildConfig(
+fun BuildConfig(
   debug: Boolean,
   versionName: String,
   versionCode: Int,

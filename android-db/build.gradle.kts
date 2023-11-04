@@ -18,6 +18,7 @@ dependencies {
   implementation(libs.androidx.roomKtx)
   implementation(libs.androidx.room.runtime)
   ksp(libs.androidx.room.compiler)
+  implementation(libs.kotlinx.datetime)
 
   testImplementation(projects.testingAndroid)
   testImplementation(projects.testingDb)
