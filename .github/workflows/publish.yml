@@ -61,9 +61,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Get Git Tag
-        run: echo "GIT_TAG=$GIT_TAG" >> $GITHUB_ENV
-
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
@@ -88,4 +85,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           generateReleaseNotes: true
-          name: v${{ env.GIT_TAG }}
+          name: v${{ needs.verify-version.outputs.git-tag }}
