@@ -16,7 +16,8 @@ android {
 }
 
 dependencies {
-  implementation(projects.androidUiCore)
+  api(projects.kotlinCore)
+  api(projects.androidUiCore)
   implementation(libs.androidx.appcompat)
   implementation(libs.androidx.fragmentKtx)
   implementation(libs.androidx.recyclerview)

@@ -13,7 +13,10 @@ import dev.jonpoulton.alakazam.android.ui.core.hideIfTrue
 import dev.jonpoulton.alakazam.android.ui.core.show
 import dev.jonpoulton.alakazam.android.ui.core.showIfTrue
 import dev.jonpoulton.alakazam.android.ui.core.viewScope
+import dev.jonpoulton.alakazam.kotlin.core.collectFlow
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.Flow
 
 val ViewBinding.viewScope: CoroutineScope
   get() = root.viewScope
@@ -24,6 +27,10 @@ fun ViewBinding.showIfTrue(condition: Boolean) {
 
 fun ViewBinding.hideIfTrue(condition: Boolean) {
   root.hideIfTrue(condition)
+}
+
+fun <T> ViewBinding.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
+  return viewScope.collectFlow(flow, call)
 }
 
 fun ViewBinding.show() {
