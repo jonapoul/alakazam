@@ -30,5 +30,8 @@ class ProvidesCoreModule {
   fun clock(): Clock = SystemClock
 
   @Provides
-  fun toaster(context: Context, main: MainDispatcher): Toaster = Toaster(context, main)
+  fun toaster(
+    @ApplicationContext context: Context,
+    main: MainDispatcher,
+  ): Toaster = Toaster(main, appContext = context, resourcesContext = context)
 }

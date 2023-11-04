@@ -7,15 +7,16 @@ import dev.jonpoulton.alakazam.kotlin.core.MainDispatcher
 import kotlinx.coroutines.withContext
 
 class Toaster(
-  private val context: Context,
   private val main: MainDispatcher,
+  private val appContext: Context,
+  private val resourcesContext: Context = appContext,
 ) {
   fun toast(message: String, length: Int = Toast.LENGTH_LONG) {
-    Toast.makeText(context, message, length).show()
+    Toast.makeText(appContext, message, length).show()
   }
 
   fun toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
-    toast(context.getString(message), length)
+    toast(resourcesContext.getString(message), length)
   }
 
   /**
@@ -28,6 +29,6 @@ class Toaster(
   }
 
   suspend fun coToast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
-    coToast(context.getString(message), length)
+    coToast(resourcesContext.getString(message), length)
   }
 }
