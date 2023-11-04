@@ -19,7 +19,7 @@ class RoomDatabaseRule<DB : RoomDatabase>(
   val database: DB
     get() = nullableDatabase ?: throw AssertionError("Database is null!")
 
-  override fun starting(description: Description?) {
+  override fun starting(description: Description) {
     super.starting(description)
     val context = ApplicationProvider.getApplicationContext<Context>()
     nullableDatabase = Room.inMemoryDatabaseBuilder(context, databaseClass.java)
@@ -27,7 +27,7 @@ class RoomDatabaseRule<DB : RoomDatabase>(
       .build()
   }
 
-  override fun finished(description: Description?) {
+  override fun finished(description: Description) {
     super.finished(description)
     nullableDatabase?.close()
     nullableDatabase = null
