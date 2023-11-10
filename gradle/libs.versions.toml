@@ -35,7 +35,7 @@ desugaring = "1.1.5"
 flowpreferences = "1.9.1"
 inject = "1"
 koin = "3.4.0"
-kotlinx-coroutines = "1.7.3"
+kotlinx-coroutines = "1.6.4"
 kotlinx-datetime = "0.4.0"
 kotlinx-serialization = "1.5.0"
 logback = "3.0.0"
@@ -56,7 +56,7 @@ junit = "4.13.2"
 mockk = "1.13.7"
 robolectric = "4.10.3"
 timber-junit = "1.0.1"
-turbine = "0.8.0"
+turbine = "0.12.3"
 
 [libraries]
 # Plugins
