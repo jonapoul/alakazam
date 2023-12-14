@@ -43,6 +43,7 @@ dependencies {
     implementation "dev.jonpoulton.alakazam:android-ui-viewbinding:{version}"
 
     /* DI libraries */
+    implementation "dev.jonpoulton.alakazam:di-dagger:{version}"
     implementation "dev.jonpoulton.alakazam:di-hilt:{version}"
     implementation "dev.jonpoulton.alakazam:di-koin:{version}"
 

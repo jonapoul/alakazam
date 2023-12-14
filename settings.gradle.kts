@@ -37,6 +37,7 @@ include(":android-ui-core")
 include(":android-ui-material")
 include(":android-ui-viewbinding")
 
+include(":di-dagger")
 include(":di-hilt")
 include(":di-koin")
 

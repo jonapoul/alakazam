@@ -35,6 +35,7 @@
             <option value="$PROJECT_DIR$/android-ui-material" />
             <option value="$PROJECT_DIR$/android-ui-viewbinding" />
             <option value="$PROJECT_DIR$/build-logic" />
+            <option value="$PROJECT_DIR$/di-dagger" />
             <option value="$PROJECT_DIR$/di-hilt" />
             <option value="$PROJECT_DIR$/di-koin" />
             <option value="$PROJECT_DIR$/kotlin-core" />
