@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+rootProject.name = "alakazam"
+
 pluginManagement {
   repositories {
     gradlePluginPortal()
