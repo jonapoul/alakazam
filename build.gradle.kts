@@ -1,3 +1,5 @@
+@file:Suppress("DSL_SCOPE_VIOLATION")
+
 plugins {
   /* convention-kotlin.gradle.kts */
   alias(libs.plugins.kotlin.android) apply false

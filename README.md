@@ -38,6 +38,7 @@ dependencies {
     implementation "dev.jonpoulton.alakazam:android-prefs:{version}"
     implementation "dev.jonpoulton.alakazam:android-theme:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-appcompat:{version}"
+    implementation "dev.jonpoulton.alakazam:android-ui-compose:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-core:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-material:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-viewbinding:{version}"
