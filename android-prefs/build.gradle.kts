@@ -15,7 +15,7 @@ dependencies {
 
   implementation(libs.androidx.preference)
   implementation(libs.flowpreferences)
-  implementation(libs.timber.core)
+  implementation(libs.timber)
 
   testImplementation(projects.testingCore)
   testImplementation(libs.test.androidx.coreKtx)

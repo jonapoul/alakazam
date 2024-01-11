@@ -10,7 +10,7 @@ import timber.log.Timber
  */
 class FileLoggingTree(
   private val minPriority: Int = Log.VERBOSE,
-) : TaggedDebugTree() {
+) : TaggedDebugTree(prefix = null) {
   override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
     if (priority < minPriority) {
       return

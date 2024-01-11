@@ -18,7 +18,7 @@ dependencies {
   api(projects.testingCore)
 
   // General runtime
-  api(libs.timber.core)
+  api(libs.timber)
 
   // Testing
   api(libs.test.androidx.arch)

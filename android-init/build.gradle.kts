@@ -16,7 +16,7 @@ dependencies {
   api(projects.androidLogging)
 
   implementation(libs.inject)
-  implementation(libs.timber.core)
+  implementation(libs.timber)
 
   testImplementation(projects.testingCore)
 }
