@@ -15,6 +15,7 @@ dependencyResolutionManagement {
     mavenCentral()
     google()
     maven { url = uri("https://jitpack.io") }
+    mavenLocal()
   }
 }
 
@@ -41,6 +42,11 @@ include(":android-ui-viewbinding")
 include(":di-dagger")
 include(":di-hilt")
 include(":di-koin")
+
+include(":tak-core")
+include(":tak-dagger")
+include(":tak-plugin")
+include(":tak-ui")
 
 include(":testing-android")
 include(":testing-core")
