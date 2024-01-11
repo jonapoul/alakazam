@@ -1,0 +1,42 @@
+@file:Suppress("FunctionName")
+
+package dev.jonpoulton.alakazam.tak.compose.core
+
+import androidx.compose.material.Colors
+import androidx.compose.material.Shapes
+import androidx.compose.material.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
+import dev.jonpoulton.alakazam.tak.core.AppContext
+import dev.jonpoulton.alakazam.tak.core.PluginContext
+
+fun TakComposeView(
+  pluginContext: PluginContext,
+  appContext: AppContext,
+  colors: Colors = TakColors.colors,
+  shapes: @Composable () -> Shapes = { TakShapes },
+  typography: @Composable () -> Typography = { TakTypography },
+  content: @Composable () -> Unit,
+): ComposeView {
+  val composeContext = TakComposeContext(pluginContext, appContext)
+  return TakComposeView(composeContext, colors, shapes, typography, content)
+}
+
+/**
+ * Shortcut to create a context-aware [ComposeView] for an ATAK plugin.
+ */
+fun TakComposeView(
+  composeContext: TakComposeContext,
+  colors: Colors = TakColors.colors,
+  shapes: @Composable () -> Shapes = { TakShapes },
+  typography: @Composable () -> Typography = { TakTypography },
+  content: @Composable () -> Unit,
+): ComposeView = ComposeView(composeContext).apply {
+  setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+  setContent {
+    TakTheme(colors, shapes(), typography()) {
+      content()
+    }
+  }
+}

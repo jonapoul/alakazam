@@ -1,5 +1,4 @@
 plugins {
-  kotlin("android")
   id("convention-android")
   id("convention-atak")
   id("convention-publish")

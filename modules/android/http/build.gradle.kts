@@ -2,7 +2,6 @@ plugins {
   kotlin("plugin.serialization")
   id("convention-android")
   id("convention-desugaring")
-  id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
   id("convention-test")

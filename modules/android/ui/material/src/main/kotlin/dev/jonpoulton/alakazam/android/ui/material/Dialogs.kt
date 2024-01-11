@@ -7,10 +7,10 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import dev.jonpoulton.alakazam.kotlin.core.ifNotNull
 import dev.jonpoulton.alakazam.android.core.inflater
 import dev.jonpoulton.alakazam.android.ui.appcompat.setSimpleNegativeButton
 import dev.jonpoulton.alakazam.android.ui.appcompat.setSimplePositiveButton
+import dev.jonpoulton.alakazam.kotlin.core.ifNotNull
 
 fun Fragment.showLoadingDialog(
   @StringRes loadingText: Int = R.string.dialog_loading,

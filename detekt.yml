@@ -1,9 +1,14 @@
+# Rules pulled from https://detekt.dev/docs/introduction/compose/ for Compose
 ---
 complexity:
+  LongMethod:
+    threshold: 100
   LongParameterList:
+    constructorThreshold: 10
+    functionThreshold: 10
     ignoreDefaultParameters: true
   TooManyFunctions:
-    active: false
+    ignorePrivate: true
 exceptions:
   SwallowedException:
     active: false
@@ -11,18 +16,21 @@ exceptions:
     active: false
 naming:
   FunctionNaming:
-    ignoreAnnotated:
-    - "Composable"
+    functionPattern: '[a-zA-Z][a-zA-Z0-9]*'
   TopLevelPropertyNaming:
-    active: false
+    constantPattern: '[A-Z][A-Za-z0-9]*'
 style:
-  UnnecessaryAbstractClass:
-    active: false
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotated:
+      - 'Preview'
+      - 'PreviewDark'
   UnusedPrivateMember:
     ignoreAnnotated:
-    - "PreviewThemes"
-    - "Preview"
-  WildcardImport:
-    active: false
-  MagicNumber:
-    active: false
+      - 'Preview'
+      - 'PreviewDark'
+
+potential-bugs:
+  UnsafeCallOnNullableType:
+    active: false # just because using !! double bangs on icon functions is good enough

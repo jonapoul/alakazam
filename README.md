@@ -28,7 +28,7 @@ And add a dependency code to your **module**'s `build.gradle` file.
 
 ```gradle
 dependencies {
-    /* Android libraries */
+    // Android libraries
     implementation "dev.jonpoulton.alakazam:android-core:{version}"
     implementation "dev.jonpoulton.alakazam:android-db:{version}"
     implementation "dev.jonpoulton.alakazam:android-http:{version}"
@@ -43,17 +43,29 @@ dependencies {
     implementation "dev.jonpoulton.alakazam:android-ui-material:{version}"
     implementation "dev.jonpoulton.alakazam:android-ui-viewbinding:{version}"
 
-    /* DI libraries */
+    // DI libraries
     implementation "dev.jonpoulton.alakazam:di-dagger:{version}"
     implementation "dev.jonpoulton.alakazam:di-hilt:{version}"
     implementation "dev.jonpoulton.alakazam:di-koin:{version}"
 
-    /* Kotlin libraries */
+    // Kotlin libraries
     implementation "dev.jonpoulton.alakazam:kotlin-core:{version}"
     implementation "dev.jonpoulton.alakazam:kotlin-serialization:{version}"
     implementation "dev.jonpoulton.alakazam:kotlin-time:{version}"
 
-    /* Testing libraries */
+    // ATAK libraries
+    implementation "dev.jonpoulton.alakazam:tak-compose-components:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-compose-core:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-compose-icons:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-compose-plugin:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-compose-preview:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-compose-viewmodel:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-core:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-dagger:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-plugin:{version}"
+    implementation "dev.jonpoulton.alakazam:tak-viewmodel:{version}"
+
+    // Testing libraries
     testImplementation "dev.jonpoulton.alakazam:testing-core:{version}"
     testImplementation "dev.jonpoulton.alakazam:testing-db:{version}"
     androidTestImplementation "dev.jonpoulton.alakazam:testing-android:{version}"

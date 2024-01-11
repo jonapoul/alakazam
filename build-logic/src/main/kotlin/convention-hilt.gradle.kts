@@ -3,10 +3,9 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.the
 
 plugins {
-  kotlin("android")
-  kotlin("kapt")
-  id("com.google.dagger.hilt.android")
   id("convention-android")
+  id("com.google.dagger.hilt.android")
+  kotlin("kapt")
 }
 
 val libs = the<LibrariesForLibs>()

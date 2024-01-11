@@ -1,7 +1,6 @@
 plugins {
   id("convention-android")
   id("convention-hilt")
-  id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
   id("convention-test")
