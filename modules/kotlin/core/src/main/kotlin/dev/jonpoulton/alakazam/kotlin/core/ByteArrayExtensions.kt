@@ -1,3 +1,5 @@
+@file:Suppress("TopLevelPropertyNaming")
+
 package dev.jonpoulton.alakazam.kotlin.core
 
 private const val MAX_BYTE = 0xff

@@ -12,15 +12,14 @@ plugins {
 val libs = the<LibrariesForLibs>()
 
 licensee {
-  allow(spdxId = "Apache-2.0") /* Most libraries */
-  allow(spdxId = "MIT") /* Some other libraries */
-  allow(spdxId = "BSD-3-Clause") /* Hamcrest, Protobuf */
-  allow(spdxId = "BSD-2-Clause") /* Hamcrest */
-  allow(spdxId = "EPL-1.0") /* JUnit */
+  allow(spdxId = "Apache-2.0") // Most libraries
+  allow(spdxId = "MIT") // Some other libraries
+  allow(spdxId = "BSD-3-Clause") // Hamcrest, Protobuf
+  allow(spdxId = "BSD-2-Clause") // Hamcrest
+  allow(spdxId = "EPL-1.0") // JUnit
 
-  allowUrl("http://www.opensource.org/licenses/bsd-license.php") /* Hamcrest, BSD-2-Clause */
-  allowUrl("https://jsoup.org/license") /* MIT */
-  allowUrl("https://github.com/mockito/mockito/blob/master/LICENSE") /* MIT */
+  allowUrl(url = "http://www.opensource.org/licenses/bsd-license.php") // Hamcrest, BSD-2-Clause
+  allowUrl(url = "https://github.com/mockito/mockito/blob/master/LICENSE") // MIT
 }
 
 detekt {

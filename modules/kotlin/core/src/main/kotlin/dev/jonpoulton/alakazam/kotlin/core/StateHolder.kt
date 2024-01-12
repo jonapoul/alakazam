@@ -4,6 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+@Suppress("UnnecessaryAbstractClass")
 abstract class StateHolder<T>(private val initialState: T) {
   private val mutableState = MutableStateFlow(initialState)
 

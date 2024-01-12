@@ -6,6 +6,7 @@ import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
+@Suppress("UnnecessaryAbstractClass")
 abstract class SimpleSerializer<T : Any>(serialName: String, private val constructor: (String) -> T) : KSerializer<T> {
   override val descriptor = PrimitiveSerialDescriptor(serialName, PrimitiveKind.STRING)
 
