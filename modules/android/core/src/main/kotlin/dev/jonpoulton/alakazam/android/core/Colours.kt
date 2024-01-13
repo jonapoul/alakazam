@@ -12,7 +12,7 @@ import kotlin.math.min
  * Construct a [ColorInt] [Int] value using four ARGB values.
  */
 @ColorInt
-fun argbColour(
+public fun argbColour(
   @IntRange(from = 0, to = 255) alpha: Int,
   @IntRange(from = 0, to = 255) red: Int,
   @IntRange(from = 0, to = 255) green: Int,
@@ -27,7 +27,7 @@ fun argbColour(
  *      lerpColours(0xFF000000, 0xFFFFFFFF, 0.5) => 0xFF808080
  *      lerpColours(0xFF000000, 0xFFFFFFFF, 1.0) => 0xFFFFFFFF
  */
-fun lerpColours(
+public fun lerpColours(
   @ColorInt start: Int,
   @ColorInt end: Int,
   @FloatRange(from = 0.0, to = 1.0) factor: Float,
@@ -56,25 +56,25 @@ fun lerpColours(
  * Returns the alpha component of this [Int] as an ARGB value. Replication of
  * [android.graphics.Color.alpha] as an extension function.
  */
-fun Int.alpha(): Int = this shr 24 and 0xFF
+public fun Int.alpha(): Int = this shr 24 and 0xFF
 
 /**
  * Returns the red component of this [Int] as an ARGB value. Replication of
  * [android.graphics.Color.red] as an extension function.
  */
-fun Int.red(): Int = this shr 16 and 0xFF
+public fun Int.red(): Int = this shr 16 and 0xFF
 
 /**
  * Returns the green component of this [Int] as an ARGB value. Replication of
  * [android.graphics.Color.green] as an extension function.
  */
-fun Int.green(): Int = this shr 8 and 0xFF
+public fun Int.green(): Int = this shr 8 and 0xFF
 
 /**
  * Returns the blue component of this [Int] as an ARGB value. Replication of
  * [android.graphics.Color.blue] as an extension function.
  */
-fun Int.blue(): Int = this and 0xFF
+public fun Int.blue(): Int = this and 0xFF
 
 /**
  * Lightens the 32-bit integer colour by the given factor.
@@ -82,7 +82,7 @@ fun Int.blue(): Int = this and 0xFF
  * [factor] = 1f corresponds to #FFF, pure white.
  */
 @ColorInt
-fun Int.lighten(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
+public fun Int.lighten(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
   colourFactor { it * (1f - factor) + (255f * factor) }
 
 /**
@@ -91,7 +91,7 @@ fun Int.lighten(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
  * [factor] = 1f corresponds to #000, pure black.
  */
 @ColorInt
-fun Int.darken(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
+public fun Int.darken(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
   colourFactor { it * (1f - factor) }
 
 @ColorInt

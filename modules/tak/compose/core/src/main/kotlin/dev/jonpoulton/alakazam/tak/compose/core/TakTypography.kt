@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
-val TakTypography: Typography
+public val TakTypography: Typography
   @Composable
   @ReadOnlyComposable
   get() = MaterialTheme.typography.copy(
@@ -28,24 +28,19 @@ val TakTypography: Typography
   )
 
 @Stable
-object TakFonts {
-  @Stable
-  val Bold: Font = Font(R.font.nunito_bold, weight = FontWeight.Bold)
-
-  @Stable
-  val Regular: Font = Font(R.font.nunito_regular, weight = FontWeight.Normal)
-
-  @Stable
-  val Family: FontFamily = FontFamily(Bold, Regular)
+public object TakFonts {
+  @Stable public val Bold: Font = Font(R.font.nunito_bold, weight = FontWeight.Bold)
+  @Stable public val Regular: Font = Font(R.font.nunito_regular, weight = FontWeight.Normal)
+  @Stable public val Family: FontFamily = FontFamily(Bold, Regular)
 }
 
 @Stable
-object TakTextStyles {
+public object TakTextStyles {
   /**
    * Used for dropdown menu headers
    */
   @Stable
-  val H1: TextStyle = TextStyle(
+  public val H1: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
     fontSize = 14.sp,
     fontWeight = FontWeight.Bold,
@@ -56,7 +51,7 @@ object TakTextStyles {
    * Used for large buttons and modal buttons
    */
   @Stable
-  val H2: TextStyle = TextStyle(
+  public val H2: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
     fontSize = 14.sp,
     fontWeight = FontWeight.Normal,
@@ -67,7 +62,7 @@ object TakTextStyles {
    * Used for interactive menu options
    */
   @Stable
-  val H3: TextStyle = TextStyle(
+  public val H3: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
     fontSize = 14.sp,
     fontWeight = FontWeight.Normal,
@@ -78,7 +73,7 @@ object TakTextStyles {
    * Used for small buttons
    */
   @Stable
-  val H4: TextStyle = TextStyle(
+  public val H4: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
     fontSize = 12.sp,
     fontWeight = FontWeight.Bold,
@@ -89,7 +84,7 @@ object TakTextStyles {
    * Used for module headers
    */
   @Stable
-  val Display: TextStyle = TextStyle(
+  public val Display: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
     fontSize = 16.sp,
     fontWeight = FontWeight.Bold,
@@ -100,7 +95,7 @@ object TakTextStyles {
    * Standard font for all other cases
    */
   @Stable
-  val P: TextStyle = TextStyle(
+  public val P: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
     fontSize = 12.sp,
     fontWeight = FontWeight.Normal,

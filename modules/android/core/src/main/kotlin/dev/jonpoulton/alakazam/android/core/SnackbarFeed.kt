@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlin.time.Duration.Companion.seconds
 
-class SnackbarFeed {
+public class SnackbarFeed {
   private val pending = Channel<SnackbarMessage>(MESSAGE_QUEUE_SIZE, BufferOverflow.DROP_OLDEST)
 
   /**
@@ -17,7 +17,7 @@ class SnackbarFeed {
    * emit "null", and will then emit messages sent via [add]. Once 2 seconds has elapsed, null
    * will be emitted to remove the current message.
    */
-  val snackbars: Flow<SnackbarMessage?> = flow {
+  public val snackbars: Flow<SnackbarMessage?> = flow {
     emit(null)
     pending.receiveAsFlow().collect {
       emit(it)
@@ -26,11 +26,11 @@ class SnackbarFeed {
     }
   }
 
-  suspend fun add(message: SnackbarMessage) {
+  public suspend fun add(message: SnackbarMessage) {
     pending.send(message)
   }
 
-  fun post(message: SnackbarMessage): ChannelResult<Unit> {
+  public fun post(message: SnackbarMessage): ChannelResult<Unit> {
     return pending.trySend(message)
   }
 

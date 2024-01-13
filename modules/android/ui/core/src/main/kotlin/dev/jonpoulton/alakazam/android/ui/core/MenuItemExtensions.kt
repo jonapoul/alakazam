@@ -2,18 +2,18 @@ package dev.jonpoulton.alakazam.android.ui.core
 
 import android.view.MenuItem
 
-fun MenuItem.show() {
+public fun MenuItem.show() {
   isVisible = true
 }
 
-fun MenuItem.hide() {
+public fun MenuItem.hide() {
   isVisible = false
 }
 
-fun MenuItem.showIfTrue(condition: Boolean) {
+public fun MenuItem.showIfTrue(condition: Boolean) {
   if (condition) show() else hide()
 }
 
-fun MenuItem.hideIfTrue(condition: Boolean) {
+public fun MenuItem.hideIfTrue(condition: Boolean) {
   showIfTrue(!condition)
 }

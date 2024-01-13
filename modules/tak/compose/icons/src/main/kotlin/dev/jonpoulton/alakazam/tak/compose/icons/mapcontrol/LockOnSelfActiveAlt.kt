@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.MapControlTakIcons
 
-val MapControlTakIcons.LockOnSelfActiveAlt: ImageVector
+public val MapControlTakIcons.LockOnSelfActiveAlt: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

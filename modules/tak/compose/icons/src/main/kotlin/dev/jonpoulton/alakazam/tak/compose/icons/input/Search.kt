@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.InputTakIcons
 
-val InputTakIcons.Search: ImageVector
+public val InputTakIcons.Search: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

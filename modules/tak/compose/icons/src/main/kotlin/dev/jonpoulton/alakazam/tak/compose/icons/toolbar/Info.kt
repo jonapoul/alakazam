@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.ToolbarTakIcons
 
-val ToolbarTakIcons.Info: ImageVector
+public val ToolbarTakIcons.Info: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

@@ -9,25 +9,25 @@ import androidx.compose.ui.graphics.Color
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 
 @Stable
-interface TakIntegerPickerColors {
-  val textBackgroundColor: Color
+public interface TakIntegerPickerColors {
+  public val textBackgroundColor: Color
 
   @Composable
-  fun borderColor(enabled: Boolean): State<Color>
+  public fun borderColor(enabled: Boolean): State<Color>
 
   @Composable
-  fun buttonBackgroundColor(enabled: Boolean, pressed: Boolean): State<Color>
+  public fun buttonBackgroundColor(enabled: Boolean, pressed: Boolean): State<Color>
 
   @Composable
-  fun buttonForegroundColor(enabled: Boolean): State<Color>
+  public fun buttonForegroundColor(enabled: Boolean): State<Color>
 
   @Composable
-  fun textForegroundColor(enabled: Boolean): State<Color>
+  public fun textForegroundColor(enabled: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakIntegerPickerColors(
+public data class DefaultTakIntegerPickerColors(
   override val textBackgroundColor: Color = Color.Transparent,
   val borderColor: Color = TakColors.Sand,
   val borderColorDisabled: Color = TakColors.Ash,

@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RadialTakIcons
 
-val RadialTakIcons.PairingLineToSelf: ImageVector
+public val RadialTakIcons.PairingLineToSelf: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

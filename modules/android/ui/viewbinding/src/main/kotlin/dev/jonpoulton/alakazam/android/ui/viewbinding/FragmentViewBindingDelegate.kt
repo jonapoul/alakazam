@@ -15,7 +15,7 @@ import kotlin.reflect.KProperty
  * Creates and manages a [ViewBinding] object from within a [Fragment]. The value will be cleared
  * when the [Fragment]'s view lifecycle reaches the "destroyed" state.
  */
-class FragmentViewBindingDelegate<VB : ViewBinding>(
+public class FragmentViewBindingDelegate<VB : ViewBinding>(
   private val fragment: Fragment,
   private val viewBindingFactory: (View) -> VB,
 ) : ReadOnlyProperty<Fragment, VB>, LifecycleObserver {

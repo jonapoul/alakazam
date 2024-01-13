@@ -11,7 +11,7 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
 @ExperimentalSerializationApi
-abstract class ApiBuilder<Api>(
+public abstract class ApiBuilder<Api>(
   private val okHttpClientFactory: OkHttpClientFactory,
   private val apiClass: Class<Api>,
   private val baseUrl: String,
@@ -22,7 +22,7 @@ abstract class ApiBuilder<Api>(
     Json.asConverterFactory("application/json".toMediaType()),
   )
 
-  open fun buildApi(
+  public open fun buildApi(
     baseUrl: String = this.baseUrl,
     timeout: Duration = this.timeout,
     protocol: String = this.protocol,
@@ -38,7 +38,7 @@ abstract class ApiBuilder<Api>(
 
   protected open fun Retrofit.Builder.extraConfig(): Retrofit.Builder = this
 
-  open fun buildOkHttpClient(timeout: Duration = DEFAULT_TIMEOUT): OkHttpClient {
+  public open fun buildOkHttpClient(timeout: Duration = DEFAULT_TIMEOUT): OkHttpClient {
     return okHttpClientFactory.buildClient(
       readWriteTimeout = timeout,
       connectTimeout = timeout,

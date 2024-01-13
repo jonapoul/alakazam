@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 import kotlin.time.DurationUnit
 
 @RunWith(Parameterized::class)
-class DurationUnitExtensionsTest(private val case: TestCase) {
+internal class DurationUnitExtensionsTest(private val case: TestCase) {
   @Test
   fun runTest() {
     assertEquals(

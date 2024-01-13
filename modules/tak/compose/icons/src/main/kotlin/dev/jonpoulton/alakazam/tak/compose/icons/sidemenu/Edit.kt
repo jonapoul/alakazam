@@ -6,7 +6,7 @@ import androidx.compose.ui.res.vectorResource
 import dev.jonpoulton.alakazam.tak.compose.icons.R
 import dev.jonpoulton.alakazam.tak.compose.icons.SideMenuTakIcons
 
-val SideMenuTakIcons.Edit: ImageVector
+public val SideMenuTakIcons.Edit: ImageVector
   @Composable
   get() {
     if (nullableIcon != null) {

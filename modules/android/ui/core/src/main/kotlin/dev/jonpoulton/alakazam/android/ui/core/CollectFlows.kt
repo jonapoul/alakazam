@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.Flow
  * Easily collect a [Flow] from a [ComponentActivity] without needing to explicitly launch a
  * suspending coroutine to do so.
  */
-fun <T> ComponentActivity.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
+public fun <T> ComponentActivity.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
   return lifecycleScope.collectFlow(flow, call)
 }
 
@@ -22,7 +22,7 @@ fun <T> ComponentActivity.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit):
  * suspending coroutine to do so. This is tied to the lifecycle of the view, NOT the lifecycle of
  * the [Fragment] itself.
  */
-fun <T> Fragment.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
+public fun <T> Fragment.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
   return viewLifecycleOwner.lifecycleScope.collectFlow(flow, call)
 }
 
@@ -30,6 +30,6 @@ fun <T> Fragment.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
  * Easily collect a [Flow] from a [ViewModel] without needing to explicitly launch a
  * suspending coroutine to do so.
  */
-fun <T> ViewModel.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
+public fun <T> ViewModel.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
   return viewModelScope.collectFlow(flow, call)
 }

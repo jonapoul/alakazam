@@ -77,7 +77,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.markers.Yellow
 /**
  * A standardized set of icons to be utilized on map throughout the application.
  */
-object MarkersTakIcons
+public object MarkersTakIcons
 
 private val allIcons = listOf(
   TakIcons.Markers.AlarmGamma,

@@ -12,7 +12,7 @@ import dev.jonpoulton.alakazam.android.core.inflater
  * [RecyclerView.Adapter] class to reduce boilerplate and give smoother animations when submitting
  * new data to the view.
  */
-abstract class CommonListAdapter<T : Any, VH : CommonViewHolder<T>>(
+public abstract class CommonListAdapter<T : Any, VH : CommonViewHolder<T>>(
   diffCallback: DiffUtil.ItemCallback<T>,
 ) : ListAdapter<T, VH>(diffCallback) {
 

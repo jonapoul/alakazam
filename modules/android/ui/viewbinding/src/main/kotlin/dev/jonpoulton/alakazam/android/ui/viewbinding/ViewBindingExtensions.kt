@@ -17,31 +17,32 @@ import dev.jonpoulton.alakazam.kotlin.core.collectFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
+import kotlin.properties.ReadOnlyProperty
 
-val ViewBinding.viewScope: CoroutineScope
+public val ViewBinding.viewScope: CoroutineScope
   get() = root.viewScope
 
-fun ViewBinding.showIfTrue(condition: Boolean) {
+public fun ViewBinding.showIfTrue(condition: Boolean) {
   root.showIfTrue(condition)
 }
 
-fun ViewBinding.hideIfTrue(condition: Boolean) {
+public fun ViewBinding.hideIfTrue(condition: Boolean) {
   root.hideIfTrue(condition)
 }
 
-fun <T> ViewBinding.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
+public fun <T> ViewBinding.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
   return viewScope.collectFlow(flow, call)
 }
 
-fun ViewBinding.show() {
+public fun ViewBinding.show() {
   root.show()
 }
 
-fun ViewBinding.hide() {
+public fun ViewBinding.hide() {
   root.hide()
 }
 
-fun ViewBinding.cleanUpRecyclerAdapters() {
+public fun ViewBinding.cleanUpRecyclerAdapters() {
   val view = this.root
   if (view is RecyclerView) {
     view.adapter = null
@@ -56,9 +57,9 @@ fun ViewBinding.cleanUpRecyclerAdapters() {
  *
  *      private val binding by viewBinding(MyActivityBinding::inflate)
  */
-fun <VB : ViewBinding> AppCompatActivity.viewBinding(
+public fun <VB : ViewBinding> AppCompatActivity.viewBinding(
   bindingInflater: (LayoutInflater) -> VB,
-) = ActivityViewBindingDelegate(
+): ReadOnlyProperty<AppCompatActivity, VB> = ActivityViewBindingDelegate(
   activity = this,
   bindingInflater,
 )
@@ -69,9 +70,9 @@ fun <VB : ViewBinding> AppCompatActivity.viewBinding(
  *
  *      private val binding by viewBinding(MyFragmentBinding::bind)
  */
-fun <VB : ViewBinding> Fragment.viewBinding(
+public fun <VB : ViewBinding> Fragment.viewBinding(
   viewBindingFactory: (View) -> VB,
-) = FragmentViewBindingDelegate(
+): ReadOnlyProperty<Fragment, VB> = FragmentViewBindingDelegate(
   fragment = this,
   viewBindingFactory,
 )

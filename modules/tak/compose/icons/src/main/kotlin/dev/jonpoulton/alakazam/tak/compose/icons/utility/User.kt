@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.UtilityTakIcons
 
-val UtilityTakIcons.User: ImageVector
+public val UtilityTakIcons.User: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

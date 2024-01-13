@@ -62,7 +62,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.utility.Watercraft
 /**
  * A standardized set of icons to be utilized within the components designated for items within the side menu.
  */
-object UtilityTakIcons
+public object UtilityTakIcons
 
 private val allIcons
   @Composable

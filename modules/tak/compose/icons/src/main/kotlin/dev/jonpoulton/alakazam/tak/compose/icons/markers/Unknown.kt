@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
 
-val MarkersTakIcons.Unknown: ImageVector
+public val MarkersTakIcons.Unknown: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

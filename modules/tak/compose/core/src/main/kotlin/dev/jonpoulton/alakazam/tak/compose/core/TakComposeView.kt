@@ -11,7 +11,7 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import dev.jonpoulton.alakazam.tak.core.AppContext
 import dev.jonpoulton.alakazam.tak.core.PluginContext
 
-fun TakComposeView(
+public fun TakComposeView(
   pluginContext: PluginContext,
   appContext: AppContext,
   colors: Colors = TakColors.colors,
@@ -26,7 +26,7 @@ fun TakComposeView(
 /**
  * Shortcut to create a context-aware [ComposeView] for an ATAK plugin.
  */
-fun TakComposeView(
+public fun TakComposeView(
   composeContext: TakComposeContext,
   colors: Colors = TakColors.colors,
   shapes: @Composable () -> Shapes = { TakShapes },

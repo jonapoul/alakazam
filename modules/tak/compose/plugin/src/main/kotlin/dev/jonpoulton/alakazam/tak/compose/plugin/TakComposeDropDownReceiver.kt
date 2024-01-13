@@ -11,28 +11,29 @@ import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
 import dev.jonpoulton.alakazam.tak.compose.core.LocalTakComposeContext
+import dev.jonpoulton.alakazam.tak.compose.core.LocalTakContexts
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakComposeContext
 import dev.jonpoulton.alakazam.tak.compose.core.TakComposeView
 import dev.jonpoulton.alakazam.tak.compose.viewmodel.LocalViewModelFactory
-import dev.jonpoulton.alakazam.tak.core.PluginContext
+import dev.jonpoulton.alakazam.tak.core.TakContexts
 import dev.jonpoulton.alakazam.tak.plugin.TakDropDownReceiver
 
-abstract class TakComposeDropDownReceiver(
-  pluginContext: PluginContext,
+public abstract class TakComposeDropDownReceiver(
+  protected val contexts: TakContexts,
   mapView: MapView,
   protected val viewModelFactory: ViewModelProvider.Factory,
 ) : TakDropDownReceiver(mapView), ViewModelStoreOwner {
   override val viewModelStore: ViewModelStore = ViewModelStore()
 
-  private val composeContext = TakComposeContext(pluginContext, mapView)
+  private val composeContext = TakComposeContext(contexts)
 
   @CallSuper
   override fun disposeImpl() {
     viewModelStore.clear()
   }
 
-  open fun showDropDown(
+  public open fun showDropDown(
     dimensions: Dimensions = HalfScreen,
     ignoreBackButton: Boolean = false,
     switchable: Boolean = false,
@@ -45,6 +46,7 @@ abstract class TakComposeDropDownReceiver(
         LocalViewModelStoreOwner provides this,
         LocalViewModelFactory provides viewModelFactory,
         LocalTakComposeContext provides composeContext,
+        LocalTakContexts provides contexts,
       ) {
         content()
       }

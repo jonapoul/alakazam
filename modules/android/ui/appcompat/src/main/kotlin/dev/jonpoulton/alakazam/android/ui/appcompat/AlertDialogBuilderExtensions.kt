@@ -10,7 +10,7 @@ import androidx.appcompat.app.AlertDialog
  * apply a default (system-translated) string of "CANCEL" and invoke the supplied [onClick] when it's
  * pressed. If [onClick] is null, the button will simply close the dialog.
  */
-fun <T : AlertDialog.Builder> T.setSimpleNegativeButton(
+public fun <T : AlertDialog.Builder> T.setSimpleNegativeButton(
   @StringRes text: Int = android.R.string.cancel,
   onClick: (() -> Unit)? = null,
 ): T {
@@ -26,7 +26,7 @@ fun <T : AlertDialog.Builder> T.setSimpleNegativeButton(
  * apply a default (system-translated) string of "OK" and invoke the supplied [onClick] when it's
  * pressed. If [onClick] is null, the button will simply close the dialog.
  */
-fun <T : AlertDialog.Builder> T.setSimplePositiveButton(
+public fun <T : AlertDialog.Builder> T.setSimplePositiveButton(
   @StringRes text: Int = android.R.string.ok,
   onClick: (() -> Unit)? = null,
 ): T {
@@ -37,7 +37,7 @@ fun <T : AlertDialog.Builder> T.setSimplePositiveButton(
   }
 }
 
-fun <T : AlertDialog.Builder> T.setSimpleNeutralButton(
+public fun <T : AlertDialog.Builder> T.setSimpleNeutralButton(
   @StringRes text: Int,
   onClick: (() -> Unit)? = null,
 ): T {

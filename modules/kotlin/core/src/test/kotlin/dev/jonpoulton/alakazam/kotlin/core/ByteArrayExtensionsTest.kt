@@ -4,7 +4,7 @@ import org.junit.Assert.assertThrows
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class ByteArrayExtensionsTest {
+internal class ByteArrayExtensionsTest {
   @Test
   fun `To hex string`() {
     val bytes = byteArray(0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF)

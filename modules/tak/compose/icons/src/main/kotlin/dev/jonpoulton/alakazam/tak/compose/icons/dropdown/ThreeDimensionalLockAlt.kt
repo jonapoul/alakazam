@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.DropdownTakIcons
 
-val DropdownTakIcons.ThreeDimensionalLockAlt: ImageVector
+public val DropdownTakIcons.ThreeDimensionalLockAlt: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

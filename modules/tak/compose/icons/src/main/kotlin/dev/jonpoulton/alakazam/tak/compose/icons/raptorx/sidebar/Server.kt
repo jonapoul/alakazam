@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXSidebarTakIcons
 
-val RaptorXSidebarTakIcons.Server: ImageVector
+public val RaptorXSidebarTakIcons.Server: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

@@ -9,17 +9,17 @@ import androidx.compose.ui.unit.sp
 
 @Stable
 @Immutable
-interface TakSliderDimensions {
-  val activeThumbTextSize: TextUnit
-  val inactiveThumbTextSize: TextUnit
-  val trackHeight: Dp
-  val thumbRadius: Dp
-  val stepRadius: Dp
+public interface TakSliderDimensions {
+  public val activeThumbTextSize: TextUnit
+  public val inactiveThumbTextSize: TextUnit
+  public val trackHeight: Dp
+  public val thumbRadius: Dp
+  public val stepRadius: Dp
 }
 
 @Stable
 @Immutable
-data class DefaultTakSliderDimensions(
+public data class DefaultTakSliderDimensions(
   override val activeThumbTextSize: TextUnit = 12.sp,
   override val inactiveThumbTextSize: TextUnit = 10.sp,
   override val trackHeight: Dp = 4.dp,
@@ -27,4 +27,4 @@ data class DefaultTakSliderDimensions(
   override val stepRadius: Dp = 10.dp,
 ) : TakSliderDimensions
 
-val DefaultTakRangeSliderDimensions: TakSliderDimensions = DefaultTakSliderDimensions(thumbRadius = 12.dp)
+public val DefaultTakRangeSliderDimensions: TakSliderDimensions = DefaultTakSliderDimensions(thumbRadius = 12.dp)

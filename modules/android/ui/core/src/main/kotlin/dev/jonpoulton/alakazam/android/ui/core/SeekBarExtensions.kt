@@ -2,7 +2,7 @@ package dev.jonpoulton.alakazam.android.ui.core
 
 import android.widget.SeekBar
 
-fun SeekBar.setSimpleSeekBarChangeListener(
+public fun SeekBar.setSimpleSeekBarChangeListener(
   onProgressChanged: (seekBar: SeekBar, progress: Int, fromUser: Boolean) -> Unit,
   onStartTrackingTouch: ((seekBar: SeekBar) -> Unit)? = null,
   onStopTrackingTouch: ((seekBar: SeekBar) -> Unit)? = null,

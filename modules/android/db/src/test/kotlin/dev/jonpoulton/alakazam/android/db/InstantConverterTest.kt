@@ -19,14 +19,14 @@ import org.robolectric.RobolectricTestRunner
 import kotlin.test.assertEquals
 
 @Entity
-data class TestInstantEntity(
+internal data class TestInstantEntity(
   @PrimaryKey(autoGenerate = true) val id: Long = 0L,
   val instant: Instant,
   val nullableInstant: Instant?,
 )
 
 @Dao
-interface TestInstantDao {
+internal interface TestInstantDao {
   @Insert
   suspend fun insert(vararg entities: TestInstantEntity)
 
@@ -36,12 +36,12 @@ interface TestInstantDao {
 
 @Database(version = 1, entities = [TestInstantEntity::class], exportSchema = false)
 @TypeConverters(InstantConverter::class)
-abstract class TestInstantDatabase : RoomDatabase() {
+internal abstract class TestInstantDatabase : RoomDatabase() {
   abstract fun dao(): TestInstantDao
 }
 
 @RunWith(RobolectricTestRunner::class)
-class InstantConverterTest {
+internal class InstantConverterTest {
   @get:Rule
   val databaseRule = RoomDatabaseRule(databaseClass = TestInstantDatabase::class)
 

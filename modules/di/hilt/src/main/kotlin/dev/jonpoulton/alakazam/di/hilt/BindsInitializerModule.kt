@@ -10,8 +10,8 @@ import dev.jonpoulton.alakazam.android.init.LoggingInitializer
 
 @InstallIn(SingletonComponent::class)
 @Module
-interface BindsInitializerModule {
+public interface BindsInitializerModule {
   @Binds
   @IntoSet
-  fun logging(init: LoggingInitializer): AppInitializer
+  public fun logging(init: LoggingInitializer): AppInitializer
 }

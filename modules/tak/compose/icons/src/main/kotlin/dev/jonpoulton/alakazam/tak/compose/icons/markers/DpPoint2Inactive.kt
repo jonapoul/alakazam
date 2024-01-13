@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
 
-val MarkersTakIcons.DpPoint2Inactive: ImageVector
+public val MarkersTakIcons.DpPoint2Inactive: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

@@ -25,7 +25,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakIconButton(
+public fun TakIconButton(
   icon: ImageVector,
   isError: Boolean = false,
   isDisabled: Boolean = false,
@@ -48,7 +48,7 @@ fun TakIconButton(
 
 @Stable
 @Composable
-fun defaultTakIconButtonColors(
+public fun defaultTakIconButtonColors(
   normalBackgroundColor: Color = TakColors.Sand,
   pressedBackgroundColor: Color = TakColors.Cyber,
   errorBackgroundColor: Color = TakColors.Alert,

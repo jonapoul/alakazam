@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class BuilderExtensionsTest {
+internal class BuilderExtensionsTest {
   data class TestResult(
     val valueWasChanged: Boolean,
   )

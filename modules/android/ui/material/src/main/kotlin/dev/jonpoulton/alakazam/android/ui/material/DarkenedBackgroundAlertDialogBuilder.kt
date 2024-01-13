@@ -8,7 +8,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  * Simple wrapper class to apply a darkened background to any alert dialog popups. Note that this
  * doesn't apply to preference dialogs.
  */
-open class DarkenedBackgroundAlertDialogBuilder(
+public open class DarkenedBackgroundAlertDialogBuilder(
   context: Context,
   overrideThemeResId: Int = 0,
 ) : MaterialAlertDialogBuilder(context, overrideThemeResId) {

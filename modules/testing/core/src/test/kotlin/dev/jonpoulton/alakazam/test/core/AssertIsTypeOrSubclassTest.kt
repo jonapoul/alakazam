@@ -2,7 +2,7 @@ package dev.jonpoulton.alakazam.test.core
 
 import org.junit.Test
 
-class AssertIsTypeOrSubclassTest {
+internal class AssertIsTypeOrSubclassTest {
   @Test
   fun `assertSubclass valid 1`() = assertIsTypeOrSubclass<DataClass>(DATA1)
 

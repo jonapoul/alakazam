@@ -31,7 +31,7 @@ import dev.jonpoulton.alakazam.tak.compose.core.TakTextStyles
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakSegmentedControl(
+public fun TakSegmentedControl(
   modifier: Modifier = Modifier,
   isDisabled: Boolean = false,
   colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
@@ -66,15 +66,15 @@ fun TakSegmentedControl(
   }
 }
 
-typealias TakSegmentedControlButtonId = Long
+public typealias TakSegmentedControlButtonId = Long
 
 @Stable
 @Immutable
-class TakSegmentedControlButton(
-  val text: String,
-  val id: TakSegmentedControlButtonId,
-  val isDisabled: Boolean = false,
-  val onActivated: (TakSegmentedControlButtonId) -> Unit,
+public class TakSegmentedControlButton(
+  public val text: String,
+  public val id: TakSegmentedControlButtonId,
+  public val isDisabled: Boolean = false,
+  public val onActivated: (TakSegmentedControlButtonId) -> Unit,
 )
 
 @Stable

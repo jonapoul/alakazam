@@ -3,7 +3,7 @@ package dev.jonpoulton.alakazam.test.core
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class LoopControllerTest {
+internal class LoopControllerTest {
   @Test
   fun `Run 10 loops`() {
     val controller = FiniteLoopController(maxLoops = 10)

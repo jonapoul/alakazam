@@ -5,7 +5,7 @@ import androidx.compose.material.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 
-val TakShapes: Shapes
+public val TakShapes: Shapes
   @Composable
   @ReadOnlyComposable
   get() = MaterialTheme.shapes.copy(

@@ -9,17 +9,17 @@ import dev.jonpoulton.alakazam.tak.core.AppContext
 import javax.inject.Singleton
 
 @Module
-class TakPreferencesModule {
+public class TakPreferencesModule {
   @Provides
   @Singleton
   @Suppress("DEPRECATION")
-  fun sharedPrefs(appContext: AppContext): SharedPreferences {
+  public fun sharedPrefs(appContext: AppContext): SharedPreferences {
     return android.preference.PreferenceManager.getDefaultSharedPreferences(appContext)
   }
 
   @Provides
   @Singleton
-  fun flowPrefs(prefs: SharedPreferences, io: IODispatcher): FlowSharedPreferences {
+  public fun flowPrefs(prefs: SharedPreferences, io: IODispatcher): FlowSharedPreferences {
     return FlowSharedPreferences(prefs, io)
   }
 }

@@ -8,9 +8,9 @@ import dev.jonpoulton.alakazam.tak.core.PluginContext
 import dev.jonpoulton.alakazam.tak.core.TakToaster
 
 @Module
-class TakToasterModule {
+public class TakToasterModule {
   @Provides
-  fun toaster(
+  public fun toaster(
     appContext: AppContext,
     pluginContext: PluginContext,
     main: MainDispatcher,

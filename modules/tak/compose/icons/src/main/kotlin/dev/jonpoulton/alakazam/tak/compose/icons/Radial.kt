@@ -84,7 +84,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.radial.ViewshedLine
 /**
  * A standardized set of icons to be utilized for the radial menu and child menu components.
  */
-object RadialTakIcons
+public object RadialTakIcons
 
 private val allIcons = listOf(
   TakIcons.Radial.AddHostile,

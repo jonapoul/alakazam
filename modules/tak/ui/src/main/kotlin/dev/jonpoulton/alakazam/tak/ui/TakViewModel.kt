@@ -5,23 +5,13 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.isActive
 
-abstract class TakViewModel : ViewModel() {
-  protected var viewModelScope: CoroutineScope = buildScope()
-    private set
+public abstract class TakViewModel : ViewModel() {
+  protected val viewModelScope: CoroutineScope = CoroutineScope(context = Dispatchers.Main.immediate)
 
   @CallSuper
-  open fun init() {
-    if (!viewModelScope.isActive) {
-      viewModelScope = buildScope()
-    }
-  }
-
   override fun onCleared() {
     super.onCleared()
     viewModelScope.cancel()
   }
-
-  private fun buildScope(): CoroutineScope = CoroutineScope(context = Dispatchers.Main.immediate)
 }

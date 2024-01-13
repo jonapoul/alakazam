@@ -39,7 +39,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.utility.Walking
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakDropdownField(
+public fun TakDropdownField(
   state: MutableState<String?>,
   options: List<String>,
   hint: String,

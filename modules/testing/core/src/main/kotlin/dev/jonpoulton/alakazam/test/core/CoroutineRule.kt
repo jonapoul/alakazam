@@ -2,6 +2,7 @@ package dev.jonpoulton.alakazam.test.core
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestDispatcher
 import kotlinx.coroutines.test.TestResult
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.resetMain
@@ -25,16 +26,16 @@ import org.junit.runner.Description
  *          }
  *      }
  */
-class CoroutineRule : TestWatcher() {
-  val scope = TestScope()
-  val dispatcher = StandardTestDispatcher(scope.testScheduler)
+public class CoroutineRule : TestWatcher() {
+  public val scope: TestScope = TestScope()
+  public val dispatcher: TestDispatcher = StandardTestDispatcher(scope.testScheduler)
 
-  fun runTest(
+  public fun runTest(
     timeoutMs: Long = DEFAULT_TIMEOUT_MS,
     testBody: suspend TestScope.() -> Unit,
   ): TestResult = scope.runTest(timeoutMs, testBody)
 
-  fun advanceUntilIdle() {
+  public fun advanceUntilIdle() {
     scope.testScheduler.advanceUntilIdle()
   }
 

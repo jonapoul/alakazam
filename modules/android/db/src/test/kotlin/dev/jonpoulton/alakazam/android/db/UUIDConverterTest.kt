@@ -19,14 +19,14 @@ import java.util.UUID
 import kotlin.test.assertEquals
 
 @Entity
-data class TestUuidEntity(
+internal data class TestUuidEntity(
   @PrimaryKey(autoGenerate = true) val id: Long = 0L,
   val uuid: UUID,
   val nullableUuid: UUID?,
 )
 
 @Dao
-interface TestUuidDao {
+internal interface TestUuidDao {
   @Insert
   suspend fun insert(vararg entities: TestUuidEntity)
 
@@ -36,12 +36,12 @@ interface TestUuidDao {
 
 @Database(version = 1, entities = [TestUuidEntity::class], exportSchema = false)
 @TypeConverters(UUIDConverter::class)
-abstract class TestUuidDatabase : RoomDatabase() {
+internal abstract class TestUuidDatabase : RoomDatabase() {
   abstract fun dao(): TestUuidDao
 }
 
 @RunWith(RobolectricTestRunner::class)
-class UUIDConverterTest {
+internal class UUIDConverterTest {
   @get:Rule
   val databaseRule = RoomDatabaseRule(databaseClass = TestUuidDatabase::class)
 

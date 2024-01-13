@@ -14,7 +14,7 @@ import androidx.preference.PreferenceViewHolder
 import dev.jonpoulton.alakazam.android.core.getColorFromAttr
 
 @SuppressLint("RestrictedApi")
-class CommonPreferenceCategory @JvmOverloads constructor(
+public class CommonPreferenceCategory @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
   defStyleAttr: Int = TypedArrayUtils.getAttr(

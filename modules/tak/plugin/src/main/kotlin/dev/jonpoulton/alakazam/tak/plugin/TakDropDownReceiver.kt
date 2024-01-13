@@ -7,10 +7,10 @@ import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.ipc.AtakBroadcast.DocumentedIntentFilter
 import com.atakmap.android.maps.MapView
 
-abstract class TakDropDownReceiver(mapView: MapView) : DropDownReceiver(mapView) {
-  abstract fun intentFilter(): DocumentedIntentFilter
+public abstract class TakDropDownReceiver(mapView: MapView) : DropDownReceiver(mapView) {
+  public abstract fun intentFilter(): DocumentedIntentFilter
 
-  fun showDropDown(
+  public fun showDropDown(
     contentView: View?,
     dimensions: Dimensions = HalfScreen,
     ignoreBackButton: Boolean = false,
@@ -29,7 +29,7 @@ abstract class TakDropDownReceiver(mapView: MapView) : DropDownReceiver(mapView)
     )
   }
 
-  fun showDropDown(
+  public fun showDropDown(
     fragment: Fragment?,
     dimensions: Dimensions = HalfScreen,
     ignoreBackButton: Boolean = false,
@@ -48,24 +48,24 @@ abstract class TakDropDownReceiver(mapView: MapView) : DropDownReceiver(mapView)
     )
   }
 
-  interface Dimensions {
-    val lwFraction: Double
-    val lhFraction: Double
-    val pwFraction: Double
-    val phFraction: Double
+  public interface Dimensions {
+    public val lwFraction: Double
+    public val lhFraction: Double
+    public val pwFraction: Double
+    public val phFraction: Double
   }
 
-  object HalfScreen : Dimensions {
-    override val lwFraction = HALF_WIDTH
-    override val lhFraction = FULL_HEIGHT
-    override val pwFraction = FULL_WIDTH
-    override val phFraction = HALF_HEIGHT
+  public object HalfScreen : Dimensions {
+    override val lwFraction: Double = HALF_WIDTH
+    override val lhFraction: Double = FULL_HEIGHT
+    override val pwFraction: Double = FULL_WIDTH
+    override val phFraction: Double = HALF_HEIGHT
   }
 
-  object FullScreen : Dimensions {
-    override val lwFraction = FULL_WIDTH
-    override val lhFraction = FULL_HEIGHT
-    override val pwFraction = FULL_WIDTH
-    override val phFraction = FULL_HEIGHT
+  public object FullScreen : Dimensions {
+    override val lwFraction: Double = FULL_WIDTH
+    override val lhFraction: Double = FULL_HEIGHT
+    override val pwFraction: Double = FULL_WIDTH
+    override val phFraction: Double = FULL_HEIGHT
   }
 }

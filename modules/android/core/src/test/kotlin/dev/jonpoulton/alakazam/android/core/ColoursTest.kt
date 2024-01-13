@@ -3,7 +3,7 @@ package dev.jonpoulton.alakazam.android.core
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class ColoursTest {
+internal class ColoursTest {
   @Test
   fun `ARGB colours`() {
     /* Black */

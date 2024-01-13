@@ -5,7 +5,7 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class AssertListEqualsValidTest(private val a: List<Any>, private val b: List<Any>) {
+internal class AssertListEqualsValidTest(private val a: List<Any>, private val b: List<Any>) {
   @Test
   fun `assertListEquals valid`() = assertListEquals(a, b)
 

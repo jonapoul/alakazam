@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.transformWhile
  * Performs the supplied [call] callback on every emission matching the [Expected] type. All values
  * are passed through as-is, regardless of the type.
  */
-inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
+public inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
   crossinline call: suspend (Expected) -> Unit,
 ): Flow<Input> {
   return onEach {
@@ -23,7 +23,7 @@ inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
  * true. When this condition is reached, the offending emission ***WILL NOT*** be passed onto the
  * caller and the flow will be cancelled.
  */
-fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
+public fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
   val shouldStop = !stopOn.invoke(it)
   if (shouldStop) {
     emit(it)
@@ -36,7 +36,7 @@ fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = transformW
  * true. When this condition is reached, the offending emission ***WILL*** be passed onto the
  * caller and the flow will be cancelled.
  */
-fun <T> Flow<T>.takeUntilInclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
+public fun <T> Flow<T>.takeUntilInclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
   emit(it)
   !stopOn.invoke(it)
 }

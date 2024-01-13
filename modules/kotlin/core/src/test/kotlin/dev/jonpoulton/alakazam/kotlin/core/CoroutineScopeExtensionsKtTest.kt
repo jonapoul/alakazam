@@ -10,7 +10,7 @@ import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class CoroutineScopeExtensionsKtTest {
+internal class CoroutineScopeExtensionsKtTest {
   @get:Rule
   val coroutineRule = CoroutineRule()
 

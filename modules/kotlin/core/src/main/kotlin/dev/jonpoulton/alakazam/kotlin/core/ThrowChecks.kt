@@ -2,7 +2,7 @@
 
 package dev.jonpoulton.alakazam.kotlin.core
 
-inline fun <reified Expected : Throwable> throwsSpecific(block: () -> Unit): Boolean {
+public inline fun <reified Expected : Throwable> throwsSpecific(block: () -> Unit): Boolean {
   return try {
     block.invoke()
     false
@@ -11,7 +11,7 @@ inline fun <reified Expected : Throwable> throwsSpecific(block: () -> Unit): Boo
   }
 }
 
-fun throwsAnyException(block: () -> Unit): Boolean {
+public fun throwsAnyException(block: () -> Unit): Boolean {
   return try {
     block.invoke()
     false
@@ -20,7 +20,7 @@ fun throwsAnyException(block: () -> Unit): Boolean {
   }
 }
 
-fun throwsAnyThrowable(block: () -> Unit): Boolean {
+public fun throwsAnyThrowable(block: () -> Unit): Boolean {
   return try {
     block.invoke()
     false

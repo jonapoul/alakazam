@@ -13,24 +13,24 @@ import javax.inject.Singleton
 
 @Suppress("InjectDispatcher")
 @Module
-class ProvidesCoroutinesModule {
+public class ProvidesCoroutinesModule {
   @Provides
   @Singleton
-  fun scope(): CoroutineScope = CoroutineScope(SupervisorJob())
+  public fun scope(): CoroutineScope = CoroutineScope(SupervisorJob())
 
   @Provides
   @Singleton
-  fun providesIO(): IODispatcher = IODispatcher(Dispatchers.IO)
+  public fun providesIO(): IODispatcher = IODispatcher(Dispatchers.IO)
 
   @Provides
   @Singleton
-  fun providesMain(): MainDispatcher = MainDispatcher(Dispatchers.Main)
+  public fun providesMain(): MainDispatcher = MainDispatcher(Dispatchers.Main)
 
   @Provides
   @Singleton
-  fun providesDefault(): DefaultDispatcher = DefaultDispatcher(Dispatchers.Default)
+  public fun providesDefault(): DefaultDispatcher = DefaultDispatcher(Dispatchers.Default)
 
   @Provides
   @Singleton
-  fun providesUnconfined(): UnconfinedDispatcher = UnconfinedDispatcher(Dispatchers.Unconfined)
+  public fun providesUnconfined(): UnconfinedDispatcher = UnconfinedDispatcher(Dispatchers.Unconfined)
 }

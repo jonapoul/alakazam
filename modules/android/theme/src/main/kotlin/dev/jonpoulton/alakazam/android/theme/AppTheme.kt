@@ -7,18 +7,18 @@ import androidx.core.content.edit
 /**
  * An enum class to hold the three possible app theme states: light, dark and system.
  */
-enum class AppTheme(val string: String, val mode: Int) {
+public enum class AppTheme(public val string: String, public val mode: Int) {
   SYSTEM(string = "system", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM),
   LIGHT(string = "light", AppCompatDelegate.MODE_NIGHT_NO),
   DARK(string = "dark", AppCompatDelegate.MODE_NIGHT_YES);
 
-  companion object {
+  public companion object {
     internal var sharedPrefs: SharedPreferences? = null
 
     /**
      * Persists and applies the given [AppTheme] to the app.
      */
-    fun set(theme: AppTheme) {
+    public fun set(theme: AppTheme) {
       sharedPrefs?.edit { putString(Constants.PREF_KEY, theme.string) }
       AppCompatDelegate.setDefaultNightMode(theme.mode)
     }
@@ -26,7 +26,7 @@ enum class AppTheme(val string: String, val mode: Int) {
     /**
      * Attempts to get the saved app theme from the app's [SharedPreferences], then applies it.
      */
-    fun setFromPrefs() {
+    public fun setFromPrefs() {
       AppCompatDelegate.setDefaultNightMode(
         fromString(
           sharedPrefs?.getString(Constants.PREF_PAIR.key, Constants.PREF_PAIR.default)
@@ -38,7 +38,7 @@ enum class AppTheme(val string: String, val mode: Int) {
      * Should be called in the Application or Activity's onCreate method. Sets the initial theme state based on
      * whatever was persisted before, defaulting to "follow system".
      */
-    fun init(prefs: SharedPreferences) {
+    public fun init(prefs: SharedPreferences) {
       sharedPrefs = prefs
       setFromPrefs()
     }

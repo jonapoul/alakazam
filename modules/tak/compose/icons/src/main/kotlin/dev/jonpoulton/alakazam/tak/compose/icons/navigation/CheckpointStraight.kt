@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.NavigationTakIcons
 
-val NavigationTakIcons.CheckpointStraight: ImageVector
+public val NavigationTakIcons.CheckpointStraight: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

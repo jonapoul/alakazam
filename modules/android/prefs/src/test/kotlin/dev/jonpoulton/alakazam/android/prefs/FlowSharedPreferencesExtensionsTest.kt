@@ -17,7 +17,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
 @RunWith(RobolectricTestRunner::class)
-class FlowSharedPreferencesExtensionsTest {
+internal class FlowSharedPreferencesExtensionsTest {
   @get:Rule
   val coroutineRule = CoroutineRule()
 

@@ -17,7 +17,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.mapcontrol.ZoomControl
 /**
  * A standardized set of icons that appear on map in the main nav stack.
  */
-object MapControlTakIcons
+public object MapControlTakIcons
 
 private val allIcons = listOf(
   TakIcons.MapControl.ThreeDimensionalCompassDirection,

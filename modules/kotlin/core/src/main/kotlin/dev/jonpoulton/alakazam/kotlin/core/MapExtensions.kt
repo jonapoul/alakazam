@@ -3,7 +3,7 @@ package dev.jonpoulton.alakazam.kotlin.core
 /**
  * Returns a copied new map instance.
  */
-fun <K, V> Map<K, V>.deepCopy(): Map<K, V> {
+public fun <K, V> Map<K, V>.deepCopy(): Map<K, V> {
   return mutableMapOf<K, V>().also {
     it.putAll(this)
   }
@@ -12,7 +12,7 @@ fun <K, V> Map<K, V>.deepCopy(): Map<K, V> {
 /**
  * Clears the map and inserts a new set of values.
  */
-fun <K, V> MutableMap<K, V>.replaceAllWith(list: Map<K, V>) {
+public fun <K, V> MutableMap<K, V>.replaceAllWith(list: Map<K, V>) {
   clear()
   putAll(list)
 }

@@ -2,25 +2,25 @@ package dev.jonpoulton.alakazam.android.core
 
 import android.view.View
 
-sealed class SnackbarMessage(val notify: INotifier.(View) -> Unit) {
-  abstract val message: String
+public sealed class SnackbarMessage(public val notify: INotifier.(View) -> Unit) {
+  public abstract val message: String
 
-  data class Info(
+  public data class Info(
     override val message: String,
     val action: INotifier.Action = INotifier.EMPTY_ACTION,
   ) : SnackbarMessage({ v -> info(v, message, action) })
 
-  data class Success(
+  public data class Success(
     override val message: String,
     val action: INotifier.Action = INotifier.EMPTY_ACTION,
   ) : SnackbarMessage({ v -> success(v, message, action) })
 
-  data class Caution(
+  public data class Caution(
     override val message: String,
     val action: INotifier.Action = INotifier.EMPTY_ACTION,
   ) : SnackbarMessage({ v -> caution(v, message, action) })
 
-  data class Warning(
+  public data class Warning(
     override val message: String,
     val action: INotifier.Action = INotifier.EMPTY_ACTION,
   ) : SnackbarMessage({ v -> warning(v, message, action) })

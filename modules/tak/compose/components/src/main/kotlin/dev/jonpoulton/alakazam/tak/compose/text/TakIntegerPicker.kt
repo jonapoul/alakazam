@@ -39,7 +39,7 @@ import dev.jonpoulton.alakazam.tak.compose.core.TakTextStyles
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakIntegerPicker(
+public fun TakIntegerPicker(
   state: MutableState<Int>,
   range: IntRange,
   modifier: Modifier = Modifier,
@@ -61,7 +61,7 @@ fun TakIntegerPicker(
 }
 
 @Composable
-fun TakIntegerPicker(
+public fun TakIntegerPicker(
   value: Int,
   onValueChanged: (Int) -> Unit,
   range: IntRange,

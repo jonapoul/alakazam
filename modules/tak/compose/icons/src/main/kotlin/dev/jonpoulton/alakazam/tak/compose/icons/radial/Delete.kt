@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RadialTakIcons
 
-val RadialTakIcons.Delete: ImageVector
+public val RadialTakIcons.Delete: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

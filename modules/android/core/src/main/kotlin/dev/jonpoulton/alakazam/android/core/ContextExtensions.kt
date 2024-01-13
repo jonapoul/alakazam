@@ -19,14 +19,14 @@ import androidx.core.content.ContextCompat
 /**
  * Shows a toast with the given [message].
  */
-fun Context.toast(message: String, length: Int = Toast.LENGTH_LONG) {
+public fun Context.toast(message: String, length: Int = Toast.LENGTH_LONG) {
   Toast.makeText(this, message, length).show()
 }
 
 /**
  * Shows a toast with the given string resource as a message.
  */
-fun Context.toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+public fun Context.toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
   toast(getString(message), length)
 }
 
@@ -35,7 +35,7 @@ fun Context.toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
  * colour attribute in the [color] parameter.
  */
 @ColorInt
-fun Context.getColorFromAttr(
+public fun Context.getColorFromAttr(
   @AttrRes color: Int,
   value: TypedValue = TypedValue(),
   resolveRefs: Boolean = true,
@@ -47,7 +47,7 @@ fun Context.getColorFromAttr(
 /**
  * Checks whether the given app [Context] has been granted the specified [permission].
  */
-fun Context.hasPermission(permission: String): Boolean {
+public fun Context.hasPermission(permission: String): Boolean {
   val permissionState = ContextCompat.checkSelfPermission(this, permission)
   return permissionState == PackageManager.PERMISSION_GRANTED
 }
@@ -55,7 +55,7 @@ fun Context.hasPermission(permission: String): Boolean {
 /**
  * Shorthand method to start the specified [Service] class with the given [action] string.
  */
-inline fun <reified S : Service> Context.startServiceWithAction(action: String) {
+public inline fun <reified S : Service> Context.startServiceWithAction(action: String) {
   startService(
     Intent(this, S::class.java).apply {
       setAction(action)
@@ -66,19 +66,19 @@ inline fun <reified S : Service> Context.startServiceWithAction(action: String) 
 /**
  * Get color from resources
  */
-fun Context.getCompatColor(@ColorRes colorInt: Int): Int {
+public fun Context.getCompatColor(@ColorRes colorInt: Int): Int {
   return ContextCompat.getColor(this, colorInt)
 }
 
 /**
  * Get drawable from resources
  */
-fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable {
+public fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable {
   return ContextCompat.getDrawable(this, drawableRes)
     ?: error("Failed to get drawable from $this for $drawableRes")
 }
 
-fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
+public fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
   val drawable = getCompatDrawable(drawableRes)
   val bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
   val canvas = Canvas(bitmap)

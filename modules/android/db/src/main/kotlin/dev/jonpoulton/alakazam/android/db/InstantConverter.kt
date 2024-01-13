@@ -3,10 +3,10 @@ package dev.jonpoulton.alakazam.android.db
 import androidx.room.TypeConverter
 import kotlinx.datetime.Instant
 
-object InstantConverter {
+public object InstantConverter {
   @TypeConverter
-  fun fromString(string: String?): Instant? = string?.let(Instant::parse)
+  public fun fromString(string: String?): Instant? = string?.let(Instant::parse)
 
   @TypeConverter
-  fun toString(instant: Instant?): String? = instant?.toString()
+  public fun toString(instant: Instant?): String? = instant?.toString()
 }

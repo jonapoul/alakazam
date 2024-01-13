@@ -16,13 +16,13 @@ import androidx.navigation.fragment.findNavController
  *
  * Don't judge me, okay?
  */
-fun Fragment.navControllers(): Lazy<NavController> = LazyNavController { findNavController() }
+public fun Fragment.navControllers(): Lazy<NavController> = LazyNavController { findNavController() }
 
 /**
  * As above, so below. This time for an [AppCompatActivity] instead of a [Fragment]. This requires
  * the ID of your NavHostFragment, which should be declared in your activity XML layout.
  */
-fun AppCompatActivity.navControllers(@IdRes navHostFragmentId: Int): Lazy<NavController> =
+public fun AppCompatActivity.navControllers(@IdRes navHostFragmentId: Int): Lazy<NavController> =
   LazyNavController { findNavController(navHostFragmentId) }
 
 internal class LazyNavController(

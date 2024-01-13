@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
 
-val MarkersTakIcons.OffscreenIndicator: ImageVector
+public val MarkersTakIcons.OffscreenIndicator: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

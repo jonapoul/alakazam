@@ -14,13 +14,13 @@ import androidx.recyclerview.widget.DiffUtil
  * View holders will only be refreshed if this ID is different.
  */
 @SuppressLint("DiffUtilEquals")
-object DiffCallbacks {
-  fun <T : Any> basic(): DiffUtil.ItemCallback<T> = object : DiffUtil.ItemCallback<T>() {
+public object DiffCallbacks {
+  public fun <T : Any> basic(): DiffUtil.ItemCallback<T> = object : DiffUtil.ItemCallback<T>() {
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean = oldItem == newItem
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean = oldItem == newItem
   }
 
-  fun <T : Any, ID> withItemId(
+  public fun <T : Any, ID> withItemId(
     itemId: T.() -> ID,
   ): DiffUtil.ItemCallback<T> = object : DiffUtil.ItemCallback<T>() {
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean = oldItem.itemId() == newItem.itemId()

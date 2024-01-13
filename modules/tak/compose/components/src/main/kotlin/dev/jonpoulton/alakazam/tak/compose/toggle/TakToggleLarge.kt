@@ -11,7 +11,7 @@ import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakToggleLarge(
+public fun TakToggleLarge(
   modifier: Modifier = Modifier,
   isChecked: Boolean = false,
   isEnabled: Boolean = true,

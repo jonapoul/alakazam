@@ -42,7 +42,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakTextButtonLegacy(
+public fun TakTextButtonLegacy(
   modifier: Modifier = Modifier,
   text: String,
   icon: ImageVector? = null,
@@ -102,7 +102,7 @@ fun TakTextButtonLegacy(
 }
 
 @Composable
-fun TakIconButtonLegacy(
+public fun TakIconButtonLegacy(
   modifier: Modifier = Modifier,
   icon: ImageVector,
   contentDescription: String,

@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.ToolbarTakIcons
 
-val ToolbarTakIcons.Hamburger: ImageVector
+public val ToolbarTakIcons.Hamburger: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

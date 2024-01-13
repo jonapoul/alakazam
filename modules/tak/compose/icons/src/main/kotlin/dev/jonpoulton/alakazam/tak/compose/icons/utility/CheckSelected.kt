@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 import dev.jonpoulton.alakazam.tak.compose.icons.UtilityTakIcons
 
-val UtilityTakIcons.CheckSelected: ImageVector
+public val UtilityTakIcons.CheckSelected: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

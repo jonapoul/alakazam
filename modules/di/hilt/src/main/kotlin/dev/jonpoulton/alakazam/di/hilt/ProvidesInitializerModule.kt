@@ -10,9 +10,9 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ProvidesInitializerModule {
+public class ProvidesInitializerModule {
   @Provides
   @Singleton
-  fun initializers(initializers: Set<@JvmSuppressWildcards AppInitializer>): AppInitializers =
+  public fun initializers(initializers: Set<@JvmSuppressWildcards AppInitializer>): AppInitializers =
     AppInitializers(initializers)
 }

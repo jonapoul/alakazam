@@ -33,7 +33,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakMessageTextInput(
+public fun TakMessageTextInput(
   state: MutableState<String>,
   hint: String,
   modifier: Modifier = Modifier,
@@ -71,7 +71,7 @@ fun TakMessageTextInput(
 }
 
 @Composable
-fun TakMessageTextInput(
+public fun TakMessageTextInput(
   value: String,
   onValueChanged: (String) -> Unit,
   hint: String,

@@ -5,4 +5,4 @@ import androidx.compose.runtime.Stable
 
 @Stable
 @Immutable
-enum class TakSliderTextPosition { AboveThumb, BelowThumb, None }
+public enum class TakSliderTextPosition { AboveThumb, BelowThumb, None }

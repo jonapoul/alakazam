@@ -103,7 +103,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.sidemenu.Up
  * A standardized set of icons to be utilized for the side menu or dropdown menu component.
  */
 
-object SideMenuTakIcons
+public object SideMenuTakIcons
 
 private val allIcons
   @Composable get() = listOf(

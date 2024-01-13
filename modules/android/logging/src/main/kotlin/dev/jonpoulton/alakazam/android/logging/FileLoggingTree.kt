@@ -8,7 +8,7 @@ import timber.log.Timber
  * [Timber] class to allow storage of log messages to a file on the device. See the config files at
  * <app-module>/src/main/assets/logback.xml in each app module for details like file size limits and rotation policies.
  */
-class FileLoggingTree(
+public class FileLoggingTree(
   private val minPriority: Int = Log.VERBOSE,
 ) : TaggedDebugTree(prefix = null) {
   override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {

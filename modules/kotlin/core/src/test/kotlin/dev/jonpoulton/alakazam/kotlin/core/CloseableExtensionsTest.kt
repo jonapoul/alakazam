@@ -3,7 +3,7 @@ package dev.jonpoulton.alakazam.kotlin.core
 import org.junit.Test
 import java.io.Closeable
 
-class CloseableExtensionsTest {
+internal class CloseableExtensionsTest {
   private lateinit var closeable: Closeable
 
   @Test

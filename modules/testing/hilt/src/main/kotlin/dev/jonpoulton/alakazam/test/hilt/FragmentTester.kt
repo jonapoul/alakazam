@@ -12,12 +12,12 @@ import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 
-class FragmentTester(
-  @StyleRes val themeResId: Int,
-  @NavigationRes val navGraph: Int,
-  @IdRes val navDestination: Int,
+public class FragmentTester(
+  @StyleRes public val themeResId: Int,
+  @NavigationRes public val navGraph: Int,
+  @IdRes public val navDestination: Int,
 ) {
-  inline fun <reified F : Fragment> launchFragment() {
+  public inline fun <reified F : Fragment> launchFragment() {
     val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
     launchFragmentInHiltContainer<F>(themeResId) {
       navController.setGraph(navGraph)
@@ -30,7 +30,7 @@ class FragmentTester(
     }
   }
 
-  inline fun <reified F : Fragment> launchFragmentInHiltContainer(
+  public inline fun <reified F : Fragment> launchFragmentInHiltContainer(
     @StyleRes themeResId: Int,
     fragmentArgs: Bundle? = null,
     crossinline action: F.() -> Unit = {},

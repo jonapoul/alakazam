@@ -11,7 +11,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.input.Search
 /**
  * A standardized set of icons to be utilized within text and select inputs.
  */
-object InputTakIcons
+public object InputTakIcons
 
 private val allIcons = listOf(
   TakIcons.Input.Message,

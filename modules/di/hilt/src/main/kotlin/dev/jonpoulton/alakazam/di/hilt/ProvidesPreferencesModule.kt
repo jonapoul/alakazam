@@ -13,14 +13,14 @@ import dev.jonpoulton.alakazam.kotlin.core.IODispatcher
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ProvidesPreferencesModule {
+public class ProvidesPreferencesModule {
   @Provides
-  fun sharedPrefs(
+  public fun sharedPrefs(
     @ApplicationContext context: Context,
   ): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
   @Provides
-  fun flowPrefs(
+  public fun flowPrefs(
     prefs: SharedPreferences,
     io: IODispatcher,
   ): FlowSharedPreferences = FlowSharedPreferences(prefs, io)

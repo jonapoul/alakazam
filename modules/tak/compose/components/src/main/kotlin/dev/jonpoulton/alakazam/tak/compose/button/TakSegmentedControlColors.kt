@@ -9,23 +9,23 @@ import androidx.compose.ui.graphics.Color
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 
-interface TakSegmentedControlColors {
+public interface TakSegmentedControlColors {
   @Stable
   @Composable
-  fun backgroundColor(enabled: Boolean, active: Boolean): State<Color>
+  public fun backgroundColor(enabled: Boolean, active: Boolean): State<Color>
 
   @Stable
   @Composable
-  fun foregroundColor(enabled: Boolean, active: Boolean): State<Color>
+  public fun foregroundColor(enabled: Boolean, active: Boolean): State<Color>
 
   @Stable
   @Composable
-  fun borderColor(enabled: Boolean, active: Boolean): State<Color>
+  public fun borderColor(enabled: Boolean, active: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakSegmentedControlColors(
+public data class DefaultTakSegmentedControlColors(
   val activeBackgroundColor: Color = TakColors.Sand,
   val inactiveBackgroundColor: Color = Color.Transparent,
   val disabledBackgroundColor: Color = TakColors.Ash,

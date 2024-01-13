@@ -9,7 +9,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class FlowOnEachOfTypeTest {
+internal class FlowOnEachOfTypeTest {
   @Test
   fun `String flow doesn't emit any ints`() = runTest {
     val grabbedInts = arrayListOf<Int>()
@@ -60,7 +60,7 @@ class FlowOnEachOfTypeTest {
   }
 }
 
-class FlowTakeUntilExclusiveTest {
+internal class FlowTakeUntilExclusiveTest {
   @Test
   fun `No matches doesn't cancel the flow`() = runTest {
     val taken = flowOf("a", "b", "c")
@@ -92,7 +92,7 @@ class FlowTakeUntilExclusiveTest {
   }
 }
 
-class FlowTakeUntilInclusiveTest {
+internal class FlowTakeUntilInclusiveTest {
   @Test
   fun `No matches returns all emissions`() = runTest {
     val taken = flowOf("a", "b", "c")

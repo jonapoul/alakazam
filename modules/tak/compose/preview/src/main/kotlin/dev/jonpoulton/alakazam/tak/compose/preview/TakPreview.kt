@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import dev.jonpoulton.alakazam.tak.compose.core.TakTheme
 
 @Composable
-fun TakPreview(content: @Composable () -> Unit) = TakTheme {
+public fun TakPreview(content: @Composable () -> Unit): Unit = TakTheme {
   Surface {
     content()
   }

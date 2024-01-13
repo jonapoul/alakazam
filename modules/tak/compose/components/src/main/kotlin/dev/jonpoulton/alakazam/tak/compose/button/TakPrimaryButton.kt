@@ -34,7 +34,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakPrimaryButton(
+public fun TakPrimaryButton(
   modifier: Modifier = Modifier,
   text: String,
   icon: ImageVector? = null,

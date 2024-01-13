@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.DropdownTakIcons
 
-val DropdownTakIcons.ThreeDimensional: ImageVector
+public val DropdownTakIcons.ThreeDimensional: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

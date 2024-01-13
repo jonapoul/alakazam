@@ -5,7 +5,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class ListExtensionsTest {
+internal class ListExtensionsTest {
   @Test
   fun `Editing original after deep copy doesn't affect copy`() {
     val original = mutableListOf(1, 2, 3, 4)

@@ -6,26 +6,26 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Stable
-interface TakToggleDimensions {
-  val height: Dp
-  val thumbElevation: Dp
-  val thumbBorderWidth: Dp
-  val thumbWidth: Dp
-  val trackWidth: Dp
+public interface TakToggleDimensions {
+  public val height: Dp
+  public val thumbElevation: Dp
+  public val thumbBorderWidth: Dp
+  public val thumbWidth: Dp
+  public val trackWidth: Dp
 }
 
 @Stable
 @Immutable
-data class DefaultTakToggleDimensions(
+public data class DefaultTakToggleDimensions(
   override val height: Dp,
   override val thumbElevation: Dp,
   override val thumbBorderWidth: Dp,
   override val thumbWidth: Dp,
   override val trackWidth: Dp,
 ) : TakToggleDimensions {
-  companion object {
+  public companion object {
     @Stable
-    fun large(
+    public fun large(
       height: Dp = 29.dp,
       thumbElevation: Dp = 2.dp,
       thumbBorderWidth: Dp = 0.5.dp,
@@ -35,7 +35,7 @@ data class DefaultTakToggleDimensions(
       DefaultTakToggleDimensions(height, thumbElevation, thumbBorderWidth, thumbWidth, trackWidth)
 
     @Stable
-    fun small(
+    public fun small(
       height: Dp = 17.dp,
       thumbElevation: Dp = 2.dp,
       thumbBorderWidth: Dp = 0.5.dp,

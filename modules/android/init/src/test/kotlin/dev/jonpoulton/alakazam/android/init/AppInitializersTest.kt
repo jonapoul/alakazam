@@ -3,7 +3,7 @@ package dev.jonpoulton.alakazam.android.init
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class AppInitializersTest {
+internal class AppInitializersTest {
   private lateinit var appInitializers: AppInitializers
 
   @Test

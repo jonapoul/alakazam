@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 import dev.jonpoulton.alakazam.tak.compose.icons.UtilityTakIcons
 
-val UtilityTakIcons.BulkSelectionEmpty: ImageVector
+public val UtilityTakIcons.BulkSelectionEmpty: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

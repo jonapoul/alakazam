@@ -9,7 +9,7 @@ import com.google.android.material.snackbar.Snackbar
 import dev.jonpoulton.alakazam.android.core.INotifier
 import dev.jonpoulton.alakazam.android.core.getCompatColor
 
-class Notifier(
+public class Notifier(
   @ColorRes private val backgroundColour: Int = R.color.notifierBackground,
   @ColorRes private val successColour: Int = R.color.notifierSuccess,
   @ColorRes private val infoColour: Int = R.color.notifierInfo,

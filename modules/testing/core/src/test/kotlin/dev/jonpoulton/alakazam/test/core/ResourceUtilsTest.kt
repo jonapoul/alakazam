@@ -3,7 +3,7 @@ package dev.jonpoulton.alakazam.test.core
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class ResourceUtilsTest {
+internal class ResourceUtilsTest {
   @Test
   fun `Get resource as stream`() {
     val stream = getResourceAsStream(filename = "resource.txt")

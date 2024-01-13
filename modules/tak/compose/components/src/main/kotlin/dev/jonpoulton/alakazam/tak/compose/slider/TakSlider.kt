@@ -29,7 +29,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 @Composable
-fun TakSlider(
+public fun TakSlider(
   state: MutableState<Float>,
   modifier: Modifier = Modifier,
   enabled: Boolean = true,
@@ -59,7 +59,7 @@ fun TakSlider(
 }
 
 @Composable
-fun TakSlider(
+public fun TakSlider(
   value: Float,
   onValueChange: (Float) -> Unit,
   modifier: Modifier = Modifier,

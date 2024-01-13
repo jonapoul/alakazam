@@ -11,7 +11,7 @@ import dev.jonpoulton.alakazam.android.core.inputMethodManager
  * Starts a fading-in animation of the given [View]. The default fade duration is 500 milliseconds.
  */
 @UiThread
-fun View.fadeIn(duration: Long = 500L) {
+public fun View.fadeIn(duration: Long = 500L) {
   fade(duration, 1.0f)
 }
 
@@ -19,7 +19,7 @@ fun View.fadeIn(duration: Long = 500L) {
  * Starts a fading-out animation of the given [View]. The default fade duration is 500 milliseconds.
  */
 @UiThread
-fun View.fadeOut(duration: Long = 500L) {
+public fun View.fadeOut(duration: Long = 500L) {
   fade(duration, 0.0f)
 }
 
@@ -34,6 +34,6 @@ private fun View.fade(duration: Long, targetAlpha: Float) {
 }
 
 @UiThread
-fun View.hideKeyboard() {
+public fun View.hideKeyboard() {
   context.inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
 }

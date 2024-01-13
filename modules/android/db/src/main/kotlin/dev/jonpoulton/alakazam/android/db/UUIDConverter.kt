@@ -3,10 +3,10 @@ package dev.jonpoulton.alakazam.android.db
 import androidx.room.TypeConverter
 import java.util.UUID
 
-object UUIDConverter {
+public object UUIDConverter {
   @TypeConverter
-  fun fromString(string: String?): UUID? = string?.let(UUID::fromString)
+  public fun fromString(string: String?): UUID? = string?.let(UUID::fromString)
 
   @TypeConverter
-  fun toString(uuid: UUID?): String? = uuid?.toString()
+  public fun toString(uuid: UUID?): String? = uuid?.toString()
 }

@@ -14,7 +14,7 @@ import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class CommonFragment(
+public abstract class CommonFragment(
   @LayoutRes private val layout: Int,
   @MenuRes private val menu: Int?,
 ) : Fragment(layout), MenuProvider {

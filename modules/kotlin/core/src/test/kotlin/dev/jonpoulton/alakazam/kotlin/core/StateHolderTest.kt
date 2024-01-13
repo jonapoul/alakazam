@@ -8,7 +8,7 @@ import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class StateHolderTest {
+internal class StateHolderTest {
   @get:Rule
   val coroutineRule = CoroutineRule()
 

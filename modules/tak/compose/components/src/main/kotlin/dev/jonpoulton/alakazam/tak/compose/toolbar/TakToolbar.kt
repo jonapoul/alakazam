@@ -43,7 +43,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakToolbar(
+public fun TakToolbar(
   title: String,
   navigationButton: TakToolbarNavigationButton,
   onClickNavigate: () -> Unit,
@@ -59,7 +59,7 @@ fun TakToolbar(
 }
 
 @Composable
-fun TakToolbar(
+public fun TakToolbar(
   title: String,
   navigationButton: (@Composable () -> Unit)? = null,
   otherButtons: (@Composable RowScope.() -> Unit)? = null,
@@ -108,14 +108,14 @@ fun TakToolbar(
 
 @Stable
 @Immutable
-enum class TakToolbarNavigationButton(
+public enum class TakToolbarNavigationButton(
   internal val content: @Composable (onClick: () -> Unit) -> Unit,
 ) {
   Close(
     content = { onClick ->
       TakIconButtonLegacy(
         icon = Icons.Filled.Close,
-        contentDescription = "Back",
+        contentDescription = "Close",
         tint = TakColors.Alert,
         onClick = { onClick() },
       )
@@ -135,7 +135,7 @@ enum class TakToolbarNavigationButton(
 
 @SuppressLint("ModifierParameter")
 @Composable
-fun TakToolbarMenuItem(
+public fun TakToolbarMenuItem(
   icon: ImageVector,
   text: String,
   iconModifier: Modifier = Modifier,

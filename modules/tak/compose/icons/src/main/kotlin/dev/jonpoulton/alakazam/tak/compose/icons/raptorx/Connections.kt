@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
 
-val RaptorXTakIcons.Connections: ImageVector
+public val RaptorXTakIcons.Connections: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

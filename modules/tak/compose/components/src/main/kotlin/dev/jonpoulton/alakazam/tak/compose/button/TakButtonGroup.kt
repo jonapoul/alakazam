@@ -18,7 +18,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakButtonGroup(
+public fun TakButtonGroup(
   modifier: Modifier = Modifier,
   isDisabled: Boolean = false,
   colors: TakButtonColors = DefaultTakButtonColors(),
@@ -66,10 +66,10 @@ fun TakButtonGroup(
 
 @Stable
 @Immutable
-class TakGroupedButton(
-  val text: String,
-  val isDisabled: Boolean = false,
-  val onClick: () -> Unit,
+public class TakGroupedButton(
+  public val text: String,
+  public val isDisabled: Boolean = false,
+  public val onClick: () -> Unit,
 )
 
 @PreviewDark

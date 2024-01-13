@@ -5,7 +5,7 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
 
-class FlowExtensionsTest {
+internal class FlowExtensionsTest {
   @get:Rule
   val coroutineRule = CoroutineRule()
 

@@ -5,7 +5,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class MapExtensionsTest {
+internal class MapExtensionsTest {
   @Test
   fun `Editing original after deep copy doesn't affect copy`() {
     val original = mutableMapOf(

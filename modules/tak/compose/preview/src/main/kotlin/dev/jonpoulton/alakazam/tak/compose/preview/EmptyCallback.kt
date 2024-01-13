@@ -1,3 +1,3 @@
 package dev.jonpoulton.alakazam.tak.compose.preview
 
-val EmptyCallback: () -> Unit = {}
+public val EmptyCallback: () -> Unit = {}

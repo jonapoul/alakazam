@@ -15,21 +15,21 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ProvidesCoreModule {
+public class ProvidesCoreModule {
   @Provides
-  fun launcher(
+  public fun launcher(
     @ApplicationContext context: Context,
   ): ActivityLauncher = ActivityLauncher(context)
 
   @Provides
   @Singleton
-  fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
+  public fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
 
   @Provides
-  fun clock(): Clock = Clock.System
+  public fun clock(): Clock = Clock.System
 
   @Provides
-  fun toaster(
+  public fun toaster(
     @ApplicationContext context: Context,
     main: MainDispatcher,
   ): Toaster = Toaster(main, appContext = context, resourcesContext = context)

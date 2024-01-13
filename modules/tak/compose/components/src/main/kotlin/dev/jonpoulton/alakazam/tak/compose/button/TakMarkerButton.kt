@@ -23,7 +23,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakMarkerButton(
+public fun TakMarkerButton(
   markerIcon: ImageVector,
   isDisabled: Boolean = false,
   colors: TakMarkerButtonColors = DefaultTakMarkerButtonColors(),

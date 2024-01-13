@@ -9,11 +9,11 @@ import gov.tak.api.plugin.IPlugin
 import gov.tak.api.plugin.IServiceController
 import timber.log.Timber
 
-abstract class TakPlugin(serviceController: IServiceController) : IPlugin {
-  protected val mapView = MapView.getMapView()
-  protected val pluginContext = PluginContext(serviceController)
-  protected val appContext = AppContext(mapView)
-  protected val contexts = TakContexts(pluginContext, appContext)
+public abstract class TakPlugin(serviceController: IServiceController) : IPlugin {
+  protected val mapView: MapView = MapView.getMapView()
+  protected val pluginContext: PluginContext = PluginContext(serviceController)
+  protected val appContext: AppContext = AppContext(mapView)
+  protected val contexts: TakContexts = TakContexts(pluginContext, appContext)
 
   protected open val timberTree: Timber.Tree? = null
 

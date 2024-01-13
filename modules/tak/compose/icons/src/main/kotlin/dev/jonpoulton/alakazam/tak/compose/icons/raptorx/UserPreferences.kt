@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
 
-val RaptorXTakIcons.UserPreferences: ImageVector
+public val RaptorXTakIcons.UserPreferences: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

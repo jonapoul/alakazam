@@ -5,7 +5,7 @@ import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertThrows
 import org.junit.Test
 
-class StringExtensionsTest {
+internal class StringExtensionsTest {
   @Test
   fun `Successfully parse boolean`() {
     assertEquals(true, "true".parseBoolean())

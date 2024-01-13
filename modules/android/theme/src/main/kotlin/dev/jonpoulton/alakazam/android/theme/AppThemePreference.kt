@@ -15,7 +15,7 @@ import androidx.preference.Preference
  * persistence of this setting is managed internally, so a lot of the typical [Preference] configuration (usually done
  * via the XML file) doesn't need to be done.
  */
-class AppThemePreference @JvmOverloads constructor(
+public class AppThemePreference @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
   @SuppressLint("RestrictedApi") defStyleAttr: Int = TypedArrayUtils.getAttr(

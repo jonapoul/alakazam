@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.ToolbarTakIcons
 
-val ToolbarTakIcons.Close: ImageVector
+public val ToolbarTakIcons.Close: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

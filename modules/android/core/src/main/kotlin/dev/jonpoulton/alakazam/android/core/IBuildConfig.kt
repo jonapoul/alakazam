@@ -9,24 +9,24 @@ import kotlinx.datetime.Instant
  * clean, any classes containing BuildConfig logic won't have angry red underlines. This is implemented in the "app"
  * module and injected anywhere else using DI.
  */
-interface IBuildConfig {
-  val debug: Boolean // BuildConfig.DEBUG
-  val versionName: String // BuildConfig.VERSION_NAME
-  val versionCode: Int // BuildConfig.VERSION_CODE
-  val applicationId: String // BuildConfig.APPLICATION_ID
-  val gitId: String // custom build config field
-  val buildTime: Instant // custom build config field
-  val platform: String // name of your app
-  val os: Int // Build.VERSION.SDK_INT
-  val manufacturer: String // Build.MANUFACTURER
-  val model: String // Build.MODEL
-  val repoName: String // e.g. "jonapoul/alakazam"
-  val repoUrl: String // e.g. "https://github.com/jonapoul/alakazam"
+public interface IBuildConfig {
+  public val debug: Boolean // BuildConfig.DEBUG
+  public val versionName: String // BuildConfig.VERSION_NAME
+  public val versionCode: Int // BuildConfig.VERSION_CODE
+  public val applicationId: String // BuildConfig.APPLICATION_ID
+  public val gitId: String // custom build config field
+  public val buildTime: Instant // custom build config field
+  public val platform: String // name of your app
+  public val os: Int // Build.VERSION.SDK_INT
+  public val manufacturer: String // Build.MANUFACTURER
+  public val model: String // Build.MODEL
+  public val repoName: String // e.g. "jonapoul/alakazam"
+  public val repoUrl: String // e.g. "https://github.com/jonapoul/alakazam"
 }
 
-@Suppress("LongParameterList", "FunctionNaming")
+@Suppress("FunctionName")
 @SuppressLint("AnnotateVersionCheck")
-fun BuildConfig(
+public fun BuildConfig(
   debug: Boolean,
   versionName: String,
   versionCode: Int,

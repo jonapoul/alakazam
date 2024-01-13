@@ -10,7 +10,7 @@ import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakToggleSmall(
+public fun TakToggleSmall(
   modifier: Modifier = Modifier,
   isChecked: Boolean = false,
   isEnabled: Boolean = true,

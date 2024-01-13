@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
  * Yes I know ATAK uses Holo instead of Material, but this'll do for now.
  */
 @Composable
-fun TakTheme(
+public fun TakTheme(
   colors: Colors = TakColors.colors,
   shapes: Shapes = TakShapes,
   typography: Typography = TakTypography,

@@ -15,11 +15,11 @@ import java.util.concurrent.TimeUnit
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
-open class OkHttpClientFactory(
+public open class OkHttpClientFactory(
   private val context: Context,
   private val buildConfig: IBuildConfig,
 ) {
-  open fun buildClient(
+  public open fun buildClient(
     readWriteTimeout: Duration = DEFAULT_TIMEOUT,
     connectTimeout: Duration = DEFAULT_TIMEOUT,
   ): OkHttpClient {

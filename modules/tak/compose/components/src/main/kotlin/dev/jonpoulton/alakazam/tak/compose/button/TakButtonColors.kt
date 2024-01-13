@@ -8,19 +8,19 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.graphics.Color
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 
-interface TakButtonColors {
+public interface TakButtonColors {
   @Stable
   @Composable
-  fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
+  public fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 
   @Stable
   @Composable
-  fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
+  public fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakButtonColors(
+public data class DefaultTakButtonColors(
   val normalBackgroundColor: Color = TakColors.Sand,
   val pressedBackgroundColor: Color = TakColors.Ash,
   val errorBackgroundColor: Color = TakColors.Alert,

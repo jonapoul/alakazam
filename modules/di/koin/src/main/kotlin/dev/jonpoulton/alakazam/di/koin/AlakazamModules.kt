@@ -1,6 +1,8 @@
 package dev.jonpoulton.alakazam.di.koin
 
-val alakazamModules = listOf(
+import org.koin.core.module.Module
+
+public val alakazamModules: List<Module> = listOf(
   coroutineModule,
   coreModule,
   httpModule,

@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.SideMenuTakIcons
 
-val SideMenuTakIcons.FullscreenAlternate: ImageVector
+public val SideMenuTakIcons.FullscreenAlternate: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

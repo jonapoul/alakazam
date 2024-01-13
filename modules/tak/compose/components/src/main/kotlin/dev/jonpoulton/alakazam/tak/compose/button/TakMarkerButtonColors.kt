@@ -9,19 +9,19 @@ import androidx.compose.ui.graphics.Color
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 
-interface TakMarkerButtonColors {
+public interface TakMarkerButtonColors {
   @Stable
   @Composable
-  fun backgroundColor(enabled: Boolean, pressed: Boolean): State<Color>
+  public fun backgroundColor(enabled: Boolean, pressed: Boolean): State<Color>
 
   @Stable
   @Composable
-  fun borderColor(enabled: Boolean, pressed: Boolean): State<Color>
+  public fun borderColor(enabled: Boolean, pressed: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakMarkerButtonColors(
+public data class DefaultTakMarkerButtonColors(
   val normalBackgroundColor: Color = TakColors.Ink,
   val pressedBackgroundColor: Color = TakColors.Ash,
   val disabledBackgroundColor: Color = TakColors.Ash,

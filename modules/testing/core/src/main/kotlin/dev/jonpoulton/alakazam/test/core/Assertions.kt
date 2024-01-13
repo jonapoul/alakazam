@@ -3,11 +3,11 @@ package dev.jonpoulton.alakazam.test.core
 import org.junit.Assert.assertEquals
 
 @Throws(AssertionError::class)
-fun fail(reason: String) {
+public fun fail(reason: String) {
   throw AssertionError(reason)
 }
 
-inline fun <reified ExpectedType> assertIsType(value: Any?) {
+public inline fun <reified ExpectedType> assertIsType(value: Any?) {
   val received = value?.javaClass
   val expected = ExpectedType::class.java
   if (received != expected) {
@@ -17,7 +17,7 @@ inline fun <reified ExpectedType> assertIsType(value: Any?) {
   }
 }
 
-inline fun <reified ExpectedType> assertIsTypeOrSubclass(value: Any?) {
+public inline fun <reified ExpectedType> assertIsTypeOrSubclass(value: Any?) {
   val received = value?.javaClass
   val expected = ExpectedType::class.java
   if (value !is ExpectedType) {
@@ -27,7 +27,7 @@ inline fun <reified ExpectedType> assertIsTypeOrSubclass(value: Any?) {
   }
 }
 
-inline fun <reified E, reified A> assertListEquals(expected: List<E>, actual: List<A>) {
+public inline fun <reified E, reified A> assertListEquals(expected: List<E>, actual: List<A>) {
   if (expected.size != actual.size) {
     val expStr = expected.toTypedArray().contentDeepToString()
     val actStr = actual.toTypedArray().contentDeepToString()
@@ -39,14 +39,14 @@ inline fun <reified E, reified A> assertListEquals(expected: List<E>, actual: Li
   }
 }
 
-inline fun <reified T> assertListContains(list: List<T>, expected: T) {
+public inline fun <reified T> assertListContains(list: List<T>, expected: T) {
   if (!list.contains(expected)) {
     val listStr = list.toTypedArray().contentDeepToString()
     throw AssertionError("List doesn't contain $expected: $listStr")
   }
 }
 
-inline fun <reified T : Throwable> assertThrows(call: () -> Unit) {
+public inline fun <reified T : Throwable> assertThrows(call: () -> Unit) {
   try {
     call.invoke()
     throw AssertionError("Should have thrown ${T::class.java.simpleName}")
@@ -59,13 +59,13 @@ inline fun <reified T : Throwable> assertThrows(call: () -> Unit) {
   }
 }
 
-fun <T : Comparable<T>> T.assertMoreThan(other: T) {
+public fun <T : Comparable<T>> T.assertMoreThan(other: T) {
   if (this <= other) {
     throw AssertionError("$this should be more than $other")
   }
 }
 
-fun <T : Comparable<T>> T.assertLessThan(other: T) {
+public fun <T : Comparable<T>> T.assertLessThan(other: T) {
   if (this >= other) {
     throw AssertionError("$this should be less than $other")
   }

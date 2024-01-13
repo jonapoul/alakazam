@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
 
-val MarkersTakIcons.PresenceCurrent: ImageVector
+public val MarkersTakIcons.PresenceCurrent: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

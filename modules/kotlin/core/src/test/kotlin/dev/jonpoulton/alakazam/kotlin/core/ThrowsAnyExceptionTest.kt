@@ -6,7 +6,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class ThrowsAnyExceptionTest {
+internal class ThrowsAnyExceptionTest {
   private class CustomSubClassException : IllegalStateException()
 
   @Test

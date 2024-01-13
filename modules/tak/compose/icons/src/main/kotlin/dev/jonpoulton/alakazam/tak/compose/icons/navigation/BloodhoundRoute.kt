@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.NavigationTakIcons
 
-val NavigationTakIcons.BloodhoundRoute: ImageVector
+public val NavigationTakIcons.BloodhoundRoute: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

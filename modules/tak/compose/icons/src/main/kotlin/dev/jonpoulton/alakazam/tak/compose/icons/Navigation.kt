@@ -33,7 +33,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.navigation.RoverReceptionOff
 /**
  * A standardized set of icons to be utilized within the in route navigation feature.
  */
-object NavigationTakIcons
+public object NavigationTakIcons
 
 private val allIcons = listOf(
   TakIcons.Navigation.BloodhoundNavLit,

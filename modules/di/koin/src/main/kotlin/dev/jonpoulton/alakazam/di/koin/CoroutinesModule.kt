@@ -7,10 +7,11 @@ import dev.jonpoulton.alakazam.kotlin.core.UnconfinedDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import org.koin.core.module.Module
 import org.koin.dsl.module
 
 @Suppress("InjectDispatcher")
-val coroutineModule = module {
+public val coroutineModule: Module = module {
   /* Application scope */
   single { CoroutineScope(SupervisorJob()) }
 

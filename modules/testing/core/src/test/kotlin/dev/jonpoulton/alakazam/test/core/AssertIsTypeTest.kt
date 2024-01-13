@@ -2,7 +2,7 @@ package dev.jonpoulton.alakazam.test.core
 
 import org.junit.Test
 
-class AssertIsTypeTest {
+internal class AssertIsTypeTest {
   @Test
   fun `assertIsType valid 1`() = assertIsType<DataClass>(DATA1)
 

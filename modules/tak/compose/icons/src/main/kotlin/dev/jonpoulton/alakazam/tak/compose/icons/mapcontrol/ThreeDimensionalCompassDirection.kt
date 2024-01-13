@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.MapControlTakIcons
 
-val MapControlTakIcons.ThreeDimensionalCompassDirection: ImageVector
+public val MapControlTakIcons.ThreeDimensionalCompassDirection: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

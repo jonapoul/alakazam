@@ -22,7 +22,7 @@ private fun ViewGroup.setChildrenEnabled(enable: Boolean) {
  * Recursively sets every [View] under this [ViewGroup] to a disabled state.
  */
 @UiThread
-fun ViewGroup.disableChildren() {
+public fun ViewGroup.disableChildren() {
   setChildrenEnabled(false)
 }
 
@@ -30,7 +30,7 @@ fun ViewGroup.disableChildren() {
  * Recursively sets every [View] under this [ViewGroup] to an enabled state.
  */
 @UiThread
-fun ViewGroup.enableChildren() {
+public fun ViewGroup.enableChildren() {
   setChildrenEnabled(true)
 }
 
@@ -39,11 +39,11 @@ fun ViewGroup.enableChildren() {
  * RecyclerView adapter.
  */
 @UiThread
-fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
+public fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
   return context.inflater.inflate(layoutRes, this, false)
 }
 
-fun ViewGroup.cleanUpRecyclerAdapters() {
+public fun ViewGroup.cleanUpRecyclerAdapters() {
   children.forEach {
     if (it is RecyclerView) {
       /* Remove the adapter class to allow garbage collection */

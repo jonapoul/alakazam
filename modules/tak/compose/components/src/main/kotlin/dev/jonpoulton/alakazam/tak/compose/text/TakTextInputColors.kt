@@ -10,23 +10,23 @@ import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 
 @Stable
-interface TakTextInputColors {
+public interface TakTextInputColors {
   @Composable
-  fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
+  public fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 
   @Composable
-  fun borderColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
+  public fun borderColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 
   @Composable
-  fun hintColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
+  public fun hintColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 
   @Composable
-  fun textColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
+  public fun textColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakTextInputColors(
+public data class DefaultTakTextInputColors(
   val normalBackgroundColor: Color = TakColors.Ink,
   val pressedBackgroundColor: Color = TakColors.Ash,
   val errorBackgroundColor: Color = normalBackgroundColor,

@@ -13,7 +13,7 @@ import kotlin.reflect.KProperty
  * Creates and manages a [ViewBinding] object from within an [AppCompatActivity]. The value will be
  * cleared when the [AppCompatActivity] reaches the "destroyed" lifecycle state.
  */
-class ActivityViewBindingDelegate<VB : ViewBinding>(
+public class ActivityViewBindingDelegate<VB : ViewBinding>(
   private val activity: AppCompatActivity,
   private val viewBindingFactory: (LayoutInflater) -> VB,
 ) : ReadOnlyProperty<AppCompatActivity, VB>, LifecycleEventObserver {

@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.ToolbarTakIcons
 
-val ToolbarTakIcons.TrackHistory: ImageVector
+public val ToolbarTakIcons.TrackHistory: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

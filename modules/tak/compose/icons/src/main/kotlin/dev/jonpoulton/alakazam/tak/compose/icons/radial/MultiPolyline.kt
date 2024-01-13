@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RadialTakIcons
 
-val RadialTakIcons.MultiPolyline: ImageVector
+public val RadialTakIcons.MultiPolyline: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

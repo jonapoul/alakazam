@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
 
-val RaptorXTakIcons.AddFavorite: ImageVector
+public val RaptorXTakIcons.AddFavorite: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

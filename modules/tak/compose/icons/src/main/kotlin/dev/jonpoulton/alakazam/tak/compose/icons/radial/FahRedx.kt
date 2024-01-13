@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RadialTakIcons
 
-val RadialTakIcons.FahRedx: ImageVector
+public val RadialTakIcons.FahRedx: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

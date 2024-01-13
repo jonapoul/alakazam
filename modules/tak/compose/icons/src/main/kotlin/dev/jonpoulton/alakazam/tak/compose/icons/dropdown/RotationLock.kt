@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.DropdownTakIcons
 
-val DropdownTakIcons.RotationLock: ImageVector
+public val DropdownTakIcons.RotationLock: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

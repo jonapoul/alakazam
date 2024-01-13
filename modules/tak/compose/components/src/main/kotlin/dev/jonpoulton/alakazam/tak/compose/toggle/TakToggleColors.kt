@@ -12,19 +12,19 @@ import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 
 @Stable
 @Immutable
-interface TakToggleColors : SwitchColors {
-  val borderColor: Color
+public interface TakToggleColors : SwitchColors {
+  public val borderColor: Color
 }
 
 @Stable
 @Immutable
-interface TakToggleSmallColors : TakToggleColors
+public interface TakToggleSmallColors : TakToggleColors
 
 @Stable
 @Immutable
-interface TakToggleLargeColors : TakToggleColors {
+public interface TakToggleLargeColors : TakToggleColors {
   @Composable
-  fun textColor(enabled: Boolean, checked: Boolean): State<Color>
+  public fun textColor(enabled: Boolean, checked: Boolean): State<Color>
 }
 
 @Stable
@@ -63,7 +63,7 @@ internal data class DefaultTakToggleSmallColors(
 
 @Stable
 @Immutable
-data class DefaultTakToggleLargeColors(
+public data class DefaultTakToggleLargeColors(
   val checkedThumbColor: Color = TakColors.Cloud,
   val checkedTrackColor: Color = TakColors.Gamma,
   val checkedTrackAlpha: Float = 1f,

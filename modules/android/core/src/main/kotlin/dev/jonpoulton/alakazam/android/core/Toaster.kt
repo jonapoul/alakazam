@@ -6,16 +6,16 @@ import androidx.annotation.StringRes
 import dev.jonpoulton.alakazam.kotlin.core.MainDispatcher
 import kotlinx.coroutines.withContext
 
-class Toaster(
+public class Toaster(
   private val main: MainDispatcher,
   private val appContext: Context,
   private val resourcesContext: Context = appContext,
 ) {
-  fun toast(message: String, length: Int = Toast.LENGTH_LONG) {
+  public fun toast(message: String, length: Int = Toast.LENGTH_LONG) {
     Toast.makeText(appContext, message, length).show()
   }
 
-  fun toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+  public fun toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
     toast(resourcesContext.getString(message), length)
   }
 
@@ -24,11 +24,11 @@ class Toaster(
    * - Manually ensure that you're on the main dispatcher, to avoid interacting with UI from a background thread
    * - use [coToast] to do that for you
    */
-  suspend fun coToast(message: String, length: Int = Toast.LENGTH_LONG) {
+  public suspend fun coToast(message: String, length: Int = Toast.LENGTH_LONG) {
     withContext(main) { toast(message, length) }
   }
 
-  suspend fun coToast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+  public suspend fun coToast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
     coToast(resourcesContext.getString(message), length)
   }
 }

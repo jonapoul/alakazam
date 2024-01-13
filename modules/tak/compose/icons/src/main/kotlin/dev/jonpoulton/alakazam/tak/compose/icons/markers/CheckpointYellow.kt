@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
 
-val MarkersTakIcons.CheckpointYellow: ImageVector
+public val MarkersTakIcons.CheckpointYellow: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

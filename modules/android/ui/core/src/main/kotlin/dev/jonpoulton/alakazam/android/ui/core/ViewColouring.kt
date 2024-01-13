@@ -10,7 +10,7 @@ import dev.jonpoulton.alakazam.android.core.getCompatColor
 /**
  * Quick method to allow changing the ColorFilter of an [TextView] just from a [ColorRes] integer.
  */
-fun TextView.setTextColorRes(@ColorRes color: Int) {
+public fun TextView.setTextColorRes(@ColorRes color: Int) {
   setTextColor(
     context.getCompatColor(color)
   )
@@ -19,7 +19,7 @@ fun TextView.setTextColorRes(@ColorRes color: Int) {
 /**
  * Quick method to allow changing the ColorFilter of an [TextView] just from a color attribute.
  */
-fun TextView.setTextColorAttr(@AttrRes color: Int) {
+public fun TextView.setTextColorAttr(@AttrRes color: Int) {
   setTextColor(
     context.getColorFromAttr(color)
   )
@@ -28,7 +28,7 @@ fun TextView.setTextColorAttr(@AttrRes color: Int) {
 /**
  * Quick method to allow changing the ColorFilter of an [ImageView] just from a [ColorRes] integer.
  */
-fun ImageView.setColorFilterRes(@ColorRes color: Int) {
+public fun ImageView.setColorFilterRes(@ColorRes color: Int) {
   setColorFilter(
     context.getCompatColor(color)
   )
@@ -37,7 +37,7 @@ fun ImageView.setColorFilterRes(@ColorRes color: Int) {
 /**
  * Quick method to allow changing the ColorFilter of an [ImageView] just from a color attribute.
  */
-fun ImageView.setColorFilterAttr(@AttrRes color: Int) {
+public fun ImageView.setColorFilterAttr(@AttrRes color: Int) {
   setColorFilter(
     context.getColorFromAttr(color)
   )

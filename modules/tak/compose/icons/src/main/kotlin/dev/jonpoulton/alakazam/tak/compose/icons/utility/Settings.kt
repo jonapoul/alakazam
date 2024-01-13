@@ -6,7 +6,7 @@ import androidx.compose.ui.res.vectorResource
 import dev.jonpoulton.alakazam.tak.compose.icons.R
 import dev.jonpoulton.alakazam.tak.compose.icons.UtilityTakIcons
 
-val UtilityTakIcons.Settings: ImageVector
+public val UtilityTakIcons.Settings: ImageVector
   @Composable
   get() {
     if (nullableIcon != null) {

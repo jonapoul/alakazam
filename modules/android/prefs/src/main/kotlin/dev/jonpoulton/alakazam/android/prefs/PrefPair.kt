@@ -10,7 +10,7 @@ import android.content.SharedPreferences
  * @param default is the default value of this preference. The type [T] of [default] represents the
  *                expected type to be stored in this preference.
  */
-data class PrefPair<T>(
+public data class PrefPair<T>(
   val key: String,
   val default: T,
 )

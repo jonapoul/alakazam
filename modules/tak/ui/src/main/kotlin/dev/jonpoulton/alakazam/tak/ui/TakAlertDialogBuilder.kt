@@ -12,18 +12,18 @@ import com.atakmap.android.maps.MapView
 import dev.jonpoulton.alakazam.tak.core.AppContext
 import dev.jonpoulton.alakazam.tak.core.PluginContext
 
-class TakAlertDialogBuilder : AlertDialog.Builder {
+public class TakAlertDialogBuilder : AlertDialog.Builder {
   private val pluginContext: PluginContext
 
-  constructor(appContext: Context, pluginContext: PluginContext) : super(appContext) {
+  public constructor(appContext: Context, pluginContext: PluginContext) : super(appContext) {
     this.pluginContext = pluginContext
   }
 
-  constructor(appContext: AppContext, pluginContext: PluginContext) : super(appContext) {
+  public constructor(appContext: AppContext, pluginContext: PluginContext) : super(appContext) {
     this.pluginContext = pluginContext
   }
 
-  constructor(mapView: MapView, pluginContext: PluginContext) : super(mapView.context) {
+  public constructor(mapView: MapView, pluginContext: PluginContext) : super(mapView.context) {
     this.pluginContext = pluginContext
   }
 
@@ -45,7 +45,7 @@ class TakAlertDialogBuilder : AlertDialog.Builder {
   override fun setIcon(@DrawableRes iconId: Int): TakAlertDialogBuilder =
     super.setIcon(ContextCompat.getDrawable(pluginContext, iconId)) as TakAlertDialogBuilder
 
-  fun setSimplePositiveButton(
+  public fun setSimplePositiveButton(
     @StringRes text: Int = android.R.string.ok,
     onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
@@ -57,7 +57,7 @@ class TakAlertDialogBuilder : AlertDialog.Builder {
     }
   }
 
-  fun setSimpleNegativeButton(
+  public fun setSimpleNegativeButton(
     @StringRes text: Int = android.R.string.cancel,
     onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
@@ -69,7 +69,7 @@ class TakAlertDialogBuilder : AlertDialog.Builder {
     }
   }
 
-  fun setSimpleNeutralButton(
+  public fun setSimpleNeutralButton(
     @StringRes text: Int,
     onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {

@@ -62,7 +62,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.toolbar.Viewshed
 /**
  * A standardized set of icons to be utilized within the main toolbar component.
  */
-object ToolbarTakIcons
+public object ToolbarTakIcons
 
 private val allIcons = listOf(
   TakIcons.Toolbar.Android,

@@ -34,7 +34,7 @@ import kotlinx.coroutines.launch
 import kotlin.math.floor
 
 @Composable
-fun TakRangeSlider(
+public fun TakRangeSlider(
   state: MutableState<ClosedFloatingPointRange<Float>>,
   modifier: Modifier = Modifier,
   enabled: Boolean = true,
@@ -63,7 +63,7 @@ fun TakRangeSlider(
 }
 
 @Composable
-fun TakRangeSlider(
+public fun TakRangeSlider(
   value: ClosedFloatingPointRange<Float>,
   onValueChange: (ClosedFloatingPointRange<Float>) -> Unit,
   modifier: Modifier = Modifier,

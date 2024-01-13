@@ -9,6 +9,7 @@ tasks.withType<KotlinCompile> {
     jvmTarget = "11"
     freeCompilerArgs += listOf(
       "-Xjvm-default=all-compatibility",
+      "-Xexplicit-api=strict",
       "-opt-in=kotlin.RequiresOptIn",
       "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
     )
@@ -16,6 +17,7 @@ tasks.withType<KotlinCompile> {
 }
 
 extensions.configure<KotlinTopLevelExtension> {
+  explicitApi()
   jvmToolchain(jdkVersion = 11)
 }
 

@@ -28,7 +28,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakSecondaryButton(
+public fun TakSecondaryButton(
   modifier: Modifier = Modifier,
   text: String,
   isDisabled: Boolean = false,

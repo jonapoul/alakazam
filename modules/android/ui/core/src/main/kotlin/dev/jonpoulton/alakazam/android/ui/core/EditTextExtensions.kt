@@ -6,7 +6,7 @@ import androidx.annotation.UiThread
 import dev.jonpoulton.alakazam.android.core.inputMethodManager
 
 @UiThread
-fun EditText.showKeyboard() {
+public fun EditText.showKeyboard() {
   requestFocusFromTouch()
   val finalDotIndex = text?.lastIndexOf(char = '.')
   val selectionIndex = if (finalDotIndex == -1) text.length else finalDotIndex ?: 0
@@ -14,6 +14,6 @@ fun EditText.showKeyboard() {
   context.inputMethodManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }
 
-fun EditText.getString(): String {
+public fun EditText.getString(): String {
   return text.toString()
 }

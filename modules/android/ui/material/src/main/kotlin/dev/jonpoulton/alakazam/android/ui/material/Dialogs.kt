@@ -12,13 +12,13 @@ import dev.jonpoulton.alakazam.android.ui.appcompat.setSimpleNegativeButton
 import dev.jonpoulton.alakazam.android.ui.appcompat.setSimplePositiveButton
 import dev.jonpoulton.alakazam.kotlin.core.ifNotNull
 
-fun Fragment.showLoadingDialog(
+public fun Fragment.showLoadingDialog(
   @StringRes loadingText: Int = R.string.dialog_loading,
   onClickCancel: (() -> Unit)? = null,
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = requireActivity().showLoadingDialog(getString(loadingText), onClickCancel, extraConfig)
+): AlertDialog = requireActivity().showLoadingDialog(getString(loadingText), onClickCancel, extraConfig)
 
-fun Activity.showLoadingDialog(
+public fun Activity.showLoadingDialog(
   loadingText: String = getString(R.string.dialog_loading),
   onClickCancel: (() -> Unit)? = null,
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
@@ -34,41 +34,41 @@ fun Activity.showLoadingDialog(
     .show()
 }
 
-fun Activity.showSuccessDialog(
+public fun Activity.showSuccessDialog(
   message: String,
   title: String = getString(R.string.dialog_success),
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = showSuccessDialogImpl(this, title, message, extraConfig)
+): AlertDialog = showSuccessDialogImpl(this, title, message, extraConfig)
 
-fun Activity.showCautionDialog(
+public fun Activity.showCautionDialog(
   message: String,
   title: String = getString(R.string.dialog_caution),
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = showCautionDialogImpl(this, title, message, extraConfig)
+): AlertDialog = showCautionDialogImpl(this, title, message, extraConfig)
 
-fun Activity.showWarningDialog(
+public fun Activity.showWarningDialog(
   message: String,
   title: String = getString(R.string.dialog_warning),
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = showWarningDialogImpl(this, title, message, extraConfig)
+): AlertDialog = showWarningDialogImpl(this, title, message, extraConfig)
 
-fun Fragment.showSuccessDialog(
+public fun Fragment.showSuccessDialog(
   message: String,
   title: String = getString(R.string.dialog_success),
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = showSuccessDialogImpl(requireActivity(), title, message, extraConfig)
+): AlertDialog = showSuccessDialogImpl(requireActivity(), title, message, extraConfig)
 
-fun Fragment.showCautionDialog(
+public fun Fragment.showCautionDialog(
   message: String,
   title: String = getString(R.string.dialog_caution),
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = showCautionDialogImpl(requireActivity(), title, message, extraConfig)
+): AlertDialog = showCautionDialogImpl(requireActivity(), title, message, extraConfig)
 
-fun Fragment.showWarningDialog(
+public fun Fragment.showWarningDialog(
   message: String,
   title: String = getString(R.string.dialog_warning),
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder = { this },
-) = showWarningDialogImpl(requireActivity(), title, message, extraConfig)
+): AlertDialog = showWarningDialogImpl(requireActivity(), title, message, extraConfig)
 
 private fun showWarningDialogImpl(
   context: Context,

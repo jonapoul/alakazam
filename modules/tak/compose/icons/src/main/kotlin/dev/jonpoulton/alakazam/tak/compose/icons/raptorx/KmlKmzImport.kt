@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
 
-val RaptorXTakIcons.KmlKmzImport: ImageVector
+public val RaptorXTakIcons.KmlKmzImport: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

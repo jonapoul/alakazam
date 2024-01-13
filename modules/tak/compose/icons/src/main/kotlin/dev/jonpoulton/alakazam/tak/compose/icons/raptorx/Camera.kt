@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
 
-val RaptorXTakIcons.Camera: ImageVector
+public val RaptorXTakIcons.Camera: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

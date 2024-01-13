@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.MapControlTakIcons
 
-val MapControlTakIcons.ThreeDimensionalCompassTilt: ImageVector
+public val MapControlTakIcons.ThreeDimensionalCompassTilt: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

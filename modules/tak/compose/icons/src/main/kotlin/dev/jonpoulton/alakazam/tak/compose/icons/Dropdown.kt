@@ -27,7 +27,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.dropdown.ThreeDimensionalLockAl
 /**
  * A standardized set of icons to be utilized within the dropdown child menu for the toolbar component.
  */
-object DropdownTakIcons
+public object DropdownTakIcons
 
 private val allIcons = listOf(
   TakIcons.Dropdown.AddHostile,

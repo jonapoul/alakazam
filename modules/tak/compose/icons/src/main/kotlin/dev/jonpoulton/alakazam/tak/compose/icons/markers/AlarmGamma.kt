@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
 
-val MarkersTakIcons.AlarmGamma: ImageVector
+public val MarkersTakIcons.AlarmGamma: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

@@ -9,23 +9,23 @@ import androidx.compose.ui.graphics.Color
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
 
-interface TakSecondaryButtonColors {
+public interface TakSecondaryButtonColors {
   @Stable
   @Composable
-  fun backgroundColor(enabled: Boolean, pressed: Boolean): State<Color>
+  public fun backgroundColor(enabled: Boolean, pressed: Boolean): State<Color>
 
   @Stable
   @Composable
-  fun foregroundColor(enabled: Boolean, pressed: Boolean): State<Color>
+  public fun foregroundColor(enabled: Boolean, pressed: Boolean): State<Color>
 
   @Stable
   @Composable
-  fun borderColor(enabled: Boolean, pressed: Boolean): State<Color>
+  public fun borderColor(enabled: Boolean, pressed: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakSecondaryButtonColors(
+public data class DefaultTakSecondaryButtonColors(
   val normalBackgroundColor: Color = Color.Transparent,
   val pressedBackgroundColor: Color = TakColors.Sand,
   val disabledBackgroundColor: Color = TakColors.Ash,

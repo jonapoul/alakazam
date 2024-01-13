@@ -4,7 +4,7 @@ package dev.jonpoulton.alakazam.kotlin.core
  * Run some "fire and forget" block of code, without worrying about any [Exception] which might be
  * thrown. Use with caution, obviously!
  */
-fun justTry(block: () -> Unit) {
+public fun justTry(block: () -> Unit) {
   try {
     block.invoke()
   } catch (e: Exception) {
@@ -15,7 +15,7 @@ fun justTry(block: () -> Unit) {
 /**
  * Don't do anything
  */
-fun noOp() {
+public fun noOp() {
   // No-op, obviously
 }
 
@@ -24,5 +24,5 @@ fun noOp() {
  * an enum to which we add a new entry. If we have this value declared on any relevant when
  * statements, a compiler error will block building.
  */
-val <T> T.exhaustive: T
+public val <T> T.exhaustive: T
   get() = this

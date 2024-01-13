@@ -101,8 +101,8 @@ import dev.jonpoulton.alakazam.tak.compose.icons.raptorx.sidebar.SystemMessages
 /**
  * A standardized set of icons to be utilized within the TAKX Application
  */
-object RaptorXTakIcons
-object RaptorXSidebarTakIcons
+public object RaptorXTakIcons
+public object RaptorXSidebarTakIcons
 
 private val allIcons = listOf(
   TakIcons.RaptorX.About,

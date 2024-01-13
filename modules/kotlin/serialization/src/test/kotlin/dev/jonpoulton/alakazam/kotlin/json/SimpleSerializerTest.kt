@@ -8,7 +8,7 @@ import kotlinx.serialization.json.Json
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SimpleSerializerTest {
+internal class SimpleSerializerTest {
   @Serializable(with = FooSerializer::class)
   data class Foo(val data: String) {
     override fun toString(): String = data

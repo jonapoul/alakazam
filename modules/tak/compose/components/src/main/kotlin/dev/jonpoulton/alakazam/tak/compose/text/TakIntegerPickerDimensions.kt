@@ -7,16 +7,16 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Stable
-interface TakIntegerPickerDimensions {
-  val iconSize: Dp
-  val iconPadding: PaddingValues
-  val borderThickness: Dp
-  val cornerRadius: Dp
+public interface TakIntegerPickerDimensions {
+  public val iconSize: Dp
+  public val iconPadding: PaddingValues
+  public val borderThickness: Dp
+  public val cornerRadius: Dp
 }
 
 @Stable
 @Immutable
-data class DefaultTakIntegerPickerDimensions(
+public data class DefaultTakIntegerPickerDimensions(
   override val iconSize: Dp = 24.dp,
   override val iconPadding: PaddingValues = PaddingValues(all = 5.dp),
   override val borderThickness: Dp = 1.dp,

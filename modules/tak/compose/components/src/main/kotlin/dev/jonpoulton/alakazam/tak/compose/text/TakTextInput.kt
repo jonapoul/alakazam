@@ -31,7 +31,7 @@ import dev.jonpoulton.alakazam.tak.compose.icons.utility.Walking
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
-fun TakTextInput(
+public fun TakTextInput(
   state: MutableState<String>,
   hint: String,
   modifier: Modifier = Modifier,
@@ -63,7 +63,7 @@ fun TakTextInput(
 }
 
 @Composable
-fun TakTextInput(
+public fun TakTextInput(
   value: String,
   onValueChanged: (String) -> Unit,
   hint: String,

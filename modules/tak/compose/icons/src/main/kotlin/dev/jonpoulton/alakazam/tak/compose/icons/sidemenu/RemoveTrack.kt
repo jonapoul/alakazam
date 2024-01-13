@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.SideMenuTakIcons
 
-val SideMenuTakIcons.RemoveTrack: ImageVector
+public val SideMenuTakIcons.RemoveTrack: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

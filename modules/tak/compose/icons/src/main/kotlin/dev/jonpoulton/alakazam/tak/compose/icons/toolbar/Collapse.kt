@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.ToolbarTakIcons
 
-val ToolbarTakIcons.Collapse: ImageVector
+public val ToolbarTakIcons.Collapse: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

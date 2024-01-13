@@ -6,8 +6,8 @@ import kotlinx.datetime.Clock
 import javax.inject.Singleton
 
 @Module
-class ProvidesClockModule {
+public class ProvidesClockModule {
   @Provides
   @Singleton
-  fun clock(): Clock = Clock.System
+  public fun clock(): Clock = Clock.System
 }

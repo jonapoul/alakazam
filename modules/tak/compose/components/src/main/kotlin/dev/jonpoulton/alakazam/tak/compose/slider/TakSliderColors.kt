@@ -11,16 +11,16 @@ import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 
 @Stable
 @Immutable
-interface TakSliderColors : SliderColors {
-  val secondaryThumbColor: Color
+public interface TakSliderColors : SliderColors {
+  public val secondaryThumbColor: Color
 
   @Composable
-  fun textColor(enabled: Boolean, active: Boolean): State<Color>
+  public fun textColor(enabled: Boolean, active: Boolean): State<Color>
 }
 
 @Stable
 @Immutable
-data class DefaultTakSliderColors(
+public data class DefaultTakSliderColors(
   val primaryThumbColor: Color = TakColors.Sand,
   override val secondaryThumbColor: Color = TakColors.Ink.copy(alpha = 0.65f),
   val thumbColorDisabled: Color = TakColors.Ash,

@@ -7,17 +7,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Stable
-interface TakTextInputDimensions {
-  val iconSize: Dp
-  val iconPadding: PaddingValues
-  val textPadding: PaddingValues
-  val borderThicknessSmall: Dp
-  val borderThicknessLarge: Dp
+public interface TakTextInputDimensions {
+  public val iconSize: Dp
+  public val iconPadding: PaddingValues
+  public val textPadding: PaddingValues
+  public val borderThicknessSmall: Dp
+  public val borderThicknessLarge: Dp
 }
 
 @Stable
 @Immutable
-data class DefaultTakTextInputDimensions(
+public data class DefaultTakTextInputDimensions(
   override val iconSize: Dp = 24.dp,
   override val iconPadding: PaddingValues = PaddingValues(all = 10.dp),
   override val textPadding: PaddingValues = PaddingValues(horizontal = 10.dp, vertical = 12.dp),

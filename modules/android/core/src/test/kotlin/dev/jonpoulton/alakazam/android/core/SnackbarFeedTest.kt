@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertIs
 import kotlin.test.assertNull
 
-class SnackbarFeedTest {
+internal class SnackbarFeedTest {
   private lateinit var snackbarFeed: SnackbarFeed
 
   @Before

@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.NavigationTakIcons
 
-val NavigationTakIcons.RoverReceptionEnabled3: ImageVector
+public val NavigationTakIcons.RoverReceptionEnabled3: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

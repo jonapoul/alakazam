@@ -7,7 +7,7 @@ import java.util.Locale
  * string is not "true" or "false", a [IllegalStateException] is thrown.
  */
 @Throws(IllegalStateException::class)
-fun String.parseBoolean(): Boolean {
+public fun String.parseBoolean(): Boolean {
   return when {
     this.equals("true", ignoreCase = true) -> true
     this.equals("false", ignoreCase = true) -> false
@@ -19,7 +19,7 @@ fun String.parseBoolean(): Boolean {
  * Replaces the first character of the supplied [String] with a capitalised version.
  * Mercilessly lifted from https://stackoverflow.com/a/67843987/15634757
  */
-fun String.capitalized(): String {
+public fun String.capitalized(): String {
   return this.replaceFirstChar {
     if (it.isLowerCase()) {
       it.titlecase(Locale.getDefault())
@@ -29,7 +29,7 @@ fun String.capitalized(): String {
   }
 }
 
-fun String.throwIfBlank(): String {
+public fun String.throwIfBlank(): String {
   if (this.isBlank()) {
     error("String can't be blank!")
   } else {

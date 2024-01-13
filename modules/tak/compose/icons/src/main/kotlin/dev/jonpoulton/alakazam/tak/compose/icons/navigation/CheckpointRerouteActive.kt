@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.NavigationTakIcons
 
-val NavigationTakIcons.CheckpointRerouteActive: ImageVector
+public val NavigationTakIcons.CheckpointRerouteActive: ImageVector
   get() {
     if (nullableIcon != null) {
       return nullableIcon!!

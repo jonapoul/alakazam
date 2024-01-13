@@ -5,7 +5,7 @@ import dev.jonpoulton.alakazam.tak.core.PluginContext
 import timber.log.Timber
 import java.io.File
 
-object TakNativeLoader {
+public object TakNativeLoader {
   private var nativeLibraryDir: String? = null
 
   /**
@@ -15,7 +15,7 @@ object TakNativeLoader {
    * non-conflicting package name.
    */
   @Synchronized
-  fun init(pluginContext: PluginContext) {
+  public fun init(pluginContext: PluginContext) {
     if (nativeLibraryDir == null) {
       try {
         val nativeDir = pluginContext.packageManager
@@ -38,7 +38,7 @@ object TakNativeLoader {
    * manipulated. Use only validated, sanitized absolute paths.
    */
   @SuppressLint("UnsafeDynamicallyLoadedCode")
-  fun loadLibrary(name: String) {
+  public fun loadLibrary(name: String) {
     if (nativeLibraryDir != null) {
       val libFile = File(nativeLibraryDir, System.mapLibraryName(name))
       if (libFile.exists()) {
