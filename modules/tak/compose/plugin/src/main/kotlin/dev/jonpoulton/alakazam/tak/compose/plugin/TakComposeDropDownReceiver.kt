@@ -33,10 +33,7 @@ abstract class TakComposeDropDownReceiver(
   }
 
   open fun showDropDown(
-    lwFraction: Double = HALF_HEIGHT,
-    lhFraction: Double = FULL_HEIGHT,
-    pwFraction: Double = FULL_WIDTH,
-    phFraction: Double = HALF_HEIGHT,
+    dimensions: Dimensions = HalfScreen,
     ignoreBackButton: Boolean = false,
     switchable: Boolean = false,
     stateListener: DropDown.OnStateListener? = null,
@@ -54,10 +51,10 @@ abstract class TakComposeDropDownReceiver(
     }
     showDropDown(
       composeView,
-      lwFraction,
-      lhFraction,
-      pwFraction,
-      phFraction,
+      dimensions.lwFraction,
+      dimensions.lhFraction,
+      dimensions.pwFraction,
+      dimensions.phFraction,
       ignoreBackButton,
       switchable,
       stateListener,
