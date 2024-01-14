@@ -6,7 +6,9 @@ import androidx.compose.material.Colors
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import dev.jonpoulton.alakazam.tak.core.AppContext
 import dev.jonpoulton.alakazam.tak.core.PluginContext
@@ -48,7 +50,9 @@ public fun TakComposeView(
   setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
   setContent {
     TakTheme(colors, shapes(), typography()) {
-      content()
+      CompositionLocalProvider(LocalContext provides composeContext) {
+        content()
+      }
     }
   }
 }
