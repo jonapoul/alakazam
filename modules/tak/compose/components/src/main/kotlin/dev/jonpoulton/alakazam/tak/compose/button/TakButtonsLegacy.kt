@@ -17,10 +17,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SwapHoriz
@@ -34,9 +34,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
+import dev.jonpoulton.alakazam.kotlin.core.ifTrue
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
@@ -46,27 +48,31 @@ public fun TakTextButtonLegacy(
   modifier: Modifier = Modifier,
   text: String,
   icon: ImageVector? = null,
+  endIcon: ImageVector? = null,
   tint: Color = Color.White,
   isDisabled: Boolean = false,
   isChecked: Boolean = false,
+  forceUppercase: Boolean = true,
   contentPadding: PaddingValues = PaddingValues(),
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  style: TextStyle = LocalTextStyle.current,
   onClick: () -> Unit,
 ) {
-  val interactionSource = remember { MutableInteractionSource() }
   val isPressed by interactionSource.collectIsPressedAsState()
   val contentColour = contentColour(isDisabled, tint)
-  Button(
+  ButtonWithNoMinimumWidth(
     modifier = modifier
       .padding(1.dp)
-      .border(width = 1.dp, color = borderColour(isPressed, isChecked, isDisabled), shape = RoundedEdges)
+      .border(1.dp, borderColour(isPressed, isChecked, isDisabled), RoundedEdges)
       .height(36.dp)
       .width(IntrinsicSize.Max)
-      .defaultMinSize(minWidth = ButtonDefaults.MinWidth, minHeight = ButtonDefaults.MinHeight),
+      .defaultMinSize(minWidth = 0.dp, minHeight = ButtonDefaults.MinHeight),
     colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
     contentPadding = contentPadding,
     shape = RoundedEdges,
     enabled = !isDisabled,
     onClick = { onClick() },
+    minWidth = 0.dp,
     interactionSource = interactionSource,
   ) {
     Row(
@@ -89,14 +95,28 @@ public fun TakTextButtonLegacy(
       }
 
       Text(
-        text = text.uppercase(),
+        text = text.ifTrue(forceUppercase) { uppercase() },
         modifier = Modifier
           .align(Alignment.CenterVertically)
-          .fillMaxWidth()
+          .weight(1f)
           .wrapContentHeight(),
         textAlign = TextAlign.Center,
         color = contentColour,
+        style = style,
       )
+
+      if (endIcon != null) {
+        Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
+
+        Icon(
+          imageVector = endIcon,
+          contentDescription = null,
+          tint = contentColour,
+          modifier = Modifier
+            .align(Alignment.CenterVertically)
+            .size(IconSize),
+        )
+      }
     }
   }
 }
@@ -190,6 +210,37 @@ private fun PreviewTakIconButton(
 @PreviewDark
 @Composable
 private fun RegularTextPreview() = PreviewTakTextButton()
+
+@PreviewDark
+@Composable
+private fun RegularTextEndIconPreview() = TakPreview {
+  TakTextButtonLegacy(
+    modifier = Modifier,
+    text = "Click me",
+    endIcon = Icons.Filled.SwapHoriz,
+    onClick = EmptyCallback,
+  )
+}
+
+@PreviewDark
+@Composable
+private fun TinyTextButton() = TakPreview {
+  TakTextButtonLegacy(
+    modifier = Modifier,
+    text = "A",
+    onClick = EmptyCallback,
+  )
+}
+
+@PreviewDark
+@Composable
+private fun RegularTextButton() = TakPreview {
+  TakTextButtonLegacy(
+    modifier = Modifier,
+    text = "Click me",
+    onClick = EmptyCallback,
+  )
+}
 
 @PreviewDark
 @Composable

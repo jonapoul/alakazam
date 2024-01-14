@@ -18,6 +18,7 @@ dependencies {
 
   // only used for previews
   compileOnly(projects.modules.android.ui.compose)
+  compileOnly(projects.modules.kotlin.core)
   compileOnly(projects.modules.tak.compose.icons)
   compileOnly(projects.modules.tak.compose.preview)
 }

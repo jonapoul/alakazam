@@ -2,6 +2,7 @@
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   id("convention-android")
@@ -33,4 +34,12 @@ dependencies {
   implementation(libs.androidx.compose.ui.core)
   implementation(libs.androidx.compose.ui.preview)
   debugImplementation(libs.androidx.compose.ui.tooling)
+}
+
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    freeCompilerArgs += listOf(
+      "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+    )
+  }
 }
