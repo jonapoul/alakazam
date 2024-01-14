@@ -5,8 +5,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem
@@ -33,12 +35,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.button.TakIconButtonLegacy
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakLegacyColors
+import dev.jonpoulton.alakazam.tak.compose.core.TakTypography
 import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
@@ -61,6 +65,7 @@ public fun TakToolbar(
 @Composable
 public fun TakToolbar(
   title: String,
+  style: TextStyle = TakTypography.h1,
   navigationButton: (@Composable () -> Unit)? = null,
   otherButtons: (@Composable RowScope.() -> Unit)? = null,
   menuOptions: (@Composable ColumnScope.() -> Unit)? = null,
@@ -80,8 +85,7 @@ public fun TakToolbar(
         .weight(1f)
         .wrapContentHeight()
         .padding(horizontal = 8.dp),
-      color = Color.White,
-      fontWeight = FontWeight.Bold,
+      style = style,
     )
 
     if (otherButtons != null) {
@@ -138,14 +142,29 @@ public enum class TakToolbarNavigationButton(
 public fun TakToolbarMenuItem(
   icon: ImageVector,
   text: String,
+  style: TextStyle = TakTypography.body1,
   iconModifier: Modifier = Modifier,
   textModifier: Modifier = Modifier,
   contentColour: Color = Color.White,
   onClick: () -> Unit,
 ) {
   DropdownMenuItem(onClick = { onClick() }) {
-    Icon(modifier = iconModifier, imageVector = icon, contentDescription = null, tint = contentColour)
-    Text(modifier = textModifier, text = text, color = contentColour)
+    Icon(
+      modifier = iconModifier,
+      imageVector = icon,
+      contentDescription = null,
+      tint = contentColour
+    )
+
+    Spacer(modifier = Modifier.width(12.dp))
+
+    Text(
+      modifier = textModifier,
+      text = text,
+      color = contentColour,
+      style = style,
+      fontSize = 14.sp,
+    )
   }
 }
 
@@ -208,5 +227,15 @@ private fun PreviewCustomNavButton() = TakPreview {
     title = "Toolbar With Funky Back Button",
     otherButtons = null,
     menuOptions = null,
+  )
+}
+
+@PreviewDark
+@Composable
+private fun PreviewMenuItem() = TakPreview {
+  TakToolbarMenuItem(
+    icon = Icons.Filled.Edit,
+    text = "Some Text",
+    onClick = EmptyCallback,
   )
 }

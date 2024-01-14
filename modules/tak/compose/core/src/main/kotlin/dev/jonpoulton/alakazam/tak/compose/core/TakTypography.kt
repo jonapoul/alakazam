@@ -87,7 +87,7 @@ public object TakTextStyles {
   @Stable
   public val Body1: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
-    fontSize = 12.sp,
+    fontSize = 14.sp,
     fontWeight = FontWeight.Normal,
     color = TakColors.Cloud,
   )
@@ -98,7 +98,7 @@ public object TakTextStyles {
   @Stable
   public val Body2: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
-    fontSize = 10.sp,
+    fontSize = 12.sp,
     fontWeight = FontWeight.Normal,
     color = TakColors.Cloud,
   )
@@ -106,7 +106,7 @@ public object TakTextStyles {
   @Stable
   public val Subtitle1: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
-    fontSize = 10.sp,
+    fontSize = 12.sp,
     fontWeight = FontWeight.Normal,
     color = TakColors.Stone,
   )
