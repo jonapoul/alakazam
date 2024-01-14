@@ -23,8 +23,9 @@ public val TakTypography: Typography
     h2 = TakTextStyles.H2,
     h3 = TakTextStyles.H3,
     h4 = TakTextStyles.H4,
-    body1 = TakTextStyles.Display,
-    body2 = TakTextStyles.P,
+    body1 = TakTextStyles.Body1,
+    body2 = TakTextStyles.Body2,
+    subtitle1 = TakTextStyles.Subtitle1,
   )
 
 @Stable
@@ -84,10 +85,10 @@ public object TakTextStyles {
    * Used for module headers
    */
   @Stable
-  public val Display: TextStyle = TextStyle(
+  public val Body1: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
-    fontSize = 16.sp,
-    fontWeight = FontWeight.Bold,
+    fontSize = 12.sp,
+    fontWeight = FontWeight.Normal,
     color = TakColors.Cloud,
   )
 
@@ -95,11 +96,19 @@ public object TakTextStyles {
    * Standard font for all other cases
    */
   @Stable
-  public val P: TextStyle = TextStyle(
+  public val Body2: TextStyle = TextStyle(
     fontFamily = TakFonts.Family,
-    fontSize = 12.sp,
+    fontSize = 10.sp,
     fontWeight = FontWeight.Normal,
     color = TakColors.Cloud,
+  )
+
+  @Stable
+  public val Subtitle1: TextStyle = TextStyle(
+    fontFamily = TakFonts.Family,
+    fontSize = 10.sp,
+    fontWeight = FontWeight.Normal,
+    color = TakColors.Stone,
   )
 }
 
@@ -126,6 +135,10 @@ private fun PreviewBody1() = PreviewTypography(TakTypography.body1)
 @PreviewDark
 @Composable
 private fun PreviewBody2() = PreviewTypography(TakTypography.body2)
+
+@PreviewDark
+@Composable
+private fun PreviewSubtitle1() = PreviewTypography(TakTypography.subtitle1)
 
 @Composable
 private fun PreviewTypography(style: TextStyle) = TakTheme {
