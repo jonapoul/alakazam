@@ -36,6 +36,12 @@ public data class DefaultTakSecondaryButtonColors(
   val pressedBorderColor: Color = Color.Transparent,
   val disabledBorderColor: Color = TakLegacyColors.Gray,
 ) : TakSecondaryButtonColors {
+  public constructor(color: Color) : this(
+    pressedBackgroundColor = color,
+    normalForegroundColor = color,
+    normalBorderColor = color,
+  )
+
   @Stable
   @Composable
   override fun backgroundColor(enabled: Boolean, pressed: Boolean): State<Color> = rememberUpdatedState(
