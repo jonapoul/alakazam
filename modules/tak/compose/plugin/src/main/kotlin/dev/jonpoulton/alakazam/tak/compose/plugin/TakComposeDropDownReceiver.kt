@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.alakazam.tak.compose.core.LocalTakComposeContext
 import dev.jonpoulton.alakazam.tak.compose.core.LocalTakContexts
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakComposeContext
@@ -45,7 +44,6 @@ public abstract class TakComposeDropDownReceiver(
       CompositionLocalProvider(
         LocalViewModelStoreOwner provides this,
         LocalViewModelFactory provides viewModelFactory,
-        LocalTakComposeContext provides composeContext,
         LocalTakContexts provides contexts,
       ) {
         content()

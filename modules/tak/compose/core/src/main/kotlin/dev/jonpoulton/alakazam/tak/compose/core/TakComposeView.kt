@@ -50,7 +50,10 @@ public fun TakComposeView(
   setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
   setContent {
     TakTheme(colors, shapes(), typography()) {
-      CompositionLocalProvider(LocalContext provides composeContext) {
+      CompositionLocalProvider(
+        LocalContext provides composeContext,
+        LocalTakComposeContext provides composeContext,
+      ) {
         content()
       }
     }

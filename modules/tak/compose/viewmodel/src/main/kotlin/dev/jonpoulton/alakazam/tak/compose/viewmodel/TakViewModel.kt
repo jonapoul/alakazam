@@ -15,9 +15,7 @@ public inline fun <reified VM : ViewModel> takViewModel(
     "No ViewModelStoreOwner was provided via LocalViewModelStoreOwner"
   },
   key: String? = null,
-  factory: ViewModelProvider.Factory? = checkNotNull(LocalViewModelFactory.current) {
-    "No ViewModelProvider.Factory was provided via LocalViewModelFactory"
-  },
+  factory: ViewModelProvider.Factory? = LocalViewModelFactory.current,
   extras: CreationExtras = if (viewModelStoreOwner is HasDefaultViewModelProviderFactory) {
     viewModelStoreOwner.defaultViewModelCreationExtras
   } else {

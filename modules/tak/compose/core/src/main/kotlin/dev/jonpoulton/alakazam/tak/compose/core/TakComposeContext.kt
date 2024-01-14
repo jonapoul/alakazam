@@ -18,4 +18,6 @@ public class TakComposeContext(plugin: PluginContext, private val app: AppContex
   override fun getApplicationContext(): Context = app.applicationContext
 }
 
-public val LocalTakComposeContext: ProvidableCompositionLocal<TakComposeContext?> = compositionLocalOf { null }
+public val LocalTakComposeContext: ProvidableCompositionLocal<TakComposeContext> = compositionLocalOf {
+  error("CompositionLocal TakComposeContext not present")
+}
