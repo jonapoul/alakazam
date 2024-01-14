@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import com.atakmap.android.maps.MapView
 import dev.jonpoulton.alakazam.tak.core.AppContext
 import dev.jonpoulton.alakazam.tak.core.PluginContext
+import dev.jonpoulton.alakazam.tak.core.TakContexts
 
 public class TakAlertDialogBuilder : AlertDialog.Builder {
   private val pluginContext: PluginContext
@@ -25,6 +26,10 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
 
   public constructor(mapView: MapView, pluginContext: PluginContext) : super(mapView.context) {
     this.pluginContext = pluginContext
+  }
+
+  public constructor(contexts: TakContexts) : super(contexts.app) {
+    this.pluginContext = contexts.plugin
   }
 
   override fun setView(@LayoutRes layoutResId: Int): TakAlertDialogBuilder =

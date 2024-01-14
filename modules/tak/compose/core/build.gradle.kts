@@ -18,6 +18,5 @@ android {
 
 dependencies {
   api(projects.modules.tak.core)
-  compileOnly(libs.atak.sdk)
   implementation(libs.androidx.compose.ui.fonts)
 }
