@@ -39,6 +39,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
   kotlinOptions {
     freeCompilerArgs += listOf(
+      "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
       "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
     )
   }
