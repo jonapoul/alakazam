@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.markers
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
@@ -10,6 +11,8 @@ import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.MarkersTakIcons
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val MarkersTakIcons.Orange: ImageVector
   get() {
@@ -49,3 +52,7 @@ public val MarkersTakIcons.Orange: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = MarkersTakIcons.Orange)

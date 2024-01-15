@@ -20,6 +20,7 @@ dependencies {
   api(projects.modules.tak.compose.core)
 
   // For previews
+  compileOnly(projects.modules.tak.compose.preview)
   compileOnly(libs.androidx.compose.material.core)
   compileOnly(libs.androidx.compose.ui.preview)
   compileOnly(libs.androidx.compose.ui.tooling)

@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.toolbar
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
@@ -12,7 +13,9 @@ import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.ToolbarTakIcons
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val ToolbarTakIcons.Close: ImageVector
   get() {
@@ -71,3 +74,7 @@ public val ToolbarTakIcons.Close: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = ToolbarTakIcons.Close)

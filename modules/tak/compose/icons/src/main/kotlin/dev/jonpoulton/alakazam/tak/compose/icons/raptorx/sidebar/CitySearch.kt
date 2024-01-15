@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.raptorx.sidebar
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
 import androidx.compose.ui.graphics.SolidColor
@@ -9,7 +10,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXSidebarTakIcons
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val RaptorXSidebarTakIcons.CitySearch: ImageVector
   get() {
@@ -93,3 +96,7 @@ public val RaptorXSidebarTakIcons.CitySearch: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = RaptorXSidebarTakIcons.CitySearch)

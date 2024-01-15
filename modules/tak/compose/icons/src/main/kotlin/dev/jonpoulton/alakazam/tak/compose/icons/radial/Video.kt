@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.radial
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
@@ -9,7 +10,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.RadialTakIcons
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val RadialTakIcons.Video: ImageVector
   get() {
@@ -87,3 +90,6 @@ public val RadialTakIcons.Video: ImageVector
 
 private var nullableIcon: ImageVector? = null
 
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = RadialTakIcons.Video)

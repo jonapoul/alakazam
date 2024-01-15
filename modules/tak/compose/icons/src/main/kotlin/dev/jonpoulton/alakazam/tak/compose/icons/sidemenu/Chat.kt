@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.sidemenu
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
@@ -10,7 +11,9 @@ import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.SideMenuTakIcons
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val SideMenuTakIcons.Chat: ImageVector
   get() {
@@ -81,3 +84,7 @@ public val SideMenuTakIcons.Chat: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = SideMenuTakIcons.Chat)

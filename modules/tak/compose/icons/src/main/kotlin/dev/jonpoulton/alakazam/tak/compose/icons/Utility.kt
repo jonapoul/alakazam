@@ -3,18 +3,8 @@
 package dev.jonpoulton.alakazam.tak.compose.icons
 
 import android.content.res.Configuration
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.tak.compose.core.TakTheme
 import dev.jonpoulton.alakazam.tak.compose.icons.utility.Add
 import dev.jonpoulton.alakazam.tak.compose.icons.utility.Aircraft
 import dev.jonpoulton.alakazam.tak.compose.icons.utility.BulkSelectionEmpty
@@ -114,17 +104,4 @@ private val allIcons
 
 @Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun PreviewUtility() = TakTheme {
-  Surface {
-    val icons = allIcons
-    LazyVerticalGrid(
-      columns = GridCells.Adaptive(minSize = 40.dp),
-    ) {
-      items(icons) { icon ->
-        Box(modifier = Modifier.padding(8.dp)) {
-          Image(icon, contentDescription = null)
-        }
-      }
-    }
-  }
-}
+private fun PreviewUtility() = PreviewIconGrid { allIcons }

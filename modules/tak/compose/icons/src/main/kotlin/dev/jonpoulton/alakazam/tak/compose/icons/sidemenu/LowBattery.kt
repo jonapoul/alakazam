@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.sidemenu
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
@@ -11,7 +12,9 @@ import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.SideMenuTakIcons
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val SideMenuTakIcons.LowBattery: ImageVector
   get() {
@@ -87,3 +90,7 @@ public val SideMenuTakIcons.LowBattery: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = SideMenuTakIcons.LowBattery)

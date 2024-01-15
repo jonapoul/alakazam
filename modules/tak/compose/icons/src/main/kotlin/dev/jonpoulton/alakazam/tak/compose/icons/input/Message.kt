@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.input
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
@@ -10,6 +11,8 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.icons.InputTakIcons
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val InputTakIcons.Message: ImageVector
   get() {
@@ -53,3 +56,7 @@ public val InputTakIcons.Message: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = InputTakIcons.Message)

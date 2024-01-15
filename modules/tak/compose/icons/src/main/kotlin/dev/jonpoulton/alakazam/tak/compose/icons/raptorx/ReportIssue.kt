@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.raptorx
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
 import androidx.compose.ui.graphics.SolidColor
@@ -9,7 +10,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val RaptorXTakIcons.ReportIssue: ImageVector
   get() {
@@ -71,3 +74,7 @@ public val RaptorXTakIcons.ReportIssue: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = RaptorXTakIcons.ReportIssue)

@@ -1,5 +1,6 @@
 package dev.jonpoulton.alakazam.tak.compose.icons.dropdown
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
@@ -12,6 +13,8 @@ import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.tak.compose.icons.DropdownTakIcons
+import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
+import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val DropdownTakIcons.HostileSpi: ImageVector
   get() {
@@ -110,3 +113,7 @@ public val DropdownTakIcons.HostileSpi: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
+
+@Composable
+@PreviewDark
+private fun Preview() = PreviewIcon(icon = DropdownTakIcons.HostileSpi)
