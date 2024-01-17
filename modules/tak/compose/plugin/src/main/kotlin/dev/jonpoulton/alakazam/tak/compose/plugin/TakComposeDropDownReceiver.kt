@@ -2,53 +2,53 @@ package dev.jonpoulton.alakazam.tak.compose.plugin
 
 import androidx.annotation.CallSuper
 import androidx.compose.material.Colors
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
+import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.maps.MapView
+import dev.jonpoulton.alakazam.tak.compose.core.HalfScreen
 import dev.jonpoulton.alakazam.tak.compose.core.LocalTakContexts
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakComposeContext
 import dev.jonpoulton.alakazam.tak.compose.core.TakComposeView
+import dev.jonpoulton.alakazam.tak.compose.core.TakScreen
+import dev.jonpoulton.alakazam.tak.compose.core.TakScreenNavigator
+import dev.jonpoulton.alakazam.tak.compose.core.setTakContent
 import dev.jonpoulton.alakazam.tak.compose.viewmodel.LocalViewModelFactory
 import dev.jonpoulton.alakazam.tak.core.TakContexts
-import dev.jonpoulton.alakazam.tak.plugin.TakDropDownReceiver
+import dev.jonpoulton.alakazam.tak.plugin.HasDocumentedIntentFilter
 
 public abstract class TakComposeDropDownReceiver(
-  protected val contexts: TakContexts,
+  private val contexts: TakContexts,
   mapView: MapView,
   protected val viewModelFactory: ViewModelProvider.Factory,
-) : TakDropDownReceiver(mapView), ViewModelStoreOwner {
+) : DropDownReceiver(mapView), ViewModelStoreOwner, TakScreenNavigator, HasDocumentedIntentFilter {
   override val viewModelStore: ViewModelStore = ViewModelStore()
 
+  protected open val colors: Colors = TakColors.colors
+  protected val navStack: MutableList<TakScreen> = arrayListOf()
+
   private val composeContext = TakComposeContext(contexts)
+  private val composeView = TakComposeView(composeContext)
 
   @CallSuper
   override fun disposeImpl() {
     viewModelStore.clear()
   }
 
-  public open fun showDropDown(
-    dimensions: Dimensions = HalfScreen,
+  protected fun showDropDown(
+    dimensions: TakScreen.Dimensions = HalfScreen,
     ignoreBackButton: Boolean = false,
     switchable: Boolean = false,
     stateListener: DropDown.OnStateListener? = null,
-    colors: Colors = TakColors.colors,
-    content: @Composable () -> Unit,
+    screen: TakScreen,
   ) {
-    val composeView = TakComposeView(composeContext, colors) {
-      CompositionLocalProvider(
-        LocalViewModelStoreOwner provides this,
-        LocalViewModelFactory provides viewModelFactory,
-        LocalTakContexts provides contexts,
-      ) {
-        content()
-      }
-    }
+    navStack.add(screen)
+    composeScreen(screen)
     showDropDown(
       composeView,
       dimensions.lwFraction,
@@ -59,5 +59,48 @@ public abstract class TakComposeDropDownReceiver(
       switchable,
       stateListener,
     )
+  }
+
+  override fun navigateForward(screen: TakScreen) {
+    navStack.add(screen)
+    composeScreen(screen)
+  }
+
+  override fun navigateReplace(screen: TakScreen) {
+    navStack.removeLast()
+    navigateForward(screen)
+  }
+
+  override fun navigateBack(forceNavBack: Boolean) {
+    when (navStack.size) {
+      0 -> error("Can't navigate back, nav stack is empty!")
+      1 -> close()
+      else -> {
+        navStack.removeLast()
+        composeScreen(navStack.last())
+      }
+    }
+  }
+
+  override fun close() {
+    navStack.clear()
+    closeDropDown()
+  }
+
+  override fun onBackButtonPressed(): Boolean {
+    navigateBack()
+    return true // ignore the signal
+  }
+
+  private fun composeScreen(screen: TakScreen) {
+    composeView.setTakContent(composeContext, colors) {
+      CompositionLocalProvider(
+        LocalViewModelStoreOwner provides this,
+        LocalViewModelFactory provides viewModelFactory,
+        LocalTakContexts provides contexts,
+      ) {
+        screen.ScreenContent()
+      }
+    }
   }
 }

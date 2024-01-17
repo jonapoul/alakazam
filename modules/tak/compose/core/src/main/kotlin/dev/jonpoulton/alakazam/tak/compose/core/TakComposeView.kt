@@ -14,40 +14,52 @@ import dev.jonpoulton.alakazam.tak.core.AppContext
 import dev.jonpoulton.alakazam.tak.core.PluginContext
 import dev.jonpoulton.alakazam.tak.core.TakContexts
 
+public fun TakComposeView(contexts: TakContexts): ComposeView {
+  val composeContext = TakComposeContext(contexts)
+  return TakComposeView(composeContext)
+}
+
 public fun TakComposeView(
   contexts: TakContexts,
-  colors: Colors = TakColors.colors,
-  shapes: @Composable () -> Shapes = { TakShapes },
-  typography: @Composable () -> Typography = { TakTypography },
   content: @Composable () -> Unit,
-): ComposeView {
-  val composeContext = TakComposeContext(contexts)
-  return TakComposeView(composeContext, colors, shapes, typography, content)
+): ComposeView = TakComposeView(
+  composeContext = TakComposeContext(contexts),
+  content = content,
+)
+
+public fun TakComposeView(pluginContext: PluginContext, appContext: AppContext): ComposeView {
+  val composeContext = TakComposeContext(pluginContext, appContext)
+  return TakComposeView(composeContext)
 }
 
 public fun TakComposeView(
   pluginContext: PluginContext,
   appContext: AppContext,
-  colors: Colors = TakColors.colors,
-  shapes: @Composable () -> Shapes = { TakShapes },
-  typography: @Composable () -> Typography = { TakTypography },
   content: @Composable () -> Unit,
-): ComposeView {
-  val composeContext = TakComposeContext(pluginContext, appContext)
-  return TakComposeView(composeContext, colors, shapes, typography, content)
+): ComposeView = TakComposeView(
+  composeContext = TakComposeContext(pluginContext, appContext),
+  content = content,
+)
+
+public fun TakComposeView(composeContext: TakComposeContext): ComposeView {
+  val view = ComposeView(composeContext)
+  view.setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+  return view
 }
 
-/**
- * Shortcut to create a context-aware [ComposeView] for an ATAK plugin.
- */
-public fun TakComposeView(
+public fun TakComposeView(composeContext: TakComposeContext, content: @Composable () -> Unit): ComposeView {
+  val view = TakComposeView(composeContext)
+  view.setTakContent(composeContext, content = content)
+  return view
+}
+
+public fun ComposeView.setTakContent(
   composeContext: TakComposeContext,
   colors: Colors = TakColors.colors,
   shapes: @Composable () -> Shapes = { TakShapes },
   typography: @Composable () -> Typography = { TakTypography },
   content: @Composable () -> Unit,
-): ComposeView = ComposeView(composeContext).apply {
-  setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+) {
   setContent {
     TakTheme(colors, shapes(), typography()) {
       CompositionLocalProvider(
@@ -57,5 +69,17 @@ public fun TakComposeView(
         content()
       }
     }
+  }
+}
+
+public fun ComposeView.setTakContent(
+  composeContext: TakComposeContext,
+  colors: Colors = TakColors.colors,
+  shapes: @Composable () -> Shapes = { TakShapes },
+  typography: @Composable () -> Typography = { TakTypography },
+  screen: TakScreen,
+) {
+  setTakContent(composeContext, colors, shapes, typography) {
+    screen.ScreenContent()
   }
 }
