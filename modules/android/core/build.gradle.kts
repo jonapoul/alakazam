@@ -12,6 +12,7 @@ android {
 
 dependencies {
   implementation(projects.modules.kotlin.core)
+  implementation(libs.androidx.annotation)
   implementation(libs.androidx.coreKtx)
   implementation(libs.kotlinx.coroutines.android)
   implementation(libs.kotlinx.datetime)
