@@ -3,10 +3,10 @@ package dev.jonpoulton.alakazam.tak.compose.icons.sidemenu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.R
 import dev.jonpoulton.alakazam.tak.compose.icons.SideMenuTakIcons
-import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val SideMenuTakIcons.Edit: ImageVector
   @Composable

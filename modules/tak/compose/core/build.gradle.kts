@@ -17,6 +17,7 @@ android {
 }
 
 dependencies {
+  api(projects.modules.android.ui.compose)
   api(projects.modules.tak.core)
   implementation(libs.androidx.compose.ui.fonts)
 }

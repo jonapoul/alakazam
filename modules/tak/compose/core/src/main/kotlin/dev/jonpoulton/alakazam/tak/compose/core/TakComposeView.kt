@@ -80,6 +80,6 @@ public fun ComposeView.setTakContent(
   screen: TakScreen,
 ) {
   setTakContent(composeContext, colors, shapes, typography) {
-    screen.ScreenContent()
+    screen.Compose()
   }
 }

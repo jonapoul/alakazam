@@ -14,12 +14,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.icons.TakIcons
 import dev.jonpoulton.alakazam.tak.compose.icons.markers.Blue
 import dev.jonpoulton.alakazam.tak.compose.icons.markers.Neutral
 import dev.jonpoulton.alakazam.tak.compose.icons.markers.Purple
-import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable

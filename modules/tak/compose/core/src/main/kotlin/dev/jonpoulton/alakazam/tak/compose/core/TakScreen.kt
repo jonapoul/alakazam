@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 
 public interface TakScreen {
   @Composable
-  public fun ScreenContent()
+  public fun Compose()
 
   public interface Dimensions {
     public val lwFraction: Double

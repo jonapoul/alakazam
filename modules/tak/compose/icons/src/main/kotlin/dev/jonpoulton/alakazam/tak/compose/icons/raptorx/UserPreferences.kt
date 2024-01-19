@@ -12,9 +12,9 @@ import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
+import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.icons.PreviewIcon
 import dev.jonpoulton.alakazam.tak.compose.icons.RaptorXTakIcons
-import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 
 public val RaptorXTakIcons.UserPreferences: ImageVector
   get() {

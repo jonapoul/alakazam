@@ -26,49 +26,49 @@ allprojects {
 
 And add a dependency code to your **module**'s `build.gradle` file.
 
-```gradle
+```kotlin
 dependencies {
     // Android libraries
-    implementation "dev.jonpoulton.alakazam:android-core:{version}"
-    implementation "dev.jonpoulton.alakazam:android-db:{version}"
-    implementation "dev.jonpoulton.alakazam:android-http:{version}"
-    implementation "dev.jonpoulton.alakazam:android-init:{version}"
-    implementation "dev.jonpoulton.alakazam:android-logging:{version}"
-    implementation "dev.jonpoulton.alakazam:android-navigation:{version}"
-    implementation "dev.jonpoulton.alakazam:android-prefs:{version}"
-    implementation "dev.jonpoulton.alakazam:android-theme:{version}"
-    implementation "dev.jonpoulton.alakazam:android-ui-appcompat:{version}"
-    implementation "dev.jonpoulton.alakazam:android-ui-compose:{version}"
-    implementation "dev.jonpoulton.alakazam:android-ui-core:{version}"
-    implementation "dev.jonpoulton.alakazam:android-ui-material:{version}"
-    implementation "dev.jonpoulton.alakazam:android-ui-viewbinding:{version}"
+    implementation("dev.jonpoulton.alakazam:android-core:{version}")
+    implementation("dev.jonpoulton.alakazam:android-db:{version}")
+    implementation("dev.jonpoulton.alakazam:android-http:{version}")
+    implementation("dev.jonpoulton.alakazam:android-init:{version}")
+    implementation("dev.jonpoulton.alakazam:android-logging:{version}")
+    implementation("dev.jonpoulton.alakazam:android-navigation:{version}")
+    implementation("dev.jonpoulton.alakazam:android-prefs:{version}")
+    implementation("dev.jonpoulton.alakazam:android-theme:{version}")
+    implementation("dev.jonpoulton.alakazam:android-ui-appcompat:{version}")
+    implementation("dev.jonpoulton.alakazam:android-ui-compose:{version}")
+    implementation("dev.jonpoulton.alakazam:android-ui-core:{version}")
+    implementation("dev.jonpoulton.alakazam:android-ui-material:{version}")
+    implementation("dev.jonpoulton.alakazam:android-ui-viewbinding:{version}")
 
     // DI libraries
-    implementation "dev.jonpoulton.alakazam:di-dagger:{version}"
-    implementation "dev.jonpoulton.alakazam:di-hilt:{version}"
-    implementation "dev.jonpoulton.alakazam:di-koin:{version}"
+    implementation("dev.jonpoulton.alakazam:di-dagger:{version}")
+    implementation("dev.jonpoulton.alakazam:di-hilt:{version}")
+    implementation("dev.jonpoulton.alakazam:di-koin:{version}")
 
     // Kotlin libraries
-    implementation "dev.jonpoulton.alakazam:kotlin-core:{version}"
-    implementation "dev.jonpoulton.alakazam:kotlin-serialization:{version}"
-    implementation "dev.jonpoulton.alakazam:kotlin-time:{version}"
+    implementation("dev.jonpoulton.alakazam:kotlin-core:{version}")
+    implementation("dev.jonpoulton.alakazam:kotlin-serialization:{version}")
+    implementation("dev.jonpoulton.alakazam:kotlin-time:{version}")
 
     // ATAK libraries
-    implementation "dev.jonpoulton.alakazam:tak-compose-components:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-compose-core:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-compose-icons:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-compose-plugin:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-compose-preview:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-compose-viewmodel:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-core:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-dagger:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-plugin:{version}"
-    implementation "dev.jonpoulton.alakazam:tak-viewmodel:{version}"
+    implementation("dev.jonpoulton.alakazam:tak-compose-components:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-compose-core:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-compose-icons:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-compose-plugin:{version}")
+    compileOnly("dev.jonpoulton.alakazam:tak-compose-preview:{version}") // not runtime
+    implementation("dev.jonpoulton.alakazam:tak-compose-viewmodel:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-core:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-dagger:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-plugin:{version}")
+    implementation("dev.jonpoulton.alakazam:tak-viewmodel:{version}")
 
     // Testing libraries
-    testImplementation "dev.jonpoulton.alakazam:testing-core:{version}"
-    testImplementation "dev.jonpoulton.alakazam:testing-db:{version}"
-    androidTestImplementation "dev.jonpoulton.alakazam:testing-android:{version}"
-    androidTestImplementation "dev.jonpoulton.alakazam:testing-hilt:{version}"
+    testImplementation("dev.jonpoulton.alakazam:testing-core:{version}")
+    testImplementation("dev.jonpoulton.alakazam:testing-db:{version}")
+    androidTestImplementation("dev.jonpoulton.alakazam:testing-android:{version}")
+    androidTestImplementation("dev.jonpoulton.alakazam:testing-hilt:{version}")
 }
 ```

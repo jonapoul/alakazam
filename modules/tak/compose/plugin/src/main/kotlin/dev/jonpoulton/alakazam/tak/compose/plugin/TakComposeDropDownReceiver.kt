@@ -3,6 +3,7 @@ package dev.jonpoulton.alakazam.tak.compose.plugin
 import androidx.annotation.CallSuper
 import androidx.compose.material.Colors
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.ComposeView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
@@ -33,7 +34,7 @@ public abstract class TakComposeDropDownReceiver(
   protected val navStack: MutableList<TakScreen> = arrayListOf()
 
   private val composeContext = TakComposeContext(contexts)
-  private val composeView = TakComposeView(composeContext)
+  private var composeView: ComposeView? = null
 
   @CallSuper
   override fun disposeImpl() {
@@ -48,6 +49,7 @@ public abstract class TakComposeDropDownReceiver(
     screen: TakScreen,
   ) {
     navStack.add(screen)
+    composeView = TakComposeView(composeContext)
     composeScreen(screen)
     showDropDown(
       composeView,
@@ -84,6 +86,7 @@ public abstract class TakComposeDropDownReceiver(
 
   override fun close() {
     navStack.clear()
+    composeView = null
     closeDropDown()
   }
 
@@ -93,13 +96,13 @@ public abstract class TakComposeDropDownReceiver(
   }
 
   private fun composeScreen(screen: TakScreen) {
-    composeView.setTakContent(composeContext, colors) {
+    composeView?.setTakContent(composeContext, colors) {
       CompositionLocalProvider(
         LocalViewModelStoreOwner provides this,
         LocalViewModelFactory provides viewModelFactory,
         LocalTakContexts provides contexts,
       ) {
-        screen.ScreenContent()
+        screen.Compose()
       }
     }
   }

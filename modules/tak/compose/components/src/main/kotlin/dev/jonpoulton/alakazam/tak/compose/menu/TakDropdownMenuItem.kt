@@ -14,11 +14,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
+import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.core.TakTypography
 import dev.jonpoulton.alakazam.tak.compose.icons.TakIcons
 import dev.jonpoulton.alakazam.tak.compose.icons.utility.Walking
-import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
-import dev.jonpoulton.alakazam.tak.compose.preview.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @SuppressLint("ModifierParameter")

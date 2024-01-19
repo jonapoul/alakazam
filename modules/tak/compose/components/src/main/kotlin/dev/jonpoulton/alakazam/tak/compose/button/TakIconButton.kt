@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
+import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakToast
@@ -33,7 +34,6 @@ import dev.jonpoulton.alakazam.tak.compose.icons.TakIcons
 import dev.jonpoulton.alakazam.tak.compose.icons.sidemenu.Add
 import dev.jonpoulton.alakazam.tak.compose.icons.sidemenu.Alpha
 import dev.jonpoulton.alakazam.tak.compose.icons.sidemenu.Settings
-import dev.jonpoulton.alakazam.tak.compose.preview.EmptyCallback
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 
 @Composable
