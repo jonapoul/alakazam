@@ -43,6 +43,8 @@ public fun TakComposeView(
 
 public fun TakComposeView(composeContext: TakComposeContext): ComposeView {
   val view = ComposeView(composeContext)
+
+  // TODO: Use ViewCompositionStrategy.DisposeOnLifecycleDestroyed instead?
   view.setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
   return view
 }

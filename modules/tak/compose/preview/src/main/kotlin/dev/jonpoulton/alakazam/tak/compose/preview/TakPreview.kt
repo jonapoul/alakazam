@@ -14,8 +14,8 @@ import androidx.compose.ui.res.painterResource
 import dev.jonpoulton.alakazam.tak.compose.core.TakTheme
 
 @Composable
-public fun TakPreview(content: @Composable () -> Unit): Unit = TakTheme {
-  Surface {
+public fun TakPreview(modifier: Modifier = Modifier, content: @Composable () -> Unit): Unit = TakTheme {
+  Surface(modifier = modifier) {
     content()
   }
 }

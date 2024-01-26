@@ -30,6 +30,8 @@ style:
     ignoreAnnotated:
       - 'Preview'
       - 'PreviewDark'
+  ForbiddenComment:
+    active: false
 
 potential-bugs:
   UnsafeCallOnNullableType:
