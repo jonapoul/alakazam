@@ -54,16 +54,16 @@ internal class UUIDConverterTest {
 
   @Test
   fun noEntities() = runTest {
-    /* Given no entities inserted, when all entities are fetched */
+    // Given no entities inserted, when all entities are fetched
     val entities = dao.getAll()
 
-    /* Then we have no entities (and the converter didn't throw a fit) */
+    // Then we have no entities (and the converter didn't throw a fit)
     assertEquals(expected = emptyList(), actual = entities)
   }
 
   @Test
   fun oneEntityWithoutNullableUUID() = runTest {
-    /* Given one entity inserted */
+    // Given one entity inserted
     val entity = TestUuidEntity(
       id = 1L,
       uuid = EXAMPLE_UUID,
@@ -71,16 +71,16 @@ internal class UUIDConverterTest {
     )
     dao.insert(entity)
 
-    /* When all entities are fetched */
+    // When all entities are fetched
     val entities = dao.getAll()
 
-    /* Then we have no entities (and the converter didn't throw a fit) */
+    // Then we have no entities (and the converter didn't throw a fit)
     assertEquals(expected = listOf(entity), actual = entities)
   }
 
   @Test
   fun oneEntityWithNullableUUID() = runTest {
-    /* Given one entity inserted */
+    // Given one entity inserted
     val entity = TestUuidEntity(
       id = 1L,
       uuid = EXAMPLE_UUID,
@@ -88,10 +88,10 @@ internal class UUIDConverterTest {
     )
     dao.insert(entity)
 
-    /* When all entities are fetched */
+    // When all entities are fetched
     val entities = dao.getAll()
 
-    /* Then we have no entities (and the converter didn't throw a fit) */
+    // Then we have no entities (and the converter didn't throw a fit)
     assertEquals(expected = listOf(entity), actual = entities)
   }
 

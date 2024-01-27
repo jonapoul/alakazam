@@ -6,7 +6,7 @@ import org.junit.Test
 internal class ColoursTest {
   @Test
   fun `ARGB colours`() {
-    /* Black */
+    // Black
     assertEquals(
       0xFF000000.toInt(),
       argbColour(
@@ -16,7 +16,7 @@ internal class ColoursTest {
         blue = 0
       )
     )
-    /* White */
+    // White
     assertEquals(
       0xFFFFFFFF.toInt(),
       argbColour(
@@ -26,7 +26,7 @@ internal class ColoursTest {
         blue = 255
       )
     )
-    /* Grey-ish blue */
+    // Grey-ish blue
     assertEquals(
       0xFFAABBCC.toInt(),
       argbColour(
@@ -40,7 +40,7 @@ internal class ColoursTest {
 
   @Test
   fun `Lerp black to white`() {
-    /* Factor = 0.0 gives the start colour */
+    // Factor = 0.0 gives the start colour
     assertEquals(
       0xFF000000.toInt(),
       lerpColours(
@@ -49,7 +49,7 @@ internal class ColoursTest {
         factor = 0.0f
       )
     )
-    /* Factor = 1.0 gives the end colour */
+    // Factor = 1.0 gives the end colour
     assertEquals(
       0xFFFFFFFF.toInt(),
       lerpColours(

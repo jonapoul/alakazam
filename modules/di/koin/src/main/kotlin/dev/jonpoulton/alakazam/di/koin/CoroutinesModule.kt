@@ -12,10 +12,10 @@ import org.koin.dsl.module
 
 @Suppress("InjectDispatcher")
 public val coroutineModule: Module = module {
-  /* Application scope */
+  // Application scope
   single { CoroutineScope(SupervisorJob()) }
 
-  /* Dispatchers */
+  // Dispatchers
   single { MainDispatcher(Dispatchers.Main) }
   single { IODispatcher(Dispatchers.IO) }
   single { DefaultDispatcher(Dispatchers.Default) }

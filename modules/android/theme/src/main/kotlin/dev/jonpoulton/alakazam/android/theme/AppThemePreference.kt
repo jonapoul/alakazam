@@ -41,18 +41,18 @@ public class AppThemePreference @JvmOverloads constructor(
       )
     }
 
-    /* Force the default preference key as that bundled in this library */
+    // Force the default preference key as that bundled in this library
     key = Constants.PREF_KEY
 
-    /* Force our internal entries and entry values to be used */
+    // Force our internal entries and entry values to be used
     setEntryValues(R.array.app_theme_values)
     setEntries(R.array.app_theme_entries)
     dialogTitle = title
 
-    /* Set the default value as "follow system" */
+    // Set the default value as "follow system"
     setDefaultValue(AppTheme.SYSTEM.string)
 
-    /* Force the simple summary provider, meaning that the current theme name will be listed under the preference */
+    // Force the simple summary provider, meaning that the current theme name will be listed under the preference
     summaryProvider = SimpleSummaryProvider.getInstance()
 
     /* Update the displayed icon depending on the current theme. Only does anything if icon
@@ -89,7 +89,7 @@ public class AppThemePreference @JvmOverloads constructor(
    * Update the displayed icon between the sun and moon, depending on the app's current state.
    */
   private fun setThemeIcon() {
-    /* Don't change the icon if the user's specified that they don't want any icon space */
+    // Don't change the icon if the user's specified that they don't want any icon space
     if (!isIconSpaceReserved || !shouldShowIcon) return
     val isDarkTheme = context.resources.configuration.uiMode and
       Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES

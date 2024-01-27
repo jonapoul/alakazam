@@ -15,6 +15,6 @@ public abstract class CommonViewHolder<T>(root: View) : RecyclerView.ViewHolder(
   public abstract fun bindTo(item: T)
 
   public open fun onRecycled() {
-    /* No-op by default */
+    // No-op by default
   }
 }

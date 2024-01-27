@@ -8,7 +8,7 @@ internal class AppInitializersTest {
 
   @Test
   fun `Initialiser going first`() {
-    /* Given */
+    // Given
     var builderString = ""
     appInitializers = AppInitializers(
       setOf(
@@ -18,10 +18,10 @@ internal class AppInitializersTest {
       )
     )
 
-    /* When */
+    // When
     appInitializers.init()
 
-    /* Then */
+    // Then
     assertEquals(expected = "BAC", actual = builderString)
   }
 

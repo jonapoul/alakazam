@@ -44,7 +44,7 @@ public open class OkHttpClientFactory(
 
   private fun buildDispatcher(): Dispatcher {
     return Dispatcher().apply {
-      /* Allow for high number of concurrent data fetches on same host. */
+      // Allow for high number of concurrent data fetches on same host.
       maxRequestsPerHost = MAX_REQUESTS_PER_HOST
     }
   }

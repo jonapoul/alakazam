@@ -46,10 +46,10 @@ public fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
 public fun ViewGroup.cleanUpRecyclerAdapters() {
   children.forEach {
     if (it is RecyclerView) {
-      /* Remove the adapter class to allow garbage collection */
+      // Remove the adapter class to allow garbage collection
       it.adapter = null
     } else if (it is ViewGroup) {
-      /* Recursively go through child layouts to find RecyclerViews */
+      // Recursively go through child layouts to find RecyclerViews
       it.cleanUpRecyclerAdapters()
     }
   }

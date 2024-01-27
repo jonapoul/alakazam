@@ -64,12 +64,12 @@ koverReport {
 
   if (isAndroid) {
     androidReports("debug") {
-      /* No-op, all same config as default */
+      // No-op, all same config as default
     }
   }
 }
 
 rootProject.dependencies {
-  /* Include this module in test coverage */
+  // Include this module in test coverage
   kover(project)
 }

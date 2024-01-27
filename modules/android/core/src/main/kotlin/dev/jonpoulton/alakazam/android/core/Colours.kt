@@ -37,13 +37,13 @@ public fun lerpColours(
   val dg = end.green() - start.green()
   val db = end.blue() - start.blue()
 
-  /* Result channel lies between first and second colors channel */
+  // Result channel lies between first and second colors channel
   val alpha = (start.alpha() + da * factor).toInt()
   val red = (start.red() + dr * factor).toInt()
   val green = (start.green() + dg * factor).toInt()
   val blue = (start.blue() + db * factor).toInt()
 
-  /* Lock results into the range 0-255, then combine into ARGB integer */
+  // Lock results into the range 0-255, then combine into ARGB integer
   return argbColour(
     alpha = max(min(alpha, 255), 0),
     red = max(min(red, 255), 0),

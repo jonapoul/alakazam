@@ -34,11 +34,11 @@ public class CommonPreferenceCategory @JvmOverloads constructor(
 
   override fun onBindViewHolder(holder: PreferenceViewHolder) {
     super.onBindViewHolder(holder)
-    /* Set icon colour */
+    // Set icon colour
     val imageView = holder.findViewById(android.R.id.icon) as ImageView
     ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(categoryTint))
 
-    /* Set text colour */
+    // Set text colour
     val titleView = holder.findViewById(android.R.id.title) as TextView
     titleView.setTextColor(categoryTint)
   }

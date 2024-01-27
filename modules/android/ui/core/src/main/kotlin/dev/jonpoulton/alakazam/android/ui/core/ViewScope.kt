@@ -34,7 +34,7 @@ public val View.viewScope: CoroutineScope
     addOnAttachStateChangeListener(
       object : View.OnAttachStateChangeListener {
         override fun onViewAttachedToWindow(v: View) {
-          /* No-op */
+          // No-op
         }
 
         override fun onViewDetachedFromWindow(v: View) {

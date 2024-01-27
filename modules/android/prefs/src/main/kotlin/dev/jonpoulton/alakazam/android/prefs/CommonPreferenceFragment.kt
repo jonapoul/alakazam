@@ -26,7 +26,7 @@ public abstract class CommonPreferenceFragment(
   }
 
   override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-    /* No-op by default */
+    // No-op by default
     return false
   }
 }
