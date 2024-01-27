@@ -1,5 +1,7 @@
 plugins {
+  kotlin("android")
   id("convention-android")
+  id("convention-kotlin")
   id("convention-publish")
   id("convention-style")
   kotlin("kapt")

@@ -1,11 +1,10 @@
 @file:Suppress("UnstableApiUsage")
 
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 plugins {
-  kotlin("android")
   id("com.android.library")
-  id("convention-kotlin")
 }
 
 val libs = the<LibrariesForLibs>()
@@ -25,7 +24,7 @@ android {
     targetCompatibility = JavaVersion.VERSION_11
   }
 
-  kotlinOptions {
+  extensions.findByType(KotlinJvmOptions::class)?.apply {
     jvmTarget = "11"
   }
 

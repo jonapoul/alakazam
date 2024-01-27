@@ -3,7 +3,9 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.the
 
 plugins {
+  kotlin("android")
   id("convention-android")
+  id("convention-kotlin")
   id("com.google.dagger.hilt.android")
   kotlin("kapt")
 }

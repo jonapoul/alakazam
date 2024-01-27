@@ -5,7 +5,9 @@ import org.gradle.accessors.dm.LibrariesForLibs
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+  kotlin("android")
   id("convention-android")
+  id("convention-kotlin")
 }
 
 val libs = the<LibrariesForLibs>()
