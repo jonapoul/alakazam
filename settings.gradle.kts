@@ -53,6 +53,7 @@ include(":modules:tak:compose:viewmodel")
 include(":modules:tak:core")
 include(":modules:tak:dagger")
 include(":modules:tak:plugin")
+include(":modules:tak:res")
 include(":modules:tak:ui")
 
 include(":modules:testing:android")

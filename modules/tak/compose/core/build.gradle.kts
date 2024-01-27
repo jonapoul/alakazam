@@ -9,15 +9,11 @@ plugins {
 
 android {
   namespace = "dev.jonpoulton.alakazam.tak.compose.core"
-
-  buildFeatures {
-    androidResources = true
-    resValues = true
-  }
 }
 
 dependencies {
   api(projects.modules.android.ui.compose)
   api(projects.modules.tak.core)
+  implementation(projects.modules.tak.res)
   implementation(libs.androidx.compose.ui.fonts)
 }

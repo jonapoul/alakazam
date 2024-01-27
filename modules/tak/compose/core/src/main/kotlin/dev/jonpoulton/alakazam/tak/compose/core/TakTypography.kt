@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import dev.jonpoulton.alakazam.tak.res.R as TakR
 
 public val TakTypography: Typography
   @Composable
@@ -30,8 +31,8 @@ public val TakTypography: Typography
 
 @Stable
 public object TakFonts {
-  @Stable public val Bold: Font = Font(R.font.nunito_bold, weight = FontWeight.Bold)
-  @Stable public val Regular: Font = Font(R.font.nunito_regular, weight = FontWeight.Normal)
+  @Stable public val Bold: Font = Font(TakR.font.nunito_bold, weight = FontWeight.Bold)
+  @Stable public val Regular: Font = Font(TakR.font.nunito_regular, weight = FontWeight.Normal)
   @Stable public val Family: FontFamily = FontFamily(Bold, Regular)
 }
 
