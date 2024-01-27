@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
   id("convention-android")
   id("convention-atak")
@@ -8,6 +10,10 @@ plugins {
 
 android {
   namespace = "dev.jonpoulton.alakazam.tak.ui"
+
+  buildFeatures {
+    resValues = true
+  }
 }
 
 dependencies {
