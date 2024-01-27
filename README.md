@@ -50,6 +50,7 @@ dependencies {
 
     // Kotlin libraries
     implementation("dev.jonpoulton.alakazam:kotlin-core:{version}")
+    compileOnly("dev.jonpoulton.alakazam:kotlin-compose-annotations:{version}") // not runtime
     implementation("dev.jonpoulton.alakazam:kotlin-serialization:{version}")
     implementation("dev.jonpoulton.alakazam:kotlin-time:{version}")
 
