@@ -67,6 +67,7 @@ public fun ComposeView.setTakContent(
       CompositionLocalProvider(
         LocalContext provides composeContext,
         LocalTakComposeContext provides composeContext,
+        LocalMapView provides rootView,
       ) {
         content()
       }
