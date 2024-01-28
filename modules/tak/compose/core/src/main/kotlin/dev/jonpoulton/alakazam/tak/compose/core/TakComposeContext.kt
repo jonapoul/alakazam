@@ -15,7 +15,7 @@ import dev.jonpoulton.alakazam.tak.core.TakContexts
  * the [app]'s application context for non-resource-related work.
  */
 public class TakComposeContext(
-  plugin: PluginContext,
+  private val plugin: PluginContext,
   private val app: AppContext,
 ) : ContextWrapper(plugin) {
   public constructor(contexts: TakContexts) : this(contexts.plugin, contexts.app)
@@ -23,6 +23,9 @@ public class TakComposeContext(
   private val applicationContext = TakComposeApplicationContext(plugin, app)
 
   override fun getApplicationContext(): Context = applicationContext
+
+  // Useful in the debugger, otherwise it only shows up as a ContextWrapper
+  override fun toString(): String = "TakComposeContext($plugin, $app)"
 
   /**
    * Needed for font resolution. [androidx.compose.ui.platform.AndroidComposeView] creates its own call to
