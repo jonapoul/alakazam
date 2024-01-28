@@ -40,21 +40,21 @@ public fun takStringResource(@StringRes id: Int, vararg formatArgs: Any): String
 
 @Composable
 @ReadOnlyComposable
-public fun stringArrayResource(@ArrayRes id: Int): Array<String> {
+public fun takStringArrayResource(@ArrayRes id: Int): Array<String> {
   val resources = takResources()
   return resources.getStringArray(id)
 }
 
 @Composable
 @ReadOnlyComposable
-public fun pluralStringResource(@PluralsRes id: Int, count: Int): String {
+public fun takPluralStringResource(@PluralsRes id: Int, count: Int): String {
   val resources = takResources()
   return resources.getQuantityString(id, count)
 }
 
 @Composable
 @ReadOnlyComposable
-public fun pluralStringResource(@PluralsRes id: Int, count: Int, vararg formatArgs: Any): String {
+public fun takPluralStringResource(@PluralsRes id: Int, count: Int, vararg formatArgs: Any): String {
   val resources = takResources()
   return resources.getQuantityString(id, count, *formatArgs)
 }
