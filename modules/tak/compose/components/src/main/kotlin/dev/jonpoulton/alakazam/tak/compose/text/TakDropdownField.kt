@@ -37,11 +37,13 @@ import dev.jonpoulton.alakazam.tak.compose.icons.utility.Collapse
 import dev.jonpoulton.alakazam.tak.compose.icons.utility.Expand
 import dev.jonpoulton.alakazam.tak.compose.icons.utility.Walking
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 public fun TakDropdownField(
   state: MutableState<String?>,
-  options: List<String>,
+  options: ImmutableList<String>,
   hint: String,
   modifier: Modifier = Modifier,
   startIcon: ImageVector? = null,
@@ -171,7 +173,7 @@ private fun TakDropdownFieldItem(
 @PreviewDark
 @Composable
 private fun Empty() = TakPreview {
-  val options = listOf("a", "b", "c", "d")
+  val options = persistentListOf("a", "b", "c", "d")
   val state = remember { mutableStateOf<String?>(null) }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
@@ -184,7 +186,7 @@ private fun Empty() = TakPreview {
 @PreviewDark
 @Composable
 private fun Disabled() = TakPreview {
-  val options = listOf("Alpha", "Bravo", "Charlie", "Delta")
+  val options = persistentListOf("Alpha", "Bravo", "Charlie", "Delta")
   val state = remember { mutableStateOf<String?>("Bravo") }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
@@ -198,7 +200,7 @@ private fun Disabled() = TakPreview {
 @PreviewDark
 @Composable
 private fun Error() = TakPreview {
-  val options = listOf("Alpha", "Bravo", "Charlie", "Delta")
+  val options = persistentListOf("Alpha", "Bravo", "Charlie", "Delta")
   val state = remember { mutableStateOf<String?>("Bravo") }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
@@ -212,7 +214,7 @@ private fun Error() = TakPreview {
 @PreviewDark
 @Composable
 private fun WithStartIcon() = TakPreview {
-  val options = listOf("Alpha", "Bravo", "Charlie", "Delta")
+  val options = persistentListOf("Alpha", "Bravo", "Charlie", "Delta")
   val state = remember { mutableStateOf<String?>("Bravo") }
   TakDropdownField(
     modifier = Modifier.width(200.dp),

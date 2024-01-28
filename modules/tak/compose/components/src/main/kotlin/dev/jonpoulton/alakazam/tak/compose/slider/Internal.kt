@@ -10,6 +10,7 @@
 
 package dev.jonpoulton.alakazam.tak.compose.slider
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.MutatePriority
@@ -70,6 +71,9 @@ import androidx.compose.ui.util.fastFirstOrNull
 import androidx.compose.ui.util.lerp
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakFonts
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
@@ -243,8 +247,8 @@ internal fun Float.mapToNewRange(inRange: ClosedRange<Float>, outRange: ClosedRa
   return (this - inRange.start) * outSize / inSize + outRange.start
 }
 
-internal fun stepsToTickFractions(steps: Int): List<Float> {
-  return if (steps == 0) emptyList() else List(steps + 2) { it.toFloat() / (steps + 1) }
+internal fun stepsToTickFractions(steps: Int): ImmutableList<Float> {
+  return if (steps == 0) persistentListOf() else List(steps + 2) { it.toFloat() / (steps + 1) }.toImmutableList()
 }
 
 @Composable
@@ -268,7 +272,7 @@ internal fun CorrectValueSideEffect(
 
 internal fun snapValueToTick(
   current: Float,
-  tickFractions: List<Float>,
+  tickFractions: ImmutableList<Float>,
   minPx: Float,
   maxPx: Float,
 ): Float {
@@ -297,6 +301,7 @@ internal suspend fun animateToTarget(
 internal val SliderToTickAnimation = TweenSpec<Float>(durationMillis = 100)
 
 @OptIn(ExperimentalMaterialApi::class)
+@SuppressLint("ModifierFactoryUnreferencedReceiver")
 @Suppress("ModifierInspectorInfo")
 internal fun Modifier.minimumTouchTargetSize(): Modifier = composed(
   inspectorInfo = debugInspectorInfo {

@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.core.TakTextStyles
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 public fun TakSegmentedControl(
@@ -37,7 +39,7 @@ public fun TakSegmentedControl(
   colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
   textStyle: TextStyle = TakTextStyles.H4,
   activeButtonId: TakSegmentedControlButtonId,
-  buttons: List<TakSegmentedControlButton>,
+  buttons: ImmutableList<TakSegmentedControlButton>,
 ) {
   Row(
     modifier = Modifier.wrapContentHeight(),
@@ -124,7 +126,7 @@ private fun Regular() = TakPreview {
   TakSegmentedControl(
     modifier = Modifier,
     activeButtonId = activeId,
-    buttons = listOf(
+    buttons = persistentListOf(
       TakSegmentedControlButton(text = "ABCD", id = 1, onActivated = { activeId = it }),
       TakSegmentedControlButton(text = "WXYZ", id = 2, onActivated = { activeId = it }),
       TakSegmentedControlButton(text = "1234", id = 3, onActivated = { activeId = it }),

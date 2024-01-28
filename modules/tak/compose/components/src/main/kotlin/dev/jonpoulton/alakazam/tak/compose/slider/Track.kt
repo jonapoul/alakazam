@@ -19,6 +19,8 @@ import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 import dev.jonpoulton.alakazam.tak.compose.slider.TakSliderTextPosition.AboveThumb
 import dev.jonpoulton.alakazam.tak.compose.slider.TakSliderTextPosition.BelowThumb
 import dev.jonpoulton.alakazam.tak.compose.slider.TakSliderTextPosition.None
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 internal fun LinearTrack(
@@ -26,7 +28,7 @@ internal fun LinearTrack(
   positionFraction: Float,
   enabled: Boolean,
   textPosition: TakSliderTextPosition,
-  stepFractions: List<Float> = emptyList(),
+  stepFractions: ImmutableList<Float> = persistentListOf(),
   dimensions: TakSliderDimensions = DefaultTakSliderDimensions(),
   colors: TakSliderColors = DefaultTakSliderColors(),
 ) {
@@ -57,7 +59,7 @@ internal fun RangeTrack(
   fractionStart: Float,
   fractionEnd: Float,
   enabled: Boolean,
-  tickFractions: List<Float>,
+  tickFractions: ImmutableList<Float>,
   topPadding: Dp = 0.dp,
   bottomPadding: Dp = 0.dp,
   dimensions: TakSliderDimensions = DefaultTakSliderDimensions(),
@@ -150,7 +152,7 @@ private fun TrackEmpty() = TakPreview {
     fractionStart = 0f,
     fractionEnd = 0f,
     enabled = true,
-    tickFractions = emptyList(),
+    tickFractions = persistentListOf(),
   )
 }
 
@@ -162,7 +164,7 @@ private fun TrackHalfway() = TakPreview {
     fractionStart = 0f,
     fractionEnd = 0.5f,
     enabled = true,
-    tickFractions = emptyList(),
+    tickFractions = persistentListOf(),
   )
 }
 
@@ -174,7 +176,7 @@ private fun TrackHalfwayDisabled() = TakPreview {
     fractionStart = 0f,
     fractionEnd = 0.5f,
     enabled = false,
-    tickFractions = emptyList(),
+    tickFractions = persistentListOf(),
   )
 }
 
@@ -186,7 +188,7 @@ private fun TrackFull() = TakPreview {
     fractionStart = 0f,
     fractionEnd = 1f,
     enabled = true,
-    tickFractions = emptyList(),
+    tickFractions = persistentListOf(),
   )
 }
 
@@ -198,7 +200,7 @@ private fun RangePartial() = TakPreview {
     fractionStart = 0.25f,
     fractionEnd = 0.75f,
     enabled = true,
-    tickFractions = emptyList(),
+    tickFractions = persistentListOf(),
   )
 }
 
@@ -210,6 +212,6 @@ private fun RangeStepped() = TakPreview {
     fractionStart = 0.2f,
     fractionEnd = 0.8f,
     enabled = true,
-    tickFractions = listOf(0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f),
+    tickFractions = persistentListOf(0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f),
   )
 }

@@ -41,6 +41,7 @@ inject = "1"
 koin = "3.4.0"
 kotlinx-coroutines = "1.6.4"
 kotlinx-datetime = "0.4.0"
+kotlinx-immutable = "0.3.5"
 kotlinx-serialization = "1.5.0"
 logback = "3.0.0"
 material = "1.9.0"
@@ -119,6 +120,7 @@ kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable ", version.ref = "kotlinx-immutable" }
 kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 logback-android = { module = "com.github.tony19:logback-android", version.ref = "logback" }

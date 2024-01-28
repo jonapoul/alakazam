@@ -16,6 +16,8 @@ import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.core.TakTextStyles
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 public fun TakButtonGroup(
@@ -23,7 +25,7 @@ public fun TakButtonGroup(
   isDisabled: Boolean = false,
   colors: TakButtonColors = DefaultTakButtonColors(),
   textStyle: TextStyle = TakTextStyles.H2,
-  buttons: List<TakGroupedButton>,
+  buttons: ImmutableList<TakGroupedButton>,
 ) {
   Row(
     modifier = Modifier
@@ -79,7 +81,7 @@ private fun OneButton() = TakPreview {
     TakButtonGroup(
       modifier = Modifier,
       isDisabled = false,
-      buttons = listOf(
+      buttons = persistentListOf(
         TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
       ),
     )
@@ -93,7 +95,7 @@ private fun TwoButtons() = TakPreview {
     TakButtonGroup(
       modifier = Modifier,
       isDisabled = false,
-      buttons = listOf(
+      buttons = persistentListOf(
         TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
         TakGroupedButton(text = "1234", onClick = EmptyCallback),
       ),
@@ -108,7 +110,7 @@ private fun ThreeButtons() = TakPreview {
     TakButtonGroup(
       modifier = Modifier,
       isDisabled = false,
-      buttons = listOf(
+      buttons = persistentListOf(
         TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
         TakGroupedButton(text = "1234", onClick = EmptyCallback),
         TakGroupedButton(text = "WXYZ", onClick = EmptyCallback),
@@ -124,7 +126,7 @@ private fun FourButtons() = TakPreview {
     TakButtonGroup(
       modifier = Modifier,
       isDisabled = false,
-      buttons = listOf(
+      buttons = persistentListOf(
         TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
         TakGroupedButton(text = "EFGH", onClick = EmptyCallback),
         TakGroupedButton(text = "1234", onClick = EmptyCallback),

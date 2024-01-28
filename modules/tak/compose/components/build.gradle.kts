@@ -17,6 +17,7 @@ dependencies {
   api(projects.modules.tak.compose.core)
   implementation(libs.androidx.compose.material.icons)
   implementation(libs.androidx.compose.ui.util)
+  implementation(libs.kotlinx.immutable)
 
   // only used for previews
   compileOnly(projects.modules.android.ui.compose)

@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.tak.compose.core.TakTypography
 import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
+import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.launch
 import kotlin.math.floor
 
@@ -207,7 +208,7 @@ private fun RangeSliderImpl(
   enabled: Boolean,
   positionFractionStart: Float,
   positionFractionEnd: Float,
-  tickFractions: List<Float>,
+  tickFractions: ImmutableList<Float>,
   width: Float,
   startInteractionSource: MutableInteractionSource,
   endInteractionSource: MutableInteractionSource,
