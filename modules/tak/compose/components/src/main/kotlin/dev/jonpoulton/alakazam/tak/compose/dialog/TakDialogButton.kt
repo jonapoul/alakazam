@@ -1,7 +1,10 @@
 package dev.jonpoulton.alakazam.tak.compose.dialog
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
@@ -11,6 +14,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -20,6 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
+import dev.jonpoulton.alakazam.tak.compose.button.DefaultTakButtonColors
+import dev.jonpoulton.alakazam.tak.compose.button.TakButtonColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 import dev.jonpoulton.alakazam.tak.compose.core.TakFonts
 import dev.jonpoulton.alakazam.tak.compose.icons.TakIcons
@@ -59,14 +66,20 @@ public data class TakDialogNegativeButton(
 internal fun RowScope.TakDialogButton(
   config: TakDialogButton,
   modifier: Modifier = Modifier,
+  colors: TakButtonColors = DefaultTakButtonColors(),
 ) {
   val onClick = config.onClick
+  val interactionSource = remember { MutableInteractionSource() }
+  val isPressed by interactionSource.collectIsPressedAsState()
+  val backgroundColor by colors.backgroundColor(enabled = true, pressed = isPressed, error = false)
+  val foregroundColor by colors.foregroundColor(enabled = true, pressed = isPressed, error = false)
   Row(
     modifier
       .height(48.dp)
+      .background(backgroundColor)
       .padding(16.dp)
       .weight(1f)
-      .clickable(onClick = onClick),
+      .clickable(interactionSource, indication = null, onClick = onClick),
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.CenterVertically,
   ) {
@@ -76,7 +89,7 @@ internal fun RowScope.TakDialogButton(
         modifier = Modifier.size(IconSize),
         imageVector = icon,
         contentDescription = config.text,
-        colorFilter = ColorFilter.tint(TakColors.Ink),
+        colorFilter = ColorFilter.tint(foregroundColor),
       )
     }
 
@@ -85,6 +98,7 @@ internal fun RowScope.TakDialogButton(
         .padding(horizontal = 4.dp)
         .height(IconSize),
       style = ButtonTextStyle,
+      color = foregroundColor,
       text = config.text.uppercase(),
     )
   }
@@ -102,9 +116,7 @@ private val ButtonTextStyle = TextStyle(
 @PreviewDark
 @Composable
 private fun PreviewDialogButton() = TakPreview {
-  PreviewSandyBox {
-    Row {
-      TakDialogButton(PreviewPositiveButton)
-    }
+  Row {
+    TakDialogButton(PreviewPositiveButton)
   }
 }
