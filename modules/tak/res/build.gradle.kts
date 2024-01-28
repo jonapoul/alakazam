@@ -3,7 +3,8 @@
 plugins {
   id("convention-android")
   id("convention-publish")
-  id("convention-style")
+  id("convention-style-licensee")
+  id("convention-style-spotless")
 }
 
 android {
