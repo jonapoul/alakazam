@@ -8,8 +8,6 @@
     <item name="android:spinnerItemStyle">@style/Theme.Alakazam.Atak.Spinner.Item</item>
     <item name="android:editTextStyle">@style/Theme.Alakazam.Atak.EditText</item>
     <item name="android:colorControlNormal">@color/white</item>
-
-    <item name="android:fontFamily">@font/nunito</item>
   </style>
 
   <style name="Theme.Alakazam.Atak.Spinner" parent="@android:style/Widget.Spinner">
