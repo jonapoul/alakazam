@@ -24,8 +24,8 @@ public fun TakDialog(
   content: @Composable () -> Unit,
 ) {
   CompositionLocalProvider(
-    LocalView provides LocalMapView.current, // used when attaching to a window
-    LocalContext provides LocalTakComposeContext.current, // used when resolving drawables from resources
+    LocalView provides LocalMapView.current,
+    LocalContext provides LocalTakComposeContext.current,
   ) {
     Dialog(
       onDismissRequest = onDismissRequest,
