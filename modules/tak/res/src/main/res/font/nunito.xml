@@ -8,7 +8,7 @@
 
   <font
     app:font="@font/nunito_bold"
-    app:fontStyle="bold"
-    app:fontWeight="400" />
+    app:fontStyle="normal"
+    app:fontWeight="700" />
 
 </font-family>

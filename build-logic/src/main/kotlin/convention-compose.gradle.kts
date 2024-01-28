@@ -13,10 +13,6 @@ plugins {
 val libs = the<LibrariesForLibs>()
 
 extensions.getByType(CommonExtension::class).apply {
-  defaultConfig {
-    minSdk = 23
-  }
-
   buildFeatures {
     compose = true
   }
