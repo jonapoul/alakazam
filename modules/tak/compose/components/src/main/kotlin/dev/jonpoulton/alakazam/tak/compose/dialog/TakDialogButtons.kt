@@ -26,19 +26,19 @@ public fun TakDialogButtons(
       .fillMaxWidth()
       .height(48.dp)
   ) {
-    if (positive != null) TakDialogButton(positive)
+    if (negative != null) TakDialogButton(negative)
 
-    if (positive != null && (neutral != null || negative != null)) {
+
+    if (negative != null && (neutral != null || positive != null)) {
       VerticalDivider()
     }
-
     if (neutral != null) TakDialogButton(neutral)
 
-    if (neutral != null && negative != null) {
+    if (neutral != null && positive != null) {
       VerticalDivider()
     }
 
-    if (negative != null) TakDialogButton(negative)
+    if (positive != null) TakDialogButton(positive)
   }
 }
 
