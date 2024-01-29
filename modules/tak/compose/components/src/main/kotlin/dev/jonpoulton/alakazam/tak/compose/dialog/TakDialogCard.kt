@@ -3,9 +3,8 @@ package dev.jonpoulton.alakazam.tak.compose.dialog
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Divider
@@ -27,9 +26,8 @@ public fun TakDialogCard(
 ) {
   Card(
     modifier = modifier
-      .requiredWidth(400.dp)
-      .wrapContentHeight()
-      .padding(8.dp),
+      .fillMaxWidth()
+      .padding(16.dp),
     backgroundColor = TakColors.Sand,
     shape = shape,
     border = BorderStroke(width = 1.dp, color = TakColors.Ink),
