@@ -18,6 +18,7 @@ import dev.jonpoulton.alakazam.tak.compose.core.TakColors
 @Composable
 public fun TakDialogCard(
   modifier: Modifier = Modifier,
+  dismissDialog: () -> Unit = {},
   shape: Shape = TakDialogCardShape,
   positiveButton: TakDialogPositiveButton? = null,
   neutralButton: TakDialogNeutralButton? = null,
@@ -42,6 +43,7 @@ public fun TakDialogCard(
 
       if (positiveButton != null || negativeButton != null || neutralButton != null) {
         TakDialogButtons(
+          dismissDialog = dismissDialog,
           positive = positiveButton,
           neutral = neutralButton,
           negative = negativeButton,

@@ -19,6 +19,7 @@ public fun TakDialogTextCard(
   title: String,
   text: String,
   modifier: Modifier = Modifier,
+  dismissDialog: () -> Unit = {},
   shape: Shape = TakDialogCardShape,
   positiveButton: TakDialogPositiveButton? = null,
   neutralButton: TakDialogNeutralButton? = null,
@@ -26,6 +27,7 @@ public fun TakDialogTextCard(
 ) {
   TakDialogCard(
     modifier = modifier,
+    dismissDialog = dismissDialog,
     shape = shape,
     positiveButton = positiveButton,
     neutralButton = neutralButton,

@@ -17,6 +17,7 @@ import dev.jonpoulton.alakazam.tak.compose.preview.TakPreview
 @Composable
 public fun TakDialogButtons(
   modifier: Modifier = Modifier,
+  dismissDialog: () -> Unit = {},
   positive: TakDialogPositiveButton? = null,
   neutral: TakDialogNeutralButton? = null,
   negative: TakDialogNegativeButton? = null,
@@ -26,19 +27,18 @@ public fun TakDialogButtons(
       .fillMaxWidth()
       .height(48.dp)
   ) {
-    if (negative != null) TakDialogButton(negative)
-
+    if (negative != null) TakDialogButton(negative, dismissDialog = dismissDialog)
 
     if (negative != null && (neutral != null || positive != null)) {
       VerticalDivider()
     }
-    if (neutral != null) TakDialogButton(neutral)
+    if (neutral != null) TakDialogButton(neutral, dismissDialog = dismissDialog)
 
     if (neutral != null && positive != null) {
       VerticalDivider()
     }
 
-    if (positive != null) TakDialogButton(positive)
+    if (positive != null) TakDialogButton(positive, dismissDialog = dismissDialog)
   }
 }
 

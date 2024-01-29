@@ -23,12 +23,14 @@ public fun TakDialogLoadingCard(
   title: String,
   text: String,
   modifier: Modifier = Modifier,
+  dismissDialog: () -> Unit = {},
   shape: Shape = TakDialogCardShape,
   positiveButton: TakDialogPositiveButton? = null,
   neutralButton: TakDialogNeutralButton? = null,
   negativeButton: TakDialogNegativeButton? = null,
 ) {
   TakDialogCard(
+    dismissDialog = dismissDialog,
     modifier = modifier,
     shape = shape,
     positiveButton = positiveButton,

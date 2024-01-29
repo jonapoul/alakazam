@@ -34,6 +34,7 @@ public fun TakDialogTextInputCard(
   onTextChanged: (String) -> Unit,
   hint: String,
   modifier: Modifier = Modifier,
+  dismissDialog: () -> Unit = {},
   error: Boolean = false,
   colors: TakTextInputColors = DefaultTakTextInputColors(),
   textIcon: ImageVector? = null,
@@ -46,6 +47,7 @@ public fun TakDialogTextInputCard(
   negativeButton: TakDialogNegativeButton? = null,
 ) {
   TakDialogCard(
+    dismissDialog = dismissDialog,
     modifier = modifier,
     shape = shape,
     positiveButton = positiveButton,

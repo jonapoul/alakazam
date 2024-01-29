@@ -66,6 +66,7 @@ public data class TakDialogNegativeButton(
 internal fun RowScope.TakDialogButton(
   config: TakDialogButton,
   modifier: Modifier = Modifier,
+  dismissDialog: () -> Unit = {},
   colors: TakButtonColors = DefaultTakButtonColors(),
 ) {
   val onClick = config.onClick
@@ -79,7 +80,10 @@ internal fun RowScope.TakDialogButton(
       .background(backgroundColor)
       .padding(16.dp)
       .weight(1f)
-      .clickable(interactionSource, indication = null, onClick = onClick),
+      .clickable(interactionSource, indication = null) {
+        dismissDialog()
+        onClick()
+      },
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.CenterVertically,
   ) {
