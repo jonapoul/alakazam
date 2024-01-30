@@ -54,12 +54,6 @@ dependencies {
     implementation("dev.jonpoulton.alakazam:kotlin-serialization:{version}")
     implementation("dev.jonpoulton.alakazam:kotlin-time:{version}")
 
-    // ATAK libraries
-    implementation("dev.jonpoulton.alakazam:tak-core:{version}")
-    implementation("dev.jonpoulton.alakazam:tak-dagger:{version}")
-    implementation("dev.jonpoulton.alakazam:tak-plugin:{version}")
-    implementation("dev.jonpoulton.alakazam:tak-viewmodel:{version}")
-
     // Testing libraries
     testImplementation("dev.jonpoulton.alakazam:testing-core:{version}")
     testImplementation("dev.jonpoulton.alakazam:testing-db:{version}")

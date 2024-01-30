@@ -44,12 +44,6 @@ include(":modules:di:dagger")
 include(":modules:di:hilt")
 include(":modules:di:koin")
 
-include(":modules:tak:core")
-include(":modules:tak:dagger")
-include(":modules:tak:plugin")
-include(":modules:tak:res")
-include(":modules:tak:ui")
-
 include(":modules:testing:android")
 include(":modules:testing:core")
 include(":modules:testing:db")
