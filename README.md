@@ -55,12 +55,6 @@ dependencies {
     implementation("dev.jonpoulton.alakazam:kotlin-time:{version}")
 
     // ATAK libraries
-    implementation("dev.jonpoulton.alakazam:tak-compose-components:{version}")
-    implementation("dev.jonpoulton.alakazam:tak-compose-core:{version}")
-    implementation("dev.jonpoulton.alakazam:tak-compose-icons:{version}")
-    implementation("dev.jonpoulton.alakazam:tak-compose-plugin:{version}")
-    compileOnly("dev.jonpoulton.alakazam:tak-compose-preview:{version}") // not runtime
-    implementation("dev.jonpoulton.alakazam:tak-compose-viewmodel:{version}")
     implementation("dev.jonpoulton.alakazam:tak-core:{version}")
     implementation("dev.jonpoulton.alakazam:tak-dagger:{version}")
     implementation("dev.jonpoulton.alakazam:tak-plugin:{version}")
