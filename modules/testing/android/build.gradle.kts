@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.test.android"
+  namespace = "alakazam.test.android"
 }
 
 configurations.configureEach {

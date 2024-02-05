@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.android.core"
+  namespace = "alakazam.android.core"
 }
 
 dependencies {

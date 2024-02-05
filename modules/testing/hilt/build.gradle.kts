@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.test.hilt"
+  namespace = "alakazam.test.hilt"
 }
 
 dependencies {

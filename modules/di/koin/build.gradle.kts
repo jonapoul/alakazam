@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.di.koin"
+  namespace = "alakazam.di.koin"
 }
 
 dependencies {

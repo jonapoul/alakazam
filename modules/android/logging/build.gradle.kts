@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.android.logging"
+  namespace = "alakazam.android.logging"
 }
 
 dependencies {

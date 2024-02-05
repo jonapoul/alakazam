@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.android.ui.material"
+  namespace = "alakazam.android.ui.material"
 
   buildFeatures {
     resValues = true

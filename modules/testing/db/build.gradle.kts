@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.test.db"
+  namespace = "alakazam.test.db"
 }
 
 dependencies {

@@ -21,7 +21,7 @@ val shouldRunOnCheck = project == rootProject
 
 koverReport {
   filters {
-    includes { packages("dev.jonpoulton.alakazam") }
+    includes { packages("alakazam") }
     excludes {
       classes(
         "*Hilt_*",

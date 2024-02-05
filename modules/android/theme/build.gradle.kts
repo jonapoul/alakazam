@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.android.theme"
+  namespace = "alakazam.android.theme"
 
   buildFeatures {
     resValues = true

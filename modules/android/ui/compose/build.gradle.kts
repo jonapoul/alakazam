@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.android.ui.compose"
+  namespace = "alakazam.android.ui.compose"
 }
 
 dependencies {

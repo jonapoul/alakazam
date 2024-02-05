@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.di.dagger"
+  namespace = "alakazam.di.dagger"
 }
 
 dependencies {

@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.alakazam.android.http"
+  namespace = "alakazam.android.http"
 }
 
 dependencies {
