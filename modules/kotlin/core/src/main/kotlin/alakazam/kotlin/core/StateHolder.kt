@@ -8,15 +8,15 @@ import kotlinx.coroutines.flow.asStateFlow
 public abstract class StateHolder<T>(private val initialState: T) {
   private val mutableState = MutableStateFlow(initialState)
 
-  public val state: Flow<T> = mutableState.asStateFlow()
+  public open val state: Flow<T> = mutableState.asStateFlow()
 
-  public fun set(state: T) {
+  public open fun set(state: T) {
     mutableState.value = state
   }
 
-  public fun peek(): T = mutableState.value
+  public open fun peek(): T = mutableState.value
 
-  public fun reset() {
+  public open fun reset() {
     set(initialState)
   }
 }
