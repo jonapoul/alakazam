@@ -9,11 +9,8 @@ android {
 }
 
 dependencies {
-  api(projects.modules.android.core)
+  api(libs.timber)
 
-  implementation(libs.timber)
   implementation(libs.logback.android)
   implementation(libs.slf4j)
-
-  testImplementation(projects.modules.testing.core)
 }

@@ -11,11 +11,14 @@ android {
 }
 
 dependencies {
-  implementation(projects.modules.kotlin.core)
+  api(projects.modules.kotlin.core)
+  api(libs.kotlinx.coroutines.core)
   implementation(libs.androidx.annotation)
-  implementation(libs.androidx.coreKtx)
-  implementation(libs.kotlinx.coroutines.android)
+  implementation(libs.androidx.core.ktx)
   implementation(libs.kotlinx.datetime)
   implementation(libs.timber)
-  testImplementation(projects.modules.testing.core)
+  testImplementation(libs.test.turbine)
+  testImplementation(libs.test.junit)
+  testImplementation(libs.test.kotlin.core)
+  testImplementation(libs.test.kotlin.coroutines)
 }

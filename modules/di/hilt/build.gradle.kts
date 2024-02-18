@@ -1,8 +1,9 @@
 plugins {
   id("module-android")
-  id("convention-hilt")
   id("convention-publish")
   id("convention-style")
+  id("com.google.dagger.hilt.android")
+  kotlin("kapt")
 }
 
 android {
@@ -10,15 +11,16 @@ android {
 }
 
 dependencies {
-  implementation(projects.modules.android.core)
-  implementation(projects.modules.android.http)
-  implementation(projects.modules.android.prefs)
-  implementation(projects.modules.android.ui.core)
-  implementation(projects.modules.kotlin.core)
-  implementation(projects.modules.kotlin.time)
-
+  api(projects.modules.android.core)
+  api(projects.modules.android.http)
+  api(projects.modules.kotlin.core)
+  api(libs.androidx.hilt.android)
+  api(libs.dagger.core)
+  api(libs.flowpreferences)
+  api(libs.javax.inject)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.datetime)
   implementation(libs.androidx.preference)
-  implementation(libs.flowpreferences)
-
-  testImplementation(projects.modules.testing.core)
+  implementation(libs.androidx.hilt.core)
+  kapt(libs.androidx.hilt.compiler)
 }

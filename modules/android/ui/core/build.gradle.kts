@@ -15,9 +15,14 @@ android {
 }
 
 dependencies {
+  api(libs.kotlinx.coroutines.core)
+  api(libs.androidx.activity.core)
+  api(libs.androidx.lifecycle.viewmodel.core)
+  api(libs.androidx.recyclerview)
   implementation(projects.modules.kotlin.core)
   implementation(projects.modules.android.core)
-  implementation(libs.androidx.coreKtx)
-  implementation(libs.androidx.fragmentKtx)
-  implementation(libs.androidx.recyclerview)
+  implementation(libs.androidx.core.ktx)
+  implementation(libs.androidx.fragment.ktx)
+  implementation(libs.androidx.lifecycle.common)
+  implementation(libs.androidx.lifecycle.viewmodel.ktx)
 }

@@ -9,11 +9,8 @@ android {
 }
 
 dependencies {
-  implementation(projects.modules.kotlin.core)
-
-  api(libs.androidx.roomKtx)
   api(libs.androidx.room.runtime)
-
-  api(libs.test.androidx.coreKtx)
-  api(libs.test.androidx.room)
+  api(libs.test.androidx.core.ktx)
+  api(libs.test.junit)
+  implementation(projects.modules.kotlin.core)
 }

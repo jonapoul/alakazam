@@ -12,15 +12,16 @@ android {
 }
 
 dependencies {
-  api(projects.modules.android.core)
-
-  implementation(libs.androidx.roomKtx)
-  implementation(libs.androidx.room.runtime)
-  ksp(libs.androidx.room.compiler)
+  implementation(libs.androidx.room.common)
   implementation(libs.kotlinx.datetime)
+  ksp(libs.androidx.room.compiler)
 
-  testImplementation(projects.modules.testing.android)
   testImplementation(projects.modules.testing.db)
-  testImplementation(libs.test.androidx.runner)
+  testImplementation(libs.androidx.room.ktx)
+  testImplementation(libs.androidx.room.runtime)
+  testImplementation(libs.androidx.sqlite)
+  testImplementation(libs.test.junit)
+  testImplementation(libs.test.kotlin.core)
+  testImplementation(libs.test.kotlin.coroutines)
   testImplementation(libs.test.robolectric)
 }

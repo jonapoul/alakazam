@@ -1,6 +1,6 @@
 package alakazam.android.theme
 
-import alakazam.android.prefs.PrefPair
+import alakazam.android.prefs.core.PrefPair
 
 internal object Constants {
   const val PREF_KEY = "app_theme"

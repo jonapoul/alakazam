@@ -10,8 +10,10 @@ android {
 }
 
 dependencies {
-  api(libs.dagger.core)
-  kapt(libs.dagger.compiler)
   api(projects.modules.kotlin.core)
-  api(projects.modules.kotlin.time)
+  api(libs.dagger.core)
+  api(libs.javax.inject)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.datetime)
+  kapt(libs.dagger.compiler)
 }

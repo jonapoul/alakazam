@@ -32,6 +32,5 @@ public class ProvidesCoroutinesModule {
 
   @Provides
   @Singleton
-  public fun providesUnconfined(): UnconfinedDispatcher =
-    UnconfinedDispatcher(Dispatchers.Unconfined)
+  public fun providesUnconfined(): UnconfinedDispatcher = UnconfinedDispatcher(Dispatchers.Unconfined)
 }

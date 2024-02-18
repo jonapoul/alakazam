@@ -57,8 +57,17 @@ dependencyAnalysis {
     all {
       ignoreKtx(ignore = true)
 
-      // strict mode!
-      onAny { severity(value = "fail") }
+      onAny {
+        // strict mode!
+        severity(value = "fail")
+
+        // https://github.com/autonomousapps/dependency-analysis-gradle-plugin/issues/884
+        exclude("() -> java.io.File?")
+      }
+
+      onRuntimeOnly { exclude("com.github.tony19:logback-android", "androidx.compose.ui:ui-tooling") }
+      onCompileOnly { exclude("androidx.annotation:annotation") }
+      onUsedTransitiveDependencies { exclude("com.google.dagger:dagger-compiler") }
     }
   }
   dependencies {

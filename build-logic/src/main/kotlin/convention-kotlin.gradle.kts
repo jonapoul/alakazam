@@ -26,5 +26,4 @@ val implementation by configurations
 
 dependencies {
   implementation(libs.kotlin.stdlib)
-  implementation(libs.kotlinx.coroutines.core)
 }
