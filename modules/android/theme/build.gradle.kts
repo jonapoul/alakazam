@@ -15,7 +15,6 @@ android {
 }
 
 dependencies {
-  api(projects.modules.android.init)
   api(projects.modules.android.prefs)
   implementation(libs.androidx.preference)
   implementation(libs.inject)
