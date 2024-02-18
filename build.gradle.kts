@@ -29,6 +29,7 @@ plugins {
   alias(libs.plugins.ksp) apply false
 
   // Configured below
+  alias(libs.plugins.doctor)
   alias(libs.plugins.versions)
 }
 
@@ -40,6 +41,14 @@ tasks.dependencyUpdates.configure {
 }
 
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }
+
+doctor {
+  javaHome {
+    ensureJavaHomeMatches.set(true)
+    ensureJavaHomeIsSet.set(true)
+    failOnError.set(true)
+  }
+}
 
 dependencyGuard {
   configuration("classpath")

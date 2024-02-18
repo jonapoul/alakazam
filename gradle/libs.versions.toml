@@ -9,6 +9,7 @@ agp = "7.4.2"
 androidCacheFix = "3.0"
 dependencyGuard = "0.4.3"
 detekt = "1.23.0"
+doctor = "0.9.1"
 dokka = "1.8.20"
 kotlin = "1.8.20"
 kover = "0.7.5"
@@ -163,6 +164,7 @@ androidx-hilt = { id = "com.google.dagger.hilt.android", version.ref = "androidx
 androidx-navigation = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
