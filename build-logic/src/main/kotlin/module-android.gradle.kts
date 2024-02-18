@@ -4,4 +4,12 @@ plugins {
   kotlin("android")
   id("convention-android")
   id("convention-kotlin")
+  id("com.dropbox.dependency-guard")
+}
+
+dependencyGuard {
+  configuration("debugCompileClasspath")
+  configuration("debugRuntimeClasspath")
+  configuration("releaseCompileClasspath")
+  configuration("releaseRuntimeClasspath")
 }

@@ -7,6 +7,7 @@ sdk-target = "33"
 # Plugins
 agp = "7.4.2"
 androidCacheFix = "3.0"
+dependencyGuard = "0.4.3"
 detekt = "1.23.0"
 dokka = "1.8.20"
 kotlin = "1.8.20"
@@ -67,6 +68,7 @@ turbine = "0.12.3"
 # Plugins
 plugin-agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 plugin-androidCacheFix = { module = "org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin", version.ref = "androidCacheFix" }
+plugin-dependencyGuard = { module = "com.dropbox.dependency-guard:com.dropbox.dependency-guard.gradle.plugin", version.ref = "dependencyGuard" }
 plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 plugin-hilt = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "androidx-hilt" }
@@ -159,6 +161,7 @@ agp = { id = "com.android.library", version.ref = "agp" }
 androidCacheFix = { id = "org.gradle.android.cache-fix", version.ref = "androidCacheFix" }
 androidx-hilt = { id = "com.google.dagger.hilt.android", version.ref = "androidx-hilt" }
 androidx-navigation = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
+dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

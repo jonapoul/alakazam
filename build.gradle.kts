@@ -25,6 +25,7 @@ plugins {
   // Other
   alias(libs.plugins.androidx.hilt) apply false
   alias(libs.plugins.androidx.navigation) apply false
+  alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.ksp) apply false
 
   // Configured below
@@ -39,3 +40,7 @@ tasks.dependencyUpdates.configure {
 }
 
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }
+
+dependencyGuard {
+  configuration("classpath")
+}
