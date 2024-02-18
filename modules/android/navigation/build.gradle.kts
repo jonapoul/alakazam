@@ -1,9 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-  kotlin("android")
-  id("convention-android")
-  id("convention-kotlin")
+  id("module-android")
   id("convention-publish")
   id("convention-style")
 }

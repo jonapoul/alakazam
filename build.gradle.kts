@@ -1,6 +1,8 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
 plugins {
+  // convention-android.gradle.kts
+  alias(libs.plugins.agp) apply false
   // convention-kotlin.gradle.kts
   alias(libs.plugins.kotlin.android) apply false
   alias(libs.plugins.kotlin.serialization) apply false
@@ -19,7 +21,6 @@ plugins {
   alias(libs.plugins.kover)
 
   // Other
-  alias(libs.plugins.agp) apply false
   alias(libs.plugins.androidx.hilt) apply false
   alias(libs.plugins.androidx.navigation) apply false
   alias(libs.plugins.ksp) apply false
