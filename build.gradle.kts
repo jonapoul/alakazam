@@ -25,6 +25,7 @@ plugins {
   // Other
   alias(libs.plugins.androidx.hilt) apply false
   alias(libs.plugins.androidx.navigation) apply false
+  alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.ksp) apply false
 
@@ -47,6 +48,23 @@ doctor {
     ensureJavaHomeMatches.set(true)
     ensureJavaHomeIsSet.set(true)
     failOnError.set(true)
+  }
+}
+
+dependencyAnalysis {
+  // See https://github.com/autonomousapps/dependency-analysis-gradle-plugin/wiki/Customizing-plugin-behavior
+  issues {
+    all {
+      ignoreKtx(ignore = true)
+
+      // strict mode!
+      onAny { severity(value = "fail") }
+    }
+  }
+  dependencies {
+    bundle("kotlin-stdlib") {
+      includeGroup("org.jetbrains.kotlin")
+    }
   }
 }
 

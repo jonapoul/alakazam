@@ -7,6 +7,7 @@ sdk-target = "33"
 # Plugins
 agp = "7.4.2"
 androidCacheFix = "3.0"
+dependencyAnalysis = "1.20.0"
 dependencyGuard = "0.4.3"
 detekt = "1.23.0"
 doctor = "0.9.1"
@@ -162,6 +163,7 @@ agp = { id = "com.android.library", version.ref = "agp" }
 androidCacheFix = { id = "org.gradle.android.cache-fix", version.ref = "androidCacheFix" }
 androidx-hilt = { id = "com.google.dagger.hilt.android", version.ref = "androidx-hilt" }
 androidx-navigation = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
+dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
