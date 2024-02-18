@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
   implementation(libs.plugin.agp)
+  implementation(libs.plugin.androidCacheFix)
   implementation(libs.plugin.detekt)
   implementation(libs.plugin.dokka)
   implementation(libs.plugin.hilt)

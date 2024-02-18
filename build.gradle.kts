@@ -3,6 +3,8 @@
 plugins {
   // convention-android.gradle.kts
   alias(libs.plugins.agp) apply false
+  alias(libs.plugins.androidCacheFix) apply false
+
   // convention-kotlin.gradle.kts
   alias(libs.plugins.kotlin.android) apply false
   alias(libs.plugins.kotlin.serialization) apply false
