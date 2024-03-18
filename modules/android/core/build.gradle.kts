@@ -13,9 +13,9 @@ android {
 dependencies {
   api(projects.modules.kotlin.core)
   api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.datetime)
   implementation(libs.androidx.annotation)
   implementation(libs.androidx.core.ktx)
-  implementation(libs.kotlinx.datetime)
   implementation(libs.timber)
   testImplementation(libs.test.turbine)
   testImplementation(libs.test.junit)
