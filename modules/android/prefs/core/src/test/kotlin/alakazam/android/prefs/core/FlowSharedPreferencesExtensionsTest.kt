@@ -129,7 +129,7 @@ internal class FlowSharedPreferencesExtensionsTest {
   @Test
   fun `Object preference`() = runTest {
     val serializer = object :
-      SimpleStringSerializer<ExampleClass>(FlowSharedPreferencesExtensionsTest::ExampleClass) {}
+      SimpleStringSerializer<ExampleClass>(::ExampleClass) {}
     val default = ExampleClass(data = "abc")
     val prefPair = PrefPair(key = "object_key", default = default)
     val pref = flowPrefs.getObject(prefPair, serializer)
@@ -149,7 +149,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Nullable object preference`() = runTest {
-    val serializer = object : SimpleNullableStringSerializer<ExampleClass>(FlowSharedPreferencesExtensionsTest::ExampleClass) {}
+    val serializer = object : SimpleNullableStringSerializer<ExampleClass>(::ExampleClass) {}
     val prefPair = PrefPair<ExampleClass?>(key = "nullable_object_key", default = null)
     val pref = flowPrefs.getNullableObject(prefPair, serializer)
 
