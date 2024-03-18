@@ -2,6 +2,7 @@ package alakazam.kotlin.json
 
 import alakazam.kotlin.serialization.SimpleSerializer
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.junit.Test
