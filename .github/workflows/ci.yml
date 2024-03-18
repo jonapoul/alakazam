@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  # Run on every commit in a PR, in any branch
+  pull_request:
+    branches:
+
+  workflow_dispatch:
+
+  # Run when a commit has been made on the primary branch, which should be after a PR
+  push:
+    branches: [ "master" ]
+
+env:
+  CI: true
+
+permissions:
+  contents: write
+  checks: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: 11
+          distribution: "zulu"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          generate-job-summary: false
+          dependency-graph: generate-and-submit
+          cache-read-only: false
+
+      - name: Check
+        run: ./gradlew check
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check-reports
+          path: |
+            ./*/build/reports
+            ./build/reports
+          if-no-files-found: warn
+
+      - name: Publish test reports
+        uses: mikepenz/action-junit-report@v4
+        if: always()
+        with:
+          report_paths: "**/build/test-results/*/TEST-*.xml"
