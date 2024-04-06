@@ -48,7 +48,7 @@ public fun lerpColours(
     alpha = max(min(alpha, 255), 0),
     red = max(min(red, 255), 0),
     green = max(min(green, 255), 0),
-    blue = max(min(blue, 255), 0)
+    blue = max(min(blue, 255), 0),
   )
 }
 
@@ -82,7 +82,9 @@ public fun Int.blue(): Int = this and 0xFF
  * [factor] = 1f corresponds to #FFF, pure white.
  */
 @ColorInt
-public fun Int.lighten(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
+public fun Int.lighten(
+  @FloatRange(from = 0.0, to = 1.0) factor: Float,
+): Int =
   colourFactor { it * (1f - factor) + (255f * factor) }
 
 /**
@@ -91,7 +93,9 @@ public fun Int.lighten(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
  * [factor] = 1f corresponds to #000, pure black.
  */
 @ColorInt
-public fun Int.darken(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int =
+public fun Int.darken(
+  @FloatRange(from = 0.0, to = 1.0) factor: Float,
+): Int =
   colourFactor { it * (1f - factor) }
 
 @ColorInt

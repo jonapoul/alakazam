@@ -19,6 +19,8 @@ ij_kotlin_name_count_to_use_star_import_for_members = 999
 
 # noinspection EditorConfigKeyCorrectness
 [*.kt]
+ktlint_function_naming_ignore_when_annotated_with = Composable
+ktlint_standard_annotation = disabled
 ktlint_standard_function-signature = disabled
 ktlint_standard_multiline-expression-wrapping = disabled
 ktlint_standard_string-template-indent = disabled

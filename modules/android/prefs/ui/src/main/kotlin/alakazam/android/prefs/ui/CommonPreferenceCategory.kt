@@ -20,7 +20,7 @@ public class CommonPreferenceCategory @JvmOverloads constructor(
   defStyleAttr: Int = TypedArrayUtils.getAttr(
     context,
     androidx.preference.R.attr.preferenceCategoryStyle,
-    android.R.attr.preferenceCategoryStyle
+    android.R.attr.preferenceCategoryStyle,
   ),
   defStyleRes: Int = 0,
 ) : PreferenceCategory(context, attrs, defStyleAttr, defStyleRes) {

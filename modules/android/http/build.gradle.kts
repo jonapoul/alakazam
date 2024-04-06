@@ -18,6 +18,8 @@ dependencies {
   api(libs.retrofit.core)
 
   implementation(projects.modules.kotlin.core)
+  implementation(libs.androidx.lifecycle.common)
+  implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.kotlinx.serialization.json)
   implementation(libs.okhttp.logging)
   implementation(libs.retrofit.serialization)

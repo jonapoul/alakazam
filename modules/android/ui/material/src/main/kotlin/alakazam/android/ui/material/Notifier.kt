@@ -16,8 +16,12 @@ public class Notifier(
   @ColorRes private val cautionColour: Int = R.color.notifierCaution,
   @ColorRes private val warningColour: Int = R.color.notifierWarning,
 ) : INotifier {
-
-  private fun snackbar(root: View, message: String, @ColorRes actionTextColour: Int, action: INotifier.Action) {
+  private fun snackbar(
+    root: View,
+    message: String,
+    @ColorRes actionTextColour: Int,
+    action: INotifier.Action,
+  ) {
     val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG)
     snackbar.view.setBackgroundResource(backgroundColour)
     val text = snackbar.view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
@@ -32,7 +36,11 @@ public class Notifier(
     snackbar(root, message, successColour, action)
   }
 
-  override fun success(root: View, @StringRes message: Int, action: INotifier.Action) {
+  override fun success(
+    root: View,
+    @StringRes message: Int,
+    action: INotifier.Action,
+  ) {
     success(root, root.context.getString(message), action)
   }
 
@@ -40,7 +48,11 @@ public class Notifier(
     snackbar(root, message, cautionColour, action)
   }
 
-  override fun caution(root: View, @StringRes message: Int, action: INotifier.Action) {
+  override fun caution(
+    root: View,
+    @StringRes message: Int,
+    action: INotifier.Action,
+  ) {
     caution(root, root.context.getString(message), action)
   }
 
@@ -48,7 +60,11 @@ public class Notifier(
     snackbar(root, message, warningColour, action)
   }
 
-  override fun warning(root: View, @StringRes message: Int, action: INotifier.Action) {
+  override fun warning(
+    root: View,
+    @StringRes message: Int,
+    action: INotifier.Action,
+  ) {
     caution(root, root.context.getString(message), action)
   }
 
@@ -56,7 +72,11 @@ public class Notifier(
     snackbar(root, message, infoColour, action)
   }
 
-  override fun info(root: View, @StringRes message: Int, action: INotifier.Action) {
+  override fun info(
+    root: View,
+    @StringRes message: Int,
+    action: INotifier.Action,
+  ) {
     info(root, root.context.getString(message), action)
   }
 

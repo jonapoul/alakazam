@@ -22,8 +22,11 @@ public fun Fragment.navControllers(): Lazy<NavController> = LazyNavController { 
  * As above, so below. This time for an [AppCompatActivity] instead of a [Fragment]. This requires
  * the ID of your NavHostFragment, which should be declared in your activity XML layout.
  */
-public fun AppCompatActivity.navControllers(@IdRes navHostFragmentId: Int): Lazy<NavController> =
-  LazyNavController { findNavController(navHostFragmentId) }
+public fun AppCompatActivity.navControllers(
+  @IdRes navHostFragmentId: Int,
+): Lazy<NavController> = LazyNavController {
+  findNavController(navHostFragmentId)
+}
 
 internal class LazyNavController(
   private val navControllerFactory: () -> NavController,

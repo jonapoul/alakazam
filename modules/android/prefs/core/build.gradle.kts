@@ -11,6 +11,8 @@ android {
 
 dependencies {
   api(libs.flowpreferences)
+  implementation(libs.androidx.lifecycle.common)
+  implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.androidx.preference)
 
   testImplementation(projects.modules.testing.core)

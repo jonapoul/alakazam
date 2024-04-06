@@ -14,7 +14,6 @@ public abstract class CommonPreferenceFragment(
   @XmlRes private val settings: Int,
   @MenuRes private val menu: Int?,
 ) : PreferenceFragmentCompat(), MenuProvider {
-
   @CallSuper
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     setPreferencesFromResource(settings, rootKey)

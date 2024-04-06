@@ -13,8 +13,8 @@ internal class ColoursTest {
         alpha = 255,
         red = 0,
         green = 0,
-        blue = 0
-      )
+        blue = 0,
+      ),
     )
     // White
     assertEquals(
@@ -23,8 +23,8 @@ internal class ColoursTest {
         alpha = 255,
         red = 255,
         green = 255,
-        blue = 255
-      )
+        blue = 255,
+      ),
     )
     // Grey-ish blue
     assertEquals(
@@ -33,8 +33,8 @@ internal class ColoursTest {
         alpha = 255,
         red = 170,
         green = 187,
-        blue = 204
-      )
+        blue = 204,
+      ),
     )
   }
 
@@ -46,8 +46,8 @@ internal class ColoursTest {
       lerpColours(
         start = 0xFF000000.toInt(),
         end = 0xFFFFFFFF.toInt(),
-        factor = 0.0f
-      )
+        factor = 0.0f,
+      ),
     )
     // Factor = 1.0 gives the end colour
     assertEquals(
@@ -55,8 +55,8 @@ internal class ColoursTest {
       lerpColours(
         start = 0xFF000000.toInt(),
         end = 0xFFFFFFFF.toInt(),
-        factor = 1.0f
-      )
+        factor = 1.0f,
+      ),
     )
   }
 

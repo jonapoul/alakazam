@@ -15,5 +15,6 @@ configurations.configureEach {
 dependencies {
   api(libs.test.androidx.core.ktx)
   api(libs.test.junit)
+  implementation(libs.androidx.lifecycle.common)
   implementation(libs.timber)
 }

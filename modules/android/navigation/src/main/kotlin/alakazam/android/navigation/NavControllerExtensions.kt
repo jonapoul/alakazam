@@ -11,8 +11,11 @@ import androidx.navigation.Navigator
  * Performs navigation to the specified [destination], ignoring the effects of double-tapping the
  * button and any associated [IllegalArgumentException]
  */
-public fun NavController.safelyNavigate(@IdRes destination: Int): Unit =
-  safely { navigate(destination) }
+public fun NavController.safelyNavigate(
+  @IdRes destination: Int,
+): Unit = safely {
+  navigate(destination)
+}
 
 /**
  * Performs navigation to the specified [destination], ignoring the effects of double-tapping the
@@ -22,7 +25,9 @@ public fun NavController.safelyNavigate(
   @IdRes destination: Int,
   args: Bundle?,
   navOptions: NavOptions,
-): Unit = safely { navigate(destination, args, navOptions) }
+): Unit = safely {
+  navigate(destination, args, navOptions)
+}
 
 /**
  * Performs navigation to the specified [destination], ignoring the effects of double-tapping the
@@ -33,28 +38,36 @@ public fun NavController.safelyNavigate(
   args: Bundle?,
   navOptions: NavOptions,
   extras: Navigator.Extras,
-): Unit = safely { navigate(destination, args, navOptions, extras) }
+): Unit = safely {
+  navigate(destination, args, navOptions, extras)
+}
 
 /**
  * Performs navigation to the specified [directions], ignoring the effects of double-tapping the
  * button and any associated [IllegalArgumentException]
  */
 public fun NavController.safelyNavigate(directions: NavDirections): Unit =
-  safely { navigate(directions) }
+  safely {
+    navigate(directions)
+  }
 
 /**
  * Performs navigation to the specified [directions], ignoring the effects of double-tapping the
  * button and any associated [IllegalArgumentException]
  */
 public fun NavController.safelyNavigate(directions: NavDirections, navOptions: NavOptions): Unit =
-  safely { navigate(directions, navOptions) }
+  safely {
+    navigate(directions, navOptions)
+  }
 
 /**
  * Performs navigation to the specified [directions], ignoring the effects of double-tapping the
  * button and any associated [IllegalArgumentException]
  */
 public fun NavController.safelyNavigate(directions: NavDirections, navExtras: Navigator.Extras): Unit =
-  safely { navigate(directions, navExtras) }
+  safely {
+    navigate(directions, navExtras)
+  }
 
 private fun NavController.safely(call: NavController.() -> Unit) {
   try {

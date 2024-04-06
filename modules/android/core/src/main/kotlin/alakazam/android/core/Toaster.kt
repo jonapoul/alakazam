@@ -15,7 +15,10 @@ public class Toaster(
     Toast.makeText(appContext, message, length).show()
   }
 
-  public fun toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+  public fun toast(
+    @StringRes message: Int,
+    length: Int = Toast.LENGTH_LONG,
+  ) {
     toast(resourcesContext.getString(message), length)
   }
 
@@ -28,7 +31,10 @@ public class Toaster(
     withContext(main) { toast(message, length) }
   }
 
-  public suspend fun coToast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+  public suspend fun coToast(
+    @StringRes message: Int,
+    length: Int = Toast.LENGTH_LONG,
+  ) {
     coToast(resourcesContext.getString(message), length)
   }
 }

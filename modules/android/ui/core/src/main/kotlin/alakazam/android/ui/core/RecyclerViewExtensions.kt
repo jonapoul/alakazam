@@ -30,6 +30,6 @@ public fun RecyclerView.scrollListener(
       override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         onScrolled.invoke(recyclerView, dx, dy)
       }
-    }
+    },
   )
 }

@@ -13,7 +13,6 @@ public class RoomDatabaseRule<DB : RoomDatabase>(
   private val databaseClass: KClass<DB>,
   private val allowMainThread: Boolean = false,
 ) : TestWatcher() {
-
   private var nullableDatabase: DB? = null
 
   public val database: DB

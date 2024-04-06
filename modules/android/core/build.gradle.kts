@@ -15,6 +15,8 @@ dependencies {
   api(libs.kotlinx.coroutines.core)
   api(libs.kotlinx.datetime)
   implementation(libs.androidx.annotation)
+  implementation(libs.androidx.lifecycle.common)
+  implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.androidx.core.ktx)
   implementation(libs.timber)
   testImplementation(libs.test.turbine)

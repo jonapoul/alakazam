@@ -26,7 +26,10 @@ public fun Context.toast(message: String, length: Int = Toast.LENGTH_LONG) {
 /**
  * Shows a toast with the given string resource as a message.
  */
-public fun Context.toast(@StringRes message: Int, length: Int = Toast.LENGTH_LONG) {
+public fun Context.toast(
+  @StringRes message: Int,
+  length: Int = Toast.LENGTH_LONG,
+) {
   toast(getString(message), length)
 }
 
@@ -59,26 +62,32 @@ public inline fun <reified S : Service> Context.startServiceWithAction(action: S
   startService(
     Intent(this, S::class.java).apply {
       setAction(action)
-    }
+    },
   )
 }
 
 /**
  * Get color from resources
  */
-public fun Context.getCompatColor(@ColorRes colorInt: Int): Int {
+public fun Context.getCompatColor(
+  @ColorRes colorInt: Int,
+): Int {
   return ContextCompat.getColor(this, colorInt)
 }
 
 /**
  * Get drawable from resources
  */
-public fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable {
+public fun Context.getCompatDrawable(
+  @DrawableRes drawableRes: Int,
+): Drawable {
   return ContextCompat.getDrawable(this, drawableRes)
     ?: error("Failed to get drawable from $this for $drawableRes")
 }
 
-public fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
+public fun Context.drawableToBitmap(
+  @DrawableRes drawableRes: Int,
+): Bitmap {
   val drawable = getCompatDrawable(drawableRes)
   val bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
   val canvas = Canvas(bitmap)
@@ -86,4 +95,3 @@ public fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
   drawable.draw(canvas)
   return bitmap
 }
-

@@ -10,7 +10,8 @@ import androidx.core.content.edit
 public enum class AppTheme(public val string: String, public val mode: Int) {
   SYSTEM(string = "system", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM),
   LIGHT(string = "light", AppCompatDelegate.MODE_NIGHT_NO),
-  DARK(string = "dark", AppCompatDelegate.MODE_NIGHT_YES);
+  DARK(string = "dark", AppCompatDelegate.MODE_NIGHT_YES),
+  ;
 
   public companion object {
     internal var sharedPrefs: SharedPreferences? = null
@@ -29,8 +30,8 @@ public enum class AppTheme(public val string: String, public val mode: Int) {
     public fun setFromPrefs() {
       AppCompatDelegate.setDefaultNightMode(
         fromString(
-          sharedPrefs?.getString(Constants.PREF_PAIR.key, Constants.PREF_PAIR.default)
-        )
+          sharedPrefs?.getString(Constants.PREF_PAIR.key, Constants.PREF_PAIR.default),
+        ),
       )
     }
 

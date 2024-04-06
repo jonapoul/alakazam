@@ -17,7 +17,6 @@ public class ActivityViewBindingDelegate<VB : ViewBinding>(
   private val activity: AppCompatActivity,
   private val viewBindingFactory: (LayoutInflater) -> VB,
 ) : ReadOnlyProperty<AppCompatActivity, VB>, LifecycleEventObserver {
-
   private var binding: VB? = null
 
   init {

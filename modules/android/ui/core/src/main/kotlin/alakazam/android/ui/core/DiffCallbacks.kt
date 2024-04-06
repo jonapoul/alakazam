@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.DiffUtil
 public object DiffCallbacks {
   public fun <T : Any> basic(): DiffUtil.ItemCallback<T> = object : DiffUtil.ItemCallback<T>() {
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean = oldItem == newItem
+
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean = oldItem == newItem
   }
 
@@ -24,6 +25,7 @@ public object DiffCallbacks {
     itemId: T.() -> ID,
   ): DiffUtil.ItemCallback<T> = object : DiffUtil.ItemCallback<T>() {
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean = oldItem.itemId() == newItem.itemId()
+
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean = oldItem == newItem
   }
 }

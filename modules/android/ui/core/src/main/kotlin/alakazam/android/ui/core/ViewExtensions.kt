@@ -29,7 +29,7 @@ private fun View.fade(duration: Long, targetAlpha: Float) {
   this.startAnimation(
     AlphaAnimation(this.alpha, targetAlpha).also {
       it.duration = duration
-    }
+    },
   )
 }
 

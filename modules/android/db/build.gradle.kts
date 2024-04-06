@@ -4,7 +4,7 @@ plugins {
   id("convention-publish")
   id("convention-style")
   id("convention-test")
-  id("com.google.devtools.ksp")
+  alias(libs.plugins.ksp)
 }
 
 android {
@@ -14,7 +14,6 @@ android {
 dependencies {
   implementation(libs.androidx.room.common)
   implementation(libs.kotlinx.datetime)
-  ksp(libs.androidx.room.compiler)
 
   testImplementation(projects.modules.testing.db)
   testImplementation(libs.androidx.room.ktx)
@@ -24,4 +23,5 @@ dependencies {
   testImplementation(libs.test.kotlin.core)
   testImplementation(libs.test.kotlin.coroutines)
   testImplementation(libs.test.robolectric)
+  kspTest(libs.androidx.room.compiler)
 }

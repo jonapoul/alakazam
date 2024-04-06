@@ -16,8 +16,8 @@ androidx.customview:customview:1.1.0
 androidx.drawerlayout:drawerlayout:1.0.0
 androidx.emoji2:emoji2-views-helper:1.2.0
 androidx.emoji2:emoji2:1.2.0
-androidx.fragment:fragment-ktx:1.6.1
-androidx.fragment:fragment:1.6.1
+androidx.fragment:fragment-ktx:1.6.2
+androidx.fragment:fragment:1.6.2
 androidx.interpolator:interpolator:1.0.0
 androidx.lifecycle:lifecycle-common:2.6.1
 androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1
@@ -50,10 +50,10 @@ androidx.versionedparcelable:versionedparcelable:1.1.1
 androidx.viewpager:viewpager:1.0.0
 androidx.window:window:1.0.0
 com.google.guava:listenablefuture:1.0
-org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20
-org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20
-org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20
-org.jetbrains.kotlin:kotlin-stdlib:1.8.20
+org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22
+org.jetbrains.kotlin:kotlin-stdlib:1.8.22
 org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4

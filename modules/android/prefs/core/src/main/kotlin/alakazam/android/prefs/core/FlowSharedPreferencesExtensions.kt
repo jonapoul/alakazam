@@ -24,11 +24,11 @@ public fun FlowSharedPreferences.getStringSet(pref: PrefPair<Set<String>>): Pref
   getStringSet(pref.key, pref.default)
 
 public fun <T : Any> FlowSharedPreferences.getObject(
-    pair: PrefPair<T>,
-    serializer: Serializer<T>,
+  pair: PrefPair<T>,
+  serializer: Serializer<T>,
 ): Preference<T> = getObject(pair.key, serializer, pair.default)
 
 public fun <T : Any> FlowSharedPreferences.getNullableObject(
-    pair: PrefPair<T?>,
-    serializer: NullableSerializer<T>,
+  pair: PrefPair<T?>,
+  serializer: NullableSerializer<T>,
 ): Preference<T?> = getNullableObject(pair.key, serializer, pair.default)

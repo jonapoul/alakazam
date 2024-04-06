@@ -66,7 +66,7 @@ public open class OkHttpClientFactory(
     val CONNECTION_POOL = ConnectionPool(
       MAX_IDLE_CONNECTIONS,
       KEEP_ALIVE_TIME_MINUTES,
-      TimeUnit.MINUTES
+      TimeUnit.MINUTES,
     )
   }
 }

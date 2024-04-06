@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import androidx.core.content.res.TypedArrayUtils
 import androidx.core.content.withStyledAttributes
 import androidx.preference.ListPreference
+import androidx.preference.Preference
 import androidx.preference.R as AndroidXR
 
 /**
@@ -21,12 +22,11 @@ public class AppThemePreference @JvmOverloads constructor(
   @SuppressLint("RestrictedApi") defStyleAttr: Int = TypedArrayUtils.getAttr(
     context,
     AndroidXR.attr.dialogPreferenceStyle,
-    android.R.attr.dialogPreferenceStyle
+    android.R.attr.dialogPreferenceStyle,
   ),
   defStyleRes: Int = 0,
 ) : ListPreference(context, attrs, defStyleAttr, defStyleRes),
   SharedPreferences.OnSharedPreferenceChangeListener {
-
   private val prefs = AppTheme.sharedPrefs
 
   private var shouldShowIcon: Boolean = DEFAULT_SHOULD_SHOW_ICON
@@ -37,7 +37,7 @@ public class AppThemePreference @JvmOverloads constructor(
         ?: context.getString(R.string.app_theme)
       shouldShowIcon = getBoolean(
         R.styleable.AppThemePreference_atp_shouldShowIcon,
-        DEFAULT_SHOULD_SHOW_ICON
+        DEFAULT_SHOULD_SHOW_ICON,
       )
     }
 
@@ -98,7 +98,7 @@ public class AppThemePreference @JvmOverloads constructor(
         R.drawable.ic_theme_dark
       } else {
         R.drawable.ic_theme_light
-      }
+      },
     )
   }
 

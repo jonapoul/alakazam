@@ -19,7 +19,6 @@ public class FragmentViewBindingDelegate<VB : ViewBinding>(
   private val fragment: Fragment,
   private val viewBindingFactory: (View) -> VB,
 ) : ReadOnlyProperty<Fragment, VB>, LifecycleObserver {
-
   private var binding: VB? = null
 
   init {
@@ -33,7 +32,7 @@ public class FragmentViewBindingDelegate<VB : ViewBinding>(
                 binding?.cleanUpRecyclerAdapters()
                 binding = null
               }
-            }
+            },
           )
         }
 
@@ -44,7 +43,7 @@ public class FragmentViewBindingDelegate<VB : ViewBinding>(
         override fun onDestroy(owner: LifecycleOwner) {
           fragment.viewLifecycleOwnerLiveData.removeObserver(liveDataObserver)
         }
-      }
+      },
     )
   }
 

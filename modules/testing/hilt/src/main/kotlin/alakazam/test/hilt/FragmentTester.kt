@@ -38,17 +38,17 @@ public class FragmentTester(
     val intent = Intent.makeMainActivity(
       ComponentName(
         ApplicationProvider.getApplicationContext(),
-        HiltTestActivity::class.java
-      )
+        HiltTestActivity::class.java,
+      ),
     ).putExtra(
       "androidx.fragment.app.testing.FragmentScenario.EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY",
-      themeResId
+      themeResId,
     )
 
     ActivityScenario.launch<HiltTestActivity>(intent).onActivity { activity ->
       val fragment = activity.supportFragmentManager.fragmentFactory.instantiate(
         F::class.java.classLoader!!,
-        F::class.java.name
+        F::class.java.name,
       ) as F
       fragment.arguments = fragmentArgs
       activity.supportFragmentManager

@@ -41,7 +41,7 @@ tasks.dependencyUpdates.configure {
   }
 }
 
-fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }
+fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
 
 doctor {
   javaHome {

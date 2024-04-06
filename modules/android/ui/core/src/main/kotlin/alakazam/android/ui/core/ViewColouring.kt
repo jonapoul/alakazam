@@ -10,35 +10,43 @@ import androidx.annotation.ColorRes
 /**
  * Quick method to allow changing the ColorFilter of an [TextView] just from a [ColorRes] integer.
  */
-public fun TextView.setTextColorRes(@ColorRes color: Int) {
+public fun TextView.setTextColorRes(
+  @ColorRes color: Int,
+) {
   setTextColor(
-    context.getCompatColor(color)
+    context.getCompatColor(color),
   )
 }
 
 /**
  * Quick method to allow changing the ColorFilter of an [TextView] just from a color attribute.
  */
-public fun TextView.setTextColorAttr(@AttrRes color: Int) {
+public fun TextView.setTextColorAttr(
+  @AttrRes color: Int,
+) {
   setTextColor(
-    context.getColorFromAttr(color)
+    context.getColorFromAttr(color),
   )
 }
 
 /**
  * Quick method to allow changing the ColorFilter of an [ImageView] just from a [ColorRes] integer.
  */
-public fun ImageView.setColorFilterRes(@ColorRes color: Int) {
+public fun ImageView.setColorFilterRes(
+  @ColorRes color: Int,
+) {
   setColorFilter(
-    context.getCompatColor(color)
+    context.getCompatColor(color),
   )
 }
 
 /**
  * Quick method to allow changing the ColorFilter of an [ImageView] just from a color attribute.
  */
-public fun ImageView.setColorFilterAttr(@AttrRes color: Int) {
+public fun ImageView.setColorFilterAttr(
+  @AttrRes color: Int,
+) {
   setColorFilter(
-    context.getColorFromAttr(color)
+    context.getColorFromAttr(color),
   )
 }

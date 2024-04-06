@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 public abstract class CommonListAdapter<T : Any, VH : CommonViewHolder<T>>(
   diffCallback: DiffUtil.ItemCallback<T>,
 ) : ListAdapter<T, VH>(diffCallback) {
-
   protected abstract fun buildViewHolder(inflater: LayoutInflater, parent: ViewGroup): VH
 
   final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {

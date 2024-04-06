@@ -5,6 +5,5 @@ plugins {
 }
 
 dependencyGuard {
-  configuration("compileClasspath")
   configuration("runtimeClasspath")
 }

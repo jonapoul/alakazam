@@ -7,5 +7,7 @@ import androidx.core.content.ContextCompat
 
 public abstract class ColourCreator(protected val context: Context) {
   @ColorInt
-  protected fun fromRes(@ColorRes res: Int): Int = ContextCompat.getColor(context, res)
+  protected fun fromRes(
+    @ColorRes res: Int,
+  ): Int = ContextCompat.getColor(context, res)
 }

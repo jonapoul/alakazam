@@ -39,7 +39,9 @@ public fun ViewGroup.enableChildren() {
  * RecyclerView adapter.
  */
 @UiThread
-public fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
+public fun ViewGroup.inflate(
+  @LayoutRes layoutRes: Int,
+): View {
   return context.inflater.inflate(layoutRes, this, false)
 }
 
