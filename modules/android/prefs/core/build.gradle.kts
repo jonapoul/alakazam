@@ -10,6 +10,7 @@ android {
 }
 
 dependencies {
+  api(projects.modules.kotlin.core)
   api(libs.flowpreferences)
   implementation(libs.androidx.lifecycle.common)
   implementation(libs.androidx.lifecycle.runtime)

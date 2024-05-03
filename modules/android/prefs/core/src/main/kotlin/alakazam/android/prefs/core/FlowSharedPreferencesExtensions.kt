@@ -1,5 +1,6 @@
 package alakazam.android.prefs.core
 
+import alakazam.kotlin.core.PrefPair
 import com.fredporciuncula.flow.preferences.FlowSharedPreferences
 import com.fredporciuncula.flow.preferences.NullableSerializer
 import com.fredporciuncula.flow.preferences.Preference

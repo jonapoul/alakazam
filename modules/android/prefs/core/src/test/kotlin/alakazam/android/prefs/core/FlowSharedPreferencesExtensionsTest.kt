@@ -1,5 +1,6 @@
 package alakazam.android.prefs.core
 
+import alakazam.kotlin.core.PrefPair
 import alakazam.test.core.CoroutineRule
 import android.content.Context
 import androidx.preference.PreferenceManager
