@@ -45,7 +45,7 @@ fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase(
 
 doctor {
   javaHome {
-    ensureJavaHomeMatches.set(true)
+    ensureJavaHomeMatches.set(false)
     ensureJavaHomeIsSet.set(true)
     failOnError.set(true)
   }
