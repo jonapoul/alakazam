@@ -12,16 +12,15 @@ android {
 }
 
 dependencies {
-  api(projects.modules.android.core)
   api(libs.kotlinx.serialization.core)
   api(libs.okhttp.core)
   api(libs.retrofit.core)
-
-  implementation(projects.modules.kotlin.core)
+  api(projects.modules.android.core)
   implementation(libs.androidx.lifecycle.common)
   implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.kotlinx.serialization.json)
   implementation(libs.okhttp.logging)
   implementation(libs.retrofit.serialization)
   implementation(libs.timber)
+  implementation(projects.modules.kotlin.core)
 }

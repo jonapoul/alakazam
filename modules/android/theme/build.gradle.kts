@@ -15,9 +15,9 @@ android {
 }
 
 dependencies {
-  implementation(projects.modules.kotlin.core)
   implementation(libs.androidx.appcompat)
   implementation(libs.androidx.core.core)
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.preference)
+  implementation(projects.modules.kotlin.core)
 }

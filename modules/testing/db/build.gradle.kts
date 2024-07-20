@@ -12,6 +12,6 @@ dependencies {
   api(libs.androidx.room.runtime)
   api(libs.test.androidx.core.ktx)
   api(libs.test.junit)
-  implementation(projects.modules.kotlin.core)
   implementation(libs.androidx.lifecycle.common)
+  implementation(projects.modules.kotlin.core)
 }

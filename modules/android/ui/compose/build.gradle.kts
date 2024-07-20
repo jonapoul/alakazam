@@ -31,12 +31,12 @@ android {
 }
 
 dependencies {
-  implementation(platform(libs.androidx.compose.bom))
   api(libs.androidx.compose.material.core)
   api(libs.androidx.compose.runtime)
+  debugImplementation(libs.androidx.compose.ui.tooling)
   implementation(libs.androidx.compose.foundation.core)
   implementation(libs.androidx.compose.ui.core)
   implementation(libs.androidx.compose.ui.graphics)
   implementation(libs.androidx.compose.ui.preview)
-  debugImplementation(libs.androidx.compose.ui.tooling)
+  implementation(platform(libs.androidx.compose.bom))
 }

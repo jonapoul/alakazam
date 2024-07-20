@@ -15,12 +15,12 @@ android {
 }
 
 dependencies {
-  api(projects.modules.android.core)
   api(libs.androidx.appcompat)
   api(libs.androidx.fragment.core)
   api(libs.material)
+  api(projects.modules.android.core)
+  implementation(libs.androidx.cardview)
   implementation(projects.modules.android.ui.appcompat)
   implementation(projects.modules.android.ui.core)
   implementation(projects.modules.kotlin.core)
-  implementation(libs.androidx.cardview)
 }

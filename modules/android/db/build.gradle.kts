@@ -14,8 +14,7 @@ android {
 dependencies {
   implementation(libs.androidx.room.common)
   implementation(libs.kotlinx.datetime)
-
-  testImplementation(projects.modules.testing.db)
+  kspTest(libs.androidx.room.compiler)
   testImplementation(libs.androidx.room.ktx)
   testImplementation(libs.androidx.room.runtime)
   testImplementation(libs.androidx.sqlite)
@@ -23,5 +22,5 @@ dependencies {
   testImplementation(libs.test.kotlin.core)
   testImplementation(libs.test.kotlin.coroutines)
   testImplementation(libs.test.robolectric)
-  kspTest(libs.androidx.room.compiler)
+  testImplementation(projects.modules.testing.db)
 }

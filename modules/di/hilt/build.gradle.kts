@@ -11,16 +11,16 @@ android {
 }
 
 dependencies {
-  api(projects.modules.android.core)
-  api(projects.modules.android.http)
-  api(projects.modules.kotlin.core)
   api(libs.androidx.hilt.android)
   api(libs.dagger.core)
   api(libs.flowpreferences)
   api(libs.javax.inject)
   api(libs.kotlinx.coroutines.core)
   api(libs.kotlinx.datetime)
-  implementation(libs.androidx.preference)
+  api(projects.modules.android.core)
+  api(projects.modules.android.http)
+  api(projects.modules.kotlin.core)
   implementation(libs.androidx.hilt.core)
+  implementation(libs.androidx.preference)
   kapt(libs.androidx.hilt.compiler)
 }

@@ -10,7 +10,6 @@ configurations.configureEach {
 }
 
 dependencies {
-  api(projects.modules.kotlin.core)
   api(libs.kotlinx.coroutines.core)
   api(libs.test.junit)
   api(libs.test.kotlin.common)
@@ -18,4 +17,5 @@ dependencies {
   api(libs.test.kotlin.junit)
   api(libs.test.mockk.core)
   api(libs.test.turbine)
+  api(projects.modules.kotlin.core)
 }
