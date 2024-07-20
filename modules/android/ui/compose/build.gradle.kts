@@ -10,11 +10,10 @@ plugins {
 
 tasks.withType<KotlinCompile> {
   kotlinOptions {
-    freeCompilerArgs +=
-      listOf(
-        "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
-        "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
-      )
+    freeCompilerArgs += listOf(
+      "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+      "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+    )
   }
 }
 
@@ -26,7 +25,8 @@ android {
   }
 
   composeOptions {
-    kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
+    kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler
+      .get()
   }
 }
 

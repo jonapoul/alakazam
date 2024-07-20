@@ -17,9 +17,7 @@ internal class BuilderExtensionsTest {
       return this
     }
 
-    fun build(): TestResult {
-      return TestResult(valueWasChanged)
-    }
+    fun build(): TestResult = TestResult(valueWasChanged)
   }
 
   @Test

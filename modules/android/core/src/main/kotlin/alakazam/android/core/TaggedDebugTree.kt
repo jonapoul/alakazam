@@ -8,7 +8,6 @@ public open class TaggedDebugTree(private val prefix: String?) : Timber.DebugTre
     super.log(priority, tag, taggedMessage, t)
   }
 
-  override fun createStackElementTag(element: StackTraceElement): String {
-    return "(${element.fileName}:${element.lineNumber})#${element.methodName}"
-  }
+  override fun createStackElementTag(element: StackTraceElement): String =
+    "(${element.fileName}:${element.lineNumber})#${element.methodName}"
 }

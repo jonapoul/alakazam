@@ -26,24 +26,22 @@ public abstract class ApiBuilder<Api>(
     baseUrl: String = this.baseUrl,
     timeout: Duration = this.timeout,
     protocol: String = this.protocol,
-  ): Api {
-    return Retrofit.Builder()
-      .apply { converterFactories.forEach(::addConverterFactory) }
-      .baseUrl("$protocol://$baseUrl")
-      .client(buildOkHttpClient(timeout))
-      .extraConfig()
-      .build()
-      .create(apiClass)
-  }
+  ): Api = Retrofit
+    .Builder()
+    .apply { converterFactories.forEach(::addConverterFactory) }
+    .baseUrl("$protocol://$baseUrl")
+    .client(buildOkHttpClient(timeout))
+    .extraConfig()
+    .build()
+    .create(apiClass)
 
   protected open fun Retrofit.Builder.extraConfig(): Retrofit.Builder = this
 
-  public open fun buildOkHttpClient(timeout: Duration = DEFAULT_TIMEOUT): OkHttpClient {
-    return okHttpClientFactory.buildClient(
+  public open fun buildOkHttpClient(timeout: Duration = DEFAULT_TIMEOUT): OkHttpClient =
+    okHttpClientFactory.buildClient(
       readWriteTimeout = timeout,
       connectTimeout = timeout,
     )
-  }
 
   private companion object {
     val DEFAULT_TIMEOUT = 2.seconds

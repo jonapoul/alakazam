@@ -30,9 +30,7 @@ public class SnackbarFeed {
     pending.send(message)
   }
 
-  public fun post(message: SnackbarMessage): ChannelResult<Unit> {
-    return pending.trySend(message)
-  }
+  public fun post(message: SnackbarMessage): ChannelResult<Unit> = pending.trySend(message)
 
   private companion object {
     val TIMEOUT = 2.seconds

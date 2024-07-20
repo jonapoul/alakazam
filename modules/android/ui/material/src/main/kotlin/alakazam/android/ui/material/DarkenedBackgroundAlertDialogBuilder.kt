@@ -12,11 +12,9 @@ public open class DarkenedBackgroundAlertDialogBuilder(
   context: Context,
   overrideThemeResId: Int = 0,
 ) : MaterialAlertDialogBuilder(context, overrideThemeResId) {
-  override fun show(): AlertDialog {
-    return create().apply {
-      window?.setDimAmount(DIM_AMOUNT)
-      show()
-    }
+  override fun show(): AlertDialog = create().apply {
+    window?.setDimAmount(DIM_AMOUNT)
+    show()
   }
 
   private companion object {

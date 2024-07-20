@@ -21,17 +21,13 @@ public open class EditFloatPreference @JvmOverloads constructor(
     }
   }
 
-  override fun getPersistedString(defaultReturnValue: String): String {
-    return getPersistedFloat(DEFAULT_VALUE).toString()
-  }
+  override fun getPersistedString(defaultReturnValue: String): String = getPersistedFloat(DEFAULT_VALUE).toString()
 
-  override fun persistString(value: String?): Boolean {
-    return try {
-      persistFloat(value?.toFloat() ?: DEFAULT_VALUE)
-    } catch (e: NumberFormatException) {
-      Timber.e("Failed to parse '$value' as a float")
-      false
-    }
+  override fun persistString(value: String?): Boolean = try {
+    persistFloat(value?.toFloat() ?: DEFAULT_VALUE)
+  } catch (e: NumberFormatException) {
+    Timber.e("Failed to parse '$value' as a float")
+    false
   }
 
   private companion object {

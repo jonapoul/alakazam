@@ -20,17 +20,13 @@ public open class EditIntPreference @JvmOverloads constructor(
     }
   }
 
-  override fun getPersistedString(defaultReturnValue: String?): String {
-    return getPersistedInt(DEFAULT_VALUE).toString()
-  }
+  override fun getPersistedString(defaultReturnValue: String?): String = getPersistedInt(DEFAULT_VALUE).toString()
 
-  override fun persistString(value: String?): Boolean {
-    return try {
-      persistInt(value?.toInt() ?: DEFAULT_VALUE)
-    } catch (e: NumberFormatException) {
-      Timber.e("Failed to parse '$value' as an integer")
-      false
-    }
+  override fun persistString(value: String?): Boolean = try {
+    persistInt(value?.toInt() ?: DEFAULT_VALUE)
+  } catch (e: NumberFormatException) {
+    Timber.e("Failed to parse '$value' as an integer")
+    false
   }
 
   private companion object {

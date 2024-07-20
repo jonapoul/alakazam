@@ -10,11 +10,9 @@ import kotlinx.coroutines.flow.transformWhile
  */
 public inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
   crossinline call: suspend (Expected) -> Unit,
-): Flow<Input> {
-  return onEach {
-    if (it is Expected) {
-      call(it)
-    }
+): Flow<Input> = onEach {
+  if (it is Expected) {
+    call(it)
   }
 }
 

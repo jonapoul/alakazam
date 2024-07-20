@@ -41,9 +41,7 @@ public fun ViewGroup.enableChildren() {
 @UiThread
 public fun ViewGroup.inflate(
   @LayoutRes layoutRes: Int,
-): View {
-  return context.inflater.inflate(layoutRes, this, false)
-}
+): View = context.inflater.inflate(layoutRes, this, false)
 
 public fun ViewGroup.cleanUpRecyclerAdapters() {
   children.forEach {

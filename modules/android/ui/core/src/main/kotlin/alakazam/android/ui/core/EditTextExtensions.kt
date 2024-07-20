@@ -14,6 +14,4 @@ public fun EditText.showKeyboard() {
   context.inputMethodManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }
 
-public fun EditText.getString(): String {
-  return text.toString()
-}
+public fun EditText.getString(): String = text.toString()

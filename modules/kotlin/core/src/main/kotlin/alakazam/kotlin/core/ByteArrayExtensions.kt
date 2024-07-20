@@ -10,10 +10,8 @@ private const val NUM_MAC_BYTES = 6
  * an optional separating character between each byte. If the separator character is ignored or
  * set to null, there will be no gap between each byte string.
  */
-public fun ByteArray.toHexString(separator: String = ""): String {
-  return joinToString(separator) {
-    "%02X".format(it.toInt() and MAX_BYTE)
-  }
+public fun ByteArray.toHexString(separator: String = ""): String = joinToString(separator) {
+  "%02X".format(it.toInt() and MAX_BYTE)
 }
 
 /**

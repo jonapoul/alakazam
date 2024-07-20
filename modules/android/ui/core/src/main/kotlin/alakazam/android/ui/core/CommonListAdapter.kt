@@ -17,9 +17,8 @@ public abstract class CommonListAdapter<T : Any, VH : CommonViewHolder<T>>(
 ) : ListAdapter<T, VH>(diffCallback) {
   protected abstract fun buildViewHolder(inflater: LayoutInflater, parent: ViewGroup): VH
 
-  final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-    return buildViewHolder(parent.context.inflater, parent)
-  }
+  final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH =
+    buildViewHolder(parent.context.inflater, parent)
 
   final override fun onBindViewHolder(holder: VH, position: Int) {
     holder.bindTo(getItem(position))

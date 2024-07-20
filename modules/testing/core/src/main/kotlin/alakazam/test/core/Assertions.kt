@@ -3,9 +3,7 @@ package alakazam.test.core
 import org.junit.Assert.assertEquals
 
 @Throws(AssertionError::class)
-public fun fail(reason: String) {
-  throw AssertionError(reason)
-}
+public fun fail(reason: String): Unit = throw AssertionError(reason)
 
 public inline fun <reified ExpectedType> assertIsType(value: Any?) {
   val received = value?.javaClass

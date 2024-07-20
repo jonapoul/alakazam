@@ -22,18 +22,17 @@ public open class OkHttpClientFactory(
   public open fun buildClient(
     readWriteTimeout: Duration = DEFAULT_TIMEOUT,
     connectTimeout: Duration = DEFAULT_TIMEOUT,
-  ): OkHttpClient {
-    return OkHttpClient.Builder()
-      .ifTrue(buildConfig.debug) { addInterceptor(buildInterceptor()) }
-      .readTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
-      .writeTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
-      .connectTimeout(connectTimeout.inWholeSeconds, TimeUnit.SECONDS)
-      .cache(buildCache())
-      .connectionPool(CONNECTION_POOL)
-      .dispatcher(buildDispatcher())
-      .extraConfig()
-      .build()
-  }
+  ): OkHttpClient = OkHttpClient
+    .Builder()
+    .ifTrue(buildConfig.debug) { addInterceptor(buildInterceptor()) }
+    .readTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
+    .writeTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
+    .connectTimeout(connectTimeout.inWholeSeconds, TimeUnit.SECONDS)
+    .cache(buildCache())
+    .connectionPool(CONNECTION_POOL)
+    .dispatcher(buildDispatcher())
+    .extraConfig()
+    .build()
 
   protected open fun OkHttpClient.Builder.extraConfig(): OkHttpClient.Builder = this
 
@@ -42,17 +41,13 @@ public open class OkHttpClientFactory(
     return Cache(directory, CACHE_MAX_SIZE_BYTES)
   }
 
-  private fun buildDispatcher(): Dispatcher {
-    return Dispatcher().apply {
-      // Allow for high number of concurrent data fetches on same host.
-      maxRequestsPerHost = MAX_REQUESTS_PER_HOST
-    }
+  private fun buildDispatcher(): Dispatcher = Dispatcher().apply {
+    // Allow for high number of concurrent data fetches on same host.
+    maxRequestsPerHost = MAX_REQUESTS_PER_HOST
   }
 
-  private fun buildInterceptor(): Interceptor {
-    return HttpLoggingInterceptor { message -> Timber.v(message) }
-      .also { it.level = HttpLoggingInterceptor.Level.BODY }
-  }
+  private fun buildInterceptor(): Interceptor = HttpLoggingInterceptor { message -> Timber.v(message) }
+    .also { it.level = HttpLoggingInterceptor.Level.BODY }
 
   private companion object {
     val DEFAULT_TIMEOUT = 5.seconds

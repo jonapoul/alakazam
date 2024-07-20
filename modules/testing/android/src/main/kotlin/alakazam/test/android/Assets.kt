@@ -5,7 +5,8 @@ import androidx.test.core.app.ApplicationProvider
 import java.io.InputStream
 
 public fun getTestAssetAsStream(filename: String): InputStream =
-  ApplicationProvider.getApplicationContext<Context>()
+  ApplicationProvider
+    .getApplicationContext<Context>()
     .resources
     .assets
     .open(filename)

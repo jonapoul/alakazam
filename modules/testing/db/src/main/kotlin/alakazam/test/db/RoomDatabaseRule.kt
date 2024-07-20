@@ -21,7 +21,8 @@ public class RoomDatabaseRule<DB : RoomDatabase>(
   override fun starting(description: Description) {
     super.starting(description)
     val context = ApplicationProvider.getApplicationContext<Context>()
-    nullableDatabase = Room.inMemoryDatabaseBuilder(context, databaseClass.java)
+    nullableDatabase = Room
+      .inMemoryDatabaseBuilder(context, databaseClass.java)
       .ifTrue(allowMainThread) { allowMainThreadQueries() }
       .build()
   }

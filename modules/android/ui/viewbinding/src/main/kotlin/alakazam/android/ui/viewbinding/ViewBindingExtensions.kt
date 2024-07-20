@@ -30,9 +30,8 @@ public fun ViewBinding.hideIfTrue(condition: Boolean) {
   root.hideIfTrue(condition)
 }
 
-public fun <T> ViewBinding.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job {
-  return viewScope.collectFlow(flow, call)
-}
+public fun <T> ViewBinding.collectFlow(flow: Flow<T>, call: suspend (T) -> Unit): Job =
+  viewScope.collectFlow(flow, call)
 
 public fun ViewBinding.show() {
   root.show()

@@ -71,19 +71,15 @@ public inline fun <reified S : Service> Context.startServiceWithAction(action: S
  */
 public fun Context.getCompatColor(
   @ColorRes colorInt: Int,
-): Int {
-  return ContextCompat.getColor(this, colorInt)
-}
+): Int = ContextCompat.getColor(this, colorInt)
 
 /**
  * Get drawable from resources
  */
 public fun Context.getCompatDrawable(
   @DrawableRes drawableRes: Int,
-): Drawable {
-  return ContextCompat.getDrawable(this, drawableRes)
-    ?: error("Failed to get drawable from $this for $drawableRes")
-}
+): Drawable = ContextCompat.getDrawable(this, drawableRes)
+  ?: error("Failed to get drawable from $this for $drawableRes")
 
 public fun Context.drawableToBitmap(
   @DrawableRes drawableRes: Int,

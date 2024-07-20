@@ -44,7 +44,5 @@ internal class ByteArrayExtensionsTest {
     }
   }
 
-  private fun byteArray(vararg ints: Int): ByteArray {
-    return ints.asList().map { it.toByte() }.toByteArray()
-  }
+  private fun byteArray(vararg ints: Int): ByteArray = ints.asList().map { it.toByte() }.toByteArray()
 }
