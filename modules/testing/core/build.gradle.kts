@@ -11,6 +11,7 @@ configurations.configureEach {
 
 dependencies {
   api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.datetime)
   api(libs.test.junit)
   api(libs.test.kotlin.common)
   api(libs.test.kotlin.coroutines)

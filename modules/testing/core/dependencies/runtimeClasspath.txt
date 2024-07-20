@@ -27,5 +27,7 @@ org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4
+org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.4.1
+org.jetbrains.kotlinx:kotlinx-datetime:0.4.1
 org.jetbrains:annotations:13.0
 org.objenesis:objenesis:3.3
