@@ -1,12 +1,8 @@
-import app.cash.licensee.UnusedAction
-
 plugins {
   id("app.cash.licensee")
 }
 
 licensee {
-  unusedAction(UnusedAction.IGNORE)
-
   allow(spdxId = "Apache-2.0") // Most libraries
   allow(spdxId = "MIT") // Some other libraries
   allow(spdxId = "BSD-3-Clause") // Hamcrest, Protobuf
