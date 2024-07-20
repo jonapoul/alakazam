@@ -17,7 +17,7 @@ public fun <T : AlertDialog.Builder> T.setSimpleNegativeButton(
   return if (onClick == null) {
     setNegativeButton(text, null) as T
   } else {
-    setNegativeButton(text) { _, _ -> onClick.invoke() } as T
+    setNegativeButton(text) { _, _ -> onClick() } as T
   }
 }
 
@@ -33,7 +33,7 @@ public fun <T : AlertDialog.Builder> T.setSimplePositiveButton(
   return if (onClick == null) {
     setPositiveButton(text, null) as T
   } else {
-    setPositiveButton(text) { _, _ -> onClick.invoke() } as T
+    setPositiveButton(text) { _, _ -> onClick() } as T
   }
 }
 
@@ -44,6 +44,6 @@ public fun <T : AlertDialog.Builder> T.setSimpleNeutralButton(
   return if (onClick == null) {
     setNeutralButton(text, null) as T
   } else {
-    setNeutralButton(text) { _, _ -> onClick.invoke() } as T
+    setNeutralButton(text) { _, _ -> onClick() } as T
   }
 }

@@ -19,6 +19,6 @@ public abstract class SimpleSerializer<T : Any>(
   }
 
   override fun deserialize(decoder: Decoder): T {
-    return constructor.invoke(decoder.decodeString())
+    return constructor(decoder.decodeString())
   }
 }

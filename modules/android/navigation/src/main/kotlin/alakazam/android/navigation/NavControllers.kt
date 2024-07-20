@@ -34,7 +34,7 @@ internal class LazyNavController(
   private var cached: NavController? = null
 
   override val value: NavController
-    get() = cached ?: navControllerFactory.invoke().also { cached = it }
+    get() = cached ?: navControllerFactory().also { cached = it }
 
   override fun isInitialized(): Boolean = cached != null
 }

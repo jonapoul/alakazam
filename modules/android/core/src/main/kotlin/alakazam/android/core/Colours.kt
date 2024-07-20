@@ -101,6 +101,6 @@ public fun Int.darken(
 @ColorInt
 private inline fun Int.colourFactor(rgbFactor: (Int) -> Float): Int {
   val (r, g, b) = intArrayOf(red(), green(), blue())
-    .map { rgbFactor.invoke(it).toInt() }
+    .map { rgbFactor(it).toInt() }
   return argbColour(alpha(), r, g, b)
 }

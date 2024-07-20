@@ -4,7 +4,7 @@ import timber.log.Timber
 
 public fun tryOrLog(block: () -> Unit) {
   try {
-    block.invoke()
+    block()
   } catch (e: Exception) {
     Timber.w(e)
   }

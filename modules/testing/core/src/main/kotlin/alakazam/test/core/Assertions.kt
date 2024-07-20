@@ -48,7 +48,7 @@ public inline fun <reified T> assertListContains(list: List<T>, expected: T) {
 
 public inline fun <reified T : Throwable> assertThrows(call: () -> Unit) {
   try {
-    call.invoke()
+    call()
     throw AssertionError("Should have thrown ${T::class.java.simpleName}")
   } catch (t: Throwable) {
     if (t.javaClass != T::class.java) {

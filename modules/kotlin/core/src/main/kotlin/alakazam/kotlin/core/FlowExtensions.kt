@@ -13,7 +13,7 @@ public inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
 ): Flow<Input> {
   return onEach {
     if (it is Expected) {
-      call.invoke(it)
+      call(it)
     }
   }
 }
@@ -24,7 +24,7 @@ public inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
  * caller and the flow will be cancelled.
  */
 public fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
-  val shouldStop = !stopOn.invoke(it)
+  val shouldStop = !stopOn(it)
   if (shouldStop) {
     emit(it)
   }
@@ -38,5 +38,5 @@ public fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = tra
  */
 public fun <T> Flow<T>.takeUntilInclusive(stopOn: (T) -> Boolean): Flow<T> = transformWhile {
   emit(it)
-  !stopOn.invoke(it)
+  !stopOn(it)
 }

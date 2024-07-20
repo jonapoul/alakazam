@@ -24,11 +24,11 @@ public fun RecyclerView.scrollListener(
   this.addOnScrollListener(
     object : RecyclerView.OnScrollListener() {
       override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-        onScrollStateChanged.invoke(recyclerView, newState)
+        onScrollStateChanged(recyclerView, newState)
       }
 
       override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-        onScrolled.invoke(recyclerView, dx, dy)
+        onScrolled(recyclerView, dx, dy)
       }
     },
   )

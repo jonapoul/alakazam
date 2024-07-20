@@ -6,7 +6,7 @@ package alakazam.kotlin.core
  */
 public fun justTry(block: () -> Unit) {
   try {
-    block.invoke()
+    block()
   } catch (e: Exception) {
     // No-op
   }

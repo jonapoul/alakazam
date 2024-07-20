@@ -32,7 +32,7 @@ internal val BOOLS = listOf(true, false, true)
 
 internal fun checkFailed(call: () -> Unit) {
   try {
-    call.invoke()
+    call()
     throw AssertionError(UNEXPECTED)
   } catch (e: AssertionError) {
     if (e.message == UNEXPECTED) throw e

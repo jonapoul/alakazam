@@ -25,6 +25,6 @@ internal class CloseableExtensionsTest {
   }
 
   private fun buildCloseable(block: () -> Unit) {
-    closeable = Closeable { block.invoke() }
+    closeable = Closeable { block() }
   }
 }

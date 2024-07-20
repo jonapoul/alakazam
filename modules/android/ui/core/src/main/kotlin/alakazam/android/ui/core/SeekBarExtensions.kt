@@ -10,7 +10,7 @@ public fun SeekBar.setSimpleSeekBarChangeListener(
   setOnSeekBarChangeListener(
     object : SeekBar.OnSeekBarChangeListener {
       override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-        onProgressChanged.invoke(seekBar, progress, fromUser)
+        onProgressChanged(seekBar, progress, fromUser)
       }
 
       override fun onStartTrackingTouch(seekBar: SeekBar) {

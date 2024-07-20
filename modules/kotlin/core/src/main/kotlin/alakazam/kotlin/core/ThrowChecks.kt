@@ -4,7 +4,7 @@ package alakazam.kotlin.core
 
 public inline fun <reified Expected : Throwable> throwsSpecific(block: () -> Unit): Boolean {
   return try {
-    block.invoke()
+    block()
     false
   } catch (e: Throwable) {
     Expected::class.isInstance(e)
@@ -13,7 +13,7 @@ public inline fun <reified Expected : Throwable> throwsSpecific(block: () -> Uni
 
 public fun throwsAnyException(block: () -> Unit): Boolean {
   return try {
-    block.invoke()
+    block()
     false
   } catch (e: Exception) {
     true
@@ -22,7 +22,7 @@ public fun throwsAnyException(block: () -> Unit): Boolean {
 
 public fun throwsAnyThrowable(block: () -> Unit): Boolean {
   return try {
-    block.invoke()
+    block()
     false
   } catch (e: Throwable) {
     true

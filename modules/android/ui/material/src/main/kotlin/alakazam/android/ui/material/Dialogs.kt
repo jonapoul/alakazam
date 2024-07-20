@@ -28,7 +28,7 @@ public fun Activity.showLoadingDialog(
   loadingTextView.text = loadingText
   return MaterialAlertDialogBuilder(this)
     .setView(view)
-    .ifNotNull(onClickCancel) { setSimpleNegativeButton { it.invoke() } }
+    .ifNotNull(onClickCancel) { setSimpleNegativeButton { it() } }
     .setCancelable(false)
     .extraConfig()
     .show()
