@@ -1,7 +1,9 @@
 package alakazam.android.logging
 
+import alakazam.android.core.TaggedDebugTree
 import android.util.Log
 import org.slf4j.LoggerFactory
+import timber.log.Timber
 
 /**
  * [Timber] class to allow storage of log messages to a file on the device. See the config files at
