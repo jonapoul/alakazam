@@ -1,4 +1,4 @@
-@file:Suppress("UnstableApiUsage")
+import blueprint.recipes.androidResourcesBlueprint
 
 plugins {
   id("module-android")
@@ -8,11 +8,9 @@ plugins {
 
 android {
   namespace = "alakazam.android.theme"
-
-  buildFeatures {
-    resValues = true
-  }
 }
+
+androidResourcesBlueprint(viewBinding = false)
 
 dependencies {
   implementation(libs.androidx.appcompat)

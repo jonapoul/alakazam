@@ -9,7 +9,6 @@ import androidx.core.content.res.TypedArrayUtils
 import androidx.core.content.withStyledAttributes
 import androidx.preference.ListPreference
 import androidx.preference.Preference
-import androidx.preference.R as AndroidXR
 
 /**
  * A [Preference] which allows the user to toggle the app's display theme between light, dark, or "follow system". The
@@ -21,7 +20,7 @@ public class AppThemePreference @JvmOverloads constructor(
   attrs: AttributeSet? = null,
   @SuppressLint("RestrictedApi") defStyleAttr: Int = TypedArrayUtils.getAttr(
     context,
-    AndroidXR.attr.dialogPreferenceStyle,
+    androidx.preference.R.attr.dialogPreferenceStyle,
     android.R.attr.dialogPreferenceStyle,
   ),
   defStyleRes: Int = 0,

@@ -1,6 +1,4 @@
-@file:Suppress("UnstableApiUsage")
-
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import blueprint.recipes.androidComposeBlueprint
 
 plugins {
   id("module-android")
@@ -8,27 +6,19 @@ plugins {
   id("convention-style")
 }
 
-tasks.withType<KotlinCompile> {
-  kotlinOptions {
-    freeCompilerArgs += listOf(
-      "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
-      "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
-    )
-  }
-}
-
 android {
   namespace = "alakazam.android.ui.compose"
-
-  buildFeatures {
-    compose = true
-  }
-
-  composeOptions {
-    kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler
-      .get()
-  }
 }
+
+androidComposeBlueprint(
+  composeCompilerVersion = libs.versions.androidx.compose.compiler,
+  composeBomVersion = libs.versions.androidx.compose.bom,
+  composeLintVersion = libs.versions.androidx.compose.lint.slack,
+  experimentalApis = listOf(
+    "androidx.compose.foundation.ExperimentalFoundationApi",
+    "androidx.compose.material.ExperimentalMaterialApi",
+  ),
+)
 
 dependencies {
   api(libs.androidx.compose.material.core)
@@ -38,5 +28,4 @@ dependencies {
   implementation(libs.androidx.compose.ui.core)
   implementation(libs.androidx.compose.ui.graphics)
   implementation(libs.androidx.compose.ui.preview)
-  implementation(platform(libs.androidx.compose.bom))
 }

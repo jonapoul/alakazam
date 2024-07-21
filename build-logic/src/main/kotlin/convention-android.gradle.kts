@@ -1,72 +1,17 @@
 @file:Suppress("UnstableApiUsage")
 
+import blueprint.recipes.androidLibBlueprint
+import com.android.build.api.dsl.LibraryExtension
 import org.gradle.accessors.dm.LibrariesForLibs
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
-
-plugins {
-  id("com.android.library")
-  id("org.gradle.android.cache-fix")
-}
 
 val libs = the<LibrariesForLibs>()
 
-android {
-  compileSdk = libs.versions.sdk.compile.get().toInt()
+androidLibBlueprint()
 
-  defaultConfig {
-    minSdk = libs.versions.sdk.min.get().toInt()
-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    testInstrumentationRunnerArguments["disableAnalytics"] = "true"
-    multiDexEnabled = true
-  }
-
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-  }
-
-  extensions.findByType(KotlinJvmOptions::class)?.apply {
-    jvmTarget = "11"
-  }
-
-  lint {
-    checkReleaseBuilds = false
-    abortOnError = false
-    quiet = true
-  }
-
-  buildFeatures {
-    aidl = false
-    buildConfig = false
-    compose = false
-    prefab = false
-    renderScript = false
-    resValues = false
-    shaders = false
-    viewBinding = false
-  }
-
+extensions.configure<LibraryExtension> {
   packagingOptions {
-    jniLibs {
-      useLegacyPackaging = true
-    }
-
     resources {
       pickFirsts.add("MANIFEST.MF")
-      excludes.addAll(
-        listOf(
-          "META-INF/DEPENDENCIES",
-          "META-INF/LICENSE*",
-          "META-INF/NOTICE*",
-          "META-INF/ASL2.0",
-        )
-      )
-    }
-  }
-
-  testOptions {
-    unitTests {
-      isIncludeAndroidResources = true
     }
   }
 }

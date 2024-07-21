@@ -1,5 +1,6 @@
 plugins {
   id("module-kotlin")
+  id("convention-coroutines")
   id("convention-publish")
   id("convention-style")
   id("convention-test")

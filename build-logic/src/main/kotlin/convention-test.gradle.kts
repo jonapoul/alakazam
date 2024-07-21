@@ -1,75 +1,25 @@
-import kotlinx.kover.gradle.plugin.dsl.AggregationType
-import kotlinx.kover.gradle.plugin.dsl.MetricType
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import blueprint.recipes.TestVersions
+import blueprint.recipes.koverBlueprint
+import blueprint.recipes.testBlueprint
+import org.gradle.accessors.dm.LibrariesForLibs
 
-plugins {
-  id("org.jetbrains.kotlinx.kover")
-}
+val libs = the<LibrariesForLibs>()
 
-tasks.withType<Test> {
-  testLogging {
-    exceptionFormat = TestExceptionFormat.FULL
-    showCauses = true
-    showExceptions = true
-    showStackTraces = true
-    showStandardStreams = true
-  }
-}
+koverBlueprint()
 
-val isAndroid = project.isAndroid()
-val shouldRunOnCheck = project == rootProject
-
-koverReport {
-  filters {
-    includes { packages("alakazam") }
-    excludes {
-      classes(
-        "*Hilt_*",
-        "*_Factory*",
-      )
-      packages(
-        "*hilt_aggregated_deps.*",
-        "*.di.*",
-      )
-    }
-  }
-
-  defaults {
-    if (isAndroid) {
-      mergeWith("debug")
-    }
-
-    html {
-      onCheck = shouldRunOnCheck
-    }
-
-    log {
-      onCheck = shouldRunOnCheck
-      coverageUnits = MetricType.INSTRUCTION
-      aggregationForGroup = AggregationType.COVERED_PERCENTAGE
-    }
-
-    verify {
-      onCheck = shouldRunOnCheck
-      rule {
-        isEnabled = shouldRunOnCheck
-        bound {
-          minValue = 50
-          metric = MetricType.INSTRUCTION
-          aggregation = AggregationType.COVERED_PERCENTAGE
-        }
-      }
-    }
-  }
-
-  if (isAndroid) {
-    androidReports("debug") {
-      // No-op, all same config as default
-    }
-  }
-}
-
-rootProject.dependencies {
-  // Include this module in test coverage
-  kover(project)
-}
+testBlueprint(
+  versions = TestVersions(
+    alakazam = null,
+    androidxArch = libs.versions.androidx.arch.test,
+    androidxCoreKtx = null,
+    androidxJunit = libs.versions.androidx.junit,
+    androidxRules = libs.versions.androidx.rules,
+    androidxRunner = libs.versions.androidx.runner,
+    coroutines = libs.versions.kotlinx.coroutines,
+    junit = libs.versions.junit,
+    kotlin = libs.versions.kotlin,
+    mockk = libs.versions.mockk,
+    robolectric = libs.versions.robolectric,
+    turbine = libs.versions.turbine,
+  )
+)

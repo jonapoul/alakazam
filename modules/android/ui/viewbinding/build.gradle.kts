@@ -1,4 +1,4 @@
-@file:Suppress("UnstableApiUsage")
+import blueprint.recipes.androidResourcesBlueprint
 
 plugins {
   id("module-android")
@@ -8,11 +8,9 @@ plugins {
 
 android {
   namespace = "alakazam.android.ui.viewbinding"
-
-  buildFeatures {
-    viewBinding = true
-  }
 }
+
+androidResourcesBlueprint(viewBinding = true)
 
 dependencies {
   api(libs.androidx.appcompat)

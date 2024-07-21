@@ -1,3 +1,5 @@
+import blueprint.recipes.androidResourcesBlueprint
+
 plugins {
   id("module-android")
   id("convention-publish")
@@ -8,6 +10,8 @@ plugins {
 android {
   namespace = "alakazam.android.prefs.ui"
 }
+
+androidResourcesBlueprint(viewBinding = false)
 
 dependencies {
   api(libs.androidx.core.core)
