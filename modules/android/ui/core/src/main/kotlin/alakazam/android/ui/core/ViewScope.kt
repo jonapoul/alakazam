@@ -1,7 +1,6 @@
 package alakazam.android.ui.core
 
 import android.view.View
-import androidx.core.view.ViewCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -23,10 +22,6 @@ public val View.viewScope: CoroutineScope
 
     val scope = CoroutineScope(context = SupervisorJob() + Dispatchers.Main.immediate)
     setTag(KEY_VIEW_SCOPE, scope)
-
-    if (!ViewCompat.isAttachedToWindow(this)) {
-      Timber.w("Creating scope before ${javaClass.name} attaches to the window!")
-    }
 
     addOnAttachStateChangeListener(
       object : View.OnAttachStateChangeListener {
