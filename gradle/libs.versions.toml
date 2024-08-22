@@ -15,7 +15,7 @@ ktlint-cli = "1.3.0"
 ktlint-gradle = "12.1.0"
 licensee = "1.7.0"
 publish = "0.29.0-tak"
-spotless = "6.23.0"
+spotless = "6.25.0"
 versions = "0.49.0"
 
 # Libraries
@@ -62,7 +62,7 @@ androidx-runner = "1.5.2"
 androidx-test = "1.5.0"
 junit = "4.13.2"
 mockk = "1.13.7"
-robolectric = "4.12.1"
+robolectric = "4.13"
 turbine = "0.12.3"
 
 [libraries]

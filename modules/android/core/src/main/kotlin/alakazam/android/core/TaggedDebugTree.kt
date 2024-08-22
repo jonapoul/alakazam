@@ -17,7 +17,7 @@ public open class TaggedDebugTree(
     return if (includeLineNumber) {
       "(${element.fileName}:${element.lineNumber})$methodName"
     } else {
-      "${element.fileName}#${methodName}"
+      "${element.fileName}#$methodName"
     }
   }
 }
