@@ -1,17 +1,12 @@
 package alakazam.kotlin.core
 
-import alakazam.test.core.CoroutineRule
 import app.cash.turbine.test
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 
 internal class StateHolderTest {
-  @get:Rule
-  val coroutineRule = CoroutineRule()
-
   private class IntStateHolder : StateHolder<Int>(initialState = INITIAL_VALUE)
 
   private lateinit var stateHolder: IntStateHolder

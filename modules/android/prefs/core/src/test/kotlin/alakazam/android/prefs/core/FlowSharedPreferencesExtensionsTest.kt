@@ -1,16 +1,15 @@
 package alakazam.android.prefs.core
 
 import alakazam.kotlin.core.PrefPair
-import alakazam.test.core.CoroutineRule
+import alakazam.test.core.standardDispatcher
 import android.content.Context
 import androidx.preference.PreferenceManager
 import androidx.test.core.app.ApplicationProvider
 import app.cash.turbine.test
 import com.fredporciuncula.flow.preferences.FlowSharedPreferences
+import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.After
-import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -19,19 +18,7 @@ import kotlin.test.assertNull
 
 @RunWith(RobolectricTestRunner::class)
 internal class FlowSharedPreferencesExtensionsTest {
-  @get:Rule
-  val coroutineRule = CoroutineRule()
-
   private lateinit var flowPrefs: FlowSharedPreferences
-
-  @Before
-  fun before() {
-    val ctx = ApplicationProvider.getApplicationContext<Context>()
-    flowPrefs = FlowSharedPreferences(
-      sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx),
-      coroutineContext = coroutineRule.dispatcher,
-    )
-  }
 
   @After
   fun after() {
@@ -40,6 +27,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Int preference`() = runTest {
+    buildPrefs()
     val prefPair = PrefPair(key = "int_key", default = -1)
     val pref = flowPrefs.getInt(prefPair)
     pref.asFlow().test {
@@ -54,6 +42,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `String preference`() = runTest {
+    buildPrefs()
     val prefPair = PrefPair(key = "string_key", default = "default")
     val pref = flowPrefs.getString(prefPair)
     pref.asFlow().test {
@@ -68,6 +57,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Nullable string preference`() = runTest {
+    buildPrefs()
     val prefPair = PrefPair<String?>(key = "string_key", default = null)
     val pref = flowPrefs.getNullableString(prefPair)
     pref.asFlow().test {
@@ -82,6 +72,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Bool preference`() = runTest {
+    buildPrefs()
     val prefPair = PrefPair(key = "bool_key", default = false)
     val pref = flowPrefs.getBoolean(prefPair)
     pref.asFlow().test {
@@ -96,6 +87,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Float preference`() = runTest {
+    buildPrefs()
     val prefPair = PrefPair(key = "float_key", default = 1.23f)
     val pref = flowPrefs.getFloat(prefPair)
     pref.asFlow().test {
@@ -110,6 +102,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `String set preference`() = runTest {
+    buildPrefs()
     val default = setOf("a", "b", "c")
     val prefPair = PrefPair(key = "string_set_key", default = default)
     val pref = flowPrefs.getStringSet(prefPair)
@@ -129,8 +122,8 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Object preference`() = runTest {
-    val serializer = object :
-      SimpleStringSerializer<ExampleClass>(::ExampleClass) {}
+    buildPrefs()
+    val serializer = object : SimpleStringSerializer<ExampleClass>(::ExampleClass) {}
     val default = ExampleClass(data = "abc")
     val prefPair = PrefPair(key = "object_key", default = default)
     val pref = flowPrefs.getObject(prefPair, serializer)
@@ -150,6 +143,7 @@ internal class FlowSharedPreferencesExtensionsTest {
 
   @Test
   fun `Nullable object preference`() = runTest {
+    buildPrefs()
     val serializer = object : SimpleNullableStringSerializer<ExampleClass>(::ExampleClass) {}
     val prefPair = PrefPair<ExampleClass?>(key = "nullable_object_key", default = null)
     val pref = flowPrefs.getNullableObject(prefPair, serializer)
@@ -165,5 +159,13 @@ internal class FlowSharedPreferencesExtensionsTest {
       assertEquals(expected = null, actual = awaitItem())
       cancelAndIgnoreRemainingEvents()
     }
+  }
+
+  private fun TestScope.buildPrefs() {
+    val ctx = ApplicationProvider.getApplicationContext<Context>()
+    flowPrefs = FlowSharedPreferences(
+      sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx),
+      coroutineContext = standardDispatcher,
+    )
   }
 }
