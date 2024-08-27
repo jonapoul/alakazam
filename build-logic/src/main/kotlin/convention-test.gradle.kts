@@ -2,6 +2,7 @@ import blueprint.recipes.TestVersions
 import blueprint.recipes.koverBlueprint
 import blueprint.recipes.testBlueprint
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val libs = the<LibrariesForLibs>()
 
@@ -23,3 +24,9 @@ testBlueprint(
     turbine = libs.versions.turbine,
   )
 )
+
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    freeCompilerArgs += "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+  }
+}

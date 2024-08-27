@@ -1,6 +1,7 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
   id("module-kotlin")
-  id("convention-coroutines")
   id("convention-publish")
   id("convention-style")
   id("convention-test")
@@ -8,6 +9,12 @@ plugins {
 
 configurations.configureEach {
   exclude(group = "org.junit.jupiter")
+}
+
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    freeCompilerArgs += "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+  }
 }
 
 dependencies {
