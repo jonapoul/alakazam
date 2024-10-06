@@ -1,22 +1,13 @@
 package alakazam.kotlin.core
 
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
-@Suppress("UnnecessaryAbstractClass")
-public abstract class StateHolder<T>(private val initialState: T) {
-  private val mutableState = MutableStateFlow(initialState)
+public open class StateHolder<T>(
+  private val initialState: T,
+  private val mutableState: MutableStateFlow<T>,
+) : MutableStateFlow<T> by mutableState {
+  public constructor(initialState: T) : this(initialState, MutableStateFlow(initialState))
 
-  public open val state: StateFlow<T> = mutableState.asStateFlow()
-
-  public open fun set(state: T) {
-    mutableState.value = state
-  }
-
-  public open fun peek(): T = mutableState.value
-
-  public open fun reset() {
-    set(initialState)
-  }
+  public open fun reset(): Unit = update { initialState }
 }

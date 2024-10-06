@@ -1,6 +1,7 @@
 package alakazam.kotlin.core
 
 import app.cash.turbine.test
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
@@ -18,8 +19,8 @@ internal class StateHolderTest {
 
   @Test
   fun `Initial state`() = runTest {
-    assertEquals(expected = INITIAL_VALUE, actual = stateHolder.peek())
-    stateHolder.state.test {
+    assertEquals(expected = INITIAL_VALUE, actual = stateHolder.value)
+    stateHolder.test {
       assertEquals(expected = INITIAL_VALUE, actual = awaitItem())
       cancelAndIgnoreRemainingEvents()
     }
@@ -27,9 +28,9 @@ internal class StateHolderTest {
 
   @Test
   fun `Change state`() = runTest {
-    stateHolder.state.test {
+    stateHolder.test {
       assertEquals(expected = INITIAL_VALUE, actual = awaitItem())
-      stateHolder.set(456)
+      stateHolder.update { 456 }
       assertEquals(expected = 456, actual = awaitItem())
       stateHolder.reset()
       assertEquals(expected = INITIAL_VALUE, actual = awaitItem())
