@@ -1,4 +1,4 @@
-com.google.dagger:dagger:2.50
+com.google.dagger:dagger:2.47
 javax.inject:javax.inject:1
 org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22
 org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22

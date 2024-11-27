@@ -53,7 +53,7 @@ androidx.window:window:1.0.0
 com.fredporciuncula:flow-preferences:1.9.1
 com.google.code.findbugs:jsr305:3.0.2
 com.google.dagger:dagger-lint-aar:2.47
-com.google.dagger:dagger:2.50
+com.google.dagger:dagger:2.47
 com.google.dagger:hilt-android:2.47
 com.google.dagger:hilt-core:2.47
 com.google.guava:listenablefuture:1.0
