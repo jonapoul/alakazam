@@ -1,13 +1,11 @@
 name: CI
 
 on:
-  # Run on every commit in a PR, in any branch
   pull_request:
     branches:
 
   workflow_dispatch:
 
-  # Run when a commit has been made on the primary branch, which should be after a PR
   push:
     branches: [ "master" ]
 
@@ -34,9 +32,21 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          generate-job-summary: false
+          add-job-summary: on-failure
           dependency-graph: generate-and-submit
           cache-read-only: false
+          dependency-graph-continue-on-failure: false
+
+      - name: Initialise Gradle project
+        run: ./gradlew dependencies
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.10
+
+      - name: Verify Gradle dependencies
+        run: python3 ./scripts/check-dependencies.py
 
       - name: Check
         run: ./gradlew check
