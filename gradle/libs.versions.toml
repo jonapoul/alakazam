@@ -1,6 +1,6 @@
 [versions]
 # Plugins
-agp = "7.4.2"
+agp = "8.7.3"
 androidCacheFix = "3.0.1"
 blueprint = "0.9.0"
 dependencyAnalysis = "1.20.0"
