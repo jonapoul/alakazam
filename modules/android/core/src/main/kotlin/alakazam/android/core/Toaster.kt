@@ -1,13 +1,13 @@
 package alakazam.android.core
 
-import alakazam.kotlin.core.MainDispatcher
+import alakazam.kotlin.core.CoroutineContexts
 import android.content.Context
 import android.widget.Toast
 import androidx.annotation.StringRes
 import kotlinx.coroutines.withContext
 
 public class Toaster(
-  private val main: MainDispatcher,
+  private val contexts: CoroutineContexts,
   private val appContext: Context,
   private val resourcesContext: Context = appContext,
 ) {
@@ -28,7 +28,7 @@ public class Toaster(
    * - use [coToast] to do that for you
    */
   public suspend fun coToast(message: String, length: Int = Toast.LENGTH_LONG) {
-    withContext(main) { toast(message, length) }
+    withContext(contexts.main) { toast(message, length) }
   }
 
   public suspend fun coToast(

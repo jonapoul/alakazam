@@ -1,6 +1,6 @@
 package alakazam.di.hilt
 
-import alakazam.kotlin.core.IODispatcher
+import alakazam.kotlin.core.CoroutineContexts
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
@@ -22,6 +22,6 @@ public class ProvidesPreferencesModule {
   @Provides
   public fun flowPrefs(
     prefs: SharedPreferences,
-    io: IODispatcher,
-  ): FlowSharedPreferences = FlowSharedPreferences(prefs, io)
+    contexts: CoroutineContexts,
+  ): FlowSharedPreferences = FlowSharedPreferences(prefs, contexts.io)
 }

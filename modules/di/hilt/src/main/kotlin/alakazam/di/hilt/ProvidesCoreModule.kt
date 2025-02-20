@@ -3,7 +3,7 @@ package alakazam.di.hilt
 import alakazam.android.core.ActivityLauncher
 import alakazam.android.core.SnackbarFeed
 import alakazam.android.core.Toaster
-import alakazam.kotlin.core.MainDispatcher
+import alakazam.kotlin.core.CoroutineContexts
 import android.content.Context
 import dagger.Module
 import dagger.Provides
@@ -31,6 +31,6 @@ public class ProvidesCoreModule {
   @Provides
   public fun toaster(
     @ApplicationContext context: Context,
-    main: MainDispatcher,
-  ): Toaster = Toaster(main, appContext = context, resourcesContext = context)
+    contexts: CoroutineContexts,
+  ): Toaster = Toaster(contexts, appContext = context, resourcesContext = context)
 }
