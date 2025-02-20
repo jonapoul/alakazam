@@ -20,7 +20,7 @@ public enum class AppTheme(public val string: String, public val mode: Int) {
      * Persists and applies the given [AppTheme] to the app.
      */
     public fun set(theme: AppTheme) {
-      sharedPrefs?.edit { putString(Constants.PREF_KEY, theme.string) }
+      sharedPrefs?.edit { putString(AppThemePreference.PREF_KEY, theme.string) }
       AppCompatDelegate.setDefaultNightMode(theme.mode)
     }
 
@@ -30,7 +30,7 @@ public enum class AppTheme(public val string: String, public val mode: Int) {
     public fun setFromPrefs() {
       AppCompatDelegate.setDefaultNightMode(
         fromString(
-          sharedPrefs?.getString(Constants.PREF_PAIR.key, Constants.PREF_PAIR.default),
+          sharedPrefs?.getString(AppThemePreference.PREF_KEY, SYSTEM.string),
         ),
       )
     }
