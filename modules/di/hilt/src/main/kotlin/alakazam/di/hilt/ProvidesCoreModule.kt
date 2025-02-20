@@ -26,6 +26,7 @@ public class ProvidesCoreModule {
   public fun snackbarFeed(): SnackbarFeed = SnackbarFeed()
 
   @Provides
+  @Singleton
   public fun clock(): Clock = Clock.System
 
   @Provides
