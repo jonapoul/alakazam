@@ -13,7 +13,6 @@ android {
 dependencies {
   api(libs.androidx.hilt.android)
   api(libs.dagger.core)
-  api(libs.flowpreferences)
   api(libs.javax.inject)
   api(libs.kotlinx.coroutines.core)
   api(libs.kotlinx.datetime)

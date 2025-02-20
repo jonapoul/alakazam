@@ -6,5 +6,4 @@ public val alakazamModules: List<Module> = listOf(
   coroutineModule,
   coreModule,
   httpModule,
-  preferencesModule,
 )
