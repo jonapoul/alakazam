@@ -1,9 +1,5 @@
 plugins {
-  id("module-android")
-  id("convention-desugaring")
-  id("convention-publish")
-  id("convention-style")
-  id("convention-test")
+  alias(libs.plugins.module.android)
 }
 
 android {

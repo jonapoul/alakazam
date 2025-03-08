@@ -1,8 +1,6 @@
 plugins {
-  id("module-android")
-  id("convention-publish")
-  id("convention-style")
-  kotlin("kapt")
+  alias(libs.plugins.module.android)
+  alias(libs.plugins.ksp)
 }
 
 android {
@@ -15,5 +13,5 @@ dependencies {
   api(libs.kotlinx.coroutines.core)
   api(libs.kotlinx.datetime)
   api(projects.modules.kotlin.core)
-  kapt(libs.dagger.compiler)
+  ksp(libs.dagger.compiler)
 }

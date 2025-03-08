@@ -1,7 +1,7 @@
 package alakazam.di.hilt
 
-import alakazam.android.core.IBuildConfig
 import alakazam.android.http.OkHttpClientFactory
+import alakazam.kotlin.core.BuildConfig
 import android.content.Context
 import dagger.Module
 import dagger.Provides
@@ -17,9 +17,6 @@ public class ProvidesHttpModule {
   @Singleton
   public fun clientFactory(
     @ApplicationContext context: Context,
-    buildConfig: IBuildConfig,
-  ): OkHttpClientFactory = OkHttpClientFactory(
-    context,
-    buildConfig,
-  )
+    provider: BuildConfig.Provider,
+  ): OkHttpClientFactory = OkHttpClientFactory(context, provider)
 }

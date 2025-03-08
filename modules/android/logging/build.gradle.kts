@@ -1,7 +1,5 @@
 plugins {
-  id("module-android")
-  id("convention-publish")
-  id("convention-style")
+  alias(libs.plugins.module.android)
 }
 
 android {

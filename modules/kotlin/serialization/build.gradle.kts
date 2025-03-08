@@ -1,9 +1,6 @@
 plugins {
-  id("module-kotlin")
-  kotlin("plugin.serialization")
-  id("convention-publish")
-  id("convention-style")
-  id("convention-test")
+  alias(libs.plugins.module.kotlin)
+  alias(libs.plugins.kotlin.serialization)
 }
 
 dependencies {

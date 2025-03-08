@@ -1,10 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  id("module-kotlin")
-  id("convention-publish")
-  id("convention-style")
-  id("convention-test")
+  alias(libs.plugins.module.kotlin)
 }
 
 configurations.configureEach {
@@ -12,8 +9,8 @@ configurations.configureEach {
 }
 
 tasks.withType<KotlinCompile> {
-  kotlinOptions {
-    freeCompilerArgs += "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+  compilerOptions {
+    freeCompilerArgs.add("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
   }
 }
 

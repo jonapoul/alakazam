@@ -1,9 +1,7 @@
 plugins {
-  id("module-android")
-  id("convention-publish")
-  id("convention-style")
-  id("com.google.dagger.hilt.android")
-  kotlin("kapt")
+  alias(libs.plugins.module.android)
+  alias(libs.plugins.androidx.hilt)
+  alias(libs.plugins.ksp)
 }
 
 android {
@@ -25,5 +23,5 @@ dependencies {
   implementation(libs.test.androidx.core.core)
   implementation(libs.test.androidx.hilt)
   implementation(libs.test.androidx.navigation)
-  kapt(libs.androidx.hilt.compiler)
+  ksp(libs.androidx.hilt.compiler)
 }

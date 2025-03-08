@@ -1,6 +1,5 @@
-org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22
-org.jetbrains.kotlin:kotlin-stdlib:1.8.22
-org.jetbrains.kotlinx:kotlinx-serialization-bom:1.5.1
-org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.5.1
-org.jetbrains.kotlinx:kotlinx-serialization-core:1.5.1
+org.jetbrains.kotlin:kotlin-stdlib:2.1.10
+org.jetbrains.kotlinx:kotlinx-serialization-bom:1.8.0
+org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.8.0
+org.jetbrains.kotlinx:kotlinx-serialization-core:1.8.0
 org.jetbrains:annotations:13.0

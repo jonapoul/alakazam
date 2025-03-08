@@ -1,5 +1,10 @@
+// linter tells me I need to opt in, then the IDE tells me the opt in isn't being used?
+@file:OptIn(ExperimentalForInheritanceCoroutinesApi::class)
+@file:Suppress("UnnecessaryOptInAnnotation")
+
 package alakazam.kotlin.core
 
+import kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 

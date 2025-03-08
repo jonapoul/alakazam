@@ -11,6 +11,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import alakazam.android.ui.core.R as CoreR
 
 public fun Fragment.showLoadingDialog(
   @StringRes loadingText: Int = R.string.dialog_loading,
@@ -77,7 +78,7 @@ private fun showWarningDialogImpl(
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
 ): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Alakazam_AlertDialog_Warning)
   .setTitle(title)
-  .setIcon(R.drawable.ic_warning)
+  .setIcon(CoreR.drawable.ic_warning)
   .setMessage(message)
   .setSimplePositiveButton()
   .extraConfig()
@@ -90,7 +91,7 @@ private fun showCautionDialogImpl(
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
 ): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Alakazam_AlertDialog_Caution)
   .setTitle(title)
-  .setIcon(R.drawable.ic_caution)
+  .setIcon(CoreR.drawable.ic_caution)
   .setMessage(message)
   .setSimplePositiveButton()
   .extraConfig()
@@ -103,7 +104,7 @@ private fun showSuccessDialogImpl(
   extraConfig: MaterialAlertDialogBuilder.() -> MaterialAlertDialogBuilder,
 ): AlertDialog = MaterialAlertDialogBuilder(context, R.style.Theme_Alakazam_AlertDialog_Success)
   .setTitle(title)
-  .setIcon(R.drawable.ic_check)
+  .setIcon(CoreR.drawable.ic_check)
   .setMessage(message)
   .setSimplePositiveButton()
   .extraConfig()

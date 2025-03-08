@@ -1,43 +1,28 @@
-@file:Suppress("DSL_SCOPE_VIOLATION")
-
-buildscript {
-  repositories {
-    mavenCentral()
-    google()
-    gradlePluginPortal()
-    maven { url = uri("https://jitpack.io") }
-    mavenLocal()
-  }
-  dependencies {
-    classpath(libs.plugin.publish)
-  }
-}
-
 plugins {
   alias(libs.plugins.agp) apply false
   alias(libs.plugins.androidCacheFix) apply false
   alias(libs.plugins.androidx.hilt) apply false
   alias(libs.plugins.androidx.navigation) apply false
-  alias(libs.plugins.dependencyAnalysis)
-  alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.detekt) apply false
-  alias(libs.plugins.doctor)
   alias(libs.plugins.dokka) apply false
   alias(libs.plugins.kotlin.android) apply false
+  alias(libs.plugins.kotlin.compose) apply false
   alias(libs.plugins.kotlin.serialization) apply false
-  alias(libs.plugins.kover)
   alias(libs.plugins.ksp) apply false
   alias(libs.plugins.ktlint) apply false
   alias(libs.plugins.licensee) apply false
+  alias(libs.plugins.publish) apply false
   alias(libs.plugins.spotless) apply false
+
+  alias(libs.plugins.dependencyAnalysis)
+  alias(libs.plugins.dependencyGuard)
+  alias(libs.plugins.doctor)
+  alias(libs.plugins.kover)
   alias(libs.plugins.versions)
 }
 
-// Dependency versions config
 tasks.dependencyUpdates.configure {
-  rejectVersionIf {
-    !candidate.version.isStable() && currentVersion.isStable()
-  }
+  rejectVersionIf { !candidate.version.isStable() && currentVersion.isStable() }
 }
 
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
@@ -51,27 +36,35 @@ doctor {
 }
 
 dependencyAnalysis {
-  // See https://github.com/autonomousapps/dependency-analysis-gradle-plugin/wiki/Customizing-plugin-behavior
-  issues {
-    all {
-      ignoreKtx(ignore = true)
+  structure {
+    ignoreKtx(ignore = true)
+    bundle(name = "kotlin") { includeGroup("org.jetbrains.kotlin:*") }
+    bundle(name = "modules") { include("^:.*\$".toRegex()) }
+    bundle(name = "okhttp") { includeGroup(group = "com.squareup.okhttp3") }
+    bundle(name = "viewModel") { include(regex = "androidx.lifecycle:lifecycle-viewmodel.*".toRegex()) }
+  }
 
-      onAny {
-        // strict mode!
-        severity(value = "fail")
+  reporting {
+    printBuildHealth(true)
+    onlyOnFailure(true)
+  }
 
-        // https://github.com/autonomousapps/dependency-analysis-gradle-plugin/issues/884
-        exclude("() -> java.io.File?")
-      }
-
-      onRuntimeOnly { exclude("com.github.tony19:logback-android", "androidx.compose.ui:ui-tooling") }
-      onCompileOnly { exclude("androidx.annotation:annotation") }
-      onUsedTransitiveDependencies { exclude("com.google.dagger:dagger-compiler") }
+  abi {
+    exclusions {
+      ignoreInternalPackages()
+      ignoreGeneratedCode()
     }
   }
-  dependencies {
-    bundle("kotlin-stdlib") {
-      includeGroup("org.jetbrains.kotlin")
+
+  issues {
+    all {
+      onAny { severity(value = "fail") }
+
+      onRuntimeOnly { severity(value = "ignore") }
+
+      ignoreSourceSet(
+        "androidTest",
+      )
     }
   }
 }

@@ -7,7 +7,6 @@ pluginManagement {
     gradlePluginPortal()
     mavenCentral()
     google()
-    maven { url = uri("https://jitpack.io") }
     mavenLocal()
   }
 }
@@ -16,7 +15,6 @@ dependencyResolutionManagement {
   repositories {
     mavenCentral()
     google()
-    maven { url = uri("https://jitpack.io") }
     mavenLocal()
   }
 }
@@ -49,8 +47,5 @@ include(":modules:testing:core")
 include(":modules:testing:db")
 include(":modules:testing:hilt")
 
-// https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
-// https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:stable
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

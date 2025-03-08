@@ -1,9 +1,7 @@
 import blueprint.recipes.androidComposeBlueprint
 
 plugins {
-  id("module-android")
-  id("convention-publish")
-  id("convention-style")
+  alias(libs.plugins.module.android)
 }
 
 android {
@@ -11,7 +9,6 @@ android {
 }
 
 androidComposeBlueprint(
-  composeCompilerVersion = libs.versions.androidx.compose.compiler,
   composeBomVersion = libs.versions.androidx.compose.bom,
   composeLintVersion = libs.versions.androidx.compose.lint.slack,
   experimentalApis = listOf(

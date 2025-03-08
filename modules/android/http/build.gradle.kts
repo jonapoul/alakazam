@@ -1,10 +1,6 @@
 plugins {
-  id("module-android")
-  kotlin("plugin.serialization")
-  id("convention-desugaring")
-  id("convention-publish")
-  id("convention-style")
-  id("convention-test")
+  alias(libs.plugins.module.android)
+  alias(libs.plugins.kotlin.serialization)
 }
 
 android {

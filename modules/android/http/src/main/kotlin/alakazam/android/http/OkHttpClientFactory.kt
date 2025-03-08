@@ -1,6 +1,6 @@
 package alakazam.android.http
 
-import alakazam.android.core.IBuildConfig
+import alakazam.kotlin.core.BuildConfig
 import alakazam.kotlin.core.ifTrue
 import android.content.Context
 import okhttp3.Cache
@@ -17,14 +17,14 @@ import kotlin.time.Duration.Companion.seconds
 
 public open class OkHttpClientFactory(
   private val context: Context,
-  private val buildConfig: IBuildConfig,
+  private val buildConfig: BuildConfig.Provider,
 ) {
   public open fun buildClient(
     readWriteTimeout: Duration = DEFAULT_TIMEOUT,
     connectTimeout: Duration = DEFAULT_TIMEOUT,
   ): OkHttpClient = OkHttpClient
     .Builder()
-    .ifTrue(buildConfig.debug) { addInterceptor(buildInterceptor()) }
+    .ifTrue(buildConfig.get().debug) { addInterceptor(buildInterceptor()) }
     .readTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
     .writeTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
     .connectTimeout(connectTimeout.inWholeSeconds, TimeUnit.SECONDS)
