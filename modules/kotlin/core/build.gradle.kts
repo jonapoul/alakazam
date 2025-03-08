@@ -7,6 +7,7 @@ plugins {
 
 dependencies {
   api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.datetime)
   testImplementation(libs.test.junit)
   testImplementation(libs.test.kotlin.core)
   testImplementation(libs.test.kotlin.coroutines)

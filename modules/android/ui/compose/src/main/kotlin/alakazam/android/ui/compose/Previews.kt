@@ -1,5 +1,8 @@
+@file:SuppressLint("ComposePreviewNaming", "ComposeModifierMissing")
+
 package alakazam.android.ui.compose
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
@@ -35,5 +38,3 @@ public fun PreviewSurface(
     }
   }
 }
-
-public val EmptyCallback: () -> Unit = {}
