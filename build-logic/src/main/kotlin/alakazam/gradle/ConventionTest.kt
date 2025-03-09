@@ -4,15 +4,20 @@ import blueprint.core.getVersion
 import blueprint.core.libs
 import blueprint.recipes.TestVersions
 import blueprint.recipes.koverBlueprint
+import blueprint.recipes.powerAssertBlueprint
 import blueprint.recipes.testBlueprint
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 class ConventionTest : Plugin<Project> {
   override fun apply(target: Project): Unit = with(target) {
     koverBlueprint()
+
+    powerAssertBlueprint()
 
     testBlueprint(
       versions = TestVersions(

@@ -6,6 +6,7 @@ import blueprint.recipes.DetektAll
 import blueprint.recipes.detektBlueprint
 import blueprint.recipes.ktlintBlueprint
 import blueprint.recipes.licenseeBlueprint
+import blueprint.recipes.sortDependenciesBlueprint
 import blueprint.recipes.spotlessBlueprint
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -28,5 +29,7 @@ class ConventionStyle : Plugin<Project> {
         "https://opensource.org/license/mit", // slf4j
       ),
     )
+
+    sortDependenciesBlueprint()
   }
 }

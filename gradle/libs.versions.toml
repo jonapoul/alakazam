@@ -5,6 +5,7 @@ androidCacheFix = "3.0.1"
 blueprint = "1.0.0"
 dependencyAnalysis = "2.10.1"
 dependencyGuard = "0.5.0"
+dependencySort = "0.14"
 detekt = "1.23.8"
 doctor = "0.10.0"
 dokka = "2.0.0"
@@ -156,6 +157,7 @@ androidx-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" 
 androidx-navigation = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
+dependencySort = { id = "com.squareup.sort-dependencies", version.ref = "dependencySort" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
@@ -166,6 +168,7 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
+powerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }
