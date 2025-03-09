@@ -50,7 +50,6 @@ retrofit = "2.11.0"
 retrofit-serialization = "1.0.0"
 slf4j = "2.0.17"
 sqldelight = "2.0.2"
-timber = "5.0.1"
 
 # Testing
 androidx-arch-test = "2.2.0"
@@ -123,6 +122,7 @@ dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
 javax-inject = { module = "javax.inject:javax.inject", version.ref = "inject" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
@@ -137,7 +137,6 @@ slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 sqldelight-driver-sqlite = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
 sqldelight-primitive = { module = "app.cash.sqldelight:primitive-adapters", version.ref = "sqldelight" }
 sqldelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqldelight" }
-timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 # Testing
 test-androidx-core-core = { module = "androidx.test:core", version.ref = "androidx-test" }

@@ -19,6 +19,7 @@ tasks.withType<KotlinCompile> {
 
 kotlin {
   commonMainDependencies {
+    api(libs.kotlin.stdlib)
     implementation(libs.androidx.room.common)
     implementation(libs.kotlinx.datetime)
   }

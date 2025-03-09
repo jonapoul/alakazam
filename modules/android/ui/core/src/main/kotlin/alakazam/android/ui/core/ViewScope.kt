@@ -1,11 +1,11 @@
 package alakazam.android.ui.core
 
+import android.util.Log
 import android.view.View
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import timber.log.Timber
 
 private val KEY_VIEW_SCOPE = R.id.view_scope
 
@@ -16,7 +16,7 @@ public val View.viewScope: CoroutineScope
       if (it is CoroutineScope) {
         return it
       } else {
-        Timber.e("Why is the value of KEY_VIEW_SCOPE an instance of ${it.javaClass.name}?")
+        Log.e("ViewScope", "Why is the value of KEY_VIEW_SCOPE an instance of ${it.javaClass.name}?")
       }
     }
 

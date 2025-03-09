@@ -8,7 +8,6 @@ android {
 
 dependencies {
   api(libs.kotlinx.coroutines.core)
-  api(libs.timber)
   api(projects.modules.kotlin.core)
   implementation(libs.androidx.annotation)
   implementation(libs.androidx.core.ktx)

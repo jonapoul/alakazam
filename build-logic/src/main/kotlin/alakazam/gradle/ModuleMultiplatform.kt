@@ -3,7 +3,6 @@ package alakazam.gradle
 import blueprint.recipes.ideaBlueprint
 import blueprint.recipes.kotlinBaseBlueprint
 import blueprint.recipes.kotlinMultiplatformBlueprint
-import com.autonomousapps.DependencyAnalysisPlugin
 import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPlugin
 import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPluginExtension
 import com.vanniktech.maven.publish.MavenPublishPlugin
@@ -22,7 +21,7 @@ class ModuleMultiplatform : Plugin<Project> {
       apply(DokkaJavadocPlugin::class)
       apply(ConventionStyle::class)
       apply(ConventionTest::class)
-      apply(DependencyAnalysisPlugin::class.java)
+//      apply(DependencyAnalysisPlugin::class.java) // doesn't work
       apply(DependencyGuardPlugin::class)
     }
 

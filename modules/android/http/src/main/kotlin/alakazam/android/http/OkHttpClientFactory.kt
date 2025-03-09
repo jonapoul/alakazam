@@ -1,15 +1,12 @@
 package alakazam.android.http
 
 import alakazam.kotlin.core.BuildConfig
-import alakazam.kotlin.core.ifTrue
 import android.content.Context
 import okhttp3.Cache
 import okhttp3.ConnectionPool
 import okhttp3.Dispatcher
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import timber.log.Timber
 import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.time.Duration
@@ -18,13 +15,14 @@ import kotlin.time.Duration.Companion.seconds
 public open class OkHttpClientFactory(
   private val context: Context,
   private val buildConfig: BuildConfig.Provider,
+  private val loggingInterceptor: (() -> HttpLoggingInterceptor)? = null,
 ) {
   public open fun buildClient(
     readWriteTimeout: Duration = DEFAULT_TIMEOUT,
     connectTimeout: Duration = DEFAULT_TIMEOUT,
   ): OkHttpClient = OkHttpClient
     .Builder()
-    .ifTrue(buildConfig.get().debug) { addInterceptor(buildInterceptor()) }
+    .maybeAddInterceptor()
     .readTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
     .writeTimeout(readWriteTimeout.inWholeSeconds, TimeUnit.SECONDS)
     .connectTimeout(connectTimeout.inWholeSeconds, TimeUnit.SECONDS)
@@ -46,8 +44,12 @@ public open class OkHttpClientFactory(
     maxRequestsPerHost = MAX_REQUESTS_PER_HOST
   }
 
-  private fun buildInterceptor(): Interceptor = HttpLoggingInterceptor { message -> Timber.v(message) }
-    .also { it.level = HttpLoggingInterceptor.Level.BODY }
+  private fun OkHttpClient.Builder.maybeAddInterceptor(): OkHttpClient.Builder {
+    if (buildConfig.get().debug && loggingInterceptor != null) {
+      addInterceptor(loggingInterceptor.invoke())
+    }
+    return this
+  }
 
   private companion object {
     val DEFAULT_TIMEOUT = 5.seconds

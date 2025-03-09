@@ -24,13 +24,10 @@ dependencies {
   implementation(libs.kotlinx.datetime)
   implementation(libs.kotlinx.serialization.core)
   implementation(libs.kotlinx.serialization.json)
-  implementation(libs.sqldelight.driver.sqlite)
-  implementation(libs.sqldelight.primitive)
   implementation(libs.sqldelight.runtime)
   implementation(projects.modules.db.sqldelight)
   implementation(projects.modules.kotlin.core)
   implementation(projects.modules.testing.core)
-  implementation(projects.modules.testing.sqldelight)
   testImplementation(libs.test.kotlin.common)
   testImplementation(libs.test.kotlin.junit)
 }

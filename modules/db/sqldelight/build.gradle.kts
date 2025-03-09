@@ -11,6 +11,7 @@ android {
 
 kotlin {
   commonMainDependencies {
+    api(libs.kotlin.stdlib)
     api(libs.sqldelight.runtime)
     compileOnly(libs.kotlinx.datetime)
     compileOnly(libs.kotlinx.serialization.core)

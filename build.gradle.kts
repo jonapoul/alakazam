@@ -41,10 +41,9 @@ doctor {
 dependencyAnalysis {
   structure {
     ignoreKtx(ignore = true)
-    bundle(name = "kotlin") { includeGroup("org.jetbrains.kotlin:*") }
+    bundle(name = "kotlin") { includeGroup("org.jetbrains.kotlin") }
     bundle(name = "modules") { include("^:.*\$".toRegex()) }
     bundle(name = "okhttp") { includeGroup(group = "com.squareup.okhttp3") }
-    bundle(name = "viewModel") { include(regex = "androidx.lifecycle:lifecycle-viewmodel.*".toRegex()) }
   }
 
   reporting {
@@ -62,12 +61,7 @@ dependencyAnalysis {
   issues {
     all {
       onAny { severity(value = "fail") }
-
       onRuntimeOnly { severity(value = "ignore") }
-
-      ignoreSourceSet(
-        "androidTest",
-      )
     }
   }
 }
