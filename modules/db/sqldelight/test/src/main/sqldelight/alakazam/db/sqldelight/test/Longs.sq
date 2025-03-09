@@ -1,0 +1,15 @@
+import alakazam.db.sqldelight.TestEnum;
+import alakazam.db.sqldelight.TestId;
+import kotlinx.datetime.Instant;
+
+CREATE TABLE IF NOT EXISTS longs(
+  id INTEGER AS TestId PRIMARY KEY NOT NULL,
+  instant INTEGER AS Instant NOT NULL DEFAULT 456,
+  enum INTEGER AS TestEnum NOT NULL DEFAULT 0
+);
+
+insert:
+  INSERT INTO longs(id, instant, enum) VALUES(?,?,?);
+
+getFirst:
+  SELECT * FROM longs LIMIT 1;

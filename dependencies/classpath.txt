@@ -5,6 +5,13 @@ androidx.navigation:navigation-safe-args-generator:2.8.8
 androidx.navigation:navigation-safe-args-gradle-plugin:2.8.8
 app.cash.licensee:app.cash.licensee.gradle.plugin:1.12.0
 app.cash.licensee:licensee-gradle-plugin:1.12.0
+app.cash.sqldelight:app.cash.sqldelight.gradle.plugin:2.0.2
+app.cash.sqldelight:core:2.0.2
+app.cash.sqldelight:dialect-api:2.0.2
+app.cash.sqldelight:gradle-plugin:2.0.2
+app.cash.sqldelight:migrations:2.0.2
+com.alecstrong.sql.psi:core:0.4.9
+com.alecstrong.sql.psi:environment:0.4.9
 com.android.databinding:baseLibrary:8.9.0
 com.android.library:com.android.library.gradle.plugin:8.9.0
 com.android.tools.analytics-library:crash:31.9.0
@@ -114,10 +121,12 @@ com.squareup.okio:okio:3.9.0
 com.squareup.retrofit2:converter-moshi:2.11.0
 com.squareup.retrofit2:converter-scalars:2.11.0
 com.squareup.retrofit2:retrofit:2.11.0
+com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin:0.14
 com.squareup:javapoet:1.13.0
 com.squareup:javawriter:2.5.0
-com.squareup:kotlinpoet-jvm:1.15.1
-com.squareup:kotlinpoet:1.15.1
+com.squareup:kotlinpoet-jvm:1.16.0
+com.squareup:kotlinpoet:1.16.0
+com.squareup:sort-dependencies-gradle-plugin:0.14
 com.sun.activation:javax.activation:1.2.0
 com.sun.istack:istack-commons-runtime:3.0.8
 com.sun.xml.fastinfoset:FastInfoset:1.2.16
@@ -171,6 +180,7 @@ org.apache.maven:maven-artifact:3.9.9
 org.apache.maven:maven-builder-support:3.9.9
 org.apache.maven:maven-model-builder:3.9.9
 org.apache.maven:maven-model:3.9.9
+org.apfloat:apfloat:1.10.1
 org.bitbucket.b_c:jose4j:0.9.5
 org.bouncycastle:bcpkix-jdk18on:1.79
 org.bouncycastle:bcprov-jdk18on:1.79
@@ -196,6 +206,7 @@ org.jetbrains.intellij.deps:intellij-coverage-agent:1.0.765
 org.jetbrains.intellij.deps:intellij-coverage-reporter:1.0.765
 org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:2.1.10
 org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.1.10
+org.jetbrains.kotlin.plugin.power-assert:org.jetbrains.kotlin.plugin.power-assert.gradle.plugin:2.1.10
 org.jetbrains.kotlin.plugin.serialization:org.jetbrains.kotlin.plugin.serialization.gradle.plugin:2.1.10
 org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.10
 org.jetbrains.kotlin:kotlin-bom:2.0.21
@@ -213,6 +224,7 @@ org.jetbrains.kotlin:kotlin-gradle-plugins-bom:2.1.10
 org.jetbrains.kotlin:kotlin-klib-commonizer-api:2.1.10
 org.jetbrains.kotlin:kotlin-metadata-jvm:2.0.21
 org.jetbrains.kotlin:kotlin-native-utils:2.1.10
+org.jetbrains.kotlin:kotlin-power-assert:2.1.10
 org.jetbrains.kotlin:kotlin-reflect:2.0.21
 org.jetbrains.kotlin:kotlin-serialization:2.1.10
 org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.0
@@ -235,6 +247,8 @@ org.jetbrains.kotlinx:kover-features-jvm:0.9.1
 org.jetbrains.kotlinx:kover-gradle-plugin:0.9.1
 org.jetbrains.kotlinx:kover-jvm-agent:0.9.1
 org.jetbrains:annotations:13.0
+org.jgrapht:jgrapht-core:1.5.2
+org.jheaps:jheaps:0.14
 org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin:12.2.0
 org.jlleitschuh.gradle:ktlint-gradle:12.2.0
 org.jvnet.staxex:stax-ex:1.8.1

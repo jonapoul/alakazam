@@ -26,6 +26,8 @@ gradlePlugin {
   plugins {
     create(id = "alakazam.module.android", impl = "alakazam.gradle.ModuleAndroid")
     create(id = "alakazam.module.kotlin", impl = "alakazam.gradle.ModuleKotlin")
+    create(id = "alakazam.module.kotlin.nopublish", impl = "alakazam.gradle.ModuleKotlinNoPublish")
+    create(id = "alakazam.module.multiplatform", impl = "alakazam.gradle.ModuleMultiplatform")
   }
 }
 

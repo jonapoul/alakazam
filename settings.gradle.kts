@@ -3,18 +3,31 @@
 rootProject.name = "alakazam"
 
 pluginManagement {
+  includeBuild("build-logic")
   repositories {
-    gradlePluginPortal()
+    google {
+      mavenContent {
+        includeGroupByRegex(".*android.*")
+        includeGroupByRegex(".*google.*")
+      }
+    }
     mavenCentral()
-    google()
+    gradlePluginPortal()
+    maven("https://oss.sonatype.org/content/repositories/snapshots")
     mavenLocal()
   }
 }
 
 dependencyResolutionManagement {
   repositories {
+    google {
+      mavenContent {
+        includeGroupByRegex(".*android.*")
+        includeGroupByRegex(".*google.*")
+      }
+    }
     mavenCentral()
-    google()
+    maven("https://jitpack.io")
     mavenLocal()
   }
 }
@@ -27,7 +40,6 @@ include(":modules:kotlin:serialization")
 include(":modules:kotlin:time")
 
 include(":modules:android:core")
-include(":modules:android:db")
 include(":modules:android:http")
 include(":modules:android:logging")
 include(":modules:android:navigation")
@@ -38,14 +50,19 @@ include(":modules:android:ui:core")
 include(":modules:android:ui:material")
 include(":modules:android:ui:viewbinding")
 
+include(":modules:db:room")
+include(":modules:db:sqldelight")
+include(":modules:db:sqldelight:test")
+
 include(":modules:di:dagger")
 include(":modules:di:hilt")
 include(":modules:di:koin")
 
 include(":modules:testing:android")
 include(":modules:testing:core")
-include(":modules:testing:db")
 include(":modules:testing:hilt")
+include(":modules:testing:room")
+include(":modules:testing:sqldelight")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

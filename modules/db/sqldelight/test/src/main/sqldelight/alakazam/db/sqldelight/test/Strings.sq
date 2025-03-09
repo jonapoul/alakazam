@@ -1,0 +1,23 @@
+import alakazam.db.sqldelight.MyJsonClass;
+import alakazam.db.sqldelight.TestEnum;
+import kotlin.uuid.Uuid;
+import kotlinx.datetime.Instant;
+import kotlinx.serialization.json.JsonObject;
+
+CREATE TABLE IF NOT EXISTS strings(
+  id TEXT AS Uuid PRIMARY KEY NOT NULL,
+  instant TEXT AS Instant NOT NULL,
+  nullableInstant TEXT AS Instant,
+  enum TEXT AS TestEnum,
+  jsonObject TEXT AS JsonObject NOT NULL,
+  nullableJsonObject TEXT AS JsonObject,
+  deserializedJsonObject TEXT AS MyJsonClass NOT NULL
+);
+
+insert:
+  INSERT INTO
+    strings(id, instant, nullableInstant, enum, jsonObject, nullableJsonObject, deserializedJsonObject)
+    VALUES(?,?,?,?,?,?,?);
+
+getFirst:
+  SELECT * FROM strings LIMIT 1;

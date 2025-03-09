@@ -57,7 +57,7 @@ dependencies {
 
   // Testing libraries
   testImplementation("dev.jonpoulton.alakazam:testing-core:{version}")
-  testImplementation("dev.jonpoulton.alakazam:testing-db:{version}")
+  testImplementation("dev.jonpoulton.alakazam:testing-room:{version}")
   androidTestImplementation("dev.jonpoulton.alakazam:testing-android:{version}")
   androidTestImplementation("dev.jonpoulton.alakazam:testing-hilt:{version}")
 }

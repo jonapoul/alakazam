@@ -68,3 +68,15 @@ public fun <T : Comparable<T>> T.assertLessThan(other: T) {
     throw AssertionError("$this should be less than $other")
   }
 }
+
+public fun assertEmpty(c: Collection<*>) {
+  if (!c.isEmpty()) {
+    throw AssertionError("$c should be empty, actually had $c.size elements: ${c.joinToString()}")
+  }
+}
+
+public fun assertNotEmpty(c: Collection<*>) {
+  if (c.isEmpty()) {
+    throw AssertionError("$c should have at least one item, actually empty")
+  }
+}
