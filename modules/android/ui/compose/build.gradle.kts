@@ -18,6 +18,7 @@ androidComposeBlueprint(
 )
 
 dependencies {
+  api(libs.androidx.compose.foundation.layout)
   api(libs.androidx.compose.material.core)
   api(libs.androidx.compose.runtime)
   debugImplementation(libs.androidx.compose.ui.tooling)
@@ -25,4 +26,5 @@ dependencies {
   implementation(libs.androidx.compose.ui.core)
   implementation(libs.androidx.compose.ui.graphics)
   implementation(libs.androidx.compose.ui.preview)
+  implementation(libs.androidx.compose.ui.unit)
 }

@@ -1,10 +1,6 @@
 plugins {
-  alias(libs.plugins.module.android)
+  alias(libs.plugins.module.kotlin)
   alias(libs.plugins.ksp)
-}
-
-android {
-  namespace = "alakazam.di.dagger"
 }
 
 dependencies {

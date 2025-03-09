@@ -14,6 +14,7 @@ dependencies {
   api(libs.androidx.appcompat)
   api(libs.androidx.core.core)
   api(libs.androidx.fragment.core)
+  implementation(libs.androidx.annotation)
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.common)
   implementation(libs.androidx.lifecycle.viewmodel.core)

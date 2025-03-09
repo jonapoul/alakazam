@@ -15,6 +15,7 @@ dependencies {
   api(libs.androidx.lifecycle.viewmodel.core)
   api(libs.test.androidx.runner)
   implementation(libs.androidx.activity.core)
+  implementation(libs.androidx.annotation)
   implementation(libs.androidx.core.core)
   implementation(libs.androidx.fragment.core)
   implementation(libs.androidx.lifecycle.common)

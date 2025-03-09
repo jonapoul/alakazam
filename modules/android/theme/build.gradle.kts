@@ -15,5 +15,4 @@ dependencies {
   implementation(libs.androidx.core.core)
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.preference)
-  implementation(projects.modules.kotlin.core)
 }

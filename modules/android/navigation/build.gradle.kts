@@ -13,5 +13,6 @@ dependencies {
   api(libs.androidx.fragment.core)
   api(libs.androidx.navigation.common)
   api(libs.androidx.navigation.runtime)
+  implementation(libs.androidx.annotation)
   implementation(libs.androidx.navigation.fragment.ktx)
 }

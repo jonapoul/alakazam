@@ -12,11 +12,9 @@ dependencies {
   api(libs.okhttp.core)
   api(libs.retrofit.core)
   api(projects.modules.android.core)
-  implementation(libs.androidx.lifecycle.common)
-  implementation(libs.androidx.lifecycle.runtime)
+  api(projects.modules.kotlin.core)
   implementation(libs.kotlinx.serialization.json)
   implementation(libs.okhttp.logging)
   implementation(libs.retrofit.serialization)
   implementation(libs.timber)
-  implementation(projects.modules.kotlin.core)
 }

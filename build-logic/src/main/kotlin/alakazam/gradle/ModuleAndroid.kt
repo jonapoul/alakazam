@@ -1,6 +1,7 @@
 package alakazam.gradle
 
 import blueprint.recipes.ideaBlueprint
+import com.autonomousapps.DependencyAnalysisPlugin
 import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPlugin
 import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPluginExtension
 import org.gradle.api.Plugin
@@ -18,6 +19,7 @@ class ModuleAndroid : Plugin<Project> {
       apply(ConventionPublish::class)
       apply(ConventionStyle::class)
       apply(ConventionTest::class)
+      apply(DependencyAnalysisPlugin::class.java)
       apply(DependencyGuardPlugin::class)
     }
 
