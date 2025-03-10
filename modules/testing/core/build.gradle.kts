@@ -1,4 +1,5 @@
 import blueprint.core.commonMainDependencies
+import blueprint.core.commonTestDependencies
 
 plugins {
   alias(libs.plugins.module.multiplatform)
@@ -26,5 +27,12 @@ kotlin {
     compileOnly(libs.kotlinx.datetime)
     compileOnly(libs.test.turbine)
     compileOnly(projects.modules.kotlin.core)
+  }
+
+  commonTestDependencies {
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.datetime)
+    implementation(libs.test.turbine)
+    implementation(projects.modules.kotlin.core)
   }
 }
