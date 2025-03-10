@@ -2,19 +2,17 @@ package alakazam.kotlin.json
 
 import alakazam.kotlin.serialization.SimpleSerializer
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.junit.Test
 import kotlin.test.assertEquals
 
 internal class SimpleSerializerTest {
   @Serializable(with = FooSerializer::class)
-  data class Foo(val data: String) {
+  private data class Foo(val data: String) {
     override fun toString(): String = data
   }
 
-  object FooSerializer : SimpleSerializer<Foo>(serialName = "Foo", constructor = ::Foo)
+  private object FooSerializer : SimpleSerializer<Foo>(serialName = "Foo", constructor = ::Foo)
 
   @Test
   fun `Basic serializer`() {

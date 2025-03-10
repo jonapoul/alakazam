@@ -1,14 +1,26 @@
+import blueprint.core.commonMainDependencies
+import blueprint.core.commonTestDependencies
+
 plugins {
-  alias(libs.plugins.module.kotlin)
+  alias(libs.plugins.module.multiplatform)
 }
 
-dependencies {
-  api(libs.kotlinx.coroutines.core)
-  api(libs.kotlinx.datetime)
-  testImplementation(libs.test.junit)
-  testImplementation(libs.test.kotlin.core)
-  testImplementation(libs.test.kotlin.coroutines)
-  testImplementation(libs.test.turbine)
-  testImplementation(projects.modules.kotlin.core)
-  testImplementation(projects.modules.testing.core)
+android {
+  namespace = "alakazam.kotlin.core"
+}
+
+kotlin {
+  commonMainDependencies {
+    api(libs.kotlinx.coroutines.core)
+    api(libs.kotlinx.datetime)
+  }
+
+  commonTestDependencies {
+    implementation(libs.test.junit)
+    implementation(libs.test.kotlin.core)
+    implementation(libs.test.kotlin.coroutines)
+    implementation(libs.test.turbine)
+    implementation(projects.modules.kotlin.core)
+    implementation(projects.modules.testing.core)
+  }
 }

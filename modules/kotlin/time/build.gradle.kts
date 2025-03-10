@@ -1,9 +1,22 @@
+import blueprint.core.commonMainDependencies
+import blueprint.core.commonTestDependencies
+
 plugins {
-  alias(libs.plugins.module.kotlin)
+  alias(libs.plugins.module.multiplatform)
 }
 
-dependencies {
-  api(libs.kotlinx.datetime)
-  testImplementation(libs.test.junit)
-  testImplementation(libs.test.kotlin.core)
+android {
+  namespace = "alakazam.kotlin.time"
+}
+
+kotlin {
+  commonMainDependencies {
+    api(libs.kotlinx.datetime)
+  }
+
+  commonTestDependencies {
+    implementation(libs.test.junit)
+    implementation(libs.test.kotlin.core)
+    implementation(libs.test.kotlin.coroutines)
+  }
 }

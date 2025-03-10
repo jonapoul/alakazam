@@ -1,27 +1,30 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import blueprint.core.commonMainDependencies
 
 plugins {
-  alias(libs.plugins.module.kotlin)
+  alias(libs.plugins.module.multiplatform)
+}
+
+android {
+  namespace = "alakazam.test.core"
 }
 
 configurations.configureEach {
   exclude(group = "org.junit.jupiter")
 }
 
-tasks.withType<KotlinCompile> {
+kotlin {
   compilerOptions {
     freeCompilerArgs.add("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
   }
-}
 
-dependencies {
-  api(libs.kotlinx.coroutines.core)
-  api(libs.kotlinx.datetime)
-  api(libs.test.junit)
-  api(libs.test.kotlin.common)
-  api(libs.test.kotlin.coroutines)
-  api(libs.test.kotlin.junit)
-  api(libs.test.mockk.core)
-  api(libs.test.turbine)
-  api(projects.modules.kotlin.core)
+  commonMainDependencies {
+    api(libs.test.junit)
+    api(libs.test.kotlin.common)
+    api(libs.test.kotlin.coroutines)
+    api(libs.test.kotlin.junit)
+    compileOnly(libs.kotlinx.coroutines.core)
+    compileOnly(libs.kotlinx.datetime)
+    compileOnly(libs.test.turbine)
+    compileOnly(projects.modules.kotlin.core)
+  }
 }
