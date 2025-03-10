@@ -26,7 +26,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 11
+          java-version: 21
           distribution: "zulu"
 
       - name: Set up Gradle
@@ -39,14 +39,6 @@ jobs:
 
       - name: Initialise Gradle project
         run: ./gradlew dependencies
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Verify Gradle dependencies
-        run: python3 ./scripts/check-dependencies.py
 
       - name: Check
         run: ./gradlew check

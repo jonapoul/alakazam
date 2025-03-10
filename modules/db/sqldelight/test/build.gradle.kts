@@ -28,6 +28,7 @@ dependencies {
   implementation(projects.modules.db.sqldelight)
   implementation(projects.modules.kotlin.core)
   implementation(projects.modules.testing.core)
+  implementation(projects.modules.testing.sqldelight)
   testImplementation(libs.test.kotlin.common)
   testImplementation(libs.test.kotlin.junit)
 }
