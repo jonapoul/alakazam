@@ -20,6 +20,7 @@ plugins {
   alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.doctor)
+  alias(libs.plugins.publishReport)
   alias(libs.plugins.kover)
   alias(libs.plugins.versions)
 }
