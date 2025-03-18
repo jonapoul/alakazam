@@ -1,4 +1,4 @@
-name: CI
+name: PR
 
 on:
   pull_request:
@@ -12,7 +12,7 @@ permissions:
   checks: write
 
 jobs:
-  check:
+  pr-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
