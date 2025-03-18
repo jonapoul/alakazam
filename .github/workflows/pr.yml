@@ -28,9 +28,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           add-job-summary: on-failure
-          dependency-graph: generate-and-submit
           cache-read-only: false
-          dependency-graph-continue-on-failure: false
 
       - name: Run baseline
         run: ./gradlew dependencyGuardBaseline
