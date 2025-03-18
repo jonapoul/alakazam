@@ -14,3 +14,6 @@ local.properties
 .idea/*
 # Detekt plugin configuration (Tools -> Detekt)
 !.idea/detekt.xml
+
+# CI
+dependency-graph-reports/
