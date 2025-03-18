@@ -1,4 +1,4 @@
-name: CI
+name: Main
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   checks: write
 
 jobs:
-  check:
+  main-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
