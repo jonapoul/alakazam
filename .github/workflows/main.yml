@@ -1,11 +1,6 @@
-name: CI
+name: Main
 
 on:
-  pull_request:
-    branches:
-
-  workflow_dispatch:
-
   push:
     branches: [ "master" ]
 
@@ -17,7 +12,7 @@ permissions:
   checks: write
 
 jobs:
-  check:
+  main-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
