@@ -57,10 +57,10 @@ androidx.versionedparcelable:versionedparcelable:1.1.1
 androidx.viewpager:viewpager:1.0.0
 androidx.window:window:1.0.0
 com.google.guava:listenablefuture:1.0
-org.jetbrains.kotlin:kotlin-stdlib-common:2.1.10
+org.jetbrains.kotlin:kotlin-stdlib-common:2.1.20
 org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0
 org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0
-org.jetbrains.kotlin:kotlin-stdlib:2.1.10
+org.jetbrains.kotlin:kotlin-stdlib:2.1.20
 org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4
 org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4
