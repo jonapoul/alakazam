@@ -3,8 +3,8 @@ androidx.databinding:databinding-compiler-common:8.9.0
 androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:2.8.9
 androidx.navigation:navigation-safe-args-generator:2.8.9
 androidx.navigation:navigation-safe-args-gradle-plugin:2.8.9
-app.cash.licensee:app.cash.licensee.gradle.plugin:1.12.0
-app.cash.licensee:licensee-gradle-plugin:1.12.0
+app.cash.licensee:app.cash.licensee.gradle.plugin:1.13.0
+app.cash.licensee:licensee-gradle-plugin:1.13.0
 app.cash.sqldelight:app.cash.sqldelight.gradle.plugin:2.0.2
 app.cash.sqldelight:core:2.0.2
 app.cash.sqldelight:dialect-api:2.0.2
@@ -137,6 +137,8 @@ com.vanniktech:nexus:0.31.0
 commons-codec:commons-codec:1.17.0
 commons-io:commons-io:2.17.0
 commons-logging:commons-logging:1.2
+dev.drewhamilton.poko:poko-annotations-jvm:0.18.2
+dev.drewhamilton.poko:poko-annotations:0.18.2
 dev.equo.ide:solstice:1.8.1
 dev.zacsweers.moshix:moshi-sealed-reflect:0.25.1
 dev.zacsweers.moshix:moshi-sealed-runtime:0.25.1
@@ -241,11 +243,11 @@ org.jetbrains.kotlinx.kover:org.jetbrains.kotlinx.kover.gradle.plugin:0.9.1
 org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.0
 org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0
 org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0
-org.jetbrains.kotlinx:kotlinx-serialization-bom:1.7.3
-org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3
-org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3
-org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.3
-org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3
+org.jetbrains.kotlinx:kotlinx-serialization-bom:1.8.0
+org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.8.0
+org.jetbrains.kotlinx:kotlinx-serialization-core:1.8.0
+org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.8.0
+org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0
 org.jetbrains.kotlinx:kover-features-jvm:0.9.1
 org.jetbrains.kotlinx:kover-gradle-plugin:0.9.1
 org.jetbrains.kotlinx:kover-jvm-agent:0.9.1
