@@ -41,10 +41,10 @@ androidx.versionedparcelable:versionedparcelable:1.1.1
 androidx.viewpager:viewpager:1.0.0
 com.google.guava:listenablefuture:1.0
 org.jetbrains.kotlin:kotlin-stdlib:2.1.20
-org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1
-org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.1
-org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1
-org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1
+org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2
+org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.2
+org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2
+org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2
 org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.6.2
 org.jetbrains.kotlinx:kotlinx-datetime:0.6.2
 org.jetbrains:annotations:23.0.0
