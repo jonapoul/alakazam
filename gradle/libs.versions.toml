@@ -3,7 +3,7 @@
 agp = "8.9.1"
 androidCacheFix = "3.0.1"
 blueprint = "1.0.0"
-dependencyAnalysis = "2.14.0"
+dependencyAnalysis = "2.16.0"
 dependencyGuard = "0.5.0"
 dependencySort = "0.14"
 detekt = "1.23.8"
