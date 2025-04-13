@@ -11,9 +11,9 @@ androidx.collection:collection-jvm:1.4.2
 androidx.collection:collection-ktx:1.4.2
 androidx.collection:collection:1.4.2
 androidx.concurrent:concurrent-futures:1.1.0
-androidx.core:core-ktx:1.15.0
+androidx.core:core-ktx:1.16.0
 androidx.core:core-viewtree:1.0.0
-androidx.core:core:1.15.0
+androidx.core:core:1.16.0
 androidx.cursoradapter:cursoradapter:1.0.0
 androidx.customview:customview-poolingcontainer:1.0.0
 androidx.customview:customview:1.0.0
@@ -59,3 +59,4 @@ org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2
 org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.6.2
 org.jetbrains.kotlinx:kotlinx-datetime:0.6.2
 org.jetbrains:annotations:23.0.0
+org.jspecify:jspecify:1.0.0
