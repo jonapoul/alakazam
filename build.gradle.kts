@@ -33,13 +33,21 @@ fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase(
 
 doctor {
   javaHome {
-    ensureJavaHomeMatches.set(false)
-    ensureJavaHomeIsSet.set(true)
-    failOnError.set(true)
+    ensureJavaHomeMatches = false
+    ensureJavaHomeIsSet = true
+    failOnError = true
   }
 }
 
 dependencyAnalysis {
+  useTypesafeProjectAccessors(true)
+
+  usage {
+    analysis {
+      checkSuperClasses(true)
+    }
+  }
+
   structure {
     ignoreKtx(ignore = true)
     bundle(name = "kotlin") { includeGroup("org.jetbrains.kotlin") }
