@@ -1,8 +1,10 @@
+androidx.annotation:annotation-jvm:1.9.1
+androidx.annotation:annotation:1.9.1
 androidx.databinding:databinding-common:8.10.0
 androidx.databinding:databinding-compiler-common:8.10.0
-androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:2.8.9
-androidx.navigation:navigation-safe-args-generator:2.8.9
-androidx.navigation:navigation-safe-args-gradle-plugin:2.8.9
+androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:2.9.0
+androidx.navigation:navigation-safe-args-generator:2.9.0
+androidx.navigation:navigation-safe-args-gradle-plugin:2.9.0
 app.cash.licensee:app.cash.licensee.gradle.plugin:1.13.0
 app.cash.licensee:licensee-gradle-plugin:1.13.0
 app.cash.sqldelight:app.cash.sqldelight.gradle.plugin:2.0.2
@@ -123,8 +125,8 @@ com.squareup.retrofit2:retrofit:2.11.0
 com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin:0.14
 com.squareup:javapoet:1.13.0
 com.squareup:javawriter:2.5.0
-com.squareup:kotlinpoet-jvm:1.16.0
-com.squareup:kotlinpoet:1.16.0
+com.squareup:kotlinpoet-jvm:2.0.0
+com.squareup:kotlinpoet:2.0.0
 com.squareup:sort-dependencies-gradle-plugin:0.14
 com.sun.activation:javax.activation:1.2.0
 com.sun.istack:istack-commons-runtime:3.0.8
