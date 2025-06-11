@@ -61,7 +61,7 @@ androidx-test = "1.6.1"
 junit = "4.13.2"
 mockk = "1.14.2"
 robolectric = "4.14.1"
-turbine = "1.2.0"
+turbine = "1.2.1"
 
 [libraries]
 # Plugins
