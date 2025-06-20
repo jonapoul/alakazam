@@ -60,7 +60,7 @@ androidx-runner = "1.6.2"
 androidx-test = "1.6.1"
 junit = "4.13.2"
 mockk = "1.14.2"
-robolectric = "4.14.1"
+robolectric = "4.15"
 turbine = "1.2.1"
 
 [libraries]
