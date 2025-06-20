@@ -23,7 +23,7 @@ versions = "0.52.0"
 # Libraries
 androidx-activity = "1.10.1"
 androidx-annotation = "1.9.1"
-androidx-appcompat = "1.7.0"
+androidx-appcompat = "1.7.1"
 androidx-cardview = "1.0.0"
 androidx-compose-bom = "2025.02.00"
 androidx-compose-lint-slack = "1.4.2"
