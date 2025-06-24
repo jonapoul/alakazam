@@ -9,7 +9,9 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.plugin.KotlinPluginWrapper
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class ModuleKotlinNoPublish : Plugin<Project> {
   override fun apply(target: Project): Unit = with(target) {
@@ -26,6 +28,12 @@ class ModuleKotlinNoPublish : Plugin<Project> {
 
     extensions.configure<DependencyGuardPluginExtension> {
       configuration("runtimeClasspath")
+    }
+
+    tasks.withType<KotlinCompile>().configureEach {
+      compilerOptions {
+        freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
+      }
     }
   }
 }

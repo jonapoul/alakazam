@@ -24,14 +24,12 @@ kotlin {
     api(libs.test.kotlin.coroutines)
     api(libs.test.kotlin.junit)
     compileOnly(libs.kotlinx.coroutines.core)
-    compileOnly(libs.kotlinx.datetime)
     compileOnly(libs.test.turbine)
     compileOnly(projects.modules.kotlin.core)
   }
 
   commonTestDependencies {
     implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.datetime)
     implementation(libs.test.turbine)
     implementation(projects.modules.kotlin.core)
   }

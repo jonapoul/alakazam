@@ -2,8 +2,8 @@
 
 package alakazam.test.core
 
-import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
+import kotlin.time.Clock
+import kotlin.time.Instant
 
 public fun TestClock(time: Instant): Clock = object : Clock {
   override fun now(): Instant = time

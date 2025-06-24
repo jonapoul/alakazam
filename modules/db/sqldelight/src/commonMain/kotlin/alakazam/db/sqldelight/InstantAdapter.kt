@@ -1,7 +1,7 @@
 package alakazam.db.sqldelight
 
 import app.cash.sqldelight.ColumnAdapter
-import kotlinx.datetime.Instant
+import kotlin.time.Instant
 
 public interface InstantAdapter<T : Any> : ColumnAdapter<Instant, T> {
   public data object FromMilliseconds :

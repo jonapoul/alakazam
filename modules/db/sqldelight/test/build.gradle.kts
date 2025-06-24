@@ -6,7 +6,7 @@ plugins {
   alias(libs.plugins.kotlin.serialization)
 }
 
-tasks.withType<KotlinCompile> {
+tasks.withType<KotlinCompile>().configureEach {
   compilerOptions {
     freeCompilerArgs.add("-opt-in=kotlin.uuid.ExperimentalUuidApi")
   }
@@ -21,7 +21,6 @@ sqldelight {
 }
 
 dependencies {
-  implementation(libs.kotlinx.datetime)
   implementation(libs.kotlinx.serialization.core)
   implementation(libs.kotlinx.serialization.json)
   implementation(libs.sqldelight.runtime)

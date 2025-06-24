@@ -5,13 +5,13 @@ import alakazam.db.sqldelight.test.TestDatabase
 import alakazam.test.sqldelight.SqlDelightDatabaseRule
 import alakazam.test.sqldelight.inMemory
 import kotlinx.coroutines.test.runTest
-import kotlinx.datetime.Instant
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
+import kotlin.time.Instant
 import kotlin.uuid.Uuid
 
 internal class StringAdaptersTest {

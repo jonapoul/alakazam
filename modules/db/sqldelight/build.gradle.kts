@@ -13,7 +13,6 @@ kotlin {
   commonMainDependencies {
     api(libs.kotlin.stdlib)
     api(libs.sqldelight.runtime)
-    compileOnly(libs.kotlinx.datetime)
     compileOnly(libs.kotlinx.serialization.core)
     compileOnly(libs.kotlinx.serialization.json)
     implementation(projects.modules.kotlin.core)

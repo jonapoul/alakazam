@@ -12,7 +12,6 @@ android {
 kotlin {
   commonMainDependencies {
     api(libs.kotlinx.coroutines.core)
-    api(libs.kotlinx.datetime)
   }
 
   commonTestDependencies {

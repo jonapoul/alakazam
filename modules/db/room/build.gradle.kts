@@ -11,7 +11,7 @@ android {
   namespace = "alakazam.db.room"
 }
 
-tasks.withType<KotlinCompile> {
+tasks.withType<KotlinCompile>().configureEach {
   compilerOptions {
     freeCompilerArgs.add("-opt-in=kotlin.uuid.ExperimentalUuidApi")
   }
@@ -21,7 +21,6 @@ kotlin {
   commonMainDependencies {
     api(libs.kotlin.stdlib)
     implementation(libs.androidx.room.common)
-    implementation(libs.kotlinx.datetime)
   }
 
   androidUnitTestDependencies {
