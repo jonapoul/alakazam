@@ -5,11 +5,11 @@ import alakazam.db.sqldelight.test.TestDatabase
 import alakazam.test.sqldelight.SqlDelightDatabaseRule
 import alakazam.test.sqldelight.inMemory
 import kotlinx.coroutines.test.runTest
-import kotlinx.datetime.Instant
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
+import kotlin.time.Instant
 
 internal class LongAdaptersTest {
   @get:Rule

@@ -11,6 +11,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.dokka.gradle.formats.DokkaJavadocPlugin
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 
 class ModuleMultiplatform : Plugin<Project> {
@@ -32,6 +33,12 @@ class ModuleMultiplatform : Plugin<Project> {
     extensions.configure<DependencyGuardPluginExtension> {
       configuration("jvmRuntimeClasspath")
       configuration("androidReleaseRuntimeClasspath")
+    }
+
+    extensions.configure<KotlinMultiplatformExtension> {
+      compilerOptions {
+        freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
+      }
     }
   }
 }

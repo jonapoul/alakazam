@@ -13,7 +13,6 @@ dependencies {
   api(libs.dagger.core)
   api(libs.javax.inject)
   api(libs.kotlinx.coroutines.core)
-  api(libs.kotlinx.datetime)
   api(projects.modules.android.core)
   api(projects.modules.android.http)
   api(projects.modules.kotlin.core)

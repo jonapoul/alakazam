@@ -10,8 +10,10 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.dokka.gradle.formats.DokkaJavadocPlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class ModuleAndroid : Plugin<Project> {
   override fun apply(target: Project): Unit = with(target) {
@@ -31,6 +33,12 @@ class ModuleAndroid : Plugin<Project> {
 
     extensions.configure<DependencyGuardPluginExtension> {
       configuration("releaseRuntimeClasspath")
+    }
+
+    tasks.withType<KotlinCompile>().configureEach {
+      compilerOptions {
+        freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
+      }
     }
   }
 }

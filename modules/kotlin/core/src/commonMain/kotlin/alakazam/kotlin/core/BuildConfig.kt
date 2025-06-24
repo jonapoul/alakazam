@@ -1,6 +1,6 @@
 package alakazam.kotlin.core
 
-import kotlinx.datetime.Instant
+import kotlin.time.Instant
 
 /**
  * Intended to give a less annoying interface to compile-time constants of the app. This way if we run a project

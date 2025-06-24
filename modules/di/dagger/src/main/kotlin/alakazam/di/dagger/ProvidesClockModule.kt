@@ -2,8 +2,8 @@ package alakazam.di.dagger
 
 import dagger.Module
 import dagger.Provides
-import kotlinx.datetime.Clock
 import javax.inject.Singleton
+import kotlin.time.Clock
 
 @Module
 public class ProvidesClockModule {

@@ -1,9 +1,9 @@
 package alakazam.test.core
 
-import kotlinx.datetime.Instant
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.time.Duration.Companion.hours
+import kotlin.time.Instant
 
 internal class TestClockTest {
   @Test

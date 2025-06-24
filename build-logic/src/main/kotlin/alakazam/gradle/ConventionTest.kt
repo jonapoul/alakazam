@@ -36,7 +36,7 @@ class ConventionTest : Plugin<Project> {
       )
     )
 
-    tasks.withType<KotlinCompile> {
+    tasks.withType<KotlinCompile>().configureEach {
       compilerOptions {
         freeCompilerArgs.add("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
       }

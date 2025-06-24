@@ -1,6 +1,6 @@
 import alakazam.db.sqldelight.TestEnum;
 import alakazam.db.sqldelight.TestId;
-import kotlinx.datetime.Instant;
+import kotlin.time.Instant;
 
 CREATE TABLE IF NOT EXISTS longs(
   id INTEGER AS TestId PRIMARY KEY NOT NULL,
