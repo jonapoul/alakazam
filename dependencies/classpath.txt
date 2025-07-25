@@ -204,6 +204,8 @@ org.glassfish.jaxb:jaxb-runtime:2.3.2
 org.glassfish.jaxb:txw2:2.3.2
 org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin:3.0.1
 org.jdom:jdom2:2.0.6
+org.jetbrains.compose:compose-gradle-plugin:1.8.2
+org.jetbrains.compose:org.jetbrains.compose.gradle.plugin:1.8.2
 org.jetbrains.dokka:dokka-core:2.0.0
 org.jetbrains.dokka:dokka-gradle-plugin:2.0.0
 org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin:2.0.0

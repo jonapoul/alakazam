@@ -35,7 +35,6 @@ dependencies {
   implementation("dev.jonpoulton.alakazam:android-navigation:{version}")
   implementation("dev.jonpoulton.alakazam:android-theme:{version}")
   implementation("dev.jonpoulton.alakazam:android-ui-appcompat:{version}")
-  implementation("dev.jonpoulton.alakazam:android-ui-compose:{version}")
   implementation("dev.jonpoulton.alakazam:android-ui-core:{version}")
   implementation("dev.jonpoulton.alakazam:android-ui-material:{version}")
   implementation("dev.jonpoulton.alakazam:android-ui-viewbinding:{version}")
@@ -50,6 +49,7 @@ dependencies {
   implementation("dev.jonpoulton.alakazam:di-koin:{version}")
 
   // Kotlin libraries
+  implementation("dev.jonpoulton.alakazam:kotlin-compose:{version}")
   implementation("dev.jonpoulton.alakazam:kotlin-core:{version}")
   implementation("dev.jonpoulton.alakazam:kotlin-logging:{version}")
   implementation("dev.jonpoulton.alakazam:kotlin-serialization:{version}")

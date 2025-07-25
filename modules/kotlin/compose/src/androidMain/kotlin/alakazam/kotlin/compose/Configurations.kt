@@ -1,4 +1,4 @@
-package alakazam.android.ui.compose
+package alakazam.kotlin.compose
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable

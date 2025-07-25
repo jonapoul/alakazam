@@ -3,6 +3,7 @@ plugins {
   alias(libs.plugins.androidCacheFix) apply false
   alias(libs.plugins.androidx.hilt) apply false
   alias(libs.plugins.androidx.navigation) apply false
+  alias(libs.plugins.compose) apply false
   alias(libs.plugins.dependencySort) apply false
   alias(libs.plugins.detekt) apply false
   alias(libs.plugins.dokka) apply false
