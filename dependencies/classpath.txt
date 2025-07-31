@@ -2,9 +2,9 @@ androidx.annotation:annotation-jvm:1.9.1
 androidx.annotation:annotation:1.9.1
 androidx.databinding:databinding-common:8.11.1
 androidx.databinding:databinding-compiler-common:8.11.1
-androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:2.9.2
-androidx.navigation:navigation-safe-args-generator:2.9.2
-androidx.navigation:navigation-safe-args-gradle-plugin:2.9.2
+androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:2.9.3
+androidx.navigation:navigation-safe-args-generator:2.9.3
+androidx.navigation:navigation-safe-args-gradle-plugin:2.9.3
 app.cash.licensee:app.cash.licensee.gradle.plugin:1.13.0
 app.cash.licensee:licensee-gradle-plugin:1.13.0
 app.cash.sql-psi:core:0.5.2
