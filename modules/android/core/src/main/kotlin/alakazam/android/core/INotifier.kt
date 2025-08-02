@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 
 public interface INotifier {
   public data class Action(
-    @StringRes val actionText: Int,
+    @param:StringRes val actionText: Int,
     val onClick: View.OnClickListener,
   )
 

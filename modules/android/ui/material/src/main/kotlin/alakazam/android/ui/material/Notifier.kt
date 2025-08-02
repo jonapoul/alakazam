@@ -10,11 +10,11 @@ import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
 
 public class Notifier(
-  @ColorRes private val backgroundColour: Int = R.color.notifierBackground,
-  @ColorRes private val successColour: Int = R.color.notifierSuccess,
-  @ColorRes private val infoColour: Int = R.color.notifierInfo,
-  @ColorRes private val cautionColour: Int = R.color.notifierCaution,
-  @ColorRes private val warningColour: Int = R.color.notifierWarning,
+  @param:ColorRes private val backgroundColour: Int = R.color.notifierBackground,
+  @param:ColorRes private val successColour: Int = R.color.notifierSuccess,
+  @param:ColorRes private val infoColour: Int = R.color.notifierInfo,
+  @param:ColorRes private val cautionColour: Int = R.color.notifierCaution,
+  @param:ColorRes private val warningColour: Int = R.color.notifierWarning,
 ) : INotifier {
   private fun snackbar(
     root: View,

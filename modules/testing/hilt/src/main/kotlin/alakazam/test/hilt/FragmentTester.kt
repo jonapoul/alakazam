@@ -13,9 +13,9 @@ import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 
 public class FragmentTester(
-  @StyleRes public val themeResId: Int,
-  @NavigationRes public val navGraph: Int,
-  @IdRes public val navDestination: Int,
+  @param:StyleRes public val themeResId: Int,
+  @param:NavigationRes public val navGraph: Int,
+  @param:IdRes public val navDestination: Int,
 ) {
   public inline fun <reified F : Fragment> launchFragment() {
     val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
