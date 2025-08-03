@@ -1,3 +1,4 @@
+import blueprint.core.androidMainDependencies
 import blueprint.core.commonMainDependencies
 
 plugins {
@@ -25,15 +26,16 @@ kotlin {
   }
 
   commonMainDependencies {
-    api(libs.compose.foundation.layout)
-    api(libs.compose.material3)
-    api(libs.compose.runtime)
-    implementation(libs.compose.foundation.core)
-    implementation(libs.compose.ui.core)
-    implementation(libs.compose.ui.graphics)
-    implementation(libs.compose.ui.preview)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.compose.ui.unit)
+    api(compose.foundation)
+    api(compose.material3)
+    api(compose.runtime)
+    implementation(compose.ui)
+    implementation(compose.preview)
+    implementation(compose.uiTooling)
+  }
+
+  androidMainDependencies {
+    // TBC
   }
 }
 

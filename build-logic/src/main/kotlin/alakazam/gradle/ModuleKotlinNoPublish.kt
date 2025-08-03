@@ -19,7 +19,7 @@ class ModuleKotlinNoPublish : Plugin<Project> {
       apply(KotlinPluginWrapper::class)
       apply(ConventionStyle::class)
       apply(ConventionTest::class)
-      apply(DependencyAnalysisPlugin::class.java)
+      apply(DependencyAnalysisPlugin::class)
       apply(DependencyGuardPlugin::class)
     }
 
