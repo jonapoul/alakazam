@@ -8,6 +8,7 @@ import blueprint.recipes.powerAssertBlueprint
 import blueprint.recipes.testBlueprint
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -40,6 +41,11 @@ class ConventionTest : Plugin<Project> {
       compilerOptions {
         freeCompilerArgs.add("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
       }
+    }
+
+    tasks.withType<Test>().configureEach {
+      // To work around https://github.com/gradle/gradle/issues/33619
+      failOnNoDiscoveredTests.set(false)
     }
   }
 }
