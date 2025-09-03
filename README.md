@@ -31,7 +31,6 @@ dependencies {
   // Android libraries
   implementation("dev.jonpoulton.alakazam:android-core:{version}")
   implementation("dev.jonpoulton.alakazam:android-http:{version}")
-  implementation("dev.jonpoulton.alakazam:android-logging:{version}")
   implementation("dev.jonpoulton.alakazam:android-navigation:{version}")
   implementation("dev.jonpoulton.alakazam:android-theme:{version}")
   implementation("dev.jonpoulton.alakazam:android-ui-appcompat:{version}")
@@ -53,11 +52,12 @@ dependencies {
   implementation("dev.jonpoulton.alakazam:kotlin-logging:{version}")
   implementation("dev.jonpoulton.alakazam:kotlin-serialization:{version}")
   implementation("dev.jonpoulton.alakazam:kotlin-time:{version}")
-  compileOnly("dev.jonpoulton.alakazam:kotlin-compose-annotations:{version}") // not runtime
 
   // Testing libraries
   testImplementation("dev.jonpoulton.alakazam:testing-core:{version}")
+  testImplementation("dev.jonpoulton.alakazam:testing-logging:{version}")
   testImplementation("dev.jonpoulton.alakazam:testing-room:{version}")
+  testImplementation("dev.jonpoulton.alakazam:testing-sqldelight:{version}")
   androidTestImplementation("dev.jonpoulton.alakazam:testing-android:{version}")
   androidTestImplementation("dev.jonpoulton.alakazam:testing-hilt:{version}")
 }

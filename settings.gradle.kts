@@ -36,7 +36,6 @@ includeBuild("build-logic")
 
 include(":modules:kotlin:core")
 include(":modules:kotlin:compose")
-include(":modules:kotlin:compose-annotations")
 include(":modules:kotlin:logging")
 include(":modules:kotlin:serialization")
 include(":modules:kotlin:time")
