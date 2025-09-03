@@ -56,7 +56,6 @@ include(":modules:db:sqldelight:test")
 
 include(":modules:di:dagger")
 include(":modules:di:hilt")
-include(":modules:di:koin")
 
 include(":modules:testing:android")
 include(":modules:testing:core")

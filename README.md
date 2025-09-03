@@ -46,7 +46,6 @@ dependencies {
   // DI libraries
   implementation("dev.jonpoulton.alakazam:di-dagger:{version}")
   implementation("dev.jonpoulton.alakazam:di-hilt:{version}")
-  implementation("dev.jonpoulton.alakazam:di-koin:{version}")
 
   // Kotlin libraries
   implementation("dev.jonpoulton.alakazam:kotlin-compose:{version}")

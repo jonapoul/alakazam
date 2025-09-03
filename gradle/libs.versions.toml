@@ -40,7 +40,6 @@ androidx-sqlite = "2.5.2"
 dagger = "2.57.1"
 desugaring = "2.1.5"
 inject = "1"
-koin = "4.1.0"
 kotlinx-coroutines = "1.10.2"
 kotlinx-datetime = "0.7.1"
 kotlinx-serialization = "1.9.0"
@@ -122,7 +121,6 @@ compose-ui-unit = { module = "org.jetbrains.compose.ui:ui-unit", version.ref = "
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
 dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 javax-inject = { module = "javax.inject:javax.inject", version.ref = "inject" }
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
