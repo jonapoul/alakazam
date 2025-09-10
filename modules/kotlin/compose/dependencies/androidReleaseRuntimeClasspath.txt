@@ -102,7 +102,7 @@ org.jetbrains.compose.ui:ui-tooling:1.8.2
 org.jetbrains.compose.ui:ui-unit:1.8.2
 org.jetbrains.compose.ui:ui-util:1.8.2
 org.jetbrains.compose.ui:ui:1.8.2
-org.jetbrains.kotlin:kotlin-stdlib:2.2.10
+org.jetbrains.kotlin:kotlin-stdlib:2.2.20
 org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0
 org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.0
 org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0
