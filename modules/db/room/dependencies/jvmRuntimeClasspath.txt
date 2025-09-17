@@ -1,6 +1,6 @@
 androidx.annotation:annotation-jvm:1.9.1
 androidx.annotation:annotation:1.9.1
-androidx.room:room-common-jvm:2.7.2
-androidx.room:room-common:2.7.2
-org.jetbrains.kotlin:kotlin-stdlib:2.2.10
+androidx.room:room-common-jvm:2.8.0
+androidx.room:room-common:2.8.0
+org.jetbrains.kotlin:kotlin-stdlib:2.2.20
 org.jetbrains:annotations:13.0
