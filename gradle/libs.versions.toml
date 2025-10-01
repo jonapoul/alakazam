@@ -58,7 +58,7 @@ androidx-rules = "1.7.0"
 androidx-runner = "1.7.0"
 androidx-test = "1.7.0"
 junit = "4.13.2"
-mockk = "1.14.5"
+mockk = "1.14.6"
 robolectric = "4.16"
 turbine = "1.2.1"
 
