@@ -17,7 +17,6 @@ class ModuleMultiplatform : Plugin<Project> {
       apply(ConventionPublish::class)
       apply(ConventionStyle::class)
       apply(ConventionTest::class)
-      // apply(DependencyAnalysisPlugin::class) // doesn't work
     }
 
     kotlinBaseBlueprint()

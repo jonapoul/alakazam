@@ -2,7 +2,6 @@ package alakazam.gradle
 
 import blueprint.recipes.ideaBlueprint
 import blueprint.recipes.kotlinJvmBlueprint
-import com.autonomousapps.DependencyAnalysisPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -18,7 +17,6 @@ class ModuleAndroid : Plugin<Project> {
       apply(ConventionPublish::class)
       apply(ConventionStyle::class)
       apply(ConventionTest::class)
-      apply(DependencyAnalysisPlugin::class)
     }
 
     kotlinJvmBlueprint()

@@ -19,7 +19,6 @@ plugins {
   alias(libs.plugins.spotless) apply false
   alias(libs.plugins.sqldelight) apply false
 
-  alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.doctor)
   alias(libs.plugins.publishReport)
   alias(libs.plugins.kover)
@@ -39,40 +38,3 @@ doctor {
     failOnError = true
   }
 }
-
-dependencyAnalysis {
-  useTypesafeProjectAccessors(true)
-
-  usage {
-    analysis {
-      checkSuperClasses(true)
-    }
-  }
-
-  structure {
-    ignoreKtx(ignore = true)
-    bundle(name = "kotlin") { includeGroup("org.jetbrains.kotlin") }
-    bundle(name = "modules") { include("^:.*\$".toRegex()) }
-    bundle(name = "okhttp") { includeGroup(group = "com.squareup.okhttp3") }
-  }
-
-  reporting {
-    printBuildHealth(true)
-    onlyOnFailure(true)
-  }
-
-  abi {
-    exclusions {
-      ignoreInternalPackages()
-      ignoreGeneratedCode()
-    }
-  }
-
-  issues {
-    all {
-      onAny { severity(value = "fail") }
-      onRuntimeOnly { severity(value = "ignore") }
-    }
-  }
-}
-
