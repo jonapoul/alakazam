@@ -1,3 +1,7 @@
+/**
+ * Copyright © 2025 Jon Poulton
+ * SPDX-License-Identifier: Apache-2.0
+ */
 package alakazam.test.sqldelight
 
 import alakazam.db.sqldelight.SqlDriverFactory

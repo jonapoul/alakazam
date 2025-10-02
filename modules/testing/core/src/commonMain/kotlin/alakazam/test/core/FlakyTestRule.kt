@@ -1,3 +1,7 @@
+/**
+ * Copyright © 2025 Jon Poulton
+ * SPDX-License-Identifier: Apache-2.0
+ */
 package alakazam.test.core
 
 import alakazam.test.core.Flaky.Companion.DEFAULT_RETRY_COUNT
