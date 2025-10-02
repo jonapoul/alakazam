@@ -4,4 +4,11 @@
  */
 package alakazam.test.logging
 
-public actual fun Thread.getThreadId(): Long = id
+import android.os.Build
+
+public actual fun Thread.getThreadId(): Long = if (Build.VERSION.SDK_INT >= 36) {
+  threadId()
+} else {
+  @Suppress("DEPRECATION")
+  id
+}
