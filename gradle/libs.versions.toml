@@ -2,7 +2,7 @@
 # Plugins
 agp = "8.13.0"
 androidCacheFix = "3.0.2"
-blueprint = "1.0.0"
+blueprint = "1.1.0"
 compose = "1.9.0"
 dependencyAnalysis = "3.0.4"
 dependencyGuard = "0.5.0"
