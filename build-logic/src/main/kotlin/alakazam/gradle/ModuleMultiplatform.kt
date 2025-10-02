@@ -3,8 +3,6 @@ package alakazam.gradle
 import blueprint.recipes.ideaBlueprint
 import blueprint.recipes.kotlinBaseBlueprint
 import blueprint.recipes.kotlinMultiplatformBlueprint
-import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPlugin
-import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPluginExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -19,18 +17,11 @@ class ModuleMultiplatform : Plugin<Project> {
       apply(ConventionPublish::class)
       apply(ConventionStyle::class)
       apply(ConventionTest::class)
-      // apply(DependencyAnalysisPlugin::class) // doesn't work
-      apply(DependencyGuardPlugin::class)
     }
 
     kotlinBaseBlueprint()
     kotlinMultiplatformBlueprint()
     ideaBlueprint()
-
-    extensions.configure<DependencyGuardPluginExtension> {
-      configuration("jvmRuntimeClasspath")
-      configuration("androidReleaseRuntimeClasspath")
-    }
 
     extensions.configure<KotlinMultiplatformExtension> {
       compilerOptions {

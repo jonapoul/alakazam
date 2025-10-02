@@ -2,21 +2,21 @@ plugins {
   `kotlin-dsl`
 }
 
+fun DependencyHandler.plugin(dependency: Provider<PluginDependency>) =
+  dependency.get().run { create("$pluginId:$pluginId.gradle.plugin:$version") }
+
 dependencies {
   compileOnly(libs.plugin.agp)
-  compileOnly(libs.plugin.androidCacheFix)
-  compileOnly(libs.plugin.compose)
-  compileOnly(libs.plugin.dependencyAnalysis)
-  compileOnly(libs.plugin.dependencyGuard)
-  compileOnly(libs.plugin.detekt)
-  compileOnly(libs.plugin.dokka)
-  compileOnly(libs.plugin.hilt)
   compileOnly(libs.plugin.kotlin)
-  compileOnly(libs.plugin.kover)
-  compileOnly(libs.plugin.ktlint)
-  compileOnly(libs.plugin.licensee)
-  compileOnly(libs.plugin.publish)
-  compileOnly(libs.plugin.spotless)
+  compileOnly(plugin(libs.plugins.androidCacheFix))
+  compileOnly(plugin(libs.plugins.androidx.hilt))
+  compileOnly(plugin(libs.plugins.compose))
+  compileOnly(plugin(libs.plugins.detekt))
+  compileOnly(plugin(libs.plugins.dokka))
+  compileOnly(plugin(libs.plugins.kover))
+  compileOnly(plugin(libs.plugins.licensee))
+  compileOnly(plugin(libs.plugins.publish))
+  compileOnly(plugin(libs.plugins.spotless))
 
   implementation(libs.plugin.blueprint.core)
   implementation(libs.plugin.blueprint.recipes)

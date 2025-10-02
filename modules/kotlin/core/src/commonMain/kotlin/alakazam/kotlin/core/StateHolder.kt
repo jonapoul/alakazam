@@ -1,4 +1,7 @@
-// linter tells me I need to opt in, then the IDE tells me the opt in isn't being used?
+/**
+ * Copyright © 2025 Jon Poulton
+ * SPDX-License-Identifier: Apache-2.0
+ */
 @file:OptIn(ExperimentalForInheritanceCoroutinesApi::class)
 @file:Suppress("UnnecessaryOptInAnnotation")
 

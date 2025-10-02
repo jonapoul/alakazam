@@ -40,5 +40,5 @@ kotlin {
 }
 
 dependencies {
-  lintChecks("com.slack.lint.compose:compose-lint-checks:${libs.versions.androidx.compose.lint.slack.get()}")
+  lintChecks(libs.androidx.compose.lint.slack)
 }
