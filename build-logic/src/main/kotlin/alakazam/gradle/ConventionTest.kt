@@ -38,7 +38,7 @@ class ConventionTest : Plugin<Project> {
         mockk = libs.version("mockk"),
         robolectric = libs.version("robolectric"),
         turbine = libs.version("turbine"),
-      )
+      ),
     )
 
     tasks.withType<KotlinCompile>().configureEach {
