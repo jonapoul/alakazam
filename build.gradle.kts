@@ -22,14 +22,7 @@ plugins {
   alias(libs.plugins.doctor)
   alias(libs.plugins.publishReport)
   alias(libs.plugins.kover)
-  alias(libs.plugins.versions)
 }
-
-tasks.dependencyUpdates.configure {
-  rejectVersionIf { !candidate.version.isStable() && currentVersion.isStable() }
-}
-
-fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { lowercase().contains(it) }
 
 doctor {
   javaHome {
