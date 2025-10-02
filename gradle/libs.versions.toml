@@ -62,7 +62,7 @@ androidx-room-common = { module = "androidx.room:room-common", version.ref = "an
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
-androidx-sqlite = { module = "androidx.sqlite:sqlite", version = "2.6.0" }
+androidx-sqlite = { module = "androidx.sqlite:sqlite", version = "2.6.1" }
 #compose-foundation-core = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
 #compose-foundation-layout = { module = "org.jetbrains.compose.foundation:foundation-layout", version.ref = "compose" }
 #compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose" }
