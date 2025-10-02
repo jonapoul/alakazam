@@ -1,5 +1,0 @@
-org.jetbrains.kotlin:kotlin-stdlib:2.2.20
-org.jetbrains.kotlinx:kotlinx-serialization-bom:1.9.0
-org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0
-org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0
-org.jetbrains:annotations:13.0

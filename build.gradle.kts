@@ -20,7 +20,6 @@ plugins {
   alias(libs.plugins.sqldelight) apply false
 
   alias(libs.plugins.dependencyAnalysis)
-  alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.doctor)
   alias(libs.plugins.publishReport)
   alias(libs.plugins.kover)
@@ -77,6 +76,3 @@ dependencyAnalysis {
   }
 }
 
-dependencyGuard {
-  configuration("classpath")
-}

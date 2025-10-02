@@ -7,7 +7,6 @@ dependencies {
   compileOnly(libs.plugin.androidCacheFix)
   compileOnly(libs.plugin.compose)
   compileOnly(libs.plugin.dependencyAnalysis)
-  compileOnly(libs.plugin.dependencyGuard)
   compileOnly(libs.plugin.detekt)
   compileOnly(libs.plugin.dokka)
   compileOnly(libs.plugin.hilt)
