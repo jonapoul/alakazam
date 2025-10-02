@@ -4,9 +4,9 @@ import com.vanniktech.maven.publish.MavenPublishPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.withType
+import org.gradle.kotlin.dsl.configure
+import org.jetbrains.dokka.gradle.DokkaExtension
 import org.jetbrains.dokka.gradle.DokkaPlugin
-import org.jetbrains.dokka.gradle.DokkaTask
 
 class ConventionPublish : Plugin<Project> {
   override fun apply(target: Project): Unit = with(target) {
@@ -15,8 +15,14 @@ class ConventionPublish : Plugin<Project> {
       apply(DokkaPlugin::class)
     }
 
-    tasks.withType<DokkaTask>().configureEach {
-      failOnWarning.set(true)
+    extensions.configure<DokkaExtension> {
+      dokkaPublications.configureEach {
+        failOnWarning.set(true)
+      }
+
+      dokkaSourceSets.configureEach {
+        suppressGeneratedFiles.set(true)
+      }
     }
   }
 }

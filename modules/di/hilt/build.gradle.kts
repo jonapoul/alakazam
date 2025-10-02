@@ -20,3 +20,8 @@ dependencies {
   implementation(libs.androidx.preference)
   ksp(libs.androidx.hilt.compiler)
 }
+
+// https://github.com/Kotlin/dokka/issues/4217
+dokka.dokkaSourceSets.configureEach {
+  suppressedFiles.from(layout.buildDirectory.dir("generated"))
+}
