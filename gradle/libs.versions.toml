@@ -95,7 +95,7 @@ test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 agp = { id = "com.android.library", version.ref = "agp" }
-androidCacheFix = { id = "org.gradle.android.cache-fix", version = "3.0.2" }
+androidCacheFix = { id = "org.gradle.android.cache-fix", version = "3.0.3" }
 androidx-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 androidx-navigation = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
