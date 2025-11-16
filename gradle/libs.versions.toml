@@ -1,22 +1,22 @@
 [versions]
 # Plugins
-agp = "8.13.0"
-blueprint = "1.1.0"
-compose = "1.9.2"
+agp = "8.13.1"
+blueprint = "1.1.1"
+compose = "1.9.3"
 kotlin = "2.2.21"
 
 # Libraries
 androidx-core = "1.17.0"
 androidx-fragment = "1.8.9"
 androidx-lifecycle = "2.9.4"
-androidx-navigation = "2.9.5"
+androidx-navigation = "2.9.6"
 androidx-room = "2.8.3"
 dagger = "2.57.2"
 desugaring = "2.1.5"
 kotlinx-coroutines = "1.10.2"
 kotlinx-serialization = "1.9.0"
 okhttp = "5.3.0"
-sqldelight = "2.1.0"
+sqldelight = "2.2.1"
 
 # Testing
 androidx-arch-test = "2.2.0"
@@ -25,7 +25,7 @@ androidx-rules = "1.7.0"
 androidx-runner = "1.7.0"
 androidx-test = "1.7.0"
 junit = "4.13.2"
-mockk = "1.14.5"
+mockk = "1.14.6"
 robolectric = "4.16"
 turbine = "1.2.1"
 
@@ -95,7 +95,7 @@ test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 agp = { id = "com.android.library", version.ref = "agp" }
-androidCacheFix = { id = "org.gradle.android.cache-fix", version = "3.0.2" }
+androidCacheFix = { id = "org.gradle.android.cache-fix", version = "3.0.3" }
 androidx-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 androidx-navigation = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
@@ -107,10 +107,10 @@ kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref 
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version = "0.9.3" }
-ksp = { id = "com.google.devtools.ksp", version = "2.3.1" }
+ksp = { id = "com.google.devtools.ksp", version = "2.3.2" }
 licensee = { id = "app.cash.licensee", version = "1.14.1" }
 powerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
-publish = { id = "com.vanniktech.maven.publish", version = "0.34.0" }
+publish = { id = "com.vanniktech.maven.publish", version = "0.35.0" }
 publishReport = { id = "io.github.gmazzo.publications.report", version = "1.3.3" }
 spotless = { id = "com.diffplug.spotless", version = "8.0.0" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
