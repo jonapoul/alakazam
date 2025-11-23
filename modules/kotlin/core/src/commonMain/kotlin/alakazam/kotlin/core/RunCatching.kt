@@ -7,7 +7,7 @@ package alakazam.kotlin.core
 import kotlinx.coroutines.CancellationException
 
 /**
- * Same as [kotlin.runCatching], but explicitly handles [CancellationException] as a special case.
+ * Same as `kotlin.runCatching`, but explicitly handles `CancellationException` as a special case.
  *
  * See reference, [Kotlin doc](https://kotlinlang.org/docs/cancellation-and-timeouts.html#cancellation-is-cooperative).
  */

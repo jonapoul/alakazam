@@ -23,7 +23,7 @@ public fun <T> CoroutineScope.collectFlow(flow: Flow<T>, context: CoroutineConte
   launch(context) { flow.collect(call::invoke) }
 
 /**
- * Runs an infinite loop of periodic function calls, scoped to the [CoroutineScope]'s lifecycle.
+ * Runs an infinite loop of periodic function calls, scoped to the CoroutineScope's lifecycle.
  */
 public fun CoroutineScope.launchInfiniteLoop(
   loopController: LoopController = InfiniteLoopController,
