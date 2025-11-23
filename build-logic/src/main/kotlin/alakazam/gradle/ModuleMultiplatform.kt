@@ -49,7 +49,6 @@ class ModuleMultiplatform : Plugin<Project> {
           abortOnError = true
           checkGeneratedSources = false
           checkReleaseBuilds = false
-          checkReleaseBuilds = false
           checkTestSources = true
           explainIssues = true
           htmlReport = true
