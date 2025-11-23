@@ -14,7 +14,7 @@ import org.junit.runner.Description
 
 /**
  * This rule should be added to any test containing any coroutines/Flows, since it sets the main dispatcher to run in
- * a controlled [TestDispatcher]. Use as:
+ * a controlled `TestDispatcher`. Use as:
  *
  *      @get:Rule
  *      val dispatcherRule = MainDispatcherRule()
