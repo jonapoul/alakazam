@@ -37,7 +37,7 @@ plugin-blueprint-recipes = { module = "dev.jonpoulton.blueprint:recipes", versio
 plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
 # Libraries
-androidx-activity-core = { module = "androidx.activity:activity", version = "1.11.0" }
+androidx-activity-core = { module = "androidx.activity:activity", version = "1.12.0" }
 androidx-annotation = { module = "androidx.annotation:annotation", version = "1.9.1" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.7.1" }
 androidx-cardview = { module = "androidx.cardview:cardview", version = "1.0.0" }
