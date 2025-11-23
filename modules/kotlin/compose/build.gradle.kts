@@ -7,12 +7,8 @@ plugins {
   alias(libs.plugins.compose)
 }
 
-android {
+kotlin.android {
   namespace = "alakazam.kotlin.compose"
-
-  buildFeatures {
-    compose = true
-  }
 }
 
 kotlin {

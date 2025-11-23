@@ -1,4 +1,4 @@
-import blueprint.core.androidUnitTestDependencies
+import alakazam.gradle.androidHostTestDependencies
 import blueprint.core.commonMainDependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -7,7 +7,7 @@ plugins {
   alias(libs.plugins.ksp)
 }
 
-android {
+kotlin.android {
   namespace = "alakazam.db.room"
 }
 
@@ -23,7 +23,7 @@ kotlin {
     implementation(libs.androidx.room.common)
   }
 
-  androidUnitTestDependencies {
+  androidHostTestDependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.sqlite)
@@ -35,7 +35,6 @@ kotlin {
   }
 }
 
-val kspAndroidTest by configurations
 dependencies {
-  kspAndroidTest(libs.androidx.room.compiler)
+  "kspAndroidHostTest"(libs.androidx.room.compiler)
 }
