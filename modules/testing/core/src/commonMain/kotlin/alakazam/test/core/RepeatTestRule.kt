@@ -31,7 +31,7 @@ public class RepeatTestRule : TestRule {
 }
 
 /**
- * @property iterations The number to repeated iterations required to let a [org.junit.Test] pass successfully.
+ * @property iterations The number to repeated iterations required to let a test pass successfully.
  */
 public annotation class Repeat(val iterations: Int)
 

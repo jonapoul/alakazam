@@ -21,7 +21,7 @@ public inline fun <Input, reified Expected> Flow<Input>.onEachOfType(
 }
 
 /**
- * An operator to take all values emitted by the subject [Flow], only stopping when [stopOn] returns
+ * An operator to take all values emitted by the subject flow, only stopping when [stopOn] returns
  * true. When this condition is reached, the offending emission ***WILL NOT*** be passed onto the
  * caller and the flow will be cancelled.
  */
@@ -34,7 +34,7 @@ public fun <T> Flow<T>.takeUntilExclusive(stopOn: (T) -> Boolean): Flow<T> = tra
 }
 
 /**
- * An operator to take all values emitted by the subject [Flow], only stopping when [stopOn] returns
+ * An operator to take all values emitted by the subject flow, only stopping when [stopOn] returns
  * true. When this condition is reached, the offending emission ***WILL*** be passed onto the
  * caller and the flow will be cancelled.
  */

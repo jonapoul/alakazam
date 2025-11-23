@@ -12,7 +12,7 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
 /**
- * Cleans up some of the boilerplate associated with collecting [Flow] streams from a fragment. Without this we'd
+ * Cleans up some of the boilerplate associated with collecting flow streams from a fragment. Without this we'd
  * need two indentations before any collected values are dealt with, but this reduces that by one so it's a tad more
  * readable.
  */
@@ -23,7 +23,7 @@ public fun <T> CoroutineScope.collectFlow(flow: Flow<T>, context: CoroutineConte
   launch(context) { flow.collect(call::invoke) }
 
 /**
- * Runs an infinite loop of periodic function calls, scoped to the [CoroutineScope]'s lifecycle.
+ * Runs an infinite loop of periodic function calls, scoped to the CoroutineScope's lifecycle.
  */
 public fun CoroutineScope.launchInfiniteLoop(
   loopController: LoopController = InfiniteLoopController,

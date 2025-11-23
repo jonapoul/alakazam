@@ -5,7 +5,7 @@ plugins {
   alias(libs.plugins.module.multiplatform)
 }
 
-android {
+kotlin.android {
   namespace = "alakazam.kotlin.logging"
 }
 

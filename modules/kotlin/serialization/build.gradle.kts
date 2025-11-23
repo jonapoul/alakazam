@@ -6,7 +6,7 @@ plugins {
   alias(libs.plugins.kotlin.serialization)
 }
 
-android {
+kotlin.android {
   namespace = "alakazam.kotlin.serialization"
 }
 
