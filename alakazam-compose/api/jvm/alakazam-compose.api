@@ -1,0 +1,19 @@
+public final class alakazam/compose/CompositionsKt {
+	public static final fun getCurrentOrThrow (Landroidx/compose/runtime/ProvidableCompositionLocal;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
+}
+
+public final class alakazam/compose/DisposablesKt {
+	public static final fun OnDispose (Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V
+}
+
+public final class alakazam/compose/MutableStateExtensionsKt {
+	public static final fun set (Landroidx/compose/runtime/MutableState;Ljava/lang/Object;)V
+}
+
+public final class alakazam/compose/SpacersKt {
+	public static final fun HorizontalSpacer (Landroidx/compose/foundation/layout/RowScope;FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun HorizontalSpacer--orJrPs (FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun VerticalSpacer (Landroidx/compose/foundation/layout/ColumnScope;FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun VerticalSpacer--orJrPs (FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+}
+

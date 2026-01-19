@@ -1,23 +1,88 @@
+@file:Suppress("UnstableApiUsage")
+
 package alakazam.gradle
 
-import blueprint.core.libs
-import blueprint.core.version
-import blueprint.recipes.androidDesugaringBlueprint
-import blueprint.recipes.androidLibBlueprint
+import blueprint.core.intProperty
 import com.android.build.api.dsl.LibraryExtension
+import org.gradle.android.AndroidCacheFixPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.findByType
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class ConventionAndroid : Plugin<Project> {
   override fun apply(target: Project) = with(target) {
-    androidLibBlueprint()
-    androidDesugaringBlueprint(libs.version("desugaring"))
+    with(pluginManager) {
+      apply(AndroidCacheFixPlugin::class)
+      apply(ConventionKotlinBase::class)
+    }
 
-    extensions.configure<LibraryExtension> {
+    tasks.withType(KotlinCompile::class).configureEach {
+      compilerOptions {
+        jvmTarget.set(jvmTarget())
+      }
+    }
+
+    extensions.configure(LibraryExtension::class) {
+      namespace = namespace()
+      compileSdk = intProperty(key = "alakazam.compileSdk").get()
+
+      defaultConfig {
+        minSdk = intProperty(key = "alakazam.minSdk").get()
+        testInstrumentationRunnerArguments["disableAnalytics"] = "true"
+      }
+
+      extensions.findByType(KotlinJvmCompilerOptions::class)?.apply {
+        jvmTarget.set(jvmTarget())
+      }
+
+      val version = javaVersion().get()
+      compileOptions {
+        sourceCompatibility = version
+        targetCompatibility = version
+      }
+
+      buildFeatures {
+        aidl = false
+        buildConfig = false
+        compose = false
+        prefab = false
+        renderScript = false
+        resValues = false
+        shaders = false
+        viewBinding = false
+      }
+
+      lint {
+        abortOnError = false
+        checkGeneratedSources = false
+        checkReleaseBuilds = false
+        checkReleaseBuilds = false
+        checkTestSources = true
+        explainIssues = true
+        htmlReport = true
+        xmlReport = true
+        lintConfig = rootProject
+          .isolated
+          .projectDirectory
+          .file("config/lint.xml")
+          .asFile
+      }
+
       packaging {
         resources {
           pickFirsts.add("MANIFEST.MF")
+        }
+      }
+
+      testOptions {
+        unitTests {
+          isIncludeAndroidResources = true
+          isReturnDefaultValues = true
         }
       }
     }

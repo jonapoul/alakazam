@@ -1,8 +1,8 @@
 package alakazam.gradle
 
-import blueprint.recipes.licenseeBlueprint
-import com.diffplug.gradle.spotless.SpotlessExtension
-import com.diffplug.gradle.spotless.SpotlessPlugin
+import app.cash.licensee.LicenseeExtension
+import app.cash.licensee.LicenseePlugin
+import app.cash.licensee.UnusedAction.IGNORE
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektPlugin
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
@@ -14,30 +14,20 @@ import org.gradle.kotlin.dsl.getValue
 import org.gradle.kotlin.dsl.provideDelegate
 import org.gradle.kotlin.dsl.registering
 import org.gradle.kotlin.dsl.withType
-import org.gradle.plugins.ide.idea.IdeaPlugin
-import org.gradle.plugins.ide.idea.model.IdeaModel
 
 class ConventionStyle : Plugin<Project> {
   override fun apply(target: Project): Unit = with(target) {
     with(pluginManager) {
-      apply(IdeaPlugin::class)
       apply(DetektPlugin::class)
-      apply(SpotlessPlugin::class)
+      apply(LicenseePlugin::class)
     }
 
-    extensions.configure<IdeaModel> {
-      module {
-        isDownloadSources = true
-        isDownloadJavadoc = true
-      }
-    }
-
-    extensions.configure<DetektExtension> {
+    extensions.configure(DetektExtension::class) {
       config.setFrom(rootProject.file("config/detekt.yml"))
       buildUponDefaultConfig = true
     }
 
-    val detektTasks = tasks.withType<Detekt>()
+    val detektTasks = tasks.withType(Detekt::class)
     val detektCheck by tasks.registering { dependsOn(detektTasks) }
     tasks.named("check").configure { dependsOn(detektCheck) }
 
@@ -46,24 +36,11 @@ class ConventionStyle : Plugin<Project> {
       exclude { it.file.path.contains("generated") }
     }
 
-    extensions.configure<SpotlessExtension> {
-      format("misc") {
-        target("*.gradle", "*.md", ".gitignore")
-        trimTrailingWhitespace()
-        leadingTabsToSpaces(2)
-        endWithNewline()
-      }
-
-      format("licenseKotlin") {
-        licenseHeaderFile(rootProject.file("config/spotless.kt"), "(package|@file:)")
-        target("src/**/*.kt")
-      }
+    extensions.configure(LicenseeExtension::class) {
+      allow("Apache-2.0")
+      allow("BSD-2-Clause")
+      allow("EPL-1.0")
+      unusedAction(IGNORE)
     }
-
-    licenseeBlueprint(
-      allowedUrls = listOf(
-        "https://opensource.org/license/mit", // slf4j
-      ),
-    )
   }
 }

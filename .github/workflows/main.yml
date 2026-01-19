@@ -31,7 +31,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
-          java-version: 21
+          java-version: 17
           distribution: "zulu"
 
       - name: Set up Gradle
@@ -41,9 +41,6 @@ jobs:
           dependency-graph: generate-and-submit
           cache-read-only: false
           dependency-graph-continue-on-failure: false
-
-      - name: Initialise Gradle project
-        run: ./gradlew dependencies
 
       - name: Check
         run: ./gradlew check
