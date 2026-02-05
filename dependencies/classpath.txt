@@ -104,8 +104,8 @@ commons-io:commons-io:2.16.1
 commons-logging:commons-logging:1.2
 dev.drewhamilton.poko:poko-annotations-jvm:0.18.7
 dev.drewhamilton.poko:poko-annotations:0.18.7
-dev.jonpoulton.takdevx.dependency-guard:dev.jonpoulton.takdevx.dependency-guard.gradle.plugin:0.1.1-SNAPSHOT
-dev.jonpoulton.takdevx:dependency-guard:0.1.1-SNAPSHOT
+dev.jonpoulton.takdevx.dependency-guard:dev.jonpoulton.takdevx.dependency-guard.gradle.plugin:0.2.0
+dev.jonpoulton.takdevx:dependency-guard:0.2.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.30.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.30.0
 gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:3.0.3
