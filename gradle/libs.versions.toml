@@ -27,7 +27,7 @@ androidCacheFix = { id = "org.gradle.android.cache-fix", version = "3.0.3" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version = "3.5.1" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
-dependencyGuardTak = { id = "dev.jonpoulton.takdevx.dependency-guard", version = "0.1.1-SNAPSHOT" }
+dependencyGuardTak = { id = "dev.jonpoulton.takdevx.dependency-guard", version = "0.2.0" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.8" }
 dokka = { id = "org.jetbrains.dokka", version = "2.1.0" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

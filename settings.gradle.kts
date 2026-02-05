@@ -2,30 +2,10 @@
 
 rootProject.name = "alakazam"
 
+apply(from = "gradle/repositories.gradle.kts")
+
 pluginManagement {
   includeBuild("build-logic")
-  repositories {
-    google {
-      mavenContent {
-        includeGroupByRegex(".*android.*")
-        includeGroupByRegex(".*google.*")
-      }
-    }
-    mavenCentral()
-    gradlePluginPortal()
-  }
-}
-
-dependencyResolutionManagement {
-  repositories {
-    google {
-      mavenContent {
-        includeGroupByRegex(".*android.*")
-        includeGroupByRegex(".*google.*")
-      }
-    }
-    mavenCentral()
-  }
 }
 
 plugins {

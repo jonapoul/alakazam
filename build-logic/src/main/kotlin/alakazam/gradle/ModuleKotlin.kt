@@ -45,8 +45,8 @@ class ModuleKotlin : Plugin<Project> {
 
       extensions.configure(KotlinMultiplatformAndroidLibraryTarget::class) {
         namespace = namespace()
-        minSdk = intProperty("alakazam.minSdk").get()
-        compileSdk = intProperty("alakazam.compileSdk").get()
+        minSdk = providers.intProperty("alakazam.minSdk").get()
+        compileSdk = providers.intProperty("alakazam.compileSdk").get()
 
         packaging.resources.excludes.addAll(
           listOf(

@@ -29,10 +29,10 @@ class ConventionAndroid : Plugin<Project> {
 
     extensions.configure(LibraryExtension::class) {
       namespace = namespace()
-      compileSdk = intProperty(key = "alakazam.compileSdk").get()
+      compileSdk = providers.intProperty(key = "alakazam.compileSdk").get()
 
       defaultConfig {
-        minSdk = intProperty(key = "alakazam.minSdk").get()
+        minSdk = providers.intProperty(key = "alakazam.minSdk").get()
         testInstrumentationRunnerArguments["disableAnalytics"] = "true"
       }
 
