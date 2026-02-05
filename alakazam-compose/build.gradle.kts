@@ -20,3 +20,9 @@ kotlin {
 dependencies {
   lintChecks(libs.compose.lint)
 }
+
+takDependencyGuard {
+  allow("androidx.activity:activity:1.8.2")
+  allow("androidx.collection:collection-jvm:1.5.0")
+  allow("androidx.collection:collection:1.5.0")
+}
