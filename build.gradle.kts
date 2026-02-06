@@ -15,8 +15,13 @@ plugins {
   alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.publishReport)
+  id("alakazam.convention.detekt")
 }
 
 dependencyGuard {
   configuration("classpath")
+}
+
+tasks.detektCheck {
+  dependsOn(gradle.includedBuild("build-logic").task(":detektCheck"))
 }

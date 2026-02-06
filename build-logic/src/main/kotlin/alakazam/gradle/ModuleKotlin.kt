@@ -1,8 +1,6 @@
 package alakazam.gradle
 
-import blueprint.core.get
 import blueprint.core.intProperty
-import blueprint.core.libs
 import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
 import com.android.build.gradle.api.KotlinMultiplatformAndroidPlugin
 import com.autonomousapps.DependencyAnalysisPlugin

@@ -36,9 +36,10 @@ class ConventionAndroid : Plugin<Project> {
         testInstrumentationRunnerArguments["disableAnalytics"] = "true"
       }
 
-      extensions.findByType(KotlinJvmCompilerOptions::class)?.apply {
-        jvmTarget.set(jvmTarget())
-      }
+      extensions
+        .findByType(KotlinJvmCompilerOptions::class)
+        ?.jvmTarget
+        ?.set(jvmTarget())
 
       val version = javaVersion().get()
       compileOptions {

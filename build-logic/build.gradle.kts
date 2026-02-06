@@ -1,11 +1,22 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
   `kotlin-dsl`
+  alias(libs.plugins.detekt)
 }
 
 tasks.validatePlugins {
   enableStricterValidation = true
   failOnWarning = true
 }
+
+detekt {
+  config.setFrom(file("../config/detekt.yml"))
+  buildUponDefaultConfig = true
+}
+
+val detektCheck by tasks.registering { dependsOn(tasks.withType(Detekt::class)) }
+tasks.check { dependsOn(detektCheck) }
 
 dependencies {
   fun compileOnlyPlugin(plugin: Provider<PluginDependency>) =
@@ -38,5 +49,6 @@ gradlePlugin {
 
     "alakazam.module.android"(impl = "alakazam.gradle.ModuleAndroid")
     "alakazam.module.kotlin"(impl = "alakazam.gradle.ModuleKotlin")
+    "alakazam.convention.detekt"(impl = "alakazam.gradle.ConventionDetekt")
   }
 }

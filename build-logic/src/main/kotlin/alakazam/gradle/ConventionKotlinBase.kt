@@ -11,9 +11,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class ConventionKotlinBase : Plugin<Project> {
   override fun apply(target: Project) = with(target) {
-    with(pluginManager) {
-      apply(BinaryCompatibilityValidatorPlugin::class)
-    }
+    pluginManager.apply(BinaryCompatibilityValidatorPlugin::class)
 
     tasks.withType<KotlinCompile>().configureEach {
       compilerOptions {
