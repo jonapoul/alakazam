@@ -1,37 +1,54 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
   `kotlin-dsl`
+  alias(libs.plugins.detekt)
 }
 
-fun DependencyHandler.plugin(dependency: Provider<PluginDependency>) =
-  dependency.get().run { create("$pluginId:$pluginId.gradle.plugin:$version") }
+tasks.validatePlugins {
+  enableStricterValidation = true
+  failOnWarning = true
+}
+
+detekt {
+  config.setFrom(file("../config/detekt.yml"))
+  buildUponDefaultConfig = true
+}
+
+val detektCheck by tasks.registering { dependsOn(tasks.withType(Detekt::class)) }
+tasks.check { dependsOn(detektCheck) }
 
 dependencies {
-  compileOnly(libs.plugin.agp)
-  compileOnly(libs.plugin.kotlin)
-  compileOnly(plugin(libs.plugins.androidCacheFix))
-  compileOnly(plugin(libs.plugins.androidx.hilt))
-  compileOnly(plugin(libs.plugins.compose))
-  compileOnly(plugin(libs.plugins.detekt))
-  compileOnly(plugin(libs.plugins.dokka))
-  compileOnly(plugin(libs.plugins.kover))
-  compileOnly(plugin(libs.plugins.licensee))
-  compileOnly(plugin(libs.plugins.publish))
-  compileOnly(plugin(libs.plugins.spotless))
+  fun compileOnlyPlugin(plugin: Provider<PluginDependency>) =
+    compileOnly(plugin.map { "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version.requiredVersion}" })
 
-  implementation(libs.plugin.blueprint.core)
-  implementation(libs.plugin.blueprint.recipes)
+  compileOnlyPlugin(libs.plugins.agp)
+  compileOnlyPlugin(libs.plugins.androidCacheFix)
+  compileOnlyPlugin(libs.plugins.compose)
+  compileOnlyPlugin(libs.plugins.dependencyAnalysis)
+  compileOnlyPlugin(libs.plugins.dependencyGuard)
+  compileOnlyPlugin(libs.plugins.dependencyGuardTak)
+  compileOnlyPlugin(libs.plugins.detekt)
+  compileOnlyPlugin(libs.plugins.dokka)
+  compileOnlyPlugin(libs.plugins.kotlin.compose)
+  compileOnlyPlugin(libs.plugins.kotlin.multiplatform)
+  compileOnlyPlugin(libs.plugins.kotlin.serialization)
+  compileOnlyPlugin(libs.plugins.kotlinx.abi)
+  compileOnlyPlugin(libs.plugins.licensee)
+  compileOnlyPlugin(libs.plugins.publish)
+
+  implementation(libs.blueprint)
 }
 
 gradlePlugin {
   plugins {
-    create(id = "alakazam.module.android", impl = "alakazam.gradle.ModuleAndroid")
-    create(id = "alakazam.module.kotlin", impl = "alakazam.gradle.ModuleKotlin")
-    create(id = "alakazam.module.kotlin.nopublish", impl = "alakazam.gradle.ModuleKotlinNoPublish")
-    create(id = "alakazam.module.multiplatform", impl = "alakazam.gradle.ModuleMultiplatform")
-  }
-}
+    operator fun String.invoke(impl: String) = create(this) {
+      this.id = this@invoke
+      implementationClass = impl
+    }
 
-fun NamedDomainObjectContainer<PluginDeclaration>.create(id: String, impl: String) = create(id) {
-  this.id = id
-  implementationClass = impl
+    "alakazam.module.android"(impl = "alakazam.gradle.ModuleAndroid")
+    "alakazam.module.kotlin"(impl = "alakazam.gradle.ModuleKotlin")
+    "alakazam.convention.detekt"(impl = "alakazam.gradle.ConventionDetekt")
+  }
 }

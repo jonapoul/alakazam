@@ -1,0 +1,80 @@
+public final class alakazam/test/AssertionsKt {
+	public static final fun assertEmpty (Ljava/util/Collection;)V
+	public static final fun assertLessThan (Ljava/lang/Comparable;Ljava/lang/Comparable;)V
+	public static final fun assertMoreThan (Ljava/lang/Comparable;Ljava/lang/Comparable;)V
+	public static final fun assertNotEmpty (Ljava/util/Collection;)V
+	public static final fun fail (Ljava/lang/String;)V
+}
+
+public final class alakazam/test/ClocksKt {
+	public static final fun TestClock (Ljava/util/List;)Lkotlin/time/Clock;
+	public static final fun TestClock (Lkotlin/jvm/functions/Function0;)Lkotlin/time/Clock;
+	public static final fun TestClock (Lkotlin/time/Instant;)Lkotlin/time/Clock;
+	public static final fun TestClock ([Lkotlin/time/Instant;)Lkotlin/time/Clock;
+}
+
+public class alakazam/test/FiniteLoopController : alakazam/kotlin/LoopController {
+	public fun <init> (I)V
+	public fun shouldLoop ()Z
+}
+
+public abstract interface annotation class alakazam/test/Flaky : java/lang/annotation/Annotation {
+	public static final field Companion Lalakazam/test/Flaky$Companion;
+	public static final field DEFAULT_RETRY_COUNT I
+	public abstract fun reason ()Ljava/lang/String;
+	public abstract fun retry ()I
+}
+
+public final class alakazam/test/Flaky$Companion {
+	public static final field DEFAULT_RETRY_COUNT I
+}
+
+public final class alakazam/test/FlakyTestRule : org/junit/rules/TestRule {
+	public fun <init> ()V
+	public fun <init> (Z)V
+	public synthetic fun <init> (ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun apply (Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;)Lorg/junit/runners/model/Statement;
+}
+
+public final class alakazam/test/LocaleRule : org/junit/rules/ExternalResource {
+	public fun <init> (Ljava/util/Locale;)V
+}
+
+public final class alakazam/test/MainDispatcherRule : org/junit/rules/TestWatcher {
+	public fun <init> ()V
+	public fun <init> (Lkotlinx/coroutines/test/TestDispatcher;)V
+	public synthetic fun <init> (Lkotlinx/coroutines/test/TestDispatcher;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getDispatcher ()Lkotlinx/coroutines/test/TestDispatcher;
+}
+
+public abstract interface annotation class alakazam/test/Repeat : java/lang/annotation/Annotation {
+	public abstract fun iterations ()I
+}
+
+public final class alakazam/test/RepeatTestRule : org/junit/rules/TestRule {
+	public fun <init> ()V
+	public fun apply (Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;)Lorg/junit/runners/model/Statement;
+}
+
+public final class alakazam/test/SingleLoopController : alakazam/test/FiniteLoopController {
+	public fun <init> ()V
+}
+
+public final class alakazam/test/TestCoroutineContexts : alakazam/kotlin/CoroutineContexts {
+	public fun <init> (Lalakazam/test/MainDispatcherRule;)V
+	public fun <init> (Lkotlin/coroutines/CoroutineContext;)V
+	public fun getDefault ()Lkotlin/coroutines/CoroutineContext;
+	public fun getIo ()Lkotlin/coroutines/CoroutineContext;
+	public fun getMain ()Lkotlin/coroutines/CoroutineContext;
+	public fun getUnconfined ()Lkotlin/coroutines/CoroutineContext;
+}
+
+public final class alakazam/test/TestScopeExtensionsKt {
+	public static final fun getStandardDispatcher (Lkotlinx/coroutines/test/TestScope;)Lkotlinx/coroutines/test/TestDispatcher;
+	public static final fun getUnconfinedDispatcher (Lkotlinx/coroutines/test/TestScope;)Lkotlinx/coroutines/test/TestDispatcher;
+}
+
+public final class alakazam/test/TimeZoneRule : org/junit/rules/ExternalResource {
+	public fun <init> (Ljava/util/TimeZone;)V
+}
+

@@ -2,74 +2,26 @@
 
 rootProject.name = "alakazam"
 
+apply(from = "gradle/repositories.gradle.kts")
+
 pluginManagement {
   includeBuild("build-logic")
-  repositories {
-    google {
-      mavenContent {
-        includeGroupByRegex(".*android.*")
-        includeGroupByRegex(".*google.*")
-      }
-    }
-    mavenCentral()
-    gradlePluginPortal()
-    maven("https://oss.sonatype.org/content/repositories/snapshots")
-    mavenLocal()
-  }
-}
-
-dependencyResolutionManagement {
-  repositories {
-    google {
-      mavenContent {
-        includeGroupByRegex(".*android.*")
-        includeGroupByRegex(".*google.*")
-      }
-    }
-    mavenCentral()
-    mavenLocal()
-  }
 }
 
 plugins {
   id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-  id("com.gradle.develocity") version "4.3"
+  id("com.gradle.develocity") version "4.3.2"
 }
 
 develocity {
   buildScan.publishing.onlyIf { false }
 }
 
-includeBuild("build-logic")
+include(
+  ":alakazam-android",
+  ":alakazam-compose",
+  ":alakazam-kotlin",
+  ":alakazam-testing",
+)
 
-include(":modules:kotlin:core")
-include(":modules:kotlin:compose")
-include(":modules:kotlin:logging")
-include(":modules:kotlin:serialization")
-include(":modules:kotlin:time")
-
-include(":modules:android:core")
-include(":modules:android:http")
-include(":modules:android:navigation")
-include(":modules:android:theme")
-include(":modules:android:ui:appcompat")
-include(":modules:android:ui:core")
-include(":modules:android:ui:material")
-include(":modules:android:ui:viewbinding")
-
-include(":modules:db:room")
-include(":modules:db:sqldelight")
-include(":modules:db:sqldelight:test")
-
-include(":modules:di:dagger")
-include(":modules:di:hilt")
-
-include(":modules:testing:android")
-include(":modules:testing:core")
-include(":modules:testing:hilt")
-include(":modules:testing:logging")
-include(":modules:testing:room")
-include(":modules:testing:sqldelight")
-
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

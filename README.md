@@ -1,7 +1,7 @@
 # Alakazam
 
 ![CI](https://github.com/jonapoul/alakazam/actions/workflows/main.yml/badge.svg)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/android-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/android-core)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/kotlin)
 
 ![Alakazam](docs/alakazam.png)
 
@@ -14,51 +14,23 @@ TODO
 
 ## Usage
 
-Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
+Add to your `settings.gradle.kts` file:
 
 ```gradle
-allprojects {
-    repositories {
-        mavenCentral()
-    }
+dependencyResolutionManagement {
+  repositories {
+    mavenCentral()
+  }
 }
 ```
 
-And add a dependency code to your **module**'s `build.gradle` file.
+And add a dependency code to your **module**'s `build.gradle.kts` file.
 
 ```kotlin
 dependencies {
-  // Android libraries
-  implementation("dev.jonpoulton.alakazam:android-core:{version}")
-  implementation("dev.jonpoulton.alakazam:android-http:{version}")
-  implementation("dev.jonpoulton.alakazam:android-navigation:{version}")
-  implementation("dev.jonpoulton.alakazam:android-theme:{version}")
-  implementation("dev.jonpoulton.alakazam:android-ui-appcompat:{version}")
-  implementation("dev.jonpoulton.alakazam:android-ui-core:{version}")
-  implementation("dev.jonpoulton.alakazam:android-ui-material:{version}")
-  implementation("dev.jonpoulton.alakazam:android-ui-viewbinding:{version}")
-
-  // Database libraries
-  implementation("dev.jonpoulton.alakazam:db-room:{version}")
-  implementation("dev.jonpoulton.alakazam:db-sqldelight:{version}")
-
-  // DI libraries
-  implementation("dev.jonpoulton.alakazam:di-dagger:{version}")
-  implementation("dev.jonpoulton.alakazam:di-hilt:{version}")
-
-  // Kotlin libraries
-  implementation("dev.jonpoulton.alakazam:kotlin-compose:{version}")
-  implementation("dev.jonpoulton.alakazam:kotlin-core:{version}")
-  implementation("dev.jonpoulton.alakazam:kotlin-logging:{version}")
-  implementation("dev.jonpoulton.alakazam:kotlin-serialization:{version}")
-  implementation("dev.jonpoulton.alakazam:kotlin-time:{version}")
-
-  // Testing libraries
-  testImplementation("dev.jonpoulton.alakazam:testing-core:{version}")
-  testImplementation("dev.jonpoulton.alakazam:testing-logging:{version}")
-  testImplementation("dev.jonpoulton.alakazam:testing-room:{version}")
-  testImplementation("dev.jonpoulton.alakazam:testing-sqldelight:{version}")
-  androidTestImplementation("dev.jonpoulton.alakazam:testing-android:{version}")
-  androidTestImplementation("dev.jonpoulton.alakazam:testing-hilt:{version}")
+  implementation("dev.jonpoulton.alakazam:android:{version}")
+  implementation("dev.jonpoulton.alakazam:compose:{version}")
+  implementation("dev.jonpoulton.alakazam:kotlin:{version}")
+  testImplementation("dev.jonpoulton.alakazam:testing:{version}")
 }
 ```

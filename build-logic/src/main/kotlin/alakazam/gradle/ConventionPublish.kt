@@ -15,7 +15,7 @@ class ConventionPublish : Plugin<Project> {
       apply(DokkaPlugin::class)
     }
 
-    extensions.configure<DokkaExtension> {
+    extensions.configure(DokkaExtension::class) {
       dokkaPublications.configureEach {
         failOnWarning.set(true)
       }

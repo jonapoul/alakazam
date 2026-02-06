@@ -1,0 +1,14 @@
+@file:Suppress("UnreachableCode", "RedundantSuppression")
+
+package alakazam.test
+
+import java.io.InputStream
+
+public inline fun <reified T> T.getResourceAsStream(filename: String): InputStream =
+  T::class.java.classLoader?.getResourceAsStream(filename)
+    ?: error("Null input stream for $filename!")
+
+public inline fun <reified T> T.getResourceAsText(filename: String): String =
+  getResourceAsStream(filename)
+    .reader()
+    .readText()
