@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinBaseExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class ConventionKotlinBase : Plugin<Project> {
-  override fun apply(target: Project) = with(target) {
+  override fun apply(target: Project): Unit = with(target) {
     pluginManager.apply(BinaryCompatibilityValidatorPlugin::class)
 
     tasks.withType<KotlinCompile>().configureEach {
@@ -25,6 +25,10 @@ class ConventionKotlinBase : Plugin<Project> {
 
     extensions.configure(KotlinBaseExtension::class) {
       explicitApi()
+    }
+
+    tasks.register("compileAll") {
+      dependsOn(tasks.withType<KotlinCompile>())
     }
   }
 }
