@@ -13,7 +13,6 @@ kotlin {
     api(compose.runtime)
     implementation(compose.ui)
     implementation(compose.preview)
-    implementation(compose.uiTooling)
   }
 }
 

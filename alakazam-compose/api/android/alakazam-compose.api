@@ -14,18 +14,6 @@ public final class alakazam/compose/MutableStateExtensionsKt {
 	public static final fun set (Landroidx/compose/runtime/MutableState;Ljava/lang/Object;)V
 }
 
-public abstract interface annotation class alakazam/compose/PreviewDark : java/lang/annotation/Annotation {
-}
-
-public abstract interface annotation class alakazam/compose/PreviewLandscape : java/lang/annotation/Annotation {
-}
-
-public abstract interface annotation class alakazam/compose/PreviewLight : java/lang/annotation/Annotation {
-}
-
-public abstract interface annotation class alakazam/compose/PreviewThemes : java/lang/annotation/Annotation {
-}
-
 public final class alakazam/compose/SpacersKt {
 	public static final fun HorizontalSpacer (Landroidx/compose/foundation/layout/RowScope;FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
 	public static final fun HorizontalSpacer--orJrPs (FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
