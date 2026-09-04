@@ -1,4 +1,3 @@
-import blueprint.core.androidMainDependencies
 import blueprint.core.commonMainDependencies
 import blueprint.core.commonTestDependencies
 
