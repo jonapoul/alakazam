@@ -1,3 +1,7 @@
+public class alakazam/kotlin/AutoCloseableStateHolder : alakazam/kotlin/CloseableStateHolder {
+	public fun <init> (Ljava/lang/AutoCloseable;)V
+}
+
 public final class alakazam/kotlin/BasicBuildConfig : alakazam/kotlin/BuildConfig {
 	public fun <init> (ZLjava/lang/String;ILjava/lang/String;Ljava/lang/String;Lkotlin/time/Instant;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public final fun component1 ()Z
@@ -68,6 +72,13 @@ public final class alakazam/kotlin/ByteArrayExtensionsKt {
 
 public final class alakazam/kotlin/CloseableExtensionsKt {
 	public static final fun quietlyClose (Ljava/io/Closeable;)V
+}
+
+public class alakazam/kotlin/CloseableStateHolder : alakazam/kotlin/StateHolder {
+	public fun <init> (Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
+	public fun compareAndSet (Ljava/lang/Object;Ljava/lang/Object;)Z
+	public fun getValue ()Ljava/lang/Object;
+	public fun setValue (Ljava/lang/Object;)V
 }
 
 public abstract interface class alakazam/kotlin/CoroutineContexts {
@@ -184,7 +195,6 @@ public class alakazam/kotlin/SimpleSerializer : kotlinx/serialization/KSerialize
 
 public class alakazam/kotlin/StateHolder : kotlinx/coroutines/flow/MutableStateFlow {
 	public fun <init> (Ljava/lang/Object;)V
-	public fun <init> (Ljava/lang/Object;Lkotlinx/coroutines/flow/MutableStateFlow;)V
 	public fun collect (Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun compareAndSet (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun emit (Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
