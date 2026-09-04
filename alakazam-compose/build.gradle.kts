@@ -9,10 +9,8 @@ plugins {
 kotlin {
   commonMainDependencies {
     api(compose.foundation)
-    api(compose.material3)
     api(compose.runtime)
     implementation(compose.ui)
-    implementation(compose.preview)
   }
 }
 
@@ -21,7 +19,6 @@ dependencies {
 }
 
 takDependencyGuard {
-  allow("androidx.activity:activity:1.8.2")
   allow("androidx.collection:collection-jvm:1.5.0")
   allow("androidx.collection:collection:1.5.0")
 }

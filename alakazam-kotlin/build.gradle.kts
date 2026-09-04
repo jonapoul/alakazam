@@ -19,7 +19,6 @@ kotlin {
     implementation(libs.test.junit)
     implementation(libs.test.kotlin.coroutines)
     implementation(libs.test.turbine)
-    implementation(project(":alakazam-kotlin"))
     implementation(project(":alakazam-testing"))
   }
 }
