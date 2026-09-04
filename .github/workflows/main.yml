@@ -12,23 +12,30 @@ env:
 permissions:
   contents: write
   checks: write
+  security-events: write
 
 concurrency:
   group: 'ci-${{ github.workflow }}-${{ github.ref }}'
   cancel-in-progress: true
 
 jobs:
-  gitleaks:
+  betterleaks:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITLEAKS_CONFIG: ./config/gitleaks.toml
+      - uses: dortort/betterleaks-action@cd0b905aa4befb8f42f8b1ab98150180c9e77515 # v0.1.0
+        id: betterleaks
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          config: ./config/betterleaks.toml
+          fail-on-leak: 'true'
+      - uses: github/codeql-action/upload-sarif@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4
+        if: always()
+        with:
+          sarif_file: ${{ steps.betterleaks.outputs.sarif-path }}
 
   check-build-logic:
     runs-on: ubuntu-latest
@@ -75,7 +82,7 @@ jobs:
   finish:
     if: ${{ !cancelled() }}
     needs:
-      - gitleaks
+      - betterleaks
       - check-build-logic
       - check
       - dependency-guard

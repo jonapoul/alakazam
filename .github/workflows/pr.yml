@@ -12,6 +12,7 @@ permissions:
   contents: read
   checks: write
   pull-requests: write
+  security-events: write
 
 concurrency:
   group: 'ci-${{ github.event.merge_group.head_ref || github.head_ref }}-${{ github.workflow }}'
@@ -93,17 +94,23 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7 # v2
 
-  gitleaks:
+  betterleaks:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITLEAKS_CONFIG: ./config/gitleaks.toml
+      - uses: dortort/betterleaks-action@cd0b905aa4befb8f42f8b1ab98150180c9e77515 # v0.1.0
+        id: betterleaks
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          config: ./config/betterleaks.toml
+          fail-on-leak: 'true'
+      - uses: github/codeql-action/upload-sarif@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4
+        if: always()
+        with:
+          sarif_file: ${{ steps.betterleaks.outputs.sarif-path }}
 
   ktfmt:
     runs-on: ubuntu-latest
@@ -114,7 +121,7 @@ jobs:
       - run: scripts/ktfmt.sh check --force
 
   validation:
-    needs: [ changed-files, renovate, gradle-wrapper, shellcheck, actionlint, gitleaks, ktfmt ]
+    needs: [ changed-files, renovate, gradle-wrapper, shellcheck, actionlint, betterleaks, ktfmt ]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
