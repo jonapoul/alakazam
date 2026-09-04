@@ -1,13 +1,13 @@
 package alakazam.kotlin
 
 import alakazam.test.FiniteLoopController
+import kotlin.test.assertEquals
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
-import kotlin.test.assertEquals
 
 internal class CoroutineScopeExtensionsKtTest {
   @Test

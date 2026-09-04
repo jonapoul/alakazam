@@ -9,10 +9,10 @@ public interface ResettableStateFlow<T> : MutableStateFlow<T> {
   public fun reset()
 }
 
-public fun <T> ResettableStateFlow(value: T): ResettableStateFlow<T> = ResettableStateFlowImpl(value)
+public fun <T> ResettableStateFlow(value: T): ResettableStateFlow<T> =
+  ResettableStateFlowImpl(value)
 
-private class ResettableStateFlowImpl<T>(
-  private val initialValue: T,
-) : ResettableStateFlow<T>, MutableStateFlow<T> by MutableStateFlow(initialValue) {
+private class ResettableStateFlowImpl<T>(private val initialValue: T) :
+  ResettableStateFlow<T>, MutableStateFlow<T> by MutableStateFlow(initialValue) {
   override fun reset() = update { initialValue }
 }

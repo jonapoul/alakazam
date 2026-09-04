@@ -26,7 +26,8 @@ public class FlakyTestRule(private val applyToAll: Boolean = false) : TestRule {
 }
 
 /**
- * @property reason The reason explaining what is flaky in the test, and any corresponding JIRA ticket.
+ * @property reason The reason explaining what is flaky in the test, and any corresponding JIRA
+ *   ticket.
  * @property retry The number of retry allowed to make the test pass successfully.
  */
 public annotation class Flaky(
@@ -51,7 +52,11 @@ private class FlakyTestRuleException(
   iterations: Int,
   description: Description,
   cause: Throwable?,
-) : IllegalStateException("Giving up on test [${description.displayName}] after $iterations iterations.", cause)
+) :
+  IllegalStateException(
+    "Giving up on test [${description.displayName}] after $iterations iterations.",
+    cause,
+  )
 
 private class FlakyTestStatement(
   private val statement: Statement,
@@ -61,17 +66,20 @@ private class FlakyTestStatement(
   override fun evaluate() {
     var cause: Throwable? = null
     repeat(iterations) { iteration ->
-      runCatching { statement.evaluate() }.fold(
-        onSuccess = {
-          val iterationCount = iteration + 1
-          println("FlakyTestRule: [${description.displayName}] ${"succeeded after $iterationCount iterations."}")
-          return
-        },
-        onFailure = { throwable ->
-          cause = throwable
-          throwable.printStackTrace()
-        },
-      )
+      runCatching { statement.evaluate() }
+        .fold(
+          onSuccess = {
+            val iterationCount = iteration + 1
+            println(
+              "FlakyTestRule: [${description.displayName}] ${"succeeded after $iterationCount iterations."}"
+            )
+            return
+          },
+          onFailure = { throwable ->
+            cause = throwable
+            throwable.printStackTrace()
+          },
+        )
     }
     throw FlakyTestRuleException(iterations, description, cause)
   }

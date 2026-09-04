@@ -1,7 +1,7 @@
 package alakazam.kotlin
 
-import org.junit.Test
 import java.io.Closeable
+import org.junit.Test
 
 internal class CloseableExtensionsTest {
   private lateinit var closeable: Closeable

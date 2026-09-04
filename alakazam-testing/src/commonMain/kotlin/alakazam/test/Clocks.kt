@@ -5,13 +5,15 @@ package alakazam.test
 import kotlin.time.Clock
 import kotlin.time.Instant
 
-public fun TestClock(time: Instant): Clock = object : Clock {
-  override fun now(): Instant = time
-}
+public fun TestClock(time: Instant): Clock =
+  object : Clock {
+    override fun now(): Instant = time
+  }
 
-public fun TestClock(time: () -> Instant): Clock = object : Clock {
-  override fun now(): Instant = time()
-}
+public fun TestClock(time: () -> Instant): Clock =
+  object : Clock {
+    override fun now(): Instant = time()
+  }
 
 public fun TestClock(vararg times: Instant): Clock = TestClock(times.toList())
 

@@ -1,10 +1,10 @@
 package alakazam.kotlin
 
 import app.cash.turbine.test
+import kotlin.test.assertEquals
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
-import kotlin.test.assertEquals
 
 internal class ResettableStateFlowTest {
   @Test

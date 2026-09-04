@@ -1,11 +1,11 @@
 package alakazam.kotlin
 
 import app.cash.turbine.test
+import kotlin.test.assertEquals
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
-import kotlin.test.assertEquals
 
 internal class CloseableStateHolderTest {
   private lateinit var closed: MutableList<String>
@@ -14,10 +14,11 @@ internal class CloseableStateHolderTest {
   @Before
   fun before() {
     closed = mutableListOf()
-    stateHolder = CloseableStateHolder(
-      initialState = CloseableString(INITIAL_VALUE),
-      onClose = { closed.add(it.value) },
-    )
+    stateHolder =
+      CloseableStateHolder(
+        initialState = CloseableString(INITIAL_VALUE),
+        onClose = { closed.add(it.value) },
+      )
   }
 
   @Test

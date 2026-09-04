@@ -2,53 +2,41 @@
 
 package alakazam.kotlin
 
-import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import org.junit.Test
 
 internal class ThrowsSpecificTest {
   private class CustomSubClassException : IllegalStateException()
 
   @Test
   fun `Throws specific valid 1`() {
-    assertTrue(
-      throwsSpecific<IllegalStateException> { throw IllegalStateException() },
-    )
+    assertTrue(throwsSpecific<IllegalStateException> { throw IllegalStateException() })
   }
 
   @Test
   fun `Throws specific valid 2`() {
-    assertTrue(
-      throwsSpecific<Exception> { throw Exception() },
-    )
+    assertTrue(throwsSpecific<Exception> { throw Exception() })
   }
 
   @Test
   fun `Throws specific valid 3`() {
-    assertTrue(
-      throwsSpecific<IllegalStateException> { throw CustomSubClassException() },
-    )
+    assertTrue(throwsSpecific<IllegalStateException> { throw CustomSubClassException() })
   }
 
   @Test
   fun `Throws specific invalid 1`() {
-    assertFalse(
-      throwsSpecific<IllegalStateException> { throw ClassNotFoundException() },
-    )
+    assertFalse(throwsSpecific<IllegalStateException> { throw ClassNotFoundException() })
   }
 
   @Test
   fun `Throws specific invalid 2`() {
-    assertFalse(
-      throwsSpecific<Error> { throw Exception() },
-    )
+    assertFalse(throwsSpecific<Error> { throw Exception() })
   }
 
   @Test
   fun `Throws specific invalid 3`() {
-    assertFalse(
-      throwsSpecific<IllegalStateException> { throw Exception() },
-    )
+    assertFalse(throwsSpecific<IllegalStateException> { throw Exception() })
   }
 
   @Test
@@ -56,7 +44,7 @@ internal class ThrowsSpecificTest {
     assertFalse(
       throwsSpecific<IllegalStateException> {
         1 + 1
-      },
+      }
     )
   }
 }

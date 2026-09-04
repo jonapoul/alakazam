@@ -1,11 +1,11 @@
 package alakazam.kotlin
 
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.time.Clock
 import kotlin.time.Instant
 import kotlin.time.toJavaInstant
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 
 public fun Instant.format(
   format: String,
@@ -14,9 +14,8 @@ public fun Instant.format(
 
 public fun Instant.format(formatter: DateTimeFormatter): String = formatter.format(toJavaInstant())
 
-public fun Instant.formatFull(
-  config: TimestampConfig = TimestampConfig.Default,
-): String = format(Instant.fullFormatter(config))
+public fun Instant.formatFull(config: TimestampConfig = TimestampConfig.Default): String =
+  format(Instant.fullFormatter(config))
 
 public fun Instant.formatReduced(
   now: Instant = Clock.System.now(),
@@ -34,21 +33,21 @@ public fun Instant.formatReduced(
 }
 
 public fun Instant.Companion.todayFormatter(
-  config: TimestampConfig = TimestampConfig.Default,
+  config: TimestampConfig = TimestampConfig.Default
 ): DateTimeFormatter = "HH:mm".localisedFormatter(config)
 
 public fun Instant.Companion.thisYearFormatter(
-  config: TimestampConfig = TimestampConfig.Default,
+  config: TimestampConfig = TimestampConfig.Default
 ): DateTimeFormatter = "dd MMM HH:mm".localisedFormatter(config)
 
 public fun Instant.Companion.dateFormatter(
-  config: TimestampConfig = TimestampConfig.Default,
+  config: TimestampConfig = TimestampConfig.Default
 ): DateTimeFormatter = "dd MMM yyyy".localisedFormatter(config)
 
 public fun Instant.Companion.fullFormatter(
-  config: TimestampConfig = TimestampConfig.Default,
+  config: TimestampConfig = TimestampConfig.Default
 ): DateTimeFormatter = "dd MMM yyyy HH:mm:ss z".localisedFormatter(config)
 
 public fun Instant.Companion.isoFormatter(
-  config: TimestampConfig = TimestampConfig.Default,
+  config: TimestampConfig = TimestampConfig.Default
 ): DateTimeFormatter = "yyyy-MM-dd HH:mm:ss z".localisedFormatter(config)

@@ -17,16 +17,5 @@
         "before 4am on monday"
       ]
     }
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/^\\.github/workflows/[^/]+\\.yml$/"
-      ],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+KTLINT_VERSION: (?<currentValue>\\S+)"
-      ]
-    }
   ]
 }

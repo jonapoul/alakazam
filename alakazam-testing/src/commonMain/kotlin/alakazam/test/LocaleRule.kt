@@ -1,7 +1,7 @@
 package alakazam.test
 
-import org.junit.rules.ExternalResource
 import java.util.Locale
+import org.junit.rules.ExternalResource
 
 public class LocaleRule(private val locale: Locale) : ExternalResource() {
   private lateinit var default: Locale

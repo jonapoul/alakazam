@@ -1,8 +1,8 @@
 package alakazam.kotlin
 
+import kotlin.test.assertEquals
 import org.junit.Assert.assertThrows
 import org.junit.Test
-import kotlin.test.assertEquals
 
 internal class ByteArrayExtensionsTest {
   @Test
@@ -44,5 +44,6 @@ internal class ByteArrayExtensionsTest {
     }
   }
 
-  private fun byteArray(vararg ints: Int): ByteArray = ints.asList().map { it.toByte() }.toByteArray()
+  private fun byteArray(vararg ints: Int): ByteArray =
+    ints.asList().map { it.toByte() }.toByteArray()
 }

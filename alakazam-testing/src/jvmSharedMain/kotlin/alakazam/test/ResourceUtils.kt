@@ -9,6 +9,4 @@ public inline fun <reified T> T.getResourceAsStream(filename: String): InputStre
     ?: error("Null input stream for $filename!")
 
 public inline fun <reified T> T.getResourceAsText(filename: String): String =
-  getResourceAsStream(filename)
-    .reader()
-    .readText()
+  getResourceAsStream(filename).reader().readText()

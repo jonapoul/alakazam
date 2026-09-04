@@ -1,9 +1,9 @@
 package alakazam.test
 
-import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Instant
+import org.junit.Test
 
 internal class TestClockTest {
   @Test
@@ -32,12 +32,13 @@ internal class TestClockTest {
 
   @Test
   fun `Provide vararg`() {
-    val clock = TestClock(
-      0.instant,
-      1.instant,
-      2.instant,
-      3.instant,
-    )
+    val clock =
+      TestClock(
+        0.instant,
+        1.instant,
+        2.instant,
+        3.instant,
+      )
 
     assertEquals(expected = 0.instant, actual = clock.now())
     assertEquals(expected = 1.instant, actual = clock.now())
@@ -48,12 +49,13 @@ internal class TestClockTest {
 
   @Test
   fun `Provide list`() {
-    val instants = listOf(
-      0.instant,
-      1.instant,
-      2.instant,
-      3.instant,
-    )
+    val instants =
+      listOf(
+        0.instant,
+        1.instant,
+        2.instant,
+        3.instant,
+      )
     val clock = TestClock(instants)
 
     assertEquals(expected = 0.instant, actual = clock.now())
@@ -63,5 +65,6 @@ internal class TestClockTest {
     assertThrows<ArrayIndexOutOfBoundsException> { clock.now() }
   }
 
-  private val Int.instant get() = Instant.fromEpochMilliseconds(toLong())
+  private val Int.instant
+    get() = Instant.fromEpochMilliseconds(toLong())
 }

@@ -16,11 +16,14 @@ detekt {
 }
 
 val detektCheck by tasks.registering { dependsOn(tasks.withType(Detekt::class)) }
+
 tasks.check { dependsOn(detektCheck) }
 
 dependencies {
   fun compileOnlyPlugin(plugin: Provider<PluginDependency>) =
-    compileOnly(plugin.map { "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version.requiredVersion}" })
+    compileOnly(
+      plugin.map { "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version.requiredVersion}" }
+    )
 
   compileOnlyPlugin(libs.plugins.agp)
   compileOnlyPlugin(libs.plugins.androidCacheFix)
@@ -42,10 +45,11 @@ dependencies {
 
 gradlePlugin {
   plugins {
-    operator fun String.invoke(impl: String) = create(this) {
-      this.id = this@invoke
-      implementationClass = impl
-    }
+    operator fun String.invoke(impl: String) =
+      create(this) {
+        this.id = this@invoke
+        implementationClass = impl
+      }
 
     "alakazam.module.android"(impl = "alakazam.gradle.ModuleAndroid")
     "alakazam.module.kotlin"(impl = "alakazam.gradle.ModuleKotlin")

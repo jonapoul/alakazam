@@ -3,7 +3,8 @@ package alakazam.kotlin
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
-public open class StateHolder<T> private constructor(
+public open class StateHolder<T>
+private constructor(
   private val initialState: T,
   private val mutableState: MutableStateFlow<T>,
 ) : MutableStateFlow<T> by mutableState {

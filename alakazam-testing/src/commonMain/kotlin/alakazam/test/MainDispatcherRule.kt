@@ -9,12 +9,11 @@ import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
 /**
- * This rule should be added to any test containing any coroutines/Flows, since it sets the main dispatcher to run in
- * a controlled `TestDispatcher`. Use as:
+ * This rule should be added to any test containing any coroutines/Flows, since it sets the main
+ * dispatcher to run in a controlled `TestDispatcher`. Use as:
  *
  *      @get:Rule
  *      val dispatcherRule = MainDispatcherRule()
- *
  *      @Test
  *      fun `My wicked test`() = runTest {
  *          launch(Dispatchers.Main) {
@@ -23,7 +22,7 @@ import org.junit.runner.Description
  *      }
  */
 public class MainDispatcherRule(
-  public val dispatcher: TestDispatcher = UnconfinedTestDispatcher(),
+  public val dispatcher: TestDispatcher = UnconfinedTestDispatcher()
 ) : TestWatcher() {
   override fun starting(description: Description?) {
     super.starting(description)

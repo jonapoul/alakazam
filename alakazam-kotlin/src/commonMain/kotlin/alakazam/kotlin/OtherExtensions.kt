@@ -12,7 +12,5 @@ public fun justTry(block: () -> Unit) {
   }
 }
 
-/**
- * Don't do anything
- */
+/** Don't do anything */
 public fun noOp(): Unit = Unit

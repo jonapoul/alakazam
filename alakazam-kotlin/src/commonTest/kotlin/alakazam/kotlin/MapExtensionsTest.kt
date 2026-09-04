@@ -1,19 +1,20 @@
 package alakazam.kotlin
 
-import org.junit.Assert.assertArrayEquals
-import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
+import org.junit.Assert.assertArrayEquals
+import org.junit.Test
 
 internal class MapExtensionsTest {
   @Test
   fun `Editing original after deep copy doesn't affect copy`() {
-    val original = mutableMapOf(
-      0 to "a",
-      1 to "b",
-      2 to "c",
-      3 to "d",
-    )
+    val original =
+      mutableMapOf(
+        0 to "a",
+        1 to "b",
+        2 to "c",
+        3 to "d",
+      )
     val copy = original.deepCopy()
     original[0] = "e"
     assertNotEquals(original[0], copy[0])
@@ -24,12 +25,13 @@ internal class MapExtensionsTest {
 
   @Test
   fun `Editing copy after deep copy doesn't affect original`() {
-    val original = mapOf(
-      0 to "a",
-      1 to "b",
-      2 to "c",
-      3 to "d",
-    )
+    val original =
+      mapOf(
+        0 to "a",
+        1 to "b",
+        2 to "c",
+        3 to "d",
+      )
     val copy = original.deepCopy().toMutableMap()
     copy[0] = "e"
     assertNotEquals(original[0], copy[0])
@@ -40,18 +42,20 @@ internal class MapExtensionsTest {
 
   @Test
   fun `Replacing all replaces all`() {
-    val original = mutableMapOf(
-      0 to "a",
-      1 to "b",
-      2 to "c",
-      3 to "d",
-    )
-    val new = mapOf(
-      4 to "e",
-      5 to "f",
-      6 to "g",
-      7 to "h",
-    )
+    val original =
+      mutableMapOf(
+        0 to "a",
+        1 to "b",
+        2 to "c",
+        3 to "d",
+      )
+    val new =
+      mapOf(
+        4 to "e",
+        5 to "f",
+        6 to "g",
+        7 to "h",
+      )
     original.replaceAllWith(new)
     assertArrayEquals(
       original.toList().toTypedArray(),

@@ -3,9 +3,9 @@ package alakazam.kotlin
 import kotlin.time.Instant
 
 /**
- * Intended to give a less annoying interface to compile-time constants of the app. This way if we run a project
- * clean, any classes containing BuildConfig logic won't have angry red underlines. This is implemented in the "app"
- * module and injected anywhere else using DI.
+ * Intended to give a less annoying interface to compile-time constants of the app. This way if we
+ * run a project clean, any classes containing BuildConfig logic won't have angry red underlines.
+ * This is implemented in the "app" module and injected anywhere else using DI.
  */
 public interface BuildConfig {
   public val debug: Boolean // BuildConfig.DEBUG

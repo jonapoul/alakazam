@@ -1,10 +1,10 @@
 package alakazam.kotlin
 
+import kotlin.test.assertEquals
+import kotlin.time.DurationUnit
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
-import kotlin.test.assertEquals
-import kotlin.time.DurationUnit
 
 @RunWith(Parameterized::class)
 internal class DurationUnitExtensionsTest(private val case: TestCase) {
@@ -21,14 +21,15 @@ internal class DurationUnitExtensionsTest(private val case: TestCase) {
   companion object {
     @JvmStatic
     @Parameterized.Parameters
-    fun data() = listOf(
-      TestCase(unit = DurationUnit.NANOSECONDS, expected = "ns"),
-      TestCase(unit = DurationUnit.MICROSECONDS, expected = "μs"),
-      TestCase(unit = DurationUnit.MILLISECONDS, expected = "ms"),
-      TestCase(unit = DurationUnit.SECONDS, expected = "s"),
-      TestCase(unit = DurationUnit.MINUTES, expected = "m"),
-      TestCase(unit = DurationUnit.HOURS, expected = "h"),
-      TestCase(unit = DurationUnit.DAYS, expected = "d"),
-    )
+    fun data() =
+      listOf(
+        TestCase(unit = DurationUnit.NANOSECONDS, expected = "ns"),
+        TestCase(unit = DurationUnit.MICROSECONDS, expected = "μs"),
+        TestCase(unit = DurationUnit.MILLISECONDS, expected = "ms"),
+        TestCase(unit = DurationUnit.SECONDS, expected = "s"),
+        TestCase(unit = DurationUnit.MINUTES, expected = "m"),
+        TestCase(unit = DurationUnit.HOURS, expected = "h"),
+        TestCase(unit = DurationUnit.DAYS, expected = "d"),
+      )
   }
 }

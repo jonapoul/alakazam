@@ -16,6 +16,7 @@ public inline fun <reified E : Enum<E>> KClass<E>.parseOrNull(int: Int): E? =
 public inline fun <reified E : Enum<E>> KClass<E>.parse(int: Int): E =
   parseOrNull(int) ?: error("No ${E::class.qualifiedName} with ordinal '$int'")
 
-public inline fun <reified E : Enum<E>> KClass<E>.parseOrNull(long: Long): E? = parseOrNull(long.toInt())
+public inline fun <reified E : Enum<E>> KClass<E>.parseOrNull(long: Long): E? =
+  parseOrNull(long.toInt())
 
 public inline fun <reified E : Enum<E>> KClass<E>.parse(long: Long): E = parse(long.toInt())

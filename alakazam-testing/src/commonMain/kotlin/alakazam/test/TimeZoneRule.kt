@@ -1,7 +1,7 @@
 package alakazam.test
 
-import org.junit.rules.ExternalResource
 import java.util.TimeZone
+import org.junit.rules.ExternalResource
 
 public class TimeZoneRule(private val tz: TimeZone) : ExternalResource() {
   private lateinit var default: TimeZone

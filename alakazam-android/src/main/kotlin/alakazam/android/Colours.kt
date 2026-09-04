@@ -8,9 +8,7 @@ import androidx.annotation.IntRange
 import kotlin.math.max
 import kotlin.math.min
 
-/**
- * Construct a [ColorInt] [Int] value using four ARGB values.
- */
+/** Construct a [ColorInt] [Int] value using four ARGB values. */
 @ColorInt
 public fun argbColour(
   @IntRange(from = 0, to = 255) alpha: Int,
@@ -77,30 +75,25 @@ public fun Int.green(): Int = this shr 8 and 0xFF
 public fun Int.blue(): Int = this and 0xFF
 
 /**
- * Lightens the 32-bit integer colour by the given factor.
- * [factor] = 0f corresponds to no change.
+ * Lightens the 32-bit integer colour by the given factor. [factor] = 0f corresponds to no change.
  * [factor] = 1f corresponds to #FFF, pure white.
  */
 @ColorInt
-public fun Int.lighten(
-  @FloatRange(from = 0.0, to = 1.0) factor: Float,
-): Int =
-  colourFactor { it * (1f - factor) + (255f * factor) }
+public fun Int.lighten(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int = colourFactor {
+  it * (1f - factor) + (255f * factor)
+}
 
 /**
- * Darkens the 32-bit integer colour by the given factor.
- * [factor] = 0f corresponds to no change.
+ * Darkens the 32-bit integer colour by the given factor. [factor] = 0f corresponds to no change.
  * [factor] = 1f corresponds to #000, pure black.
  */
 @ColorInt
-public fun Int.darken(
-  @FloatRange(from = 0.0, to = 1.0) factor: Float,
-): Int =
-  colourFactor { it * (1f - factor) }
+public fun Int.darken(@FloatRange(from = 0.0, to = 1.0) factor: Float): Int = colourFactor {
+  it * (1f - factor)
+}
 
 @ColorInt
 private inline fun Int.colourFactor(rgbFactor: (Int) -> Float): Int {
-  val (r, g, b) = intArrayOf(red(), green(), blue())
-    .map { rgbFactor(it).toInt() }
+  val (r, g, b) = intArrayOf(red(), green(), blue()).map { rgbFactor(it).toInt() }
   return argbColour(alpha(), r, g, b)
 }

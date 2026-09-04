@@ -1,9 +1,9 @@
 package alakazam.kotlin
 
-import org.junit.Assert.assertArrayEquals
-import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
+import org.junit.Assert.assertArrayEquals
+import org.junit.Test
 
 internal class ListExtensionsTest {
   @Test

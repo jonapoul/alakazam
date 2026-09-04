@@ -9,20 +9,21 @@ import org.jetbrains.dokka.gradle.DokkaExtension
 import org.jetbrains.dokka.gradle.DokkaPlugin
 
 class ConventionPublish : Plugin<Project> {
-  override fun apply(target: Project): Unit = with(target) {
-    with(pluginManager) {
-      apply(MavenPublishPlugin::class)
-      apply(DokkaPlugin::class)
-    }
-
-    extensions.configure(DokkaExtension::class) {
-      dokkaPublications.configureEach {
-        failOnWarning.set(true)
+  override fun apply(target: Project): Unit =
+    with(target) {
+      with(pluginManager) {
+        apply(MavenPublishPlugin::class)
+        apply(DokkaPlugin::class)
       }
 
-      dokkaSourceSets.configureEach {
-        suppressGeneratedFiles.set(true)
+      extensions.configure(DokkaExtension::class) {
+        dokkaPublications.configureEach {
+          failOnWarning.set(true)
+        }
+
+        dokkaSourceSets.configureEach {
+          suppressGeneratedFiles.set(true)
+        }
       }
     }
-  }
 }

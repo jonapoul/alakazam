@@ -11,7 +11,8 @@ public open class SimpleSerializer<T : Any>(
   serialName: String,
   private val constructor: (String) -> T,
 ) : KSerializer<T> {
-  override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor(serialName, PrimitiveKind.STRING)
+  override val descriptor: SerialDescriptor =
+    PrimitiveSerialDescriptor(serialName, PrimitiveKind.STRING)
 
   override fun serialize(encoder: Encoder, value: T): Unit = encoder.encodeString(value.toString())
 

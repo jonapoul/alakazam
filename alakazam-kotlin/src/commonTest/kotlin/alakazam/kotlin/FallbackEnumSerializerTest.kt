@@ -1,5 +1,6 @@
 package alakazam.kotlin
 
+import kotlin.test.assertEquals
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerialName
@@ -7,34 +8,26 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.nullable
 import kotlinx.serialization.json.Json
 import org.junit.Test
-import kotlin.test.assertEquals
 
 @OptIn(ExperimentalSerializationApi::class)
 internal class FallbackEnumSerializerTest {
   @Serializable
   private enum class TestEnum {
-    @SerialName("a")
-    A,
-
-    @SerialName("b")
-    B,
-
-    @SerialName("another-value")
-    SomethingElse,
-
+    @SerialName("a") A,
+    @SerialName("b") B,
+    @SerialName("another-value") SomethingElse,
     Unknown,
   }
 
-  private object TestEnumSerializer : KSerializer<TestEnum> by fallbackEnumSerializer(fallback = TestEnum.Unknown)
+  private object TestEnumSerializer :
+    KSerializer<TestEnum> by fallbackEnumSerializer(fallback = TestEnum.Unknown)
 
   private val nullableSerializer = TestEnumSerializer.nullable
 
   @Serializable
   private data class TestPojo(
-    @Serializable(with = TestEnumSerializer::class)
-    val a: TestEnum,
-    @Serializable(with = TestEnumSerializer::class)
-    val b: TestEnum,
+    @Serializable(with = TestEnumSerializer::class) val a: TestEnum,
+    @Serializable(with = TestEnumSerializer::class) val b: TestEnum,
   )
 
   private val prettyJson = Json {
@@ -49,12 +42,14 @@ internal class FallbackEnumSerializerTest {
     val serialized = prettyJson.encodeToString(TestPojo.serializer(), pojo)
     assertEquals(
       actual = serialized,
-      expected = """
+      expected =
+        """
         {
           "a": "a",
           "b": "another-value"
         }
-      """.trimIndent(),
+        """
+          .trimIndent(),
     )
 
     val deserialized = prettyJson.decodeFromString(TestPojo.serializer(), serialized)
@@ -63,7 +58,8 @@ internal class FallbackEnumSerializerTest {
 
   @Test
   fun `Unrecognised value deserializes to fallback`() {
-    val deserialized = Json.decodeFromString(TestPojo.serializer(), """{"a":"a","b":"not-a-real-value"}""")
+    val deserialized =
+      Json.decodeFromString(TestPojo.serializer(), """{"a":"a","b":"not-a-real-value"}""")
     assertEquals(expected = TestEnum.Unknown, actual = deserialized.b)
   }
 
@@ -78,8 +74,12 @@ internal class FallbackEnumSerializerTest {
   @Test
   fun `Case insensitive decoding is handled by the format`() {
     val json = Json { decodeEnumsCaseInsensitive = true }
-    val deserialized = json.decodeFromString(TestPojo.serializer(), """{"a":"A","b":"ANOTHER-VALUE"}""")
-    assertEquals(expected = TestPojo(a = TestEnum.A, b = TestEnum.SomethingElse), actual = deserialized)
+    val deserialized =
+      json.decodeFromString(TestPojo.serializer(), """{"a":"A","b":"ANOTHER-VALUE"}""")
+    assertEquals(
+      expected = TestPojo(a = TestEnum.A, b = TestEnum.SomethingElse),
+      actual = deserialized,
+    )
   }
 
   @Test

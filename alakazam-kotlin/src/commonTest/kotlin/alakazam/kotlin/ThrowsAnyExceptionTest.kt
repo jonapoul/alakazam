@@ -2,32 +2,26 @@
 
 package alakazam.kotlin
 
-import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import org.junit.Test
 
 internal class ThrowsAnyExceptionTest {
   private class CustomSubClassException : IllegalStateException()
 
   @Test
   fun `Throws any exception valid 1`() {
-    assertTrue(
-      throwsAnyException { throw IllegalStateException() },
-    )
+    assertTrue(throwsAnyException { throw IllegalStateException() })
   }
 
   @Test
   fun `Throws any exception valid 2`() {
-    assertTrue(
-      throwsAnyException { throw Exception() },
-    )
+    assertTrue(throwsAnyException { throw Exception() })
   }
 
   @Test
   fun `Throws any exception valid 3`() {
-    assertTrue(
-      throwsAnyException { throw CustomSubClassException() },
-    )
+    assertTrue(throwsAnyException { throw CustomSubClassException() })
   }
 
   @Test(expected = Throwable::class)
@@ -50,7 +44,7 @@ internal class ThrowsAnyExceptionTest {
     assertFalse(
       throwsAnyException {
         1 + 1
-      },
+      }
     )
   }
 }

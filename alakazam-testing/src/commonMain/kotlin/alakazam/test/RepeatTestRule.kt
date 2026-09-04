@@ -5,8 +5,8 @@ import org.junit.runner.Description
 import org.junit.runners.model.Statement
 
 /**
- * Repeat a test multiple times and throw any occurring error.
- * Inspiration taken from [ShampooRule](https://gist.github.com/JakeWharton/7fe7deb1f7f4a795c120) by Jake Wharton.
+ * Repeat a test multiple times and throw any occurring error. Inspiration taken from
+ * [ShampooRule](https://gist.github.com/JakeWharton/7fe7deb1f7f4a795c120) by Jake Wharton.
  *
  * ```
  * @get:Rule
@@ -44,15 +44,19 @@ private class RepeatTestRuleException(
   iterations: Int,
   description: Description,
   cause: Throwable?,
-) : IllegalStateException("[${description.displayName}] failed after $iterations iterations.", cause)
+) :
+  IllegalStateException("[${description.displayName}] failed after $iterations iterations.", cause)
 
 private class RepeatTestStatement(
   private val statement: Statement,
   private val description: Description,
   private val iterations: Int,
 ) : Statement() {
-  override fun evaluate() = repeat(iterations) { iteration ->
-    runCatching { statement.evaluate() }
-      .onFailure { throwable -> throw RepeatTestRuleException(iteration.inc(), description, cause = throwable) }
-  }
+  override fun evaluate() =
+    repeat(iterations) { iteration ->
+      runCatching { statement.evaluate() }
+        .onFailure { throwable ->
+          throw RepeatTestRuleException(iteration.inc(), description, cause = throwable)
+        }
+    }
 }

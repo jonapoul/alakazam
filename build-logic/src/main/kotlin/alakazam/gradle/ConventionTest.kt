@@ -11,23 +11,24 @@ import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class ConventionTest : Plugin<Project> {
-  override fun apply(target: Project): Unit = with(target) {
-    tasks.withType(KotlinCompile::class).configureEach {
-      compilerOptions {
-        freeCompilerArgs.add("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
+  override fun apply(target: Project): Unit =
+    with(target) {
+      tasks.withType(KotlinCompile::class).configureEach {
+        compilerOptions {
+          freeCompilerArgs.add("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
+        }
       }
-    }
 
-    tasks.withType(Test::class).configureEach {
-      testLogging {
-        events = setOf(PASSED, SKIPPED, FAILED)
-        exceptionFormat = FULL
-        showCauses = true
-        showExceptions = true
-        showStackTraces = true
-        showStandardStreams = false
-        displayGranularity = 2
+      tasks.withType(Test::class).configureEach {
+        testLogging {
+          events = setOf(PASSED, SKIPPED, FAILED)
+          exceptionFormat = FULL
+          showCauses = true
+          showExceptions = true
+          showStackTraces = true
+          showStandardStreams = false
+          displayGranularity = 2
+        }
       }
     }
-  }
 }

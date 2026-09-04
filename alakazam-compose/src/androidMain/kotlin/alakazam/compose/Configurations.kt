@@ -7,4 +7,5 @@ import androidx.compose.ui.platform.LocalConfiguration
 
 @Composable
 @ReadOnlyComposable
-public fun isLandscape(): Boolean = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+public fun isLandscape(): Boolean =
+  LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE

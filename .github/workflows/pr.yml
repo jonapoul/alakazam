@@ -105,23 +105,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG: ./config/gitleaks.toml
 
-  ktlint:
+  ktfmt:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - name: Install ktlint
-        env:
-          # renovate: datasource=github-releases depName=pinterest/ktlint
-          KTLINT_VERSION: 1.7.1
-        run: |
-          curl -sSLO "https://github.com/pinterest/ktlint/releases/download/$KTLINT_VERSION/ktlint"
-          chmod a+x ktlint
-          sudo mv ktlint /usr/local/bin/
-      - run: scripts/ktlintCheck.sh
+      - uses: ./.github/actions/setup-java
+      - run: scripts/ktfmt.sh check --force
 
   validation:
-    needs: [ changed-files, renovate, gradle-wrapper, shellcheck, actionlint, gitleaks, ktlint ]
+    needs: [ changed-files, renovate, gradle-wrapper, shellcheck, actionlint, gitleaks, ktfmt ]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:

@@ -30,9 +30,7 @@ public inline fun <reified T> assertListEquals(expected: List<T>, actual: List<T
     val actStr = actual.toTypedArray().contentDeepToString()
     throw AssertionError("Different list sizes: expected = $expStr, actual = $actStr")
   } else {
-    expected
-      .zip(actual)
-      .forEach { (exp, act) -> assertEquals<T>(exp, act) }
+    expected.zip(actual).forEach { (exp, act) -> assertEquals<T>(exp, act) }
   }
 }
 

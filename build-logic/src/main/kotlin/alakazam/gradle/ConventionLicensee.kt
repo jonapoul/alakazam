@@ -9,14 +9,15 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 
 class ConventionLicensee : Plugin<Project> {
-  override fun apply(target: Project): Unit = with(target) {
-    pluginManager.apply(LicenseePlugin::class)
+  override fun apply(target: Project): Unit =
+    with(target) {
+      pluginManager.apply(LicenseePlugin::class)
 
-    extensions.configure(LicenseeExtension::class) {
-      allow("Apache-2.0")
-      allow("BSD-2-Clause")
-      allow("EPL-1.0")
-      unusedAction(IGNORE)
+      extensions.configure(LicenseeExtension::class) {
+        allow("Apache-2.0")
+        allow("BSD-2-Clause")
+        allow("EPL-1.0")
+        unusedAction(IGNORE)
+      }
     }
-  }
 }

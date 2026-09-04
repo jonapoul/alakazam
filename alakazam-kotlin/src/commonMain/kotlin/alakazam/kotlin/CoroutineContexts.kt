@@ -1,8 +1,8 @@
 package alakazam.kotlin
 
+import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
-import kotlin.coroutines.CoroutineContext
 
 public interface CoroutineContexts {
   public val main: CoroutineContext

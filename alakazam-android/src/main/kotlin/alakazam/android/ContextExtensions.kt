@@ -17,16 +17,12 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.createBitmap
 
-/**
- * Shows a toast with the given [message].
- */
+/** Shows a toast with the given [message]. */
 public fun Context.toast(message: String, length: Int = Toast.LENGTH_LONG) {
   Toast.makeText(this, message, length).show()
 }
 
-/**
- * Shows a toast with the given string resource as a message.
- */
+/** Shows a toast with the given string resource as a message. */
 public fun Context.toast(
   @StringRes message: Int,
   length: Int = Toast.LENGTH_LONG,
@@ -48,43 +44,31 @@ public fun Context.getColorFromAttr(
   return value.data
 }
 
-/**
- * Checks whether the given app [Context] has been granted the specified [permission].
- */
+/** Checks whether the given app [Context] has been granted the specified [permission]. */
 public fun Context.hasPermission(permission: String): Boolean {
   val permissionState = ContextCompat.checkSelfPermission(this, permission)
   return permissionState == PackageManager.PERMISSION_GRANTED
 }
 
-/**
- * Shorthand method to start the specified [Service] class with the given [action] string.
- */
+/** Shorthand method to start the specified [Service] class with the given [action] string. */
 public inline fun <reified S : Service> Context.startServiceWithAction(action: String) {
   startService(
     Intent(this, S::class.java).apply {
       setAction(action)
-    },
+    }
   )
 }
 
-/**
- * Get color from resources
- */
-public fun Context.getCompatColor(
-  @ColorRes colorInt: Int,
-): Int = ContextCompat.getColor(this, colorInt)
+/** Get color from resources */
+public fun Context.getCompatColor(@ColorRes colorInt: Int): Int =
+  ContextCompat.getColor(this, colorInt)
 
-/**
- * Get drawable from resources
- */
-public fun Context.getCompatDrawable(
-  @DrawableRes drawableRes: Int,
-): Drawable = ContextCompat.getDrawable(this, drawableRes)
-  ?: error("Failed to get drawable from $this for $drawableRes")
+/** Get drawable from resources */
+public fun Context.getCompatDrawable(@DrawableRes drawableRes: Int): Drawable =
+  ContextCompat.getDrawable(this, drawableRes)
+    ?: error("Failed to get drawable from $this for $drawableRes")
 
-public fun Context.drawableToBitmap(
-  @DrawableRes drawableRes: Int,
-): Bitmap {
+public fun Context.drawableToBitmap(@DrawableRes drawableRes: Int): Bitmap {
   val drawable = getCompatDrawable(drawableRes)
   val bitmap = createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight)
   val canvas = Canvas(bitmap)

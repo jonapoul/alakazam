@@ -1,9 +1,9 @@
 package alakazam.kotlin
 
+import kotlin.test.assertEquals
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import org.junit.Test
-import kotlin.test.assertEquals
 
 internal class SimpleSerializerTest {
   @Serializable(with = FooSerializer::class)
