@@ -3,8 +3,6 @@
 ![CI](https://github.com/jonapoul/alakazam/actions/workflows/main.yml/badge.svg)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.jonpoulton.alakazam/kotlin)
 
-![Alakazam](docs/alakazam.png)
-
 This is a simple library to hold a bunch of Kotlin extensions and utility functions that I use all the time in various
 projects. I just made this repo to keep them all in the same place and stop me copying them around all the time.
 
