@@ -13,9 +13,9 @@ import kotlinx.serialization.serializer
  * Decorates the serializer of the enum [E] so that any value which can't be recognised is decoded
  * as [fallback], instead of throwing.
  *
- * Encoding is delegated to the format via [Encoder.encodeEnum]/[Decoder.decodeEnum], so entries are
- * represented however the format represents enums. That means [kotlinx.serialization.SerialName] on
- * each entry is respected by JSON, while a format like protobuf still uses the entry's ordinal.
+ * Encoding is delegated to the format via `Encoder.encodeEnum`/`Decoder.decodeEnum`, so entries are
+ * represented however the format represents enums. That means `@SerialName` on each entry is
+ * respected by JSON, while a format like protobuf still uses the entry's ordinal.
  *
  * ```kotlin
  * @Serializable
@@ -33,7 +33,7 @@ import kotlinx.serialization.serializer
  * serializer, otherwise resolving the descriptor recurses. Instead, apply the serializer at the use
  * site, or pass the generated serializer explicitly.
  *
- * Use [kotlinx.serialization.builtins.nullable] if the property being decoded is also nullable.
+ * Use `KSerializer.nullable` if the property being decoded is also nullable.
  */
 public inline fun <reified E : Enum<E>> fallbackEnumSerializer(
   fallback: E,
