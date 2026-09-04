@@ -2,63 +2,172 @@ name: PR
 
 on:
   pull_request:
-    branches:
 
 env:
   CI: true
+  GRADLE_ENCRYPTION_KEY: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
-  contents: write
+  contents: read
   checks: write
+  pull-requests: write
 
 concurrency:
   group: 'ci-${{ github.event.merge_group.head_ref || github.head_ref }}-${{ github.workflow }}'
   cancel-in-progress: true
 
 jobs:
-  pr-check:
+  changed-files:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      renovate: ${{ steps.filter.outputs.renovate }}
+      wrapper: ${{ steps.filter.outputs.wrapper }}
+      shell: ${{ steps.filter.outputs.shell }}
+      workflows: ${{ steps.filter.outputs.workflows }}
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4
+        id: filter
+        with:
+          filters: |
+            renovate:
+              - '.github/renovate.json'
+              - '.github/renovate.json5'
+              - 'renovate.json'
+              - 'renovate.json5'
+            wrapper:
+              - 'gradle/wrapper/**'
+              - 'gradlew'
+              - 'gradlew.bat'
+            shell:
+              - '**/*.sh'
+            workflows:
+              - '.github/workflows/**'
+              - '.github/actions/**'
+
+  renovate:
+    needs: changed-files
+    if: needs.changed-files.outputs.renovate == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: 'lts/*'
+      - run: npm install -g renovate
+      - run: renovate-config-validator
+
+  gradle-wrapper:
+    needs: changed-files
+    if: needs.changed-files.outputs.wrapper == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: gradle/actions/wrapper-validation@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6
+
+  shellcheck:
+    needs: changed-files
+    if: needs.changed-files.outputs.shell == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
-          fetch-tags: true
-          ref: ${{ github.head_ref }}
+      - run: |
+          mapfile -t files < <(git diff --name-only --diff-filter=ACMR origin/master -- '*.sh')
+          if [[ ${#files[@]} -gt 0 ]]; then
+            shellcheck "${files[@]}"
+          fi
 
-      - name: Gitleaks
-        uses: gitleaks/gitleaks-action@v2
+  actionlint:
+    needs: changed-files
+    if: needs.changed-files.outputs.workflows == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7 # v2
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG: ./config/gitleaks.toml
 
+  ktlint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Install ktlint
+        env:
+          # renovate: datasource=github-releases depName=pinterest/ktlint
+          KTLINT_VERSION: 1.7.1
         run: |
-          curl -sSLO https://github.com/pinterest/ktlint/releases/download/1.7.1/ktlint
+          curl -sSLO "https://github.com/pinterest/ktlint/releases/download/$KTLINT_VERSION/ktlint"
           chmod a+x ktlint
           sudo mv ktlint /usr/local/bin/
+      - run: scripts/ktlintCheck.sh
 
-      - name: Run ktlint
-        run: scripts/ktlintCheck.sh
+  validation:
+    needs: [ changed-files, renovate, gradle-wrapper, shellcheck, actionlint, gitleaks, ktlint ]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [[ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            echo "One or more validation jobs failed or were cancelled"
+            exit 1
+          fi
 
-      - name: Setup JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: 17
-          distribution: "zulu"
+  check-build-logic:
+    needs: validation
+    if: ${{ !cancelled() && needs.validation.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: ./.github/actions/setup-java
+      - uses: ./.github/actions/setup-gradle
+      - run: ./gradlew -p build-logic check
 
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v5
-        with:
-          add-job-summary: on-failure
-          cache-read-only: false
+  detekt:
+    needs: validation
+    if: ${{ !cancelled() && needs.validation.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: ./.github/actions/setup-java
+      - uses: ./.github/actions/setup-gradle
+      - run: ./gradlew detektCheck --continue
 
-      - name: Check
-        run: ./gradlew check
+  check:
+    needs: validation
+    if: ${{ !cancelled() && needs.validation.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: ./.github/actions/setup-java
+      - uses: ./.github/actions/setup-gradle
 
-      - name: Upload reports
-        uses: actions/upload-artifact@v6
-        if: always()
+      # detekt runs in its own job, so skip it here
+      - run: ./gradlew check -x detektCheck
+
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: ${{ !cancelled() }}
         with:
           name: check-reports
           path: |
@@ -66,8 +175,62 @@ jobs:
             ./build/reports
           if-no-files-found: warn
 
-      - name: Publish test reports
-        uses: mikepenz/action-junit-report@v6
-        if: always()
+      - uses: gmazzo/publish-report-annotations@d9c7375f4c587879eeedba56c6e35f1235219f9f # v1
+        if: ${{ !cancelled() }}
+
+  dependency-guard:
+    needs: validation
+    if: ${{ !cancelled() && needs.validation.result == 'success' && !startsWith(github.head_ref, 'renovate/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: ./.github/actions/setup-java
+      - uses: ./.github/actions/setup-gradle
+      - run: ./gradlew dependencyGuard
+
+  dependency-guard-baseline:
+    needs: validation
+    if: ${{ !cancelled() && needs.validation.result == 'success' && startsWith(github.head_ref, 'renovate/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          report_paths: "**/build/test-results/*/TEST-*.xml"
+          ref: ${{ github.head_ref }}
+          # Use a PAT (not GITHUB_TOKEN) so the baseline commit re-triggers the PR
+          # workflow; commits pushed with GITHUB_TOKEN do not trigger new runs.
+          token: ${{ secrets.RENOVATE_BASELINE_TOKEN }}
+      - uses: ./.github/actions/setup-java
+      - uses: ./.github/actions/setup-gradle
+      - run: ./gradlew dependencyGuardBaseline
+      - name: Commit baseline updates
+        run: |
+          if git diff --exit-code; then
+            echo "No baseline changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Baseline"
+          git push
+
+  finish:
+    if: ${{ !cancelled() }}
+    needs:
+      - validation
+      - check-build-logic
+      - detekt
+      - check
+      - dependency-guard
+      - dependency-guard-baseline
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [[ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            echo "One or more jobs failed or were cancelled"
+            exit 1
+          fi
