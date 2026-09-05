@@ -1,6 +1,6 @@
 package alakazam.kotlin
 
-public interface LoopController {
+public fun interface LoopController {
   public fun shouldLoop(): Boolean
 }
 

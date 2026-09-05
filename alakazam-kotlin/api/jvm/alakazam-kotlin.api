@@ -116,8 +116,8 @@ public final class alakazam/kotlin/DurationUnitExtensionsKt {
 	public static final fun shortName (Lkotlin/time/DurationUnit;)Ljava/lang/String;
 }
 
-public final class alakazam/kotlin/FallbackEnumSerializer : kotlinx/serialization/KSerializer {
-	public fun <init> (Ljava/lang/Enum;Lkotlin/enums/EnumEntries;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+public final class alakazam/kotlin/EnumStringSerializer : kotlinx/serialization/KSerializer {
+	public fun <init> (Ljava/lang/String;[Ljava/lang/Enum;ZLjava/lang/Enum;)V
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Enum;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
@@ -184,6 +184,10 @@ public final class alakazam/kotlin/ResettableStateFlowKt {
 
 public final class alakazam/kotlin/RunCatchingKt {
 	public static final fun coRunCatching (Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class alakazam/kotlin/SerializableByString {
+	public abstract fun getValue ()Ljava/lang/String;
 }
 
 public class alakazam/kotlin/SimpleSerializer : kotlinx/serialization/KSerializer {
