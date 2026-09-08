@@ -11,12 +11,13 @@ import kotlinx.serialization.encoding.Encoder
 public inline fun <reified E> enumStringSerializer(
   ignoreCase: Boolean = false,
   fallback: E? = null,
-): KSerializer<E> where E : Enum<E>, E : SerializableByString = EnumStringSerializer(
-  serialName = requireNotNull(E::class.qualifiedName),
-  enumValues = enumValues<E>(),
-  ignoreCase = ignoreCase,
-  fallback = fallback,
-)
+): KSerializer<E> where E : Enum<E>, E : SerializableByString =
+  EnumStringSerializer(
+    serialName = requireNotNull(E::class.qualifiedName),
+    enumValues = enumValues<E>(),
+    ignoreCase = ignoreCase,
+    fallback = fallback,
+  )
 
 public class EnumStringSerializer<E>(
   serialName: String,
@@ -31,7 +32,7 @@ public class EnumStringSerializer<E>(
     return enumValues.firstOrNull { it.value.equals(decoded, ignoreCase = ignoreCase) }
       ?: fallback
       ?: throw SerializationException(
-        "No value matching $decoded in ${enumValues.contentToString()} with ignoreCase=$ignoreCase",
+        "No value matching $decoded in ${enumValues.contentToString()} with ignoreCase=$ignoreCase"
       )
   }
 
