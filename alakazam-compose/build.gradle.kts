@@ -20,5 +20,5 @@ dependencies {
 
 takDependencyGuard {
   allow("androidx.collection:collection-jvm:1.5.0")
-  allow("androidx.collection:collection:1.5.0")
+  allow("androidx.collection:collection:1.6.0")
 }
