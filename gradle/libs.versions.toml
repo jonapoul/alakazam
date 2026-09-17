@@ -12,7 +12,7 @@ androidx-annotation = { module = "androidx.annotation:annotation", version = "1.
 androidx-core = { module = "androidx.core:core", version = "1.17.0" }
 androidx-coreKtx = { module = "androidx.core:core-ktx", version = "1.17.0" }
 blueprint = { module = "dev.jonpoulton.blueprint:core", version = "2.0.0" }
-compose-lint = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.4.2" }
+compose-lint = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.6.0" }
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.7.1" }
 kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
