@@ -50,7 +50,6 @@ class ConventionAndroid : Plugin<Project> {
           buildConfig = false
           compose = false
           prefab = false
-          renderScript = false
           resValues = false
           shaders = false
           viewBinding = false
@@ -63,8 +62,6 @@ class ConventionAndroid : Plugin<Project> {
           checkReleaseBuilds = false
           checkTestSources = true
           explainIssues = true
-          htmlReport = true
-          xmlReport = true
           lintConfig = rootProject.isolated.projectDirectory.file("config/lint.xml").asFile
         }
 

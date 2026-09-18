@@ -9,9 +9,8 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.getValue
 import org.gradle.kotlin.dsl.provideDelegate
-import org.gradle.kotlin.dsl.registering
 import org.gradle.kotlin.dsl.withType
-import org.gradle.language.base.plugins.LifecycleBasePlugin
+import org.gradle.language.base.plugins.LifecycleBasePlugin.VERIFICATION_GROUP
 
 class ConventionDetekt : Plugin<Project> {
   override fun apply(target: Project): Unit =
@@ -26,10 +25,11 @@ class ConventionDetekt : Plugin<Project> {
 
       val detektTasks = tasks.withType(Detekt::class)
 
-      val detektCheck by tasks.registering {
-        group = LifecycleBasePlugin.VERIFICATION_GROUP
-        dependsOn(detektTasks)
-      }
+      val detektCheck =
+        tasks.register("detektCheck") {
+          group = VERIFICATION_GROUP
+          dependsOn(detektTasks)
+        }
 
       pluginManager.withPlugin("base") {
         tasks.named("check").configure { dependsOn(detektCheck) }

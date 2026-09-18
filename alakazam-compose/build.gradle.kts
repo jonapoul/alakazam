@@ -8,17 +8,12 @@ plugins {
 
 kotlin {
   commonMainDependencies {
-    api(compose.foundation)
-    api(compose.runtime)
-    implementation(compose.ui)
+    api(libs.compose.foundation)
+    api(libs.compose.runtime)
+    implementation(libs.compose.ui)
   }
 }
 
 dependencies {
   lintChecks(libs.compose.lint)
-}
-
-takDependencyGuard {
-  allow("androidx.collection:collection-jvm:1.5.0")
-  allow("androidx.collection:collection:1.5.0")
 }
