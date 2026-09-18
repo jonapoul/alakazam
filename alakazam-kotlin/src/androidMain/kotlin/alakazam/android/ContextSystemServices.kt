@@ -40,7 +40,6 @@ import android.hardware.input.InputManager
 import android.hardware.usb.UsbManager
 import android.location.LocationManager
 import android.media.AudioManager
-import android.media.MediaCommunicationManager
 import android.media.MediaRouter
 import android.media.metrics.MediaMetricsManager
 import android.media.midi.MidiManager
@@ -167,8 +166,6 @@ public val Context.launcherApps: LauncherApps
 public val Context.localeManager: LocaleManager
   get() = requireSystemService()
 public val Context.locationManager: LocationManager
-  get() = requireSystemService()
-public val Context.mediaCommunicationManager: MediaCommunicationManager
   get() = requireSystemService()
 public val Context.mediaMetricsManager: MediaMetricsManager
   get() = requireSystemService()

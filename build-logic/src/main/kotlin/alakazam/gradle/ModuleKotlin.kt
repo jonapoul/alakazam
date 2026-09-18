@@ -10,8 +10,6 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
-import takdevx.dependencyguard.TakDependencyGuardExtension
-import takdevx.dependencyguard.TakDependencyGuardPlugin
 
 class ModuleKotlin : Plugin<Project> {
   override fun apply(target: Project): Unit =
@@ -24,12 +22,6 @@ class ModuleKotlin : Plugin<Project> {
         apply(ConventionStyle::class)
         apply(ConventionTest::class)
         apply(DependencyAnalysisPlugin::class)
-        apply(TakDependencyGuardPlugin::class)
-      }
-
-      extensions.configure(TakDependencyGuardExtension::class) {
-        configuration("androidRuntimeClasspath")
-        configuration("jvmRuntimeClasspath")
       }
 
       extensions.configure(KotlinMultiplatformExtension::class) {
@@ -49,6 +41,8 @@ class ModuleKotlin : Plugin<Project> {
           minSdk = providers.intProperty("alakazam.minSdk").get()
           compileSdk = providers.intProperty("alakazam.compileSdk").get()
 
+          withHostTest {}
+
           packaging.resources.excludes.addAll(
             listOf(
               "META-INF/DEPENDENCIES",
@@ -64,8 +58,6 @@ class ModuleKotlin : Plugin<Project> {
             checkReleaseBuilds = false
             checkTestSources = true
             explainIssues = true
-            htmlReport = true
-            xmlReport = true
             lintConfig = project.rootProject.file("config/lint.xml")
           }
         }

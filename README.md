@@ -26,7 +26,6 @@ And add a dependency code to your **module**'s `build.gradle.kts` file.
 
 ```kotlin
 dependencies {
-  implementation("dev.jonpoulton.alakazam:android:{version}")
   implementation("dev.jonpoulton.alakazam:compose:{version}")
   implementation("dev.jonpoulton.alakazam:kotlin:{version}")
   testImplementation("dev.jonpoulton.alakazam:testing:{version}")

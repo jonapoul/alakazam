@@ -1,5 +1,8 @@
+@file:OptIn(ExperimentalForInheritanceCoroutinesApi::class)
+
 package alakazam.kotlin
 
+import kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 

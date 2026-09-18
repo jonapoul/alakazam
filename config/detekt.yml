@@ -17,12 +17,18 @@ exceptions:
 naming:
   FunctionNaming:
     functionPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    excludes: &testExcludes
+      - '**/test/**'
+      - '**/commonTest/**'
+      - '**/jvmTest/**'
+      - '**/androidHostTest/**'
   TopLevelPropertyNaming:
     constantPattern: '[A-Z][A-Za-z0-9]*'
 style:
   UnnecessaryAbstractClass:
     active: false
   MagicNumber:
+    excludes: *testExcludes
     ignorePropertyDeclaration: true
     ignoreCompanionObjectPropertyDeclaration: true
     ignoreAnnotated:
