@@ -1,3 +1,4 @@
+import blueprint.core.androidMainDependencies
 import blueprint.core.commonMainDependencies
 import blueprint.core.commonTestDependencies
 
@@ -20,5 +21,11 @@ kotlin {
     implementation(libs.test.kotlin.coroutines)
     implementation(libs.test.turbine)
     implementation(project(":alakazam-testing"))
+  }
+
+  androidMainDependencies {
+    implementation(libs.androidx.annotation)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.coreKtx)
   }
 }

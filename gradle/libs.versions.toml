@@ -27,7 +27,6 @@ test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 agp = { id = "com.android.library", version.ref = "agp" }
-androidCacheFix = { id = "org.gradle.android.cache-fix", version = "3.0.3" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version = "3.19.2" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }

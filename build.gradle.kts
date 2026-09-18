@@ -1,6 +1,5 @@
 plugins {
   alias(libs.plugins.agp) apply false
-  alias(libs.plugins.androidCacheFix) apply false
   alias(libs.plugins.compose) apply false
   alias(libs.plugins.detekt) apply false
   alias(libs.plugins.dokka) apply false

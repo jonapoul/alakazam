@@ -18,7 +18,6 @@ develocity {
 }
 
 include(
-  ":alakazam-android",
   ":alakazam-compose",
   ":alakazam-kotlin",
   ":alakazam-testing",

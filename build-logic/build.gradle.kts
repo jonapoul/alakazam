@@ -41,7 +41,6 @@ dependencies {
     )
 
   compileOnlyPlugin(libs.plugins.agp)
-  compileOnlyPlugin(libs.plugins.androidCacheFix)
   compileOnlyPlugin(libs.plugins.compose)
   compileOnlyPlugin(libs.plugins.dependencyAnalysis)
   compileOnlyPlugin(libs.plugins.dependencyGuard)
@@ -64,7 +63,6 @@ gradlePlugin {
         implementationClass = impl
       }
 
-    "alakazam.module.android"(impl = "alakazam.gradle.ModuleAndroid")
     "alakazam.module.kotlin"(impl = "alakazam.gradle.ModuleKotlin")
     "alakazam.convention.detekt"(impl = "alakazam.gradle.ConventionDetekt")
   }
