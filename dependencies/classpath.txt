@@ -94,8 +94,8 @@ dev.drewhamilton.poko:poko-annotations:0.18.7
 dev.jonpoulton.blueprint:core:2.4.2
 dev.zacsweers.moshix:moshi-sealed-reflect:0.37.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.37.0
-io.github.gmazzo.publications.report:io.github.gmazzo.publications.report.gradle.plugin:1.4.1
-io.github.gmazzo.publications.report:plugin:1.4.1
+io.github.gmazzo.publications.report:io.github.gmazzo.publications.report.gradle.plugin:1.4.2
+io.github.gmazzo.publications.report:plugin:1.4.2
 io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.8
 io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:1.23.8
 jakarta.activation:jakarta.activation-api:1.2.1
